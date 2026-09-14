@@ -1,3 +1,17 @@
+# Kahani Cards — RFID story games
+
+Stories live in `docs/<story-slug>/` and are published from `docs/` via
+GitHub Pages. `docs/index.html` is the landing page.
+
+## Before you make audio for a new story
+
+Read **[AUDIO_STANDARD.md](AUDIO_STANDARD.md)** first, and run
+`python3 check_audio.py docs/<story-slug>` before shipping. It catches the
+failure mode that is invisible on a laptop: a background bed that buries the
+narration on a phone speaker.
+
+---
+
 # Find & Tap — project files
 
 This is the "Find & Tap" RFID scavenger-hunt game built for a 4-year-old:
