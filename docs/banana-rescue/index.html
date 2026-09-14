@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/>
+<title>The Great Banana Rescue</title>
+<style>
+body{margin:0;background:#101522;color:white;font-family:system-ui,sans-serif;min-height:100vh;display:grid;place-items:center;padding:16px}
+.app{max-width:920px;width:100%;background:#1b2236;padding:26px;border-radius:26px;box-shadow:0 24px 70px #0008}
+h1{margin:0;font-size:clamp(30px,6vw,52px)}.sub{opacity:.7;margin:6px 0 18px}.hero{font-size:76px;text-align:center;min-height:95px}
+.progress{display:flex;gap:6px;flex-wrap:wrap;margin:14px 0}.step{font-size:12px;padding:7px 9px;border-radius:999px;background:#2b334d;opacity:.5}.step.done{background:#17603f;opacity:1}.step.current{background:#7b641e;opacity:1}
+.status{background:#252e48;border-radius:16px;padding:17px;min-height:62px;font-size:18px;display:flex;align-items:center}.success{background:#173f2d}.wrong{background:#512735}
+button,input{border:0;border-radius:14px;padding:14px;font-size:17px}button{font-weight:800;cursor:pointer}.primary{width:100%;background:#f6c653;color:#211b0c;margin-top:14px}
+.row{display:flex;gap:9px;margin-top:12px}input{flex:1;min-width:0}.scan{background:#dce7ff;color:#17223b}.hidden{display:none}
+.cards{margin-top:18px;background:#141a2a;padding:14px;border-radius:15px;font-size:13px;line-height:1.8;opacity:.8}
+.topbar{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}.modeactions{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}.modebtn{background:#334155;color:#fff;padding:10px 12px;font-size:13px;white-space:nowrap}.teachbtn{background:#0f766e;color:#fff;padding:10px 12px;font-size:13px;white-space:nowrap}.modepill{display:inline-flex;align-items:center;gap:7px;margin:8px 0 4px;padding:7px 10px;border-radius:999px;background:#13261f;color:#a7f3d0;font-size:12px;font-weight:700}.modepill.devactive{background:#2d2440;color:#ddd6fe}.dev{display:none;margin-top:16px;padding:14px;border-radius:15px;background:#111827;border:1px dashed #64748b}.dev.active{display:block}.dev h3{margin:0 0 10px;font-size:15px}.devrow{display:flex;gap:8px;flex-wrap:wrap}.dev select{flex:1;min-width:220px;border:0;border-radius:12px;padding:12px;font-size:15px}.dev button{background:#c4b5fd;color:#211a3a}.teach{display:none;margin-top:16px;padding:14px;border-radius:15px;background:#0f172a;border:1px solid #475569}.teach.active{display:block}.teach h3{margin:0 0 6px}.teachintro{font-size:13px;opacity:.78;margin-bottom:12px}.teachstatus{padding:12px;border-radius:12px;background:#172033;margin-bottom:12px;font-size:14px}.teachgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:8px}.teachcard{display:flex;align-items:center;justify-content:space-between;gap:8px;background:#111827;padding:10px;border-radius:12px}.teachcard .meta{min-width:0}.teachcard .name{font-weight:800}.teachcard .uidtxt{font-size:11px;opacity:.6;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;max-width:150px}.teachcard button{padding:8px 10px;font-size:12px;background:#5eead4;color:#083344}.teachcard button.clear{background:#475569;color:#fff}.teachfooter{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}.teachfooter button{padding:10px 12px;font-size:13px;background:#334155;color:#fff}#tapTray{display:none;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}#tapTray.on{display:grid}#tapTray button{background:#1e293b;border:2px solid #334155;border-radius:14px;padding:14px 6px;cursor:pointer;color:#fff;font:inherit;text-align:center;transition:transform .08s,border-color .15s}#tapTray button:hover{border-color:#5eead4}#tapTray button:active{transform:scale(.94)}#tapTray .i{font-size:30px;line-height:1.1}#tapTray .n{font-size:12px;margin-top:5px;opacity:.85}.cards{display:none}.cards.active{display:block}.note{font-size:12px;opacity:.6;margin-top:12px}
+</style></head><body><div class="app">
+<div class="topbar"><div><h1>🍌 The Great Banana Rescue</h1><div class="sub">Interactive physical-card adventure</div></div><div class="modeactions"><button class="teachbtn" id="tapToggle" type="button">📱 No Reader</button>
+<button class="teachbtn" id="teachToggle" type="button">Teach Cards</button><button class="modebtn" id="modeToggle" type="button">Developer Mode</button></div></div>
+<div class="hero" id="hero">🌙</div><div class="progress" id="progress"></div><div class="status" id="status">Ready, Explorer?</div>
+<div id="tapTray"></div>
+<div class="modepill" id="modePill">📡 Card Reader Mode</div>
+<button class="primary" id="start">▶ Start Adventure</button>
+<div class="hidden" id="cardArea"><div class="row"><input autocomplete="off" id="uid" placeholder="Type card UID"/><button class="scan" id="scan">Scan Card</button></div></div>
+<div class="cards" id="testIds"><b>Developer test IDs:</b> 1001 Moon • 1002 Torch • 1003 Banana • 1004 Rope • 1005 Ladder • 1006 Jump • 1007 Clap • 1008 Laugh • 1009 Dance • 1010 Water • 1011 Party Horn</div>
+
+<div class="teach" id="teachPanel">
+<h3>🏷️ Teach Cards</h3>
+<div class="teachintro">Choose a card below, then scan that physical card. The UID is saved in this browser and will be used automatically during the game.</div>
+<div class="teachstatus" id="teachStatus">Select a card to teach.</div>
+<div class="teachgrid" id="teachGrid"></div>
+<div class="teachfooter"><button id="clearAllCards" type="button">Reset all learned cards</button><button id="exitTeach" type="button">Done — Card Reader Mode</button></div>
+</div>
+<div class="dev" id="devPanel">
+<h3>🛠 Developer Test Mode</h3>
+<div class="devrow">
+<select id="sceneSelect">
+<option value="MOON">Moon</option><option value="TORCH">Torch</option><option value="BANANA">Banana</option><option value="ROPE">Rope</option><option value="LADDER">Ladder</option><option value="JUMP">Jump</option><option value="CLAP">Clap</option><option value="LAUGH">Laugh</option><option value="DANCE">Dance — full 30 sec</option><option value="WATER">Water — after dance</option><option value="PARTY">Party Horn</option>
+</select>
+<button id="jumpBtn">Jump to Scene</button>
+</div>
+</div>
+<div class="note" id="modeHelp">Card Reader Mode is active. A keyboard-style RFID reader can scan a UID and press Enter automatically. Integrations can also call <code>window.scanCard(uid)</code>.</div>
+</div><audio id="opening" preload="auto" src="./audio/narration/opening.mp3"></audio>
+<audio id="moonPrompt" preload="auto" src="./audio/narration/moon_prompt.mp3"></audio>
+<audio id="moonSuccess" preload="auto" src="./audio/narration/moon_success.mp3"></audio>
+<audio id="chime" preload="auto" src="./audio/sfx/correct_chime.mp3"></audio>
+<audio id="growl" preload="auto" src="./audio/sfx/stomach_growl.mp3"></audio>
+<audio id="torchPrompt" preload="auto" src="./audio/narration/torch_prompt.mp3"></audio>
+<audio id="torchSuccess" preload="auto" src="./audio/narration/torch_success.mp3"></audio>
+<audio id="bananaSuccess" preload="auto" src="./audio/narration/banana_success.mp3"></audio>
+<audio id="ropeSuccess" preload="auto" src="./audio/narration/rope_success.mp3"></audio>
+<audio id="ladderSuccess" preload="auto" src="./audio/narration/ladder_success.mp3"></audio>
+<audio id="jumpSuccess" preload="auto" src="./audio/narration/jump_success.mp3"></audio>
+<audio id="wrong" preload="auto" src="./audio/narration/wrong_card.mp3"></audio>
+<audio id="castleClap" preload="auto" src="./audio/narration/castle_clap.mp3"></audio>
+<audio id="clapSuccess" preload="auto" src="./audio/narration/clap_success_laugh_prompt.mp3"></audio>
+<audio id="waterSuccess" preload="auto" src="./audio/narration/water_success.mp3"></audio>
+<audio id="finale" preload="auto" src="./audio/narration/party_horn_finale.mp3"></audio>
+<audio id="snore" preload="auto" src="./audio/sfx/monster_snore.mp3"></audio>
+<audio id="gem" preload="auto" src="./audio/sfx/gem_awaken.mp3"></audio>
+<audio id="monsterLaugh" preload="auto" src="./audio/sfx/monster_laugh.mp3"></audio>
+<audio id="partyHorn" preload="auto" src="./audio/sfx/party_horn.mp3"></audio>
+<audio id="danceMusic" preload="auto" src="./audio/music/banana_dance_music.mp3"></audio>
+<audio id="laughDance" preload="auto" src="./audio/narration/laugh_success_dance_prompt.mp3"></audio>
+<audio id="danceInstruction" preload="auto" src="./audio/narration/dance_instruction.mp3"></audio>
+<audio id="waterPromptNew" preload="auto" src="./audio/narration/water_prompt.mp3"></audio>
+<audio id="torchClick" preload="auto" src="./audio/sfx/torch_click.mp3"></audio>
+<audio id="ropeBush" preload="auto" src="./audio/sfx/rope_bush.mp3"></audio>
+<audio id="ladderJumpFx" preload="auto" src="./audio/sfx/ladder_jump.mp3"></audio>
+<audio id="gemFlyCatch" preload="auto" src="./audio/sfx/gem_fly_catch.mp3"></audio>
+<audio id="wrongBoing" preload="auto" src="./audio/sfx/wrong_boing.mp3"></audio>
+<audio id="waterDrink" preload="auto" src="./audio/sfx/water_drink.mp3"></audio>
+<script>
+const $=x=>document.getElementById(x);
+const order=['MOON','TORCH','BANANA','ROPE','LADDER','JUMP','CLAP','LAUGH','DANCE','WATER','PARTY'];
+const em={MOON:'🌙',TORCH:'🔦',BANANA:'🍌',ROPE:'🪢',LADDER:'🪜',JUMP:'🤸',CLAP:'👏',LAUGH:'😂',DANCE:'💃',WATER:'💧',PARTY:'🎉'};
+const ids={MOON:['MOON','1001'],TORCH:['TORCH','FLASHLIGHT','1002'],BANANA:['BANANA','1003'],ROPE:['ROPE','1004'],LADDER:['LADDER','1005'],JUMP:['JUMP','1006'],CLAP:['CLAP','1007'],LAUGH:['LAUGH','1008'],DANCE:['DANCE','1009'],WATER:['WATER','1010'],PARTY:['PARTY','PARTY HORN','1011']};
+const learnedKey='bananaRescueLearnedCards';
+let learnedCards=loadLearnedCards();
+let teachTarget=null;
+function loadLearnedCards(){try{return JSON.parse(localStorage.getItem(learnedKey)||'{}')||{}}catch(e){return {}}}
+function saveLearnedCards(){localStorage.setItem(learnedKey,JSON.stringify(learnedCards));renderTeachGrid()}
+function normalizeUid(v){return String(v??'').trim().toUpperCase()}
+function uidMatches(card,uid){uid=normalizeUid(uid);return normalizeUid(learnedCards[card])===uid || ids[card].includes(uid)}
+let current=null,done=[],busy=false;
+function render(){$('progress').innerHTML=order.map(x=>`<span class="step ${done.includes(x)?'done':''} ${current===x?'current':''}">${em[x]} ${x}</span>`).join('')}
+function status(t,c=''){$('status').className='status '+c;$('status').textContent=t}
+function ended(a){return new Promise(r=>a.addEventListener('ended',r,{once:true}))}
+async function play(id,v=1){let a=$(id);if(!a||!a.src)return;a.pause();a.currentTime=0;a.volume=Math.max(0,Math.min(1,v));try{await a.play();await ended(a)}catch(e){console.warn(id,e);status('Audio could not play. Please tap Start again.','wrong')}}
+function speak(t){return new Promise(r=>{speechSynthesis.cancel();let u=new SpeechSynthesisUtterance(t);u.rate=.95;u.pitch=1.08;u.volume=1;u.onend=r;speechSynthesis.speak(u)})}
+
+/* ===== playing without a reader =====
+   Six cards on screen each turn, always including the one being asked for.
+   A tap sends that card's built-in id straight through scanCard(), so it
+   follows exactly the same path as a real scan — no teaching needed. */
+const TAP_CHOICES=6;
+let tapOn=false;
+function tapShuffle(a){for(let i=a.length-1;i>0;i--){const j=Math.floor(Math.random()*(i+1));const t=a[i];a[i]=a[j];a[j]=t}return a}
+function setTapMode(on){
+  tapOn=!!on;
+  try{localStorage.setItem('bananaRescueTap',tapOn?'1':'0')}catch(e){}
+  const b=$('tapToggle'); if(b) b.textContent = tapOn ? '🎴 Use Reader' : '📱 No Reader';
+  renderTapTray();
+}
+function renderTapTray(){
+  const tray=$('tapTray'); if(!tray) return;
+  if(!tapOn || !current || mode==='teach'){ tray.className=''; tray.innerHTML=''; return; }
+  const answer=current;
+  const others=tapShuffle(order.filter(c=>c!==answer)).slice(0,TAP_CHOICES-1);
+  const pick=tapShuffle([answer].concat(others));
+  tray.className='on';
+  tray.innerHTML='';
+  pick.forEach(c=>{
+    const b=document.createElement('button');
+    const label = c==='PARTY' ? 'PARTY HORN' : c;
+    b.innerHTML='<div class="i">'+em[c]+'</div><div class="n">'+label+'</div>';
+    b.addEventListener('click',()=>{ if(!busy) scanCard(ids[c][0]); });
+    tray.appendChild(b);
+  });
+}
+
+function waitFor(x){current=x;busy=false;$('hero').textContent=em[x];updateCardInput();let msg = x==='WATER' ? '💧 Go drink real water first. When you come back, tap the WATER card!' : `${em[x]} Find the ${x==='PARTY'?'PARTY HORN':x} card!`;status(msg);render();renderTapTray();if(mode==='developer'){$('uid').value='';$('uid').focus()}}
+async function wrong(){busy=true;status('😄 Interesting choice! Bobo likes it, but it will not solve THIS problem. Try again!','wrong');await play('wrongBoing',.7);await play('wrong');busy=false;status(`${em[current]} Still looking for the ${current==='PARTY'?'PARTY HORN':current} card!`)}
+async function correct(x){busy=true;$('cardArea').classList.add('hidden');status(`✨ ${x}! You got it!`,'success');await play('chime',.62);done.push(x);render();
+ if(x==='MOON'){await play('moonSuccess');await play('torchPrompt');waitFor('TORCH')}
+ else if(x==='TORCH'){await play('torchClick',.7);await play('torchSuccess');waitFor('BANANA')}
+ else if(x==='BANANA'){await play('bananaSuccess');waitFor('ROPE')}
+ else if(x==='ROPE'){await play('ropeBush',.65);await play('ropeSuccess');waitFor('LADDER')}
+ else if(x==='LADDER'){await play('ladderSuccess');waitFor('JUMP')}
+ else if(x==='JUMP'){await play('ladderJumpFx',.7);await play('jumpSuccess');play('snore',.42);await play('castleClap');waitFor('CLAP')}
+ else if(x==='CLAP'){await play('gem');await play('clapSuccess');waitFor('LAUGH')}
+ else if(x==='LAUGH'){await play('monsterLaugh');await play('gemFlyCatch',.7);await play('laughDance');waitFor('DANCE')}
+ else if(x==='DANCE'){
+    status('💃 Get ready for the Royal Banana Dance!','success');
+
+    // Spoken instruction FIRST. No music underneath.
+    await play('danceInstruction');
+
+    // Then music ONLY for 30 seconds. No narration overlaps it.
+    status('🎵 DANCE TIME! Keep moving until the music stops.','success');
+    let m=$('danceMusic');
+    m.pause();
+    m.currentTime=0;
+    m.loop=true;
+    m.volume=.58;
+    try{await m.play()}catch(e){}
+    await new Promise(r=>setTimeout(r,30000));
+    m.pause();
+    m.loop=false;
+    m.currentTime=0;
+
+    // Only AFTER music has fully stopped do we talk about water.
+    status('😮‍💨 Whew! That was a lot of dancing…','success');
+    await new Promise(r=>setTimeout(r,700));
+    await play('waterPromptNew');
+
+    waitFor('WATER')
+}
+ else if(x==='WATER'){await play('waterDrink',.65);await play('waterSuccess');waitFor('PARTY')}
+ else if(x==='PARTY'){await play('partyHorn');await play('finale');current=null;renderTapTray();render();$('hero').textContent='🏰🍌🎉';status('🏆 Adventure complete! You saved the Banana Kingdom.','success');$('start').disabled=false;$('start').textContent='↻ Play Again';busy=false}
+}
+async function scanCard(v){if(mode==='teach'){teachCard(v);return}if(!current||busy)return;v=normalizeUid(v);uidMatches(current,v)?await correct(current):await wrong()}
+async function start(){done=[];current=null;renderTapTray();busy=true;render();$('start').disabled=true;$('start').textContent='Adventure Playing…';$('cardArea').classList.add('hidden');$('hero').textContent='🌲🌙';status('Shhhhh… listen carefully.');play('growl',.42);await play('opening');await play('moonPrompt');waitFor('MOON')}
+let savedMode=localStorage.getItem('bananaRescueMode');
+let mode=savedMode==='developer'||savedMode==='teach'?savedMode:'reader';
+let readerBuffer='',readerTimer=null;
+function updateCardInput(){
+  const show = mode==='developer' && !!current && !busy;
+  $('cardArea').classList.toggle('hidden',!show);
+}
+function renderTeachGrid(){
+  $('teachGrid').innerHTML=order.map(card=>{
+    const uid=learnedCards[card];
+    const label=card==='PARTY'?'PARTY HORN':card;
+    return `<div class="teachcard"><div class="meta"><div class="name">${em[card]} ${label}</div><div class="uidtxt">${uid?'UID: '+uid:'Not taught yet'}</div></div><div>${uid?`<button class="clear" onclick="clearLearnedCard('${card}')">Clear</button> `:''}<button onclick="beginTeach('${card}')">${uid?'Re-teach':'Teach'}</button></div></div>`
+  }).join('');
+}
+function beginTeach(card){
+  teachTarget=card;
+  readerBuffer='';
+  const label=card==='PARTY'?'PARTY HORN':card;
+  $('teachStatus').textContent=`Waiting for ${em[card]} ${label}. Scan that physical card now…`;
+  $('hero').textContent=em[card];
+}
+function teachCard(uid){
+  uid=normalizeUid(uid);
+  if(!uid)return;
+  if(!teachTarget){$('teachStatus').textContent=`Scanned ${uid}, but first choose which card you want to teach.`;return}
+  // Ensure one physical UID cannot accidentally belong to two game cards.
+  for(const c of order){if(c!==teachTarget && normalizeUid(learnedCards[c])===uid) delete learnedCards[c]}
+  const card=teachTarget;
+  learnedCards[card]=uid;
+  saveLearnedCards();
+  const label=card==='PARTY'?'PARTY HORN':card;
+  $('teachStatus').textContent=`✅ ${em[card]} ${label} learned as UID ${uid}. Choose another card, or tap Done.`;
+  teachTarget=null;
+}
+function clearLearnedCard(card){delete learnedCards[card];saveLearnedCards();$('teachStatus').textContent=`Cleared ${card}. You can teach it again anytime.`}
+function clearAllLearnedCards(){
+  if(!confirm('Reset all learned card UIDs on this browser?'))return;
+  learnedCards={};saveLearnedCards();teachTarget=null;$('teachStatus').textContent='All learned cards cleared.'
+}
+function updateCardInput(){
+  const show = mode==='developer' && !!current && !busy;
+  $('cardArea').classList.toggle('hidden',!show);
+}
+function applyMode(){
+  const dev=mode==='developer', teach=mode==='teach';
+  $('devPanel').classList.toggle('active',dev);
+  $('teachPanel').classList.toggle('active',teach);
+  $('testIds').classList.toggle('active',dev);
+  $('modePill').classList.toggle('devactive',dev||teach);
+  $('modePill').textContent=dev?'🛠 Developer Mode':teach?'🏷️ Teach Cards Mode':'📡 Card Reader Mode';
+  $('modeToggle').textContent=dev?'Card Reader Mode':'Developer Mode';
+  $('teachToggle').textContent=teach?'Card Reader Mode':'Teach Cards';
+  $('modeHelp').innerHTML=dev
+    ? 'Developer Mode: type a test UID or jump directly to a scene. Press <b>Ctrl/⌘ + Shift + D</b> anytime to switch back.'
+    : teach
+      ? 'Teach Cards Mode: choose a card, then scan it. Learned UIDs are stored only in this browser/device.'
+      : 'Card Reader Mode is active. A keyboard-style RFID reader can scan a UID and press Enter automatically. Integrations can also call <code>window.scanCard(uid)</code>. Press <b>Ctrl/⌘ + Shift + D</b> to open Developer Mode.';
+  updateCardInput();
+  renderTeachGrid();
+  if(dev && current){setTimeout(()=>$('uid').focus(),0)}
+}
+function setMode(next){
+  mode=next==='developer'?'developer':next==='teach'?'teach':'reader';
+  localStorage.setItem('bananaRescueMode',mode);
+  readerBuffer='';teachTarget=null;
+  applyMode();
+}
+function toggleMode(){setMode(mode==='developer'?'reader':'developer')}
+function toggleTeach(){setMode(mode==='teach'?'reader':'teach')}
+function handleReaderKey(e){
+  if((e.ctrlKey||e.metaKey)&&e.shiftKey&&e.key.toLowerCase()==='d'){e.preventDefault();toggleMode();return}
+  if((mode!=='reader'&&mode!=='teach') || (mode==='reader'&&(!current||busy)))return;
+  if(e.key==='Enter'){
+    if(readerBuffer){const uid=readerBuffer;readerBuffer=''; mode==='teach'?teachCard(uid):scanCard(uid)}
+    return;
+  }
+  if(e.key.length===1 && /[a-zA-Z0-9_-]/.test(e.key)){
+    readerBuffer+=e.key;
+    clearTimeout(readerTimer);
+    readerTimer=setTimeout(()=>{readerBuffer=''},1200);
+  }
+}
+$('start').onclick=start;
+$('scan').onclick=()=>scanCard($('uid').value);
+$('uid').onkeydown=e=>{if(e.key==='Enter')scanCard(e.target.value)};
+$('modeToggle').onclick=toggleMode;
+$('teachToggle').onclick=toggleTeach;
+$('exitTeach').onclick=()=>setMode('reader');
+$('clearAllCards').onclick=clearAllLearnedCards;
+document.addEventListener('keydown',handleReaderKey);
+render();applyMode();
+
+function stopAllAudio(){
+  document.querySelectorAll('audio').forEach(a=>{try{a.pause();a.currentTime=0}catch(e){}});
+  speechSynthesis.cancel();
+}
+function markProgressBefore(scene){
+  const idx=order.indexOf(scene);
+  done=idx>0?order.slice(0,idx):[];
+}
+async function jumpToScene(scene){
+  stopAllAudio();
+  busy=true;
+  current=null;renderTapTray();
+  $('start').disabled=true;
+  $('start').textContent='Developer Test Mode';
+  markProgressBefore(scene);
+  render();
+  $('cardArea').classList.add('hidden');
+
+  // Play only the transition that leads into the selected scene when useful.
+  if(scene==='MOON'){ $('hero').textContent='🌙'; await play('moonPrompt'); waitFor('MOON'); }
+  else if(scene==='TORCH'){ $('hero').textContent='🔦'; await play('torchPrompt'); waitFor('TORCH'); }
+  else if(scene==='BANANA'){ $('hero').textContent='🍌'; await play('torchSuccess'); waitFor('BANANA'); }
+  else if(scene==='ROPE'){ $('hero').textContent='🪢'; await play('bananaSuccess'); waitFor('ROPE'); }
+  else if(scene==='LADDER'){ $('hero').textContent='🪜'; await play('ropeSuccess'); waitFor('LADDER'); }
+  else if(scene==='JUMP'){ $('hero').textContent='🤸'; await play('ladderSuccess'); waitFor('JUMP'); }
+  else if(scene==='CLAP'){ $('hero').textContent='👏'; play('snore',.42); await play('castleClap'); waitFor('CLAP'); }
+  else if(scene==='LAUGH'){ $('hero').textContent='😂'; await play('clapSuccess'); waitFor('LAUGH'); }
+  else if(scene==='DANCE'){
+    $('hero').textContent='💃';
+    await play('laughDance');
+    waitFor('DANCE');
+  }
+  else if(scene==='WATER'){
+    $('hero').textContent='💧';
+    await play('waterPromptNew');
+    waitFor('WATER');
+  }
+  else if(scene==='PARTY'){ $('hero').textContent='🎉'; await play('waterSuccess'); waitFor('PARTY'); }
+}
+$('jumpBtn').onclick=()=>jumpToScene($('sceneSelect').value);
+
+
+window.scanCard=scanCard;
+window.setBananaRescueMode=setMode;
+window.getBananaRescueMode=()=>mode;
+window.teachBananaCard=(card,uid)=>{learnedCards[String(card).toUpperCase()]=normalizeUid(uid);saveLearnedCards()};
+window.getLearnedBananaCards=()=>({...learnedCards});
+
+(function(){
+  const b=document.getElementById('tapToggle');
+  if(b) b.addEventListener('click',()=>setTapMode(!tapOn));
+  let saved=null; try{saved=localStorage.getItem('bananaRescueTap')}catch(e){}
+  setTapMode(saved==='1');
+})();
+</script></body></html>
