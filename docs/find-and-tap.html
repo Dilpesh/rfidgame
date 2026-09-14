@@ -120,7 +120,17 @@
   }
   .mode-pill:hover { color: var(--ink); }
   .mode-pill[data-mode="dev"] { color: var(--violet); border-color: color-mix(in srgb, var(--violet) 40%, var(--border)); }
-  .mode-pill[data-mode="prod"] { color: var(--teal); border-color: color-mix(in srgb, var(--teal) 40%, var(--border)); }
+  #tapTray { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin:4px 0 14px; }
+    #tapTray button { background:var(--surface-2); border:2px solid var(--border); border-radius:14px;
+      padding:14px 6px; cursor:pointer; font:inherit; color:inherit; text-align:center;
+      transition:transform .08s, border-color .15s; }
+    #tapTray button:hover { border-color:var(--teal); }
+    #tapTray button:active { transform:scale(.94); }
+    #tapTray .swatch { width:42px; height:42px; border-radius:11px; margin:0 auto 7px; display:block; }
+    #tapTray .cap { font-size:13px; }
+    .mode-card.tap .icon { filter:none; }
+    .mode-pill[data-mode="tap"] { color: var(--teal); }
+    .mode-pill[data-mode="prod"] { color: var(--teal); border-color: color-mix(in srgb, var(--teal) 40%, var(--border)); }
 
   .card {
     background: var(--surface);
@@ -305,6 +315,11 @@
         <span class="label">Production Mode</span>
         <span class="desc">The real thing. Hand the reader to your kid, flip the phone face down, and let them play.</span>
       </button>
+      <button class="mode-card tap" data-mode="tap">
+        <span class="icon">📱</span>
+        <span class="label">No Reader &mdash; Tap on Screen</span>
+        <span class="desc">No RFID reader to hand? Play right here. Six cards appear each turn and your kid taps one &mdash; the card being asked for is always among them.</span>
+      </button>
     </div>
   </section>
 
@@ -375,6 +390,8 @@
       <button class="btn btn-ghost" id="replayBtn">🔁 Replay instruction</button>
       <button class="btn btn-ghost" id="endSessionBtn">⏹ End session</button>
     </div>
+
+    <div id="tapTray" hidden></div>
 
     <div class="prod-hint" id="prodHint" hidden><span class="blip"></span> Listening for a card&nbsp;&mdash; phone can go face down now</div>
 
@@ -546,7 +563,8 @@
   function renderModePill() {
     var pill = $("modePill");
     if (!state.mode) return;
-    pill.textContent = (state.mode === "dev" ? "🧪 Developer" : "🎮 Production") + " · switch";
+    pill.textContent = (state.mode === "dev" ? "🧪 Developer"
+      : state.mode === "tap" ? "📱 On screen" : "🎮 Production") + " · switch";
     pill.setAttribute("data-mode", state.mode);
   }
 
@@ -771,7 +789,53 @@
     $("promptIcon").className = "prompt-icon listening";
     $("promptIcon").innerHTML = card.kind === "shape" ? iconMarkup(card, 68).replace("stroke:var(--ink)", "stroke:var(--violet)") : "";
     updateDevPanels(card);
+    renderTapTray();
     playLine("card_" + cardId);
+  }
+
+  /* ============ playing without a reader ============
+     Every card gets a stand-in tag, so a tap travels the exact same path as a
+     real scan — same correct/retry lines, same progress, same everything.
+     The card being asked for is always one of the six on offer. ============ */
+  var TAP_PREFIX = "TAP:";
+  var TAP_CHOICES = 6;
+
+  function enterTapMode() {
+    CARD_DEFS.forEach(function (c) { state.mapping[c.id] = TAP_PREFIX + c.id; });
+    saveMapping();
+    startGame();
+  }
+
+  function tapShuffle(a) {
+    for (var i = a.length - 1; i > 0; i--) {
+      var j = Math.floor(Math.random() * (i + 1)), t = a[i]; a[i] = a[j]; a[j] = t;
+    }
+    return a;
+  }
+
+  function renderTapTray() {
+    var tray = $("tapTray");
+    if (!tray) return;
+    if (state.mode !== "tap" || state.view !== "play") { tray.hidden = true; tray.innerHTML = ""; return; }
+    var wantId = state.queue[state.index];
+    if (!wantId) { tray.hidden = true; tray.innerHTML = ""; return; }
+    var answer = CARD_BY_ID[wantId];
+    var others = tapShuffle(CARD_DEFS.filter(function (c) { return c.id !== wantId; }))
+                   .slice(0, TAP_CHOICES - 1);
+    var pick = tapShuffle([answer].concat(others));
+
+    tray.hidden = false;
+    tray.innerHTML = "";
+    pick.forEach(function (c) {
+      var b = document.createElement("button");
+      var swatch = c.kind === "color"
+        ? '<span class="swatch" style="background:' + c.hex + '"></span>'
+        : '<span class="swatch" style="display:flex;align-items:center;justify-content:center">'
+          + iconMarkup(c, 34) + '</span>';
+      b.innerHTML = swatch + '<span class="cap">' + c.label + '</span>';
+      b.addEventListener("click", function () { handleGameScan(TAP_PREFIX + c.id); });
+      tray.appendChild(b);
+    });
   }
 
   function updateDevPanels(card) {
@@ -818,6 +882,7 @@
   }
 
   function finishGame() {
+    var _tray = $("tapTray"); if (_tray) { _tray.hidden = true; _tray.innerHTML = ""; }
     releaseWakeLock();
     if (bgMusic) { try { bgMusic.pause(); } catch (e) {} }
     $("completeStats").textContent = "Found all " + state.queue.length + " cards in " + state.tries + " tap" + (state.tries === 1 ? "" : "s") + ".";
@@ -839,6 +904,7 @@
       btn.addEventListener("click", function () {
         state.mode = btn.getAttribute("data-mode");
         renderModePill();
+        if (state.mode === "tap") { enterTapMode(); return; }
         renderDashboard();
         setView("dashboard");
       });

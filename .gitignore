@@ -1,0 +1,10 @@
+.DS_Store
+*.m4a
+audio/pre-pitch/
+audio/pre-retake/
+audio/old-vo/
+**/incoming/
+voice-samples/
+recording*/
+*.bak
+*.bak-*

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Card Games for Kids</title>
+<style>
+  :root { --bg:#0f1115; --card:#1a1d24; --fg:#f4f4f4; --dim:#8b93a1; --go:#4caf50; --warn:#ffca28; }
+  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body { margin:0; background:var(--bg); color:var(--fg); padding:20px 16px 40px;
+         font-family:system-ui,-apple-system,sans-serif; }
+  .wrap { max-width:760px; margin:0 auto; }
+  header { text-align:center; margin-bottom:26px; }
+  h1 { font-size:26px; margin:0 0 8px; }
+  .sub { color:var(--dim); font-size:15px; line-height:1.6; max-width:520px; margin:0 auto; }
+
+  .games { display:grid; gap:14px; }
+  a.game { display:flex; gap:16px; align-items:center; text-decoration:none; color:inherit;
+           background:var(--card); border:2px solid transparent; border-radius:16px;
+           padding:18px; transition:border-color .15s, transform .08s; }
+  a.game:hover { border-color:var(--go); }
+  a.game:active { transform:scale(.99); }
+  .ico { font-size:44px; width:62px; text-align:center; flex:none; line-height:1.1; }
+  .body { flex:1; min-width:0; }
+  .name { font-size:19px; font-weight:700; }
+  .hi   { font-size:14px; color:var(--dim); margin-top:1px; }
+  .desc { font-size:14px; color:#c6c6c6; line-height:1.55; margin-top:8px; }
+  .tags { margin-top:10px; display:flex; gap:7px; flex-wrap:wrap; }
+  .tag  { font-size:11px; letter-spacing:.05em; text-transform:uppercase;
+          background:#242832; color:#9aa2ae; padding:3px 9px; border-radius:20px; }
+  .tag.go { background:#1e3a20; color:#a5d6a7; }
+  .arrow { color:var(--dim); font-size:24px; flex:none; }
+
+  .note { background:var(--card); border-left:3px solid var(--warn); border-radius:10px;
+          padding:15px 17px; margin-top:26px; font-size:14px; line-height:1.65; color:#ddd; }
+  .note b { color:var(--warn); }
+  .foot { margin-top:26px; text-align:center; font-size:13px; color:var(--dim); line-height:1.8; }
+  .foot a { color:#64b5f6; text-decoration:none; }
+  .foot a:hover { text-decoration:underline; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <h1>🎴 Card Games for Kids</h1>
+    <p class="sub">Audio adventures played with physical cards — put the phone down,
+      listen, and tap the right card. No reader? Every game plays on screen too.</p>
+  </header>
+
+  <div class="games">
+
+    <a class="game" href="jungle-rescue.html">
+      <div class="ico">🐆</div>
+      <div class="body">
+        <div class="name">Jungle Rescue Patrol</div>
+        <div class="hi">जंगल बचाओ टीम</div>
+        <div class="desc">Fuel the jeep and rescue five animals in trouble — an elephant
+          stuck in a pit, a giraffe who can't reach the mangoes, a parrot with a hurt wing,
+          and a lion afraid of the dark. Ends in a disco.</div>
+        <div class="tags"><span class="tag">15 cards</span><span class="tag">~15 min</span>
+          <span class="tag">Hindi</span><span class="tag go">Plays without a reader</span></div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+
+    <a class="game" href="moon-game.html">
+      <div class="ico">🌙</div>
+      <div class="body">
+        <div class="name">The Monkey Who Stole the Moon</div>
+        <div class="hi">चाँद चोर बंदर</div>
+        <div class="desc">The moon is missing and the jungle is dark. Jump a river, clap a
+          parrot awake, creep past a snoring lion and laugh a sad monkey down from his tree.
+          Winds down into bedtime on purpose.</div>
+        <div class="tags"><span class="tag">8 cards</span><span class="tag">~10 min</span>
+          <span class="tag">Hindi</span><span class="tag go">Plays without a reader</span></div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+
+    <a class="game" href="find-and-tap.html">
+      <div class="ico">🔎</div>
+      <div class="body">
+        <div class="name">Find &amp; Tap</div>
+        <div class="desc">A quick ears-only scavenger hunt: a voice asks for a colour or a
+          shape, and the child finds the matching card. Short rounds, good for the youngest
+          players and for warming up before a longer story.</div>
+        <div class="tags"><span class="tag">Quick rounds</span><span class="tag">Colours &amp; shapes</span></div>
+      </div>
+      <div class="arrow">›</div>
+    </a>
+
+  </div>
+
+  <div class="note">
+    <b>No card reader?</b> Pick “No reader — tap on screen” when a game asks. It offers six
+    cards each turn and the child taps one — the right card is always among them, so the
+    story can never get stuck.
+  </div>
+
+  <div class="foot">
+    Printable card labels:
+    <a href="cards.html">Jungle Rescue (15)</a> ·
+    <a href="card-labels.html">Monkey &amp; Moon (9)</a>
+  </div>
+
+</div>
+</body>
+</html>

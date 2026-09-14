@@ -49,6 +49,17 @@
   textarea { width:100%; height:90px; background:#101319; color:#ddd; border:1px solid #333;
              border-radius:8px; padding:9px; font-family:ui-monospace,monospace; font-size:12px; }
 
+
+  /* ---------- play without a reader ---------- */
+  #tap-tray { display:none; grid-template-columns:repeat(3,1fr); gap:9px; margin-top:18px; }
+  .tapcard { background:#141821; border:2px solid #2b313d; border-radius:13px; padding:14px 6px;
+             cursor:pointer; text-align:center; transition:transform .08s, border-color .15s; }
+  .tapcard:hover { border-color:var(--go); }
+  .tapcard:active { transform:scale(.94); }
+  .tapcard .i { font-size:34px; line-height:1.1; }
+  .tapcard .n { font-size:13px; margin-top:5px; color:#dcdcdc; }
+  @media (max-width:380px){ .tapcard .i{font-size:28px} .tapcard .n{font-size:11.5px} }
+
   /* ---------- play ---------- */
   #play .step { text-align:center; padding:26px 10px; }
   #play .ico { font-size:96px; line-height:1.1; }
@@ -76,6 +87,22 @@
 <div class="wrap">
   <h1>Jungle Rescue Patrol 🐆</h1>
   <div class="sub">जंगल बचाओ टीम — six friends to rescue</div>
+
+
+  <!-- ============ SCREEN 0: HOW ARE WE PLAYING? ============ -->
+  <div class="panel" id="screen-mode" style="display:none;">
+    <h3 style="margin-top:0">How are you playing?</h3>
+    <p class="hint">This game is made for physical RFID cards, but it plays perfectly well
+      without them &mdash; handy for trying it out, or when the reader isn&rsquo;t to hand.</p>
+    <div class="rowbtns" style="margin-top:16px">
+      <button class="go" onclick="chooseMode(false)" style="font-size:17px;padding:15px 20px">
+        &#127180; I have a card reader</button>
+      <button onclick="chooseMode(true)" style="font-size:17px;padding:15px 20px">
+        &#128241; No reader &mdash; tap on screen</button>
+    </div>
+    <p class="hint" style="margin-top:14px">With a reader you scan the real cards. On screen,
+      the game offers you six cards each turn and the child taps one.</p>
+  </div>
 
   <!-- ============ SCREEN 1: TEACH THE CARDS ============ -->
   <div class="panel" id="screen-teach" style="display:none;">
@@ -125,6 +152,7 @@
     </div>
     <div class="rowbtns" style="justify-content:center;margin-top:6px">
       <button class="small" onclick="showTeach()">Re-teach cards</button>
+      <button class="small" onclick="showMode()">Change how we play</button>
     </div>
   </div>
 
@@ -150,6 +178,7 @@
         <div class="want" id="play-want">…</div>
         <div class="cnt" id="play-count"></div>
       </div>
+      <div id="tap-tray"></div>
     </div>
     <div class="rowbtns" style="justify-content:center">
       <button class="small" onclick="if(confirm('Start the story again?'))restart()">Start again</button>
@@ -530,9 +559,64 @@ function sfx(file) {
 
 /* ---------------- screens ---------------- */
 function show(which) {
-  ["teach", "ready", "warmup", "play"].forEach(s =>
+  ["mode", "teach", "ready", "warmup", "play"].forEach(s =>
     document.getElementById("screen-" + s).style.display = (s === which ? "block" : "none"));
 }
+
+/* ==========================================================================
+   TWO WAYS TO PLAY
+   With a reader, cards are scanned. Without one, the game puts six cards on
+   screen each turn and the child taps. The card the story is waiting for is
+   ALWAYS among the six, so the game can never become unwinnable.
+   Choosing "no reader" also skips teaching — you cannot teach cards you
+   cannot scan.
+   ========================================================================== */
+const TAP_CHOICES = 6;
+let tapMode = false;
+let tapTrayStep = -1;
+
+function showMode() { show("mode"); }
+
+function chooseMode(tap) {
+  tapMode = tap;
+  tapTrayStep = -1;
+  if (tap) { showReady(); return; }
+  if (taughtCount() === CARDS.length) showReady(); else showTeach();
+}
+
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    const t = a[i]; a[i] = a[j]; a[j] = t;
+  }
+  return a;
+}
+
+function renderTapTray() {
+  const tray = document.getElementById('tap-tray');
+  if (!tray) return;
+  if (!tapMode || !started || stepIdx >= STEPS.length) {
+    tray.style.display = "none"; tray.innerHTML = ""; tapTrayStep = -1; return;
+  }
+  tray.style.display = "grid";
+  if (tapTrayStep === stepIdx) return;        // keep the same six for this turn
+  tapTrayStep = stepIdx;
+
+  const want = STEPS[stepIdx].card;
+  const answer = CARDS.find(c => c.id === want);
+  const others = shuffle(CARDS.filter(c => c.id !== want)).slice(0, TAP_CHOICES - 1);
+  const pick = shuffle((answer ? [answer] : []).concat(others));
+
+  tray.innerHTML = "";
+  pick.forEach(c => {
+    const b = document.createElement('button');
+    b.className = "tapcard";
+    b.innerHTML = '<div class="i">' + c.ico + '</div><div class="n">' + c.hi + '</div>';
+    b.onclick = () => handleScan(c.id);
+    tray.appendChild(b);
+  });
+}
+
 function showTeach() { stopTeaching(); renderTeach(); show("teach"); }
 
 /* ---------------- card warm-up ---------------- */
@@ -546,9 +630,12 @@ function renderWarmup() {
   const g = document.getElementById('warm-grid');
   g.innerHTML = "";
   CARDS.forEach(c => {
-    const d = document.createElement('div');
+    // On screen, the warm-up tiles are tappable too — otherwise there is no way
+    // to meet the cards without a reader.
+    const d = document.createElement(tapMode ? 'button' : 'div');
     d.className = "wcard" + (warmSeen[c.id] ? " seen" : "");
     d.innerHTML = `<div class="i">${c.ico}</div><div class="n">${c.hi}</div>`;
+    if (tapMode) { d.style.cursor = "pointer"; d.onclick = () => { if (!busy) warmScan(c.id); }; }
     g.appendChild(d);
   });
   const n = Object.keys(warmSeen).length;
@@ -714,12 +801,14 @@ function renderPlay() {
     document.getElementById('play-ico').textContent = "🌙";
     document.getElementById('play-want').textContent = "गुड नाइट! 🎉";
     document.getElementById('play-count').textContent = "The moon is back in the sky.";
+    renderTapTray();
     return;
   }
   const c = CARDS.find(x => x.id === STEPS[stepIdx].card);
   document.getElementById('play-ico').textContent = c.ico;
   document.getElementById('play-want').textContent = `${c.hi} का कार्ड लाओ`;
   document.getElementById('play-count').textContent = `${stepIdx + 1} / ${STEPS.length}`;
+  renderTapTray();
 }
 
 function handleScan(rawUid) {
@@ -901,7 +990,7 @@ function devLogScan(uid, card, good) {
 /* ---------------- boot ---------------- */
 loadCards();
 if (new URLSearchParams(location.search).get('dev') === '1') toggleDev();
-if (taughtCount() === CARDS.length) showReady(); else showTeach();
+showMode();
 </script>
 </body>
 </html>
