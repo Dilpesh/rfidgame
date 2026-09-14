@@ -646,9 +646,47 @@ function restoreBackup() {
 }
 
 /* ---------------- the game ---------------- */
+
+/* ==========================================================================
+   KEEP THE SCREEN AWAKE
+   The reader sends keystrokes. A sleeping or locked phone does not deliver
+   keystrokes to a background page — the story would keep talking while the
+   cards quietly stopped working. So hold a screen wake lock for as long as a
+   story is running, and take it again if the phone is unlocked mid-game.
+   ========================================================================== */
+let wakeLock = null;
+
+async function keepAwake(on) {
+  try {
+    if (!('wakeLock' in navigator)) {
+      devLog("wake lock unsupported — set the phone's auto-lock to Never", "no");
+      return;
+    }
+    if (on) {
+      if (wakeLock) return;
+      wakeLock = await navigator.wakeLock.request('screen');
+      wakeLock.addEventListener('release', () => { wakeLock = null; });
+      devLog("screen will stay awake");
+    } else if (wakeLock) {
+      const w = wakeLock; wakeLock = null;
+      await w.release();
+      devLog("screen may sleep again");
+    }
+  } catch (e) {
+    wakeLock = null;
+    devLog("wake lock refused: " + e.message, "no");
+  }
+}
+
+// Coming back from a lock screen or another app drops the lock — take it again.
+document.addEventListener('visibilitychange', () => {
+  if (document.visibilityState === 'visible' && started) keepAwake(true);
+});
+
 function startGame() {
   warming = false;
   stepIdx = 0; started = true;
+  keepAwake(true);
   show("play"); renderPlay();
   busy = true;
   outroStop();
@@ -722,7 +760,7 @@ function handleScan(rawUid) {
   runSeq(step.seq, () => {
     stepIdx++;
     renderPlay(); devRefresh();
-    if (stepIdx >= STEPS.length) { ambienceStop(); outroStart(); }
+    if (stepIdx >= STEPS.length) { ambienceStop(); outroStart(); keepAwake(false); }
     busy = false;
     runPending();
   });
