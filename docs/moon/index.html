@@ -290,6 +290,29 @@ const CACHE_BUST = "?v=" + Date.now();
 function audioUrl(file) { return AUDIO_DIR + file + CACHE_BUST; }
 
 const STORE = "moonGameCards";
+
+/* ===== CARD UIDS — generated from cards.json by sync_cards.py, do not edit ===== */
+/* __CARD_UIDS_START__ */
+const SEED_VERSION = "2026-09-14a";
+const DEFAULT_UIDS = {
+  "6358547": "BANANA",
+  "6358348": "CLAP",
+  "6373847": "DANCE",
+  "6358746": "JUMP",
+  "2681159": "LAUGH",
+  "2692278": "MOON",
+  "2692483": "TORCH",
+  "6375577": "TORCH",
+  "2682976": "WATER",
+  "2690428": "WATER"
+};
+/* __CARD_UIDS_END__ */
+
+// Readers differ on leading zeros, case and stray whitespace. Compare on a
+// normalised form so "0002690428", "2690428" and " 2690428 " are one card.
+function normUid(v) {
+  return String(v == null ? "" : v).trim().toUpperCase().replace(/^0+(?=.)/, "");
+}
 // Own folder — this game never reads or writes the old game's audio.
 const AUDIO_DIR = "audio/";
 
@@ -307,6 +330,15 @@ let wrongIdx  = 0;
 function loadCards() {
   try { uidToCard = JSON.parse(localStorage.getItem(STORE)) || {}; }
   catch (e) { uidToCard = {}; }
+  // Seed the printed cards once per browser, and again whenever the printed
+  // set changes (SEED_VERSION). Anything taught by hand always wins.
+  try {
+    if (localStorage.getItem(STORE + ":seed") !== SEED_VERSION) {
+      for (const u in DEFAULT_UIDS) if (!(u in uidToCard)) uidToCard[u] = DEFAULT_UIDS[u];
+      localStorage.setItem(STORE + ":seed", SEED_VERSION);
+      saveCards();
+    }
+  } catch (e) { /* private window, storage off — game still works, just untaught */ }
 }
 function saveCards() {
   try { localStorage.setItem(STORE, JSON.stringify(uidToCard)); }
@@ -693,6 +725,7 @@ function teachAll() {
 }
 function stopTeaching() { teaching = null; teachQueue = []; renderTeach(); }
 function acceptTeach(uid) {
+  uid = normUid(uid);
   const clash = uidToCard[uid];
   if (clash && clash !== teaching) {
     const c = CARDS.find(x => x.id === clash);
@@ -707,8 +740,10 @@ function acceptTeach(uid) {
   if (!teaching && taughtCount() === CARDS.length) setTimeout(showReady, 400);
 }
 function resetAll() {
-  if (!confirm("Forget all taught cards?")) return;
-  uidToCard = {}; saveCards(); stopTeaching();
+  if (!confirm("Forget every card and go back to the printed set?")) return;
+  uidToCard = {}; saveCards();
+  try { localStorage.removeItem(STORE + ":seed"); } catch (e) {}
+  loadCards(); stopTeaching(); renderTeach();
 }
 function toggleBackup() {
   const b = document.getElementById('backup');
@@ -805,7 +840,7 @@ function renderPlay() {
 }
 
 function handleScan(rawUid) {
-  const cardId = uidToCard[rawUid] || rawUid.toUpperCase();
+  const cardId = uidToCard[normUid(rawUid)] || normUid(rawUid);
 
   if (teaching) { acceptTeach(rawUid); return; }
   if (!started) { devLog("scan ignored — game not started"); return; }
@@ -894,7 +929,7 @@ function toggleDev() {
 }
 function devResolve(text) {
   const v = (text || "").trim(); if (!v) return null;
-  if (uidToCard[v]) return v;
+  if (uidToCard[normUid(v)]) return v;
   const up = v.toUpperCase();
   if (CARDS.some(c => c.id === up)) return uidOf(up) || up;   // works untaught too
   return v;

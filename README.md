@@ -3,6 +3,26 @@
 Stories live in `docs/<story-slug>/` and are published from `docs/` via
 GitHub Pages. `docs/index.html` is the landing page.
 
+## The physical RFID cards
+
+`cards.json` is the single source of truth for which card UID means what. A
+card can have several UIDs — water and torch each have two, and either one
+works, in every game. Add cards there, bump `seed_version`, then:
+
+```
+python3 sync_cards.py        # push the UIDs into every game
+node qa_cards.js             # verify every card resolves in every game
+```
+
+`CARD_LIST.md` is the generated human-readable list, handy when labelling the
+physical cards.
+
+Games seed these into `localStorage` on first load, so a fresh browser starts
+with every card already known and skips the teach screen. Teaching a card by
+hand still overrides the default.
+
+---
+
 ## Before you make audio for a new story
 
 Read **[AUDIO_STANDARD.md](AUDIO_STANDARD.md)** first, and run
