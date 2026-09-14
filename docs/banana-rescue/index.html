@@ -155,10 +155,35 @@ async function correct(x){busy=true;$('cardArea').classList.add('hidden');status
     waitFor('WATER')
 }
  else if(x==='WATER'){await play('waterDrink',.65);await play('waterSuccess');waitFor('PARTY')}
- else if(x==='PARTY'){await play('partyHorn');await play('finale');current=null;renderTapTray();render();$('hero').textContent='🏰🍌🎉';status('🏆 Adventure complete! You saved the Banana Kingdom.','success');$('start').disabled=false;$('start').textContent='↻ Play Again';busy=false}
+ else if(x==='PARTY'){await play('partyHorn');await play('finale');current=null;renderTapTray();render();$('hero').textContent='🏰🍌🎉';status('🏆 Adventure complete! You saved the Banana Kingdom.','success');$('start').disabled=false;$('start').textContent='↻ Play Again';busy=false;keepAwake(false)}
 }
 async function scanCard(v){if(mode==='teach'){teachCard(v);return}if(!current||busy)return;v=normalizeUid(v);uidMatches(current,v)?await correct(current):await wrong()}
-async function start(){done=[];current=null;renderTapTray();busy=true;render();$('start').disabled=true;$('start').textContent='Adventure Playing…';$('cardArea').classList.add('hidden');$('hero').textContent='🌲🌙';status('Shhhhh… listen carefully.');play('growl',.42);await play('opening');await play('moonPrompt');waitFor('MOON')}
+
+/* ---- keep the screen awake ----
+   Kids put the phone down and listen; a 30-second dance break is long enough
+   for the screen to lock and the audio to stop. Needs https or localhost —
+   over file:// the browser refuses it. */
+let wakeLock=null;
+async function keepAwake(on){
+  try{
+    if(!('wakeLock' in navigator)){
+      if(on) console.warn('wake lock unsupported here — set the phone auto-lock to Never');
+      return;
+    }
+    if(on){
+      if(wakeLock) return;
+      wakeLock=await navigator.wakeLock.request('screen');
+      wakeLock.addEventListener('release',()=>{wakeLock=null});
+    } else if(wakeLock){
+      const w=wakeLock; wakeLock=null; await w.release();
+    }
+  }catch(e){ wakeLock=null; console.warn('wake lock refused: '+e.message) }
+}
+// Coming back from a lock screen or another app drops the lock — take it again.
+document.addEventListener('visibilitychange',()=>{
+  if(document.visibilityState==='visible' && (current||busy)) keepAwake(true);
+});
+async function start(){done=[];current=null;keepAwake(true);renderTapTray();busy=true;render();$('start').disabled=true;$('start').textContent='Adventure Playing…';$('cardArea').classList.add('hidden');$('hero').textContent='🌲🌙';status('Shhhhh… listen carefully.');play('growl',.42);await play('opening');await play('moonPrompt');waitFor('MOON')}
 let savedMode=localStorage.getItem('bananaRescueMode');
 let mode=savedMode==='developer'||savedMode==='teach'?savedMode:'reader';
 let readerBuffer='',readerTimer=null;

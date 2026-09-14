@@ -23,6 +23,22 @@ hand still overrides the default.
 
 ---
 
+## Keeping the screen awake
+
+Every game takes a screen wake lock while a story is playing, re-takes it
+after the phone comes back from a lock screen, and releases it at the end.
+
+The browser only grants this over **https or localhost** — opening the file
+directly (`file://`) will not work, so play from the published site. On
+iPhone it needs iOS 16.4 or newer; where it is unsupported the game still
+plays, so set the phone's auto-lock to Never for those.
+
+```
+node qa_wakelock.js          # verify the wiring in all four games
+```
+
+---
+
 ## Before you make audio for a new story
 
 Read **[AUDIO_STANDARD.md](AUDIO_STANDARD.md)** first, and run
