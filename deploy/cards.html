@@ -1,0 +1,49 @@
+<!DOCTYPE html><html lang="hi"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Card labels — Jungle Rescue Patrol</title><style>
+@page { size:A4; margin:10mm; }
+body { margin:0; font-family:system-ui,-apple-system,sans-serif; background:#fff; color:#111; }
+.howto { max-width:720px; margin:0 auto; padding:18px; font-size:14px; line-height:1.7; color:#333; }
+.howto h1 { font-size:19px; margin:0 0 8px; } .howto b { color:#000; } .howto ol { padding-left:20px; }
+.btn { display:inline-block; margin:10px 0; background:#111; color:#fff; border:0;
+        padding:11px 20px; font-size:15px; border-radius:7px; cursor:pointer; }
+.sheet { display:grid; grid-template-columns:repeat(2,82mm); gap:5mm; justify-content:center; padding:4mm 0; }
+.label { width:82mm; height:50mm; border:1px dashed #b9b9b9; border-radius:4mm;
+          display:flex; flex-direction:column; align-items:center; justify-content:center;
+          text-align:center; padding:3mm; break-inside:avoid; page-break-inside:avoid; }
+.label .ico { font-size:22mm; line-height:1.05; }
+.label .hi { font-size:8.5mm; font-weight:700; margin-top:1.5mm; }
+.label .en { font-size:3.6mm; letter-spacing:1.2mm; text-transform:uppercase; color:#777; margin-top:1mm; }
+@media print { .howto { display:none; } .sheet { padding:0; } .label { border:1px dashed #ccc; } }
+</style></head><body>
+<div class="howto">
+  <h1>🖨️ Card labels — Jungle Rescue Patrol (15 cards)</h1>
+  <p>Sized <b>82 × 50 mm</b>, slightly under a standard RFID card so the edges don't lift.
+     Fills 2 A4 pages at 2 per row.</p>
+  <ol>
+    <li>Press <b>Print</b> (⌘P). A4, <b>scale 100%</b> — not "fit to page".</li>
+    <li>Cut along the dashed lines and stick one on each card.</li>
+    <li>Open the game, teach each card, then run the <b>card warm-up</b> so the kids meet the deck.</li>
+  </ol>
+  <p><b>Short on time?</b> Print it and lay the sheet on the table — the kids put each card on its
+     picture. Works just as well and needs no scissors.</p>
+  <button class="btn" onclick="window.print()">Print</button>
+</div>
+<div class="sheet">
+  <div class="label"><div class="ico">⛽</div><div class="hi">ईंधन</div><div class="en">Fuel</div></div>
+  <div class="label"><div class="ico">🪢</div><div class="hi">रस्सी</div><div class="en">Rope</div></div>
+  <div class="label"><div class="ico">🎈</div><div class="hi">गुब्बारे</div><div class="en">Balloons</div></div>
+  <div class="label"><div class="ico">🍪</div><div class="hi">नाश्ता</div><div class="en">Snack</div></div>
+  <div class="label"><div class="ico">🪜</div><div class="hi">सीढ़ी</div><div class="en">Ladder</div></div>
+  <div class="label"><div class="ico">✂️</div><div class="hi">कटर</div><div class="en">Pruners</div></div>
+  <div class="label"><div class="ico">🥭</div><div class="hi">आम</div><div class="en">Mango</div></div>
+  <div class="label"><div class="ico">🩹</div><div class="hi">दवा पेटी</div><div class="en">First aid</div></div>
+  <div class="label"><div class="ico">💧</div><div class="hi">पानी</div><div class="en">Water</div></div>
+  <div class="label"><div class="ico">🎵</div><div class="hi">संगीत</div><div class="en">Music</div></div>
+  <div class="label"><div class="ico">🔦</div><div class="hi">टॉर्च</div><div class="en">Flashlight</div></div>
+  <div class="label"><div class="ico">💎</div><div class="hi">नगीना</div><div class="en">Gem</div></div>
+  <div class="label"><div class="ico">🧣</div><div class="hi">कंबल</div><div class="en">Blanket</div></div>
+  <div class="label"><div class="ico">🪩</div><div class="hi">डिस्को बॉल</div><div class="en">Disco ball</div></div>
+  <div class="label"><div class="ico">🎉</div><div class="hi">पार्टी हॉर्न</div><div class="en">Party horn</div></div>
+</div>
+</body></html>

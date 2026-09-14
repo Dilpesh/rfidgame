@@ -1,0 +1,869 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jungle Rescue Patrol</title>
+<style>
+  :root { --bg:#0f1115; --card:#1a1d24; --fg:#f4f4f4; --dim:#8b93a1;
+          --go:#4caf50; --warn:#ffca28; --bad:#ef5350; }
+  * { box-sizing:border-box; -webkit-tap-highlight-color:transparent; }
+  body { margin:0; background:var(--bg); color:var(--fg);
+         font-family:system-ui,-apple-system,sans-serif; padding:16px; }
+  .wrap { max-width:760px; margin:0 auto; }
+  h1 { font-size:22px; margin:6px 0 2px; }
+  .sub { color:var(--dim); font-size:14px; margin-bottom:18px; }
+  .panel { background:var(--card); border-radius:14px; padding:18px; margin-bottom:14px; }
+  button { font:inherit; font-size:15px; padding:11px 16px; border-radius:9px;
+           border:1px solid #3a3f4a; background:#262b34; color:var(--fg); cursor:pointer; }
+  button:hover { background:#31374280; }
+  button.go { background:var(--go); border-color:var(--go); color:#07220b; font-weight:700; }
+  button.go:disabled { background:#2b3a2d; border-color:#2b3a2d; color:#6d7a70; cursor:not-allowed; }
+  button.small { font-size:13px; padding:7px 11px; }
+
+  /* ---------- teach the cards ---------- */
+  #teach-list { display:grid; gap:10px; }
+  .crow { display:flex; align-items:center; gap:14px; background:#141821;
+          border:2px solid transparent; border-radius:12px; padding:12px 14px; }
+  .crow .ico { font-size:34px; width:46px; text-align:center; }
+  .crow .nm  { flex:1; }
+  .crow .hi  { font-size:19px; }
+  .crow .en  { font-size:12px; color:var(--dim); letter-spacing:.06em; text-transform:uppercase; }
+  .crow .uid { font-family:ui-monospace,monospace; font-size:12px; color:var(--go); }
+  .crow .uid.none { color:#5d6470; }
+  .crow.waiting { border-color:var(--warn); background:#211d10; }
+  .wcard { background:#141821; border:2px solid transparent; border-radius:10px; padding:9px 5px;
+           text-align:center; opacity:.45; transition:opacity .2s, border-color .2s; }
+  .wcard.seen { opacity:1; border-color:var(--go); }
+  .wcard .i { font-size:27px; } .wcard .n { font-size:12px; margin-top:3px; }
+  .crow.done .ico { filter:none; }
+  .pulse { animation:pulse 1s ease-in-out infinite; }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:.35} }
+  .bar { height:7px; background:#232833; border-radius:4px; overflow:hidden; margin:14px 0 6px; }
+  .bar i { display:block; height:100%; background:var(--go); width:0; transition:width .25s; }
+  .rowbtns { display:flex; gap:8px; flex-wrap:wrap; margin-top:14px; }
+  .hint { color:var(--dim); font-size:13.5px; line-height:1.6; }
+  .big-prompt { text-align:center; padding:22px 10px; }
+  .big-prompt .ico { font-size:74px; }
+  .big-prompt .say { font-size:24px; margin-top:8px; }
+  textarea { width:100%; height:90px; background:#101319; color:#ddd; border:1px solid #333;
+             border-radius:8px; padding:9px; font-family:ui-monospace,monospace; font-size:12px; }
+
+  /* ---------- play ---------- */
+  #play .step { text-align:center; padding:26px 10px; }
+  #play .ico { font-size:96px; line-height:1.1; }
+  #play .want { font-size:27px; margin-top:10px; }
+  #play .cnt { color:var(--dim); font-size:14px; margin-top:10px; }
+  #play.done .ico { font-size:110px; }
+
+  /* ---------- dev ---------- */
+  #dev { display:none; position:fixed; top:0; right:0; width:330px; max-width:93vw; height:100%;
+         overflow-y:auto; background:#12141a; border-left:2px solid var(--go); padding:14px;
+         z-index:99; font-size:13px; box-shadow:-4px 0 18px #0009; }
+  #dev h3 { margin:0 0 8px; color:var(--go); font-size:15px; }
+  #dev h4 { margin:14px 0 6px; color:var(--dim); font-size:11px; letter-spacing:.07em;
+            text-transform:uppercase; }
+  #dev button { font-size:12.5px; padding:6px 9px; margin:0 3px 3px 0; }
+  #dev-cards button.want { border-color:var(--go); color:#b9f6ca; }
+  #dev-info { background:#0b0d11; border-radius:7px; padding:9px; line-height:1.6; }
+  #dev-info b { color:var(--warn); }
+  #dev-log { background:#0b0d11; border-radius:7px; padding:8px; height:150px; overflow-y:auto;
+             font-family:ui-monospace,monospace; font-size:11px; white-space:pre-wrap; color:#9aa2ae; }
+  #dev-log .ok { color:#81c784; } #dev-log .no { color:#ef9a9a; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Jungle Rescue Patrol 🐆</h1>
+  <div class="sub">जंगल बचाओ टीम — six friends to rescue</div>
+
+  <!-- ============ SCREEN 1: TEACH THE CARDS ============ -->
+  <div class="panel" id="screen-teach" style="display:none;">
+    <h3 style="margin-top:0">Teach the cards</h3>
+    <p class="hint">Tap <b>Teach all</b> and scan each card as it lights up. The game
+      remembers them on this device, so you only ever do this once.</p>
+
+    <div class="big-prompt" id="teach-prompt" style="display:none;">
+      <div class="ico pulse" id="tp-ico">🔦</div>
+      <div class="say">Scan the <b id="tp-name">Torch</b> card…</div>
+      <div class="hint" id="tp-count" style="margin-top:8px"></div>
+    </div>
+
+    <div class="bar"><i id="teach-bar"></i></div>
+    <div class="hint" id="teach-count">0 of 9 taught</div>
+
+    <div id="teach-list" style="margin-top:14px"></div>
+
+    <div class="rowbtns">
+      <button class="go" id="btn-teach-all" onclick="teachAll()">Teach all cards</button>
+      <button class="small" onclick="stopTeaching()">Stop</button>
+      <button class="small" onclick="resetAll()">Forget all</button>
+      <button class="small" onclick="toggleBackup()">Backup / restore</button>
+    </div>
+
+    <div id="backup" style="display:none;margin-top:14px">
+      <p class="hint">Copy this somewhere safe. To restore, paste it back and press Restore.</p>
+      <textarea id="backup-text"></textarea>
+      <div class="rowbtns"><button class="small" onclick="restoreBackup()">Restore</button></div>
+    </div>
+
+    <div class="rowbtns" style="margin-top:16px">
+      <button class="go" id="btn-to-game" onclick="showReady()" disabled>Cards ready &rarr;</button>
+    </div>
+  </div>
+
+  <!-- ============ SCREEN 2: READY ============ -->
+  <div class="panel" id="screen-ready" style="display:none;">
+    <div class="big-prompt">
+      <div class="ico">🌙</div>
+      <div class="say">Ready to play!</div>
+      <div class="hint" id="ready-note" style="margin-top:10px"></div>
+    </div>
+    <div class="rowbtns" style="justify-content:center">
+      <button class="go" onclick="startWarmup()" style="font-size:17px;padding:14px 22px">Card warm-up first</button>
+      <button onclick="startGame()" style="font-size:17px;padding:14px 22px">Straight to the story</button>
+    </div>
+    <div class="rowbtns" style="justify-content:center;margin-top:6px">
+      <button class="small" onclick="showTeach()">Re-teach cards</button>
+    </div>
+  </div>
+
+  <!-- ============ SCREEN 2b: CARD WARM-UP ============ -->
+  <div class="panel" id="screen-warmup" style="display:none;">
+    <h3 style="margin-top:0">Card warm-up</h3>
+    <p class="hint">Let the kids scan the cards in any order — each one says its own name.
+      Good for learning the deck before the rescue starts. Stop whenever you like.</p>
+    <div class="bar"><i id="warm-bar"></i></div>
+    <div class="hint" id="warm-count"></div>
+    <div id="warm-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(92px,1fr));gap:8px;margin:14px 0"></div>
+    <div class="rowbtns" style="justify-content:center">
+      <button class="go" onclick="startGame()" style="font-size:18px;padding:14px 26px">Start the rescue &rarr;</button>
+      <button class="small" onclick="warmReset()">Reset ticks</button>
+    </div>
+  </div>
+
+  <!-- ============ SCREEN 3: PLAY ============ -->
+  <div class="panel" id="screen-play" style="display:none;">
+    <div id="play">
+      <div class="step">
+        <div class="ico" id="play-ico">🔦</div>
+        <div class="want" id="play-want">…</div>
+        <div class="cnt" id="play-count"></div>
+      </div>
+    </div>
+    <div class="rowbtns" style="justify-content:center">
+      <button class="small" onclick="if(confirm('Start the story again?'))restart()">Start again</button>
+    </div>
+  </div>
+</div>
+
+<!-- ============ DEV PANEL (hidden in production) ============ -->
+<div id="dev">
+  <h3>🔧 Developer mode</h3>
+  <div class="hint">Ctrl+Shift+D closes this. The kids never see it.</div>
+  <h4>Type a card</h4>
+  <input type="text" id="dev-input" placeholder="TORCH or a tag ID" autocomplete="off"
+         style="width:64%;padding:6px;border-radius:5px;border:1px solid #444;background:#232730;color:#eee"
+         onkeydown="if(event.key==='Enter'){event.preventDefault();devSubmit();}">
+  <button onclick="devSubmit()">Send</button>
+  <h4>State</h4>
+  <div id="dev-info"></div>
+  <div style="margin-top:8px">
+    <button onclick="skipCurrent()">⏩ Skip this line</button>
+    <button onclick="devSendExpected()">⏭ Send expected card</button>
+  </div>
+  <div style="margin-top:4px">
+    <button onclick="devStep(-1)">⏪ Previous scene</button>
+    <button onclick="devStep(1)">⏩ Next scene</button>
+    <button onclick="devAuto()">▶▶ Auto-play</button>
+  </div>
+  <div class="hint" style="margin-top:6px">Ctrl+Shift+&rarr; skips the line ·
+    Ctrl+Shift+&uarr;/&darr; jumps a scene</div>
+  <h4>Options</h4>
+  <label><input type="checkbox" id="dev-fast" onchange="devRefresh()"> Skip audio (fast)</label><br>
+  <label><input type="checkbox" id="dev-tts" onchange="devRefresh()"> Force speech instead of files</label>
+  <h4>Jump to step</h4>
+  <select id="dev-step" style="padding:6px;border-radius:5px;background:#232730;color:#eee;border:1px solid #444"></select>
+  <button onclick="devJump()">Go</button>
+  <h4>Cards</h4>
+  <div id="dev-cards"></div>
+  <h4>Log</h4>
+  <div id="dev-log"></div>
+  <div style="margin-top:8px">
+    <button onclick="document.getElementById('dev-log').innerHTML=''">Clear</button>
+    <button onclick="restart()">↻ Restart</button>
+  </div>
+</div>
+
+<script>
+/* ==========================================================================
+   चाँद चोर बंदर — the monkey who stole the moon
+   Cards are learned by scanning (no hard-coded tag IDs), so this works with
+   any reader that types a UID and presses Enter.
+   ========================================================================== */
+
+const CARDS = [
+  { id:"FUEL",       ico:"⛽", hi:"ईंधन",        en:"Fuel"       },
+  { id:"ROPE",       ico:"🪢", hi:"रस्सी",       en:"Rope"       },
+  { id:"BALLOONS",   ico:"🎈", hi:"गुब्बारे",     en:"Balloons"   },
+  { id:"SNACK",      ico:"🍪", hi:"नाश्ता",      en:"Snack"      },
+  { id:"LADDER",     ico:"🪜", hi:"सीढ़ी",        en:"Ladder"     },
+  { id:"PRUNERS",    ico:"✂️", hi:"कटर",         en:"Pruners"    },
+  { id:"MANGO",      ico:"🥭", hi:"आम",          en:"Mango"      },
+  { id:"FIRSTAID",   ico:"🩹", hi:"दवा पेटी",    en:"First aid"  },
+  { id:"WATER",      ico:"💧", hi:"पानी",        en:"Water"      },
+  { id:"MUSIC",      ico:"🎵", hi:"संगीत",       en:"Music"      },
+  { id:"FLASHLIGHT", ico:"🔦", hi:"टॉर्च",       en:"Flashlight" },
+  { id:"GEM",        ico:"💎", hi:"नगीना",       en:"Gem"        },
+  { id:"BLANKET",    ico:"🧣", hi:"कंबल",        en:"Blanket"    },
+  { id:"DISCOBALL",  ico:"🪩", hi:"डिस्को बॉल",  en:"Disco ball" },
+  { id:"PARTYHORN",  ico:"🎉", hi:"पार्टी हॉर्न", en:"Party horn" }
+];
+
+// The story. Each step is a SEQUENCE of beats played in order.
+// A repeated card (fuel) is simply a repeated step.
+const STEPS = [
+  { card:"FUEL", seq:[ { sfx:"sfx_fuel.mp3", vo:"vo_fuel_step1.mp3" } ] },
+  { card:"FUEL", seq:[ { sfx:"sfx_fuel.mp3", vo:"vo_fuel_step2.mp3" } ] },
+  { card:"FUEL", seq:[
+      { sfx:"sfx_fuel.mp3" },
+      { sfx:"sfx_engine.mp3", vo:"vo_fuel_done.mp3" },
+      { vo:"vo_bridge_jungle.mp3",
+        text:"जीप स्टार्ट हो गई! चलो, जंगल के अंदर चलते हैं। पेड़ बड़े होते जा रहे हैं। अरे, रुको! ये आवाज़ कैसी? कोई हमें बुला रहा है!" },
+      { sfx:"sfx_elephant.mp3" },
+      { vo:"vo_eleph_1.mp3" } ] },
+
+  { card:"ROPE",     seq:[ { vo:"vo_eleph_2.mp3" } ] },
+  { card:"BALLOONS", seq:[ { sfx:"sfx_pop.mp3", vo:"vo_eleph_3.mp3" } ] },
+  { card:"SNACK",    seq:[ { sfx:"sfx_munch.mp3" },
+                           { sfx:"sfx_munch.mp3" },
+                           { sfx:"sfx_munch.mp3", vo:"vo_eleph_done.mp3" },
+                           { sfx:"sfx_clap.mp3" },
+                           { vo:"vo_gir_1.mp3" } ] },
+
+  { card:"LADDER",  seq:[ { sfx:"sfx_jump.mp3", vo:"vo_gir_2.mp3" } ] },
+  { card:"PRUNERS", seq:[ { vo:"vo_gir_3.mp3" } ] },
+  { card:"MANGO",   seq:[ { sfx:"sfx_munch.mp3" },
+                          { sfx:"sfx_munch.mp3" },
+                          { sfx:"sfx_munch.mp3", vo:"vo_gir_done.mp3" },
+                          { sfx:"sfx_clap.mp3" },
+                          { vo:"vo_bridge_refuel.mp3",
+                            text:"वाह! हमने तीन दोस्तों को बचा लिया! पर हम बहुत दूर आ गए हैं। अरे! जीप की टंकी फिर से खाली हो गई!" },
+                          { vo:"vo_refuel_mid.mp3" } ] },
+
+  { card:"FUEL", seq:[ { sfx:"sfx_fuel.mp3", vo:"vo_refuel_step.mp3",
+                         text:"शाबाश! एक बार और ईंधन डालो!" } ] },
+  { card:"FUEL", seq:[ { sfx:"sfx_fuel.mp3" },
+                       { sfx:"sfx_engine.mp3" },
+                       { vo:"vo_bridge_parrot.mp3",
+                         text:"इंजन फिर से चालू! चलो आगे चलें। सुनो! कोई पंख फड़फड़ा रहा है। ऊपर देखो!" },
+                       { sfx:"sfx_parrot.mp3" },
+                       { vo:"vo_parr_1.mp3" } ] },
+
+  { card:"FIRSTAID", seq:[ { sfx:"sfx_magic.mp3", vo:"vo_parr_2.mp3" } ] },
+  { card:"WATER",    seq:[ { sfx:"sfx_glug.mp3", vo:"vo_parr_3.mp3" } ] },
+  { card:"MUSIC",    seq:[ { sfx:"sfx_parrot_song.mp3", hold:true },
+                           { vo:"vo_parr_done.mp3" },
+                           { sfx:"sfx_clap.mp3" },
+                           { vo:"vo_bridge_night.mp3",
+                             text:"शाम ढल रही है और जंगल में अँधेरा हो रहा है। अरे! वो कौन बैठा है उस बड़ी चट्टान पर?" },
+                           { vo:"vo_lion_1.mp3" } ] },
+
+  { card:"FLASHLIGHT", seq:[ { sfx:"sfx_flashlight.mp3", vo:"vo_lion_2.mp3" } ] },
+  { card:"GEM",        seq:[ { sfx:"sfx_magic.mp3", vo:"vo_lion_3.mp3" } ] },
+  { card:"BLANKET",    seq:[ { vo:"vo_lion_done.mp3" },
+                             { sfx:"sfx_snore.mp3" },
+                             { vo:"vo_disco_1.mp3" } ] },
+
+  { card:"DISCOBALL", alt:["PARTYHORN"], last:true,
+    seq:[ { sfx:"sfx_disco.mp3" }, { sfx:"sfx_cheer.mp3" } ] }
+];
+
+const INTRO = [
+  { vo:"vo_intro_1.mp3" },
+  // vo_intro_2.mp3 ("phone face down, get ready") dropped — the opening line
+  // already welcomes them, and 33s before the first card is too long for under-5s.
+  { vo:"vo_fuel_1.mp3" }
+];
+
+const WRONG = [ { vo:"vo_retry_funny.mp3" } ];
+
+const AMBIENCE = "sfx_jungle_day.mp3";   // jungle wildlife bed, no crickets
+const OUTRO    = "";                      // the disco finale is this story's ending
+
+// Warm-up round: kids scan each card and Coco names it, before the story starts.
+const WARMUP_TEXT = {
+  FUEL:"ये है ईंधन का कार्ड!", ROPE:"ये है रस्सी का कार्ड!",
+  BALLOONS:"ये है गुब्बारों का कार्ड!", SNACK:"ये है नाश्ते का कार्ड!",
+  LADDER:"ये है सीढ़ी का कार्ड!",
+  PRUNERS:"ये है कटर का कार्ड!", MANGO:"ये है आम का कार्ड!",
+  FIRSTAID:"ये है दवा पेटी का कार्ड!", WATER:"ये है पानी का कार्ड!",
+  MUSIC:"ये है संगीत का कार्ड!", FLASHLIGHT:"ये है टॉर्च का कार्ड!",
+  GEM:"ये है नगीने का कार्ड!", BLANKET:"ये है कंबल का कार्ड!",
+  DISCOBALL:"ये है डिस्को बॉल का कार्ड!", PARTYHORN:"ये है पार्टी हॉर्न का कार्ड!"
+};
+
+// Chrome caches local audio hard. A stamp that changes on every page load means
+// a re-cut clip is always heard, instead of yesterday's copy.
+const CACHE_BUST = "?v=" + Date.now();
+function audioUrl(file) { return AUDIO_DIR + file + CACHE_BUST; }
+
+const STORE = "rescueGameCards";
+// Own folder — this game never reads or writes the old game's audio.
+const AUDIO_DIR = "audio/";
+
+let uidToCard = {};      // "0007712345" -> "TORCH"
+let stepIdx   = 0;
+let started   = false;
+let busy      = false;   // a line is playing
+let pending   = null;    // a correct card tapped while Coco was still talking
+let activeWait = null;   // how to cut short whatever is playing right now
+let inputBuf  = "";
+let teaching  = null;    // card id currently being taught
+let teachQueue = [];
+let wrongIdx  = 0;
+
+/* ---------------- storage ---------------- */
+function loadCards() {
+  try { uidToCard = JSON.parse(localStorage.getItem(STORE)) || {}; }
+  catch (e) { uidToCard = {}; }
+}
+function saveCards() {
+  try { localStorage.setItem(STORE, JSON.stringify(uidToCard)); }
+  catch (e) { devLog("could not save cards: " + e.message, "no"); }
+}
+function uidOf(cardId) {
+  for (const u in uidToCard) if (uidToCard[u] === cardId) return u;
+  return null;
+}
+function taughtCount() { return CARDS.filter(c => uidOf(c.id)).length; }
+
+/* ---------------- audio ---------------- */
+// Plays a clip; if the file isn't there yet, speaks the words instead, so the
+// whole game is playable before a single line has been recorded.
+function say(item, onDone) {
+  const file = item.vo || item.audio;          // story beats carry `vo`
+  const fast = document.getElementById('dev-fast');
+  if (fast && fast.checked) { devLog("(skipped) " + (file || "")); return defer(onDone); }
+  const forceTts = document.getElementById('dev-tts');
+  if (file && !(forceTts && forceTts.checked)) {
+    devLog("♪ " + file);
+    const a = new Audio(audioUrl(file));
+    let done = false;
+    const finish = (viaError) => {
+      if (done) return; done = true;
+      activeWait = null;
+      clearTimeout(guard);
+      if (viaError) {
+        devLog("  COULD NOT PLAY " + file + " — speaking instead", "no");
+        if (item.noFallback) return defer(onDone);
+        if (item.text) return speak(item.text, onDone);
+      }
+      defer(onDone);
+    };
+    // Watchdog: if the clip never reports that it ended (a stalled decode, a
+    // browser that swallows the event), move on anyway. The story must never
+    // freeze with kids waiting on it.
+    let guard = setTimeout(() => {
+      devLog("  watchdog fired for " + file, "no");
+      finish(false);
+    }, 45000);
+    a.onloadedmetadata = () => {
+      if (isFinite(a.duration)) {
+        clearTimeout(guard);
+        guard = setTimeout(() => finish(false), (a.duration + 2) * 1000);
+      }
+    };
+    a.onended = () => finish(false);
+    a.onerror = () => finish(true);
+    activeWait = () => { try { a.pause(); } catch (e) {} finish(false); };
+    a.play().catch(() => finish(true));
+    return;
+  }
+  if (item.text) return speak(item.text, onDone);
+  defer(onDone);
+}
+function speak(text, onDone) {
+  if (!('speechSynthesis' in window)) return defer(onDone);
+  try {
+    speechSynthesis.cancel();
+    const u = new SpeechSynthesisUtterance(text);
+    u.lang = 'hi-IN'; u.rate = 0.92;
+    let done = false;
+    const finish = () => { if (done) return; done = true; activeWait = null;
+                           clearTimeout(guard); defer(onDone); };
+    activeWait = () => { try { speechSynthesis.cancel(); } catch (e) {} finish(); };
+    // Same watchdog: browsers with no Hindi voice installed may never fire onend.
+    const guard = setTimeout(finish, Math.max(8, text.split(/\s+/).length * 0.7) * 1000 + 4000);
+    u.onend = finish;
+    u.onerror = finish;
+    speechSynthesis.speak(u);
+  } catch (e) { defer(onDone); }
+}
+function defer(fn) { if (fn) setTimeout(fn, 0); }
+
+// Whatever is playing right now, and how to end it early. Dev mode uses this to
+// fast-forward instead of sitting through a 15-second line.
+function skipCurrent() {
+  if (!activeWait) { devLog("nothing playing to skip"); return; }
+  const cut = activeWait; activeWait = null;
+  devLog("skipped ahead");
+  cut();
+}
+
+// Plays a list of beats one after another.
+// The music bed dips while Coco talks and comes back up between scenes — which
+// is exactly when the kids are hunting for the next card.
+function runSeq(seq, done) {
+  let i = 0;
+  duckAmbience(true);
+  (function next() {
+    if (i >= seq.length) { duckAmbience(false); return done && done(); }
+    playBeat(seq[i++], next);
+  })();
+}
+
+let introMode = false;   // the opening line gets the bed pulled right down
+function duckAmbience(down) {
+  if (!amb) return;
+  const to = down ? (introMode ? AMB_INTRO : AMB_DUCK) : AMB_BASE;
+  fadeTo(amb, to, down ? 400 : 900);
+}
+
+// One beat: an effect, a line, or an effect then a line.
+function playBeat(beat, done) {
+  if (beat.sfx && beat.vo) {
+    sfxThen(beat.sfx, () => say(beat, done), beat.hold);
+  } else if (beat.sfx) {
+    sfxThen(beat.sfx, done, beat.hold);
+  } else {
+    say(beat, done);
+  }
+}
+
+// Plays an effect and calls back when it ends — capped, so a long or missing
+// file never holds up the story.
+function sfxThen(file, done, hold) {
+  const fast = document.getElementById('dev-fast');
+  if (!file || (fast && fast.checked)) return defer(done);
+  let fired = false;
+  const go = () => { if (fired) return; fired = true; activeWait = null;
+                     clearTimeout(cap); defer(done); };
+  // Normally we move on after a moment and let the tail ring under the voice.
+  // `hold` waits for the whole thing — that is the kids' dancing time.
+  const cap = setTimeout(go, hold ? 20000 : 2600);
+  try {
+    const a = new Audio(audioUrl(file));
+    liveSfx.push(a);
+    if (liveSfx.length > 8) liveSfx.shift();
+    a.onended = go; a.onerror = go;
+    activeWait = () => { try { a.pause(); } catch (e) {} go(); };
+    a.play().catch(go);
+  } catch (e) { go(); }
+}
+
+// A long effect must not still be playing when the next scene starts — that is
+// how the parrot's music ended up under the lion.
+let liveSfx = [];
+function stopSfx() {
+  liveSfx.forEach(a => {
+    try { fadeTo(a, 0, 500, () => { try { a.pause(); } catch (e) {} }); } catch (e) {}
+  });
+  liveSfx = [];
+}
+
+/* ---- night ambience: quiet bed under the whole story ---- */
+let amb = null;
+const AMB_BASE = 0.62;   // between scenes
+const AMB_DUCK  = 0.30;  // while Coco is speaking
+const AMB_INTRO = 0.14;  // under the opening line — low, but still there
+function ambienceStart() {
+  const fast = document.getElementById('dev-fast');
+  if (fast && fast.checked) return;
+  try {
+    amb = new Audio(audioUrl(AMBIENCE));
+    amb.loop = true; amb.volume = 0;
+    amb.play().then(() => fadeAmb(AMB_BASE, 1500)).catch(() => { amb = null; });
+  } catch (e) { amb = null; }
+}
+function ambienceStop() {
+  if (amb) fadeTo(amb, 0, 3500, () => { try { amb.pause(); } catch (e) {} amb = null; });
+}
+function fadeAmb(to, ms, done) { fadeTo(amb, to, ms, done); }
+
+function fadeTo(el, to, ms, done) {
+  if (!el) return done && done();
+  // Cancel any fade already running on this element — the start-up fade and a
+  // duck would otherwise fight each other and land on whichever finished last.
+  if (el._fade) { clearInterval(el._fade); el._fade = null; }
+  const from = el.volume, steps = 30, dt = ms / steps;
+  let k = 0;
+  el._fade = setInterval(() => {
+    k++;
+    if (!el) return;
+    el.volume = Math.max(0, Math.min(1, from + (to - from) * (k / steps)));
+    if (k >= steps) { clearInterval(el._fade); el._fade = null; if (done) done(); }
+  }, dt);
+}
+
+/* ---- lullaby: fades up once the story is over, for the walk to bed ---- */
+let outro = null;
+function outroStart() {
+  if (!OUTRO) return;
+  const fast = document.getElementById('dev-fast');
+  if (fast && fast.checked) return;
+  try {
+    outro = new Audio(audioUrl(OUTRO));
+    outro.loop = true; outro.volume = 0;
+    outro.play().then(() => fadeTo(outro, 0.45, 5000)).catch(() => { outro = null; });
+  } catch (e) { outro = null; }
+}
+function outroStop() {
+  if (outro) { try { outro.pause(); } catch (e) {} outro = null; }
+}
+function sfx(file) {
+  if (!file) return;
+  const fast = document.getElementById('dev-fast');
+  if (fast && fast.checked) return;
+  try { new Audio(audioUrl(file)).play().catch(() => {}); } catch (e) {}
+}
+
+/* ---------------- screens ---------------- */
+function show(which) {
+  ["teach", "ready", "warmup", "play"].forEach(s =>
+    document.getElementById("screen-" + s).style.display = (s === which ? "block" : "none"));
+}
+function showTeach() { stopTeaching(); renderTeach(); show("teach"); }
+
+/* ---------------- card warm-up ---------------- */
+let warming = false, warmSeen = {};
+function startWarmup() {
+  warming = true; warmSeen = {};
+  show("warmup"); renderWarmup();
+}
+function warmReset() { warmSeen = {}; renderWarmup(); }
+function renderWarmup() {
+  const g = document.getElementById('warm-grid');
+  g.innerHTML = "";
+  CARDS.forEach(c => {
+    const d = document.createElement('div');
+    d.className = "wcard" + (warmSeen[c.id] ? " seen" : "");
+    d.innerHTML = `<div class="i">${c.ico}</div><div class="n">${c.hi}</div>`;
+    g.appendChild(d);
+  });
+  const n = Object.keys(warmSeen).length;
+  document.getElementById('warm-count').textContent = `${n} of ${CARDS.length} met`;
+  document.getElementById('warm-bar').style.width = (n / CARDS.length * 100) + "%";
+}
+function warmScan(cardId) {
+  const c = CARDS.find(x => x.id === cardId);
+  if (!c) { devLog("warm-up: unknown card " + cardId, "no"); return; }
+  warmSeen[cardId] = true; renderWarmup();
+  busy = true;
+  say({ vo: "vo_card_" + cardId.toLowerCase() + ".mp3", text: WARMUP_TEXT[cardId] },
+      () => { busy = false; });
+}
+function showReady() {
+  stopTeaching(); warming = false;
+  const miss = CARDS.length - taughtCount();
+  document.getElementById('ready-note').innerHTML = miss
+    ? `<span style="color:var(--warn)">${miss} card(s) not taught yet — those steps will need the dev panel.</span>`
+    : "All 9 cards are taught. Put the phone face down and press start.";
+  show("ready");
+}
+
+/* ---------------- teaching ---------------- */
+function renderTeach() {
+  const list = document.getElementById('teach-list');
+  list.innerHTML = "";
+  CARDS.forEach(c => {
+    const uid = uidOf(c.id);
+    const row = document.createElement('div');
+    row.className = "crow" + (uid ? " done" : "") + (teaching === c.id ? " waiting" : "");
+    row.innerHTML =
+      `<div class="ico">${c.ico}</div>
+       <div class="nm"><div class="hi">${c.hi}</div><div class="en">${c.en}</div></div>
+       <div class="uid ${uid ? '' : 'none'}">${uid ? '✓ ' + uid : 'not taught'}</div>`;
+    const b = document.createElement('button');
+    b.className = "small";
+    b.textContent = uid ? "Re-teach" : "Teach";
+    b.onclick = () => teachOne(c.id);
+    row.appendChild(b);
+    list.appendChild(row);
+  });
+  const n = taughtCount();
+  document.getElementById('teach-count').textContent = `${n} of ${CARDS.length} taught`;
+  document.getElementById('teach-bar').style.width = (n / CARDS.length * 100) + "%";
+  document.getElementById('btn-to-game').disabled = (n === 0);
+  const prompt = document.getElementById('teach-prompt');
+  if (teaching) {
+    const c = CARDS.find(x => x.id === teaching);
+    document.getElementById('tp-ico').textContent = c.ico;
+    document.getElementById('tp-name').textContent = `${c.hi} (${c.en})`;
+    document.getElementById('tp-count').textContent =
+      teachQueue.length ? `${teachQueue.length} more after this` : "last one!";
+    prompt.style.display = "block";
+  } else {
+    prompt.style.display = "none";
+  }
+}
+function teachOne(cardId) { teachQueue = []; teaching = cardId; renderTeach(); }
+function teachAll() {
+  teachQueue = CARDS.map(c => c.id);
+  teaching = teachQueue.shift();
+  renderTeach();
+}
+function stopTeaching() { teaching = null; teachQueue = []; renderTeach(); }
+function acceptTeach(uid) {
+  const clash = uidToCard[uid];
+  if (clash && clash !== teaching) {
+    const c = CARDS.find(x => x.id === clash);
+    if (!confirm(`That card is already "${c ? c.en : clash}". Move it to "${teaching}"?`)) return;
+  }
+  for (const u in uidToCard) if (uidToCard[u] === teaching) delete uidToCard[u];
+  uidToCard[uid] = teaching;
+  saveCards();
+  sfx("sfx_pop.mp3");
+  teaching = teachQueue.length ? teachQueue.shift() : null;
+  renderTeach();
+  if (!teaching && taughtCount() === CARDS.length) setTimeout(showReady, 400);
+}
+function resetAll() {
+  if (!confirm("Forget all taught cards?")) return;
+  uidToCard = {}; saveCards(); stopTeaching();
+}
+function toggleBackup() {
+  const b = document.getElementById('backup');
+  const open = b.style.display === "none";
+  b.style.display = open ? "block" : "none";
+  if (open) document.getElementById('backup-text').value = JSON.stringify(uidToCard);
+}
+function restoreBackup() {
+  try {
+    const o = JSON.parse(document.getElementById('backup-text').value);
+    if (o && typeof o === "object") { uidToCard = o; saveCards(); renderTeach(); alert("Restored."); }
+  } catch (e) { alert("That doesn't look like a valid backup."); }
+}
+
+/* ---------------- the game ---------------- */
+function startGame() {
+  warming = false;
+  stepIdx = 0; started = true;
+  show("play"); renderPlay();
+  busy = true;
+  outroStop();
+  introMode = true;
+  ambienceStart();
+  // Let the jungle come up on its own for a moment before Coco speaks — it sets
+  // the scene, and it tells you at once that the music is working.
+  setTimeout(() => {
+    runSeq(INTRO, () => { introMode = false; busy = false; devRefresh(); runPending(); });
+  }, 1800);
+}
+function restart() { pending = null; startGame(); }
+
+// Runs a card that was tapped while a line was still playing.
+function runPending() {
+  if (!pending) return;
+  const uid = pending; pending = null;
+  setTimeout(() => handleScan(uid), 150);
+}
+
+function renderPlay() {
+  const el = document.getElementById('play');
+  if (stepIdx >= STEPS.length) {
+    el.classList.add('done');
+    document.getElementById('play-ico').textContent = "🌙";
+    document.getElementById('play-want').textContent = "गुड नाइट! 🎉";
+    document.getElementById('play-count').textContent = "The moon is back in the sky.";
+    return;
+  }
+  const c = CARDS.find(x => x.id === STEPS[stepIdx].card);
+  document.getElementById('play-ico').textContent = c.ico;
+  document.getElementById('play-want').textContent = `${c.hi} का कार्ड लाओ`;
+  document.getElementById('play-count').textContent = `${stepIdx + 1} / ${STEPS.length}`;
+}
+
+function handleScan(rawUid) {
+  const cardId = uidToCard[rawUid] || rawUid.toUpperCase();
+
+  if (teaching) { acceptTeach(rawUid); return; }
+  if (warming) { if (!busy) warmScan(cardId); return; }
+  if (!started) { devLog("scan ignored — game not started"); return; }
+  if (stepIdx >= STEPS.length) { sfx("sfx_disco.mp3"); return; }
+
+  if (busy) {
+    // Kids tap the card the moment they find it, long before Coco stops talking.
+    // Remember a correct card and act on it as soon as the line ends, so their
+    // tap is never silently swallowed. Wrong cards mid-line are ignored rather
+    // than queued — no telling them off for being keen.
+    const st = STEPS[stepIdx];
+    if (cardId === st.card || (st.alt && st.alt.indexOf(cardId) >= 0)) {
+      pending = rawUid;
+      devLog("queued " + cardId + " — will run when this line ends");
+    } else {
+      devLog("ignored " + cardId + " — still talking");
+    }
+    return;
+  }
+
+  const step = STEPS[stepIdx];
+  devLogScan(rawUid, cardId, cardId === step.card);
+
+  if (cardId !== step.card && !(step.alt && step.alt.indexOf(cardId) >= 0)) {
+    busy = true;
+    const w = WRONG[wrongIdx++ % WRONG.length];
+    say(w, () => { busy = false; runPending(); });
+    return;
+  }
+
+  busy = true;
+  stopSfx();                      // clear anything still ringing from the last scene
+  runSeq(step.seq, () => {
+    stepIdx++;
+    renderPlay(); devRefresh();
+    if (stepIdx >= STEPS.length) { ambienceStop(); outroStart(); }
+    busy = false;
+    runPending();
+  });
+}
+
+
+/* ---------------- reader input ---------------- */
+// The RFID reader types the UID and presses Enter, exactly like a keyboard.
+window.addEventListener('keydown', (e) => {
+  if ((e.ctrlKey || e.metaKey) && e.shiftKey && (e.key === 'D' || e.key === 'd')) {
+    e.preventDefault(); toggleDev(); return;
+  }
+  if ((e.ctrlKey || e.metaKey) && e.shiftKey && devOpen) {
+    if (e.key === 'ArrowRight') { e.preventDefault(); skipCurrent(); return; }
+    if (e.key === 'ArrowDown')  { e.preventDefault(); devStep(1);   return; }
+    if (e.key === 'ArrowUp')    { e.preventDefault(); devStep(-1);  return; }
+  }
+  const t = e.target;
+  if (t && (t.tagName === 'INPUT' || t.tagName === 'TEXTAREA' || t.tagName === 'SELECT')) return;
+  if (e.key === 'Enter') {
+    // The reader ends every scan with Enter. If a button still had focus from a
+    // mouse click, Enter would "press" it again — re-teaching from card one, or
+    // restarting the story mid-play. Swallow it.
+    e.preventDefault();
+    const uid = inputBuf.trim(); inputBuf = "";
+    if (uid) handleScan(uid);
+  } else if (e.key.length === 1) {
+    inputBuf += e.key;
+  }
+});
+
+// Belt and braces: never leave a button holding focus, for the same reason.
+document.addEventListener('click', (e) => {
+  const b = e.target.closest && e.target.closest('button');
+  if (b) setTimeout(() => b.blur(), 0);
+});
+
+/* ==========================================================================
+   DEVELOPER MODE — hidden unless you ask for it (Ctrl+Shift+D, or ?dev=1)
+   ========================================================================== */
+let devOpen = false, devTimer = null;
+
+function toggleDev() {
+  devOpen = !devOpen;
+  document.getElementById('dev').style.display = devOpen ? "block" : "none";
+  if (devOpen) {
+    devBuildCards(); devBuildSteps(); devRefresh();
+    devTimer = setInterval(devRefresh, 400);
+  } else if (devTimer) { clearInterval(devTimer); devTimer = null; }
+}
+function devResolve(text) {
+  const v = (text || "").trim(); if (!v) return null;
+  if (uidToCard[v]) return v;
+  const up = v.toUpperCase();
+  if (CARDS.some(c => c.id === up)) return uidOf(up) || up;   // works untaught too
+  return v;
+}
+function devSubmit() {
+  const box = document.getElementById('dev-input');
+  const uid = devResolve(box.value); if (!uid) return;
+  box.value = ""; handleScan(uid); devRefresh();
+}
+function devSendExpected() {
+  if (stepIdx >= STEPS.length) return devLog("story finished");
+  if (busy) return devLog("busy — still talking", "no");
+  handleScan(devResolve(STEPS[stepIdx].card)); devRefresh();
+}
+function devAuto() {
+  const tick = () => {
+    if (stepIdx >= STEPS.length) return;
+    if (!busy) devSendExpected();
+    setTimeout(tick, 300);
+  };
+  if (!started) startGame();
+  setTimeout(tick, 400);
+}
+// Jump forward or back a scene without hunting in the dropdown.
+function devStep(delta) {
+  skipCurrent();
+  const n = Math.max(0, Math.min(STEPS.length - 1, stepIdx + delta));
+  stepIdx = n; started = true; busy = false;
+  show("play"); renderPlay(); devRefresh();
+  devLog("jumped to scene " + (n + 1) + " (" + STEPS[n].card + ")");
+}
+
+function devJump() {
+  stepIdx = +document.getElementById('dev-step').value;
+  started = true; busy = false; show("play"); renderPlay(); devRefresh();
+  devLog("jumped to step " + (stepIdx + 1));
+}
+function devBuildCards() {
+  const box = document.getElementById('dev-cards');
+  if (box.dataset.built) return;
+  CARDS.forEach(c => {
+    const b = document.createElement('button');
+    b.textContent = c.ico + " " + c.en;
+    b.dataset.card = c.id;
+    b.onclick = () => { handleScan(devResolve(c.id)); devRefresh(); };
+    box.appendChild(b);
+  });
+  const b = document.createElement('button');
+  b.textContent = "❓ wrong card"; b.onclick = () => { handleScan("NOT_A_CARD"); devRefresh(); };
+  box.appendChild(b);
+  box.dataset.built = "1";
+}
+function devBuildSteps() {
+  const sel = document.getElementById('dev-step');
+  if (sel.dataset.built) return;
+  STEPS.forEach((s, i) => {
+    const o = document.createElement('option');
+    o.value = i; o.textContent = (i + 1) + ". " + s.card;
+    sel.appendChild(o);
+  });
+  sel.dataset.built = "1";
+}
+function devRefresh() {
+  if (!devOpen) return;
+  const want = stepIdx < STEPS.length ? STEPS[stepIdx].card : "(finished)";
+  document.getElementById('dev-info').innerHTML =
+    `Step: <b>${Math.min(stepIdx + 1, STEPS.length)} / ${STEPS.length}</b><br>` +
+    `Waiting for: <b>${want}</b><br>` +
+    `Taught: <b>${taughtCount()} / ${CARDS.length}</b><br>` +
+    `Started: <b>${started}</b> &nbsp; Busy: <b>${busy}</b>`;
+  const sel = document.getElementById('dev-step');
+  if (sel && stepIdx < STEPS.length) sel.value = stepIdx;
+  document.querySelectorAll('#dev-cards button').forEach(b =>
+    b.classList.toggle('want', b.dataset.card === want));
+}
+function devLog(msg, cls) {
+  const box = document.getElementById('dev-log'); if (!box) return;
+  box.innerHTML += `<div class="${cls || ''}">[${new Date().toLocaleTimeString()}] ${msg}</div>`;
+  box.scrollTop = box.scrollHeight;
+}
+function devLogScan(uid, card, good) {
+  devLog(`SCAN ${uid} → ${card} ${good ? '✓' : '✗'}`, good ? 'ok' : 'no');
+}
+
+/* ---------------- boot ---------------- */
+loadCards();
+if (new URLSearchParams(location.search).get('dev') === '1') toggleDev();
+if (taughtCount() === CARDS.length) showReady(); else showTeach();
+</script>
+</body>
+</html>

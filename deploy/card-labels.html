@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="hi"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Card labels — चाँद चोर बंदर</title>
+<style>
+  @page { size: A4; margin: 10mm; }
+  body { margin:0; font-family: system-ui, -apple-system, sans-serif;
+         background:#ffffff; color:#111; }
+
+  .howto { max-width:720px; margin:0 auto; padding:18px;
+           font-size:14px; line-height:1.7; color:#333; }
+  .howto h1 { font-size:19px; margin:0 0 8px; }
+  .howto b { color:#000; }
+  .howto ol { padding-left:20px; }
+  .btn { display:inline-block; margin:10px 0; background:#111; color:#fff; border:0;
+         padding:11px 20px; font-size:15px; border-radius:7px; cursor:pointer; }
+
+  .sheet { display:grid; grid-template-columns: repeat(2, 82mm);
+           gap:5mm; justify-content:center; padding:4mm 0; }
+
+  .label { width:82mm; height:50mm; border:1px dashed #b9b9b9; border-radius:4mm;
+           display:flex; flex-direction:column; align-items:center;
+           justify-content:center; text-align:center; padding:3mm;
+           break-inside:avoid; page-break-inside:avoid; }
+  .label .ico  { font-size:22mm; line-height:1.05; }
+  .label .hi   { font-size:9mm; font-weight:700; margin-top:1.5mm; letter-spacing:.2mm; }
+  .label .en   { font-size:3.6mm; letter-spacing:1.2mm; text-transform:uppercase;
+                 color:#777; margin-top:1mm; }
+
+  @media print {
+    .howto { display:none; }
+    .sheet { padding:0; }
+    .label { border:1px dashed #ccc; }
+  }
+</style></head>
+<body>
+
+<div class="howto">
+  <h1>🖨️ Card labels — 8 cards</h1>
+  <p>Sized <b>82 × 50 mm</b>, a little smaller than a standard RFID card so the edges
+     don't curl up when you stick them on.</p>
+  <ol>
+    <li>Press <b>Print</b> (or ⌘P). Choose A4, <b>scale 100%</b> — not "fit to page", or the
+        sizing goes out.</li>
+    <li>Cut along the dashed lines.</li>
+    <li>Stick one on each card, then teach that card in the game so the picture and the
+        tag match.</li>
+  </ol>
+  <p><b>Short on time tonight?</b> Don't cut and paste — just print it, lay the sheet on the
+     table, and put each card on its picture. Works exactly as well for a first play, and your
+     kids can hand you "the one with the monkey face" without reading a word.</p>
+  <button class="btn" onclick="window.print()">Print</button>
+</div>
+
+<div class="sheet">
+  <div class="label"><div class="ico">🔦</div><div class="hi">टॉर्च</div><div class="en">Torch</div></div>
+  <div class="label"><div class="ico">🤸</div><div class="hi">कूदो</div><div class="en">Jump</div></div>
+  <div class="label"><div class="ico">👏</div><div class="hi">ताली</div><div class="en">Clap</div></div>
+  <div class="label"><div class="ico">😂</div><div class="hi">हँसो</div><div class="en">Laugh</div></div>
+  <div class="label"><div class="ico">💧</div><div class="hi">पानी</div><div class="en">Water</div></div>
+  <div class="label"><div class="ico">🍌</div><div class="hi">केला</div><div class="en">Banana</div></div>
+  <div class="label"><div class="ico">💃</div><div class="hi">नाचो</div><div class="en">Dance</div></div>
+  <div class="label"><div class="ico">🌙</div><div class="hi">चाँद</div><div class="en">Moon</div></div>
+  <div class="label"><div class="ico">🐒</div><div class="hi">किशु मिशु</div><div class="en">Spare</div></div>
+</div>
+
+</body></html>
