@@ -8,3 +8,6 @@ voice-samples/
 recording*/
 *.bak
 *.bak-*
+
+# local pre-processing backups (not needed in the public repo)
+**/_original_backup/
