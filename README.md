@@ -3,6 +3,8 @@
 Stories live in `docs/<story-slug>/` and are published from `docs/` via
 GitHub Pages. `docs/index.html` is the landing page.
 
+Open items and things worth keeping: **[BACKLOG.md](BACKLOG.md)**.
+
 ## The physical RFID cards
 
 `cards.json` is the single source of truth for which card UID means what. A
