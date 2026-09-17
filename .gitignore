@@ -14,3 +14,7 @@ recording*/
 
 # generated scratch from scripts/make_scripts.py
 scripts/.dump.js
+
+# ElevenLabs working files (audio, not source)
+tts/out/
+tts/auditions/

@@ -1,0 +1,25 @@
+{
+  "_comment": "Voice config for the ElevenLabs narration. Run `python3 tts/generate.py voices` to list the voice ids available on your account, audition a few, then put the winner in default_voice.",
+
+  "model_id": "eleven_multilingual_v2",
+  "output_format": "mp3_44100_128",
+
+  "default_voice": "",
+
+  "voice_settings": {
+    "stability": 0.45,
+    "similarity_boost": 0.80,
+    "style": 0.35,
+    "use_speaker_boost": true
+  },
+
+  "_per_clip_voice_comment": "Give an animal character its own voice here. Key is the clip filename.",
+  "per_clip_voice": {},
+
+  "_audition_lines_comment": "The lines used to compare voices. Short, but covers a greeting, an instruction and an excited moment.",
+  "audition_lines": [
+    "हैलो किशु मिशु! मेरा नाम है कोको। आज हम एक शरारती बंदर को ढूंढेंगे!",
+    "टॉर्च वाला कार्ड लाओ!",
+    "शाबाश! तुम सच में जंगल के हीरो हो!"
+  ]
+}

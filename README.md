@@ -5,6 +5,19 @@ GitHub Pages. `docs/index.html` is the landing page.
 
 Open items and things worth keeping: **[BACKLOG.md](BACKLOG.md)**.
 
+## Synthetic narration (ElevenLabs)
+
+`tts/` generates the narration with ElevenLabs instead of recording it. See
+**[tts/README.md](tts/README.md)** — audition voices, build a story, compare
+against the human recordings, then install with a backup.
+
+```
+python3 tts/generate.py cost                 # what a full pass would cost
+python3 tts/generate.py build moon --dry-run # exercise the pipeline, spend nothing
+```
+
+---
+
 ## The story scripts
 
 `scripts/moon.md` and `scripts/jungle-rescue.md` are the full narration
