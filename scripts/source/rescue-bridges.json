@@ -1,0 +1,26 @@
+[
+ ["vo_bridge_jungle.mp3","🌉 Bridge 1","Plays right after the engine starts, before the elephant. This is the missing link — the jeep sets off, then something calls out.","जीप स्टार्ट हो गई! चलो, जंगल के अंदर चलते हैं। पेड़ बड़े होते जा रहे हैं... अरे, रुको! ये आवाज़ कैसी? कोई हमें बुला रहा है!",""],
+ ["vo_bridge_refuel.mp3","🌉 Bridge 2","After the giraffe is fed, before the mid-game refuel. Explains WHY the tank is empty again.","वाह! हमने तीन दोस्तों को बचा लिया! पर हम बहुत दूर आ गए हैं... अरे! जीप की टंकी फिर से खाली हो गई!",""],
+ ["vo_refuel_step.mp3","⛽ Refuel","NEW — plays on the first refuel card, which used to be silent. Short and encouraging.","शाबाश! एक बार और ईंधन डालो!","fuel-filling sound plays first"],
+ ["vo_bridge_parrot.mp3","🌉 Bridge 3","After the engine restarts, before the parrot. Leads them to look up.","इंजन फिर से चालू! चलो आगे चलें... सुनो! कोई पंख फड़फड़ा रहा है। ऊपर देखो!","parrot squawk plays after this"],
+ ["vo_bridge_night.mp3","🌉 Bridge 4","After the parrot is saved, before the lion. Turns the story towards evening.","शाम ढल रही है और जंगल में अँधेरा हो रहा है... अरे! वो कौन बैठा है उस बड़ी चट्टान पर?",""],
+
+ ["vo_card_fuel.mp3","🎴 Warm-up","Card warm-up. Keep every one of these short and bright — about 2 seconds.","ये है ईंधन का कार्ड!",""],
+ ["vo_card_rope.mp3","🎴 Warm-up","","ये है रस्सी का कार्ड!",""],
+ ["vo_card_balloons.mp3","🎴 Warm-up","","ये है गुब्बारों का कार्ड!",""],
+ ["vo_card_snack.mp3","🎴 Warm-up","","ये है नाश्ते का कार्ड!",""],
+ ["vo_card_red.mp3","🎴 Warm-up","","ये है लाल रंग का कार्ड!",""],
+ ["vo_card_blue.mp3","🎴 Warm-up","","ये है नीले रंग का कार्ड!",""],
+ ["vo_card_green.mp3","🎴 Warm-up","","ये है हरे रंग का कार्ड!",""],
+ ["vo_card_ladder.mp3","🎴 Warm-up","","ये है सीढ़ी का कार्ड!",""],
+ ["vo_card_pruners.mp3","🎴 Warm-up","","ये है कटर का कार्ड!",""],
+ ["vo_card_mango.mp3","🎴 Warm-up","","ये है आम का कार्ड!",""],
+ ["vo_card_firstaid.mp3","🎴 Warm-up","","ये है दवा पेटी का कार्ड!",""],
+ ["vo_card_water.mp3","🎴 Warm-up","","ये है पानी का कार्ड!",""],
+ ["vo_card_music.mp3","🎴 Warm-up","","ये है संगीत का कार्ड!",""],
+ ["vo_card_flashlight.mp3","🎴 Warm-up","","ये है टॉर्च का कार्ड!",""],
+ ["vo_card_gem.mp3","🎴 Warm-up","","ये है नगीने का कार्ड!",""],
+ ["vo_card_blanket.mp3","🎴 Warm-up","","ये है कंबल का कार्ड!",""],
+ ["vo_card_discoball.mp3","🎴 Warm-up","","ये है डिस्को बॉल का कार्ड!",""],
+ ["vo_card_partyhorn.mp3","🎴 Warm-up","","ये है पार्टी हॉर्न का कार्ड!",""]
+]

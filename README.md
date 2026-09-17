@@ -5,6 +5,23 @@ GitHub Pages. `docs/index.html` is the landing page.
 
 Open items and things worth keeping: **[BACKLOG.md](BACKLOG.md)**.
 
+## The story scripts
+
+`scripts/moon.md` and `scripts/jungle-rescue.md` are the full narration
+scripts — every Hindi line exactly as recorded, in play order, with the card
+cue, sound effects, clip filename, clip length and the original performance
+direction.
+
+They are generated, not hand-written, so they can't drift from the game:
+
+```
+python3 scripts/make_scripts.py
+```
+
+The games supply the order; `scripts/source/*.json` supplies the words.
+
+---
+
 ## The physical RFID cards
 
 `cards.json` is the single source of truth for which card UID means what. A

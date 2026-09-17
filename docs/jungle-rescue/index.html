@@ -694,7 +694,7 @@ function showReady() {
   const miss = CARDS.length - taughtCount();
   document.getElementById('ready-note').innerHTML = miss
     ? `<span style="color:var(--warn)">${miss} card(s) not taught yet — those steps will need the dev panel.</span>`
-    : "All 9 cards are taught. Put the phone face down and press start.";
+    : `All ${CARDS.length} cards are taught. Put the phone face down and press start.`;
   show("ready");
 }
 

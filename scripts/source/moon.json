@@ -1,0 +1,107 @@
+[
+ [
+  "vo_hello.mp3",
+  "Opening",
+  "Coco says hello and sets the scene. Bright, then slow down for the missing moon.",
+  "हैलो किशु मिशु! मेरा नाम है कोको। आज हम एक शरारती बंदर को ढूंढेंगे — जिसने चाँद चुरा लिया है! देखो, जंगल में रात हो गई है। ऊपर आसमान में देखो... अरे! चाँद कहाँ गया? चाँद गायब है! सब कुछ अँधेरा है।",
+  "night jungle ambience comes up and stays under the story"
+ ],
+ [
+  "vo_torch_ask.mp3",
+  "Opening",
+  "Asks for the first card.",
+  "क्या तुम मेरी मदद करोगे? शाबाश! सबसे पहले हमें रौशनी चाहिए — टॉर्च वाला कार्ड लाओ!",
+  ""
+ ],
+ [
+  "vo_torch.mp3",
+  "🔦 Torch",
+  "Torch click plays first. Discovery, then the river stops you short.",
+  "टॉर्च जल गई! अब सब दिख रहा है। अरे देखो — ज़मीन पर छोटे-छोटे पैरों के निशान! ये तो बंदर के हैं! चलो उनके पीछे चलें... ओहो! रुको! सामने नदी है। इसे पार करने के लिए कूदना पड़ेगा — कूदो वाला कार्ड लाओ!",
+  "boing plays when they scan JUMP"
+ ],
+ [
+  "vo_jump.mp3",
+  "🤸 Jump",
+  "MOVEMENT — count out loud, they jump with you. Keep pauses under a second.",
+  "सब खड़े हो जाओ! तैयार? एक, दो, तीन, कूदो! शाबाश! एक बार और — एक, दो, तीन, कूदो! वाह! हम नदी पार कर गए! अरे देखो, एक तोता डाल पर सो रहा है। उसे उठाना पड़ेगा — शोर मचाओ! ताली वाला कार्ड लाओ!",
+  "clapping, then a parrot squawk"
+ ],
+ [
+  "vo_parrot.mp3",
+  "👏 Clap",
+  "*** PARROT VOICE *** — squeaky and high. Repeat it like a bird would.",
+  "बंदर! बंदर! चाँद लेकर बड़े पेड़ पर गया! बंदर! बंदर!",
+  ""
+ ],
+ [
+  "vo_clap.mp3",
+  "👏 Clap",
+  "Back to Coco. Sets up the lion, then STOP — no card is asked for here any more.",
+  "शुक्रिया तोता जी! चलो बड़े पेड़ की ओर। पर ध्यान से — रास्ते में एक शेर सो रहा है!",
+  "three big silly snores, then the tiptoe line"
+ ],
+ [
+  "vo_tiptoe.mp3",
+  "🤫 Tiptoe",
+  "*** START IN A WHISPER *** then burst out laughing at the snoring.",
+  "श्श्श्श... बिलकुल चुप! पंजों पर चलो... धीरे... धीरे... हा हा हा! सुना? शेर खर्राटे ले रहा है! कितनी ज़ोर से! चलो निकल चलें... देखो! वो रहा बड़ा पेड़! और सबसे ऊपर बैठा है बंदर — चाँद छुपाकर। पर बंदर उदास है, उसे हँसाना पड़ेगा! हँसो वाला कार्ड लाओ!",
+  "children laughing"
+ ],
+ [
+  "vo_laugh.mp3",
+  "😂 Laugh",
+  "MOVEMENT — actually laugh, big and silly. Do the hiccups properly. Then SLOW RIGHT DOWN for the water part: they walk away to drink.",
+  "सब मिलकर ज़ोर से हँसो! हा हा हा हा! और ज़ोर से! देखो, बंदर भी हँसने लगा! अरे! उसको तो हिचकी आ गई — हिच! हिच! हा हा! वो थोड़ा नीचे आ गया। अरे, हम भी थक गए ना? अब सब जाओ, पहले पानी पीकर आओ। जल्दी मत करना, आराम से पियो। पानी पी लो, तब पानी वाला कार्ड लाओ!",
+  "nothing — the game just waits for them to come back"
+ ],
+ [
+  "vo_water.mp3",
+  "💧 Water",
+  "They have ALREADY drunk — this is the welcome back. Warm and pleased.",
+  "शाबाश! सबने पानी पी लिया! आह, अब मज़ा आ गया! अरे, पर बंदर को प्यास नहीं — बंदर को तो केला चाहिए! केला वाला कार्ड लाओ!",
+  "monkey munching the banana, three times"
+ ],
+ [
+  "vo_banana.mp3",
+  "🍌 Banana",
+  "Play up the big eyes.",
+  "बंदर ने केला देखा और उसकी आँखें इत्ती बड़ी हो गईं!",
+  "monkey chatter"
+ ],
+ [
+  "vo_monkey.mp3",
+  "🍌 Banana",
+  "*** MONKEY VOICE *** — cheeky and chattery. He asks for the dance card himself.",
+  "केला दो, चाँद लो! पर पहले... मेरे साथ नाचो! नाचो वाला कार्ड लाओ!",
+  "party music"
+ ],
+ [
+  "vo_dance.mp3",
+  "💃 Dance",
+  "MOVEMENT — the big one. Call the moves, then wind it down.",
+  "सब नाचो! हाथ ऊपर! हाथ नीचे! गोल-गोल घूमो! बंदर भी नाच रहा है! हा हा हा! बस बस, रुको! बंदर खुश हो गया — उसने चाँद वापस दे दिया! अब चाँद को आसमान में लगाते हैं — चाँद वाला कार्ड लाओ!",
+  "magic sparkle"
+ ],
+ [
+  "vo_moon.mp3",
+  "🌙 Finale",
+  "Count with them, big reveal, then *** GO SLOW AND SLEEPY *** for the last part. Yawn for real.",
+  "सब मिलकर बोलो — तीन... दो... एक... चाँद वापस आसमान में! देखो कितना सुंदर! पूरा जंगल फिर से चमक उठा! अब शेर सो रहा है... तोता सो रहा है... बंदर भी सो गया... और चाँद कह रहा है — शुक्रिया किशु मिशु! अब तुम भी सो जाओ। गुड नाइट, जंगल के हीरो!",
+  "ambience fades out"
+ ],
+ [
+  "vo_wrong_1.mp3",
+  "Wrong card",
+  "Plays on a wrong card. Kind and playful, never cross.",
+  "हम्म्म्म... ये वाला नहीं! फिर से ढूंढो!",
+  ""
+ ],
+ [
+  "vo_wrong_2.mp3",
+  "Wrong card",
+  "Second variation so it doesn't repeat.",
+  "ऊप्स! बंदर हँस रहा है! सही कार्ड लाओ!",
+  ""
+ ]
+]

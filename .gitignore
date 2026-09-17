@@ -11,3 +11,6 @@ recording*/
 
 # local pre-processing backups (not needed in the public repo)
 **/_original_backup/
+
+# generated scratch from scripts/make_scripts.py
+scripts/.dump.js
