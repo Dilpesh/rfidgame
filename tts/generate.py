@@ -7,6 +7,7 @@
     python3 tts/generate.py audition <id> [<id>..] # same 3 lines in each voice
     python3 tts/generate.py cost                   # characters and credits, spends nothing
     python3 tts/generate.py build moon             # every clip -> tts/out/moon/
+    python3 tts/generate.py sfx moon               # sound effects and beds, same place
     python3 tts/generate.py build moon --dry-run   # no API calls, silent files, proves the wiring
     python3 tts/generate.py install moon           # swap into the game, backing up what's there
 
@@ -34,6 +35,20 @@ MASTER = ("highpass=f=110,"
           "acompressor=threshold=-20dB:ratio=2.5:attack=8:release=180:makeup=2,"
           "loudnorm=I=-16:TP=-1.5:LRA=11,"
           "alimiter=limit=0.95")
+
+# AUDIO_STANDARD.md section 2 - anything that plays UNDER narration. Cuts the
+# high end so the bed cannot sit in the band a phone speaker is best at while
+# the voice's own band is missing. Verify with check_audio.py afterwards.
+# Deliberately more conservative than the hand-tuned night-jungle bed, because
+# what a generator returns is unknown. Verified against white noise - a harsher
+# bed than any real ambience - which lands at -22.7 dB under the narration on a
+# phone. check_audio.py is still the gate; this just makes passing the default.
+BED = ("highshelf=f=1200:g=-20,lowpass=f=4500,highpass=f=90,"
+       "loudnorm=I=-23:TP=-2:LRA=11")
+
+# Effects that play BETWEEN lines may be full-range and bright - that is where
+# sparkle belongs. Just levelled a little under the narration.
+EFFECT = "loudnorm=I=-18:TP=-1.5:LRA=11,alimiter=limit=0.95"
 
 
 def cfg():
@@ -124,6 +139,85 @@ def speak(text, voice, c, dest, dry=False):
         pass
     open(marker, "w").write(stamp)
     return True
+
+
+def assets():
+    p = os.path.join(TTS, "assets.json")
+    return json.load(open(p, encoding="utf-8")) if os.path.exists(p) else {}
+
+
+def make_asset(fn, spec, c, dest, dry=False):
+    """One sound effect or music bed. Bed entries get the bed EQ, the rest
+    stay full-range. Same change-stamping as the narration."""
+    prompt = (spec.get("prompt") or "").strip()
+    if not prompt:
+        return None                              # no prompt written yet - skip
+    is_music = bool(spec.get("music"))
+    body = ({"prompt": prompt,
+             "music_length_ms": int(float(spec.get("duration", 10)) * 1000),
+             "force_instrumental": spec.get("instrumental", True)}
+            if is_music else
+            {"text": prompt,
+             "duration_seconds": float(spec.get("duration", 3)),
+             "loop": bool(spec.get("loop", False)),
+             "prompt_influence": float(spec.get("prompt_influence", 0.4))})
+
+    stamp = hashlib.sha1(json.dumps([body, is_music, bool(spec.get("bed"))],
+                                    sort_keys=True).encode()).hexdigest()[:12]
+    marker = dest + ".stamp"
+    if os.path.exists(dest) and os.path.exists(marker) and \
+       open(marker).read().strip() == stamp:
+        return False
+
+    fd, tmp = tempfile.mkstemp(suffix=".raw.mp3")
+    os.close(fd)
+    if dry:
+        subprocess.run(["ffmpeg", "-v", "error", "-y", "-f", "lavfi",
+                        "-i", "anullsrc=r=44100:cl=mono", "-t",
+                        "%.2f" % float(spec.get("duration", 3)),
+                        "-c:a", "libmp3lame", "-b:a", "128k", tmp], check=True)
+    else:
+        path = "/v1/music" if is_music else "/v1/sound-generation"
+        if not is_music:
+            path += "?output_format=%s" % c["output_format"]
+        open(tmp, "wb").write(api(path, "POST", body, raw=True))
+
+    subprocess.run(["ffmpeg", "-v", "error", "-y", "-i", tmp,
+                    "-af", BED if spec.get("bed") else EFFECT,
+                    "-c:a", "libmp3lame", "-b:a", "128k", "-ar", "44100", dest],
+                   check=True)
+    try:
+        os.remove(tmp)
+    except OSError:
+        pass
+    open(marker, "w").write(stamp)
+    return True
+
+
+def cmd_sfx(game, dry):
+    a = assets().get(game)
+    if not a:
+        sys.exit("no entry for %s in tts/assets.json" % game)
+    c = cfg()
+    d = os.path.join(OUT, game)
+    os.makedirs(d, exist_ok=True)
+    made = skipped = blank = 0
+    for fn, spec in sorted(a.items()):
+        r = make_asset(fn, spec, c, os.path.join(d, fn), dry)
+        if r is None:
+            blank += 1
+            print("  no prompt yet   %s" % fn)
+        elif r:
+            made += 1
+            print("  %s %s%s" % ("(silent)  " if dry else "generated ", fn,
+                                 "   [bed - EQ'd for under narration]"
+                                 if spec.get("bed") else ""))
+        else:
+            skipped += 1
+    print("\n%s: %d generated, %d already current, %d still need a prompt -> %s"
+          % (game, made, skipped, blank, os.path.relpath(d, ROOT)))
+    if not dry and made:
+        print("Then check the beds:  python3 check_audio.py docs/%s" % game)
 
 
 def cmd_voices():
@@ -224,6 +318,10 @@ if __name__ == "__main__":
         if len(a) < 2:
             sys.exit("which story? moon | jungle-rescue")
         cmd_build(a[1], "--dry-run" in a)
+    elif cmd == "sfx":
+        if len(a) < 2:
+            sys.exit("which story? moon | jungle-rescue")
+        cmd_sfx(a[1], "--dry-run" in a)
     elif cmd == "install":
         if len(a) < 2:
             sys.exit("which story? moon | jungle-rescue")

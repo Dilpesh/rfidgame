@@ -1,0 +1,136 @@
+{
+  "moon": {
+    "sfx_clap.mp3": {
+      "prompt": "children clapping happily, short burst, close and dry",
+      "duration": 2.5
+    },
+    "sfx_dance.mp3": {
+      "prompt": "bouncy playful children's dance music, light percussion, warm and mid-range, no cymbals or shakers",
+      "duration": 25,
+      "bed": true,
+      "loop": true
+    },
+    "sfx_disco.mp3": {
+      "prompt": "short cheerful party flourish, sparkly and celebratory",
+      "duration": 4
+    },
+    "sfx_flashlight.mp3": {
+      "prompt": "a small torch switch clicking on",
+      "duration": 1.2
+    },
+    "sfx_glug.mp3": {
+      "prompt": "someone drinking water from a bottle, three gulps",
+      "duration": 2.5
+    },
+    "sfx_jump.mp3": {
+      "prompt": "a light cartoon boing of someone jumping",
+      "duration": 1.5
+    },
+    "sfx_laugh_kids.mp3": {
+      "prompt": "young children giggling together",
+      "duration": 3
+    },
+    "sfx_lullaby.mp3": {
+      "prompt": "a very soft gentle lullaby music box, slow and warm",
+      "duration": 20
+    },
+    "sfx_magic.mp3": {
+      "prompt": "a gentle magical sparkle shimmer",
+      "duration": 2
+    },
+    "sfx_monkey.mp3": {
+      "prompt": "a cheeky monkey chattering and giggling",
+      "duration": 2.5
+    },
+    "sfx_munch.mp3": {
+      "prompt": "someone happily crunching a biscuit, two bites",
+      "duration": 2
+    },
+    "sfx_night_jungle.mp3": {
+      "prompt": "quiet night jungle ambience, distant owl, soft warm wind, deep and low, absolutely no crickets or cicadas",
+      "duration": 30,
+      "bed": true,
+      "loop": true
+    },
+    "sfx_parrot.mp3": {
+      "prompt": "a parrot squawking and flapping its wings once",
+      "duration": 2
+    },
+    "sfx_pop.mp3": {
+      "prompt": "a soft balloon pop",
+      "duration": 1
+    },
+    "sfx_snore.mp3": {
+      "prompt": "a big gentle animal snoring slowly, three snores",
+      "duration": 4
+    }
+  },
+  "jungle-rescue": {
+    "sfx_cheer.mp3": {
+      "prompt": "a few small children cheering and celebrating",
+      "duration": 3
+    },
+    "sfx_clap.mp3": {
+      "prompt": "children clapping happily, short burst, close and dry",
+      "duration": 2.5
+    },
+    "sfx_disco.mp3": {
+      "prompt": "short cheerful party flourish, sparkly and celebratory",
+      "duration": 4
+    },
+    "sfx_elephant.mp3": {
+      "prompt": "a friendly elephant trumpeting once",
+      "duration": 2.5
+    },
+    "sfx_engine.mp3": {
+      "prompt": "a small jeep engine starting up and settling into an idle",
+      "duration": 4
+    },
+    "sfx_flashlight.mp3": {
+      "prompt": "a small torch switch clicking on",
+      "duration": 1.2
+    },
+    "sfx_fuel.mp3": {
+      "prompt": "fuel glugging into a tank through a funnel",
+      "duration": 3
+    },
+    "sfx_glug.mp3": {
+      "prompt": "someone drinking water from a bottle, three gulps",
+      "duration": 2.5
+    },
+    "sfx_jump.mp3": {
+      "prompt": "a light cartoon boing of someone jumping",
+      "duration": 1.5
+    },
+    "sfx_jungle_day.mp3": {
+      "prompt": "calm daytime jungle ambience, distant birds and soft leaves, warm low-mid, no insects or cicadas",
+      "duration": 30,
+      "bed": true,
+      "loop": true
+    },
+    "sfx_magic.mp3": {
+      "prompt": "a gentle magical sparkle shimmer",
+      "duration": 2
+    },
+    "sfx_munch.mp3": {
+      "prompt": "someone happily crunching a biscuit, two bites",
+      "duration": 2
+    },
+    "sfx_parrot.mp3": {
+      "prompt": "a parrot squawking and flapping its wings once",
+      "duration": 2
+    },
+    "sfx_parrot_song.mp3": {
+      "prompt": "a cheerful little parrot song, whistly and playful",
+      "duration": 15
+    },
+    "sfx_pop.mp3": {
+      "prompt": "a soft balloon pop",
+      "duration": 1
+    },
+    "sfx_snore.mp3": {
+      "prompt": "a big gentle animal snoring slowly, three snores",
+      "duration": 4
+    }
+  }
+}

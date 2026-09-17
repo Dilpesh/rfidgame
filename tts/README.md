@@ -97,3 +97,49 @@ different thing, not a better version of the same thing — so audition it on
 them, not just on yourself. A middle path that keeps what's yours: your voice
 for Coco, ElevenLabs for the animal characters and for the English stories,
 where the accent was the actual problem.
+
+---
+
+## Sound effects and music from the same key
+
+`tts/assets.json` lists every effect in both stories with a prompt and a
+duration. Edit the prompts, then:
+
+```
+python3 tts/generate.py sfx moon --dry-run   # exercise it, spend nothing
+python3 tts/generate.py sfx moon             # generate for real
+python3 check_audio.py docs/moon             # verify the beds
+```
+
+Same key, same `tts/out/<story>/` folder, same `install` step.
+
+**The manifest knows which files are beds.** It read `AMBIENCE` and every
+`under:` beat out of the games, so `sfx_night_jungle.mp3`, `sfx_jungle_day.mp3`
+and `sfx_dance.mp3` are marked `"bed": true`. Those get the high-shelf cut and
+a lower level, because they play underneath narration. Everything else stays
+full-range and bright — between lines is where sparkle belongs.
+
+The bed chain is deliberately more conservative than the one hand-tuned for
+your night-jungle file, because what a generator returns is unknown. It was
+verified against white noise — harsher than any real ambience — and still put
+the bed 22.7 dB under the narration on a phone. `check_audio.py` remains the
+gate.
+
+**Prompt hints that matter here.** Say what you *don't* want: the existing
+prompts carry "no crickets or cicadas" and "no cymbals or shakers" for exactly
+the reason the moon game needed rescuing. Set `"loop": true` on anything that
+has to tile seamlessly. For a music track rather than an effect, add
+`"music": true` and it goes to the music endpoint instead.
+
+## Emotion in the narration
+
+Switch `model_id` to `eleven_v3` in `tts/config.json` and you can direct
+delivery inline in the script text:
+
+```
+[excited] शाबाश! [laughs] तुम सच में जंगल के हीरो हो!
+```
+
+Tags cover emotions (`[curious]`, `[mischievously]`), delivery (`[whispers]`,
+`[shouts]`) and non-verbal sounds (`[laughs]`, `[sighs]`). They go in the line
+text in `scripts/source/*.json`, so the printed script shows the direction too.
