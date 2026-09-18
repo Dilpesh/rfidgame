@@ -94,6 +94,29 @@ def banana(path, cards, check):
     return True
 
 
+def hinglish(path, cards, check):
+    """The Hinglish build embeds its audio, and keeps card -> [uid] under
+    lowercase ids. Same data, a third shape. The placeholder 1001-1010 ids it
+    shipped with are dropped - the on-screen buttons call the step directly,
+    so nothing needs them."""
+    s = open(path, encoding="utf-8").read()
+    m = re.search(r"^const defaultUids=\{.*?\};$", s, re.M)
+    if not m:
+        sys.exit("%s: could not find defaultUids" % path)
+    out = {}
+    for _c, v in cards.items():
+        gid = v.get("games", {}).get("jungle-rescue-hinglish")
+        if gid:
+            out[gid] = [norm(u) for u in v["uids"]]
+    new_line = "const defaultUids=" + json.dumps(out, separators=(",", ":")) + ";"
+    if new_line == m.group(0):
+        return False
+    if check:
+        return True
+    open(path, "w", encoding="utf-8").write(s[:m.start()] + new_line + s[m.end():])
+    return True
+
+
 def main():
     check = "--check" in sys.argv
     d = load()
@@ -106,6 +129,9 @@ def main():
     p = os.path.join(ROOT, "docs", "banana-rescue", "index.html")
     if banana(p, cards, check):
         changed.append("banana-rescue")
+    p = os.path.join(ROOT, "docs", "jungle-rescue-hinglish", "index.html")
+    if os.path.exists(p) and hinglish(p, cards, check):
+        changed.append("jungle-rescue-hinglish")
 
     total = sum(len(v["uids"]) for v in cards.values())
     dupes = {k: v["uids"] for k, v in cards.items() if len(v["uids"]) > 1}

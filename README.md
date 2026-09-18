@@ -35,6 +35,14 @@ The games supply the order; `scripts/source/*.json` supplies the words.
 
 ---
 
+**Note on the Hinglish build.** `docs/jungle-rescue-hinglish/` is a single
+17 MB HTML file with all 85 audio cues embedded as base64, so it has no
+`audio/` folder and `check_audio.py` cannot read it. To check its beds,
+extract them from the `media` object first. `sync_cards.py` does understand
+it and keeps its card UIDs in step with the others.
+
+---
+
 ## The physical RFID cards
 
 `cards.json` is the single source of truth for which card UID means what. A

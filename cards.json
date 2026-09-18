@@ -1,27 +1,220 @@
 {
   "_comment": "Single source of truth for physical RFID card UIDs. Edit this, then run: python3 sync_cards.py",
-  "seed_version": "2026-09-14a",
+  "seed_version": "2026-09-18a",
   "cards": {
-    "JUMP":      { "uids": ["0006358746"], "label": "Jump",       "games": { "moon": "JUMP",       "banana-rescue": "JUMP" } },
-    "BANANA":    { "uids": ["0006358547"], "label": "Banana",     "games": { "moon": "BANANA",     "banana-rescue": "BANANA" } },
-    "DANCE":     { "uids": ["0006373847"], "label": "Dance",      "games": { "moon": "DANCE",      "banana-rescue": "DANCE" } },
-    "TORCH":     { "uids": ["0002692483", "0006375577"], "label": "Torch", "games": { "moon": "TORCH", "banana-rescue": "TORCH", "jungle-rescue": "FLASHLIGHT" } },
-    "WATER":     { "uids": ["0002690428", "0002682976"], "label": "Water", "games": { "moon": "WATER", "banana-rescue": "WATER", "jungle-rescue": "WATER" } },
-    "LAUGH":     { "uids": ["0002681159"], "label": "Laugh",      "games": { "moon": "LAUGH",      "banana-rescue": "LAUGH" } },
-    "CLAP":      { "uids": ["0006358348"], "label": "Clap",       "games": { "moon": "CLAP",       "banana-rescue": "CLAP" } },
-    "MOON":      { "uids": ["0002692278"], "label": "Moon",       "games": { "moon": "MOON",       "banana-rescue": "MOON" } },
-    "ROPE":      { "uids": ["0006374623"], "label": "Rope",       "games": { "banana-rescue": "ROPE", "jungle-rescue": "ROPE" } },
-    "LADDER":    { "uids": ["0005688805"], "label": "Ladder",     "games": { "banana-rescue": "LADDER", "jungle-rescue": "LADDER" } },
-    "PARTYHORN": { "uids": ["0002696012"], "label": "Party horn", "games": { "banana-rescue": "PARTY", "jungle-rescue": "PARTYHORN" } },
-    "FUEL":      { "uids": ["0006359145"], "label": "Fuel",       "games": { "jungle-rescue": "FUEL" } },
-    "BALLOONS":  { "uids": ["0006170247"], "label": "Balloons",   "games": { "jungle-rescue": "BALLOONS" } },
-    "SNACK":     { "uids": ["0006373651"], "label": "Snack / cookie", "games": { "jungle-rescue": "SNACK" } },
-    "PRUNERS":   { "uids": ["0006358150"], "label": "Cutter / pruners", "games": { "jungle-rescue": "PRUNERS" } },
-    "GEM":       { "uids": ["0006375007"], "label": "Gem",        "games": { "jungle-rescue": "GEM" } },
-    "FIRSTAID":  { "uids": ["0006374815"], "label": "First aid",  "games": { "jungle-rescue": "FIRSTAID" } },
-    "MUSIC":     { "uids": ["0006360574"], "label": "Music",      "games": { "jungle-rescue": "MUSIC" } },
-    "MANGO":     { "uids": ["0006360778"], "label": "Mango",      "games": { "jungle-rescue": "MANGO" } },
-    "DISCOBALL": { "uids": ["0006375198"], "label": "Disco ball", "games": { "jungle-rescue": "DISCOBALL" } },
-    "BLANKET":   { "uids": ["0006375388"], "label": "Blanket",    "games": { "jungle-rescue": "BLANKET" } }
+    "JUMP": {
+      "uids": [
+        "0006358746"
+      ],
+      "label": "Jump",
+      "games": {
+        "moon": "JUMP",
+        "banana-rescue": "JUMP"
+      }
+    },
+    "BANANA": {
+      "uids": [
+        "0006358547"
+      ],
+      "label": "Banana",
+      "games": {
+        "moon": "BANANA",
+        "banana-rescue": "BANANA"
+      }
+    },
+    "DANCE": {
+      "uids": [
+        "0006373847"
+      ],
+      "label": "Dance",
+      "games": {
+        "moon": "DANCE",
+        "banana-rescue": "DANCE"
+      }
+    },
+    "TORCH": {
+      "uids": [
+        "0002692483",
+        "0006375577"
+      ],
+      "label": "Torch",
+      "games": {
+        "moon": "TORCH",
+        "banana-rescue": "TORCH",
+        "jungle-rescue": "FLASHLIGHT",
+        "jungle-rescue-hinglish": "flashlight"
+      }
+    },
+    "WATER": {
+      "uids": [
+        "0002690428",
+        "0002682976"
+      ],
+      "label": "Water",
+      "games": {
+        "moon": "WATER",
+        "banana-rescue": "WATER",
+        "jungle-rescue": "WATER",
+        "jungle-rescue-hinglish": "water"
+      }
+    },
+    "LAUGH": {
+      "uids": [
+        "0002681159"
+      ],
+      "label": "Laugh",
+      "games": {
+        "moon": "LAUGH",
+        "banana-rescue": "LAUGH"
+      }
+    },
+    "CLAP": {
+      "uids": [
+        "0006358348"
+      ],
+      "label": "Clap",
+      "games": {
+        "moon": "CLAP",
+        "banana-rescue": "CLAP"
+      }
+    },
+    "MOON": {
+      "uids": [
+        "0002692278"
+      ],
+      "label": "Moon",
+      "games": {
+        "moon": "MOON",
+        "banana-rescue": "MOON"
+      }
+    },
+    "ROPE": {
+      "uids": [
+        "0006374623"
+      ],
+      "label": "Rope",
+      "games": {
+        "banana-rescue": "ROPE",
+        "jungle-rescue": "ROPE",
+        "jungle-rescue-hinglish": "rope"
+      }
+    },
+    "LADDER": {
+      "uids": [
+        "0005688805"
+      ],
+      "label": "Ladder",
+      "games": {
+        "banana-rescue": "LADDER",
+        "jungle-rescue": "LADDER",
+        "jungle-rescue-hinglish": "ladder"
+      }
+    },
+    "PARTYHORN": {
+      "uids": [
+        "0002696012"
+      ],
+      "label": "Party horn",
+      "games": {
+        "banana-rescue": "PARTY",
+        "jungle-rescue": "PARTYHORN"
+      }
+    },
+    "FUEL": {
+      "uids": [
+        "0006359145"
+      ],
+      "label": "Fuel",
+      "games": {
+        "jungle-rescue": "FUEL",
+        "jungle-rescue-hinglish": "fuel"
+      }
+    },
+    "BALLOONS": {
+      "uids": [
+        "0006170247"
+      ],
+      "label": "Balloons",
+      "games": {
+        "jungle-rescue": "BALLOONS"
+      }
+    },
+    "SNACK": {
+      "uids": [
+        "0006373651"
+      ],
+      "label": "Snack / cookie",
+      "games": {
+        "jungle-rescue": "SNACK",
+        "jungle-rescue-hinglish": "snack"
+      }
+    },
+    "PRUNERS": {
+      "uids": [
+        "0006358150"
+      ],
+      "label": "Cutter / pruners",
+      "games": {
+        "jungle-rescue": "PRUNERS"
+      }
+    },
+    "GEM": {
+      "uids": [
+        "0006375007"
+      ],
+      "label": "Gem",
+      "games": {
+        "jungle-rescue": "GEM"
+      }
+    },
+    "FIRSTAID": {
+      "uids": [
+        "0006374815"
+      ],
+      "label": "First aid",
+      "games": {
+        "jungle-rescue": "FIRSTAID",
+        "jungle-rescue-hinglish": "firstaid"
+      }
+    },
+    "MUSIC": {
+      "uids": [
+        "0006360574"
+      ],
+      "label": "Music",
+      "games": {
+        "jungle-rescue": "MUSIC",
+        "jungle-rescue-hinglish": "music"
+      }
+    },
+    "MANGO": {
+      "uids": [
+        "0006360778"
+      ],
+      "label": "Mango",
+      "games": {
+        "jungle-rescue": "MANGO",
+        "jungle-rescue-hinglish": "mango"
+      }
+    },
+    "DISCOBALL": {
+      "uids": [
+        "0006375198"
+      ],
+      "label": "Disco ball",
+      "games": {
+        "jungle-rescue": "DISCOBALL"
+      }
+    },
+    "BLANKET": {
+      "uids": [
+        "0006375388"
+      ],
+      "label": "Blanket",
+      "games": {
+        "jungle-rescue": "BLANKET",
+        "jungle-rescue-hinglish": "blanket"
+      }
+    }
   }
 }

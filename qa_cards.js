@@ -8,7 +8,9 @@
 const { chromium } = require('playwright');
 const http = require('http'), fs = require('fs'), path = require('path');
 const ROOT = __dirname;
-const cards = JSON.parse(fs.readFileSync(ROOT + '/cards.json', 'utf8')).cards;
+const cardsFile = JSON.parse(fs.readFileSync(ROOT + '/cards.json', 'utf8'));
+const cards = cardsFile.cards;
+const SEED = cardsFile.seed_version;   // read, not hardcoded, so bumping it doesn't break the test
 
 const server = http.createServer((req, res) => {
   const p = path.join(ROOT, decodeURIComponent(req.url.split('?')[0]));
@@ -48,7 +50,7 @@ function expected(game) {
     }));
     ok(s.taught === s.total, `every card taught on first load (${s.taught}/${s.total})`);
     ok(s.stored === s.mapped && s.stored > 0, `seeded into localStorage (${s.stored} uids)`);
-    ok(s.seed === '2026-09-14a', `seed version recorded (${s.seed})`);
+    ok(s.seed === SEED, `seed version recorded (${s.seed})`);
 
     for (const [uid, id, label] of expected(game)) {
       for (const form of [uid, uid.replace(/^0+/, ''), ' ' + uid + ' ']) {

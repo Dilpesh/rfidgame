@@ -123,3 +123,21 @@ before recording. Worth checking whether it also needs a settings screen.
   straightening out before Find & Tap is edited again.
 - **Stale `~/Downloads/jungle game/moon-game.html`** still has the old loud
   ambience values. Patch it or rename it so it can't be played by mistake.
+
+---
+
+## 6. The Hinglish build's embedded audio
+
+`docs/jungle-rescue-hinglish/` ships as one 17 MB HTML file with all 85 cues
+base64'd inside it. It works, and for now that's fine — but it has costs worth
+knowing:
+
+- **First load downloads all 17 MB** before anything plays. Fine on wifi,
+  slow on a patchy mobile connection.
+- **`check_audio.py` can't read it** — there's no `audio/` folder. Its beds
+  had to be extracted from the `media` object to be checked, and one of them
+  (`dayAmb`) was failing when it arrived.
+- **Every edit costs 17 MB in git history**, forever.
+
+Not urgent. If it becomes one, splitting the audio back out into an `audio/`
+folder would fix all three at once and bring it in line with the other stories.

@@ -6,51 +6,46 @@ Source of truth is `cards.json`. After editing it, bump `seed_version` and run `
 
 | UID (as the reader types it) | Card | Used by |
 |---|---|---|
-| `0006170247` | Balloons | Jungle Rescue: BALLOONS |
+| `0006170247` | Balloons | Jungle Rescue 2: BALLOONS |
 | `0006358547` | Banana | Monkey & Moon: BANANA / Banana Rescue: BANANA |
-| `0006375388` | Blanket | Jungle Rescue: BLANKET |
+| `0006375388` | Blanket | Jungle Rescue (Hinglish): blanket / Jungle Rescue 2: BLANKET |
 | `0006358348` | Clap | Monkey & Moon: CLAP / Banana Rescue: CLAP |
-| `0006358150` | Cutter / pruners | Jungle Rescue: PRUNERS |
+| `0006358150` | Cutter / pruners | Jungle Rescue 2: PRUNERS |
 | `0006373847` | Dance | Monkey & Moon: DANCE / Banana Rescue: DANCE |
-| `0006375198` | Disco ball | Jungle Rescue: DISCOBALL |
-| `0006374815` | First aid | Jungle Rescue: FIRSTAID |
-| `0006359145` | Fuel | Jungle Rescue: FUEL |
-| `0006375007` | Gem | Jungle Rescue: GEM |
+| `0006375198` | Disco ball | Jungle Rescue 2: DISCOBALL |
+| `0006374815` | First aid | Jungle Rescue (Hinglish): firstaid / Jungle Rescue 2: FIRSTAID |
+| `0006359145` | Fuel | Jungle Rescue (Hinglish): fuel / Jungle Rescue 2: FUEL |
+| `0006375007` | Gem | Jungle Rescue 2: GEM |
 | `0006358746` | Jump | Monkey & Moon: JUMP / Banana Rescue: JUMP |
-| `0005688805` | Ladder | Jungle Rescue: LADDER / Banana Rescue: LADDER |
+| `0005688805` | Ladder | Jungle Rescue (Hinglish): ladder / Banana Rescue: LADDER / Jungle Rescue 2: LADDER |
 | `0002681159` | Laugh | Monkey & Moon: LAUGH / Banana Rescue: LAUGH |
-| `0006360778` | Mango | Jungle Rescue: MANGO |
+| `0006360778` | Mango | Jungle Rescue (Hinglish): mango / Jungle Rescue 2: MANGO |
 | `0002692278` | Moon | Monkey & Moon: MOON / Banana Rescue: MOON |
-| `0006360574` | Music | Jungle Rescue: MUSIC |
-| `0002696012` | Party horn | Jungle Rescue: PARTYHORN / Banana Rescue: PARTY |
-| `0006374623` | Rope | Jungle Rescue: ROPE / Banana Rescue: ROPE |
-| `0006373651` | Snack / cookie | Jungle Rescue: SNACK |
-| `0002692483` | Torch (1 of 2) | Jungle Rescue: FLASHLIGHT / Monkey & Moon: TORCH / Banana Rescue: TORCH |
-| `0006375577` | Torch (2 of 2) | Jungle Rescue: FLASHLIGHT / Monkey & Moon: TORCH / Banana Rescue: TORCH |
-| `0002690428` | Water (1 of 2) | Jungle Rescue: WATER / Monkey & Moon: WATER / Banana Rescue: WATER |
-| `0002682976` | Water (2 of 2) | Jungle Rescue: WATER / Monkey & Moon: WATER / Banana Rescue: WATER |
+| `0006360574` | Music | Jungle Rescue (Hinglish): music / Jungle Rescue 2: MUSIC |
+| `0002696012` | Party horn | Banana Rescue: PARTY / Jungle Rescue 2: PARTYHORN |
+| `0006374623` | Rope | Jungle Rescue (Hinglish): rope / Banana Rescue: ROPE / Jungle Rescue 2: ROPE |
+| `0006373651` | Snack / cookie | Jungle Rescue (Hinglish): snack / Jungle Rescue 2: SNACK |
+| `0002692483` | Torch (1 of 2) | Jungle Rescue (Hinglish): flashlight / Monkey & Moon: TORCH / Banana Rescue: TORCH / Jungle Rescue 2: FLASHLIGHT |
+| `0006375577` | Torch (2 of 2) | Jungle Rescue (Hinglish): flashlight / Monkey & Moon: TORCH / Banana Rescue: TORCH / Jungle Rescue 2: FLASHLIGHT |
+| `0002690428` | Water (1 of 2) | Jungle Rescue (Hinglish): water / Monkey & Moon: WATER / Banana Rescue: WATER / Jungle Rescue 2: WATER |
+| `0002682976` | Water (2 of 2) | Jungle Rescue (Hinglish): water / Monkey & Moon: WATER / Banana Rescue: WATER / Jungle Rescue 2: WATER |
 
 ## Per game
 
-### Jungle Rescue — 15 cards
+### Jungle Rescue (Hinglish) — 10 cards
 
 | In-game name | Card | UID(s) |
 |---|---|---|
-| `BALLOONS` | Balloons | 0006170247 |
-| `BLANKET` | Blanket | 0006375388 |
-| `DISCOBALL` | Disco ball | 0006375198 |
-| `FIRSTAID` | First aid | 0006374815 |
-| `FLASHLIGHT` | Torch | 0002692483, 0006375577 |
-| `FUEL` | Fuel | 0006359145 |
-| `GEM` | Gem | 0006375007 |
-| `LADDER` | Ladder | 0005688805 |
-| `MANGO` | Mango | 0006360778 |
-| `MUSIC` | Music | 0006360574 |
-| `PARTYHORN` | Party horn | 0002696012 |
-| `PRUNERS` | Cutter / pruners | 0006358150 |
-| `ROPE` | Rope | 0006374623 |
-| `SNACK` | Snack / cookie | 0006373651 |
-| `WATER` | Water | 0002690428, 0002682976 |
+| `blanket` | Blanket | 0006375388 |
+| `firstaid` | First aid | 0006374815 |
+| `flashlight` | Torch | 0002692483, 0006375577 |
+| `fuel` | Fuel | 0006359145 |
+| `ladder` | Ladder | 0005688805 |
+| `mango` | Mango | 0006360778 |
+| `music` | Music | 0006360574 |
+| `rope` | Rope | 0006374623 |
+| `snack` | Snack / cookie | 0006373651 |
+| `water` | Water | 0002690428, 0002682976 |
 
 ### Monkey & Moon — 8 cards
 
@@ -79,5 +74,25 @@ Source of truth is `cards.json`. After editing it, bump `seed_version` and run `
 | `PARTY` | Party horn | 0002696012 |
 | `ROPE` | Rope | 0006374623 |
 | `TORCH` | Torch | 0002692483, 0006375577 |
+| `WATER` | Water | 0002690428, 0002682976 |
+
+### Jungle Rescue 2 — 15 cards
+
+| In-game name | Card | UID(s) |
+|---|---|---|
+| `BALLOONS` | Balloons | 0006170247 |
+| `BLANKET` | Blanket | 0006375388 |
+| `DISCOBALL` | Disco ball | 0006375198 |
+| `FIRSTAID` | First aid | 0006374815 |
+| `FLASHLIGHT` | Torch | 0002692483, 0006375577 |
+| `FUEL` | Fuel | 0006359145 |
+| `GEM` | Gem | 0006375007 |
+| `LADDER` | Ladder | 0005688805 |
+| `MANGO` | Mango | 0006360778 |
+| `MUSIC` | Music | 0006360574 |
+| `PARTYHORN` | Party horn | 0002696012 |
+| `PRUNERS` | Cutter / pruners | 0006358150 |
+| `ROPE` | Rope | 0006374623 |
+| `SNACK` | Snack / cookie | 0006373651 |
 | `WATER` | Water | 0002690428, 0002682976 |
 
