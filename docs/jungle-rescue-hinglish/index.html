@@ -11,6 +11,7 @@
   h1{margin:0 0 4px;font-size:clamp(28px,5vw,46px)} .sub{opacity:.7;margin-bottom:18px}
   .status{border-radius:20px;padding:18px;background:#f4f8f4;margin:14px 0}.big{font-size:30px;font-weight:800}.small{opacity:.68;margin-top:6px}
   .row{display:flex;gap:10px;flex-wrap:wrap}.btn{border:0;border-radius:16px;padding:14px 18px;font-weight:700;font-size:16px;cursor:pointer;background:#173f28;color:#fff}.btn.secondary{background:#e8efe9;color:#173f28}.btn.warn{background:#7a3d18}
+  .modepill{display:inline-flex;align-items:center;gap:7px;margin:4px 0 10px;padding:7px 12px;border-radius:999px;background:#e8efe9;color:#173f28;font-size:12px;font-weight:700}.modepill.devactive{background:#efe7fb;color:#4c2f7a}
   .panel{margin-top:18px;border-top:1px solid #e4ebe5;padding-top:18px}.hidden{display:none!important}
   .cards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin-top:12px}.card{border:1px solid #d9e5dc;background:#fff;border-radius:16px;padding:13px;text-align:left;cursor:pointer;font-weight:700}.card span{display:block;font-weight:500;opacity:.6;font-size:12px;margin-top:3px}
   input{width:100%;font:inherit;padding:13px;border-radius:14px;border:1px solid #cbd8ce}.teach-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}.teach-item{padding:12px;border:1px solid #dce6de;border-radius:14px}.mapped{font-size:12px;opacity:.65;margin-top:4px;word-break:break-all}
@@ -25,7 +26,7 @@ button:disabled{opacity:.45;cursor:default}#caption{line-height:1.7;font-size:20
     <div class="big" id="sceneTitle">Ready</div>
     <div class="small" id="sceneDetail">Press Start Game</div>
   </div>
-  <p id="caption" aria-live="polite"></p><button class="btn hidden" id="continueBtn">Continue</button><p id="audioStatus" class="small">Sound starts when you click Start Game.</p><div class="row">
+  <p id="caption" aria-live="polite"></p><button class="btn hidden" id="continueBtn">Continue</button><p id="audioStatus" class="small">Sound starts when you click Start Game.</p><div class="modepill" id="modePill">Card mode — scan a card to play</div><div class="row">
     <button class="btn" id="startBtn">Start Game</button>
     <button class="btn secondary" id="readerBtn">Card Reader</button>
     <button class="btn secondary" id="teachBtn">Teach Cards</button>
@@ -119,6 +120,34 @@ async function keepAwake(on){
 }
 // Coming back from a lock screen or another app drops the lock - take it again.
 document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'&&active)keepAwake(true)});
+
+/* ---- production vs developer mode ----
+   Production is the default and the only thing the kids ever see: Start,
+   Reset, and physical RFID cards. No on-screen card buttons to tap through
+   the story, no skip button, no teach panel.
+   Ctrl+Shift+D toggles developer mode; the choice is remembered. */
+let devMode=false;
+try{devMode=localStorage.getItem('jrhDevMode')==='1'}catch{}
+function applyMode(){
+  for(const id of ['readerBtn','teachBtn','devBtn','nextBtn'])
+    $(id).classList.toggle('hidden',!devMode);
+  if(!devMode) for(const id of ['readerPanel','teachPanel','devPanel'])
+    $(id).classList.add('hidden');
+  else $('devPanel').classList.remove('hidden');
+  $('modePill').textContent=devMode?'Developer mode — Ctrl+Shift+D to leave'
+                                   :'Card mode — scan a card to play';
+  $('modePill').classList.toggle('devactive',devMode);
+  controls();
+}
+function setDevMode(on){
+  devMode=!!on;
+  try{localStorage.setItem('jrhDevMode',devMode?'1':'0')}catch{}
+  if(!devMode)teaching=null;
+  applyMode();
+}
+document.addEventListener('keydown',e=>{
+  if((e.ctrlKey||e.metaKey)&&e.shiftKey&&(e.key==='D'||e.key==='d')){e.preventDefault();setDevMode(!devMode)}
+});
 async function start(){if(active)return;stop();active=true;keepAwake(true);step=0;wrongIndex=0;locked=true;controls();const e=epoch;title('Starting…','Coco is calling Kishu Mishu');await initAudio();guard(e);await enter(e)}
 async function choose(card){if(!active||locked||!expected)return;const e=epoch;locked=true;clearHints();controls();if(foreground){try{foreground.stop()}catch{}}
  if(card!==expected){await sequence(['boing','wrong'+(wrongIndex++%3+1)],e);guard(e);locked=false;controls();scheduleHints(e);return}
@@ -151,9 +180,9 @@ window.scanCard=uid=>{uid=String(uid).trim();if(!uid)return;if(teaching){const c
 for(let [k,n] of cards){let b=document.createElement('button');b.className='card';b.textContent=n;b.onclick=()=>handle(choose(k));$('devCards').append(b)}
 $('nextBtn').onclick=()=>handle(nextStep());
 $('startBtn').onclick=()=>handle(start());$('resetBtn').onclick=()=>{stop();title('Ready','Press Start Game')};$('continueBtn').onclick=()=>continueAction?.();$('devBtn').onclick=()=>{teaching=null;show('devPanel')};$('readerBtn').onclick=()=>{teaching=null;show('readerPanel');$('scanInput').focus()};$('teachBtn').onclick=()=>{stop();show('teachPanel');renderTeach()};$('scanInput').addEventListener('keydown',e=>{if(e.key==='Enter'){window.scanCard(e.target.value);e.target.value=''}});
-let wedge='';document.addEventListener('keydown',e=>{if(e.target.tagName==='INPUT'||!active&&!teaching)return;if(e.key==='Enter'){window.scanCard(wedge);wedge=''}else if(e.key.length===1)wedge+=e.key});
+let wedge='';document.addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.altKey)return;if(e.target.tagName==='INPUT'||!active&&!teaching)return;if(e.key==='Enter'){window.scanCard(wedge);wedge=''}else if(e.key.length===1)wedge+=e.key});
 // Visible diagnostic: actual nonzero samples on the graph feeding the speakers.
 setInterval(()=>{if(!analyser)return;const d=new Float32Array(analyser.fftSize);analyser.getFloatTimeDomainData(d);const rms=Math.sqrt(d.reduce((a,v)=>a+v*v,0)/d.length);$('audioStatus').dataset.rms=rms.toFixed(5);$('audioStatus').dataset.context=ctx.state;if(rms>.0001)$('audioStatus').dataset.signalDetected='yes'},250);
-controls();renderTeach();
+applyMode();renderTeach();
 
 </script></body></html>
