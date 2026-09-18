@@ -141,3 +141,12 @@ knowing:
 
 Not urgent. If it becomes one, splitting the audio back out into an `audio/`
 folder would fix all three at once and bring it in line with the other stories.
+
+---
+
+## 7. Printable card labels for the Hinglish build
+
+Every other story has a `cards.html` at CR80 (54 x 85.6 mm), portrait, for
+sticking on the physical cards. The Hinglish build has none. It reuses the
+same ten cards as Jungle Rescue 2, so the existing labels work — this is only
+needed if its card names ever diverge.

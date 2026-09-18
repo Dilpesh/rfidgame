@@ -3,6 +3,8 @@
 Stories live in `docs/<story-slug>/` and are published from `docs/` via
 GitHub Pages. `docs/index.html` is the landing page.
 
+Before shipping any new story, run the checklist in **[LEARNINGS.md](LEARNINGS.md)**.
+
 Open items and things worth keeping: **[BACKLOG.md](BACKLOG.md)**.
 
 ## Synthetic narration (ElevenLabs)
