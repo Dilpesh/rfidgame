@@ -117,12 +117,53 @@ def hinglish(path, cards, check):
     return True
 
 
+def deck_of(game, path):
+    """The card ids a game's own code actually asks for."""
+    s = open(path, encoding="utf-8").read()
+    if game == "banana-rescue":
+        m = re.search(r"const order=\[([^\]]+)\]", s)
+        return set(m.group(1).replace("'", "").split(",")) if m else set()
+    if game == "jungle-rescue-hinglish":
+        m = re.search(r"^const cards=\[.*?\];$", s, re.M)
+        return set(re.findall(r"\['([a-z]+)',", m.group(0))) if m else set()
+    return set(re.findall(r'\{ id:"([A-Z]+)"', s))
+
+
+def verify(cards):
+    """Every card a game asks for must have at least one physical UID, or the
+    kids will scan it and nothing will happen. Also catches two cards sharing
+    a UID, which would make one of them unreachable."""
+    problems = []
+    seen = {}
+    for canon, v in cards.items():
+        for u in v["uids"]:
+            n = norm(u)
+            if n in seen and seen[n] != canon:
+                problems.append("UID %s is on both %s and %s" % (u, seen[n], canon))
+            seen[n] = canon
+    for game in sorted({g for v in cards.values() for g in v.get("games", {})}):
+        path = os.path.join(ROOT, "docs", game, "index.html")
+        if not os.path.exists(path):
+            problems.append("%s: mapped in cards.json but docs/%s/ does not exist"
+                            % (game, game))
+            continue
+        mapped = {v["games"][game] for v in cards.values()
+                  if game in v.get("games", {}) and v["uids"]}
+        unmapped = {v["games"][game] for v in cards.values()
+                    if game in v.get("games", {}) and not v["uids"]}
+        missing = deck_of(game, path) - mapped
+        for cid in sorted(missing):
+            why = " (no UID yet)" if cid in unmapped else " (not in cards.json)"
+            problems.append("%s: card %s has no physical card%s" % (game, cid, why))
+    return problems
+
+
 def main():
     check = "--check" in sys.argv
     d = load()
     cards, seed = d["cards"], d["seed_version"]
     changed = []
-    for game in ("moon", "jungle-rescue"):
+    for game in ("moon", "jungle-rescue", "toy-town"):
         p = os.path.join(ROOT, "docs", game, "index.html")
         if splice(p, block_for(cards, game, seed), check):
             changed.append(game)
@@ -138,11 +179,16 @@ def main():
     print(f"{len(cards)} cards, {total} physical UIDs")
     for k, v in dupes.items():
         print(f"  {k}: {len(v)} cards -> {', '.join(v)}")
+    problems = verify(cards)
+    if problems:
+        print("\nNOT PLAYABLE YET:")
+        for p2 in problems:
+            print("  - " + p2)
     if check:
         print("OUT OF DATE: " + ", ".join(changed) if changed else "all games up to date")
-        return 1 if changed else 0
+        return 1 if (changed or problems) else 0
     print("updated: " + ", ".join(changed) if changed else "no changes needed")
-    return 0
+    return 1 if problems else 0
 
 
 if __name__ == "__main__":
