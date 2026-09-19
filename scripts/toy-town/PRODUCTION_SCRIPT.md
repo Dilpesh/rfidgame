@@ -60,8 +60,7 @@ S01_07 T: “मैं वहाँ welcome करूँगा! और इस �
 S01_08 D: “सब ready! बस… मेरी चाबी कहाँ है?”
 [SFX: pocket_rustle, followed by rubber_duck once.]
 S01_09 N: “Driver Uncle ने जेब चेक की। एक मोज़ा… एक rubber duck… और आधा sandwich!”
-S01_10 C: “जेब में आधा sandwich?!”
-S01_11 C: “ये कौन करता है?!”
+S01_10 C [playful, mock-surprised, teasing]: “जेब में आधा sandwich?! ये कौन करता है?!”
 [Pause 0.8 seconds.]
 S01_12 D: “बाकी आधा दूसरी जेब में है!”
 [Pause 0.8 seconds.]

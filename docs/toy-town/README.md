@@ -21,3 +21,7 @@ Open Grown-up controls, select Teach for a card, and scan its UID followed by En
 Voices: Jia (Narrator), Munni (Chuku), Vardan (Driver), Bholu (Teddy). All dialogue uses the approved kid character casting. MP3 filenames match script cue IDs. The recording manifest lists speaker, emotion, and dialogue; the production script contains SFX, pauses, music, and hint directions.
 
 Use ordinary device volume controls and the in-game volume slider. No microphone, camera, or child personal information is required.
+
+## Rebuild locally without AI credits
+
+From the project folder, run `python3 local_rebuild.py`. It runs the game tests, verifies every MP3, and recreates the standalone HTML and both ZIP files. This deterministic rebuild does not contact OpenAI or ElevenLabs and consumes no credits.

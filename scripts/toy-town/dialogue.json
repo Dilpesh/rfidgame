@@ -1,1 +1,522 @@
-{"S01_01": {"speaker": "Narrator", "text": "अरे वाह! हमारे Captain आ गए! Welcome to Toy Town Station!"}, "S01_02": {"speaker": "Chuku", "text": "मैं हूँ Chuku—तुम्हारी Toy Town Express! छोटी-सी train, बड़ी-बड़ी मस्ती!"}, "S01_03": {"speaker": "Chuku", "text": "Captain, मेरा शानदार horn सुनो!"}, "S01_04": {"speaker": "Narrator", "text": "Chuku! तुम train हो या बिल्ली?"}, "S01_05": {"speaker": "Chuku", "text": "Oops! Wrong button!"}, "S01_06": {"speaker": "Narrator", "text": "आज हम Teddy से मिलने Toy Town जा रहे हैं।"}, "S01_07": {"speaker": "Teddy", "text": "मैं वहाँ welcome करूँगा! और इस बार बिल्कुल नहीं सोऊँगा!"}, "S01_08": {"speaker": "Driver Uncle", "text": "सब ready! बस… मेरी चाबी कहाँ है?"}, "S01_09": {"speaker": "Narrator", "text": "Driver Uncle ने जेब चेक की। एक मोज़ा… एक rubber duck… और आधा sandwich!"}, "S01_10": {"speaker": "Chuku", "text": "जेब में आधा sandwich?!"}, "S01_11": {"speaker": "Chuku", "text": "ये कौन करता है?!"}, "S01_12": {"speaker": "Driver Uncle", "text": "बाकी आधा दूसरी जेब में है!"}, "S01_13": {"speaker": "Narrator", "text": "लेकिन engine अभी भी locked है। Captain, तुम्हारे पास कुछ है जो इसे खोल सके?"}, "S01_H1": {"speaker": "Narrator", "text": "हम्म… engine का ताला खोलना है।"}, "S01_H2": {"speaker": "Narrator", "text": "ताला खोलने के लिए किस चीज़ को घुमाते हैं?"}, "S01_H3": {"speaker": "Narrator", "text": "चाबी वाला KEY card tap करके देखो।"}, "S01_OK1": {"speaker": "Narrator", "text": "Engine start हुआ… या Chuku को छींक आई?"}, "S01_OK2": {"speaker": "Chuku", "text": "Engine भी start हो गया! और ये छोटी-सी छींक तो bonus थी!"}, "S01_OK3": {"speaker": "Driver Uncle", "text": "Thank you, Captain! अब चलें?"}, "S01_OK4": {"speaker": "Chuku", "text": "Toy Town, हम आ रहे हैं! छुक-छुक… चलो!"}, "S02_01": {"speaker": "Narrator", "text": "दरवाज़े बंद, सब अपनी जगह! Chuku धीरे-धीरे station से निकला। चलो, अंदर वाले coach को देखें।"}, "S02_02": {"speaker": "Chuku", "text": "अरे! इस coach की lights तो अभी जली ही नहीं!"}, "S02_03": {"speaker": "Driver Uncle", "text": "Oops! मेरा lunchbox सीट से टकरा गया। अँधेरे में कुछ दिख नहीं रहा!"}, "S02_04": {"speaker": "Narrator", "text": "Captain, ऐसा क्या करें कि सब साफ़-साफ़ दिखने लगे?"}, "S02_H1": {"speaker": "Narrator", "text": "अँधेरे में हमें उजाला चाहिए।"}, "S02_H2": {"speaker": "Narrator", "text": "दीवार वाला कौन-सा switch उजाला करता है?"}, "S02_H3": {"speaker": "Narrator", "text": "LIGHT वाला card tap करो।"}, "S02_OK1": {"speaker": "Narrator", "text": "आहा! अब सब दिख रहा है! लेकिन… Driver Uncle! आपके सिर पर lunchbox क्यों है?"}, "S02_OK2": {"speaker": "Driver Uncle", "text": "अच्छा! तभी मेरी टोपी से आलू पराठे की खुशबू आ रही थी!"}, "S02_OK3": {"speaker": "Chuku", "text": "वाह, Captain! तुमने तो lunchbox वाली टोपी भी पकड़ ली!"}, "S02_OK4": {"speaker": "Narrator", "text": "Driver Uncle ने lunchbox सीट पर रखा, और असली टोपी पहन ली। Chuku आगे बढ़ा।"}, "S03_01": {"speaker": "Chuku", "text": "उफ़्फ़! इस coach में तो गर्मी है!"}, "S03_02": {"speaker": "Driver Uncle", "text": "मैं अपनी टोपी से हवा कर लेता हूँ।"}, "S03_03": {"speaker": "Driver Uncle", "text": "हवा थोड़ी-सी… हाथ की exercise ज़्यादा!"}, "S03_04": {"speaker": "Narrator", "text": "Captain, ऐसी हवा कैसे आए जो हम सब तक पहुँचे?"}, "S03_H1": {"speaker": "Narrator", "text": "हमें ठंडी-ठंडी हवा चाहिए।"}, "S03_H2": {"speaker": "Narrator", "text": "ऊपर कौन-सी चीज़ घूमकर हवा देती है?"}, "S03_H3": {"speaker": "Narrator", "text": "FAN वाला card tap करो।"}, "S03_OK1": {"speaker": "Driver Uncle", "text": "आहाहा… अब मज़ा आया!"}, "S03_OK2": {"speaker": "Narrator", "text": "देखो! हवा में Driver Uncle की मूँछ हिल रही है!"}, "S03_OK3": {"speaker": "Driver Uncle", "text": "मूँछ जी! Dance बाद में। पहले अपना ticket दिखाइए!"}, "S03_OK4": {"speaker": "Chuku", "text": "अपनी मूँछ से ticket माँग रहे हैं! ये कौन करता है?!"}, "S03_OK5": {"speaker": "Narrator", "text": "Captain ने हवा चला दी। अब सब आराम से बैठ सकते हैं!"}, "S04_01": {"speaker": "Narrator", "text": "थोड़ी देर बाद Chuku पहुँचा Masti Stop पर। यहाँ एक छोटा-सा dance break!"}, "S04_02": {"speaker": "Chuku", "text": "मेरे पहिए तो रुक गए… लेकिन मेरी मस्ती नहीं!"}, "S04_03": {"speaker": "Driver Uncle", "text": "मैं गाना गाऊँ? ला… ला… लाआआ!"}, "S04_04": {"speaker": "Chuku", "text": "अरे! मेरा horn भी तुमसे सुर सीख रहा है!"}, "S04_05": {"speaker": "Narrator", "text": "Captain, हमारी dance party कैसे शुरू होगी?"}, "S04_H1": {"speaker": "Narrator", "text": "Dance करने का मन है। बस धुन की कमी है!"}, "S04_H2": {"speaker": "Narrator", "text": "तुम्हारे cards में party वाली चीज़ कौन-सी है?"}, "S04_H3": {"speaker": "Narrator", "text": "MUSIC वाला card tap करो।"}, "S04_OK1": {"speaker": "Narrator", "text": "Party time! अपने आसपास थोड़ी जगह देख लो। खड़े होकर या बैठे-बैठे, मेरे साथ dance करो!"}, "DANCE_01": {"speaker": "Chuku", "text": "अपने हाथों को train के पहियों जैसे घुमाओ! छुक-छुक, छुक-छुक!"}, "DANCE_02": {"speaker": "Narrator", "text": "अब shoulders हिलाओ! छोटी train… बड़ी मस्ती!"}, "DANCE_F1": {"speaker": "Narrator", "text": "FREEZE! अपनी funny statue बनाओ!"}, "DANCE_J1": {"speaker": "Chuku", "text": "Driver Uncle! आपकी मूँछ अभी भी dance कर रही है!"}, "DANCE_GO1": {"speaker": "Narrator", "text": "और… फिर से dance!"}, "DANCE_03": {"speaker": "Narrator", "text": "अब jelly जैसा wobble-wobble! अपने हाथों से भी कर सकते हो!"}, "DANCE_04": {"speaker": "Chuku", "text": "ऊपर हाथ… नीचे हाथ… और funny robot!"}, "DANCE_F2": {"speaker": "Narrator", "text": "FREEZE! Robot की battery रुक गई!"}, "DANCE_J2": {"speaker": "Driver Uncle", "text": "मेरी battery तो sandwich से चलती है!"}, "DANCE_GO2": {"speaker": "Chuku", "text": "Last round, Captain! अपना favourite dance!"}, "DANCE_05": {"speaker": "Narrator", "text": "अब तुम्हारी बारी! हमें अपना dance सिखाओ!"}, "DANCE_06": {"speaker": "Chuku", "text": "वाह! ये तो Captain वाला special dance है!"}, "DANCE_F3": {"speaker": "Narrator", "text": "और… आख़िरी FREEZE!"}, "S04_END1": {"speaker": "Chuku", "text": "मेरे पहिए भी ताली बजाना चाहते हैं!"}, "S04_END2": {"speaker": "Narrator", "text": "क्या मस्त dance था! Chuku अभी Masti Stop पर ही है। थोड़ा आराम कर लें।"}, "S05_01": {"speaker": "Narrator", "text": "इतना dance किया! अब छोटा-सा water break। Captain, आराम से थोड़ा पानी पी लो। हम यहीं wait करेंगे।"}, "S05_02": {"speaker": "Chuku", "text": "मैं तुम्हारी जगह संभालता हूँ! Driver Uncle, Captain की सीट पर sandwich मत रखना!"}, "S05_03": {"speaker": "Narrator", "text": "जब पानी पीकर वापस आ जाओ, तो WATER वाला card tap कर देना। तभी हमें पता चलेगा कि तुम ready हो।"}, "S05_R1": {"speaker": "Narrator", "text": "अगर पानी पी लिया हो, तो आराम से वापस आओ और WATER वाला card tap कर देना।"}, "S05_R2": {"speaker": "Chuku", "text": "Captain, हम यहीं हैं! पानी पी लिया हो तो WATER वाला card tap कर देना।"}, "S05_OK1": {"speaker": "Narrator", "text": "Welcome back, Captain! Driver Uncle भी अपना पानी पी लें।"}, "S05_OK2": {"speaker": "Driver Uncle", "text": "Oops! Excuse me!"}, "S05_OK3": {"speaker": "Chuku", "text": "अरे! ये मेरा horn नहीं था!"}, "S05_OK4": {"speaker": "Narrator", "text": "सब अपनी जगह वापस! Chuku फिर चल पड़ा। Toy Town अब पास है।"}, "S06_01": {"speaker": "Chuku", "text": "अरे, आगे कौन है? आराम से रुकते हैं!"}, "S06_02": {"speaker": "Narrator", "text": "Teddy! तुम तो welcome करने वाले थे! यहाँ पटरी के बीच कैसे सो गए?"}, "S06_03": {"speaker": "Teddy", "text": "खर्र्र… biscuit… खर्र्र…"}, "S06_04": {"speaker": "Chuku", "text": "ये signal की आवाज़ है?"}, "S06_05": {"speaker": "Narrator", "text": "Signal biscuit के सपने थोड़ी देखता है!"}, "S06_06": {"speaker": "Narrator", "text": "Captain, Teddy की नाक कुछ yummy ढूँढ रही है। हमारे पास उसके लिए क्या है?"}, "S06_H1": {"speaker": "Narrator", "text": "Teddy को कोई खाने वाली चीज़ चाहिए।"}, "S06_H2": {"speaker": "Narrator", "text": "कुछ छोटा और crunchy… जिसे वह चबा सके।"}, "S06_H3": {"speaker": "Narrator", "text": "BISCUIT वाला card tap करो।"}, "S06_OK1": {"speaker": "Teddy", "text": "हूँ? Biscuit? मैं जाग गया!"}, "S06_OK2": {"speaker": "Narrator", "text": "Teddy उठकर platform की bench पर बैठ गया। अब उसे biscuit देते हैं।"}, "S06_OK3": {"speaker": "Teddy", "text": "मैं सो नहीं रहा था! बस पटरी की softness check कर रहा था!"}, "S06_OK4": {"speaker": "Chuku", "text": "पटरी पर softness check?! ये कौन करता है?!"}, "S06_OK5": {"speaker": "Narrator", "text": "तो result क्या आया?"}, "S06_OK6": {"speaker": "Teddy", "text": "Bed better है!"}, "S06_OK7": {"speaker": "Narrator", "text": "Teddy ने हाथ हिलाया। रास्ता clear! Chuku धीरे-धीरे station में दाखिल हुआ।"}, "S07_01": {"speaker": "Chuku", "text": "Toy Town! हमारी मस्ती वाली journey पूरी!"}, "S07_02": {"speaker": "Narrator", "text": "Chuku park हो गया। Driver Uncle ने engine बंद किया।"}, "S07_04": {"speaker": "Narrator", "text": "लेकिन Captain… बाहर जाने से पहले कुछ OFF करना बाकी है।"}, "S07_H1": {"speaker": "Narrator", "text": "हमने journey में क्या-क्या ON किया था?"}, "S07_H2": {"speaker": "Chuku", "text": "मेरे coach में अभी भी हवा चल रही है… और उजाला भी है!"}, "S07_H3": {"speaker": "Narrator", "text": "LIGHT और FAN वाले cards, एक-एक करके tap करो।"}, "S07_F_FIRST": {"speaker": "Chuku", "text": "Fan OFF! मेरी हवा वाली party ख़त्म। Captain, अभी एक चीज़ बाकी है!"}, "S07_LIGHT_H1": {"speaker": "Narrator", "text": "अब coach में उजाला कौन कर रहा है?"}, "S07_LIGHT_H2": {"speaker": "Narrator", "text": "हवा बंद है। अब light को बंद करना है।"}, "S07_LIGHT_H3": {"speaker": "Narrator", "text": "LIGHT वाला card tap करो।"}, "S07_L_FIRST": {"speaker": "Chuku", "text": "Lights OFF! बाहर station का उजाला है। लेकिन अंदर अभी एक चीज़ चल रही है!"}, "S07_FAN_H1": {"speaker": "Narrator", "text": "सुनो… whoosh-whoosh! हवा कहाँ से आ रही है?"}, "S07_FAN_H2": {"speaker": "Narrator", "text": "Light बंद है। अब fan को बंद करना है।"}, "S07_FAN_H3": {"speaker": "Narrator", "text": "FAN वाला card tap करो।"}, "S07_BOTH": {"speaker": "Narrator", "text": "दोनों OFF! Captain, तुम्हें दोनों चीज़ें याद रहीं। तुमने बिजली भी बचाई!"}, "S07_REPEAT_F": {"speaker": "Chuku", "text": "Fan तो already सो गया—श्श्श! अब light की बारी है।"}, "S07_REPEAT_L": {"speaker": "Chuku", "text": "Light तो already OFF है! अब fan की बारी है।"}, "S08_01": {"speaker": "Narrator", "text": "Captain! तुमने Chuku को चलाया, coach में उजाला और हवा की, dance किया, water break लिया, और Teddy को जगाया!"}, "S08_02": {"speaker": "Driver Uncle", "text": "और मेरी lunchbox वाली टोपी भी पकड़ ली!"}, "S08_03": {"speaker": "Chuku", "text": "सबसे ज़रूरी—तुमने याद रखा कि आखिर में दोनों switches OFF करने हैं!"}, "S08_04": {"speaker": "Narrator", "text": "अपने लिए तालियाँ!"}, "S08_05": {"speaker": "Chuku", "text": "Captain, ready for a high-five?"}, "S08_06": {"speaker": "Chuku", "text": "एक… दो… तीन!"}, "S08_07": {"speaker": "Chuku", "text": "Lights OFF… fan OFF… Captain TOP!"}, "S08_08": {"speaker": "Narrator", "text": "Goodbye, Chuku!"}, "S08_09": {"speaker": "Narrator", "text": "Chukuuu!"}, "S08_10": {"speaker": "Chuku", "text": "क्या? ये मेरा goodbye वाला horn है!"}, "S08_11": {"speaker": "Narrator", "text": "Bye, Captain! अगली adventure में मिलेंगे!"}, "W_KEY_BISCUIT": {"speaker": "Chuku", "text": "Engine biscuit नहीं खाता… Driver Uncle खा लेंगे! लेकिन engine अभी locked है।"}, "W_DARK_MUSIC": {"speaker": "Chuku", "text": "Party तो हो जाएगी… पर dancers दिखेंगे कैसे? पहले थोड़ा उजाला!"}, "W_HEAT_WATER": {"speaker": "Narrator", "text": "पानी पीना अच्छा idea है! अभी पूरे coach में हवा भी चाहिए।"}, "W_TEDDY_KEY": {"speaker": "Chuku", "text": "Teddy में keyhole नहीं है! उसकी नाक तो कुछ yummy ढूँढ रही है।"}, "W_OFF_MUSIC": {"speaker": "Chuku", "text": "एक और party? अगली बार! पहले दोनों switches को आराम दें।"}, "W_GENERAL_1": {"speaker": "Narrator", "text": "ये चीज़ बाद में काम आ सकती है। अभी एक और card सोचकर देखो।"}, "W_GENERAL_2": {"speaker": "Chuku", "text": "हम्म… इससे अभी काम नहीं बना। एक और idea try करें?"}, "W_GENERAL_3": {"speaker": "Narrator", "text": "कोई बात नहीं, Captain। सवाल सुनो और फिर एक card चुनो।"}, "UNKNOWN_CARD": {"speaker": "Narrator", "text": "मुझे ये card पहचान में नहीं आया। Captain, बड़े helper से इसे check करवा लें।"}, "W_WATER": {"speaker": "Narrator", "text": "अभी water break है। पानी पीकर वापस आ गए हो तो WATER वाला card tap करो।"}}
+{
+  "S01_01": {
+    "speaker": "Narrator",
+    "text": "अरे वाह! हमारे Captain आ गए! Welcome to Toy Town Station!"
+  },
+  "S01_02": {
+    "speaker": "Chuku",
+    "text": "मैं हूँ Chuku—तुम्हारी Toy Town Express! छोटी-सी train, बड़ी-बड़ी मस्ती!"
+  },
+  "S01_03": {
+    "speaker": "Chuku",
+    "text": "Captain, मेरा शानदार horn सुनो!"
+  },
+  "S01_04": {
+    "speaker": "Narrator",
+    "text": "Chuku! तुम train हो या बिल्ली?"
+  },
+  "S01_05": {
+    "speaker": "Chuku",
+    "text": "Oops! Wrong button!"
+  },
+  "S01_06": {
+    "speaker": "Narrator",
+    "text": "आज हम Teddy से मिलने Toy Town जा रहे हैं।"
+  },
+  "S01_07": {
+    "speaker": "Teddy",
+    "text": "मैं वहाँ welcome करूँगा! और इस बार बिल्कुल नहीं सोऊँगा!"
+  },
+  "S01_08": {
+    "speaker": "Driver Uncle",
+    "text": "सब ready! बस… मेरी चाबी कहाँ है?"
+  },
+  "S01_09": {
+    "speaker": "Narrator",
+    "text": "Driver Uncle ने जेब चेक की। एक मोज़ा… एक rubber duck… और आधा sandwich!"
+  },
+  "S01_10": {
+    "speaker": "Chuku",
+    "text": "जेब में आधा sandwich?! ये कौन करता है?!"
+  },
+  "S01_11": {
+    "speaker": "Chuku",
+    "text": "ये कौन करता है?!"
+  },
+  "S01_12": {
+    "speaker": "Driver Uncle",
+    "text": "बाकी आधा दूसरी जेब में है!"
+  },
+  "S01_13": {
+    "speaker": "Narrator",
+    "text": "लेकिन engine अभी भी locked है। Captain, तुम्हारे पास कुछ है जो इसे खोल सके?"
+  },
+  "S01_H1": {
+    "speaker": "Narrator",
+    "text": "हम्म… engine का ताला खोलना है।"
+  },
+  "S01_H2": {
+    "speaker": "Narrator",
+    "text": "ताला खोलने के लिए किस चीज़ को घुमाते हैं?"
+  },
+  "S01_H3": {
+    "speaker": "Narrator",
+    "text": "चाबी वाला KEY card tap करके देखो।"
+  },
+  "S01_OK1": {
+    "speaker": "Narrator",
+    "text": "Engine start हुआ… या Chuku को छींक आई?"
+  },
+  "S01_OK2": {
+    "speaker": "Chuku",
+    "text": "Engine भी start हो गया! और ये छोटी-सी छींक तो bonus थी!"
+  },
+  "S01_OK3": {
+    "speaker": "Driver Uncle",
+    "text": "Thank you, Captain! अब चलें?"
+  },
+  "S01_OK4": {
+    "speaker": "Chuku",
+    "text": "Toy Town, हम आ रहे हैं! छुक-छुक… चलो!"
+  },
+  "S02_01": {
+    "speaker": "Narrator",
+    "text": "दरवाज़े बंद, सब अपनी जगह! Chuku धीरे-धीरे station से निकला। चलो, अंदर वाले coach को देखें।"
+  },
+  "S02_02": {
+    "speaker": "Chuku",
+    "text": "अरे! इस coach की lights तो अभी जली ही नहीं!"
+  },
+  "S02_03": {
+    "speaker": "Driver Uncle",
+    "text": "Oops! मेरा lunchbox सीट से टकरा गया। अँधेरे में कुछ दिख नहीं रहा!"
+  },
+  "S02_04": {
+    "speaker": "Narrator",
+    "text": "Captain, ऐसा क्या करें कि सब साफ़-साफ़ दिखने लगे?"
+  },
+  "S02_H1": {
+    "speaker": "Narrator",
+    "text": "अँधेरे में हमें उजाला चाहिए।"
+  },
+  "S02_H2": {
+    "speaker": "Narrator",
+    "text": "दीवार वाला कौन-सा switch उजाला करता है?"
+  },
+  "S02_H3": {
+    "speaker": "Narrator",
+    "text": "LIGHT वाला card tap करो।"
+  },
+  "S02_OK1": {
+    "speaker": "Narrator",
+    "text": "आहा! अब सब दिख रहा है! लेकिन… Driver Uncle! आपके सिर पर lunchbox क्यों है?"
+  },
+  "S02_OK2": {
+    "speaker": "Driver Uncle",
+    "text": "अच्छा! तभी मेरी टोपी से आलू पराठे की खुशबू आ रही थी!"
+  },
+  "S02_OK3": {
+    "speaker": "Chuku",
+    "text": "वाह, Captain! तुमने तो lunchbox वाली टोपी भी पकड़ ली!"
+  },
+  "S02_OK4": {
+    "speaker": "Narrator",
+    "text": "Driver Uncle ने lunchbox सीट पर रखा, और असली टोपी पहन ली। Chuku आगे बढ़ा।"
+  },
+  "S03_01": {
+    "speaker": "Chuku",
+    "text": "उफ़्फ़! इस coach में तो गर्मी है!"
+  },
+  "S03_02": {
+    "speaker": "Driver Uncle",
+    "text": "मैं अपनी टोपी से हवा कर लेता हूँ।"
+  },
+  "S03_03": {
+    "speaker": "Driver Uncle",
+    "text": "हवा थोड़ी-सी… हाथ की exercise ज़्यादा!"
+  },
+  "S03_04": {
+    "speaker": "Narrator",
+    "text": "Captain, ऐसी हवा कैसे आए जो हम सब तक पहुँचे?"
+  },
+  "S03_H1": {
+    "speaker": "Narrator",
+    "text": "हमें ठंडी-ठंडी हवा चाहिए।"
+  },
+  "S03_H2": {
+    "speaker": "Narrator",
+    "text": "ऊपर कौन-सी चीज़ घूमकर हवा देती है?"
+  },
+  "S03_H3": {
+    "speaker": "Narrator",
+    "text": "FAN वाला card tap करो।"
+  },
+  "S03_OK1": {
+    "speaker": "Driver Uncle",
+    "text": "आहाहा… अब मज़ा आया!"
+  },
+  "S03_OK2": {
+    "speaker": "Narrator",
+    "text": "देखो! हवा में Driver Uncle की मूँछ हिल रही है!"
+  },
+  "S03_OK3": {
+    "speaker": "Driver Uncle",
+    "text": "मूँछ जी! Dance बाद में। पहले अपना ticket दिखाइए!"
+  },
+  "S03_OK4": {
+    "speaker": "Chuku",
+    "text": "अपनी मूँछ से ticket माँग रहे हैं! ये कौन करता है?!"
+  },
+  "S03_OK5": {
+    "speaker": "Narrator",
+    "text": "Captain ने हवा चला दी। अब सब आराम से बैठ सकते हैं!"
+  },
+  "S04_01": {
+    "speaker": "Narrator",
+    "text": "थोड़ी देर बाद Chuku पहुँचा Masti Stop पर। यहाँ एक छोटा-सा dance break!"
+  },
+  "S04_02": {
+    "speaker": "Chuku",
+    "text": "मेरे पहिए तो रुक गए… लेकिन मेरी मस्ती नहीं!"
+  },
+  "S04_03": {
+    "speaker": "Driver Uncle",
+    "text": "मैं गाना गाऊँ? ला… ला… लाआआ!"
+  },
+  "S04_04": {
+    "speaker": "Chuku",
+    "text": "अरे! मेरा horn भी तुमसे सुर सीख रहा है!"
+  },
+  "S04_05": {
+    "speaker": "Narrator",
+    "text": "Captain, हमारी dance party कैसे शुरू होगी?"
+  },
+  "S04_H1": {
+    "speaker": "Narrator",
+    "text": "Dance करने का मन है। बस धुन की कमी है!"
+  },
+  "S04_H2": {
+    "speaker": "Narrator",
+    "text": "तुम्हारे cards में party वाली चीज़ कौन-सी है?"
+  },
+  "S04_H3": {
+    "speaker": "Narrator",
+    "text": "MUSIC वाला card tap करो।"
+  },
+  "S04_OK1": {
+    "speaker": "Narrator",
+    "text": "Party time! अपने आसपास थोड़ी जगह देख लो। खड़े होकर या बैठे-बैठे, मेरे साथ dance करो!"
+  },
+  "DANCE_01": {
+    "speaker": "Chuku",
+    "text": "अपने हाथों को train के पहियों जैसे घुमाओ! छुक-छुक, छुक-छुक!"
+  },
+  "DANCE_02": {
+    "speaker": "Narrator",
+    "text": "अब shoulders हिलाओ! छोटी train… बड़ी मस्ती!"
+  },
+  "DANCE_F1": {
+    "speaker": "Narrator",
+    "text": "FREEZE! अपनी funny statue बनाओ!"
+  },
+  "DANCE_J1": {
+    "speaker": "Chuku",
+    "text": "Driver Uncle! आपकी मूँछ अभी भी dance कर रही है!"
+  },
+  "DANCE_GO1": {
+    "speaker": "Narrator",
+    "text": "और… फिर से dance!"
+  },
+  "DANCE_03": {
+    "speaker": "Narrator",
+    "text": "अब jelly जैसा wobble-wobble! अपने हाथों से भी कर सकते हो!"
+  },
+  "DANCE_04": {
+    "speaker": "Chuku",
+    "text": "ऊपर हाथ… नीचे हाथ… और funny robot!"
+  },
+  "DANCE_F2": {
+    "speaker": "Narrator",
+    "text": "FREEZE! Robot की battery रुक गई!"
+  },
+  "DANCE_J2": {
+    "speaker": "Driver Uncle",
+    "text": "मेरी battery तो sandwich से चलती है!"
+  },
+  "DANCE_GO2": {
+    "speaker": "Chuku",
+    "text": "Last round, Captain! अपना favourite dance!"
+  },
+  "DANCE_05": {
+    "speaker": "Narrator",
+    "text": "अब तुम्हारी बारी! हमें अपना dance सिखाओ!"
+  },
+  "DANCE_06": {
+    "speaker": "Chuku",
+    "text": "वाह! ये तो Captain वाला special dance है!"
+  },
+  "DANCE_F3": {
+    "speaker": "Narrator",
+    "text": "और… आख़िरी FREEZE!"
+  },
+  "S04_END1": {
+    "speaker": "Chuku",
+    "text": "मेरे पहिए भी ताली बजाना चाहते हैं!"
+  },
+  "S04_END2": {
+    "speaker": "Narrator",
+    "text": "क्या मस्त dance था! Chuku अभी Masti Stop पर ही है। थोड़ा आराम कर लें।"
+  },
+  "S05_01": {
+    "speaker": "Narrator",
+    "text": "इतना dance किया! अब छोटा-सा water break। Captain, आराम से थोड़ा पानी पी लो। हम यहीं wait करेंगे।"
+  },
+  "S05_02": {
+    "speaker": "Chuku",
+    "text": "मैं तुम्हारी जगह संभालता हूँ! Driver Uncle, Captain की सीट पर sandwich मत रखना!"
+  },
+  "S05_03": {
+    "speaker": "Narrator",
+    "text": "जब पानी पीकर वापस आ जाओ, तो WATER वाला card tap कर देना। तभी हमें पता चलेगा कि तुम ready हो।"
+  },
+  "S05_R1": {
+    "speaker": "Narrator",
+    "text": "अगर पानी पी लिया हो, तो आराम से वापस आओ और WATER वाला card tap कर देना।"
+  },
+  "S05_R2": {
+    "speaker": "Chuku",
+    "text": "Captain, हम यहीं हैं! पानी पी लिया हो तो WATER वाला card tap कर देना।"
+  },
+  "S05_OK1": {
+    "speaker": "Narrator",
+    "text": "Welcome back, Captain! Driver Uncle भी अपना पानी पी लें।"
+  },
+  "S05_OK2": {
+    "speaker": "Driver Uncle",
+    "text": "Oops! Excuse me!"
+  },
+  "S05_OK3": {
+    "speaker": "Chuku",
+    "text": "अरे! ये मेरा horn नहीं था!"
+  },
+  "S05_OK4": {
+    "speaker": "Narrator",
+    "text": "सब अपनी जगह वापस! Chuku फिर चल पड़ा। Toy Town अब पास है।"
+  },
+  "S06_01": {
+    "speaker": "Chuku",
+    "text": "अरे, आगे कौन है? आराम से रुकते हैं!"
+  },
+  "S06_02": {
+    "speaker": "Narrator",
+    "text": "Teddy! तुम तो welcome करने वाले थे! यहाँ पटरी के बीच कैसे सो गए?"
+  },
+  "S06_03": {
+    "speaker": "Teddy",
+    "text": "खर्र्र… biscuit… खर्र्र…"
+  },
+  "S06_04": {
+    "speaker": "Chuku",
+    "text": "ये signal की आवाज़ है?"
+  },
+  "S06_05": {
+    "speaker": "Narrator",
+    "text": "Signal biscuit के सपने थोड़ी देखता है!"
+  },
+  "S06_06": {
+    "speaker": "Narrator",
+    "text": "Captain, Teddy की नाक कुछ yummy ढूँढ रही है। हमारे पास उसके लिए क्या है?"
+  },
+  "S06_H1": {
+    "speaker": "Narrator",
+    "text": "Teddy को कोई खाने वाली चीज़ चाहिए।"
+  },
+  "S06_H2": {
+    "speaker": "Narrator",
+    "text": "कुछ छोटा और crunchy… जिसे वह चबा सके।"
+  },
+  "S06_H3": {
+    "speaker": "Narrator",
+    "text": "BISCUIT वाला card tap करो।"
+  },
+  "S06_OK1": {
+    "speaker": "Teddy",
+    "text": "हूँ? Biscuit? मैं जाग गया!"
+  },
+  "S06_OK2": {
+    "speaker": "Narrator",
+    "text": "Teddy उठकर platform की bench पर बैठ गया। अब उसे biscuit देते हैं।"
+  },
+  "S06_OK3": {
+    "speaker": "Teddy",
+    "text": "मैं सो नहीं रहा था! बस पटरी की softness check कर रहा था!"
+  },
+  "S06_OK4": {
+    "speaker": "Chuku",
+    "text": "पटरी पर softness check?! ये कौन करता है?!"
+  },
+  "S06_OK5": {
+    "speaker": "Narrator",
+    "text": "तो result क्या आया?"
+  },
+  "S06_OK6": {
+    "speaker": "Teddy",
+    "text": "Bed better है!"
+  },
+  "S06_OK7": {
+    "speaker": "Narrator",
+    "text": "Teddy ने हाथ हिलाया। रास्ता clear! Chuku धीरे-धीरे station में दाखिल हुआ।"
+  },
+  "S07_01": {
+    "speaker": "Chuku",
+    "text": "Toy Town! हमारी मस्ती वाली journey पूरी!"
+  },
+  "S07_02": {
+    "speaker": "Narrator",
+    "text": "Chuku park हो गया। Driver Uncle ने engine बंद किया।"
+  },
+  "S07_04": {
+    "speaker": "Narrator",
+    "text": "लेकिन Captain… बाहर जाने से पहले कुछ OFF करना बाकी है।"
+  },
+  "S07_H1": {
+    "speaker": "Narrator",
+    "text": "हमने journey में क्या-क्या ON किया था?"
+  },
+  "S07_H2": {
+    "speaker": "Chuku",
+    "text": "मेरे coach में अभी भी हवा चल रही है… और उजाला भी है!"
+  },
+  "S07_H3": {
+    "speaker": "Narrator",
+    "text": "LIGHT और FAN वाले cards, एक-एक करके tap करो।"
+  },
+  "S07_F_FIRST": {
+    "speaker": "Chuku",
+    "text": "Fan OFF! मेरी हवा वाली party ख़त्म। Captain, अभी एक चीज़ बाकी है!"
+  },
+  "S07_LIGHT_H1": {
+    "speaker": "Narrator",
+    "text": "अब coach में उजाला कौन कर रहा है?"
+  },
+  "S07_LIGHT_H2": {
+    "speaker": "Narrator",
+    "text": "हवा बंद है। अब light को बंद करना है।"
+  },
+  "S07_LIGHT_H3": {
+    "speaker": "Narrator",
+    "text": "LIGHT वाला card tap करो।"
+  },
+  "S07_L_FIRST": {
+    "speaker": "Chuku",
+    "text": "Lights OFF! बाहर station का उजाला है। लेकिन अंदर अभी एक चीज़ चल रही है!"
+  },
+  "S07_FAN_H1": {
+    "speaker": "Narrator",
+    "text": "सुनो… whoosh-whoosh! हवा कहाँ से आ रही है?"
+  },
+  "S07_FAN_H2": {
+    "speaker": "Narrator",
+    "text": "Light बंद है। अब fan को बंद करना है।"
+  },
+  "S07_FAN_H3": {
+    "speaker": "Narrator",
+    "text": "FAN वाला card tap करो।"
+  },
+  "S07_BOTH": {
+    "speaker": "Narrator",
+    "text": "दोनों OFF! Captain, तुम्हें दोनों चीज़ें याद रहीं। तुमने बिजली भी बचाई!"
+  },
+  "S07_REPEAT_F": {
+    "speaker": "Chuku",
+    "text": "Fan तो already सो गया—श्श्श! अब light की बारी है।"
+  },
+  "S07_REPEAT_L": {
+    "speaker": "Chuku",
+    "text": "Light तो already OFF है! अब fan की बारी है।"
+  },
+  "S08_01": {
+    "speaker": "Narrator",
+    "text": "Captain! तुमने Chuku को चलाया, coach में उजाला और हवा की, dance किया, water break लिया, और Teddy को जगाया!"
+  },
+  "S08_02": {
+    "speaker": "Driver Uncle",
+    "text": "और मेरी lunchbox वाली टोपी भी पकड़ ली!"
+  },
+  "S08_03": {
+    "speaker": "Chuku",
+    "text": "सबसे ज़रूरी—तुमने याद रखा कि आखिर में दोनों switches OFF करने हैं!"
+  },
+  "S08_04": {
+    "speaker": "Narrator",
+    "text": "अपने लिए तालियाँ!"
+  },
+  "S08_05": {
+    "speaker": "Chuku",
+    "text": "Captain, ready for a high-five?"
+  },
+  "S08_06": {
+    "speaker": "Chuku",
+    "text": "एक… दो… तीन!"
+  },
+  "S08_07": {
+    "speaker": "Chuku",
+    "text": "Lights OFF… fan OFF… Captain TOP!"
+  },
+  "S08_08": {
+    "speaker": "Narrator",
+    "text": "Goodbye, Chuku!"
+  },
+  "S08_09": {
+    "speaker": "Narrator",
+    "text": "Chukuuu!"
+  },
+  "S08_10": {
+    "speaker": "Chuku",
+    "text": "क्या? ये मेरा goodbye वाला horn है!"
+  },
+  "S08_11": {
+    "speaker": "Narrator",
+    "text": "Bye, Captain! अगली adventure में मिलेंगे!"
+  },
+  "W_KEY_BISCUIT": {
+    "speaker": "Chuku",
+    "text": "Engine biscuit नहीं खाता… Driver Uncle खा लेंगे! लेकिन engine अभी locked है।"
+  },
+  "W_DARK_MUSIC": {
+    "speaker": "Chuku",
+    "text": "Party तो हो जाएगी… पर dancers दिखेंगे कैसे? पहले थोड़ा उजाला!"
+  },
+  "W_HEAT_WATER": {
+    "speaker": "Narrator",
+    "text": "पानी पीना अच्छा idea है! अभी पूरे coach में हवा भी चाहिए।"
+  },
+  "W_TEDDY_KEY": {
+    "speaker": "Chuku",
+    "text": "Teddy में keyhole नहीं है! उसकी नाक तो कुछ yummy ढूँढ रही है।"
+  },
+  "W_OFF_MUSIC": {
+    "speaker": "Chuku",
+    "text": "एक और party? अगली बार! पहले दोनों switches को आराम दें।"
+  },
+  "W_GENERAL_1": {
+    "speaker": "Narrator",
+    "text": "ये चीज़ बाद में काम आ सकती है। अभी एक और card सोचकर देखो।"
+  },
+  "W_GENERAL_2": {
+    "speaker": "Chuku",
+    "text": "हम्म… इससे अभी काम नहीं बना। एक और idea try करें?"
+  },
+  "W_GENERAL_3": {
+    "speaker": "Narrator",
+    "text": "कोई बात नहीं, Captain। सवाल सुनो और फिर एक card चुनो।"
+  },
+  "UNKNOWN_CARD": {
+    "speaker": "Narrator",
+    "text": "मुझे ये card पहचान में नहीं आया। Captain, बड़े helper से इसे check करवा लें।"
+  },
+  "W_WATER": {
+    "speaker": "Narrator",
+    "text": "अभी water break है। पानी पीकर वापस आ गए हो तो WATER वाला card tap करो।"
+  }
+}

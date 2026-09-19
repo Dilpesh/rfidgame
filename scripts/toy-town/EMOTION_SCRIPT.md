@@ -13,8 +13,8 @@ Exact generation tags for the prepared first takes. These are delivery direction
 | S01_07 | Teddy | [playful] | मैं वहाँ welcome करूँगा! और इस बार बिल्कुल नहीं सोऊँगा! |
 | S01_08 | Driver Uncle | [confused] | सब ready! बस… मेरी चाबी कहाँ है? |
 | S01_09 | Narrator | [playful] | Driver Uncle ने जेब चेक की। एक मोज़ा… एक rubber duck… और आधा sandwich! |
-| S01_10 | Chuku | [playful] | जेब में आधा sandwich?! |
-| S01_11 | Chuku | [playful] | ये कौन करता है?! |
+| S01_10 | Chuku | [playful, mock surprised, teasing] | जेब में आधा sandwich?! ये कौन करता है?! |
+| S01_11 | Chuku | [not used in the current sequence] | ये कौन करता है?! |
 | S01_12 | Driver Uncle | [playful] | बाकी आधा दूसरी जेब में है! |
 | S01_13 | Narrator | [warmly] | लेकिन engine अभी भी locked है। Captain, तुम्हारे पास कुछ है जो इसे खोल सके? |
 | S01_H1 | Narrator | [gently] | हम्म… engine का ताला खोलना है। |

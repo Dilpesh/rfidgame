@@ -45,6 +45,14 @@ it and keeps its card UIDs in step with the others.
 
 ---
 
+**Dropping in a new Toy Town build.** The deploy folder arrives clean each
+time, with none of our work in it. Run `python3 patch_toytown.py <folder>`
+before swapping it in — it re-applies the lot with assertions and fails loudly
+if a base file has changed shape. Then re-measure the audio: a new build means
+new clips.
+
+---
+
 ## The physical RFID cards
 
 `cards.json` is the single source of truth for which card UID means what. A
