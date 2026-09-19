@@ -5,7 +5,12 @@
 <style>
   @page { size: A4; margin: 10mm; }
   body { margin:0; font-family: system-ui, -apple-system, sans-serif;
-         background:#fff; color:#111; }
+         background:#fff; color:#111;
+         /* inset: 2mm of clearance on every side of a CR80 card, so a hand-cut
+            label never overhangs an edge and peels */
+         --cw:50mm; --ch:80mm; --icon:44mm; }
+  body.exact { /* exactly ISO 7810 ID-1 (CR80): the size of the card itself */
+         --cw:54mm; --ch:85.6mm; --icon:47mm; }
 
   .howto { max-width:720px; margin:0 auto; padding:18px;
            font-size:14px; line-height:1.7; color:#333; }
@@ -19,16 +24,16 @@
 
   /* Portrait, 50 x 80 mm - inside a CR80 card (54 x 85.6 mm) on every side,
      so no edge curls up once it is stuck down. */
-  .sheet { display:grid; grid-template-columns: repeat(4, 50mm);
+  .sheet { display:grid; grid-template-columns: repeat(2, var(--cw));
            gap:6mm; justify-content:center; padding:4mm 0; }
 
-  .label { width:50mm; height:80mm; border:1px dashed #b9b9b9; border-radius:4mm;
+  .label { width:var(--cw); height:var(--ch); border:1px dashed #b9b9b9; border-radius:4mm;
            display:flex; flex-direction:column; align-items:center;
            padding:4mm 3mm 3mm; box-sizing:border-box;
            break-inside:avoid; page-break-inside:avoid; }
 
   /* The picture is the card. Words are a label for the grown-up. */
-  .label svg { width:44mm; height:44mm; flex:none; }
+  .label svg { width:var(--icon); height:var(--icon); flex:none; }
   .words { margin-top:auto; text-align:center; width:100%; }
   .label .en { font-size:7mm; font-weight:800; line-height:1; letter-spacing:.2mm; }
   .label .en.long { font-size:5.6mm; }
@@ -42,8 +47,19 @@
 
 <div class="howto">
   <h1>🖨️ Card labels — Toy Town Express (4 new cards)</h1>
-  <p><b>Portrait, 50 × 80 mm.</b> That sits inside a standard RFID card (54 × 85.6 mm)
-     on every side, so nothing overhangs and no corner peels.</p>
+  <p><b>Portrait.</b> A standard ID/RFID card (ISO 7810 ID-1, "CR80") is
+     <b>54 × 85.6 mm</b>. These print at <b>50 × 80 mm</b> by default — about 2 mm of
+     clearance on every side — because a label cut to the exact card size overhangs
+     the moment your scissors wander a millimetre, and an overhanging edge is what
+     catches and peels.</p>
+  <p>If you're printing onto pre-cut adhesive card stock, or you want the label to
+     cover the whole face, switch to exact card size:</p>
+  <p>
+    <label><input type="radio" name="sz" checked onchange="document.body.classList.remove('exact')">
+      <b>50 × 80 mm</b> — inset, easier to cut (recommended)</label><br>
+    <label><input type="radio" name="sz" onchange="document.body.classList.add('exact')">
+      <b>54 × 85.6 mm</b> — exact CR80 card size</label>
+  </p>
   <ol>
     <li>Press <b>Print</b> (or ⌘P). Choose A4, <b>scale 100%</b> — not "fit to page",
         or the sizing goes out.</li>

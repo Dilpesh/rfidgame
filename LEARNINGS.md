@@ -117,10 +117,16 @@ survived long after the deck grew to 15.
 - **No printable card labels** for the Hinglish build — it reuses Jungle
   Rescue 2's ten cards, so those labels already cover it. Toy Town has its own
   `cards.html` for its four new cards; Moon and Jungle Rescue have theirs.
-  Toy Town's are **portrait, 50 × 80 mm** — inside a CR80 card on every side,
-  with the picture taking 55% of the height and the words at the bottom for
-  the grown-up. The kids can't read; the drawing is the card. Moon and Jungle
+  Toy Town's are **portrait**, with a switch at the top of the sheet: 50 × 80 mm
+  inset (default, ~2 mm clearance so a hand-cut label never overhangs and
+  peels) or exactly 54 × 85.6 mm, ISO 7810 ID-1 / CR80, the real card size.
+  The picture takes 55% of the height and the words sit at the bottom for the
+  grown-up — the kids can't read; the drawing is the card. Moon and Jungle
   Rescue are still the older 82 × 50 landscape.
+
+  **Check the page, not just the card.** Four portrait cards across measured
+  perfectly at 54 mm each and still did not fit A4's ~190 mm printable width.
+  Print to PDF and look at the page.
 - **No duplicate-scan guard** in any game. A card resting on the reader fires
   repeatedly on some readers. See `BACKLOG.md` item 1.
 
