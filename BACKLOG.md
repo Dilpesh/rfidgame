@@ -153,22 +153,13 @@ needed if its card names ever diverge.
 
 ---
 
-## 8. Roll the reader check out to the other games
-
-`docs/reader-check.js` is wired into Toy Town only. Moon, Jungle Rescue and
-Banana Rescue all offer an on-screen card tray as a fallback, so a dead reader
-is less of a dead end there — but the same one-line hook would still save a
-confused five minutes. Include the script and wrap the start button.
-
 ---
 
-## 9. Roll the before-you-start screen out to the other games
+## 8. Roll the reader check out to the other games
 
-`docs/story-intro.js` is generic — it takes a card list and an activity list —
-but only Toy Town uses it. Moon, Jungle Rescue and Banana Rescue all involve
-clapping, jumping, dancing and drinking water, so the same notice applies. The
-card list can be generated from each game's own deck so it cannot drift.
+`docs/reader-check.js` is wired into Toy Town only. The other four all offer
+an on-screen card tray as a fallback, so a dead reader is less of a dead end
+there — but the same one-line hook would still save a confused five minutes.
 
-The interruption recovery in Toy Town's `app.js` should move out too: the same
-"a phone call orphans the promise the story is waiting on" bug exists in every
-game that awaits an audio clip.
+*(The before-you-start screen and phone-call recovery are now in all five.)*
+

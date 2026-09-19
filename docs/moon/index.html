@@ -207,6 +207,7 @@
   </div>
 </div>
 
+<script src="../interrupt-guard.js"></script><script src="../story-intro.js"></script>
 <script>
 /* ==========================================================================
    चाँद चोर बंदर — the monkey who stole the moon
@@ -1030,6 +1031,30 @@ function devLogScan(uid, card, good) {
 loadCards();
 if (new URLSearchParams(location.search).get('dev') === '1') toggleDev();
 showMode();
+
+/* ---- before-you-start screen, and surviving a phone call ----
+   Every one of these games waits on an audio clip finishing. A call stops the
+   audio and that finish event never arrives, so the story waits forever and
+   every scan is ignored. InterruptGuard offers one big Carry on button that
+   unsticks it without losing the step. See docs/interrupt-guard.js. */
+(function () {
+  const NOTES = {"WATER": "you have two", "TORCH": "you have two"};
+  const ACTIVITIES = ["Clap and jump along with Coco", "Laugh out loud on cue", "Dance with the monkey", "Go and drink a real glass of water, then come back"];
+  if (window.StoryIntro && typeof startGame === 'function') {
+    const realStart = startGame;
+    startGame = function () {
+      if (StoryIntro.seen('moon')) return realStart.apply(this, arguments);
+      StoryIntro.show({ key: 'moon', title: 'The Monkey &amp; the Moon', minutes: 10,
+        cards: CARDS.map(c=>({icon:c.ico,label:c.en,note:NOTES[c.id]||''})), activities: ACTIVITIES,
+        onStart: () => realStart() });
+    };
+  } else console.warn('story intro not wired: startGame() missing');
+  if (window.InterruptGuard) InterruptGuard.watch({
+    active: () => { try { return !!(started && stepIdx < STEPS.length); } catch (e) { return false; } },
+    onCarryOn: () => { keepAwake(true); skipNow(); busy=false; renderPlay(); runPending(); },
+    nextCard: () => { try { const s=STEPS[stepIdx];if(!s)return null;const c=CARDS.find(x=>x.id===s.card);return c?{icon:c.ico,label:c.en}:null; } catch (e) { return null; } }
+  });
+})();
 </script>
 </body>
 </html>

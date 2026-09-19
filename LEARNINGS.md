@@ -26,6 +26,8 @@ Last audited: 19 Sep 2026. The column shows the newest story,
 | 15 | No hardcoded counts in UI text | ✅ |
 | 16 | Printable card labels, portrait, picture-dominant | ✅ added |
 | 17 | Ignore a repeat of the same UID within ~1.5 s | ❌ missing everywhere |
+| 18 | Survive a phone call — one big Carry on, nothing lost | ✅ all five |
+| 19 | Show the cards and the physical activities before starting | ✅ all five |
 
 ---
 
@@ -146,3 +148,19 @@ node qa_story_logic.js                # accepted answers, early scans
 
 Then listen on an actual phone, speaker only, screen down, from two metres.
 Nothing replaces that.
+
+## 18–19. Interruptions, and telling a parent what they're in for
+
+Every one of these games waits on an audio clip finishing. A phone call stops
+the audio and that finish event never arrives, so the story waits forever and
+every scan is ignored. It looks exactly like a crash.
+
+A browser will not restart audio without a tap, so a button is unavoidable.
+`docs/interrupt-guard.js` makes it one big **Carry on** that names the card
+they were looking for, and unsticks the story without losing the step.
+
+`docs/story-intro.js` shows, before the first Start: every card the story
+needs — generated from that game's own deck so it cannot drift — and what the
+story will physically ask of the child, with a line about when to save it for
+later. Verify both with `node qa_allgames.js`.
+
