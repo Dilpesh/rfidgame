@@ -1,0 +1,956 @@
+[
+  {
+    "file": "S01_03.mp3",
+    "generation_id": "fd5zxOzZWQIBm11ImeOK",
+    "model": "eleven_v3",
+    "credits": 40.9959
+  },
+  {
+    "file": "S01_04.mp3",
+    "generation_id": "APx0PcynP3wnVZDMPDVx",
+    "model": "eleven_v3",
+    "credits": 37.996199999999995
+  },
+  {
+    "file": "S01_05.mp3",
+    "generation_id": "ZDmXtW3YdnQNaNDeKNrX",
+    "model": "eleven_v3",
+    "credits": 28.997099999999996
+  },
+  {
+    "file": "S01_06.mp3",
+    "generation_id": "2w6C72bDi8x7kcxhfGiB",
+    "model": "eleven_v3",
+    "credits": 49.995000000000005
+  },
+  {
+    "file": "S01_07.mp3",
+    "generation_id": "VXDzXJvYI4qFxJ1S6cej",
+    "model": "eleven_v3",
+    "credits": 64.9935
+  },
+  {
+    "file": "S01_10.mp3",
+    "generation_id": "2ApXUkDe74hGoB5Pun2j",
+    "model": "eleven_v3",
+    "credits": 31.9968
+  },
+  {
+    "file": "S01_11.mp3",
+    "generation_id": "gzgziBWKC8RmRMVzi9yS",
+    "model": "eleven_v3",
+    "credits": 25.9974
+  },
+  {
+    "file": "S01_H1.mp3",
+    "generation_id": "OR0HyOl27TZdy6nZ76CM",
+    "model": "eleven_v3",
+    "credits": 38.9961
+  },
+  {
+    "file": "S01_H2.mp3",
+    "generation_id": "L2CN63Pf33yJmcYDHGKU",
+    "model": "eleven_v3",
+    "credits": 49.995000000000005
+  },
+  {
+    "file": "S01_H3.mp3",
+    "generation_id": "fBxF0wlYPTQ8FpayY0GR",
+    "model": "eleven_v3",
+    "credits": 41.9958
+  },
+  {
+    "file": "S01_OK1.mp3",
+    "generation_id": "Svvz5qecBdJEie3DM6Ct",
+    "model": "eleven_v3",
+    "credits": 45.99539999999999
+  },
+  {
+    "file": "S01_OK2.mp3",
+    "generation_id": "26bPXf2KD2sJhaC2nb0k",
+    "model": "eleven_v3",
+    "credits": 64.9935
+  },
+  {
+    "file": "S01_OK3.mp3",
+    "generation_id": "dAkveWtlj3e7hJ6KTd73",
+    "model": "eleven_v3",
+    "credits": 37.996199999999995
+  },
+  {
+    "file": "S01_OK4.mp3",
+    "generation_id": "INf1Q14VpnKYYxOJbPcX",
+    "model": "eleven_v3",
+    "credits": 46.9953
+  },
+  {
+    "file": "S02_01.mp3",
+    "generation_id": "mip1qTTinw4BsF8sBkyO",
+    "model": "eleven_v3",
+    "credits": 97.9902
+  },
+  {
+    "file": "S02_02.mp3",
+    "generation_id": "fWSnuZ20bY8ovjCK0g0c",
+    "model": "eleven_v3",
+    "credits": 52.994699999999995
+  },
+  {
+    "file": "S02_03.mp3",
+    "generation_id": "010i9eozAUs0TRZodOX5",
+    "model": "eleven_v3",
+    "credits": 74.99249999999999
+  },
+  {
+    "file": "S02_04.mp3",
+    "generation_id": "y08JPDSJZAZ6d5cLl6SB",
+    "model": "eleven_v3",
+    "credits": 57.99419999999999
+  },
+  {
+    "file": "S02_H1.mp3",
+    "generation_id": "TVZmSnmKbHuBHT2Ucbwm",
+    "model": "eleven_v3",
+    "credits": 36.9963
+  },
+  {
+    "file": "S02_H2.mp3",
+    "generation_id": "xHjIuM5pdCfZgsYx5ofS",
+    "model": "eleven_v3",
+    "credits": 47.995200000000004
+  },
+  {
+    "file": "S02_H3.mp3",
+    "generation_id": "4w8i1BsMMvhGLZgioHDc",
+    "model": "eleven_v3",
+    "credits": 32.9967
+  },
+  {
+    "file": "S02_OK1.mp3",
+    "generation_id": "Mh9sJPi0h76pkXo3941x",
+    "model": "eleven_v3",
+    "credits": 82.99170000000001
+  },
+  {
+    "file": "S02_OK2.mp3",
+    "generation_id": "rG9CgJRnigglZfHFvpZc",
+    "model": "eleven_v3",
+    "credits": 61.99379999999999
+  },
+  {
+    "file": "S02_OK3.mp3",
+    "generation_id": "41WA1ftJMLBuAnxoS70v",
+    "model": "eleven_v3",
+    "credits": 62.9937
+  },
+  {
+    "file": "S02_OK4.mp3",
+    "generation_id": "dZ3vhgR6lcmpwFUml7rJ",
+    "model": "eleven_v3",
+    "credits": 80.9919
+  },
+  {
+    "file": "S03_01.mp3",
+    "generation_id": "PDDHG3vtRb4sstYIHPs2",
+    "model": "eleven_v3",
+    "credits": 42.99569999999999
+  },
+  {
+    "file": "S03_02.mp3",
+    "generation_id": "uNLIoeDlmeswPCLlvytZ",
+    "model": "eleven_v3",
+    "credits": 42.99569999999999
+  },
+  {
+    "file": "S03_03.mp3",
+    "generation_id": "Z0aVGXcZLLHTLWVQIkJJ",
+    "model": "eleven_v3",
+    "credits": 47.995200000000004
+  },
+  {
+    "file": "S03_04.mp3",
+    "generation_id": "KOO1sn9sFeIxGQQcNQzf",
+    "model": "eleven_v3",
+    "credits": 52.994699999999995
+  },
+  {
+    "file": "S03_H1.mp3",
+    "generation_id": "xe0iPcdoxE57szkJhOZ0",
+    "model": "eleven_v3",
+    "credits": 33.9966
+  },
+  {
+    "file": "S03_H2.mp3",
+    "generation_id": "R0Md3wK5NrMZ8FDajNiR",
+    "model": "eleven_v3",
+    "credits": 42.99569999999999
+  },
+  {
+    "file": "S03_H3.mp3",
+    "generation_id": "EQPi0yXCP1eauE5Y892G",
+    "model": "eleven_v3",
+    "credits": 30.996899999999997
+  },
+  {
+    "file": "S03_OK1.mp3",
+    "generation_id": "N2h3Zj0kXiTLgZlfiW9z",
+    "model": "eleven_v3",
+    "credits": 28.997099999999996
+  },
+  {
+    "file": "S03_OK2.mp3",
+    "generation_id": "YX56HOynVR7fKtJMjNmj",
+    "model": "eleven_v3",
+    "credits": 54.994499999999995
+  },
+  {
+    "file": "S03_OK3.mp3",
+    "generation_id": "EIYTEBStVOIns7TXzh5s",
+    "model": "eleven_v3",
+    "credits": 57.99419999999999
+  },
+  {
+    "file": "S03_OK4.mp3",
+    "generation_id": "hOGlYbEOmEO4vvPe2mhw",
+    "model": "eleven_v3",
+    "credits": 59.994
+  },
+  {
+    "file": "S03_OK5.mp3",
+    "generation_id": "122D8nziFmHxU0jZLfNS",
+    "model": "eleven_v3",
+    "credits": 58.994099999999996
+  },
+  {
+    "file": "S04_01.mp3",
+    "generation_id": "udCqYRq91BQvWTtr0Kmq",
+    "model": "eleven_v3",
+    "credits": 77.9922
+  },
+  {
+    "file": "S04_02.mp3",
+    "generation_id": "gBwzGxza9jNira8bhWhi",
+    "model": "eleven_v3",
+    "credits": 52.994699999999995
+  },
+  {
+    "file": "S04_03.mp3",
+    "generation_id": "sLEqLuWKEnQsm0765wXV",
+    "model": "eleven_v3",
+    "credits": 37.996199999999995
+  },
+  {
+    "file": "S04_04.mp3",
+    "generation_id": "T2OwWiO3ffYHIDbxXpZy",
+    "model": "eleven_v3",
+    "credits": 48.9951
+  },
+  {
+    "file": "S04_05.mp3",
+    "generation_id": "QXBtIv8pZFPKJWLFCqXc",
+    "model": "eleven_v3",
+    "credits": 50.994899999999994
+  },
+  {
+    "file": "S04_H1.mp3",
+    "generation_id": "0rMifxtpprCsxBtyUSU5",
+    "model": "eleven_v3",
+    "credits": 46.9953
+  },
+  {
+    "file": "S04_H2.mp3",
+    "generation_id": "JVvq6ElBNLZESsanhAxk",
+    "model": "eleven_v3",
+    "credits": 53.99459999999999
+  },
+  {
+    "file": "S04_H3.mp3",
+    "generation_id": "2UFUmyzrImlJcSwtMQLh",
+    "model": "eleven_v3",
+    "credits": 32.9967
+  },
+  {
+    "file": "S04_OK1.mp3",
+    "generation_id": "EQFXNU0hVhCdmQOqpzjO",
+    "model": "eleven_v3",
+    "credits": 92.99069999999999
+  },
+  {
+    "file": "DANCE_01.mp3",
+    "generation_id": "tBj3hGP4TEcPZ27KHAfu",
+    "model": "eleven_v3",
+    "credits": 68.9931
+  },
+  {
+    "file": "DANCE_02.mp3",
+    "generation_id": "HWV8ctbRa6FPJXyvKO6T",
+    "model": "eleven_v3",
+    "credits": 52.994699999999995
+  },
+  {
+    "file": "DANCE_F1.mp3",
+    "generation_id": "lWIbzD2wWoopueRMod1m",
+    "model": "eleven_v3",
+    "credits": 40.9959
+  },
+  {
+    "file": "DANCE_J1.mp3",
+    "generation_id": "Zy8YgecyyrKhxBxy7POM",
+    "model": "eleven_v3",
+    "credits": 56.994299999999996
+  },
+  {
+    "file": "DANCE_GO1.mp3",
+    "generation_id": "ZhBLw4eAigozMQon3re9",
+    "model": "eleven_v3",
+    "credits": 26.997299999999996
+  },
+  {
+    "file": "DANCE_03.mp3",
+    "generation_id": "eA80gH2i3uAVE42ca7P2",
+    "model": "eleven_v3",
+    "credits": 66.9933
+  },
+  {
+    "file": "DANCE_04.mp3",
+    "generation_id": "js6r0iEj8I9zc77s6Bsw",
+    "model": "eleven_v3",
+    "credits": 43.995599999999996
+  },
+  {
+    "file": "DANCE_F2.mp3",
+    "generation_id": "Lt968edaFljAkKB5X73A",
+    "model": "eleven_v3",
+    "credits": 41.9958
+  },
+  {
+    "file": "DANCE_J2.mp3",
+    "generation_id": "tSip86qUpuWBBOG5tN1d",
+    "model": "eleven_v3",
+    "credits": 45.99539999999999
+  },
+  {
+    "file": "DANCE_GO2.mp3",
+    "generation_id": "mAgDJ2KGXbQSAZiBnQRt",
+    "model": "eleven_v3",
+    "credits": 51.9948
+  },
+  {
+    "file": "DANCE_05.mp3",
+    "generation_id": "9wAgcJW7ClTaeRRYfONk",
+    "model": "eleven_v3",
+    "credits": 49.995000000000005
+  },
+  {
+    "file": "DANCE_06.mp3",
+    "generation_id": "Ns3y1Lv7qDRukrgovHTD",
+    "model": "eleven_v3",
+    "credits": 50.994899999999994
+  },
+  {
+    "file": "DANCE_F3.mp3",
+    "generation_id": "aQaOFkHYH4vmQu6Je23c",
+    "model": "eleven_v3",
+    "credits": 27.9972
+  },
+  {
+    "file": "S04_END1.mp3",
+    "generation_id": "62mOlF3atzgSGjPb56gt",
+    "model": "eleven_v3",
+    "credits": 43.995599999999996
+  },
+  {
+    "file": "S04_END2.mp3",
+    "generation_id": "fYgmf7dMhwa5FSx8jQXU",
+    "model": "eleven_v3",
+    "credits": 76.99229999999999
+  },
+  {
+    "file": "S05_01.mp3",
+    "generation_id": "dlN7yuGAHTUwZbRbzW2K",
+    "model": "eleven_v3",
+    "credits": 104.98949999999999
+  },
+  {
+    "file": "S05_02.mp3",
+    "generation_id": "zdpdwy4DIYeOJA5RPBTV",
+    "model": "eleven_v3",
+    "credits": 88.99109999999999
+  },
+  {
+    "file": "S05_03.mp3",
+    "generation_id": "XBPP9hF3NYaRQoUGnc5o",
+    "model": "eleven_v3",
+    "credits": 100.9899
+  },
+  {
+    "file": "S05_R1.mp3",
+    "generation_id": "RZyUvX7N844DJOydYXVC",
+    "model": "eleven_v3",
+    "credits": 79.992
+  },
+  {
+    "file": "S05_R2.mp3",
+    "generation_id": "4zGNPoyDLbbMe70iz7q3",
+    "model": "eleven_v3",
+    "credits": 77.9922
+  },
+  {
+    "file": "S05_OK1.mp3",
+    "generation_id": "ZIOKkXI2RqbBAaqSdTP7",
+    "model": "eleven_v3",
+    "credits": 64.9935
+  },
+  {
+    "file": "S05_OK2.mp3",
+    "generation_id": "XrN9sStBQbd2RRJffoSG",
+    "model": "eleven_v3",
+    "credits": 25.9974
+  },
+  {
+    "file": "S05_OK3.mp3",
+    "generation_id": "pdLKnlY9hnkBDIR5KU1e",
+    "model": "eleven_v3",
+    "credits": 35.996399999999994
+  },
+  {
+    "file": "S05_OK4.mp3",
+    "generation_id": "y76dGJMoxvmTD6Uu6qZy",
+    "model": "eleven_v3",
+    "credits": 63.9936
+  },
+  {
+    "file": "S06_01.mp3",
+    "generation_id": "Ej5dA8tR8qCgTMJPu5e8",
+    "model": "eleven_v3",
+    "credits": 44.99549999999999
+  },
+  {
+    "file": "S06_02.mp3",
+    "generation_id": "u24ho1JT78aDv1ghXEKp",
+    "model": "eleven_v3",
+    "credits": 72.99269999999999
+  },
+  {
+    "file": "S06_03.mp3",
+    "generation_id": "hW2NdoCwcCh7pyqy56ax",
+    "model": "eleven_v3",
+    "credits": 32.9967
+  },
+  {
+    "file": "S06_04.mp3",
+    "generation_id": "RIaoVy9YDpFDfgOvARLY",
+    "model": "eleven_v3",
+    "credits": 31.9968
+  },
+  {
+    "file": "S06_05.mp3",
+    "generation_id": "IZkCmmhvhqeKneRWHCqH",
+    "model": "eleven_v3",
+    "credits": 46.9953
+  },
+  {
+    "file": "S06_06.mp3",
+    "generation_id": "IMryvVelDeC2Uy8Kopqo",
+    "model": "eleven_v3",
+    "credits": 80.9919
+  },
+  {
+    "file": "S06_H1.mp3",
+    "generation_id": "tKCyJcgy75hiwdxNnpya",
+    "model": "eleven_v3",
+    "credits": 42.99569999999999
+  },
+  {
+    "file": "S06_H2.mp3",
+    "generation_id": "gncEpYLEneUcSA5aZbTf",
+    "model": "eleven_v3",
+    "credits": 45.99539999999999
+  },
+  {
+    "file": "S06_H3.mp3",
+    "generation_id": "sbJgfXHUnZDyrwV2Y5pp",
+    "model": "eleven_v3",
+    "credits": 34.996500000000005
+  },
+  {
+    "file": "S06_OK1.mp3",
+    "generation_id": "kzENqMbOb9fhfCQXz9rc",
+    "model": "eleven_v3",
+    "credits": 35.996399999999994
+  },
+  {
+    "file": "S06_OK2.mp3",
+    "generation_id": "AWuKdOGBiW8DZZ8wSiL4",
+    "model": "eleven_v3",
+    "credits": 73.9926
+  },
+  {
+    "file": "S06_OK3.mp3",
+    "generation_id": "N5ySCqcmniwp9BcsPh0P",
+    "model": "eleven_v3",
+    "credits": 65.9934
+  },
+  {
+    "file": "S06_OK4.mp3",
+    "generation_id": "M0fLAtbQtybi86wixWoo",
+    "model": "eleven_v3",
+    "credits": 50.994899999999994
+  },
+  {
+    "file": "S06_OK5.mp3",
+    "generation_id": "r8AwA3tUX7LAu90cG97C",
+    "model": "eleven_v3",
+    "credits": 27.9972
+  },
+  {
+    "file": "S06_OK6.mp3",
+    "generation_id": "oBoDPWXA3ygiF9DSB57q",
+    "model": "eleven_v3",
+    "credits": 23.997600000000002
+  },
+  {
+    "file": "S06_OK7.mp3",
+    "generation_id": "czEl6nhaT9zs1ZNki9ba",
+    "model": "eleven_v3",
+    "credits": 80.9919
+  },
+  {
+    "file": "S07_01.mp3",
+    "generation_id": "E5BjsPPcSs2tBAW1Z7NN",
+    "model": "eleven_v3",
+    "credits": 49.995000000000005
+  },
+  {
+    "file": "S07_02.mp3",
+    "generation_id": "XezP7ypkpWHjq6byCfA1",
+    "model": "eleven_v3",
+    "credits": 58.994099999999996
+  },
+  {
+    "file": "S07_04.mp3",
+    "generation_id": "HcTUT0TXk2B4xCX7w4YK",
+    "model": "eleven_v3",
+    "credits": 62.9937
+  },
+  {
+    "file": "S07_H1.mp3",
+    "generation_id": "DgtvAsOrzYcwJ2b7I8Fa",
+    "model": "eleven_v3",
+    "credits": 46.9953
+  },
+  {
+    "file": "S07_H2.mp3",
+    "generation_id": "uhf6QIxHDCjkfoCsyraH",
+    "model": "eleven_v3",
+    "credits": 60.9939
+  },
+  {
+    "file": "S07_H3.mp3",
+    "generation_id": "SBUB0N3Av1fRxzaF1Pqu",
+    "model": "eleven_v3",
+    "credits": 52.994699999999995
+  },
+  {
+    "file": "S07_F_FIRST.mp3",
+    "generation_id": "7ZSbtWtrS02EI4AhmZSV",
+    "model": "eleven_v3",
+    "credits": 74.99249999999999
+  },
+  {
+    "file": "S07_LIGHT_H1.mp3",
+    "generation_id": "tpgG0pYF9KC6EQWtdcay",
+    "model": "eleven_v3",
+    "credits": 41.9958
+  },
+  {
+    "file": "S07_LIGHT_H2.mp3",
+    "generation_id": "OaKwOQYwR0ONlW4gENUd",
+    "model": "eleven_v3",
+    "credits": 44.99549999999999
+  },
+  {
+    "file": "S07_LIGHT_H3.mp3",
+    "generation_id": "wPpEXZsThySepeneoZEG",
+    "model": "eleven_v3",
+    "credits": 32.9967
+  },
+  {
+    "file": "S07_L_FIRST.mp3",
+    "generation_id": "TwsLzGmxpsMcyrdqGxlY",
+    "model": "eleven_v3",
+    "credits": 80.9919
+  },
+  {
+    "file": "S07_FAN_H1.mp3",
+    "generation_id": "ZErC75iAajqQioO2nhBo",
+    "model": "eleven_v3",
+    "credits": 50.994899999999994
+  },
+  {
+    "file": "S07_FAN_H2.mp3",
+    "generation_id": "UnuBMpyMUUUimOpWBaMj",
+    "model": "eleven_v3",
+    "credits": 44.99549999999999
+  },
+  {
+    "file": "S07_FAN_H3.mp3",
+    "generation_id": "YfHMnw5Jxef1DkWohhhS",
+    "model": "eleven_v3",
+    "credits": 30.996899999999997
+  },
+  {
+    "file": "S07_BOTH.mp3",
+    "generation_id": "vh5q7LdiJCrQYx7IRhtR",
+    "model": "eleven_v3",
+    "credits": 79.992
+  },
+  {
+    "file": "S07_REPEAT_F.mp3",
+    "generation_id": "qqkhpABXYAafZ40thEZC",
+    "model": "eleven_v3",
+    "credits": 57.99419999999999
+  },
+  {
+    "file": "S07_REPEAT_L.mp3",
+    "generation_id": "WkkkL7g4stskP3xinCN8",
+    "model": "eleven_v3",
+    "credits": 51.9948
+  },
+  {
+    "file": "S08_01.mp3",
+    "generation_id": "0FFRhk5AuyzqctGOuBeS",
+    "model": "eleven_v3",
+    "credits": 113.98859999999999
+  },
+  {
+    "file": "S08_02.mp3",
+    "generation_id": "FOF865tMPSf7ggnS4FPy",
+    "model": "eleven_v3",
+    "credits": 47.995200000000004
+  },
+  {
+    "file": "S08_03.mp3",
+    "generation_id": "wsrOljUCGDSIo1GOS2GC",
+    "model": "eleven_v3",
+    "credits": 75.99239999999999
+  },
+  {
+    "file": "S08_04.mp3",
+    "generation_id": "bHJnTBdBDGWH6qRaeRlf",
+    "model": "eleven_v3",
+    "credits": 25.9974
+  },
+  {
+    "file": "S08_05.mp3",
+    "generation_id": "5jZmef8QuKTyyVm862GV",
+    "model": "eleven_v3",
+    "credits": 40.9959
+  },
+  {
+    "file": "S08_06.mp3",
+    "generation_id": "2NLrMOpa9aTtR3EQNI0T",
+    "model": "eleven_v3",
+    "credits": 21.997799999999998
+  },
+  {
+    "file": "S08_07.mp3",
+    "generation_id": "FgIivwuYuoLGNLBKaepa",
+    "model": "eleven_v3",
+    "credits": 42.99569999999999
+  },
+  {
+    "file": "S08_08.mp3",
+    "generation_id": "QUeZ8hukyjLbENBUM6pw",
+    "model": "eleven_v3",
+    "credits": 22.997699999999995
+  },
+  {
+    "file": "S08_09.mp3",
+    "generation_id": "gS1RnQeYRQMNE0HdZbsO",
+    "model": "eleven_v3",
+    "credits": 14.9985
+  },
+  {
+    "file": "S08_10.mp3",
+    "generation_id": "3Xsdtn97gUSwPpGQJHfl",
+    "model": "eleven_v3",
+    "credits": 44.99549999999999
+  },
+  {
+    "file": "S08_11.mp3",
+    "generation_id": "tUPWPIgFr1cyITYJxzCV",
+    "model": "eleven_v3",
+    "credits": 49.995000000000005
+  },
+  {
+    "file": "W_KEY_BISCUIT.mp3",
+    "generation_id": "45yA8qPB3TZokWiIpcwZ",
+    "model": "eleven_v3",
+    "credits": 85.99139999999998
+  },
+  {
+    "file": "W_DARK_MUSIC.mp3",
+    "generation_id": "q6XyUgQMBA5OA4Vdz3D3",
+    "model": "eleven_v3",
+    "credits": 70.99289999999999
+  },
+  {
+    "file": "W_HEAT_WATER.mp3",
+    "generation_id": "nit9sJ4ZwTPkwSBnWKmA",
+    "model": "eleven_v3",
+    "credits": 65.9934
+  },
+  {
+    "file": "W_TEDDY_KEY.mp3",
+    "generation_id": "tLrRtil18K86z1iIgyGC",
+    "model": "eleven_v3",
+    "credits": 70.99289999999999
+  },
+  {
+    "file": "W_OFF_MUSIC.mp3",
+    "generation_id": "zBIFB6UitSUZOgHEpB6K",
+    "model": "eleven_v3",
+    "credits": 64.9935
+  },
+  {
+    "file": "W_GENERAL_1.mp3",
+    "generation_id": "HpaW6bcRE2NuZHS5MXHb",
+    "model": "eleven_v3",
+    "credits": 65.9934
+  },
+  {
+    "file": "W_GENERAL_2.mp3",
+    "generation_id": "QI4TyEIFdv6N9cJjjVxO",
+    "model": "eleven_v3",
+    "credits": 58.994099999999996
+  },
+  {
+    "file": "W_GENERAL_3.mp3",
+    "generation_id": "Am7asKVq03ckYk88BnEZ",
+    "model": "eleven_v3",
+    "credits": 61.99379999999999
+  },
+  {
+    "file": "UNKNOWN_CARD.mp3",
+    "generation_id": "NkPHGyTQBCxNLRI7NIc7",
+    "model": "eleven_v3",
+    "credits": 84.9915
+  },
+  {
+    "file": "W_WATER.mp3",
+    "generation_id": "Q2Kb67NmlHFlE5DBt3FS",
+    "model": "eleven_v3",
+    "credits": 78.9921
+  },
+  {
+    "file": "bg_station_day.mp3",
+    "generation_id": "ks4KUGUCtzGfIWpK70oe",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 66.66
+  },
+  {
+    "file": "bg_train_roll.mp3",
+    "generation_id": "s4qj41SYF3p4HXtvVs5u",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 66.66
+  },
+  {
+    "file": "bg_fan_low.mp3",
+    "generation_id": "2WcriBOZeh3VR4IEM8xT",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 49.995000000000005
+  },
+  {
+    "file": "bg_trackside_soft.mp3",
+    "generation_id": "aaANhYBHW29ylTx781qS",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 66.66
+  },
+  {
+    "file": "ready_soft.mp3",
+    "generation_id": "LqM2M2gln0FzAWKpFOdv",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 1.6665
+  },
+  {
+    "file": "neutral_tick.mp3",
+    "generation_id": "3B9glv985Lh2HfxkVdgw",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 1.6665
+  },
+  {
+    "file": "horn_meow.mp3",
+    "generation_id": "lC9INw666opmaaU6dWDY",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 3.9996000000000005
+  },
+  {
+    "file": "horn_train_soft.mp3",
+    "generation_id": "XieB9zASYFo0ttIS0V6s",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 3.9996000000000005
+  },
+  {
+    "file": "pocket_rustle.mp3",
+    "generation_id": "yzcoiNa14eeDNRwYmolQ",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 6.666
+  },
+  {
+    "file": "rubber_duck.mp3",
+    "generation_id": "w0A9BTxEjBZpTohx5SC3",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 1.6665
+  },
+  {
+    "file": "playful_transition.mp3",
+    "generation_id": "C88DIFNBUTo8qMCnrX1c",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 3.333
+  },
+  {
+    "file": "key_turn.mp3",
+    "generation_id": "jESUKPJwpc5E4bzmM8ku",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 3.333
+  },
+  {
+    "file": "engine_wake.mp3",
+    "generation_id": "b0W6tsoKh7KV5ZBjzpXW",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 6.666
+  },
+  {
+    "file": "train_sneeze.mp3",
+    "generation_id": "kmva3LtnQMulDabv7TSP",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 3.333
+  },
+  {
+    "file": "soft_bonk.mp3",
+    "generation_id": "VJ3UeLN0mGpPsvPuiOV7",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 1.6665
+  },
+  {
+    "file": "toy_squeak.mp3",
+    "generation_id": "YH8NFU8EJY90ujcWF9MU",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 1.6665
+  },
+  {
+    "file": "switch_click.mp3",
+    "generation_id": "xjVx8ZyUZjpRSvwtG9Ra",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 1.6665
+  },
+  {
+    "file": "light_sparkle.mp3",
+    "generation_id": "HJriylvaYd7y9JP5SSX9",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 3.333
+  },
+  {
+    "file": "cloth_flaps.mp3",
+    "generation_id": "jiHz1B9KIDfX5YX175bD",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 4.9995
+  },
+  {
+    "file": "fan_start.mp3",
+    "generation_id": "S3aq7zgcC4TPJRh1JvF5",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 6.666
+  },
+  {
+    "file": "fan_stop.mp3",
+    "generation_id": "QX3Ql4JxfbeAjR48yIjW",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 6.666
+  },
+  {
+    "file": "sip_glug.mp3",
+    "generation_id": "jyuyOpIkLOjsOCSp7f4J",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 4.9995
+  },
+  {
+    "file": "polite_burp.mp3",
+    "generation_id": "Uz5cGbp2cscketcRPrEq",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 1.6665
+  },
+  {
+    "file": "brake_soft.mp3",
+    "generation_id": "CZ5wPZFEpII0Jwl6zlHq",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 6.666
+  },
+  {
+    "file": "station_bell.mp3",
+    "generation_id": "lSwfc70cbF30Bmbp7I87",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 3.333
+  },
+  {
+    "file": "party_sting.mp3",
+    "generation_id": "R2fqDWjZmTILEFtGlzMC",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 4.9995
+  },
+  {
+    "file": "short_applause.mp3",
+    "generation_id": "DWtSkXnRKQKImB6JWjeH",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 9.999
+  },
+  {
+    "file": "teddy_snore.mp3",
+    "generation_id": "sUbXFJptTb4zVWsbqomf",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 6.666
+  },
+  {
+    "file": "teddy_sniff.mp3",
+    "generation_id": "S7qt5rISQVEZQHjJDKQs",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 3.333
+  },
+  {
+    "file": "teddy_steps.mp3",
+    "generation_id": "8ePtcmeuB5bGXEJGNh7N",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 4.9995
+  },
+  {
+    "file": "biscuit_crunch.mp3",
+    "generation_id": "yUCxvDcswZks24L0KPV7",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 6.666
+  },
+  {
+    "file": "arrival_chime.mp3",
+    "generation_id": "emBECqKtPTuS2GfPltji",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 4.9995
+  },
+  {
+    "file": "engine_off.mp3",
+    "generation_id": "6hv5Wpc98As7g2gU0s3P",
+    "model": "eleven_text_to_sound_v2",
+    "credits": 4.9995
+  },
+  {
+    "file": "music_dance_loop.mp3",
+    "generation_id": "GknMZEOFMBgxeTyfmGwn",
+    "model": "eleven_music_v2",
+    "credits": 299.9333333333333
+  },
+  {
+    "file": "music_finale.mp3",
+    "generation_id": "4nu0zmivESqWLlTlNrkY",
+    "model": "eleven_music_v2",
+    "credits": 749.8333333333334
+  }
+]

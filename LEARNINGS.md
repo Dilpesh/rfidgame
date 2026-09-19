@@ -4,21 +4,22 @@ Everything the earlier games taught us, in one list, with where each was
 learned and how to verify it. **Run this against every new story before the
 kids see it.**
 
-Last audited: 18 Sep 2026, against `docs/jungle-rescue-hinglish/`.
+Last audited: 19 Sep 2026. The column shows the newest story,
+`docs/toy-town/` (Chuku & the Toy Town Express).
 
-| # | Learning | Hinglish build |
+| # | Learning | Toy Town |
 |---|---|---|
 | 1 | Screen wake lock, re-taken on `visibilitychange`, released at the end | ✅ added |
 | 2 | Background bed ≥20 dB under the narration in **every** band on a phone | ✅ fixed |
-| 3 | Narration at −16 LUFS, all clips within ~3 dB, no clipping | ✅ fixed |
+| 3 | Narration at −16 LUFS, all clips within ~3 dB, no clipping | ⚠️ 8.8 dB spread, no clipping |
 | 4 | Card UIDs normalised — leading zeros, case, whitespace | ✅ added |
 | 5 | A card may have several physical copies (water, torch) | ✅ added |
-| 6 | Cards pre-seeded, so a fresh browser needs no teaching | ✅ added |
+| 6 | Cards pre-seeded, so a fresh browser needs no teaching | ⚠️ 2 of 6 — four cards have no UID yet |
 | 7 | Production mode is RFID-only; dev tools behind a shortcut | ✅ added |
 | 8 | The reader's Enter must not re-fire the last-clicked button | ✅ fixed |
 | 9 | A scan during narration is remembered, not dropped | ✅ added |
 | 10 | Feedback within ~200 ms of every scan, always | ✅ already |
-| 11 | Wrong-card lines are warm and rotate | ✅ already (3) |
+| 11 | Wrong-card lines are warm and rotate | ✅ already |
 | 12 | Physical movement built into the story | ✅ already |
 | 13 | Action first, card second (the water step) | ✅ already |
 | 14 | Landing page links to `<slug>/index.html`, never a bare folder | ✅ |

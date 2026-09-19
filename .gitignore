@@ -21,3 +21,11 @@ tts/auditions/
 
 __pycache__/
 *.pyc
+
+# API keys — never commit
+.env
+tts/.env
+*.key
+
+# superseded drafts kept out of the published site
+_wip/

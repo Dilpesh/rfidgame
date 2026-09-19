@@ -126,6 +126,10 @@ def deck_of(game, path):
     if game == "jungle-rescue-hinglish":
         m = re.search(r"^const cards=\[.*?\];$", s, re.M)
         return set(re.findall(r"\['([a-z]+)',", m.group(0))) if m else set()
+    if game == "toy-town":
+        s = open(os.path.join(os.path.dirname(path), "app.js"), encoding="utf-8").read()
+        m = re.search(r"^const CARDS=\[.*?\];$", s, re.M)
+        return set(re.findall(r"\['([a-z]+)',", m.group(0))) if m else set()
     return set(re.findall(r'\{ id:"([A-Z]+)"', s))
 
 
@@ -163,10 +167,14 @@ def main():
     d = load()
     cards, seed = d["cards"], d["seed_version"]
     changed = []
-    for game in ("moon", "jungle-rescue", "toy-town"):
+    for game in ("moon", "jungle-rescue"):
         p = os.path.join(ROOT, "docs", game, "index.html")
         if splice(p, block_for(cards, game, seed), check):
             changed.append(game)
+    # toy-town is a multi-file build: its markers live in app.js
+    p = os.path.join(ROOT, "docs", "toy-town", "app.js")
+    if os.path.exists(p) and splice(p, block_for(cards, "toy-town", seed), check):
+        changed.append("toy-town")
     p = os.path.join(ROOT, "docs", "banana-rescue", "index.html")
     if banana(p, cards, check):
         changed.append("banana-rescue")
