@@ -1,7 +1,14 @@
 class ChukuAudio {
  constructor(dialogue){this.dialogue=dialogue;this.volume=.8;this.ctx=null;this.buffers=new Map();this.sources=new Set();this.beds={};this.speechCount=0}
  now(){return this.ctx?.currentTime||0}
- async resume(){if(!this.ctx){this.ctx=new (window.AudioContext||window.webkitAudioContext)();this.master=this.ctx.createGain();this.master.gain.value=this.volume;this.analyser=this.ctx.createAnalyser();this.master.connect(this.analyser);this.analyser.connect(this.ctx.destination)}await this.ctx.resume()}
+ // A phone call can leave the AudioContext suspended, 'interrupted' (iOS) or
+ // closed outright. A closed one can never be revived, so build a fresh one and
+ // drop the decoded buffers with it - they belong to the old context.
+ running(){return this.ctx&&this.ctx.state==='running'}
+ async resume(){
+  if(this.ctx&&this.ctx.state==='closed'){this.ctx=null;this.buffers.clear();this.sources.clear();this.beds={}}
+  if(!this.ctx){this.ctx=new (window.AudioContext||window.webkitAudioContext)();this.master=this.ctx.createGain();this.master.gain.value=this.volume;this.analyser=this.ctx.createAnalyser();this.master.connect(this.analyser);this.analyser.connect(this.ctx.destination)}
+  await this.ctx.resume()}
  suspend(){return this.ctx?.suspend()}
  check(s){if(s.aborted)throw new DOMException('Cancelled','AbortError')}
  async buffer(key){if(!this.buffers.has(key)){this.buffers.set(key,(async()=>{let bytes;if(typeof CHUKU_MEDIA!=='undefined'){if(!CHUKU_MEDIA[key])throw Error('Missing audio: '+key);bytes=Uint8Array.from(atob(CHUKU_MEDIA[key]),c=>c.charCodeAt(0)).buffer}else{const r=await fetch('audio/'+key+'.mp3');if(!r.ok)throw Error('Could not load '+key);bytes=await r.arrayBuffer()}return this.ctx.decodeAudioData(bytes)})().catch(e=>{this.buffers.delete(key);throw e}))}return this.buffers.get(key)}

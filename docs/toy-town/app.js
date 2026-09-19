@@ -105,11 +105,25 @@ const startNow=()=>{pendingCard=null;keepAwake(true);game.run(()=>game.start())}
 // that isn't talking to the phone leaves a child stuck with no explanation.
 // Check it once per browser before the first story, and offer on-screen cards
 // as the way out rather than a dead end.
-$('start').onclick=()=>{
+// What the story will actually ask a child to do, so a parent can decide
+// before it begins rather than mid-scene.
+const ACTIVITIES=['Dance for three rounds, with freeze breaks',
+ 'Go and drink a real glass of water, then come back',
+ 'Clap, stretch and stand up to turn things on and off',
+ 'Tiptoe quietly past a sleeping Teddy'];
+const CARD_NOTES={water:'you have two',biscuit:'your cookie card'};
+const readerThen=go=>{
  if(!devMode && window.ReaderCheck && !ReaderCheck.known()){
-  ReaderCheck.run({onWorking:startNow, onSkip:()=>{setDevMode(true);startNow()}});
+  ReaderCheck.run({onWorking:go, onSkip:()=>{setDevMode(true);go()}});return}
+ go()};
+$('start').onclick=()=>{
+ if(window.StoryIntro && !StoryIntro.seen('toy-town')){
+  StoryIntro.show({key:'toy-town',title:'Chuku & the Toy Town Express',minutes:13,
+   cards:CARDS.map(([id,icon,label])=>({icon,label,note:CARD_NOTES[id]||''})),
+   activities:ACTIVITIES,
+   onStart:()=>readerThen(startNow)});
   return}
- startNow()};$('next').onclick=()=>{pendingCard=null;game.run(()=>game.next())};$('reset').onclick=()=>{teaching=null;pendingCard=null;keepAwake(false);game.reset()};$('pause').onclick=()=>game.run(()=>{if(game.paused){keepAwake(true);return game.resume()}keepAwake(false);return game.pause()});
+ readerThen(startNow)};$('next').onclick=()=>{pendingCard=null;game.run(()=>game.next())};$('reset').onclick=()=>{teaching=null;pendingCard=null;keepAwake(false);game.reset()};$('pause').onclick=()=>game.run(()=>{if(game.paused){keepAwake(true);return game.resume()}keepAwake(false);return game.pause()});
 $('adult').onclick=()=>{$('adultPanel').hidden=!$('adultPanel').hidden};
 $('volume').oninput=e=>{audio.volume=Number(e.target.value);if(audio.master)audio.master.gain.setTargetAtTime(Number(e.target.value),audio.now(),.05)};
 
@@ -118,6 +132,56 @@ function teachUI(){const box=$('teach');box.replaceChildren();for(const[k,icon,l
 window.scanCard=uid=>{uid=String(uid).trim();if(!uid)return;if(teaching){const q=normUid(uid);for(const k in mapping)mapping[k]=uidList(mapping[k]).filter(x=>normUid(x)!==q);const cur=uidList(mapping[teaching]);cur.push(uid);mapping[teaching]=cur;teaching=null;try{localStorage.setItem('chukuCardMap',JSON.stringify(mapping));$('teachStatus').textContent='Card saved for this browser.'}catch{$('teachStatus').textContent='Card works for this session; browser storage is unavailable.'}teachUI();return}const q=normUid(uid);const card=Object.keys(mapping).find(k=>uidList(mapping[k]).some(x=>normUid(x)===q));queueOrChoose(card||'unknown')};
 $('uid').onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();window.scanCard(e.target.value);e.target.value=''}};
 document.addEventListener('keydown',e=>{if(e.target.matches('input,textarea,select')||e.ctrlKey||e.metaKey||e.altKey)return;if(!game.active&&!teaching)return;if(Date.now()-lastKey>1000)wedge='';lastKey=Date.now();if(e.key==='Enter'){e.preventDefault();window.scanCard(wedge);wedge=''}else if(e.key.length===1)wedge+=e.key});
-document.addEventListener('visibilitychange',()=>{if(document.hidden&&game.active&&!game.paused)game.run(()=>game.pause())});
+
+/* ---- coming back from a phone call ----
+   A call suspends the AudioContext, and sometimes closes it outright. Either
+   way the clip that was playing never fires onended, so the promise the story
+   is waiting on never settles and the game sits there forever - which is
+   exactly what "it got stuck" was.
+   A browser will not restart audio without a tap, so a button is unavoidable.
+   What we can do is make it one big obvious button, and lose nothing: tapping
+   it replays the CURRENT step from its start, so the child hears the
+   instruction again rather than half a sentence. */
+let resumeOverlay=null;
+function askToCarryOn(){
+  if(resumeOverlay||!game.active)return;
+  const el=document.createElement('div');
+  el.id='carryOn';
+  el.innerHTML='<div class="co-box"><div style="font-size:46px">🚂</div>'+
+    '<h2 style="margin:10px 0 4px;font-size:21px">Ready when you are</h2>'+
+    '<p style="margin:0 0 16px;color:#4a5a66">Chuku waited for you. Nothing is lost.</p>'+
+    '<button id="coBtn">▶ Carry on</button></div>';
+  Object.assign(el.style,{position:'fixed',inset:'0',zIndex:'9998',display:'flex',
+    alignItems:'center',justifyContent:'center',padding:'18px',
+    background:'rgba(12,16,20,.66)',backdropFilter:'blur(3px)',
+    font:'15px/1.55 system-ui,-apple-system,sans-serif'});
+  Object.assign(el.querySelector('.co-box').style,{background:'#fff',color:'#16202a',
+    borderRadius:'22px',padding:'26px 22px',maxWidth:'360px',width:'100%',textAlign:'center',
+    boxShadow:'0 24px 60px rgba(0,0,0,.3)'});
+  Object.assign(el.querySelector('#coBtn').style,{border:'0',borderRadius:'14px',
+    padding:'16px 22px',font:'inherit',fontSize:'18px',fontWeight:'800',cursor:'pointer',
+    background:'#173f28',color:'#fff',width:'100%'});
+  document.body.appendChild(el);
+  resumeOverlay=el;
+  el.querySelector('#coBtn').onclick=()=>{
+    el.remove();resumeOverlay=null;
+    keepAwake(true);
+    game.run(async()=>{
+      await audio.resume();            // needs this tap; rebuilds a closed context
+      game.paused=false;
+      await game.enter(game.index);    // replay the step we were on
+    });
+  };
+}
+
+document.addEventListener('visibilitychange',()=>{
+  if(document.hidden){ if(game.active&&!game.paused)game.run(()=>game.pause()); return }
+  if(game.active)askToCarryOn();
+});
+// Some interruptions never fire visibilitychange - the context just stops.
+setInterval(()=>{
+  if(game.active&&!game.paused&&!resumeOverlay&&audio.ctx&&!audio.running())askToCarryOn();
+},1500);
+
 teachUI();applyMode();
 setInterval(()=>{if(!audio.analyser)return;const d=new Float32Array(audio.analyser.fftSize);audio.analyser.getFloatTimeDomainData(d);$('status').dataset.rms=Math.sqrt(d.reduce((a,v)=>a+v*v,0)/d.length).toFixed(6);$('status').dataset.audio=audio.ctx.state},300);
