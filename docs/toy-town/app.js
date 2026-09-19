@@ -100,7 +100,16 @@ function render(g){document.body.classList.toggle('playing',g.active);$('start')
 }
 for(const [k,icon,label]of CARDS){const b=document.createElement('button');b.className='card';b.dataset.card=k;b.innerHTML=`<span>${icon}</span><b>${label}</b>`;b.disabled=true;b.onclick=()=>game.run(()=>game.choose(k));$('cards').appendChild(b)}
 const game=new ChukuGame(CHUKU_STORY,audio,render);
-$('start').onclick=()=>{pendingCard=null;keepAwake(true);game.run(()=>game.start())};$('next').onclick=()=>{pendingCard=null;game.run(()=>game.next())};$('reset').onclick=()=>{teaching=null;pendingCard=null;keepAwake(false);game.reset()};$('pause').onclick=()=>game.run(()=>{if(game.paused){keepAwake(true);return game.resume()}keepAwake(false);return game.pause()});
+const startNow=()=>{pendingCard=null;keepAwake(true);game.run(()=>game.start())};
+// In card mode the only way through the story is a physical card, so a reader
+// that isn't talking to the phone leaves a child stuck with no explanation.
+// Check it once per browser before the first story, and offer on-screen cards
+// as the way out rather than a dead end.
+$('start').onclick=()=>{
+ if(!devMode && window.ReaderCheck && !ReaderCheck.known()){
+  ReaderCheck.run({onWorking:startNow, onSkip:()=>{setDevMode(true);startNow()}});
+  return}
+ startNow()};$('next').onclick=()=>{pendingCard=null;game.run(()=>game.next())};$('reset').onclick=()=>{teaching=null;pendingCard=null;keepAwake(false);game.reset()};$('pause').onclick=()=>game.run(()=>{if(game.paused){keepAwake(true);return game.resume()}keepAwake(false);return game.pause()});
 $('adult').onclick=()=>{$('adultPanel').hidden=!$('adultPanel').hidden};
 $('volume').oninput=e=>{audio.volume=Number(e.target.value);if(audio.master)audio.master.gain.setTargetAtTime(Number(e.target.value),audio.now(),.05)};
 

@@ -150,3 +150,12 @@ Every other story has a `cards.html` at CR80 (54 x 85.6 mm), portrait, for
 sticking on the physical cards. The Hinglish build has none. It reuses the
 same ten cards as Jungle Rescue 2, so the existing labels work — this is only
 needed if its card names ever diverge.
+
+---
+
+## 8. Roll the reader check out to the other games
+
+`docs/reader-check.js` is wired into Toy Town only. Moon, Jungle Rescue and
+Banana Rescue all offer an on-screen card tray as a fallback, so a dead reader
+is less of a dead end there — but the same one-line hook would still save a
+confused five minutes. Include the script and wrap the start button.
