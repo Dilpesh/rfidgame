@@ -53,6 +53,20 @@ new clips.
 
 ---
 
+## Shipping a new story
+
+```
+python3 check_games.py       # every story carries every learning
+python3 sync_cards.py       # every card it asks for has a physical card
+python3 check_audio.py docs/<slug>
+node qa_allgames.js         # and the wiring actually works
+```
+
+`check_games.py` is the gate: a story missing any of the shared runtime fails
+it, and an exception has to be written into that file with a reason.
+
+---
+
 ## The physical RFID cards
 
 `cards.json` is the single source of truth for which card UID means what. A

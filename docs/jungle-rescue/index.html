@@ -224,7 +224,7 @@
   </div>
 </div>
 
-<script src="../interrupt-guard.js"></script><script src="../story-intro.js"></script>
+<script src="../scan-guard.js"></script><script src="../reader-check.js"></script><script src="../interrupt-guard.js"></script><script src="../story-intro.js"></script>
 <script>
 /* ==========================================================================
    चाँद चोर बंदर — the monkey who stole the moon
@@ -919,7 +919,9 @@ window.addEventListener('keydown', (e) => {
     // restarting the story mid-play. Swallow it.
     e.preventDefault();
     const uid = inputBuf.trim(); inputBuf = "";
-    if (uid) handleScan(uid);
+    // Guard the reader path only: a queued card is replayed through
+    // handleScan() with the same uid, and must not be mistaken for a repeat.
+    if (uid) fromReader(uid);
   } else if (e.key.length === 1) {
     inputBuf += e.key;
   }
@@ -1036,21 +1038,31 @@ loadCards();
 if (new URLSearchParams(location.search).get('dev') === '1') toggleDev();
 showMode();
 
+// A card resting on the reader fires over and over; a swept handful fires
+// three in a row. Neither is an answer the child meant to give.
+const fromReader = window.ScanGuard ? ScanGuard.wrap(handleScan) : handleScan;
+
 /* ---- before-you-start screen, and surviving a phone call ----
    Every one of these games waits on an audio clip finishing. A call stops the
    audio and that finish event never arrives, so the story waits forever and
    every scan is ignored. InterruptGuard offers one big Carry on button that
    unsticks it without losing the step. See docs/interrupt-guard.js. */
 (function () {
+  // Intro first, then check the reader is awake, then the story.
+  const readerThen = (go) => {
+    if (!window.ReaderCheck || ReaderCheck.known()) return go();
+    ReaderCheck.run({ onWorking: go, onSkip: go });
+  };
   const NOTES = {"WATER": "you have two", "FLASHLIGHT": "you have two", "SNACK": "you have two"};
   const ACTIVITIES = ["Clap and cheer for each rescue", "Jump and stretch to reach the high branches", "Dance at the disco finish", "Go and drink a real glass of water, then come back"];
   if (window.StoryIntro && typeof startGame === 'function') {
     const realStart = startGame;
     startGame = function () {
-      if (StoryIntro.seen('jungle-rescue')) return realStart.apply(this, arguments);
+      const self = this, args = arguments;
+      if (StoryIntro.seen('jungle-rescue')) return readerThen(() => realStart.apply(self, args));
       StoryIntro.show({ key: 'jungle-rescue', title: 'Jungle Rescue Patrol 2', minutes: 15,
         cards: CARDS.map(c=>({icon:c.ico,label:c.en,note:NOTES[c.id]||''})), activities: ACTIVITIES,
-        onStart: () => realStart() });
+        onStart: () => readerThen(() => realStart()) });
     };
   } else console.warn('story intro not wired: startGame() missing');
   if (window.InterruptGuard) InterruptGuard.watch({

@@ -25,9 +25,29 @@ Last audited: 19 Sep 2026. The column shows the newest story,
 | 14 | Landing page links to `<slug>/index.html`, never a bare folder | ✅ |
 | 15 | No hardcoded counts in UI text | ✅ |
 | 16 | Printable card labels, portrait, picture-dominant | ✅ added |
-| 17 | Ignore a repeat of the same UID within ~1.5 s | ❌ missing everywhere |
+| 17 | Ignore a repeat of the same UID within ~1.5 s | ✅ all five |
 | 18 | Survive a phone call — one big Carry on, nothing lost | ✅ all five |
 | 19 | Show the cards and the physical activities before starting | ✅ all five |
+
+---
+
+## The shared runtime
+
+These are no longer things each story remembers to do. They live in `docs/`
+and every story loads them:
+
+| file | what it stops happening |
+|---|---|
+| `scan-guard.js` | a card left on the reader firing over and over |
+| `reader-check.js` | a dead reader silently doing nothing |
+| `story-intro.js` | a parent finding out mid-scene that there is jumping |
+| `interrupt-guard.js` | a phone call hanging the story |
+
+**`python3 check_games.py` is the gate.** It fails if any story is missing any
+of them. An exception has to be written down in that file, with a reason —
+there is no silent pass. Run it before shipping a new story, along with
+`node qa_allgames.js`, which proves the wiring actually works rather than
+merely being present.
 
 ---
 

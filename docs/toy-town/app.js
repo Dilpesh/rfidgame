@@ -130,58 +130,27 @@ $('volume').oninput=e=>{audio.volume=Number(e.target.value);if(audio.master)audi
 
 function teachUI(){const box=$('teach');box.replaceChildren();for(const[k,icon,label]of CARDS){const b=document.createElement('button');b.textContent=icon+' Teach '+label+(uidList(mapping[k]).length?' ✓ ('+uidList(mapping[k]).length+')':'');b.onclick=()=>{game.reset();teaching=k;$('teachStatus').textContent='Scan your '+label+' card now.';$('uid').focus()};box.appendChild(b)}}
 window.scanCard=uid=>{uid=String(uid).trim();if(!uid)return;if(teaching){const q=normUid(uid);for(const k in mapping)mapping[k]=uidList(mapping[k]).filter(x=>normUid(x)!==q);const cur=uidList(mapping[teaching]);cur.push(uid);mapping[teaching]=cur;teaching=null;try{localStorage.setItem('chukuCardMap',JSON.stringify(mapping));$('teachStatus').textContent='Card saved for this browser.'}catch{$('teachStatus').textContent='Card works for this session; browser storage is unavailable.'}teachUI();return}const q=normUid(uid);const card=Object.keys(mapping).find(k=>uidList(mapping[k]).some(x=>normUid(x)===q));queueOrChoose(card||'unknown')};
+// a card left on the reader fires repeatedly on some readers
+window.ScanGuard && ScanGuard.wrapGlobal('scanCard');
 $('uid').onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();window.scanCard(e.target.value);e.target.value=''}};
-document.addEventListener('keydown',e=>{if(e.target.matches('input,textarea,select')||e.ctrlKey||e.metaKey||e.altKey)return;if(!game.active&&!teaching)return;if(Date.now()-lastKey>1000)wedge='';lastKey=Date.now();if(e.key==='Enter'){e.preventDefault();window.scanCard(wedge);wedge=''}else if(e.key.length===1)wedge+=e.key});
+document.addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.altKey)return;if(e.target&&e.target.matches&&e.target.matches('input,textarea,select'))return;if(!game.active&&!teaching)return;if(Date.now()-lastKey>1000)wedge='';lastKey=Date.now();if(e.key==='Enter'){e.preventDefault();window.scanCard(wedge);wedge=''}else if(e.key.length===1)wedge+=e.key});
 
 /* ---- coming back from a phone call ----
-   A call suspends the AudioContext, and sometimes closes it outright. Either
-   way the clip that was playing never fires onended, so the promise the story
-   is waiting on never settles and the game sits there forever - which is
-   exactly what "it got stuck" was.
-   A browser will not restart audio without a tap, so a button is unavoidable.
-   What we can do is make it one big obvious button, and lose nothing: tapping
-   it replays the CURRENT step from its start, so the child hears the
-   instruction again rather than half a sentence. */
-let resumeOverlay=null;
-function askToCarryOn(){
-  if(resumeOverlay||!game.active)return;
-  const el=document.createElement('div');
-  el.id='carryOn';
-  el.innerHTML='<div class="co-box"><div style="font-size:46px">🚂</div>'+
-    '<h2 style="margin:10px 0 4px;font-size:21px">Ready when you are</h2>'+
-    '<p style="margin:0 0 16px;color:#4a5a66">Chuku waited for you. Nothing is lost.</p>'+
-    '<button id="coBtn">▶ Carry on</button></div>';
-  Object.assign(el.style,{position:'fixed',inset:'0',zIndex:'9998',display:'flex',
-    alignItems:'center',justifyContent:'center',padding:'18px',
-    background:'rgba(12,16,20,.66)',backdropFilter:'blur(3px)',
-    font:'15px/1.55 system-ui,-apple-system,sans-serif'});
-  Object.assign(el.querySelector('.co-box').style,{background:'#fff',color:'#16202a',
-    borderRadius:'22px',padding:'26px 22px',maxWidth:'360px',width:'100%',textAlign:'center',
-    boxShadow:'0 24px 60px rgba(0,0,0,.3)'});
-  Object.assign(el.querySelector('#coBtn').style,{border:'0',borderRadius:'14px',
-    padding:'16px 22px',font:'inherit',fontSize:'18px',fontWeight:'800',cursor:'pointer',
-    background:'#173f28',color:'#fff',width:'100%'});
-  document.body.appendChild(el);
-  resumeOverlay=el;
-  el.querySelector('#coBtn').onclick=()=>{
-    el.remove();resumeOverlay=null;
-    keepAwake(true);
-    game.run(async()=>{
-      await audio.resume();            // needs this tap; rebuilds a closed context
-      game.paused=false;
-      await game.enter(game.index);    // replay the step we were on
-    });
-  };
-}
-
-document.addEventListener('visibilitychange',()=>{
-  if(document.hidden){ if(game.active&&!game.paused)game.run(()=>game.pause()); return }
-  if(game.active)askToCarryOn();
+   Was a private copy; now the shared docs/interrupt-guard.js, so there is one
+   implementation to fix. A call suspends the AudioContext and sometimes closes
+   it, so the clip never fires onended and the story waits forever. Carry on
+   rebuilds the context if needed and replays the CURRENT step. */
+const CARD_ICON=Object.fromEntries(CARDS.map(([id,icon,label])=>[id,{icon,label}]));
+window.InterruptGuard && InterruptGuard.watch({
+  active:()=>game.active,
+  onHide:()=>{if(game.active&&!game.paused)game.run(()=>game.pause())},
+  healthy:()=>!audio.ctx||audio.running(),
+  nextCard:()=>{const g=game;if(!g.active)return null;
+    const s=g.scene&&g.scene.id;const c=CARDS.find(x=>x[0]===s);
+    return c?{icon:c[1],label:c[2]}:null},
+  onCarryOn:()=>{keepAwake(true);
+    game.run(async()=>{await audio.resume();game.paused=false;await game.enter(game.index)})}
 });
-// Some interruptions never fire visibilitychange - the context just stops.
-setInterval(()=>{
-  if(game.active&&!game.paused&&!resumeOverlay&&audio.ctx&&!audio.running())askToCarryOn();
-},1500);
 
 teachUI();applyMode();
 setInterval(()=>{if(!audio.analyser)return;const d=new Float32Array(audio.analyser.fftSize);audio.analyser.getFloatTimeDomainData(d);$('status').dataset.rms=Math.sqrt(d.reduce((a,v)=>a+v*v,0)/d.length).toFixed(6);$('status').dataset.audio=audio.ctx.state},300);
