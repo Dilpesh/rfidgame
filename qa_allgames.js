@@ -2,13 +2,15 @@
 //
 //     npm install playwright && node qa_allgames.js
 //
-// For each game, in a phone-sized browser: all four shared modules load and
-// every hook finds its target (a missing one warns rather than silently doing
+// For each game, in a phone-sized browser: the shared modules load and every
+// hook finds its target (a missing one warns rather than silently doing
 // nothing); the before-you-start screen appears, then the reader check, then
-// the story; a phone call offers Carry on and leaves the story running; and
-// the scan guard, exercised through the reader path the child actually uses,
-// lets a real scan through while dropping an immediate repeat and a
-// one-character read.
+// the story; and the scan guard, exercised through the reader path the child
+// actually uses, lets a real scan through while dropping an immediate repeat
+// and a one-character read.
+//
+// The phone-call checks moved to parked/qa_interrupt.js when the Carry on
+// screens came out of the games. See BACKLOG.
 //
 // Audio is stubbed - headless Chromium has no audio device, so clips would
 // never fire 'ended' and no story would ever advance.
@@ -48,7 +50,7 @@ const type=async(p,s)=>{for(const ch of s) await p.evaluate(c=>document.dispatch
   await p.goto('http://localhost:8087/docs/'+slug+'/index.html'); await p.waitForTimeout(700);
   if(slug==='toy-town') await p.evaluate(()=>window.__stubTT(audio));
   ok(errs.length===0,'loads clean'+(errs.length?': '+errs.slice(0,2).join(' | '):''));
-  for(const api of ['ScanGuard','ReaderCheck','StoryIntro','InterruptGuard'])
+  for(const api of ['ScanGuard','ReaderCheck','StoryIntro'])
     ok(await p.evaluate(a=>!!window[a],api),`${api} present`);
   ok(warns.length===0,'every hook found its target'+(warns.length?': '+warns[0]:''));
 
@@ -62,17 +64,6 @@ const type=async(p,s)=>{for(const ch of s) await p.evaluate(c=>document.dispatch
   await p.waitForTimeout(700);
   ok(await p.evaluate(e=>{try{return !!eval(e)}catch(x){return false}},activeExpr),'story running');
 
-  // --- a phone call ---
-  await p.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>true});
-    Object.defineProperty(document,'visibilityState',{configurable:true,get:()=>'hidden'});document.dispatchEvent(new Event('visibilitychange'))});
-  await p.waitForTimeout(250);
-  await p.evaluate(()=>{Object.defineProperty(document,'hidden',{configurable:true,get:()=>false});
-    Object.defineProperty(document,'visibilityState',{configurable:true,get:()=>'visible'});document.dispatchEvent(new Event('visibilitychange'))});
-  await p.waitForTimeout(400);
-  ok(await p.$('#carryOn')!==null,'Carry on offered');
-  if(await p.$('#carryOn')){ await p.evaluate(()=>document.querySelector('#igBtn').click()); await p.waitForTimeout(800);
-   ok(await p.$('#carryOn')===null,'it closes');
-   ok(await p.evaluate(e=>{try{return !!eval(e)}catch(x){return false}},activeExpr),'story still running'); }
   // --- the scan guard, on the real entry point, with the story running ---
   const before=await p.evaluate(()=>({...ScanGuard.stats}));
   await type(p,'0006359145'); await type(p,'0006359145');     // same card twice, fast

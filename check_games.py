@@ -23,10 +23,20 @@ REQUIRED = [
   r"ReaderCheck\.run"),
  ("before-you-start", "cards needed, and what the child will be asked to do",
   r"StoryIntro\.show"),
- ("interrupt guard",  "a phone call must not hang the story",
-  r"InterruptGuard\.watch"),
  ("enter key fix",    "the reader's Enter must not re-fire a focused button",
   r"preventDefault"),
+]
+
+# Parked on purpose, 2026-09-19. The Carry on screens went out of all five
+# games: interrupt-guard.js fired on a deliberate Pause (it cannot tell a
+# suspended AudioContext from a dead one) and carrying on replayed the stop.
+# docs/interrupt-guard.js and docs/progress.js are still in the repo, unwired.
+# When they come back as one piece, move these two lines back into REQUIRED.
+PARKED = [
+ ("interrupt guard",  "a phone call must not hang the story",
+  r"InterruptGuard\.watch"),
+ ("resume",           "a tab thrown away by the phone must not restart the story",
+  r"Progress\.track"),
 ]
 
 # game -> requirement -> why it is allowed to be missing
@@ -35,7 +45,6 @@ EXCEPTIONS = {
    "scan guard": "built artifact; its source pipeline needs fixing first (BACKLOG 10)",
    "reader check": "built artifact; same",
    "before-you-start": "built artifact; same",
-   "interrupt guard": "built artifact; same",
  },
 }
 
@@ -98,6 +107,8 @@ def main():
         print("\nAdd it, or write the reason into EXCEPTIONS in this file.")
         return 1
     print("Every story carries every learning.")
+    print("Parked, not checked: " + ", ".join(n for n, _, _ in PARKED) +
+          " (see the note in this file)")
     return 0
 
 

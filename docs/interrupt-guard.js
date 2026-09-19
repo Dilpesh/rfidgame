@@ -10,6 +10,8 @@
  *
  * InterruptGuard.watch({
  *   active()      -> is a story running right now
+ *   paused()      -> optional: true if a grown-up pressed Pause on purpose.
+ *                    Never interrupt that - their Resume button is the tap.
  *   onHide()      -> optional: called when the page goes away (silence things)
  *   healthy()     -> optional: false if the audio has died even while visible
  *   onCarryOn()   -> put the story back on its feet; may be async
@@ -21,6 +23,9 @@ window.InterruptGuard = (function () {
 
   function ask() {
     if (overlay || !cfg || !cfg.active()) return;
+    // A deliberate pause suspends the audio too, and looks exactly like a call
+    // from here. It is not one: leave the Pause screen alone.
+    if (cfg.paused && cfg.paused()) return;
     const card = (cfg.nextCard && cfg.nextCard()) || null;
     const el = document.createElement('div');
     el.id = 'carryOn';

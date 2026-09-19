@@ -207,7 +207,7 @@
   </div>
 </div>
 
-<script src="../scan-guard.js"></script><script src="../reader-check.js"></script><script src="../interrupt-guard.js"></script><script src="../story-intro.js"></script>
+<script src="../scan-guard.js"></script><script src="../reader-check.js"></script><script src="../story-intro.js"></script>
 <script>
 /* ==========================================================================
    चाँद चोर बंदर — the monkey who stole the moon
@@ -1038,11 +1038,7 @@ showMode();
 // three in a row. Neither is an answer the child meant to give.
 const fromReader = window.ScanGuard ? ScanGuard.wrap(handleScan) : handleScan;
 
-/* ---- before-you-start screen, and surviving a phone call ----
-   Every one of these games waits on an audio clip finishing. A call stops the
-   audio and that finish event never arrives, so the story waits forever and
-   every scan is ignored. InterruptGuard offers one big Carry on button that
-   unsticks it without losing the step. See docs/interrupt-guard.js. */
+/* ---- the before-you-start screen ---- */
 (function () {
   // Intro first, then check the reader is awake, then the story.
   const readerThen = (go) => {
@@ -1061,11 +1057,10 @@ const fromReader = window.ScanGuard ? ScanGuard.wrap(handleScan) : handleScan;
         onStart: () => readerThen(() => realStart()) });
     };
   } else console.warn('story intro not wired: startGame() missing');
-  if (window.InterruptGuard) InterruptGuard.watch({
-    active: () => { try { return !!(started && stepIdx < STEPS.length); } catch (e) { return false; } },
-    onCarryOn: () => { keepAwake(true); skipNow(); busy=false; renderPlay(); runPending(); },
-    nextCard: () => { try { const s=STEPS[stepIdx];if(!s)return null;const c=CARDS.find(x=>x.id===s.card);return c?{icon:c.ico,label:c.en}:null; } catch (e) { return null; } }
-  });
+  /* Interruption handling (the Carry on screens) is parked - see BACKLOG.
+     docs/interrupt-guard.js and docs/progress.js are still in the repo,
+     unwired, to be rebuilt as one piece. */
+
 })();
 </script>
 </body>

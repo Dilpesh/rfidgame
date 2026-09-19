@@ -41,7 +41,9 @@ and every story loads them:
 | `scan-guard.js` | a card left on the reader firing over and over |
 | `reader-check.js` | a dead reader silently doing nothing |
 | `story-intro.js` | a parent finding out mid-scene that there is jumping |
-| `interrupt-guard.js` | a phone call hanging the story |
+
+`interrupt-guard.js` and `progress.js` are **parked** — still in `docs/`, but
+nothing loads them. See `parked/README.md` and learning 20.
 
 **`python3 check_games.py` is the gate.** It fails if any story is missing any
 of them. An exception has to be written down in that file, with a reason —
@@ -164,23 +166,53 @@ node qa_wakelock.js                   # screen stays awake
 node qa_hinglish.js                   # tiles, links, embedded build
 node qa_modes.js                      # production really is RFID-only
 node qa_story_logic.js                # accepted answers, early scans
+node qa_allgames.js                   # the shared runtime, in every game
 ```
 
 Then listen on an actual phone, speaker only, screen down, from two metres.
 Nothing replaces that.
 
-## 18–19. Interruptions, and telling a parent what they're in for
-
-Every one of these games waits on an audio clip finishing. A phone call stops
-the audio and that finish event never arrives, so the story waits forever and
-every scan is ignored. It looks exactly like a crash.
-
-A browser will not restart audio without a tap, so a button is unavoidable.
-`docs/interrupt-guard.js` makes it one big **Carry on** that names the card
-they were looking for, and unsticks the story without losing the step.
+## 18. Telling a parent what they're in for
 
 `docs/story-intro.js` shows, before the first Start: every card the story
 needs — generated from that game's own deck so it cannot drift — and what the
 story will physically ask of the child, with a line about when to save it for
-later. Verify both with `node qa_allgames.js`.
+later. Nobody should find out mid-scene that there is jumping.
 
+## 19–20. Resuming: three states, not one — and why it is parked
+
+Two screens were built for this and both came out again on 2026-09-19. The
+diagnosis is worth more than the code was, so:
+
+A story can stop for three different reasons, and they need three different
+answers:
+
+| what happened | what the audio did | the right answer |
+|---|---|---|
+| a grown-up pressed **Pause** | context suspended, on purpose | do nothing; their Resume button is the tap |
+| a **phone call** | context suspended, or `'interrupted'` on iOS | one tap, then carry on **mid-sentence** |
+| the **tab was discarded** | the whole page is gone | ask on the next load, from what is on disk |
+
+`interrupt-guard.js` asked one question — *is the AudioContext running?* — and
+so could not tell the first row from the second. Pause was covered by a Carry
+on screen within 1.5 seconds, and the only visible button replayed the whole
+stop. Pausing to answer a question cost you the scene.
+
+**A suspended context is not a dead one.** Clips are `AudioBufferSourceNode`s
+and waits are measured in `ctx.currentTime`; both freeze while suspended, so
+`resume()` continues exactly where it stopped. Only a **closed** context has
+lost the clip — its source nodes are gone and `onended` will never fire — and
+only then is replaying the stop the lesser evil. Treating the two alike is
+what turned a one-tap recovery into a restart.
+
+**A discarded tab is the third case, and the only one nothing announces.**
+Android throws a backgrounded tab away and it returns as a fresh load — at
+13-15 MB these pages go early. No event fires, nothing in memory survives, so
+the step has to already be on disk: written on `visibilitychange` and
+`pagehide`, which is all the warning there is. And never restored silently — a
+child who finished and wants it again must not be dropped at stop eight.
+
+Both modules are still in `docs/`, unwired, with their test suites in
+`parked/`. `parked/qa_pause.js` models the real state machine rather than
+stubbing it away and pins the bug; it is the one to make pass first. See
+`parked/README.md`.

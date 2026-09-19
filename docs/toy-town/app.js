@@ -135,22 +135,10 @@ window.ScanGuard && ScanGuard.wrapGlobal('scanCard');
 $('uid').onkeydown=e=>{if(e.key==='Enter'){e.preventDefault();window.scanCard(e.target.value);e.target.value=''}};
 document.addEventListener('keydown',e=>{if(e.ctrlKey||e.metaKey||e.altKey)return;if(e.target&&e.target.matches&&e.target.matches('input,textarea,select'))return;if(!game.active&&!teaching)return;if(Date.now()-lastKey>1000)wedge='';lastKey=Date.now();if(e.key==='Enter'){e.preventDefault();window.scanCard(wedge);wedge=''}else if(e.key.length===1)wedge+=e.key});
 
-/* ---- coming back from a phone call ----
-   Was a private copy; now the shared docs/interrupt-guard.js, so there is one
-   implementation to fix. A call suspends the AudioContext and sometimes closes
-   it, so the clip never fires onended and the story waits forever. Carry on
-   rebuilds the context if needed and replays the CURRENT step. */
-const CARD_ICON=Object.fromEntries(CARDS.map(([id,icon,label])=>[id,{icon,label}]));
-window.InterruptGuard && InterruptGuard.watch({
-  active:()=>game.active,
-  onHide:()=>{if(game.active&&!game.paused)game.run(()=>game.pause())},
-  healthy:()=>!audio.ctx||audio.running(),
-  nextCard:()=>{const g=game;if(!g.active)return null;
-    const s=g.scene&&g.scene.id;const c=CARDS.find(x=>x[0]===s);
-    return c?{icon:c[1],label:c[2]}:null},
-  onCarryOn:()=>{keepAwake(true);
-    game.run(async()=>{await audio.resume();game.paused=false;await game.enter(game.index)})}
-});
+/* Interruption handling (the Carry on screens) is parked - see BACKLOG.
+   docs/interrupt-guard.js and docs/progress.js are still in the repo,
+   unwired, to be rebuilt as one piece. */
+
 
 teachUI();applyMode();
 setInterval(()=>{if(!audio.analyser)return;const d=new Float32Array(audio.analyser.fftSize);audio.analyser.getFloatTimeDomainData(d);$('status').dataset.rms=Math.sqrt(d.reduce((a,v)=>a+v*v,0)/d.length).toFixed(6);$('status').dataset.audio=audio.ctx.state},300);
