@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Card labels — Chuku &amp; the Toy Town Express</title>
+<style>
+  @page { size: A4; margin: 10mm; }
+  body { margin:0; font-family: system-ui, -apple-system, sans-serif;
+         background:#ffffff; color:#111; }
+
+  .howto { max-width:720px; margin:0 auto; padding:18px;
+           font-size:14px; line-height:1.7; color:#333; }
+  .howto h1 { font-size:19px; margin:0 0 8px; }
+  .howto b { color:#000; }
+  .howto ol { padding-left:20px; }
+  .howto .note { background:#f6f6f6; border-left:3px solid #ccc;
+                 padding:10px 14px; margin:14px 0; }
+
+  .sheet { display:grid; grid-template-columns: repeat(2, 82mm);
+           gap:5mm; justify-content:center; padding:4mm 0; }
+
+  .label { width:82mm; height:50mm; border:1px dashed #b9b9b9; border-radius:4mm;
+           display:flex; align-items:center; gap:5mm; padding:4mm 6mm;
+           break-inside:avoid; page-break-inside:avoid; box-sizing:border-box; }
+  .label svg { width:28mm; height:28mm; flex:none; }
+  .words { text-align:left; min-width:0; }
+  .label .en { font-size:10mm; font-weight:800; line-height:1; letter-spacing:.3mm; }
+  /* BISCUIT is the longest word in the deck and will not fit at 10mm */
+  .label .en.long { font-size:7.4mm; }
+  .label .hi { font-size:6mm; margin-top:2mm; color:#444; }
+  .label .say { font-size:3mm; letter-spacing:.5mm; white-space:nowrap; text-transform:uppercase;
+                color:#8a8a8a; margin-top:2.5mm; }
+
+  @media print {
+    .howto { display:none; }
+    .sheet { padding:0; }
+    .label { border:1px dashed #ccc; }
+  }
+</style></head>
+<body>
+
+<div class="howto">
+  <h1>🖨️ Card labels — Toy Town Express (4 new cards)</h1>
+  <p>Sized <b>82 × 50 mm</b>, matching the Jungle Rescue and Moon sheets, so a little
+     smaller than the RFID card itself — the edges don't curl up when you stick them on.</p>
+  <ol>
+    <li>Press <b>Print</b> (or ⌘P). Choose A4, <b>scale 100%</b> — not "fit to page",
+        or the sizing goes out.</li>
+    <li>Cut along the dashed lines.</li>
+    <li>Stick one on each card, then scan that card and send me the UID so it works in
+        the game.</li>
+  </ol>
+  <div class="note">
+    <b>Why the English word is the big one here.</b> In the other two decks the Hindi word
+    is largest, because Coco speaks Hindi. Chuku speaks Hinglish and asks for the
+    <b>“LIGHT वाला card”</b> — so the word the kids actually hear is the English one, and
+    that's what should be biggest on the card.
+  </div>
+  <p><b>Water and Music</b> already have labels in the other sheets and already work in this
+     game — you only need these four.</p>
+  <button class="btn" onclick="window.print()" style="background:#111;color:#fff;border:0;padding:11px 20px;font-size:15px;border-radius:7px;cursor:pointer">Print these 4 labels</button>
+</div>
+
+<div class="sheet">
+
+  <!-- KEY -->
+  <div class="label">
+    <svg viewBox="0 0 100 100" role="img" aria-label="A key">
+      <g fill="none" stroke="#1d1d1f" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="28" cy="50" r="19" fill="#F2B233"/>
+        <circle cx="28" cy="50" r="6.5" fill="#ffffff"/>
+        <path d="M47 50 H90 V66 H80 V56 H68 V68 H58 V50Z" fill="#F2B233"/>
+      </g>
+    </svg>
+    <div class="words">
+      <div class="en">KEY</div>
+      <div class="hi">चाबी</div>
+      <div class="say">Chuku ko jagao</div>
+    </div>
+  </div>
+
+  <!-- LIGHT -->
+  <div class="label">
+    <svg viewBox="0 0 100 100" role="img" aria-label="A light bulb">
+      <g fill="none" stroke="#1d1d1f" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M50 12 V2 M84 26 l8-5 M16 26 l-8-5 M88 58 h9 M12 58 H3"/>
+        <path d="M50 16 a26 26 0 0 1 16 46 q-3 3 -3 8 H37 q0-5 -3-8 A26 26 0 0 1 50 16Z" fill="#FFD84D"/>
+        <path d="M38 76 h24 M41 86 h18"/>
+      </g>
+    </svg>
+    <div class="words">
+      <div class="en">LIGHT</div>
+      <div class="hi">लाइट</div>
+      <div class="say">Roshni karo</div>
+    </div>
+  </div>
+
+  <!-- FAN -->
+  <div class="label">
+    <svg viewBox="0 0 100 100" role="img" aria-label="A fan">
+      <g fill="none" stroke="#1d1d1f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="50" cy="40" r="33" fill="#BFE3F2"/>
+        <circle cx="50" cy="40" r="23" stroke-width="4"/>
+        <circle cx="50" cy="40" r="13" stroke-width="4"/>
+        <path d="M50 7 V73 M17 40 H83 M27 17 L73 63 M73 17 L27 63" stroke-width="4"/>
+        <circle cx="50" cy="40" r="7" fill="#1d1d1f"/>
+        <path d="M50 73 V88 M33 92 h34"/>
+      </g>
+    </svg>
+    <div class="words">
+      <div class="en">FAN</div>
+      <div class="hi">पंखा</div>
+      <div class="say">Thandi hawa</div>
+    </div>
+  </div>
+
+  <!-- BISCUIT -->
+  <div class="label">
+    <svg viewBox="0 0 100 100" role="img" aria-label="A biscuit with a bite taken out">
+      <g stroke="#1d1d1f" stroke-width="7" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M50 12 a38 38 0 1 0 34 21 a13 13 0 0 1 -21 -15 a38 38 0 0 0 -13 -6Z"
+              fill="#D9A15B"/>
+        <circle cx="38" cy="38" r="5.5" fill="#5A3411" stroke="none"/>
+        <circle cx="58" cy="52" r="5.5" fill="#5A3411" stroke="none"/>
+        <circle cx="35" cy="62" r="5.5" fill="#5A3411" stroke="none"/>
+        <circle cx="62" cy="75" r="5.5" fill="#5A3411" stroke="none"/>
+        <circle cx="22" cy="50" r="4.5" fill="#5A3411" stroke="none"/>
+      </g>
+    </svg>
+    <div class="words">
+      <div class="en long">BISCUIT</div>
+      <div class="hi">बिस्किट</div>
+      <div class="say">Teddy ke liye</div>
+    </div>
+  </div>
+
+</div>
+</body></html>

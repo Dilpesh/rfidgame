@@ -24,7 +24,7 @@ Last audited: 19 Sep 2026. The column shows the newest story,
 | 13 | Action first, card second (the water step) | ✅ already |
 | 14 | Landing page links to `<slug>/index.html`, never a bare folder | ✅ |
 | 15 | No hardcoded counts in UI text | ✅ |
-| 16 | Printable card labels, CR80 54 × 85.6 mm, portrait | ❌ **missing** |
+| 16 | Printable card labels, 82 × 50 mm, matching the other decks | ✅ added |
 | 17 | Ignore a repeat of the same UID within ~1.5 s | ❌ missing everywhere |
 
 ---
@@ -114,8 +114,11 @@ survived long after the deck grew to 15.
 
 ## 16–17. Open
 
-- **No printable card labels** for the Hinglish build. The others have
-  `cards.html` at CR80 (54 × 85.6 mm), portrait.
+- **No printable card labels** for the Hinglish build — it reuses Jungle
+  Rescue 2's ten cards, so those labels already cover it. Toy Town has its own
+  `cards.html` for its four new cards; Moon and Jungle Rescue have theirs.
+  Sheets are 82 × 50 mm, slightly smaller than the card so the edges don't
+  curl when stuck on.
 - **No duplicate-scan guard** in any game. A card resting on the reader fires
   repeatedly on some readers. See `BACKLOG.md` item 1.
 
