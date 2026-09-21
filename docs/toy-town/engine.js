@@ -24,7 +24,7 @@ class ChukuGame {
  expected(){if(this.scene.id==='off')return ['light','fan'].filter(k=>this[k]);return this.scene.card?[this.scene.card]:[]}
  waitForCard(){this.phase='waiting';this.emit();this.scheduleHint()}
  hintPrefix(){if(this.scene.id!=='off')return this.scene.hint;if(this.light&&this.fan)return 'S07';return this.light?'S07_LIGHT':'S07_FAN'}
- hintDelay(){return this.scene.id==='water'?[30,60,120][Math.min(this.waterLevel,2)]:[10,15,20,45][Math.min(this.hintLevel,3)]}
+ hintDelay(){return this.scene.id==='water'?[30,60,120][Math.min(this.waterLevel,2)]:[10,15,20,25][Math.min(this.hintLevel,3)]}
  scheduleHint(){this.hintCtrl?.abort();const c=new AbortController();this.hintCtrl=c;const s=c.signal;const delay=this.hintDelay();this.record('hint-scheduled',delay);this.run(async()=>{await this.audio.wait(delay,s);this.check(s);if(this.phase!=='waiting')return;this.phase='hint';this.emit();let cue;
  if(this.scene.id==='water'){cue='S05_R'+(this.waterLevel%2+1);this.waterLevel++}else{cue=this.hintPrefix()+'_H'+Math.min(this.hintLevel+1,3);this.hintLevel++}
  await this.sequence([cue],s);this.check(s);this.phase='waiting';this.emit();this.scheduleHint()})}
@@ -44,13 +44,30 @@ class ChukuGame {
  await this.sequence(['S07_BOTH'],s);this.check(s);return this.enter(8)}
  await this.sequence(this.scene.done,s);this.check(s);await this.enter(this.index+1)
  }
+ // Three full rounds, unchanged in length - but with a beat under them.
+ // What was wrong: the music stopped and THEN the freeze was called, so the
+ // silence arrived before the word instead of with it; and the freeze, the
+ // hold, "jump back in" and "GO!" all played with no music at all - 13.2s of
+ // beatless dance per round, three times over. Now the only silence is the
+ // freeze itself, which is the one moment that is supposed to be silent.
  async dance(s){await this.sequence(['S04_OK1'],s);for(let round=0;round<3;round++){
- this.phase='dance';this.round=round+1;this.emit();await this.audio.music('music_dance_loop',s);this.check(s);const started=this.audio.now();this.record('dance-start',round+1);
+ this.phase='dance';this.round=round+1;this.emit();
+ if(!this.audio.beds.music)await this.audio.music('music_dance_loop',s);
+ this.check(s);const started=this.audio.now();this.record('dance-start',round+1);
  await this.sequence(['DANCE_0'+(round*2+1)],s);await this.audio.wait(Math.max(0,10-(this.audio.now()-started)),s);
  await this.sequence(['DANCE_0'+(round*2+2)],s);await this.audio.wait(Math.max(0,20-(this.audio.now()-started)),s);
- this.audio.stopMusic();this.record('dance-stop',round+1);this.phase='freeze';this.emit();await this.sequence(['DANCE_F'+(round+1),{wait:3}],s);
- if(round<2)await this.sequence(['DANCE_J'+(round+1),'DANCE_GO'+(round+1)],s)
- }await this.sequence(['S04_END1','short_applause','S04_END2'],s)}
+ // In musical statues the silence IS the cue, so the shout and the cut have
+ // to land together. Decode first, so starting the clip costs no time, then
+ // stop the music and play it in the same tick.
+ const fkey='DANCE_F'+(round+1);await this.audio.buffer(fkey);this.check(s);
+ this.record('dance-stop',round+1);this.phase='freeze';this.emit();
+ this.audio.stopMusic();await this.sequence([fkey],s);
+ await this.audio.wait(3,s);
+ // The groove comes back BEFORE "jump back in", so the next round starts
+ // already moving rather than from a standing start.
+ if(round<2){await this.audio.music('music_dance_loop',s);this.check(s);
+  await this.sequence(['DANCE_J'+(round+1),'DANCE_GO'+(round+1)],s)}
+ }this.audio.stopMusic();await this.sequence(['S04_END1','short_applause','S04_END2'],s)}
  async pause(){if(!this.active||this.paused)return;this.paused=true;await this.audio.suspend();this.emit()}
  async resume(){await this.audio.resume();this.paused=false;this.emit()}
 }
