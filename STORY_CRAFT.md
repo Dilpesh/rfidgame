@@ -108,6 +108,37 @@ character talking to it *in a social role*? Not fine.
 
 ---
 
+## 3b. Rhyme, and sounds they can say back
+
+Rhyme does something no joke does: it makes the **next** word guessable. A
+three-year-old who can predict what is coming leans in rather than drifts, and
+predicting correctly is its own small reward — which is why the same nursery
+rhyme survives four hundred readings.
+
+Use it where you most need them present:
+
+- **The card ask.** The line they must act on is the one worth making
+  memorable. "छुक-छुक, चलो रुक!" is easier to hold than a sentence.
+- **The acknowledgement.** Already repeated every stop (§2) — a rhyme or a
+  matched rhythm turns it into something they say *with* you.
+- **Anything physical.** Dance calls, counting, clapping. Rhythm is what they
+  move to; "एक… दो… तीन!" already works because of this.
+
+**Repeated sound beats clever rhyme.** Alliteration and doubled words — छुक-छुक,
+wobble-wobble, खर्र्र — land as well as a true rhyme and are far easier to write
+in Hinglish, where the two languages rarely rhyme with each other. Do not
+contort a line to force a rhyme; a forced one reads as odd and loses the
+naturalness that makes the rest work.
+
+**Never rhyme the narration wall to wall.** Constant rhyme turns a story into a
+poem, and the scenes need room to be ordinary so the rhymed bits stand out.
+Two or three per story, on the moments that matter, is the whole of it.
+
+*Written from a note rather than from a session — if what you meant by rhyme
+was narrower or wider than this, say so and it gets corrected.*
+
+---
+
 ## 4. Pacing and silence
 
 **Hint ladder: about 10 / 15 / 20 / 25 seconds.** Never leave a stuck child in
