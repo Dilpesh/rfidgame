@@ -13,7 +13,7 @@
 //     silence land together - in musical statues the silence is the cue
 //   * the only beatless stretches are the freeze holds and the ending
 const fs=require('fs'),cp=require('child_process'),path=require('path');
-const TT=path.join(__dirname,'docs','toy-town');
+const TT=path.join(__dirname,'docs',process.env.GAME||'toy-town');
 const raw=fs.readFileSync(path.join(TT,'story.js'),'utf8');
 const STORY=JSON.parse(raw.slice(raw.indexOf('{'),raw.lastIndexOf('}')+1));
 const ChukuGame=require(path.join(TT,'engine.js'));

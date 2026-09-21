@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Card labels — Chuku &amp; the Toy Town Express</title>
+<style>
+  @page { size: A4; margin: 10mm; }
+  body { margin:0; font-family: system-ui, -apple-system, sans-serif;
+         background:#fff; color:#111;
+         /* inset: 2mm of clearance on every side of a CR80 card, so a hand-cut
+            label never overhangs an edge and peels */
+         --cw:50mm; --ch:80mm; --icon:44mm; }
+  body.exact { /* exactly ISO 7810 ID-1 (CR80): the size of the card itself */
+         --cw:54mm; --ch:85.6mm; --icon:47mm; }
+
+  .howto { max-width:720px; margin:0 auto; padding:18px;
+           font-size:14px; line-height:1.7; color:#333; }
+  .howto h1 { font-size:19px; margin:0 0 8px; }
+  .howto b { color:#000; }
+  .howto ol { padding-left:20px; }
+  .howto .note { background:#f6f6f6; border-left:3px solid #ccc;
+                 padding:10px 14px; margin:14px 0; }
+  .btn { background:#111; color:#fff; border:0; padding:11px 20px;
+         font-size:15px; border-radius:7px; cursor:pointer; }
+
+  /* Portrait, 50 x 80 mm - inside a CR80 card (54 x 85.6 mm) on every side,
+     so no edge curls up once it is stuck down. */
+  .sheet { display:grid; grid-template-columns: repeat(2, var(--cw));
+           gap:6mm; justify-content:center; padding:4mm 0; }
+
+  .label { width:var(--cw); height:var(--ch); border:1px dashed #b9b9b9; border-radius:4mm;
+           display:flex; flex-direction:column; align-items:center;
+           padding:4mm 3mm 3mm; box-sizing:border-box;
+           break-inside:avoid; page-break-inside:avoid; }
+
+  /* The picture is the card. Words are a label for the grown-up. */
+  .label svg { width:var(--icon); height:var(--icon); flex:none; }
+  .words { margin-top:auto; text-align:center; width:100%; }
+  .label .en { font-size:7mm; font-weight:800; line-height:1; letter-spacing:.2mm; }
+  .label .en.long { font-size:5.6mm; }
+  .label .hi { font-size:5mm; color:#333; margin-top:1.6mm; }
+  .label .say { font-size:2.8mm; letter-spacing:.4mm; text-transform:uppercase;
+                color:#9a9a9a; margin-top:1.8mm; white-space:nowrap; }
+
+  @media print { .howto { display:none; } .sheet { padding:0; } .label { border:1px dashed #ccc; } }
+</style></head>
+<body>
+
+<div class="howto">
+  <h1>🖨️ Card labels — Toy Town Express (3 new cards)</h1>
+  <p><b>Portrait.</b> A standard ID/RFID card (ISO 7810 ID-1, "CR80") is
+     <b>54 × 85.6 mm</b>. These print at <b>50 × 80 mm</b> by default — about 2 mm of
+     clearance on every side — because a label cut to the exact card size overhangs
+     the moment your scissors wander a millimetre, and an overhanging edge is what
+     catches and peels.</p>
+  <p>If you're printing onto pre-cut adhesive card stock, or you want the label to
+     cover the whole face, switch to exact card size:</p>
+  <p>
+    <label><input type="radio" name="sz" checked onchange="document.body.classList.remove('exact')">
+      <b>50 × 80 mm</b> — inset, easier to cut (recommended)</label><br>
+    <label><input type="radio" name="sz" onchange="document.body.classList.add('exact')">
+      <b>54 × 85.6 mm</b> — exact CR80 card size</label>
+  </p>
+  <ol>
+    <li>Press <b>Print</b> (or ⌘P). Choose A4, <b>scale 100%</b> — not "fit to page",
+        or the sizing goes out.</li>
+    <li>Cut along the dashed lines.</li>
+    <li>Stick one on each card, then scan that card and send me the UID so it works
+        in the game.</li>
+  </ol>
+  <div class="note">
+    <b>The picture does the work.</b> The kids can't read yet, so the drawing gets most
+    of the card and the words sit at the bottom for you. Each one has a different
+    silhouette — long and thin, round with a neck, a circle on a stand, a bitten disc —
+    so they're told apart by shape first and colour second.
+  </div>
+  <p><b>Three cards, not six.</b> Water and Music already have labels in the Jungle
+     Rescue and Moon sheets. And the <b>biscuit is your cookie card</b> — the same
+     physical card Jungle Rescue calls SNACK — so it is already labelled and already
+     works here. Only key, light and fan are new.</p>
+  <p>Its label says नाश्ता rather than BISCUIT, which is fine: the picture is a
+     cookie either way, and the kids are going by the picture. Ask me if you would
+     rather have a replacement label naming both.</p>
+  <button class="btn" onclick="window.print()">Print these 3 labels</button>
+</div>
+
+<div class="sheet">
+
+  <!-- KEY -->
+  <div class="label">
+    <svg viewBox="0 0 100 100" role="img" aria-label="A key">
+      <g fill="none" stroke="#1d1d1f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="30" cy="50" r="21" fill="#F2B233"/>
+        <circle cx="30" cy="50" r="7" fill="#fff"/>
+        <path d="M48 44 H90 V56 H88 V71 H80 V56 H74 V68 H66 V56 H48Z" fill="#F2B233"/>
+      </g>
+    </svg>
+    <div class="words">
+      <div class="en">KEY</div>
+      <div class="hi">चाबी</div>
+      <div class="say">Chuku ko jagao</div>
+    </div>
+  </div>
+
+  <!-- LIGHT -->
+  <div class="label">
+    <svg viewBox="0 0 100 100" role="img" aria-label="A light bulb">
+      <g fill="none" stroke="#1d1d1f" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M50 10 V1 M83 23 l7-5 M17 23 l-7-5 M89 55 h8 M11 55 H3"/>
+        <path d="M50 14 a27 27 0 0 1 17 48 q-3 3 -3 8 H36 q0-5 -3-8 A27 27 0 0 1 50 14Z" fill="#FFD84D"/>
+        <path d="M37 78 h26 M40 88 h20"/>
+      </g>
+    </svg>
+    <div class="words">
+      <div class="en">LIGHT</div>
+      <div class="hi">लाइट</div>
+      <div class="say">Roshni karo</div>
+    </div>
+  </div>
+
+  <!-- FAN — a table fan: base, stand, neck, guard ring, four paddle blades -->
+  <div class="label">
+    <svg viewBox="0 0 100 100" role="img" aria-label="A table fan">
+      <g stroke="#1d1d1f" stroke-linecap="round" stroke-linejoin="round">
+        <!-- stand and base -->
+        <path d="M50 72 V86" fill="none" stroke-width="6"/>
+        <path d="M26 93 q24 -11 48 0Z" fill="#8FA3B0" stroke-width="5"/>
+        <!-- cage back -->
+        <circle cx="50" cy="40" r="31" fill="#DCEEF7" stroke-width="5"/>
+        <!-- three broad blades, clear of each other; no inner guard rings,
+             which turned into a tangle at this size -->
+        <g fill="#fff" stroke-width="4.5">
+          <path d="M50 40 C64 31 65 16 51 13 C40 11 36 26 50 40Z"/>
+          <g transform="rotate(120 50 40)"><path d="M50 40 C64 31 65 16 51 13 C40 11 36 26 50 40Z"/></g>
+          <g transform="rotate(240 50 40)"><path d="M50 40 C64 31 65 16 51 13 C40 11 36 26 50 40Z"/></g>
+        </g>
+        <circle cx="50" cy="40" r="6.5" fill="#1d1d1f" stroke="none"/>
+        <circle cx="50" cy="40" r="31" fill="none" stroke-width="5"/>
+      </g>
+    </svg>
+    <div class="words">
+      <div class="en">FAN</div>
+      <div class="hi">पंखा</div>
+      <div class="say">Thandi hawa</div>
+    </div>
+  </div>
+
+
+</div>
+</body></html>

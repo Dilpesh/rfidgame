@@ -198,6 +198,55 @@ still wrong.
 
 ---
 
+## 3b. Acknowledgement — the thing Toy Town is missing
+
+This was recommended in FEEDBACK.md and then **not built** into v2. It is the
+clearest single difference between the two stories, and Jungle Rescue's own
+lines show the formula:
+
+> "**YES! Snack! Great job, Kishu Mishu!** तुमने Elephant Dada के लिए खाना भी ढूँढ लिया!"
+> "**YES! Mango! Great job, Kishu Mishu!** Giraffe Didi का खाना मिल गया!"
+> "**Welcome back, Kishu Mishu! Energy Tank FULL!**"
+
+Three parts, every time: **name the card**, **name the child**, **say what
+changed in the world.**
+
+Toy Town has only the third. Worse, after a correct card at **stop 0 and stop
+3 nothing is said at all** — just sound effects. A child who has just run
+across the room with the right card hears a click and a whirr.
+
+The fix is one short line at the front of each stop's `done`, before the
+existing consequence lines. Keep them under 2.5s: this is the moment they are
+already pleased, not a speech.
+
+| id | speaker | line | stop |
+|---|---|---|---|
+| S01_ACK | Chuku | `[delighted] YES! KEY! शाबाश Captain!` | 0 |
+| S02_ACK | Chuku | `[delighted] YES! LIGHT! शाबाश Captain!` | 1 |
+| S03_ACK | Chuku | `[delighted] YES! FAN! शाबाश Captain!` | 2 |
+| S04_ACK | Chuku | `[excited] YES! MUSIC! शाबाश Captain!` | 3 |
+| S06_ACK | Chuku | `[delighted] YES! BISCUIT! शाबाश Captain!` | 6 |
+
+**Praise, scaled by effort** — these are the two that cost the child something
+real, so they get more than an acknowledgement:
+
+| id | speaker | line | where |
+|---|---|---|---|
+| S05_ACK | Narrator | `[warm, proud] Welcome back, Captain! तुम सच में पानी पीकर आए — Energy Tank FULL!` | replaces the front of stop 5's `done` |
+| S04_PRAISE | Chuku | `[proud] Captain, तुमने पूरे तीन round dance किया! मेरे पहिए भी थक गए!` | after the dance, before `S04_END1` |
+
+That is **five short acknowledgements and two praises** — praise only where
+effort was spent, which is what keeps it from becoming wallpaper. Roughly 20
+seconds of new audio.
+
+Stops 7 and 8 need nothing: the finale is already one long acknowledgement.
+
+**Say the card name the same way every time.** "YES! KEY!" with the same rhythm
+each stop is something a three-year-old will start shouting with you, which is
+worth more than any single joke in the story.
+
+---
+
 ## 4. One code change after generating
 
 `S03_04b` is a new clip id. `docs/toy-town/story.js` needs it inserted into
