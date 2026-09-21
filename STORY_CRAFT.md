@@ -96,10 +96,37 @@ and connect them, and do not know the social rules a joke is breaking.
 | **Concrete category error** | "Engine biscuit नहीं खाता… Driver Uncle खा लेंगे!" |
 | **A repeated catchphrase** | "ये कौन करता है?!" — never vary it |
 
-### The test
+### The test — and a correction, 2026-09-21
 
 **Could a four-year-old draw the joke?** If the funny part is a picture, it
 works. If it is a relationship between two ideas, it does not.
+
+**This test is right. The first audit applied it wrongly and cut three jokes
+that then landed with both kids:**
+
+| joke | I called it | what happened |
+|---|---|---|
+| "तभी मेरी टोपी से आलू पराठे की खुशबू आ रही थी!" | delayed inference | **landed** |
+| "मूँछ जी! पहले अपना ticket दिखाइए!" | bureaucracy humour | **landed** |
+| "मेरी battery तो sandwich से चलती है!" | metaphor | **landed** |
+
+The mistake was classifying by **mechanism** — metaphor, inference, social role
+— instead of asking the drawing question. All three are drawable: a lunchbox
+worn as a hat that smells of paratha; a man asking his own moustache for a
+ticket; a man who runs on sandwiches. The mechanism was never the problem.
+
+What actually failed has no picture in it:
+
+- **degree and quantity** — "हवा थोड़ी-सी… exercise ज़्यादा"
+- **abstract domains** — learning a tune, quality testing, medical roles
+- **concessions and asides** — "Fair point.", "मैं Elephant हूँ.", "एक छोटा
+  bite मेरे लिए"
+
+So: **a metaphor is fine if its vehicle is food, a body or an object behaving
+like a person.** Draw it in your head first. If you cannot, it goes.
+
+**Mess and dirt are reliable.** "muddy / गंदा" got the biggest single laugh in
+either story.
 
 **Does the joke need a sentence of explanation?** Then it is for you, not them.
 
@@ -141,6 +168,17 @@ was narrower or wider than this, say so and it gets corrected.*
 
 ## 4. Pacing and silence
 
+**Something must land every 30 seconds** — a joke, a sound effect, or
+appreciation of what the child just did. Observed directly: the stretches where
+attention was lost were the ones with information and no beat, and the whole
+giraffe scene in Jungle Rescue has none of the three. This is the most
+important rule on this page. Read a scene with a clock and mark every beat; a
+gap over 30 seconds is a hole, whatever else is in it.
+
+**Ask for the card in the same breath as naming the need.** The moment light is
+mentioned a child picks up the LIGHT card — and then has to hold it while the
+story keeps talking. Naming the need and asking are one move, not two.
+
 **Hint ladder: about 10 / 15 / 20 / 25 seconds.** Never leave a stuck child in
 silence for 45 seconds. Water breaks are the exception — 30 / 45 / 75 — because
 they are genuinely away from the phone.
@@ -156,6 +194,9 @@ seams. The gap between two clips is already long enough.
 **Fewer, longer takes beat many short ones.** Toy Town plays 72 narration clips
 where Jungle Rescue plays 37, and every boundary is a small stutter while the
 next buffer decodes. Write a scene as two long lines, not six short ones.
+
+**The ending is what they remember.** Appreciation for what they did, and a
+joke to go out on. Do not let the last minute be a list.
 
 **Never shorten a dance or a physical game to save time.** Cut waiting, not
 doing. The dance is the part they came for.
