@@ -56,7 +56,8 @@
         "banana-rescue": "WATER",
         "jungle-rescue": "WATER",
         "jungle-rescue-hinglish": "water",
-        "toy-town": "water"
+        "toy-town": "water",
+        "toy-town-v2": "water"
       }
     },
     "LAUGH": {
@@ -149,7 +150,8 @@
       "games": {
         "jungle-rescue": "SNACK",
         "jungle-rescue-hinglish": "snack",
-        "toy-town": "biscuit"
+        "toy-town": "biscuit",
+        "toy-town-v2": "biscuit"
       }
     },
     "PRUNERS": {
@@ -188,7 +190,8 @@
       "games": {
         "jungle-rescue": "MUSIC",
         "jungle-rescue-hinglish": "music",
-        "toy-town": "music"
+        "toy-town": "music",
+        "toy-town-v2": "music"
       }
     },
     "MANGO": {
@@ -226,7 +229,8 @@
       ],
       "label": "Key",
       "games": {
-        "toy-town": "key"
+        "toy-town": "key",
+        "toy-town-v2": "key"
       }
     },
     "LIGHT": {
@@ -235,7 +239,8 @@
       ],
       "label": "Light",
       "games": {
-        "toy-town": "light"
+        "toy-town": "light",
+        "toy-town-v2": "light"
       }
     },
     "FAN": {
@@ -244,7 +249,8 @@
       ],
       "label": "Fan",
       "games": {
-        "toy-town": "fan"
+        "toy-town": "fan",
+        "toy-town-v2": "fan"
       }
     }
   }

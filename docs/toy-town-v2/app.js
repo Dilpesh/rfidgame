@@ -4,6 +4,14 @@ const CARDS=[['key','🔑','KEY'],['light','💡','LIGHT'],['fan','🌀','FAN'],
 /* __CARD_UIDS_START__ */
 const SEED_VERSION = "2026-09-19b";
 const DEFAULT_UIDS = {
+  "5720648": "biscuit",
+  "6373651": "biscuit",
+  "5688164": "fan",
+  "5688918": "key",
+  "5687908": "light",
+  "6360574": "music",
+  "2682976": "water",
+  "2690428": "water"
 };
 /* __CARD_UIDS_END__ */
 
