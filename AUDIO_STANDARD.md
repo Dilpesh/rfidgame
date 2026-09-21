@@ -294,3 +294,26 @@ docs/<story-slug>/
 Then add a tile to the `GAMES` array in `docs/index.html`. Link to
 `<story-slug>/index.html`, **not** `<story-slug>/` — a bare folder link shows
 a directory listing on `file://`.
+
+## Comparing two clips: level them first, always
+
+Louder is heard as better. It is the oldest trap in audio and it does not
+weaken with experience, so the only defence is procedure.
+
+**Never put two clips in front of someone for a judgement unless they measure
+within about 1 dB of each other.** Level both to the same mean first:
+
+```
+m=$(ffmpeg -i in.mp3 -af volumedetect -f null - 2>&1 | grep mean_volume)   # read it
+ffmpeg -i in.mp3 -af "volume=<target minus mean>dB,alimiter=limit=0.85:level=false" \
+       -c:a libmp3lame -q:a 2 out.mp3
+```
+
+This was learned the hard way: a before/after pair went out with the "after"
+9 dB louder than the "before", because one was built from levelled game files
+and the other from raw API output. The listener correctly heard that something
+alternated loud and quiet, which is the tell. Any preference expressed on a
+pair like that is worthless - it is a loudness test wearing a costume.
+
+State the measured level alongside every preview, so the reader can see the
+comparison was fair rather than take it on trust.
