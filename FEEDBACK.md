@@ -64,3 +64,44 @@ story to being approved of. So: a ting plus an in-world consequence every time,
 and explicit praise kept for the ones that cost real effort (the water trip, the
 dance, anything found only after hints). That gives the intensity-by-task
 scaling without it becoming wallpaper.
+
+---
+
+## Jungle Rescue — audited with the same lens, 2026-09-21
+
+Not played again; read and measured against what we learned from Toy Town.
+
+### Its mix is already right — this is why it sounded better
+
+| | narration | effects |
+|---|---|---|
+| Jungle Rescue | 28 clips, −16.8 to −18.8 dB — **2.0 dB spread** | 17 clips, −21.5 to −27.4 dB, sitting 5–9 dB under the voice |
+| Toy Town (before) | fine | **36 dB spread**, some effects 20 dB under the voice |
+
+Jungle Rescue needs **no levelling work**. Its effects could come up ~3 dB and
+that is the whole of it. The gap between the two stories was never taste.
+
+Its hint ladder is 8 / 17 / 28s — already tighter than Toy Town's old
+10/15/20/45.
+
+### Three jokes that need an adult's head
+
+| line | why it fails at 3–5 |
+|---|---|
+| Elephant: "खत्म?! इतना जल्दी?! मैं Elephant हूँ." → **"Fair point."** | **adult concession.** The elephant eating everything instantly is funny on its own; "Fair point" is a grown-up agreeing in debate |
+| Giraffe: "एक छोटा bite मेरे लिए? फिर से?!" → **"Coco को इस jungle में खाना मिलने वाला नहीं है."** | a **running gag about Coco's luck that spans two scenes.** Needs them to remember the elephant scene and read it as wry |
+| Water: "मैं Parrot के साथ यहीं wait करूँगा... और Water को guard करूँगा. **Coco... बस guard.**" | a **wink** that Coco might drink it. Needs inference about someone's hidden intent |
+
+The third is the same joke shape as Toy Town's "मैं तुम्हारी seat सँभाल के रखता
+हूँ", which was flagged as not landing — and it sits in the same place, at the
+end of the water instruction. Same fix: end on the instruction and let the
+silence start. Cutting the last clause is enough; the rest of the line stays.
+
+None are urgent. All three are single clauses that can be trimmed when Jungle
+Rescue is next regenerated, not reasons to open it now.
+
+### What Toy Town should steal from it
+
+Its success formula, every single time: **name the card, name the child, say
+what changed.** "YES! Snack! Great job, Kishu Mishu!" That is in
+`ELEVENLABS_BRIEF.md` §3b as five acknowledgements and two praises for Toy Town.
