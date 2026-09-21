@@ -66,7 +66,10 @@ const STUB=`
  const want=[];
  for(const v of Object.values(cards.cards)){const g=(v.games||{})['toy-town'];
    if(g&&v.uids.length) for(const u of v.uids) want.push([u,g,v.label]);}
- ok(want.length===3,`3 cards already have physical cards (${want.length})`);
+ // Was 3, from when only the three new cards were printed. Every card now
+ // works in every game, so the count is not the thing to assert - that no
+ // card the story asks for is unteachable is.
+ ok(want.length>=3,`toy-town cards carry physical UIDs (${want.length})`);
  for(const [uid,id,label] of want){
    for(const form of [uid,uid.replace(/^0+/,'')]){
      const got=await p.evaluate(u=>{const q=normUid(u);
@@ -75,13 +78,23 @@ const STUB=`
    }
  }
  ok(await p.evaluate(()=>uidList(mapping.water).length===2),'water keeps both of its physical cards');
- ok(await p.evaluate(()=>!mapping.key||!uidList(mapping.key).length),'key has no card yet, as expected');
+ ok(await p.evaluate(()=>uidList(mapping.key).length>=1),'key has its printed card');
 
  console.log('\n=== wake lock + early scan ===');
  await p.evaluate(()=>window.__stubAudio(audio));
  ok(await p.evaluate(()=>window.__wake.requests===0),'no lock just from opening the page');
  await p.evaluate(()=>$('start').click());
  await p.waitForTimeout(400);
+ // Start opens the before-you-start screen, then the reader check. Walk both,
+ // or nothing below this line is testing a running story.
+ if(await p.$('#storyIntro')){await p.evaluate(()=>document.querySelector('#si-go').click());await p.waitForTimeout(400)}
+ if(await p.$('#readerCheck')){
+   for(const ch of '0006360574') await p.evaluate(c=>document.dispatchEvent(new KeyboardEvent('keydown',{key:c,bubbles:true})),ch);
+   await p.evaluate(()=>document.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',bubbles:true})));
+   await p.waitForTimeout(1400);
+ }
+ await p.waitForTimeout(400);
+ ok(await p.evaluate(()=>game.active),'the story actually started');
  ok(await p.evaluate(()=>window.__wake.requests>=1),'lock taken when the story starts');
  ok(await p.evaluate(()=>window.__wake.type==='screen'),'requested type is "screen"');
 

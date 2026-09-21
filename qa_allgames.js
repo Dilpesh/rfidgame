@@ -34,6 +34,7 @@ const GAMES=[
  ['banana-rescue','banana-rescue','start()','!!current'],
  ['jungle-rescue-hinglish','jungle-rescue-hinglish','handle(start())','active'],
  ['toy-town','toy-town',"$('start').click()",'game.active'],
+ ['toy-town-v2','toy-town-v2',"$('start').click()",'game.active'],
 ];
 const type=async(p,s)=>{for(const ch of s) await p.evaluate(c=>document.dispatchEvent(new KeyboardEvent('keydown',{key:c,bubbles:true})),ch);
   await p.evaluate(()=>document.dispatchEvent(new KeyboardEvent('keydown',{key:'Enter',bubbles:true})));};
@@ -48,7 +49,7 @@ const type=async(p,s)=>{for(const ch of s) await p.evaluate(c=>document.dispatch
   p.on('pageerror',e=>errs.push(e.message));
   p.on('console',m=>{if(m.type()==='warning'&&/not wired|no .*\(\) to guard/.test(m.text()))warns.push(m.text())});
   await p.goto('http://localhost:8087/docs/'+slug+'/index.html'); await p.waitForTimeout(700);
-  if(slug==='toy-town') await p.evaluate(()=>window.__stubTT(audio));
+  if(slug.startsWith('toy-town')) await p.evaluate(()=>window.__stubTT(audio));
   ok(errs.length===0,'loads clean'+(errs.length?': '+errs.slice(0,2).join(' | '):''));
   for(const api of ['ScanGuard','ReaderCheck','StoryIntro'])
     ok(await p.evaluate(a=>!!window[a],api),`${api} present`);
