@@ -42,7 +42,8 @@
         "moon": "TORCH",
         "banana-rescue": "TORCH",
         "jungle-rescue": "FLASHLIGHT",
-        "jungle-rescue-hinglish": "flashlight"
+        "jungle-rescue-hinglish": "flashlight",
+        "jungle-rescue-english": "FLASHLIGHT"
       }
     },
     "WATER": {
@@ -56,7 +57,8 @@
         "banana-rescue": "WATER",
         "jungle-rescue": "WATER",
         "jungle-rescue-hinglish": "water",
-        "toy-town": "water"
+        "toy-town": "water",
+        "jungle-rescue-english": "WATER"
       }
     },
     "LAUGH": {
@@ -97,7 +99,8 @@
       "games": {
         "banana-rescue": "ROPE",
         "jungle-rescue": "ROPE",
-        "jungle-rescue-hinglish": "rope"
+        "jungle-rescue-hinglish": "rope",
+        "jungle-rescue-english": "ROPE"
       }
     },
     "LADDER": {
@@ -128,7 +131,8 @@
       "label": "Fuel",
       "games": {
         "jungle-rescue": "FUEL",
-        "jungle-rescue-hinglish": "fuel"
+        "jungle-rescue-hinglish": "fuel",
+        "jungle-rescue-english": "FUEL"
       }
     },
     "BALLOONS": {
@@ -149,7 +153,8 @@
       "games": {
         "jungle-rescue": "SNACK",
         "jungle-rescue-hinglish": "snack",
-        "toy-town": "biscuit"
+        "toy-town": "biscuit",
+        "jungle-rescue-english": "BISCUIT"
       }
     },
     "PRUNERS": {
@@ -177,7 +182,8 @@
       "label": "First aid",
       "games": {
         "jungle-rescue": "FIRSTAID",
-        "jungle-rescue-hinglish": "firstaid"
+        "jungle-rescue-hinglish": "firstaid",
+        "jungle-rescue-english": "FIRST_AID"
       }
     },
     "MUSIC": {
@@ -188,7 +194,8 @@
       "games": {
         "jungle-rescue": "MUSIC",
         "jungle-rescue-hinglish": "music",
-        "toy-town": "music"
+        "toy-town": "music",
+        "jungle-rescue-english": "MUSIC"
       }
     },
     "MANGO": {
@@ -217,7 +224,8 @@
       "label": "Blanket",
       "games": {
         "jungle-rescue": "BLANKET",
-        "jungle-rescue-hinglish": "blanket"
+        "jungle-rescue-hinglish": "blanket",
+        "jungle-rescue-english": "BLANKET"
       }
     },
     "KEY": {

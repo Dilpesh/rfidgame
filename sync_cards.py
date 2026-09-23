@@ -167,9 +167,9 @@ def main():
     d = load()
     cards, seed = d["cards"], d["seed_version"]
     changed = []
-    for game in ("moon", "jungle-rescue"):
+    for game in ("moon", "jungle-rescue", "jungle-rescue-english"):
         p = os.path.join(ROOT, "docs", game, "index.html")
-        if splice(p, block_for(cards, game, seed), check):
+        if os.path.exists(p) and splice(p, block_for(cards, game, seed), check):
             changed.append(game)
     # toy-town is a multi-file build: its markers live in app.js
     # toy-town-v2 is the retuned copy that runs beside the original, so the same
