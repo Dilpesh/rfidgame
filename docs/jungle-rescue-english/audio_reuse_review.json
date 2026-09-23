@@ -1,0 +1,167 @@
+{
+  "story": "Jungle Rescue English",
+  "reviewedAt": "2026-09-23T10:41:13.745Z",
+  "results": [
+    {
+      "group": "Opening and shared sounds",
+      "cue": "JR_001",
+      "label": "Daytime jungle — standalone",
+      "file": "old_sfx_jungle_day.mp3",
+      "choice": "use"
+    },
+    {
+      "group": "Opening and shared sounds",
+      "cue": "JR_001",
+      "label": "Daytime jungle — shipped build",
+      "file": "shipped_dayAmb.mp3",
+      "choice": "unreviewed"
+    },
+    {
+      "group": "Opening and shared sounds",
+      "cue": "JR_008",
+      "label": "Engine cough — shipped build",
+      "file": "shipped_engineCough.mp3",
+      "choice": "use"
+    },
+    {
+      "group": "Opening and shared sounds",
+      "cue": "JR_014 and seven later correct-card cues",
+      "label": "Correct chime — shipped build",
+      "file": "shipped_ting.mp3",
+      "choice": "use"
+    },
+    {
+      "group": "Opening and shared sounds",
+      "cue": "JR_016",
+      "label": "Fuel pour — standalone",
+      "file": "old_sfx_fuel.mp3",
+      "choice": "use"
+    },
+    {
+      "group": "Opening and shared sounds",
+      "cue": "JR_017",
+      "label": "Engine starts — standalone",
+      "file": "old_sfx_engine.mp3",
+      "choice": "use"
+    },
+    {
+      "group": "Elephant rescue",
+      "cue": "JR_027 / JR_162",
+      "label": "Elephant call — standalone",
+      "file": "old_sfx_elephant.mp3",
+      "choice": "use"
+    },
+    {
+      "group": "Elephant rescue",
+      "cue": "JR_027 / JR_162",
+      "label": "Elephant call — shipped build",
+      "file": "shipped_elephant.mp3",
+      "choice": "replace"
+    },
+    {
+      "group": "Elephant rescue",
+      "cue": "JR_031",
+      "label": "Mud splat — shipped build",
+      "file": "shipped_mud.mp3",
+      "choice": "use"
+    },
+    {
+      "group": "Elephant rescue",
+      "cue": "JR_043 / JR_045",
+      "label": "Rope effort — shipped build",
+      "file": "shipped_rope.mp3",
+      "choice": "replace"
+    },
+    {
+      "group": "Elephant rescue",
+      "cue": "JR_051",
+      "label": "Stomach sound — shipped build",
+      "file": "shipped_stomach.mp3",
+      "choice": "replace"
+    },
+    {
+      "group": "Elephant rescue",
+      "cue": "JR_061",
+      "label": "Biscuit crunch — standalone",
+      "file": "old_sfx_munch.mp3",
+      "choice": "use"
+    },
+    {
+      "group": "Elephant rescue",
+      "cue": "JR_061",
+      "label": "Munch — shipped build",
+      "file": "shipped_munchEle.mp3",
+      "choice": "use"
+    },
+    {
+      "group": "Parrot rescue",
+      "cue": "JR_087",
+      "label": "Healing sparkle layer — standalone",
+      "file": "old_sfx_magic.mp3",
+      "choice": "use"
+    },
+    {
+      "group": "Parrot rescue",
+      "cue": "JR_098",
+      "label": "Three gulps — standalone",
+      "file": "old_sfx_glug.mp3",
+      "choice": "replace"
+    },
+    {
+      "group": "Parrot rescue",
+      "cue": "JR_098",
+      "label": "Gulp — shipped build",
+      "file": "shipped_gulp.mp3",
+      "choice": "replace"
+    },
+    {
+      "group": "Lion rescue",
+      "cue": "JR_103",
+      "label": "Night jungle — shipped build",
+      "file": "shipped_nightAmb.mp3",
+      "choice": "use"
+    },
+    {
+      "group": "Lion rescue",
+      "cue": "JR_120",
+      "label": "Flashlight click — standalone",
+      "file": "old_sfx_flashlight.mp3",
+      "choice": "replace"
+    },
+    {
+      "group": "Lion rescue",
+      "cue": "JR_120",
+      "label": "Flashlight — shipped build",
+      "file": "shipped_flashlight.mp3",
+      "choice": "replace"
+    },
+    {
+      "group": "Lion rescue",
+      "cue": "JR_124",
+      "label": "Owl — shipped build",
+      "file": "shipped_owl.mp3",
+      "choice": "edit"
+    },
+    {
+      "group": "Finale and wrong cards",
+      "cue": "JR_070 / JR_179 / JR_181 / JR_183",
+      "label": "Boing — shipped build",
+      "file": "shipped_boing.mp3",
+      "choice": "use"
+    },
+    {
+      "group": "Finale and wrong cards",
+      "cue": "JR_160",
+      "label": "Dance loop — shipped build",
+      "file": "shipped_dance.mp3",
+      "choice": "replace"
+    },
+    {
+      "group": "Finale and wrong cards",
+      "cue": "JR_160 reference",
+      "label": "Old disco music — standalone",
+      "file": "old_sfx_disco.mp3",
+      "choice": "unreviewed"
+    }
+  ]
+}
