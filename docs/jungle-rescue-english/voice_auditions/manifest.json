@@ -1,0 +1,188 @@
+{
+  "purpose": "voice auditions only; these are not production JR_NNN cues",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0,
+    "use_speaker_boost": true
+  },
+  "output_format": "mp3_44100_128",
+  "script": "jungle_rescue_final_production_script.md",
+  "confirmed_cast": {
+    "COCO": {
+      "voice": "Saanu",
+      "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+      "reference_file": "reference_shipped_intro.mp3",
+      "note": "User confirmed the original Coco voice is Saanu; match the shipped clip's energy and tone."
+    },
+    "NARRATOR": {
+      "voice": "Jia",
+      "voice_id": "ItmwhOeluca31IEX91Yk",
+      "reference_file": "narrator_jia.mp3"
+    },
+    "PARROT": {
+      "voice": "Munni",
+      "voice_id": "VOGEEZj2Kly5dP9LrQy8",
+      "reference_file": "parrot_munni.mp3"
+    }
+  },
+  "legacy_reference": {
+    "file": "reference_shipped_intro.mp3",
+    "duration_seconds": 10.449,
+    "note": "Old shipped intro may contain obsolete personalized wording; voice comparison only."
+  },
+  "saanu_reference_comparison": {
+    "file": "coco_saanu_reference_text.mp3",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "text": "हैलो किशु मिशु! मैं हूँ कोको। आज हम जंगल बचाओ टीम बनेंगे! जंगल में हमारे कई दोस्त मुसीबत में हैं, और हमें उन्हें बचाना है!",
+    "duration_seconds": 11.964,
+    "note": "The same old opening words for voice comparison only; not a current production cue."
+  },
+  "takes": [
+    {
+      "role": "COCO",
+      "option": "Vardan",
+      "voice_id": "bBG9wwa23659EgIkMbc1",
+      "cue_ids": [
+        "JR_002",
+        "JR_003",
+        "JR_026"
+      ],
+      "text": "हैलो, मैं हूँ कोको। आज हम जंगल बचाओ टीम बनेंगे।\n\nजंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम Captain बनकर मेरी मदद करोगे?\n\nवो! ये रोड है या ट्रैम्पोलीन?",
+      "text_sha256": "56f8606a8efa2b42e6ac3218263ae509f86e27ac603ac5c884bcef0a2a6509b5",
+      "file": "coco_vardan.mp3",
+      "duration_seconds": 15.491
+    },
+    {
+      "role": "COCO",
+      "option": "Bholu",
+      "voice_id": "5krdMTA5HonvWAlY2vSx",
+      "cue_ids": [
+        "JR_002",
+        "JR_003",
+        "JR_026"
+      ],
+      "text": "हैलो, मैं हूँ कोको। आज हम जंगल बचाओ टीम बनेंगे।\n\nजंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम Captain बनकर मेरी मदद करोगे?\n\nवो! ये रोड है या ट्रैम्पोलीन?",
+      "text_sha256": "56f8606a8efa2b42e6ac3218263ae509f86e27ac603ac5c884bcef0a2a6509b5",
+      "file": "coco_bholu.mp3",
+      "duration_seconds": 22.204
+    },
+    {
+      "role": "NARRATOR",
+      "option": "Jia",
+      "voice_id": "ItmwhOeluca31IEX91Yk",
+      "cue_ids": [
+        "JR_007",
+        "JR_022",
+        "JR_033"
+      ],
+      "text": "कोको जीप में बैठा, स्टीयरिंग पकड़ी, चाबी घुमाई।\n\nजीप जंगल के अंदर गई। बड़े-बड़े पेड़, छोटी-छोटी नदियाँ, उछलती-कूदती जीप!\n\nऔर कोको खुद मड में गिर गया!",
+      "text_sha256": "8c7fd38d061a2747e91eb081735a88d3e27f3855634ea573a6fe7524d17661b1",
+      "file": "narrator_jia.mp3",
+      "duration_seconds": 15.386
+    },
+    {
+      "role": "NARRATOR",
+      "option": "Aashish",
+      "voice_id": "8ISgMxQsDzugFB0wA3Gb",
+      "cue_ids": [
+        "JR_007",
+        "JR_022",
+        "JR_033"
+      ],
+      "text": "कोको जीप में बैठा, स्टीयरिंग पकड़ी, चाबी घुमाई।\n\nजीप जंगल के अंदर गई। बड़े-बड़े पेड़, छोटी-छोटी नदियाँ, उछलती-कूदती जीप!\n\nऔर कोको खुद मड में गिर गया!",
+      "text_sha256": "8c7fd38d061a2747e91eb081735a88d3e27f3855634ea573a6fe7524d17661b1",
+      "file": "narrator_aashish.mp3",
+      "duration_seconds": 11.729
+    },
+    {
+      "role": "ELEPHANT",
+      "option": "Ravi",
+      "voice_id": "FF20guQVlAWTxmSRcTSk",
+      "cue_ids": [
+        "JR_053",
+        "JR_062",
+        "JR_063",
+        "JR_065"
+      ],
+      "text": "मेरे पेट में भूख से चूहे दौड़ रहे हैं।\n\nबस एक!\n\nबस दो... थोड़ा और दो!\n\nचार! बस करो, Captain! इतना खाऊँगा तो balloon बनकर उड़ जाऊँगा!",
+      "text_sha256": "74d630b2ff04af916a57b88a603915559c44f9dff190dcb4df46b13e146c6559",
+      "file": "elephant_ravi.mp3",
+      "duration_seconds": 14.602
+    },
+    {
+      "role": "ELEPHANT",
+      "option": "Aashish",
+      "voice_id": "8ISgMxQsDzugFB0wA3Gb",
+      "cue_ids": [
+        "JR_053",
+        "JR_062",
+        "JR_063",
+        "JR_065"
+      ],
+      "text": "मेरे पेट में भूख से चूहे दौड़ रहे हैं।\n\nबस एक!\n\nबस दो... थोड़ा और दो!\n\nचार! बस करो, Captain! इतना खाऊँगा तो balloon बनकर उड़ जाऊँगा!",
+      "text_sha256": "74d630b2ff04af916a57b88a603915559c44f9dff190dcb4df46b13e146c6559",
+      "file": "elephant_aashish.mp3",
+      "duration_seconds": 11.964
+    },
+    {
+      "role": "PARROT",
+      "option": "Munni",
+      "voice_id": "VOGEEZj2Kly5dP9LrQy8",
+      "cue_ids": [
+        "JR_075",
+        "JR_091",
+        "JR_099"
+      ],
+      "text": "आह! ओह! मेरा wing hurt हो गया!\n\nफड़फड़! अब मेरा wing चल रहा है!\n\nओहो! पानी मिलते ही मेरी चोंच खुश हो गई!",
+      "text_sha256": "4f73c9b1e60d1e0a7afb36605c674612ca1b168abfd83033421cb2478163ed7c",
+      "file": "parrot_munni.mp3",
+      "duration_seconds": 13.636
+    },
+    {
+      "role": "PARROT",
+      "option": "Saanu",
+      "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+      "cue_ids": [
+        "JR_075",
+        "JR_091",
+        "JR_099"
+      ],
+      "text": "आह! ओह! मेरा wing hurt हो गया!\n\nफड़फड़! अब मेरा wing चल रहा है!\n\nओहो! पानी मिलते ही मेरी चोंच खुश हो गई!",
+      "text_sha256": "4f73c9b1e60d1e0a7afb36605c674612ca1b168abfd83033421cb2478163ed7c",
+      "file": "parrot_saanu.mp3",
+      "duration_seconds": 11.886
+    },
+    {
+      "role": "LION",
+      "option": "Bholu",
+      "voice_id": "5krdMTA5HonvWAlY2vSx",
+      "cue_ids": [
+        "JR_108",
+        "JR_110",
+        "JR_127",
+        "JR_142"
+      ],
+      "text": "ह-हेलो? कोई है वहाँ?\n\nकोको... मैं यहाँ रास्ता भूल गया हूँ। और यहाँ इतना अँधेरा है कि मुझे अपनी पूँछ भी दिखाई नहीं दे रही!\n\nरोशनी के लिए शुक्रिया... पर रात की हवा बहुत ठंडी है। Brrr!\n\nअहाहा... अब आया ना मज़ा! इतनी गर्मी... इतना आराम...",
+      "text_sha256": "9c1a894e395025674e2fe92ab03e89758c28bcc586a13e80a3b4baf5b8e92dd8",
+      "file": "lion_bholu.mp3",
+      "duration_seconds": 28.447
+    },
+    {
+      "role": "LION",
+      "option": "Munni",
+      "voice_id": "VOGEEZj2Kly5dP9LrQy8",
+      "cue_ids": [
+        "JR_108",
+        "JR_110",
+        "JR_127",
+        "JR_142"
+      ],
+      "text": "ह-हेलो? कोई है वहाँ?\n\nकोको... मैं यहाँ रास्ता भूल गया हूँ। और यहाँ इतना अँधेरा है कि मुझे अपनी पूँछ भी दिखाई नहीं दे रही!\n\nरोशनी के लिए शुक्रिया... पर रात की हवा बहुत ठंडी है। Brrr!\n\nअहाहा... अब आया ना मज़ा! इतनी गर्मी... इतना आराम...",
+      "text_sha256": "9c1a894e395025674e2fe92ab03e89758c28bcc586a13e80a3b4baf5b8e92dd8",
+      "file": "lion_munni.mp3",
+      "duration_seconds": 28.186
+    }
+  ]
+}

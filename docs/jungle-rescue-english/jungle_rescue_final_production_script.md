@@ -20,10 +20,10 @@ A local emotion changes performance, never the character's identity.
 
 | Voice key | Fixed character identity | Baseline delivery |
 |---|---|---|
-| COCO | Established familiar kid-like Coco voice | Warm, curious, playful; clear Hindi/Hinglish; comic embarrassment at his own mistakes. Encouragement never sounds like a test examiner. |
-| NARRATOR | One consistent storyteller voice, distinct in delivery from Coco | Warm, brisk and clear; let actions and sound jokes breathe without long dramatic pauses. |
+| COCO | Saanu, ElevenLabs voice ID `d9BvEI0bp2Tmdpqnjwn0`; use `voice_auditions/reference_shipped_intro.mp3` as the approved tone reference | Warm, curious, playful; clear Hindi/Hinglish; match the shipped Coco's energy and comic timing. Encouragement never sounds like a test examiner. |
+| NARRATOR | Jia, ElevenLabs voice ID `ItmwhOeluca31IEX91Yk` | Warm, brisk and clear; distinct from Coco; let actions and sound jokes breathe without long dramatic pauses. |
 | ELEPHANT | Large, friendly Elephant दादा | Rounded, resonant, affectionate; harmless appetite and belly laughter, never a threatening growl. |
-| PARROT | Small, bright, lightly squeaky Parrot | Distress is brief and gentle; gradually relieved and cheerful. Words remain intelligible. |
+| PARROT | Munni, ElevenLabs voice ID `VOGEEZj2Kly5dP9LrQy8` | Small, bright, lightly squeaky; distress is brief and gentle, then gradually relieved and cheerful. Words remain intelligible. |
 | LION | Small child-like lion throughout | Shy, vulnerable, warm; sneezes and snores can be comically big without turning into an adult roaring lion. |
 
 **How to enforce consistency in ElevenLabs:** The audio operator must bind each voice key to one

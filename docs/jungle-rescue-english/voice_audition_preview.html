@@ -1,0 +1,132 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jungle Rescue — voice auditions</title>
+  <style>
+    :root { font-family: system-ui, -apple-system, sans-serif; color: #173427; background: #f2f7f0; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 950px; margin: auto; padding: 24px 16px 64px; }
+    h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); margin: 0 0 10px; }
+    h2 { margin: 0 0 5px; font-size: 1.25rem; }
+    p { line-height: 1.5; }
+    .intro, section, .reference { background: white; border: 1px solid #dce8dc; border-radius: 16px; padding: 20px; box-shadow: 0 4px 16px #1540270b; }
+    section { margin-top: 16px; }
+    .reference { margin-top: 16px; background: #fdfbf5; }
+    .reference p { margin: 7px 0 10px; }
+    .toolbar { display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-top: 16px; }
+    .toolbar button { background: #145b3c; color: white; border: 0; border-radius: 10px; padding: 10px 14px; font: inherit; font-weight: 700; cursor: pointer; }
+    #progress { font-weight: 700; }
+    #warning { color: #98470e; font-weight: 700; }
+    .description { color: #47604f; margin: 0 0 16px; }
+    .options { display: grid; grid-template-columns: repeat(auto-fit, minmax(255px, 1fr)); gap: 12px; }
+    .option { border: 1px solid #d5e2d6; border-radius: 12px; padding: 14px; background: #fbfdfb; }
+    .option h3 { margin: 0 0 5px; font-size: 1rem; }
+    .note { color: #53695a; font-size: .86rem; margin: 0 0 10px; }
+    audio { width: 100%; height: 44px; }
+    .select { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 12px; }
+    .select button { background: #edf3eb; color: #173427; border: 1px solid #b8cdb8; border-radius: 8px; padding: 8px 11px; font: inherit; cursor: pointer; }
+    .select button[aria-pressed="true"] { background: #145b3c; color: white; border-color: #145b3c; }
+    button:focus-visible { outline: 3px solid #e6ab25; outline-offset: 2px; }
+    .foot { color: #586d5d; font-size: .9rem; margin-top: 25px; }
+    a { color: #145b3c; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="intro">
+    <h1>Jungle Rescue voice auditions</h1>
+    <p>Coco is confirmed as <strong>Saanu</strong>. Listen on the device your child will use and choose voices for the remaining roles, or choose <strong>Neither</strong>. The remaining clips are short auditions from exact approved script lines, not final story audio. Focus on natural Hindi/Hinglish, clear card words, warmth, comic timing, and whether Lion sounds like a small child. The final cast will use one fixed voice per character.</p>
+    <p>Choices stay in this browser. <strong>Export choices</strong> downloads a small JSON file for the next production step.</p>
+    <div class="toolbar"><button id="export" type="button">Export choices</button><span id="progress" aria-live="polite"></span><span id="warning" aria-live="polite"></span></div>
+  </div>
+  <div class="reference">
+    <h2>Original Coco versus Saanu</h2>
+    <p>Both clips speak the old Jungle Rescue opening. Saanu is the confirmed Coco voice; use the shipped recording as the reference for Coco’s energy and tone. The personalized wording is no longer in the current script.</p>
+    <h3>Original Coco — shipped recording</h3>
+    <audio controls preload="metadata" src="voice_auditions/reference_shipped_intro.mp3"></audio>
+    <h3>Saanu — new recording of the same opening</h3>
+    <audio controls preload="metadata" src="voice_auditions/coco_saanu_reference_text.mp3"></audio>
+  </div>
+  <div id="roles"></div>
+  <p class="foot">Generated with ElevenLabs <code>eleven_v3</code>. The voice IDs, exact source cue text, settings and measured durations are in <a href="voice_auditions/manifest.json">the audition manifest</a>. No final <code>JR_NNN</code> cue has been installed.</p>
+</main>
+<script>
+const roles = [
+  {key:'COCO', description:'Confirmed: Saanu. Match the shipped intro’s energetic, playful delivery when recording the current script.', options:[
+    {name:'Saanu', id:'d9BvEI0bp2Tmdpqnjwn0', file:'coco_saanu_reference_text.mp3'}]},
+  {key:'NARRATOR', description:'A clear storyteller, distinct from Coco, with brisk action and space for sound jokes.', options:[
+    {name:'Jia', id:'ItmwhOeluca31IEX91Yk', file:'narrator_jia.mp3'},
+    {name:'Aashish', id:'8ISgMxQsDzugFB0wA3Gb', file:'narrator_aashish.mp3'}]},
+  {key:'ELEPHANT', description:'Large, gentle Elephant दादा; the hunger and biscuit joke should feel affectionate, never scary.', options:[
+    {name:'Ravi', id:'FF20guQVlAWTxmSRcTSk', file:'elephant_ravi.mp3'},
+    {name:'Aashish', id:'8ISgMxQsDzugFB0wA3Gb', file:'elephant_aashish.mp3'}]},
+  {key:'PARROT', description:'Small and bright. The pain line should be gentle; later relief should be easy to understand.', options:[
+    {name:'Munni', id:'VOGEEZj2Kly5dP9LrQy8', file:'parrot_munni.mp3'}]},
+  {key:'LION', description:'A shy, vulnerable child-like Lion King. Listen for the small voice even when he feels cold.', options:[
+    {name:'Bholu', id:'5krdMTA5HonvWAlY2vSx', file:'lion_bholu.mp3'},
+    {name:'Munni', id:'VOGEEZj2Kly5dP9LrQy8', file:'lion_munni.mp3'}]}
+];
+const storageKey = 'jungle-rescue-english-voice-auditions-v1';
+let choices = {};
+try { choices = JSON.parse(localStorage.getItem(storageKey) || '{}') || {}; } catch (_) { choices = {}; }
+choices.COCO = 'Saanu';
+if (choices.PARROT === 'Saanu') delete choices.PARROT;
+const allAudio = [...document.querySelectorAll('audio')];
+for (const reference of allAudio) reference.addEventListener('play', () => { for (const other of allAudio) if (other !== reference) other.pause(); });
+for (const role of roles) {
+  const section = document.createElement('section');
+  const heading = document.createElement('h2'); heading.textContent = role.key;
+  const description = document.createElement('p'); description.className = 'description'; description.textContent = role.description;
+  const options = document.createElement('div'); options.className = 'options';
+  const controls = document.createElement('div'); controls.className = 'select';
+  for (const option of role.options) {
+    const box = document.createElement('div'); box.className = 'option';
+    const name = document.createElement('h3'); name.textContent = option.name;
+    const note = document.createElement('p'); note.className = 'note'; note.textContent = role.key === 'COCO' ? 'Confirmed voice; old opening text for tone comparison only' : `Source cues: ${role.key === 'NARRATOR' ? 'JR_007, JR_022, JR_033' : role.key === 'ELEPHANT' ? 'JR_053, JR_062, JR_063, JR_065' : role.key === 'PARROT' ? 'JR_075, JR_091, JR_099' : 'JR_108, JR_110, JR_127, JR_142'}`;
+    const player = document.createElement('audio'); player.controls = true; player.preload = 'metadata'; player.src = `voice_auditions/${option.file}`;
+    player.addEventListener('play', () => { for (const other of allAudio) if (other !== player) other.pause(); });
+    allAudio.push(player);
+    box.append(name, note, player); options.append(box);
+  }
+  for (const value of role.key === 'COCO' ? ['Saanu'] : [...role.options.map(o => o.name), 'Neither']) {
+    const button = document.createElement('button'); button.type = 'button'; button.textContent = value;
+    button.setAttribute('aria-pressed', choices[role.key] === value ? 'true' : 'false');
+    button.addEventListener('click', () => {
+      choices[role.key] = value;
+      try { localStorage.setItem(storageKey, JSON.stringify(choices)); } catch (_) { /* Local-file privacy policy may block storage. */ }
+      for (const other of controls.children) other.setAttribute('aria-pressed', other === button ? 'true' : 'false');
+      updateStatus();
+    });
+    controls.append(button);
+  }
+  section.append(heading, description, options, controls);
+  document.getElementById('roles').append(section);
+}
+function updateStatus() {
+  document.getElementById('progress').textContent = `${roles.filter(r => choices[r.key]).length} of ${roles.length} roles chosen`;
+  const selected = roles.flatMap(role => {
+    const match = role.options.find(option => option.name === choices[role.key]);
+    return match ? [{role:role.key, id:match.id}] : [];
+  });
+  const duplicate = selected.filter((item, index) => selected.findIndex(other => other.id === item.id) !== index);
+  document.getElementById('warning').textContent = duplicate.length ? 'Some roles share a voice; we will resolve this before final recording.' : '';
+}
+updateStatus();
+document.getElementById('export').addEventListener('click', () => {
+  const results = roles.map(role => {
+    const option = role.options.find(item => item.name === choices[role.key]);
+    return {role:role.key, choice:choices[role.key] || 'unreviewed', voice_id:option ? option.id : null, file:option ? option.file : null};
+  });
+  const payload = {story:'Jungle Rescue English', purpose:'voice auditions', reviewedAt:new Date().toISOString(), results};
+  const blob = new Blob([JSON.stringify(payload, null, 2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a'); link.href = url; link.download = 'jungle-rescue-voice-review.json';
+  document.body.append(link); link.click(); link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+});
+</script>
+</body>
+</html>
