@@ -22,9 +22,9 @@ A local emotion changes performance, never the character's identity.
 |---|---|---|
 | COCO | Saanu, ElevenLabs voice ID `d9BvEI0bp2Tmdpqnjwn0`; use `voice_auditions/reference_shipped_intro.mp3` as the approved tone reference | Warm, curious, playful; clear Hindi/Hinglish; match the shipped Coco's energy and comic timing. Encouragement never sounds like a test examiner. |
 | NARRATOR | Jia, ElevenLabs voice ID `ItmwhOeluca31IEX91Yk` | Warm, brisk and clear; distinct from Coco; let actions and sound jokes breathe without long dramatic pauses. |
-| ELEPHANT | Large, friendly Elephant दादा | Rounded, resonant, affectionate; harmless appetite and belly laughter, never a threatening growl. |
+| ELEPHANT | Vardan, ElevenLabs voice ID `bBG9wwa23659EgIkMbc1` | Youthful, rounded, affectionate and playful; never threatening. Keep Hindi/Hinglish words clear. Use the selected bold Elephant treatment documented in `voice_auditions/bold_character_treatments_manifest.json`. |
 | PARROT | Munni, ElevenLabs voice ID `VOGEEZj2Kly5dP9LrQy8` | Small, bright, lightly squeaky; distress is brief and gentle, then gradually relieved and cheerful. Words remain intelligible. |
-| LION | Small child-like lion throughout | Shy, vulnerable, warm; sneezes and snores can be comically big without turning into an adult roaring lion. |
+| LION | Bholu, ElevenLabs voice ID `5krdMTA5HonvWAlY2vSx` | Small child-like lion throughout: shy, vulnerable and warm. Use the selected bold Lion treatment documented in `voice_auditions/bold_character_treatments_manifest.json`; sneezes and snores can be comically big without turning into an adult roaring lion. |
 
 **How to enforce consistency in ElevenLabs:** The audio operator must bind each voice key to one
 approved ElevenLabs voice ID and one approved reference sample before the full recording pass.

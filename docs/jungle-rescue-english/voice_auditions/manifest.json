@@ -13,8 +13,7 @@
     "COCO": {
       "voice": "Saanu",
       "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-      "reference_file": "reference_shipped_intro.mp3",
-      "note": "User confirmed the original Coco voice is Saanu; match the shipped clip's energy and tone."
+      "reference_file": "reference_shipped_intro.mp3"
     },
     "NARRATOR": {
       "voice": "Jia",

@@ -1,0 +1,25 @@
+{
+  "purpose": "Elephant Vardan treatment A/B only; not final JR_NNN cues",
+  "source_file": "elephant_vardan_playful.mp3",
+  "source_duration_seconds": 12.669,
+  "comparison": [
+    {
+      "file": "elephant_vardan_levelmatched.mp3",
+      "duration_seconds": 12.669,
+      "integrated_lufs": -15.7,
+      "true_peak_dbfs": -1.9,
+      "processing": "loudness match only",
+      "filter": "loudnorm=I=-16:TP=-1.5:LRA=11,alimiter=limit=0.95"
+    },
+    {
+      "file": "elephant_vardan_treated.mp3",
+      "duration_seconds": 12.669,
+      "integrated_lufs": -15.7,
+      "true_peak_dbfs": -1.4,
+      "processing": "light warmth EQ, quiet detuned body layer, then loudness match",
+      "filter": "[0:a]asplit=2[clear0][body0];[clear0]highpass=f=110,equalizer=f=600:t=q:w=1.1:g=2,equalizer=f=2500:t=q:w=0.9:g=1.5[clear];[body0]asetrate=41454,aresample=44100,atempo=1.0638298,highpass=f=350,lowpass=f=950,volume=0.12[body];[clear][body]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=11,alimiter=limit=0.95[out]",
+      "note": "The clear main voice remains at original pitch; the body layer uses a simple pitch shift and stays quiet."
+    }
+  ],
+  "output_format": "44.1 kHz mono MP3, 128 kbps"
+}

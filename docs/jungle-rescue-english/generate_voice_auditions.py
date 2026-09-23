@@ -161,6 +161,26 @@ def main():
             confirmed_cast[choice["role"]] = {
                 "voice": take["option"], "voice_id": take["voice_id"], "reference_file": take["file"]
             }
+    decisions_path = OUT / "casting_decisions.json"
+    if decisions_path.exists():
+        decisions = json.loads(decisions_path.read_text(encoding="utf-8"))
+        selected = decisions["selected"]
+        if selected.get("COCO", {}).get("voice_id") != SAANU_VOICE_ID:
+            raise ValueError("Coco's approved Saanu voice is missing from casting decisions")
+        valid_auditions = {(item["role"], item["voice_id"], item["file"]) for item in plan}
+        round2_path = OUT / "elephant_round2_manifest.json"
+        if round2_path.exists():
+            round2 = json.loads(round2_path.read_text(encoding="utf-8"))
+            valid_auditions.update(("ELEPHANT", item["voice_id"], item["file"])
+                                   for item in round2["takes"])
+        for role, choice in selected.items():
+            if not (OUT / choice["reference_file"]).is_file():
+                raise ValueError(f"Missing reference for {role}")
+            if role != "COCO" and (role, choice["voice_id"], choice["reference_file"]) not in valid_auditions:
+                raise ValueError(f"Unrecognized audition for {role}")
+        if len({choice["voice_id"] for choice in selected.values()}) != len(selected):
+            raise ValueError("Each selected character needs a distinct voice")
+        confirmed_cast = selected
     manifest = {
         "purpose": "voice auditions only; these are not production JR_NNN cues",
         "model_id": MODEL, "voice_settings": SETTINGS, "output_format": OUTPUT_FORMAT,

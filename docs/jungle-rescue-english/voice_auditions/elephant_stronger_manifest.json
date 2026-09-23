@@ -1,0 +1,47 @@
+{
+  "purpose": "Adult-to-Elephant character auditions only; not final JR_NNN cues",
+  "source_voice": "Ravi",
+  "source_voice_id": "FF20guQVlAWTxmSRcTSk",
+  "source_model": "eleven_v3",
+  "source_voice_settings": {
+    "stability": 0.5,
+    "similarity_boost": 0.75,
+    "style": 0,
+    "use_speaker_boost": true
+  },
+  "source_text_with_performance_tags": "[playfully hungry] मेरे पेट में भूख से चूहे दौड़ रहे हैं।\n\n[eagerly] बस एक!\n\n[mischievously] बस दो... थोड़ा और दो!\n\n[comic surprise] चार! बस करो, Captain! इतना खाऊँगा तो balloon बनकर उड़ जाऊँगा!",
+  "source_cues": [
+    "JR_053",
+    "JR_062",
+    "JR_063",
+    "JR_065"
+  ],
+  "source_file": "elephant_ravi_directed_source.mp3",
+  "options": [
+    {
+      "file": "elephant_ravi_directed_levelmatched.mp3",
+      "label": "Adult source, level matched",
+      "filter": "loudnorm=I=-16:TP=-1.5:LRA=11,alimiter=limit=0.95,volume=-0.4dB",
+      "duration_seconds": 12.121,
+      "integrated_lufs": -15.7,
+      "true_peak_dbfs": -4.4
+    },
+    {
+      "file": "elephant_ravi_big_warm.mp3",
+      "label": "Big and warm",
+      "filter": "[0:a]asplit=2[lead0][body0];[lead0]asetrate=42336,aresample=44100,atempo=1.0416667,highpass=f=95,equalizer=f=560:t=q:w=1:g=3,equalizer=f=1000:t=q:w=1:g=1.5,equalizer=f=2500:t=q:w=0.9:g=2[lead];[body0]asetrate=38808,aresample=44100,atempo=1.136364,highpass=f=350,lowpass=f=1000,volume=0.18[body];[lead][body]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=11,alimiter=limit=0.95[out]",
+      "duration_seconds": 12.121,
+      "integrated_lufs": -15.7,
+      "true_peak_dbfs": -1.5
+    },
+    {
+      "file": "elephant_ravi_trunky_playful.mp3",
+      "label": "Trunky and playful",
+      "filter": "[0:a]asplit=2[lead0][trunk0];[lead0]highpass=f=105,equalizer=f=700:t=q:w=1:g=2,equalizer=f=1000:t=q:w=1:g=3.5,equalizer=f=2500:t=q:w=0.9:g=2.5[lead];[trunk0]asetrate=40131,aresample=44100,atempo=1.09901,highpass=f=470,lowpass=f=1550,equalizer=f=900:t=q:w=0.5:g=5,volume=0.23[trunk];[lead][trunk]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=11,alimiter=limit=0.95[out]",
+      "duration_seconds": 12.121,
+      "integrated_lufs": -15.8,
+      "true_peak_dbfs": -1.4
+    }
+  ],
+  "note": "These local filters modify an adult source voice. They do not use Vardan or any child voice. Keep animal calls separate from the words."
+}

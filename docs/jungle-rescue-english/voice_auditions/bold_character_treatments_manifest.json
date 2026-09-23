@@ -1,0 +1,21 @@
+{
+  "purpose": "Second-round bolder character auditions; not final JR_NNN cues",
+  "roles": {
+    "ELEPHANT": {
+      "source_file": "elephant_vardan_playful.mp3",
+      "treated_file": "elephant_vardan_character_bold.mp3",
+      "duration_seconds": 12.696,
+      "integrated_lufs": -15.7,
+      "true_peak_dbfs": -1.5,
+      "filter": "[0:a]asplit=2[main0][body0];[main0]asetrate=39690,aresample=44100,atempo=1.111111,highpass=f=85,equalizer=f=280:t=q:w=1:g=4,equalizer=f=2800:t=q:w=1:g=1[main];[body0]asetrate=33075,aresample=44100,atempo=1.333333,highpass=f=180,lowpass=f=650,volume=0.36[body];[main][body]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=11,alimiter=limit=0.95[out]"
+    },
+    "LION": {
+      "source_file": "lion_bholu.mp3",
+      "treated_file": "lion_bholu_character_bold.mp3",
+      "duration_seconds": 28.421,
+      "integrated_lufs": -16.0,
+      "true_peak_dbfs": -2.3,
+      "filter": "[0:a]asplit=2[main0][growl0];[main0]asetrate=40572,aresample=44100,atempo=1.086956,highpass=f=95,equalizer=f=350:t=q:w=1:g=3,equalizer=f=2600:t=q:w=1:g=1[main];[growl0]asetrate=35280,aresample=44100,atempo=1.25,highpass=f=200,lowpass=f=900,volume=2,asoftclip=type=tanh:threshold=0.35:oversample=4,volume=0.25[growl];[main][growl]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=11,alimiter=limit=0.95[out]"
+    }
+  }
+}

@@ -38,7 +38,7 @@
 <main>
   <div class="intro">
     <h1>Jungle Rescue voice auditions</h1>
-    <p>Coco is confirmed as <strong>Saanu</strong>. Listen on the device your child will use and choose voices for the remaining roles, or choose <strong>Neither</strong>. The remaining clips are short auditions from exact approved script lines, not final story audio. Focus on natural Hindi/Hinglish, clear card words, warmth, comic timing, and whether Lion sounds like a small child. The final cast will use one fixed voice per character.</p>
+    <p>Cast: <strong>Saanu</strong> as Coco, <strong>Jia</strong> as Narrator, <strong>Vardan</strong> as Elephant, <strong>Munni</strong> as Parrot, and <strong>Bholu</strong> as Lion. Compare the new Elephant and Lion treatments below on the device your child will use. These are auditions, not final story cues.</p>
     <p>Choices stay in this browser. <strong>Export choices</strong> downloads a small JSON file for the next production step.</p>
     <div class="toolbar"><button id="export" type="button">Export choices</button><span id="progress" aria-live="polite"></span><span id="warning" aria-live="polite"></span></div>
   </div>
@@ -50,6 +50,27 @@
     <h3>Saanu — new recording of the same opening</h3>
     <audio controls preload="metadata" src="voice_auditions/coco_saanu_reference_text.mp3"></audio>
   </div>
+  <div class="reference">
+    <h2>Elephant दादा — Vardan</h2>
+    <p>Same words, same target loudness. The first treatment was too subtle on a laptop, so the new version lowers the character voice and adds a more audible warm body. Compare the first and third clips for the change in voice itself.</p>
+    <h3>Original Vardan — loudness matched</h3>
+    <audio controls preload="metadata" src="voice_auditions/elephant_vardan_levelmatched.mp3"></audio>
+    <h3>Earlier subtle treatment</h3>
+    <audio controls preload="metadata" src="voice_auditions/elephant_vardan_character.mp3"></audio>
+    <h3>New bolder Elephant treatment</h3>
+    <audio controls preload="metadata" src="voice_auditions/elephant_vardan_character_bold.mp3"></audio>
+    <p>The approved Elephant call remains a separate sound effect for production; it does not change Vardan’s spoken voice.</p>
+  </div>
+  <div class="reference">
+    <h2>Kid Lion — Bholu</h2>
+    <p>Same words, same target loudness. The new version lowers Bholu’s pitch and adds a clearly audible, softly rough underlayer while leaving the child-lion lines intelligible. Compare the first and third clips.</p>
+    <h3>Original Bholu — loudness matched</h3>
+    <audio controls preload="metadata" src="voice_auditions/lion_bholu_levelmatched.mp3"></audio>
+    <h3>Earlier subtle treatment</h3>
+    <audio controls preload="metadata" src="voice_auditions/lion_bholu_character.mp3"></audio>
+    <h3>New bolder Kid Lion treatment</h3>
+    <audio controls preload="metadata" src="voice_auditions/lion_bholu_character_bold.mp3"></audio>
+  </div>
   <div id="roles"></div>
   <p class="foot">Generated with ElevenLabs <code>eleven_v3</code>. The voice IDs, exact source cue text, settings and measured durations are in <a href="voice_auditions/manifest.json">the audition manifest</a>. No final <code>JR_NNN</code> cue has been installed.</p>
 </main>
@@ -60,20 +81,26 @@ const roles = [
   {key:'NARRATOR', description:'A clear storyteller, distinct from Coco, with brisk action and space for sound jokes.', options:[
     {name:'Jia', id:'ItmwhOeluca31IEX91Yk', file:'narrator_jia.mp3'},
     {name:'Aashish', id:'8ISgMxQsDzugFB0wA3Gb', file:'narrator_aashish.mp3'}]},
-  {key:'ELEPHANT', description:'Large, gentle Elephant दादा; the hunger and biscuit joke should feel affectionate, never scary.', options:[
-    {name:'Ravi', id:'FF20guQVlAWTxmSRcTSk', file:'elephant_ravi.mp3'},
-    {name:'Aashish', id:'8ISgMxQsDzugFB0wA3Gb', file:'elephant_aashish.mp3'}]},
+  {key:'ELEPHANT', description:'Confirmed voice: Vardan. Compare the untreated and treated clips above.', options:[
+    {name:'Vardan', id:'bBG9wwa23659EgIkMbc1', file:'elephant_vardan_playful.mp3'}]},
   {key:'PARROT', description:'Small and bright. The pain line should be gentle; later relief should be easy to understand.', options:[
     {name:'Munni', id:'VOGEEZj2Kly5dP9LrQy8', file:'parrot_munni.mp3'}]},
-  {key:'LION', description:'A shy, vulnerable child-like Lion King. Listen for the small voice even when he feels cold.', options:[
-    {name:'Bholu', id:'5krdMTA5HonvWAlY2vSx', file:'lion_bholu.mp3'},
-    {name:'Munni', id:'VOGEEZj2Kly5dP9LrQy8', file:'lion_munni.mp3'}]}
+  {key:'LION', description:'Confirmed voice: Bholu. Compare the untreated and treated clips above.', options:[
+    {name:'Bholu', id:'5krdMTA5HonvWAlY2vSx', file:'lion_bholu.mp3'}]}
 ];
 const storageKey = 'jungle-rescue-english-voice-auditions-v1';
 let choices = {};
 try { choices = JSON.parse(localStorage.getItem(storageKey) || '{}') || {}; } catch (_) { choices = {}; }
 choices.COCO = 'Saanu';
-if (choices.PARROT === 'Saanu') delete choices.PARROT;
+choices.NARRATOR = 'Jia';
+choices.ELEPHANT = 'Vardan';
+choices.PARROT = 'Munni';
+choices.LION = 'Bholu';
+for (const role of roles) {
+  if (choices[role.key] && ![...role.options.map(option => option.name), 'Neither'].includes(choices[role.key])) {
+    delete choices[role.key];
+  }
+}
 const allAudio = [...document.querySelectorAll('audio')];
 for (const reference of allAudio) reference.addEventListener('play', () => { for (const other of allAudio) if (other !== reference) other.pause(); });
 for (const role of roles) {
@@ -91,7 +118,7 @@ for (const role of roles) {
     allAudio.push(player);
     box.append(name, note, player); options.append(box);
   }
-  for (const value of role.key === 'COCO' ? ['Saanu'] : [...role.options.map(o => o.name), 'Neither']) {
+  for (const value of role.options.map(o => o.name)) {
     const button = document.createElement('button'); button.type = 'button'; button.textContent = value;
     button.setAttribute('aria-pressed', choices[role.key] === value ? 'true' : 'false');
     button.addEventListener('click', () => {
