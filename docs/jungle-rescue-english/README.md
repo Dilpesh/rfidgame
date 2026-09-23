@@ -15,6 +15,8 @@ Baseline source: `jungle_rescue_final_production_script.md`, copied from the sup
 | [Audio reuse audit](audio_reuse_audit.md) | Audio producer | Candidate-to-cue mapping and reuse limitations |
 | [Saved audio review](audio_reuse_review.json) | Audio producer | The producer's exported choices for all 23 legacy clips |
 | [Voice audition preview](voice_audition_preview.html) | Voice casting | Compare Vardan Elephant and Bholu Lion with their character treatments |
+| [Introduction and Fuel audio test](intro_fuel_audio_preview.html) | Story/audio review | Play the opening in child-experience order, test hints, scan success and the optional repeat-Fuel joke |
+| [Introduction and Fuel test manifest](audio/intro-fuel-test/manifest.json) | Audio producer / developer | Partial JR_001–JR_020 delivery data with exact files, measured durations, levels, voices and settings |
 | [Saved voice review](voice_auditions/casting_review.json) | Voice casting | User selections: Coco = Saanu, Narrator = Jia, Parrot = Munni; the first Elephant and Lion takes were rejected |
 | [Current casting decisions](voice_auditions/casting_decisions.json) | Audio producer | Selected voice IDs for all five roles |
 | [Subtle character treatments](voice_auditions/selected_character_treatments_manifest.json) | Audio producer | Archived first treatment, rejected as too subtle |

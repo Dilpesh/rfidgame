@@ -1,0 +1,313 @@
+{
+  "JR_001": {
+    "file": "intro-fuel-test/JR_001.mp3",
+    "duration_seconds": 50.051,
+    "integrated_lufs": -15.9,
+    "true_peak_dbfs": -5.4,
+    "review_status": "test",
+    "type": "sfx",
+    "bed": true,
+    "loop": true
+  },
+  "JR_002": {
+    "file": "intro-fuel-test/JR_002.mp3",
+    "duration_seconds": 5.329,
+    "integrated_lufs": -15.6,
+    "true_peak_dbfs": -1.9,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "हैलो, मैं हूँ कोको। आज हम जंगल बचाओ टीम बनेंगे।",
+    "performance_tag": "[bright and playful]"
+  },
+  "JR_003": {
+    "file": "intro-fuel-test/JR_003.mp3",
+    "duration_seconds": 7.628,
+    "integrated_lufs": -16.2,
+    "true_peak_dbfs": -1.7,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम Captain बनकर मेरी मदद करोगे?",
+    "performance_tag": "[hopeful and inviting]"
+  },
+  "JR_004": {
+    "file": "intro-fuel-test/JR_004.mp3",
+    "duration_seconds": 5.799,
+    "integrated_lufs": -15.8,
+    "true_peak_dbfs": -1.9,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "Yes! Great! अब Captain और कोको मिलकर सारे animals को बचा लेंगे।",
+    "performance_tag": "[delighted and encouraging]"
+  },
+  "JR_005": {
+    "file": "intro-fuel-test/JR_005.mp3",
+    "duration_seconds": 3.082,
+    "integrated_lufs": -16.8,
+    "true_peak_dbfs": -2.5,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "जल्दी चलो, हमारी जंगल रेस्क्यू जीप तैयार है।",
+    "performance_tag": "[warm storytelling]"
+  },
+  "JR_006": {
+    "file": "intro-fuel-test/JR_006.mp3",
+    "duration_seconds": 1.228,
+    "integrated_lufs": -19.5,
+    "true_peak_dbfs": -0.9,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_007": {
+    "file": "intro-fuel-test/JR_007.mp3",
+    "duration_seconds": 4.598,
+    "integrated_lufs": -16.2,
+    "true_peak_dbfs": -2.5,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "NARRATOR",
+    "voice_id": "ItmwhOeluca31IEX91Yk",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.56,
+      "similarity_boost": 0.78,
+      "style": 0.12,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "कोको जीप में बैठा, स्टीयरिंग पकड़ी, चाबी घुमाई।",
+    "performance_tag": "[warm and brisk]"
+  },
+  "JR_008": {
+    "file": "intro-fuel-test/JR_008.mp3",
+    "duration_seconds": 3.37,
+    "integrated_lufs": -19.6,
+    "true_peak_dbfs": -3.1,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_009": {
+    "file": "intro-fuel-test/JR_009.mp3",
+    "duration_seconds": 6.113,
+    "integrated_lufs": -17.2,
+    "true_peak_dbfs": -1.9,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "ओह, ये स्टार्ट क्यों नहीं हो रही है? हम्म, जीप की टंकी खाली है।",
+    "performance_tag": "[surprised and amused]"
+  },
+  "JR_010": {
+    "file": "intro-fuel-test/JR_010.mp3",
+    "duration_seconds": 4.206,
+    "integrated_lufs": -17.0,
+    "true_peak_dbfs": -1.8,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "Captain, टंकी खाली है! इसमें क्या डालें कि जीप चल पड़े?",
+    "performance_tag": "[curious and clear]"
+  },
+  "JR_011": {
+    "file": "intro-fuel-test/JR_011.mp3",
+    "duration_seconds": 5.642,
+    "integrated_lufs": -17.0,
+    "true_peak_dbfs": -1.9,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "अपने सामने वाले cards को देखो... इनमें Jeep को चलाने वाली कोई चीज़ है क्या?",
+    "performance_tag": "[kind and clear]"
+  },
+  "JR_012": {
+    "file": "intro-fuel-test/JR_012.mp3",
+    "duration_seconds": 3.971,
+    "integrated_lufs": -15.8,
+    "true_peak_dbfs": -1.9,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "जिससे गाड़ी की tank भरती है, वही card ढूँढो.",
+    "performance_tag": "[kind and clear]"
+  },
+  "JR_013": {
+    "file": "intro-fuel-test/JR_013.mp3",
+    "duration_seconds": 2.038,
+    "integrated_lufs": -17.0,
+    "true_peak_dbfs": -2.0,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "FUEL वाला card scan करो.",
+    "performance_tag": "[kind and clear]"
+  },
+  "JR_014": {
+    "file": "intro-fuel-test/JR_014.mp3",
+    "duration_seconds": 1.228,
+    "integrated_lufs": -19.4,
+    "true_peak_dbfs": -2.6,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_015": {
+    "file": "intro-fuel-test/JR_015.mp3",
+    "duration_seconds": 2.769,
+    "integrated_lufs": -16.6,
+    "true_peak_dbfs": -2.8,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "YES! FUEL! टंकी भर गई!",
+    "performance_tag": "[excited]"
+  },
+  "JR_016": {
+    "file": "intro-fuel-test/JR_016.mp3",
+    "duration_seconds": 6.139,
+    "integrated_lufs": -19.4,
+    "true_peak_dbfs": -0.2,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_017": {
+    "file": "intro-fuel-test/JR_017.mp3",
+    "duration_seconds": 3.109,
+    "integrated_lufs": -16.7,
+    "true_peak_dbfs": -0.4,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_018": {
+    "file": "intro-fuel-test/JR_018.mp3",
+    "duration_seconds": 2.508,
+    "integrated_lufs": -16.4,
+    "true_peak_dbfs": -7.5,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "जंगल रेस्क्यू टीम चलो!",
+    "performance_tag": "[energetic rallying call]"
+  },
+  "JR_019": {
+    "file": "intro-fuel-test/JR_019.mp3",
+    "duration_seconds": 0.731,
+    "integrated_lufs": -20.5,
+    "true_peak_dbfs": -0.3,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_020": {
+    "file": "intro-fuel-test/JR_020.mp3",
+    "duration_seconds": 4.676,
+    "integrated_lufs": -15.9,
+    "true_peak_dbfs": -3.3,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "ओहो! बस करो, Captain! Fuel तो overflow हो जाएगा!",
+    "performance_tag": "[comic surprise and affection]"
+  },
+  "_batch": {
+    "name": "Introduction and Fuel production test",
+    "format": "mp3_44100_128",
+    "script": "jungle_rescue_final_production_script.md",
+    "note": "Review MP3 batch. Approved final delivery will use the production asset contract."
+  }
+}
