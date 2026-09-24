@@ -1,0 +1,7 @@
+{
+  "text": "A small bird attempts to flap an injured wing: one uneven soft wing flap, a tiny comic feather squeak, then silence. Gentle and not scary. No bird vocal, no voices, no music.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 1.3,
+  "prompt_influence": 0.8,
+  "loop": false
+}

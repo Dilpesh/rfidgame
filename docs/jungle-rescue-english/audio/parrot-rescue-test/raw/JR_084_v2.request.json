@@ -1,0 +1,10 @@
+{
+  "text": "[happy, clear, unhurried; complete the final word] YES! FIRST AID! पट्टी और medicine मिल गई। [small relieved breath]",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+  }
+}

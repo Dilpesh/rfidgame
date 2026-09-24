@@ -1,0 +1,10 @@
+{
+  "text": "[warm welcome back] Welcome back, Captain! अब पैरट को भी थोड़ा water देते हैं।",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "text": "[concerned and gentle] अरे पैरट जी! आपका एक wing flap कर रहा है, दूसरा आराम कर रहा है।",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+  }
+}

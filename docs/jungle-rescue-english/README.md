@@ -20,6 +20,8 @@ Baseline source: `jungle_rescue_final_production_script.md`, copied from the sup
 | [Elephant Rescue audio test](elephant_rescue_audio_preview.html) | Story/audio review | Play JR_021–JR_071 in child-experience order, including ROPE pulls and all four BISCUIT taps |
 | [Elephant joke timing comparison](elephant_joke_timing_preview.html) | Story/audio review | Four current/proposed timing comparisons and the unchanged Pull–गुल reference; source cues remain unchanged |
 | [Elephant Rescue test manifest](audio/elephant-rescue-test/manifest.json) | Audio producer / developer | Partial JR_021–JR_071 delivery data, including selected Vardan processing and measured audio properties |
+| [Parrot Rescue audio test](parrot_rescue_audio_preview.html) | Story/audio review | Play JR_072–JR_102 from Elephant departure through FIRST AID and the WATER return; the shipped Hinglish hurt effect is selected |
+| [Parrot Rescue test manifest](audio/parrot-rescue-test/manifest.json) | Audio producer / developer | Partial JR_072–JR_102 review assets, including Munni Parrot, card hints, and three-gulp water effect |
 | [Saved voice review](voice_auditions/casting_review.json) | Voice casting | User selections: Coco = Saanu, Narrator = Jia, Parrot = Munni; the first Elephant and Lion takes were rejected |
 | [Current casting decisions](voice_auditions/casting_decisions.json) | Audio producer | Selected voice IDs for all five roles |
 | [Subtle character treatments](voice_auditions/selected_character_treatments_manifest.json) | Audio producer | Archived first treatment, rejected as too subtle |

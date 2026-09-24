@@ -1,0 +1,7 @@
+{
+  "text": "A very short cheerful rescue jeep departure from a stationary jungle scene: light engine swish, one soft happy suspension bump, then stop. No speech, no music, no crash.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 1.3,
+  "prompt_influence": 0.8,
+  "loop": false
+}

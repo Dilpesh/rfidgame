@@ -110,6 +110,11 @@ Intro: allow 1.5 seconds after JR_003 before JR_004. No speech recognition is re
 Elephant approach: allow 1.2 seconds after JR_026 (trampoline joke) before JR_027,
 and 0.8 seconds after JR_029 (Coco pulls) before JR_030 (एक, दो, तीन).
 These are runtime waits after the clip ends, not silence added to the source cue.
+For FIRST AID only, a correct card during JR_082 is accepted immediately but JR_082 finishes
+before JR_083 begins, so the spoken card name is never cut off by the chime. After JR_084,
+allow a 0.25-second quiet beat before JR_085's bandage sound. The approved JR_084 recording
+has a complete final word and a short clean tail. Both boundaries keep the
+acknowledgement intelligible; neither adds a new card or hint.
 Pulls: play JR_043 after JR_042 and JR_045 after JR_044; each pull gets a two-second action
 interval from the preceding call's end, containing its short creak. Then continue. JR_046
 contains the approved final Pull/gul joke, followed by JR_047 and the success/praise.

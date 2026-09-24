@@ -1,0 +1,7 @@
+{
+  "text": "Close, clearly identifiable drinking effect: a little water poured into a cup, then exactly three separated cartoon bird swallows, glug ... glug ... GULP. Three distinct rounded throat gulps with the third slightly bigger. No splashing over the swallows, no bird vocal, no speech, no music.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 4.4,
+  "prompt_influence": 0.8,
+  "loop": false
+}

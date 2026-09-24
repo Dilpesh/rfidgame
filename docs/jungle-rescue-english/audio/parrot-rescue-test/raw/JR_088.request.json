@@ -1,0 +1,10 @@
+{
+  "text": "[hopeful and tentative] Thank you, Captain! अब मैं wing हिला कर देखूँ?",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+    "stability": 0.45,
+    "similarity_boost": 0.78,
+    "style": 0.3,
+    "use_speaker_boost": true
+  }
+}

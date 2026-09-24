@@ -1,0 +1,177 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jungle Rescue — Parrot Rescue audio review</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;color:#183628;background:#eef6ed}
+    *{box-sizing:border-box}body{margin:0}main{max-width:880px;margin:auto;padding:22px 15px 60px}
+    header,section{background:#fff;border:1px solid #d4e4d4;border-radius:16px;padding:20px;margin-bottom:15px;box-shadow:0 5px 18px #163a230b}
+    h1{font-size:clamp(1.7rem,5vw,2.5rem);line-height:1.1;margin:0 0 10px}h2{margin:0 0 8px;font-size:1.2rem}p{line-height:1.5}.muted{color:#526b5b}
+    .actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}button{border:1px solid #abc5af;border-radius:10px;background:#edf5ec;color:#183628;padding:11px 14px;font:inherit;font-weight:700;cursor:pointer}
+    button.primary{background:#14623f;border-color:#14623f;color:#fff}button:disabled{opacity:.42;cursor:not-allowed}
+    .status{border-radius:11px;background:#edf5ec;padding:13px;margin-top:14px;min-height:50px;font-weight:650}
+    .flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:10px;margin-top:14px}.step{border:1px solid #d8e6d8;border-radius:12px;padding:13px;background:#fbfdfb}.step strong{display:block}.step small{color:#607364}
+    .sfx{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}.cue{border:1px solid #d8e6d8;border-radius:12px;padding:12px}.cue label{display:block;font-weight:700;margin-bottom:5px}audio{width:100%;height:42px}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Parrot Rescue audio review</h1>
+    <p>Start just after Elephant Rescue. The opening uses your selected hurt effect from the shipped Hinglish build. Coco’s FIRST AID line has a new complete ending. Help the Parrot with FIRST AID, take the water break, then tap WATER to hear her fly again.</p>
+    <div class="actions">
+      <button class="primary" id="start">Play Parrot scene</button>
+      <button id="handoff">Hear FIRST AID handoff</button>
+      <button id="stop">Stop</button>
+      <button id="aid" disabled>Tap FIRST AID</button>
+      <button id="water" disabled>Tap WATER</button>
+      <button id="reminder" disabled>Play water reminder now</button>
+    </div>
+    <div class="status" id="status" role="status" aria-live="polite">Ready. Start the Parrot scene.</div>
+  </header>
+
+  <section>
+    <h2>What the child experiences</h2>
+    <div class="flow">
+      <div class="step"><strong>Gentle distress</strong><small>The Parrot sounds hurt briefly, then Coco reassures her.</small></div>
+      <div class="step"><strong>FIRST AID</strong><small>Tap during the question or wait for hints at 8, 17 and 28 seconds.</small></div>
+      <div class="step"><strong>Real water break</strong><small>The story waits quietly. Drink water, return and tap WATER.</small></div>
+      <div class="step"><strong>Payoff</strong><small>Three distinct gulps, the Parrot's happy line, then a strong takeoff.</small></div>
+    </div>
+    <p class="muted">This is an audio review player. Its buttons simulate fresh card presentations. The deployed game handles the actual RFID reader and shared wrong-card rules.</p>
+  </section>
+
+  <section>
+    <h2>Selected Parrot hurt sound</h2>
+    <p class="muted">The full scene uses the shipped Hinglish <code>parrotFall</code> effect. Its old dialogue is not used.</p>
+    <div class="sfx">
+      <div class="cue"><label>Hinglish shipped hurt effect</label><audio controls preload="metadata" src="audio/parrot-rescue-test/JR_074.mp3?shipped=v1"></audio></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Individual audio checks</h2>
+    <div class="sfx">
+      <div class="cue"><label>Parrot's first hurt line · Munni</label><audio controls preload="metadata" src="audio/parrot-rescue-test/JR_075.mp3"></audio></div>
+      <div class="cue"><label>Wing test and healing</label><audio controls preload="metadata" src="audio/parrot-rescue-test/JR_090.mp3"></audio></div>
+      <div class="cue"><label>Water pour and three gulps</label><audio controls preload="metadata" src="audio/parrot-rescue-test/JR_098.mp3"></audio></div>
+      <div class="cue"><label>Parrot's happy water line · Munni</label><audio controls preload="metadata" src="audio/parrot-rescue-test/JR_099.mp3"></audio></div>
+      <div class="cue"><label>Takeoff</label><audio controls preload="metadata" src="audio/parrot-rescue-test/JR_100.mp3"></audio></div>
+    </div>
+  </section>
+</main>
+<script>
+'use strict';
+const dir='audio/parrot-rescue-test/';
+const dayBed='audio/intro-fuel-test/JR_001.mp3';
+const firstAidTreatmentBeatMs=250;
+const $=id=>document.getElementById(id);
+let run=0,stage='idle',foreground=null,resolveForeground=null,bed=null,pending=false,timers=[],currentCue=null;
+function status(message){$('status').textContent=message}
+function schedule(callback,delay){const id=setTimeout(callback,delay);timers.push(id)}
+function clearTimers(){for(const id of timers)clearTimeout(id);timers=[]}
+function stopForeground(){if(!foreground)return;const audio=foreground;foreground=null;currentCue=null;audio.pause();audio.onended=null;audio.onerror=null;audio.src='';const done=resolveForeground;resolveForeground=null;if(done)done()}
+function stopAll(exceptPlayer=null){run++;clearTimers();stage='idle';pending=false;stopForeground();if(bed){bed.pause();bed.src='';bed=null}for(const player of document.querySelectorAll('audio'))if(player!==exceptPlayer)player.pause();for(const id of ['aid','water','reminder'])$(id).disabled=true;status('Stopped. Start again to replay the scene.')}
+function playCue(id,token=run){
+  if(token!==run)return Promise.resolve();
+  stopForeground();
+  const revision=id==='JR_074'?'?shipped=v1':id==='JR_084'?'?complete=v3':'';
+  const audio=new Audio(`${dir}${id}.mp3${revision}`);foreground=audio;currentCue=id;audio.preload='auto';status(`Playing ${id}…`);
+  return new Promise(resolve=>{
+    let finished=false;
+    const done=()=>{if(finished)return;finished=true;if(foreground===audio){foreground=null;currentCue=null;resolveForeground=null}resolve()};
+    resolveForeground=done;
+    audio.onended=done;
+    audio.onerror=()=>{if(foreground===audio){stopAll();status(`Could not play ${id}. Check that its audio file exists.`)}};
+    audio.play().catch(()=>{if(foreground===audio){stopAll();status(`Browser blocked ${id}. Press Play Parrot scene again.`)}});
+  });
+}
+async function sequence(ids,token=run){for(const id of ids){if(token!==run)return;await playCue(id,token);if(token!==run)return;if(id==='JR_084'){status('A short beat before the bandage sound…');await new Promise(resolve=>setTimeout(resolve,firstAidTreatmentBeatMs))}}}
+function startBed(){bed=new Audio(dayBed);bed.loop=true;bed.volume=.14;bed.play().catch(()=>{})}
+function playAidHintWhenFree(id,token){
+  if(token!==run||stage!=='aidWait')return;
+  if(foreground){schedule(()=>playAidHintWhenFree(id,token),200);return}
+  playCue(id,token).then(()=>{
+    if(token!==run)return;
+    if(id==='JR_082'&&stage==='aidHintLatched')aidSuccess(token);
+    else if(stage==='aidWait')status('Waiting for FIRST AID.');
+  });
+}
+function aidWait(token){
+  if(token!==run||stage!=='aidWait')return;
+  status('Waiting for FIRST AID. Hints will play at 8, 17 and 28 seconds.');
+  for(const [delay,id] of [[8000,'JR_080'],[17000,'JR_081'],[28000,'JR_082']]){
+    schedule(()=>playAidHintWhenFree(id,token),delay);
+  }
+}
+async function aidSuccess(token){
+  if(token!==run||stage==='aidSuccess')return;
+  stage='aidSuccess';clearTimers();$('aid').disabled=true;stopForeground();
+  await sequence(['JR_083','JR_084','JR_085','JR_086','JR_087','JR_088','JR_089','JR_090','JR_091','JR_092','JR_093'],token);
+  if(token!==run)return;
+  stage='waterPrompt';$('water').disabled=false;
+  await playCue('JR_094',token);
+  if(token!==run)return;
+  if(pending){pending=false;waterSuccess(token)}else waterWait(token);
+}
+function waterWait(token){
+  if(token!==run||stage!=='waterPrompt')return;
+  stage='waterWait';$('reminder').disabled=false;
+  if(bed){bed.pause();bed.currentTime=0}
+  status('Take a real water break. Tap WATER when you return. The story waits quietly.');
+  const reminderTimes=[30000,60000,180000,300000,420000];
+  for(const delay of reminderTimes)schedule(()=>playReminder(token),delay);
+  // Continue the 120-second cadence after the explicit 420-second reminder.
+  const further=()=>{if(token!==run||stage!=='waterWait')return;playReminder(token);schedule(further,120000)};
+  schedule(further,540000);
+}
+async function playReminder(token){
+  if(token!==run||stage!=='waterWait'||foreground)return;
+  await playCue('JR_095',token);
+  if(token===run&&stage==='waterWait')status('Waiting quietly for WATER.');
+}
+async function waterSuccess(token){
+  if(token!==run||stage==='waterSuccess')return;
+  stage='waterSuccess';clearTimers();$('water').disabled=true;$('reminder').disabled=true;stopForeground();
+  await playCue('JR_096',token);
+  if(token!==run)return;
+  if(bed){bed.volume=.14;bed.play().catch(()=>{})}
+  await sequence(['JR_097','JR_098','JR_099','JR_100','JR_101','JR_102'],token);
+  if(token!==run)return;
+  if(bed){bed.pause();bed.src='';bed=null}
+  stage='complete';status('Parrot Rescue complete. She is flying again.');
+}
+$('start').onclick=async()=>{
+  stopAll();const token=run;stage='scene';startBed();
+  await sequence(['JR_072','JR_073','JR_074','JR_075','JR_076','JR_077','JR_078'],token);
+  if(token!==run)return;
+  stage='aidPrompt';$('aid').disabled=false;
+  await playCue('JR_079',token);
+  if(token!==run)return;
+  if(pending){pending=false;aidSuccess(token)}else{stage='aidWait';aidWait(token)}
+};
+$('handoff').onclick=async()=>{
+  stopAll();const token=run;stage='handoff';
+  await sequence(['JR_082','JR_083','JR_084','JR_085'],token);
+  if(token===run){stage='idle';status('FIRST AID handoff complete.')}
+};
+$('stop').onclick=()=>stopAll();
+$('aid').onclick=()=>{
+  if(stage==='aidPrompt'){pending=true;$('aid').disabled=true;status('FIRST AID received. Coco will finish the question.');return}
+  if(stage==='aidWait'&&currentCue==='JR_082'){
+    stage='aidHintLatched';clearTimers();$('aid').disabled=true;
+    status('FIRST AID received. Coco will finish saying the card name.');return;
+  }
+  if(stage==='aidWait')aidSuccess(run);
+};
+$('water').onclick=()=>{
+  if(stage==='waterPrompt'){pending=true;$('water').disabled=true;status('WATER received. Coco will finish the instruction.');return}
+  if(stage==='waterWait')waterSuccess(run);
+};
+$('reminder').onclick=()=>playReminder(run);
+document.querySelectorAll('audio').forEach(player=>player.addEventListener('play',()=>{stopAll(player);status('Playing an individual cue.')}));
+</script>
+</body>
+</html>

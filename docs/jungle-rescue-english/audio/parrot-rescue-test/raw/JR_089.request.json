@@ -1,0 +1,10 @@
+{
+  "text": "[encouraging, rhythmic] हाँ! धीरे-धीरे—एक, दो, flap!",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+  }
+}

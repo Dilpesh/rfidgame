@@ -1,0 +1,508 @@
+{
+  "JR_072": {
+    "file": "parrot-rescue-test/JR_072.mp3",
+    "duration_seconds": 1.306,
+    "integrated_lufs": -21.4,
+    "true_peak_dbfs": -2.5,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_073": {
+    "file": "parrot-rescue-test/JR_073.mp3",
+    "duration_seconds": 4.519,
+    "integrated_lufs": -16.5,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "एलिफेंट दादा safe! Jungle Rescue Team, next mission!",
+    "performance_tag": "[bright transition]",
+    "source_file": "raw/JR_073.mp3"
+  },
+  "JR_074": {
+    "file": "parrot-rescue-test/JR_074.mp3",
+    "duration_seconds": 2.795,
+    "integrated_lufs": -17.7,
+    "true_peak_dbfs": -6.5,
+    "review_status": "test",
+    "type": "sfx",
+    "source_file": "audio_candidates/shipped_parrotFall.mp3",
+    "source_key": "parrotFall",
+    "reuse_reason": "User preferred the shipped Parrot hurt effect.",
+    "alternative_file": "alternatives/JR_074_new.mp3"
+  },
+  "JR_075": {
+    "file": "parrot-rescue-test/JR_075.mp3",
+    "duration_seconds": 4.833,
+    "integrated_lufs": -15.1,
+    "true_peak_dbfs": -3.6,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "PARROT",
+    "voice_id": "VOGEEZj2Kly5dP9LrQy8",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.45,
+      "similarity_boost": 0.78,
+      "style": 0.3,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "आह! ओह! मेरा wing hurt हो गया!",
+    "performance_tag": "[briefly hurt, gentle and childlike]",
+    "source_file": "raw/JR_075.mp3"
+  },
+  "JR_076": {
+    "file": "parrot-rescue-test/JR_076.mp3",
+    "duration_seconds": 1.306,
+    "integrated_lufs": -25.9,
+    "true_peak_dbfs": -1.8,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_077": {
+    "file": "parrot-rescue-test/JR_077.mp3",
+    "duration_seconds": 5.799,
+    "integrated_lufs": -16.0,
+    "true_peak_dbfs": -2.3,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "अरे पैरट जी! आपका एक wing flap कर रहा है, दूसरा आराम कर रहा है।",
+    "performance_tag": "[concerned and gentle]",
+    "source_file": "raw/JR_077.mp3"
+  },
+  "JR_078": {
+    "file": "parrot-rescue-test/JR_078.mp3",
+    "duration_seconds": 3.866,
+    "integrated_lufs": -15.8,
+    "true_peak_dbfs": -2.3,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "चिंता मत करो, पैरट जी! Captain और मैं आपकी मदद करेंगे।",
+    "performance_tag": "[warm and reassuring]",
+    "source_file": "raw/JR_078.mp3"
+  },
+  "JR_079": {
+    "file": "parrot-rescue-test/JR_079.mp3",
+    "duration_seconds": 9.796,
+    "integrated_lufs": -16.7,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "चोट लगने पर हमें ऐसी चीज़ चाहिए जिसमें bandage और medicine जैसी चीज़ें होती हैं। Captain, क्या हमारे पास कुछ ऐसा है?",
+    "performance_tag": "[curious, clear card invitation]",
+    "source_file": "raw/JR_079.mp3"
+  },
+  "JR_080": {
+    "file": "parrot-rescue-test/JR_080.mp3",
+    "duration_seconds": 4.441,
+    "integrated_lufs": -15.9,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "अपने cards को देखो... चोट लगने पर काम आने वाली चीज़ ढूँढो.",
+    "performance_tag": "[clear and warm]",
+    "source_file": "raw/JR_080.mp3"
+  },
+  "JR_081": {
+    "file": "parrot-rescue-test/JR_081.mp3",
+    "duration_seconds": 2.691,
+    "integrated_lufs": -16.7,
+    "true_peak_dbfs": -2.5,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "इसमें bandage जैसी चीज़ें रखी होती हैं.",
+    "performance_tag": "[clear and warm]",
+    "source_file": "raw/JR_081.mp3"
+  },
+  "JR_082": {
+    "file": "parrot-rescue-test/JR_082.mp3",
+    "duration_seconds": 2.769,
+    "integrated_lufs": -17.0,
+    "true_peak_dbfs": -2.5,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "FIRST AID वाला card scan करो.",
+    "performance_tag": "[clear and warm]",
+    "source_file": "raw/JR_082.mp3"
+  },
+  "JR_083": {
+    "file": "parrot-rescue-test/JR_083.mp3",
+    "duration_seconds": 1.228,
+    "integrated_lufs": -21.2,
+    "true_peak_dbfs": -3.8,
+    "review_status": "test",
+    "type": "sfx",
+    "alias_of": "JR_040"
+  },
+  "JR_084": {
+    "file": "parrot-rescue-test/JR_084.mp3",
+    "duration_seconds": 4.389,
+    "integrated_lufs": -16.0,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "YES! FIRST AID! पट्टी और medicine मिल गई।",
+    "performance_tag": "[happy, clear, unhurried; complete the final word]",
+    "source_file": "raw/JR_084_v2.mp3",
+    "production_note": "Second take completes गई (Scribe: 3.96–4.18 s); generated breath removed at 4.36 s. No extra scripted words."
+  },
+  "JR_085": {
+    "file": "parrot-rescue-test/JR_085.mp3",
+    "duration_seconds": 1.411,
+    "integrated_lufs": -27.6,
+    "true_peak_dbfs": -1.7,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_086": {
+    "file": "parrot-rescue-test/JR_086.mp3",
+    "duration_seconds": 3.553,
+    "integrated_lufs": -16.4,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "पैरट का wing अब safe है। पट्टी लग गई!",
+    "performance_tag": "[gentle relief]",
+    "source_file": "raw/JR_086.mp3"
+  },
+  "JR_087": {
+    "file": "parrot-rescue-test/JR_087.mp3",
+    "duration_seconds": 1.646,
+    "integrated_lufs": -20.4,
+    "true_peak_dbfs": -5.8,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_088": {
+    "file": "parrot-rescue-test/JR_088.mp3",
+    "duration_seconds": 4.441,
+    "integrated_lufs": -16.4,
+    "true_peak_dbfs": -3.2,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "PARROT",
+    "voice_id": "VOGEEZj2Kly5dP9LrQy8",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.45,
+      "similarity_boost": 0.78,
+      "style": 0.3,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "Thank you, Captain! अब मैं wing हिला कर देखूँ?",
+    "performance_tag": "[hopeful and tentative]",
+    "source_file": "raw/JR_088.mp3"
+  },
+  "JR_089": {
+    "file": "parrot-rescue-test/JR_089.mp3",
+    "duration_seconds": 4.754,
+    "integrated_lufs": -15.7,
+    "true_peak_dbfs": -2.3,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "हाँ! धीरे-धीरे—एक, दो, flap!",
+    "performance_tag": "[encouraging, rhythmic]",
+    "source_file": "raw/JR_089.mp3"
+  },
+  "JR_090": {
+    "file": "parrot-rescue-test/JR_090.mp3",
+    "duration_seconds": 2.116,
+    "integrated_lufs": -22.7,
+    "true_peak_dbfs": -2.1,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_091": {
+    "file": "parrot-rescue-test/JR_091.mp3",
+    "duration_seconds": 2.691,
+    "integrated_lufs": -16.4,
+    "true_peak_dbfs": -5.9,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "PARROT",
+    "voice_id": "VOGEEZj2Kly5dP9LrQy8",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.45,
+      "similarity_boost": 0.78,
+      "style": 0.3,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "फड़फड़! अब मेरा wing चल रहा है!",
+    "performance_tag": "[delighted, bright]",
+    "source_file": "raw/JR_091.mp3"
+  },
+  "JR_092": {
+    "file": "parrot-rescue-test/JR_092.mp3",
+    "duration_seconds": 1.724,
+    "integrated_lufs": -17.1,
+    "true_peak_dbfs": -2.5,
+    "review_status": "test",
+    "type": "character_nonverbal",
+    "voice": "PARROT",
+    "voice_id": "VOGEEZj2Kly5dP9LrQy8",
+    "model_id": "eleven_v3",
+    "source_file": "raw/JR_092.mp3"
+  },
+  "JR_093": {
+    "file": "parrot-rescue-test/JR_093.mp3",
+    "duration_seconds": 4.911,
+    "integrated_lufs": -15.1,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "PARROT",
+    "voice_id": "VOGEEZj2Kly5dP9LrQy8",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.45,
+      "similarity_boost": 0.78,
+      "style": 0.3,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "लेकिन मेरी चोंच सूख गई है। मुझे पानी चाहिए।",
+    "performance_tag": "[tired and thirsty, not distressed]",
+    "source_file": "raw/JR_093.mp3"
+  },
+  "JR_094": {
+    "file": "parrot-rescue-test/JR_094.mp3",
+    "duration_seconds": 11.389,
+    "integrated_lufs": -16.4,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "इतने rescue missions के बाद Captain को भी थोड़ी प्यास लगी होगी। पहले तुम जाकर थोड़ा असली पानी पियो। पानी पीकर वापस आना और WATER वाला card tap करना।",
+    "performance_tag": "[caring, clear water-break instruction]",
+    "source_file": "raw/JR_094.mp3"
+  },
+  "JR_095": {
+    "file": "parrot-rescue-test/JR_095.mp3",
+    "duration_seconds": 5.642,
+    "integrated_lufs": -15.8,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "Captain, Coco यहीं wait कर रहा है। पानी पीकर आओ और WATER वाला card tap कर देना।",
+    "performance_tag": "[kind and unhurried reminder]",
+    "source_file": "raw/JR_095.mp3"
+  },
+  "JR_096": {
+    "file": "parrot-rescue-test/JR_096.mp3",
+    "duration_seconds": 1.228,
+    "integrated_lufs": -21.2,
+    "true_peak_dbfs": -3.8,
+    "review_status": "test",
+    "type": "sfx",
+    "alias_of": "JR_040"
+  },
+  "JR_097": {
+    "file": "parrot-rescue-test/JR_097.mp3",
+    "duration_seconds": 4.362,
+    "integrated_lufs": -16.9,
+    "true_peak_dbfs": -2.3,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "Welcome back, Captain! अब पैरट को भी थोड़ा water देते हैं।",
+    "performance_tag": "[warm welcome back]",
+    "source_file": "raw/JR_097.mp3"
+  },
+  "JR_098": {
+    "file": "parrot-rescue-test/JR_098.mp3",
+    "duration_seconds": 4.441,
+    "integrated_lufs": -22.1,
+    "true_peak_dbfs": -1.5,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_099": {
+    "file": "parrot-rescue-test/JR_099.mp3",
+    "duration_seconds": 4.441,
+    "integrated_lufs": -16.0,
+    "true_peak_dbfs": -4.2,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "PARROT",
+    "voice_id": "VOGEEZj2Kly5dP9LrQy8",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.45,
+      "similarity_boost": 0.78,
+      "style": 0.3,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "ओहो! पानी मिलते ही मेरी चोंच खुश हो गई!",
+    "performance_tag": "[surprised and happy]",
+    "source_file": "raw/JR_099.mp3"
+  },
+  "JR_100": {
+    "file": "parrot-rescue-test/JR_100.mp3",
+    "duration_seconds": 2.038,
+    "integrated_lufs": -20.8,
+    "true_peak_dbfs": -4.3,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_101": {
+    "file": "parrot-rescue-test/JR_101.mp3",
+    "duration_seconds": 3.161,
+    "integrated_lufs": -15.8,
+    "true_peak_dbfs": -3.5,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "PARROT",
+    "voice_id": "VOGEEZj2Kly5dP9LrQy8",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.45,
+      "similarity_boost": 0.78,
+      "style": 0.3,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "मैं उड़ सकता हूँ! Bye-bye, Captain!",
+    "performance_tag": "[joyful, calling as she flies away]",
+    "source_file": "raw/JR_101.mp3"
+  },
+  "JR_102": {
+    "file": "parrot-rescue-test/JR_102.mp3",
+    "duration_seconds": 5.251,
+    "integrated_lufs": -15.0,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "देखो, पैरट फुर्र से उड़ गया! Jungle Rescue Team, चलो आगे!",
+    "performance_tag": "[delighted transition]",
+    "source_file": "raw/JR_102.mp3"
+  },
+  "_batch": {
+    "name": "Parrot Rescue production test",
+    "range": "JR_072–JR_102",
+    "format": "mp3_44100_128",
+    "script": "jungle_rescue_final_production_script.md",
+    "note": "Separate FIRST AID and WATER interactions; review MP3s, not final lossless delivery."
+  }
+}
