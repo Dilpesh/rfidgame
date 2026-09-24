@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elephant Rescue — joke timing comparison</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;color:#173729;background:#eff5ec}
+    *{box-sizing:border-box}body{margin:0}main{max-width:900px;margin:auto;padding:28px 16px 64px}
+    header,section{background:#fff;border:1px solid #d7e5d4;border-radius:18px;padding:22px;margin-bottom:16px}
+    h1{font-size:clamp(1.8rem,5vw,2.7rem);line-height:1.15;margin:6px 0 14px}h2{font-size:1.25rem;margin:0 0 8px}
+    p{line-height:1.55;margin:8px 0 16px}.eyebrow{font-size:.8rem;letter-spacing:.08em;text-transform:uppercase;font-weight:750;color:#536650}
+    .muted{color:#526b5b}.pairs{display:grid;grid-template-columns:1fr 1fr;gap:12px}.take{padding:15px;background:#f7faf5;border:1px solid #dfebdc;border-radius:12px}
+    .proposed{border-color:#8bbe98;background:#eff8ee}.take strong{display:block;margin-bottom:10px}audio{width:100%;height:44px}
+    a{color:#14623f}button{background:#14623f;color:white;font:inherit;font-weight:700;border:0;border-radius:9px;padding:10px 16px;cursor:pointer}
+    button:focus-visible,a:focus-visible{outline:3px solid #dcae35;outline-offset:4px}.note{font-size:.92rem}
+    @media(max-width:600px){.pairs{grid-template-columns:1fr}header,section{padding:18px}}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <div class="eyebrow">Jungle Rescue · listening comparison</div>
+    <h1>Give the joke a moment</h1>
+    <p>Four short comparisons using the existing voices and words. Listen to <strong>Current</strong>, then <strong>Proposed</strong> for each moment.</p>
+    <p class="muted">Updated with the new biscuit wording and light Vardan audition. These excerpts isolate timing without ambience. “Current” means without extra timing edits; the full scene now includes the longer trampoline pause and the pause before counting. Other proposed timing edits remain under review.</p>
+    <button id="stop" type="button">Stop audio</button>
+    <p class="note"><a href="elephant_rescue_audio_preview.html">Back to the full Elephant scene</a></p>
+  </header>
+
+  <section>
+    <h2>1. “ये रोड है या ट्रैम्पोलीन?”</h2>
+    <p>Proposed: a longer 1.2-second beat after the joke before the Elephant trumpet introduces the next event.</p>
+    <div class="pairs">
+      <div class="take"><strong>Current</strong><audio aria-label="Trampoline joke, current timing" controls preload="metadata" src="audio/elephant-rescue-test/timing-preview/trampoline_current.wav"></audio></div>
+      <div class="take proposed"><strong>Proposed · let the joke land</strong><audio aria-label="Trampoline joke, proposed timing" controls preload="metadata" src="audio/elephant-rescue-test/timing-preview/trampoline_proposed.wav"></audio></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>2. Mud fall → “ये कौन करता है?!”</h2>
+    <p>Proposed: wait 0.8 seconds after “कोको ने एलिफेंट दादा को खींचा” before the count. Then the Narrator explains the fall while the quieter splat and boink finish; Coco reacts sooner. The pause already after his catchphrase stays.</p>
+    <div class="pairs">
+      <div class="take"><strong>Current</strong><audio aria-label="Mud joke, current timing" controls preload="metadata" src="audio/elephant-rescue-test/timing-preview/mud_current.wav"></audio></div>
+      <div class="take proposed"><strong>Proposed · connect fall and reaction</strong><audio aria-label="Mud joke, proposed timing" controls preload="metadata" src="audio/elephant-rescue-test/timing-preview/mud_proposed.wav"></audio></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>3. “सिर्फ़ दौड़ नहीं रहे हैं… कूद भी रहे हैं!”</h2>
+    <p>Proposed: Elephant answers “ये क्या था?” sooner. The growl’s listening beat and Coco’s internal pause stay; a 0.6-second beat follows “कूद भी रहे हैं!” before the biscuit question.</p>
+    <div class="pairs">
+      <div class="take"><strong>Current</strong><audio aria-label="Stomach joke, current timing" controls preload="metadata" src="audio/elephant-rescue-test/timing-preview/stomach_current.wav"></audio></div>
+      <div class="take proposed"><strong>Proposed · quicker exchange, clearer punchline</strong><audio aria-label="Stomach joke, proposed timing" controls preload="metadata" src="audio/elephant-rescue-test/timing-preview/stomach_proposed.wav"></audio></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>4. “और खाऊँगा तो balloon बन जाऊँगा!”</h2>
+    <p>Final bite only. Proposed: 0.3 seconds between the punchline and laughter. Elephant’s recorded delivery is unchanged, so this tests just that small reaction beat.</p>
+    <div class="pairs">
+      <div class="take"><strong>Current</strong><audio aria-label="Balloon joke, current timing" controls preload="metadata" src="audio/elephant-rescue-test/timing-preview/balloon_current.wav"></audio></div>
+      <div class="take proposed"><strong>Proposed · a beat before laughter</strong><audio aria-label="Balloon joke, proposed timing" controls preload="metadata" src="audio/elephant-rescue-test/timing-preview/balloon_proposed.wav"></audio></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Pull–गुल · acting reference</h2>
+    <p>The existing recording already has several pauses. Listen for whether the effort, breathlessness and surprise carry the joke; this excerpt has no timing changes.</p>
+    <audio aria-label="Pull gul joke, unchanged acting reference" controls preload="metadata" src="audio/elephant-rescue-test/timing-preview/pull_reference.wav"></audio>
+  </section>
+  <p class="muted note">Same recordings and words. No new ElevenLabs generation. Timing choices await your review.</p>
+</main>
+<script>
+'use strict';
+const players=[...document.querySelectorAll('audio')];
+for(const active of players) active.addEventListener('play',()=>{
+  for(const other of players) if(other!==active) other.pause();
+});
+document.getElementById('stop').addEventListener('click',()=>{
+  for(const player of players){player.pause();player.currentTime=0;}
+});
+document.addEventListener('visibilitychange',()=>{
+  if(document.hidden) for(const player of players) player.pause();
+});
+</script>
+</body>
+</html>

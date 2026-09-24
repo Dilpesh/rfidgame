@@ -4,7 +4,7 @@
   "selected": {
     "COCO": {"voice": "Saanu", "voice_id": "d9BvEI0bp2Tmdpqnjwn0", "reference_file": "reference_shipped_intro.mp3"},
     "NARRATOR": {"voice": "Jia", "voice_id": "ItmwhOeluca31IEX91Yk", "reference_file": "narrator_jia.mp3"},
-    "ELEPHANT": {"voice": "Vardan", "voice_id": "bBG9wwa23659EgIkMbc1", "reference_file": "elephant_vardan_playful.mp3", "production_treatment": "elephant_vardan_character_bold.mp3"},
+    "ELEPHANT": {"voice": "Vardan", "voice_id": "bBG9wwa23659EgIkMbc1", "reference_file": "elephant_vardan_playful.mp3", "production_treatment": "../audio/elephant-rescue-test/audition-childlike-v2/elephant_light.wav", "treatment_status": "approved light EQ at natural pitch; bold treatment superseded", "audition_manifest": "../audio/elephant-rescue-test/audition-childlike-v2/manifest.json"},
     "PARROT": {"voice": "Munni", "voice_id": "VOGEEZj2Kly5dP9LrQy8", "reference_file": "parrot_munni.mp3"},
     "LION": {"voice": "Bholu", "voice_id": "5krdMTA5HonvWAlY2vSx", "reference_file": "lion_bholu.mp3", "production_treatment": "lion_bholu_character_bold.mp3"}
   },

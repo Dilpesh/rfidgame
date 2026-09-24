@@ -22,7 +22,7 @@ A local emotion changes performance, never the character's identity.
 |---|---|---|
 | COCO | Saanu, ElevenLabs voice ID `d9BvEI0bp2Tmdpqnjwn0`; use `voice_auditions/reference_shipped_intro.mp3` as the approved tone reference | Warm, curious, playful; clear Hindi/Hinglish; match the shipped Coco's energy and comic timing. Encouragement never sounds like a test examiner. |
 | NARRATOR | Jia, ElevenLabs voice ID `ItmwhOeluca31IEX91Yk` | Warm, brisk and clear; distinct from Coco; let actions and sound jokes breathe without long dramatic pauses. |
-| ELEPHANT | Vardan, ElevenLabs voice ID `bBG9wwa23659EgIkMbc1` | Youthful, rounded, affectionate and playful; never threatening. Keep Hindi/Hinglish words clear. Use the selected bold Elephant treatment documented in `voice_auditions/bold_character_treatments_manifest.json`. |
+| ELEPHANT | Vardan, ElevenLabs voice ID `bBG9wwa23659EgIkMbc1` | Child-like, affectionate and playful; retain Vardan's natural pitch. Use the approved light EQ option in `audio/elephant-rescue-test/audition-childlike-v2/manifest.json`; no pitch shifting or doubled voice layers. |
 | PARROT | Munni, ElevenLabs voice ID `VOGEEZj2Kly5dP9LrQy8` | Small, bright, lightly squeaky; distress is brief and gentle, then gradually relieved and cheerful. Words remain intelligible. |
 | LION | Bholu, ElevenLabs voice ID `5krdMTA5HonvWAlY2vSx` | Small child-like lion throughout: shy, vulnerable and warm. Use the selected bold Lion treatment documented in `voice_auditions/bold_character_treatments_manifest.json`; sneezes and snores can be comically big without turning into an adult roaring lion. |
 
@@ -303,23 +303,23 @@ and one laughter cue. Feeding order and additional-tap handling are in the playb
 
 ### BITE 1
 
-**JR_062 · ELEPHANT** `[eager, playfully pleading; rising intonation]`
-> बस एक!
+**JR_062 · ELEPHANT** `[playfully incredulous; emphasise एक, rising question; no scolding]`
+> बस एक?
 
 ### BITE 2
 
 **JR_063 · ELEPHANT** `[hopeful, cheeky]`
-> बस दो... थोड़ा और दो!
+> बस दो? थोड़ा और दो, कोको!
 
 ### BITE 3
 
 **JR_064 · ELEPHANT** `[playfully pleading]`
-> तीन! बस एक आखिरी!
+> कोको, मेरा पेट देखो... बहुत भूख लगी है! और खिलाओ।
 
 ### BITE 4
 
-**JR_065 · ELEPHANT** `[count proudly, then comic surprise]`
-> चार! बस करो, Captain! इतना खाऊँगा तो balloon बनकर उड़ जाऊँगा!
+**JR_065 · ELEPHANT** `[playfully overwhelmed; quick ओके, ओके, then surprised balloon image]`
+> ओके, ओके, बस करो! और खाऊँगा तो balloon बन जाऊँगा!
 
 **JR_066 · SFX** Elephant gives a short, warm belly laugh; Coco joins with a giggle. About two seconds
 total, natural character laughter, no canned laugh track. Match the established character voices.

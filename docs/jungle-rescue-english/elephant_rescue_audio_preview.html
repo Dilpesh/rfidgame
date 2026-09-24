@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jungle Rescue — Elephant Rescue audio test</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;color:#183628;background:#eef6ed}
+    *{box-sizing:border-box}body{margin:0}main{max-width:880px;margin:auto;padding:22px 15px 60px}
+    header,section{background:#fff;border:1px solid #d4e4d4;border-radius:16px;padding:20px;margin-bottom:15px;box-shadow:0 5px 18px #163a230b}
+    h1{font-size:clamp(1.7rem,5vw,2.5rem);line-height:1.1;margin:0 0 10px}h2{margin:0 0 8px;font-size:1.2rem}p{line-height:1.5}.muted{color:#526b5b}
+    .actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}button{border:1px solid #abc5af;border-radius:10px;background:#edf5ec;color:#183628;padding:11px 14px;font:inherit;font-weight:700;cursor:pointer}
+    button.primary{background:#14623f;border-color:#14623f;color:#fff}button:disabled{opacity:.42;cursor:not-allowed}.status{border-radius:11px;background:#edf5ec;padding:13px;margin-top:14px;min-height:50px;font-weight:650}
+    .counter{display:inline-flex;align-items:center;gap:7px;border-radius:999px;background:#fff4d5;border:1px solid #ecd489;padding:8px 12px;margin-top:12px;font-weight:800}
+    .flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:10px;margin-top:14px}.step{border:1px solid #d8e6d8;border-radius:12px;padding:13px;background:#fbfdfb}.step strong{display:block}.step small{color:#607364}
+    .sfx{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}.cue{border:1px solid #d8e6d8;border-radius:12px;padding:12px}.cue label{display:block;font-weight:700;margin-bottom:5px}audio{width:100%;height:42px}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Elephant Rescue audio test</h1>
+    <p><a href="elephant_joke_timing_preview.html">New: compare current and proposed joke timing</a></p>
+    <p>Updated: a 1.2-second beat after the trampoline joke, 0.8 seconds before “एक, दो, तीन”, and new biscuit requests. The scene uses a light, natural-pitch Vardan audition. Tap BISCUIT four times as before.</p>
+    <div class="actions">
+      <button class="primary" id="start">Play scene to ROPE prompt</button>
+      <button id="stop">Stop</button>
+      <button id="rope" disabled>Tap ROPE</button>
+      <button id="biscuit" disabled>Tap BISCUIT</button>
+      <button id="wrong" disabled>Try wrong card</button>
+    </div>
+    <div class="counter">Biscuit bites: <span id="bites">0 / 4</span></div>
+    <div class="status" id="status" aria-live="polite">Ready. Start with the jeep journey.</div>
+  </header>
+
+  <section id="elephant-audition">
+    <h2>Vardan again — natural or lightly warm?</h2>
+    <p class="muted">Both use the same four new lines. The lowered pitch and doubled voice layers have been removed. Natural has volume adjustment only; Light adds a little warmth. Light is now approved and used in the scene above.</p>
+    <div class="sfx">
+      <div class="cue"><label>Natural child-like Vardan</label><audio controls preload="metadata" src="audio/elephant-rescue-test/audition-childlike-v2/elephant_natural.wav"></audio></div>
+      <div class="cue"><label>Light warmth · natural pitch</label><audio controls preload="metadata" src="audio/elephant-rescue-test/audition-childlike-v2/elephant_light.wav"></audio></div>
+    </div>
+    <ol>
+      <li>बस एक?</li>
+      <li>बस दो? थोड़ा और दो, कोको!</li>
+      <li>कोको, मेरा पेट देखो... बहुत भूख लगी है! और खिलाओ।</li>
+      <li>ओके, ओके, बस करो! और खाऊँगा तो balloon बन जाऊँगा!</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Hints</h2>
+    <p class="muted">These remain separate and do not play unless the child needs help.</p>
+    <div class="actions">
+      <button class="cueButton ropeHint" data-cue="JR_037">ROPE hint 1</button>
+      <button class="cueButton ropeHint" data-cue="JR_038">ROPE hint 2</button>
+      <button class="cueButton ropeHint" data-cue="JR_039">ROPE rescue hint</button>
+      <button class="cueButton biscuitHint" data-cue="JR_056">BISCUIT hint 1</button>
+      <button class="cueButton biscuitHint" data-cue="JR_057">BISCUIT hint 2</button>
+      <button class="cueButton biscuitHint" data-cue="JR_058">BISCUIT rescue hint</button>
+      <button class="cueButton biscuitHint" data-cue="JR_067">Next-bite hint</button>
+      <button class="cueButton biscuitHint" data-cue="JR_068">Remove-and-retap hint</button>
+    </div>
+  </section>
+
+  <section>
+    <h2>Child-experience checkpoints</h2>
+    <div class="flow">
+      <div class="step"><strong>Jeep comedy</strong><small>Three escalating bumps lead quickly to the trampoline joke.</small></div>
+      <div class="step"><strong>Coco’s mistake</strong><small>Mud splat, a distinct accident boink, then “ये कौन करता है?!”</small></div>
+      <div class="step"><strong>Earned praise</strong><small>“कितना ज़ोर लगाया” follows the child’s pretend pulling.</small></div>
+      <div class="step"><strong>Four bites</strong><small>Each fresh BISCUIT tap gets a crunch and another hungry request, ending with the balloon joke.</small></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>“Muddy गड्ढे” pronunciation</h2>
+    <p class="muted">The full scene now uses the original Coco recording excerpt. It stops before the old narration continues, so JR_029 remains in Jia’s Narrator voice.</p>
+    <div class="sfx">
+      <div class="cue"><label>Selected · Original shipped pronunciation</label><audio controls preload="metadata" src="audio/elephant-rescue-test/JR_028.mp3"></audio></div>
+      <div class="cue"><label>Reference · New v3 pronunciation</label><audio controls preload="metadata" src="audio/elephant-rescue-test/alternatives/JR_028_new_v3.mp3"></audio></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Replacement auditions — jeep bumps</h2>
+    <p class="muted">Each option contains the required soft bump, bigger bump, and quick double-bump in order.</p>
+    <div class="sfx">
+      <div class="cue"><label>Alternative A · Natural suspension</label><audio controls preload="metadata" src="audio/elephant-rescue-test/alternatives/bump_a_sequence.mp3"></audio></div>
+      <div class="cue"><label>Alternative B · Playful rescue-jeep bounce</label><audio controls preload="metadata" src="audio/elephant-rescue-test/alternatives/bump_b_sequence.mp3"></audio></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Replacement auditions — rope effort</h2>
+    <p class="muted">Both choices are short enough to sit inside the two-second pretend-pull interval and contain no snapping sound.</p>
+    <div class="sfx">
+      <div class="cue"><label>Alternative A · Textured rope fibres</label><audio controls preload="metadata" src="audio/elephant-rescue-test/alternatives/rope_a.mp3"></audio></div>
+      <div class="cue"><label>Alternative B · Strong rope tug</label><audio controls preload="metadata" src="audio/elephant-rescue-test/alternatives/rope_b.mp3"></audio></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Important effects and character moments</h2>
+    <div class="sfx">
+      <div class="cue"><label>JR_021 · Moving jeep bed</label><audio controls preload="metadata" src="audio/elephant-rescue-test/JR_021.mp3"></audio></div>
+      <div class="cue"><label>JR_023–025 · Three bumps</label><button class="cueButton" data-sequence="JR_023,JR_024,JR_025">Play bumps</button></div>
+      <div class="cue"><label>JR_032 · Coco’s accident boink</label><audio controls preload="metadata" src="audio/elephant-rescue-test/JR_032.mp3"></audio></div>
+      <div class="cue"><label>JR_043 · Rope effort</label><audio controls preload="metadata" src="audio/elephant-rescue-test/JR_043.mp3"></audio></div>
+      <div class="cue"><label>JR_047 · Mud release</label><audio controls preload="metadata" src="audio/elephant-rescue-test/JR_047.mp3"></audio></div>
+      <div class="cue"><label>JR_051 · Identifiable stomach growl</label><audio controls preload="metadata" src="audio/elephant-rescue-test/JR_051.mp3"></audio></div>
+      <div class="cue"><label>JR_066 · Elephant laugh + Coco giggle</label><audio controls preload="metadata" src="audio/elephant-rescue-test/JR_066.mp3?childlike=v2"></audio></div>
+    </div>
+  </section>
+</main>
+<script>
+'use strict';
+const dir='audio/elephant-rescue-test/';
+const dayBed='audio/intro-fuel-test/JR_001.mp3';
+const pausesAfter={JR_026:1200,JR_029:800};
+let foreground=null,bed=null,run=0,stage='idle',bites=0;
+const $=id=>document.getElementById(id);
+const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+function setStatus(text){$('status').textContent=text}
+function stopAll(exceptPlayer=null){run++;stage='idle';for(const id of ['rope','biscuit','wrong'])$(id).disabled=true;for(const player of document.querySelectorAll('audio'))if(player!==exceptPlayer)player.pause();if(foreground){const active=foreground;foreground=null;active.pause();if(active.onended)active.onended();active.src=''}if(bed){bed.pause();bed.src='';bed=null}setStatus('Stopped.')}
+function playCue(id,token=run){
+  if(token!==run)return Promise.resolve();
+  if(foreground){foreground.pause();foreground.src=''}
+  foreground=new Audio(`${dir}${id}.mp3?childlike=v2`);foreground.preload='auto';setStatus(`Playing ${id}…`);
+  return new Promise(resolve=>{let finished=false;const done=()=>{if(finished)return;finished=true;resolve()};foreground.onended=done;foreground.onerror=()=>{setStatus(`Could not play ${id}.`);done()};foreground.play().catch(()=>{setStatus(`Browser blocked ${id}; press the button again.`);done()})});
+}
+async function sequence(ids,token=run){for(const id of ids){if(token!==run)return;await playCue(id,token);if(token!==run)return;if(pausesAfter[id]){setStatus('A short story beat…');await wait(pausesAfter[id])}}}
+function switchBed(source,volume){if(bed){bed.pause();bed.src=''}bed=new Audio(source);bed.loop=true;bed.volume=volume;bed.play().catch(()=>{})}
+async function pullInterval(id,token){const started=performance.now();await playCue(id,token);const remaining=2000-(performance.now()-started);if(remaining>0)await wait(remaining)}
+function updateBites(){ $('bites').textContent=`${bites} / 4` }
+
+$('start').onclick=async()=>{
+  stopAll();const token=run;stage='scene';bites=0;updateBites();$('rope').disabled=true;$('biscuit').disabled=true;$('wrong').disabled=true;
+  switchBed(`${dir}JR_021.mp3`,.18);
+  await sequence(['JR_022','JR_023','JR_024','JR_025','JR_026','JR_027'],token);
+  if(token!==run)return;switchBed(dayBed,.16);
+  await sequence(['JR_028','JR_029','JR_030','JR_031','JR_032','JR_033','JR_034','JR_035','JR_036'],token);
+  if(token!==run)return;stage='rope';$('rope').disabled=false;setStatus('Waiting for the child to tap ROPE. Try the ROPE hints or tap ROPE.');
+};
+$('stop').onclick=()=>stopAll();
+$('rope').onclick=async()=>{
+  if(stage!=='rope')return;stage='ropeSuccess';$('rope').disabled=true;const token=run;
+  await sequence(['JR_040','JR_041','JR_042'],token);await pullInterval('JR_043',token);
+  await playCue('JR_044',token);await pullInterval('JR_045',token);
+  await sequence(['JR_046','JR_047','JR_048','JR_049','JR_050','JR_051','JR_052','JR_053','JR_054','JR_055'],token);
+  if(token!==run)return;stage='biscuit';$('biscuit').disabled=false;$('wrong').disabled=false;setStatus('Waiting for the first BISCUIT tap.');
+};
+$('biscuit').onclick=async()=>{
+  if(stage!=='biscuit'||bites>=4)return;stage='bitePlaying';$('biscuit').disabled=true;$('wrong').disabled=true;const token=run;bites++;updateBites();
+  if(bites===1)await sequence(['JR_059','JR_060','JR_061','JR_062'],token);
+  if(bites===2)await sequence(['JR_061','JR_063'],token);
+  if(bites===3)await sequence(['JR_061','JR_064'],token);
+  if(bites===4)await sequence(['JR_061','JR_065','JR_066'],token);
+  if(token!==run)return;
+  if(bites<4){stage='biscuit';$('biscuit').disabled=false;$('wrong').disabled=false;setStatus(`Bite ${bites} complete. Remove and tap BISCUIT again.`)}
+  else{stage='complete';setStatus('Elephant feeding game complete. No fifth bite is accepted.')}
+};
+$('wrong').onclick=async()=>{if(stage!=='biscuit')return;const token=run;$('wrong').disabled=true;await sequence(['JR_070','JR_071'],token);if(token===run&&stage==='biscuit')$('wrong').disabled=false};
+document.querySelectorAll('.cueButton').forEach(button=>button.onclick=async()=>{const token=run;if(button.dataset.sequence)await sequence(button.dataset.sequence.split(','),token);else await playCue(button.dataset.cue,token)});
+document.querySelectorAll('audio').forEach(player=>player.addEventListener('play',()=>{stopAll(player);setStatus('Playing an individual audition.')}));
+</script>
+</body>
+</html>

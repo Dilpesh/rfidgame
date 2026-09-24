@@ -1,0 +1,842 @@
+{
+  "JR_021": {
+    "file": "elephant-rescue-test/JR_021.mp3",
+    "duration_seconds": 12.042,
+    "integrated_lufs": -20.7,
+    "true_peak_dbfs": -1.5,
+    "review_status": "test",
+    "type": "sfx",
+    "bed": true,
+    "loop": true
+  },
+  "JR_022": {
+    "file": "elephant-rescue-test/JR_022.mp3",
+    "duration_seconds": 7.471,
+    "integrated_lufs": -16.3,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "NARRATOR",
+    "voice_id": "ItmwhOeluca31IEX91Yk",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.56,
+      "similarity_boost": 0.78,
+      "style": 0.12,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "जीप जंगल के अंदर गई। बड़े-बड़े पेड़, छोटी-छोटी नदियाँ, उछलती-कूदती जीप!",
+    "performance_tag": "[bouncy and curious]",
+    "character_treatment": null
+  },
+  "JR_023": {
+    "file": "elephant-rescue-test/JR_023.mp3",
+    "duration_seconds": 0.627,
+    "integrated_lufs": -22.0,
+    "true_peak_dbfs": -2.0,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_024": {
+    "file": "elephant-rescue-test/JR_024.mp3",
+    "duration_seconds": 0.836,
+    "integrated_lufs": -22.5,
+    "true_peak_dbfs": -1.6,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_025": {
+    "file": "elephant-rescue-test/JR_025.mp3",
+    "duration_seconds": 0.914,
+    "integrated_lufs": -25.8,
+    "true_peak_dbfs": -1.5,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_026": {
+    "file": "elephant-rescue-test/JR_026.mp3",
+    "duration_seconds": 2.508,
+    "integrated_lufs": -17.4,
+    "true_peak_dbfs": -2.5,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "वो! ये रोड है या ट्रैम्पोलीन?",
+    "performance_tag": "[surprised and comic]",
+    "character_treatment": null
+  },
+  "JR_027": {
+    "file": "elephant-rescue-test/JR_027.mp3",
+    "duration_seconds": 2.142,
+    "integrated_lufs": -20.5,
+    "true_peak_dbfs": -12.8,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_028": {
+    "file": "elephant-rescue-test/JR_028.mp3",
+    "duration_seconds": 8.673,
+    "integrated_lufs": -15.1,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "legacy shipped recording",
+    "voice_settings": null,
+    "spoken_text": "अरे! एलिफेंट दादा एक बड़े मड्डी गड्ढे में फँसे हैं। चिंता मत करो, कोको सुपर रेस्क्यू आ गया!",
+    "performance_tag": "[concerned and reassuring]",
+    "character_treatment": null,
+    "source_file": "audio_candidates/shipped_elephantSetup.mp3",
+    "source_key": "elephantSetup",
+    "source_excerpt_seconds": {
+      "start": 0.72,
+      "end": 9.35
+    },
+    "reuse_reason": "User preferred the original muddy गड्ढे pronunciation; excerpt ends before the old continuation."
+  },
+  "JR_029": {
+    "file": "elephant-rescue-test/JR_029.mp3",
+    "duration_seconds": 2.508,
+    "integrated_lufs": -16.4,
+    "true_peak_dbfs": -3.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "NARRATOR",
+    "voice_id": "ItmwhOeluca31IEX91Yk",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.56,
+      "similarity_boost": 0.78,
+      "style": 0.12,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "कोको ने एलिफेंट दादा को खींचा।",
+    "performance_tag": "[brisk and physical]",
+    "character_treatment": null
+  },
+  "JR_030": {
+    "file": "elephant-rescue-test/JR_030.mp3",
+    "duration_seconds": 2.194,
+    "integrated_lufs": -16.4,
+    "true_peak_dbfs": -3.3,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "एक, दो, तीन!",
+    "performance_tag": "[effortful and rhythmic]",
+    "character_treatment": null
+  },
+  "JR_031": {
+    "file": "elephant-rescue-test/JR_031.mp3",
+    "duration_seconds": 1.802,
+    "integrated_lufs": -20.6,
+    "true_peak_dbfs": -1.7,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_032": {
+    "file": "elephant-rescue-test/JR_032.mp3",
+    "duration_seconds": 0.627,
+    "integrated_lufs": -20.4,
+    "true_peak_dbfs": -12.7,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_033": {
+    "file": "elephant-rescue-test/JR_033.mp3",
+    "duration_seconds": 2.508,
+    "integrated_lufs": -16.4,
+    "true_peak_dbfs": -3.6,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "NARRATOR",
+    "voice_id": "ItmwhOeluca31IEX91Yk",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.56,
+      "similarity_boost": 0.78,
+      "style": 0.12,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "और कोको खुद मड में गिर गया!",
+    "performance_tag": "[comic surprise]",
+    "character_treatment": null
+  },
+  "JR_034": {
+    "file": "elephant-rescue-test/JR_034.mp3",
+    "duration_seconds": 1.959,
+    "integrated_lufs": -17.3,
+    "true_peak_dbfs": -2.5,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "ये कौन करता है?!",
+    "performance_tag": "[funny signature voice]",
+    "character_treatment": null
+  },
+  "JR_035": {
+    "file": "elephant-rescue-test/JR_035.mp3",
+    "duration_seconds": 3.239,
+    "integrated_lufs": -17.3,
+    "true_peak_dbfs": -2.3,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "ओके, नया प्लान चाहिए.",
+    "performance_tag": "[small embarrassed laugh, recovering quickly]",
+    "character_treatment": null
+  },
+  "JR_036": {
+    "file": "elephant-rescue-test/JR_036.mp3",
+    "duration_seconds": 8.908,
+    "integrated_lufs": -18.1,
+    "true_peak_dbfs": -2.3,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "Captain, हमें कोई लंबी चीज़ चाहिए जिससे एलिफेंट दादा को अपनी तरफ खींच सकें। क्या हमारे पास ऐसी कोई चीज़ है?",
+    "performance_tag": "[clear and warm]",
+    "character_treatment": null
+  },
+  "JR_037": {
+    "file": "elephant-rescue-test/JR_037.mp3",
+    "duration_seconds": 6.922,
+    "integrated_lufs": -17.3,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "अपने cards को देखो... कोई लंबी चीज़ दिख रही है जिससे हम खींच सकें?",
+    "performance_tag": "[clear and warm]",
+    "character_treatment": null
+  },
+  "JR_038": {
+    "file": "elephant-rescue-test/JR_038.mp3",
+    "duration_seconds": 4.362,
+    "integrated_lufs": -16.3,
+    "true_peak_dbfs": -2.3,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "इसे पकड़कर किसी चीज़ को अपनी तरफ खींचा जा सकता है.",
+    "performance_tag": "[clear and warm]",
+    "character_treatment": null
+  },
+  "JR_039": {
+    "file": "elephant-rescue-test/JR_039.mp3",
+    "duration_seconds": 3.239,
+    "integrated_lufs": -16.4,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "ROPE वाला card scan करो.",
+    "performance_tag": "[clear and warm]",
+    "character_treatment": null
+  },
+  "JR_040": {
+    "file": "elephant-rescue-test/JR_040.mp3",
+    "duration_seconds": 1.228,
+    "integrated_lufs": -21.2,
+    "true_peak_dbfs": -3.8,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_041": {
+    "file": "elephant-rescue-test/JR_041.mp3",
+    "duration_seconds": 8.673,
+    "integrated_lufs": -17.3,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "YES! ROPE! रस्सी मिल गई। अब एलिफेंट दादा को बाहर निकालने में कोको की मदद करो।",
+    "performance_tag": "[bright and encouraging]",
+    "character_treatment": null
+  },
+  "JR_042": {
+    "file": "elephant-rescue-test/JR_042.mp3",
+    "duration_seconds": 4.441,
+    "integrated_lufs": -16.1,
+    "true_peak_dbfs": -2.3,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "Captain, बैठे-बैठे रस्सी खींचने का नाटक करो। Pull!",
+    "performance_tag": "[playful and encouraging]",
+    "character_treatment": null
+  },
+  "JR_043": {
+    "file": "elephant-rescue-test/JR_043.mp3",
+    "duration_seconds": 0.914,
+    "integrated_lufs": -20.4,
+    "true_peak_dbfs": -1.5,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_044": {
+    "file": "elephant-rescue-test/JR_044.mp3",
+    "duration_seconds": 2.273,
+    "integrated_lufs": -16.7,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "फिर से। Pull!",
+    "performance_tag": "[clear and warm]",
+    "character_treatment": null
+  },
+  "JR_045": {
+    "file": "elephant-rescue-test/JR_045.mp3",
+    "duration_seconds": 0.914,
+    "integrated_lufs": -20.4,
+    "true_peak_dbfs": -1.5,
+    "review_status": "test",
+    "type": "sfx",
+    "alias_of": "JR_043"
+  },
+  "JR_046": {
+    "file": "elephant-rescue-test/JR_046.mp3",
+    "duration_seconds": 7.811,
+    "integrated_lufs": -16.4,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "एक आखिरी बार। Pull, pull… अरे, pull-pull करते-करते दिमाग़ की बत्ती गुल हो गई!",
+    "performance_tag": "[comically breathless, bouncing on pull and gul]",
+    "character_treatment": null
+  },
+  "JR_047": {
+    "file": "elephant-rescue-test/JR_047.mp3",
+    "duration_seconds": 1.802,
+    "integrated_lufs": -20.7,
+    "true_peak_dbfs": -6.2,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_048": {
+    "file": "elephant-rescue-test/JR_048.mp3",
+    "duration_seconds": 2.926,
+    "integrated_lufs": -16.3,
+    "true_peak_dbfs": -4.5,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "यस, एलिफेंट दादा बाहर आ गए.",
+    "performance_tag": "[relieved and happy]",
+    "character_treatment": null
+  },
+  "JR_049": {
+    "file": "elephant-rescue-test/JR_049.mp3",
+    "duration_seconds": 3.239,
+    "integrated_lufs": -16.0,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "वाह Captain! तुमने कितना ज़ोर लगाया!",
+    "performance_tag": "[proud and impressed]",
+    "character_treatment": null
+  },
+  "JR_050": {
+    "file": "elephant-rescue-test/JR_050.mp3",
+    "duration_seconds": 1.411,
+    "integrated_lufs": -16.2,
+    "true_peak_dbfs": -1.5,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "ELEPHANT",
+    "voice_id": "bBG9wwa23659EgIkMbc1",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.42,
+      "similarity_boost": 0.78,
+      "style": 0.3,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "Thank you, Captain!",
+    "performance_tag": "[relieved and grateful]",
+    "character_treatment": "bold Elephant"
+  },
+  "JR_051": {
+    "file": "elephant-rescue-test/JR_051.mp3",
+    "duration_seconds": 2.429,
+    "integrated_lufs": -20.4,
+    "true_peak_dbfs": -5.0,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_052": {
+    "file": "elephant-rescue-test/JR_052.mp3",
+    "duration_seconds": 2.351,
+    "integrated_lufs": -16.9,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "ये क्या था?",
+    "performance_tag": "[curious surprise]",
+    "character_treatment": null
+  },
+  "JR_053": {
+    "file": "elephant-rescue-test/JR_053.mp3",
+    "duration_seconds": 2.926,
+    "integrated_lufs": -16.5,
+    "true_peak_dbfs": -1.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "ELEPHANT",
+    "voice_id": "bBG9wwa23659EgIkMbc1",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.42,
+      "similarity_boost": 0.78,
+      "style": 0.3,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "मेरे पेट में भूख से चूहे दौड़ रहे हैं।",
+    "performance_tag": "[playfully hungry]",
+    "character_treatment": "bold Elephant"
+  },
+  "JR_054": {
+    "file": "elephant-rescue-test/JR_054.mp3",
+    "duration_seconds": 3.004,
+    "integrated_lufs": -16.4,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "सिर्फ़ दौड़ नहीं रहे हैं... कूद भी रहे हैं!",
+    "performance_tag": "[amused]",
+    "character_treatment": null
+  },
+  "JR_055": {
+    "file": "elephant-rescue-test/JR_055.mp3",
+    "duration_seconds": 5.642,
+    "integrated_lufs": -17.5,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "एलिफेंट दादा को भूख लगी है! Captain, क्या हमारे पास कुछ खाने के लिए है?",
+    "performance_tag": "[warm and inviting]",
+    "character_treatment": null
+  },
+  "JR_056": {
+    "file": "elephant-rescue-test/JR_056.mp3",
+    "duration_seconds": 2.691,
+    "integrated_lufs": -18.9,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "अपने cards में खाने वाली चीज़ ढूँढो।",
+    "performance_tag": "[clear and warm]",
+    "character_treatment": null
+  },
+  "JR_057": {
+    "file": "elephant-rescue-test/JR_057.mp3",
+    "duration_seconds": 3.161,
+    "integrated_lufs": -15.9,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "कुछ खाने वाला card?",
+    "performance_tag": "[clear and warm]",
+    "character_treatment": null
+  },
+  "JR_058": {
+    "file": "elephant-rescue-test/JR_058.mp3",
+    "duration_seconds": 2.273,
+    "integrated_lufs": -16.4,
+    "true_peak_dbfs": -4.0,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "BISCUIT वाला card tap करो।",
+    "performance_tag": "[clear and warm]",
+    "character_treatment": null
+  },
+  "JR_059": {
+    "file": "elephant-rescue-test/JR_059.mp3",
+    "duration_seconds": 1.228,
+    "integrated_lufs": -21.2,
+    "true_peak_dbfs": -3.8,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_060": {
+    "file": "elephant-rescue-test/JR_060.mp3",
+    "duration_seconds": 2.273,
+    "integrated_lufs": -16.9,
+    "true_peak_dbfs": -2.6,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "YES! BISCUIT!",
+    "performance_tag": "[bright]",
+    "character_treatment": null
+  },
+  "JR_061": {
+    "file": "elephant-rescue-test/JR_061.mp3",
+    "duration_seconds": 0.993,
+    "integrated_lufs": -20.9,
+    "true_peak_dbfs": -1.3,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_062": {
+    "file": "elephant-rescue-test/JR_062.mp3",
+    "duration_seconds": 1.332,
+    "integrated_lufs": -16.0,
+    "true_peak_dbfs": -3.0,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "ELEPHANT",
+    "voice_id": "bBG9wwa23659EgIkMbc1",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.42,
+      "similarity_boost": 0.78,
+      "style": 0.3,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "बस एक!",
+    "performance_tag": "[eager and playfully pleading, rising intonation]",
+    "character_treatment": "bold Elephant"
+  },
+  "JR_063": {
+    "file": "elephant-rescue-test/JR_063.mp3",
+    "duration_seconds": 2.534,
+    "integrated_lufs": -16.0,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "ELEPHANT",
+    "voice_id": "bBG9wwa23659EgIkMbc1",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.42,
+      "similarity_boost": 0.78,
+      "style": 0.3,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "बस दो... थोड़ा और दो!",
+    "performance_tag": "[hopeful and cheeky]",
+    "character_treatment": "bold Elephant"
+  },
+  "JR_064": {
+    "file": "elephant-rescue-test/JR_064.mp3",
+    "duration_seconds": 2.612,
+    "integrated_lufs": -16.0,
+    "true_peak_dbfs": -2.5,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "ELEPHANT",
+    "voice_id": "bBG9wwa23659EgIkMbc1",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.42,
+      "similarity_boost": 0.78,
+      "style": 0.3,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "तीन! बस एक आखिरी!",
+    "performance_tag": "[playfully pleading]",
+    "character_treatment": "bold Elephant"
+  },
+  "JR_065": {
+    "file": "elephant-rescue-test/JR_065.mp3",
+    "duration_seconds": 4.702,
+    "integrated_lufs": -15.6,
+    "true_peak_dbfs": -1.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "ELEPHANT",
+    "voice_id": "bBG9wwa23659EgIkMbc1",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.42,
+      "similarity_boost": 0.78,
+      "style": 0.3,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "चार! बस करो, Captain! इतना खाऊँगा तो balloon बनकर उड़ जाऊँगा!",
+    "performance_tag": "[count proudly, then comic surprise]",
+    "character_treatment": "bold Elephant"
+  },
+  "JR_066": {
+    "file": "elephant-rescue-test/JR_066.mp3",
+    "duration_seconds": 1.646,
+    "integrated_lufs": -19.1,
+    "true_peak_dbfs": -3.4,
+    "review_status": "test",
+    "type": "character_laughter"
+  },
+  "JR_067": {
+    "file": "elephant-rescue-test/JR_067.mp3",
+    "duration_seconds": 3.318,
+    "integrated_lufs": -16.8,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "Captain, वही BISCUIT वाला card फिर से tap करो।",
+    "performance_tag": "[gentle and clear]",
+    "character_treatment": null
+  },
+  "JR_068": {
+    "file": "elephant-rescue-test/JR_068.mp3",
+    "duration_seconds": 3.161,
+    "integrated_lufs": -16.0,
+    "true_peak_dbfs": -3.5,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "BISCUIT वाला card हटाओ, फिर दोबारा tap करो।",
+    "performance_tag": "[helpful and unhurried]",
+    "character_treatment": null
+  },
+  "JR_069": {
+    "file": "elephant-rescue-test/JR_069.mp3",
+    "duration_seconds": 2.847,
+    "integrated_lufs": -17.3,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "BISCUIT वाला card फिर से tap करो।",
+    "performance_tag": "[clear and kind]",
+    "character_treatment": null
+  },
+  "JR_070": {
+    "file": "elephant-rescue-test/JR_070.mp3",
+    "duration_seconds": 1.045,
+    "integrated_lufs": -20.4,
+    "true_peak_dbfs": -5.5,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_071": {
+    "file": "elephant-rescue-test/JR_071.mp3",
+    "duration_seconds": 3.631,
+    "integrated_lufs": -16.1,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "दादा को biscuit चाहिए। BISCUIT try करो।",
+    "performance_tag": "[gentle and helpful]",
+    "character_treatment": null
+  },
+  "_batch": {
+    "name": "Elephant Rescue production test",
+    "range": "JR_021–JR_071",
+    "format": "mp3_44100_128",
+    "script": "jungle_rescue_final_production_script.md",
+    "note": "Review MP3 batch. Elephant dialogue uses the selected bold Vardan treatment."
+  }
+}

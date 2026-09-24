@@ -107,6 +107,9 @@ is added. The route has eight card choices and eleven successful physical presen
 one each for seven other cards and four BISCUIT presentations.
 
 Intro: allow 1.5 seconds after JR_003 before JR_004. No speech recognition is required.
+Elephant approach: allow 1.2 seconds after JR_026 (trampoline joke) before JR_027,
+and 0.8 seconds after JR_029 (Coco pulls) before JR_030 (एक, दो, तीन).
+These are runtime waits after the clip ends, not silence added to the source cue.
 Pulls: play JR_043 after JR_042 and JR_045 after JR_044; each pull gets a two-second action
 interval from the preceding call's end, containing its short creak. Then continue. JR_046
 contains the approved final Pull/gul joke, followed by JR_047 and the success/praise.
@@ -133,7 +136,9 @@ Do not introduce an extra mandatory fuel scan.
 
 ## 6. Four-bite Biscuit game
 
-Each accepted fresh presentation is exactly one bite. Keep the approved “बस एक!” line.
+Each accepted fresh presentation is exactly one bite. The first request is “बस एक?”
+with questioning emphasis. Bites three and four do not announce their numbers;
+all four presentations and the four-bite limit remain unchanged.
 
 | Accepted bite | Audio |
 |---|---|

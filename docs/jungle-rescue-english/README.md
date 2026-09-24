@@ -17,10 +17,14 @@ Baseline source: `jungle_rescue_final_production_script.md`, copied from the sup
 | [Voice audition preview](voice_audition_preview.html) | Voice casting | Compare Vardan Elephant and Bholu Lion with their character treatments |
 | [Introduction and Fuel audio test](intro_fuel_audio_preview.html) | Story/audio review | Play the opening in child-experience order, test hints, scan success and the optional repeat-Fuel joke |
 | [Introduction and Fuel test manifest](audio/intro-fuel-test/manifest.json) | Audio producer / developer | Partial JR_001–JR_020 delivery data with exact files, measured durations, levels, voices and settings |
+| [Elephant Rescue audio test](elephant_rescue_audio_preview.html) | Story/audio review | Play JR_021–JR_071 in child-experience order, including ROPE pulls and all four BISCUIT taps |
+| [Elephant joke timing comparison](elephant_joke_timing_preview.html) | Story/audio review | Four current/proposed timing comparisons and the unchanged Pull–गुल reference; source cues remain unchanged |
+| [Elephant Rescue test manifest](audio/elephant-rescue-test/manifest.json) | Audio producer / developer | Partial JR_021–JR_071 delivery data, including selected Vardan processing and measured audio properties |
 | [Saved voice review](voice_auditions/casting_review.json) | Voice casting | User selections: Coco = Saanu, Narrator = Jia, Parrot = Munni; the first Elephant and Lion takes were rejected |
 | [Current casting decisions](voice_auditions/casting_decisions.json) | Audio producer | Selected voice IDs for all five roles |
 | [Subtle character treatments](voice_auditions/selected_character_treatments_manifest.json) | Audio producer | Archived first treatment, rejected as too subtle |
-| [Selected character treatments](voice_auditions/bold_character_treatments_manifest.json) | Audio producer | Vardan and Bholu processing selected to carry into cue production |
+| [Earlier bold character treatments](voice_auditions/bold_character_treatments_manifest.json) | Audio producer | Bholu Lion remains selected; Vardan Elephant processing superseded after robotic-sound feedback |
+| [Child-like Elephant audition](elephant_rescue_audio_preview.html#elephant-audition) | Voice review | Same revised biscuit lines in natural Vardan and light EQ; no lowered pitch or doubled layers |
 | [Elephant round 2 auditions](voice_auditions/elephant_round2_manifest.json) | Voice casting | Source Vardan audition |
 | [Adult Elephant treatment auditions](voice_auditions/elephant_stronger_manifest.json) | Audio producer | Archived adult Ravi experiment, superseded by Vardan selection |
 | [Earlier adult Elephant treatment](voice_auditions/elephant_adult_treatment_manifest.json) | Audio producer | Archived flat-source experiment that did not establish Elephant identity |
@@ -39,8 +43,10 @@ Bracketed directions change delivery, not identity, and are never read aloud.
 The confirmed Coco voice is Saanu (`d9BvEI0bp2Tmdpqnjwn0`); match the original shipped intro's
 energy and tone during the final recording pass. Narrator is Jia (`ItmwhOeluca31IEX91Yk`),
 and Parrot is Munni (`VOGEEZj2Kly5dP9LrQy8`). Elephant is Vardan (`bBG9wwa23659EgIkMbc1`)
-and Kid Lion is Bholu (`5krdMTA5HonvWAlY2vSx`). Apply the selected bold character filters
-consistently to their final spoken cues and check intelligibility on a child’s playback device. Keep one
+and Kid Lion is Bholu (`5krdMTA5HonvWAlY2vSx`). Lion keeps the selected bold filter.
+Elephant uses the approved light EQ at natural pitch. The revised biscuit dialogue and
+the 1.2-second trampoline / 0.8-second pre-count pauses are approved.
+Check intelligibility on a child’s playback device. Keep one
 distinct voice per character.
 
 Workflow:

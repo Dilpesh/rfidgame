@@ -43,6 +43,7 @@ EMBEDDED_KEYS = (
     "boing",
     "dance",
     "nightAmb",
+    "elephantSetup",
 )
 
 
