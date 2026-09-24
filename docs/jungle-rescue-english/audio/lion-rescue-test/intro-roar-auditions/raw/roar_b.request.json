@@ -1,0 +1,7 @@
+{
+  "text": "A young Lion King gives one brief proud but child-friendly roar: low soft rumble, clearly leonine open-mouthed 'rrraow', then a friendly short tail. Distinct lion sound that reads on a laptop speaker, expressive but not loud or frightening. No human speech, no generic dog growl, no house-cat meow, no attack, no music or ambience.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 1.5,
+  "prompt_influence": 0.9,
+  "loop": false
+}

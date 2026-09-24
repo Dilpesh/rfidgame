@@ -1,0 +1,7 @@
+{
+  "text": "Seamless loop inside a dry sheltered jungle cave at night: barely audible calm air and very muffled distant rain outside. Warm, cozy, quiet, no dripping inside, no echo, no voices, no music.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 12.0,
+  "prompt_influence": 0.8,
+  "loop": true
+}

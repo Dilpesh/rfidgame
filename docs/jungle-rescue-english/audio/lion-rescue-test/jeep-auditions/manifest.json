@@ -1,0 +1,38 @@
+{
+  "purpose": "Jeep-only auditions for the Lion scene; no candidate is selected for JR_103",
+  "candidates": {
+    "C": {
+      "file": "jeep_c_story_continuity.mp3",
+      "description": "Existing Elephant-scene Jeep texture plus a distinct stop",
+      "duration_seconds": 4.258,
+      "integrated_lufs": -18.5,
+      "true_peak_dbfs": -2.8,
+      "review_status": "audition_only"
+    },
+    "D": {
+      "file": "jeep_d_layered_engine.mp3",
+      "description": "New close engine, rolling gravel and distinct stop layered separately",
+      "duration_seconds": 4.467,
+      "integrated_lufs": -18.6,
+      "true_peak_dbfs": -4.2,
+      "review_status": "audition_only"
+    }
+  },
+  "components": {
+    "engine_drive": {
+      "file": "raw/engine_drive.mp3",
+      "prompt": "Close, dry field recording of a small open-top four-wheel-drive Jeep's gasoline engine running while it moves slowly. Clearly audible low-mid four-cylinder combustion chug, a slight rev and mechanical vibration; it must sound like a real off-road vehicle engine throughout. No tires, gravel, birds, voices, music, horn, other cars, or ambient jungle.",
+      "duration_seconds": 4.0
+    },
+    "tire_gravel": {
+      "file": "raw/tire_gravel.mp3",
+      "prompt": "Close recording of four thick off-road Jeep tires rolling steadily across a dry dirt track with small stones. Rhythmic gravel crunch and light loose-chassis rattle for three seconds. No engine, voices, footsteps, music, horn, or background ambience.",
+      "duration_seconds": 3.0
+    },
+    "brake_engine_off": {
+      "file": "raw/brake_engine_off.mp3",
+      "prompt": "One realistic small Jeep arrival and stop, heard close: tires slow and gently crunch gravel, a brief soft brake squeak, suspension settles, then the petrol engine winds down and switches fully off with a short mechanical click. Clear final silence. No horn, crash, voices, music, birds, or jungle ambience.",
+      "duration_seconds": 1.7
+    }
+  }
+}

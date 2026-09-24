@@ -24,7 +24,7 @@ A local emotion changes performance, never the character's identity.
 | NARRATOR | Jia, ElevenLabs voice ID `ItmwhOeluca31IEX91Yk` | Warm, brisk and clear; distinct from Coco; let actions and sound jokes breathe without long dramatic pauses. |
 | ELEPHANT | Vardan, ElevenLabs voice ID `bBG9wwa23659EgIkMbc1` | Child-like, affectionate and playful; retain Vardan's natural pitch. Use the approved light EQ option in `audio/elephant-rescue-test/audition-childlike-v2/manifest.json`; no pitch shifting or doubled voice layers. |
 | PARROT | Munni, ElevenLabs voice ID `VOGEEZj2Kly5dP9LrQy8` | Small, bright, lightly squeaky; distress is brief and gentle, then gradually relieved and cheerful. Words remain intelligible. |
-| LION | Bholu, ElevenLabs voice ID `5krdMTA5HonvWAlY2vSx` | Small child-like lion throughout: shy, vulnerable and warm. Use the selected bold Lion treatment documented in `voice_auditions/bold_character_treatments_manifest.json`; sneezes and snores can be comically big without turning into an adult roaring lion. |
+| LION | Bholu, ElevenLabs voice ID `5krdMTA5HonvWAlY2vSx` | Small child-like lion throughout: shy, vulnerable and warm. Keep Bholu's natural pitch and timing; use only gentle EQ and level control. Sneezes and snores can be comically big without turning into an adult roaring lion. |
 
 **How to enforce consistency in ElevenLabs:** The audio operator must bind each voice key to one
 approved ElevenLabs voice ID and one approved reference sample before the full recording pass.
@@ -35,20 +35,21 @@ SFX generation alone does not guarantee matching voices. Listen against the refe
 approving each batch, especially Lion, Coco's humming, and both characters' laughter.
 
 Directions in square brackets are production notes, not guaranteed ElevenLabs control syntax.
-Send only the quoted dialogue to speech generation; convey supported emotion controls separately
-for the selected model, or direct the performer. Never narrate cue IDs, headings, labels, hints'
+Send only the quoted dialogue to speech generation; convey emotion controls separately for the selected model, or direct the
+performer. Never narrate cue IDs, headings, labels, hints'
 names, brackets, or music-generation prompts. Do not feed this whole file as one TTS request.
 
 **Defaults:** Every speech cue names its speaker. Where no local emotion is supplied, use the
 speaker's baseline. Hint delivery is kind and clear. Keep the approved Hindi/Hinglish wording,
-including Captain, Pull, biscuit and lori. Pronounce “lori” as “लोरी”. Match repeated card names
+including Captain, Pull, biscuit and लोरी. Pronounce “लोरी” with a clear long “लो”, never “लौरी”. Match repeated card names
 across clips. Do not add praise, extra jokes, or improvised endings. Use the same signature
-delivery for Coco's two “ये कौन करता है?!” lines.
+delivery for Coco's three “ये कौन करता है?!” lines.
 
 ## ASSET DELIVERY CONTRACT
 
-- Each bold `JR_NNN` label is an immutable cue ID. Export separately as `JR_NNN.wav` (except
-  the explicitly split JR_129 components below); use a
+- Each bold `JR_NNN` label is an immutable cue ID; explicitly named suffix effects such as
+  `JR_103_jeep` are separate assets. Export cues separately as WAV files (with the split
+  JR_103 and JR_129 components described below); use a
   consistent lossless PCM format and sample rate agreed with the player implementer. Do not
   join prompts, hints, correct responses or alternate responses into one long recording.
 - Cue IDs identify assets, not an unconditional playlist. The companion playback file chooses
@@ -61,8 +62,10 @@ delivery for Coco's two “ये कौन करता है?!” lines.
 - Supply a delivery manifest containing cue ID, file path, type, voice key where applicable,
   actual duration, loop points where applicable, approved voice ID/model/settings, and review
   status. Do not invent duration or voice IDs before production. Playback loads this manifest.
-- Loopable beds: JR_001 daytime jungle, JR_021 moving jeep/jungle, JR_103 evening weather, and
-  the muffled cave ambience component of JR_129. Deliver JR_129 as `JR_129_entry.wav` (short
+- Loopable beds: JR_001 daytime jungle, JR_021 moving jeep/jungle, the JR_103 evening weather
+  bed, and the muffled cave ambience component of JR_129. Deliver JR_103 as
+  `JR_103_jeep.wav` (short run and stop), `JR_103_entry.wav` (audible wind-and-rain arrival) and
+  `JR_103_bed.wav` (loopable weather under dialogue). Deliver JR_129 as `JR_129_entry.wav` (short
   entry footsteps) and `JR_129_bed.wav` (loopable sheltered ambience). Its manifest entry must
   name both components and their durations/loop points. JR_150 is a short departing/fading
   scene transition, not an endless bed.
@@ -457,16 +460,23 @@ three swallows should be identifiable as drinking, not splashing.
 
 # SCENE 04 — LION
 
-**JR_103 · SFX** Fade day jungle into deep evening jungle: soft crickets, distant wind, and gentle rain.
-Keep wind and rain under the dialogue.
+**JR_103 · SFX** A clearly identifiable rescue jeep engine runs on a dirt track, tires crunch on
+gravel, then the jeep brakes and the engine stops. Then an audible, child-safe gust
+of night wind moves through the trees as light rain begins. Continue a quieter evening jungle
+bed with crickets, wind and rain under the dialogue. Deliver separate `JR_103_jeep`,
+`JR_103_entry` and loopable `JR_103_bed` assets; do not extend the engine under the scene.
 
-**JR_104 · NARRATOR** `[hushed, adventurous]`
-> रेस्क्यू जीप घने जंगलों के बीच आकर रुकी। सूरज ढल चुका था और पेड़-पौधे अँधेरे में अजीब साए जैसे लग रहे थे।
+**JR_104 · NARRATOR** `[hushed, adventurous; pronounce अंधेरे clearly as अन-धे-रे]`
+> रेस्क्यू जीप घने जंगलों के बीच आकर रुकी। सूरज ढल चुका था और पेड़-पौधे अंधेरे में अजीब साए जैसे लग रहे थे।
 
 **JR_105 · SFX** Rustling leaves behind a big rock
 
-**JR_106 · LION** `[small child-like lion voice; three heavy but harmless sneezes, not frightening]`
-> आ... छी! आ... छी! आ... छी!
+**JR_106 · LION** `[small child-like lion voice; two heavy but harmless sneezes, not frightening]`
+> आ... छी! आ... छी!
+
+**JR_106_lion · SFX** `[selected entrance roar A]` Immediately before Coco says “अरे! यह तो Lion King
+की आवाज़ है!” A short, shy, rounded young-lion roar gives the child the clue first; keep it
+friendly and below a startling level.
 
 **JR_107 · COCO** `[whispering, nervous but playful]`
 > Captain... उस बड़ी rock के पीछे कोई छुपा है!
@@ -477,22 +487,22 @@ Keep wind and rain under the dialogue.
 **JR_109 · COCO** `[surprised]`
 > अरे! यह तो Lion King की आवाज़ है! आप rock के पीछे क्या कर रहे हैं?
 
-**JR_110 · LION** `[worried, gentle]`
-> कोको... मैं यहाँ रास्ता भूल गया हूँ। और यहाँ इतना अँधेरा है कि मुझे अपनी पूँछ भी दिखाई नहीं दे रही!
+**JR_110 · LION** `[worried, gentle; pronounce अंधेरा clearly as अन-धे-रा]`
+> कोको... मैं यहाँ रास्ता भूल गया हूँ। और यहाँ इतना अंधेरा है कि मुझे अपनी पूँछ भी दिखाई नहीं दे रही!
 
 **JR_111 · COCO** `[confident, then uncertain]`
 > फ़िक्र मत करो! मैं ढूँढता हूँ आपकी पूँछ।
 
-**JR_112 · LION** `[briefly annoyed, harmless]`
-> हम्म...
+**JR_112 · SFX — reuse `JR_106_lion`** `[short grumpy little-lion roar]` Immediately after Coco says he will find
+the tail. The roar is a comic protest from Lion King; use no spoken “अरे” in this moment.
 
 **JR_113 · COCO** `[nervous, trying to sound brave]`
 > मेरा मतलब... मैं कुछ करता हूँ... ओह!
 
 **JR_114 · SFX** Coco trips over a tree root + soft comedy thud
 
-**JR_115 · COCO** `[rubbing head, urgent but playful]`
-> अरे! इतना अँधेरा है कि मेरी नाक भी नहीं दिख रही! Captain, हमें तुरंत रोशनी चाहिए, वरना हम सब टकरा जाएँगे!
+**JR_115 · COCO** `[rubbing head, urgent but playful; pronounce अंधेरा clearly as अन-धे-रा]`
+> अरे! इतना अंधेरा है कि मेरी नाक भी नहीं दिख रही! Captain, हमें तुरंत रोशनी चाहिए, वरना हम सब टकरा जाएँगे!
 
 ---
 
@@ -501,13 +511,13 @@ Keep wind and rain under the dialogue.
 
 ### HINT 1 ASSET
 
-**JR_116 · COCO** `[clear, warm]`
-> अपने cards में देखो... कोई ऐसी चीज़ है जो अँधेरे में तेज़ रोशनी दे सके?
+**JR_116 · COCO** `[clear, warm; pronounce अंधेरे clearly as अन-धे-रे]`
+> अपने cards में देखो... कोई ऐसी चीज़ है जो अंधेरे में तेज़ रोशनी दे सके?
 
 ### HINT 2 ASSET
 
-**JR_117 · COCO** `[clear, warm]`
-> इसे ON करते ही अँधेरे में रास्ता साफ़ दिखने लगता है।
+**JR_117 · COCO** `[clear, warm; pronounce अंधेरे clearly as अन-धे-रे]`
+> इसे ON करते ही अंधेरे में रास्ता साफ़ दिखने लगता है।
 
 ### RESCUE HINT ASSET
 
@@ -516,9 +526,12 @@ Keep wind and rain under the dialogue.
 
 ### CORRECT — FLASHLIGHT
 
-**JR_119 · SFX** `ting_ting`
+**JR_119 · SFX** `ting_ting`, quietly underneath the beginning of JR_121. Never delay Coco's
+acknowledgement for this sound.
 
-**JR_120 · SFX** Heavy flashlight click + bright beam hum
+**JR_120 · SFX** Heavy flashlight click + bright beam hum, start at the correct card tap under
+Coco's immediate acknowledgement. Do not wait for him to finish “YES! FLASHLIGHT!”. The
+windy bed eases slightly as the beam reveals the way; the cave entrance later changes location.
 
 **JR_121 · COCO**
 > YES! FLASHLIGHT!
@@ -534,13 +547,13 @@ no visual display is required.
 **JR_125 · NARRATOR** `[warm]`
 > टॉर्च की रोशनी में Lion King rock के पीछे से बाहर आए। पर वो थोड़े काँप रहे थे।
 
-**JR_126 · SFX** Cold night wind gust + soft lion teeth chattering
+**JR_126 · SFX** One brief cool breeze and soft leaf flutter outdoors. No teeth-chatter effect; Lion's own voice carries the cold.
 
 **JR_127 · LION** `[shivering]`
 > रोशनी के लिए शुक्रिया... पर रात की हवा बहुत ठंडी है। Brrr!
 
-**JR_128 · NARRATOR** `[warm, reassuring]`
-> रोशनी में Lion King को अपनी गुफा दिख गई। कोको उन्हें अंदर ले गया।
+**JR_128 · NARRATOR** `[warm, reassuring; the cave is shelter, but Lion still feels cold]`
+> रोशनी में Lion King को अपनी गुफा दिख गई। कोको उन्हें अंदर ले गया, लेकिन Lion King को अब भी बहुत ठंड लग रही थी।
 
 **JR_129 · SFX** A few gentle footsteps enter a dry cave; rain and wind become muffled outside.
 Keep the space cozy, not echoing or frightening.
@@ -550,14 +563,17 @@ Keep the space cozy, not echoing or frightening.
 
 **JR_131 · SFX** Dry leaf crinkles, then rips in half
 
-**JR_132 · COCO** `[oops, comic]`
-> अरेरे... यह पत्ता तो फट गया! इससे ठंड नहीं रुकेगी।
+**JR_132 · COCO** `[comic self-mockery immediately after the leaf rips; then caring]`
+> अरेरे... पत्ता तो फट गया! पत्ते से ठंड रोकने चला था... ये कौन करता है?!
+
+**JR_132_sting · SFX** `[tiny playful two-note comic pluck]` Immediately after Coco finishes
+“ये कौन करता है?!” Keep it light and short; never sound like a wrong-answer buzzer.
 
 ---
 
 # INTERACTION 07 — BLANKET
 
-**JR_133 · SFX** Lion shivering
+*JR_133 is retired. Play no Lion vocal after Coco's leaf joke; continue to JR_134.*
 
 **JR_134 · COCO** `[clear, inviting]`
 > Captain, हमें Lion King के लिए कोई soft और गर्म चीज़ चाहिए जिसे उन्हें ओढ़ा सकें!
@@ -580,12 +596,13 @@ Keep the space cozy, not echoing or frightening.
 
 ### CORRECT — BLANKET
 
-**JR_138 · SFX** `ting_ting`
-
-**JR_139 · SFX** Soft fabric rustle + warm cozy sigh
+**JR_138 · SFX** `ting_ting`, quietly underneath the beginning of JR_140. Never delay Coco's
+acknowledgement for this sound.
 
 **JR_140 · COCO**
 > YES! BLANKET! यह blanket कितना soft और warm है!
+
+**JR_139 · SFX** Soft fabric rustle + warm cozy sigh, after Coco's acknowledgement.
 
 **JR_141 · NARRATOR** `[tender]`
 > कोको ने बड़े प्यार से वो blanket Lion King को ओढ़ा दिया।
@@ -593,27 +610,25 @@ Keep the space cozy, not echoing or frightening.
 **JR_142 · LION** `[small child-like lion voice; cozy, relieved]`
 > अहाहा... अब आया ना मज़ा! इतनी गर्मी... इतना आराम...
 
-**JR_143 · COCO** `[soft, inviting whisper]`
-> Captain, Lion King को शांति से सुलाने के लिए एक छोटी सी lori गाएँ? तुम मेरे साथ गाओगे?
+**JR_143 · COCO** `[tender and empathetic, softer and slower than ordinary dialogue; invite the child warmly]`
+> Captain, Lion King को आराम से सुलाने के लिए एक छोटी सी लोरी गाएँ? तुम मेरे साथ गाओगे?
 
-**JR_144 · MUSIC** Ten-second original instrumental lori with gentle music-box tones. No lyrics or familiar
+**JR_144 · MUSIC** Ten-second original instrumental लोरी with gentle music-box tones. No lyrics or familiar
 tune. Leave room for Coco and the child; end on a warm sustained note.
 
-**JR_145 · COCO — HUMMING PERFORMANCE** `[soft, soothing; ten seconds]`
+**JR_145 · COCO — HUMMING PERFORMANCE** `[tender, empathetic, lullaby-like; noticeably softer than Coco's dialogue; ten seconds]`
 Record a simple original “ला-ला-ला” melody in Coco's established voice, with little breathing gaps
 so the child can join. Deliver as a separate vocal stem aligned to the lori music. Do not speak
 these directions. The humming is required; the child may sing, hum or listen.
 
-**JR_146 · LION** `[sleepy child-like lion voice]`
-> हूँ... अब मीठी नींद आ रही है...
+*JR_146 is retired. The लोरी now leads directly into the Lion settling and snoring.*
 
-**JR_147 · SFX** Lion settles in, then one massive harmless rumbling snore; retain the child-like character.
-
-**JR_148 · COCO** `[warm acknowledgement]`
-> वाह Captain! हमारी lori सुनकर Lion King आराम से सो गए।
+**JR_147 · SFX** Lion settles in, then snores three times with a natural comic rhythm: the
+first clear, the second a little bigger, the third softer as he falls deeper asleep. Each snore
+must be identifiable on laptop speakers. Leave a short beat before Coco speaks.
 
 **JR_149 · COCO** `[giggling, quiet whisper]`
-> लो! हमारी lori सुनते-सुनते Lion King तो खर्राटे लेने लगे! Mission successful!
+> लो! हमारी लोरी सुनते-सुनते Lion King तो खर्राटे लेने लगे! Mission successful!
 
 ---
 

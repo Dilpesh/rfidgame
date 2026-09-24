@@ -1,0 +1,7 @@
+{
+  "text": "One cold night wind gust brushes past a childlike lion, with very soft teeth chattering underneath. Not frightening; no rain, no speech, no music.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 1.8,
+  "prompt_influence": 0.8,
+  "loop": false
+}

@@ -1,0 +1,7 @@
+{
+  "text": "Three small gentle footsteps move from wet evening jungle into a dry cave. Outdoor wind and rain rapidly become muffled behind them. Cozy and safe, no echo, no voices, no music.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 2.0,
+  "prompt_influence": 0.8,
+  "loop": false
+}

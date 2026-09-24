@@ -1,0 +1,34 @@
+{
+  "purpose": "Single-file Lion introduction listening comparison",
+  "placement": "after JR_109, before JR_110",
+  "production_route_changed": false,
+  "clips": {
+    "baseline": {
+      "file": "entrance_baseline.mp3",
+      "duration_seconds": 24.816,
+      "integrated_lufs": -16.5,
+      "true_peak_dbfs": -1.9,
+      "roar": null,
+      "bed_gain": 0.12,
+      "review_status": "audition_only"
+    },
+    "roar_a": {
+      "file": "entrance_roar_a.mp3",
+      "duration_seconds": 26.54,
+      "integrated_lufs": -16.6,
+      "true_peak_dbfs": -2.2,
+      "roar": "a",
+      "bed_gain": 0.12,
+      "review_status": "audition_only"
+    },
+    "roar_b": {
+      "file": "entrance_roar_b.mp3",
+      "duration_seconds": 26.697,
+      "integrated_lufs": -16.5,
+      "true_peak_dbfs": -1.9,
+      "roar": "b",
+      "bed_gain": 0.12,
+      "review_status": "audition_only"
+    }
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "text": "A distinct child-safe nighttime jungle wind gust moves through tree leaves as a gentle rain begins. The gust swells close and clearly for two seconds, then settles, with quiet crickets underneath. Establish a windy evening immediately. No thunder, no frightening howl, no voices, no music.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 3.0,
+  "prompt_influence": 0.8,
+  "loop": false
+}

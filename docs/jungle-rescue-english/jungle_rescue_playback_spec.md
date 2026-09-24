@@ -98,8 +98,8 @@ Hints, alternatives and reusable assets are never played just because they appea
 | BISCUIT | None; hunger already established | JR_055 / BISCUIT | JR_056, JR_057, JR_058 for first bite only | Four-bite branch in section 6; JR_072–JR_078; First Aid question |
 | FIRST_AID | Parrot introduction is included above | JR_079 / FIRST_AID | JR_080, JR_081, JR_082 | JR_083–JR_093; Water question |
 | WATER | None | JR_094 / WATER | JR_095 reminders only | JR_096–JR_114; Flashlight question |
-| FLASHLIGHT | Lion introduction is included above | JR_115 / FLASHLIGHT | JR_116, JR_117, JR_118 | JR_119–JR_133; Blanket question |
-| BLANKET | Leaf attempt is included above | JR_134 / BLANKET | JR_135, JR_136, JR_137 | JR_138–JR_143; lori route; JR_150–JR_153; Music question |
+| FLASHLIGHT | Lion introduction is included above | JR_115 / FLASHLIGHT | JR_116, JR_117, JR_118 | Immediate JR_120 switch click and JR_121 acknowledgement, with JR_119 chime under them; then JR_122–JR_132; Blanket question. JR_133 is retired. |
+| BLANKET | Leaf attempt is included above | JR_134 / BLANKET | JR_135, JR_136, JR_137 | Immediate JR_140 with JR_138 under it, then JR_139, JR_141–JR_143; लोरी, JR_147–JR_149; JR_150–JR_153; Music question. JR_146 is retired. |
 | MUSIC | Celebration invitation is included above | JR_154 / MUSIC | JR_155, JR_156, JR_157 | JR_158, JR_159; timed dance; final ceremony |
 
 The fuel, flashlight and blanket prompts are their existing story lines: no second ASK clip
@@ -181,7 +181,15 @@ A correct WATER presentation immediately cancels/cuts reminders and starts JR_09
 
 Ignore all other cards quietly in this special break; do not use global corrections or the fuel
 joke while the child is away. After WATER success, restore low daytime ambience beneath the
-Parrot farewell, then crossfade to evening with JR_103. JR_098 contains the pour and three gulps;
+Parrot farewell, then crossfade to evening with JR_103: play its short jeep run-and-stop cue,
+then its clearly audible wind-and-rain entry; continue its quieter loopable weather bed beneath
+the opening dialogue. Play JR_106's two Bholu sneezes, then the selected entrance roar A
+(JR_106_lion), immediately before JR_109. Coco's JR_107 and JR_108 play before this roar;
+it is the child's first Lion clue and must come before Coco recognizes Lion King. After
+Coco's tail remark in JR_111,
+play the reused `JR_106_lion` grumpy Lion roar as cue JR_112, then JR_113. Do not play a spoken “अरे” in JR_112;
+the earlier Bholu take is retired from this route.
+JR_098 contains the pour and three gulps;
 never cut its third gulp with the next line.
 
 ## 8. Shelter, ambience and lori
@@ -193,12 +201,26 @@ footsteps finish while the bed continues. Do not leave a second loud outdoor-rai
 underneath it. Do not imply
 rain is falling onto the sleeping Lion.
 
-After JR_143, play JR_144 (lori music) and JR_145 (Coco humming) together for exactly ten seconds.
+On a correct FLASHLIGHT tap, start JR_120's switch click immediately alongside the beginning
+of JR_121 “YES! FLASHLIGHT!”, and mix JR_119's small correct chime quietly under them.
+Do not wait for the spoken acknowledgement to finish before the switch sound. Advance to
+JR_122 onward after the acknowledgement and the switch effect both finish. Ease the windy bed slightly as the flashlight
+reveals the way; do not start a second background music track. The cave sound makes the later
+location change. After JR_132, play the short `JR_132_sting` comic mistake SFX, then do not play
+the retired JR_133 shiver; continue to JR_134.
+Use the same immediate-acknowledgement pattern for BLANKET: JR_140 begins as soon as the card
+is accepted, JR_138 chimes quietly underneath, and JR_139 fabric follows the spoken response.
+
+After JR_143, play JR_144 (लोरी music) and JR_145 (Coco humming) together for exactly ten seconds.
 This is one combined ten-second interval, not twenty seconds. Both assets are required for this
 route; child's participation is optional. No voice detection, new card, retries or stronger
-conditional praise is needed.
+conditional praise is needed. Mix Coco's humming gently into the music. Keep the combined ten-second
+mix close to the level of JR_143's soft spoken invitation, with a short fade at each end. Coco's
+humming alone remains softer than spoken dialogue so the child has room to join in.
 
-Then play JR_146 sleepy Lion → JR_147 snore → JR_148 acknowledgement → JR_149 closing joke.
+Then skip retired JR_146 and play JR_147 settling plus three clearly audible snores →
+a short 0.35-second beat → JR_149 closing joke. The extra post-snore acknowledgement JR_148
+is retired so the child's final memory is the stronger snore joke.
 Lion does not speak after he is declared asleep. Continue with JR_150 departure, fading the cave
 bed and remaining snore; rain/wind subside as the team returns to the jeep. Avoid layering a
 second full snore in JR_150: it carries only the soft departing sound/tail.

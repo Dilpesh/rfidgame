@@ -1,0 +1,7 @@
+{
+  "text": "A brief grumpy little lion cub huffs and gives one tiny throaty growl, sounding annoyed but playful. Youthful animal sound, not an adult roar, not frightening, no words, no music or other sounds. Close and clear.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 1.1,
+  "prompt_influence": 0.8,
+  "loop": false
+}

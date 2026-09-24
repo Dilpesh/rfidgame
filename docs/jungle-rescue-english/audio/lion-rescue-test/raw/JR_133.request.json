@@ -1,0 +1,10 @@
+{
+  "text": "[natural character voice] [a little cold shiver, no words] ब्र्र...",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+    "stability": 0.44,
+    "similarity_boost": 0.78,
+    "style": 0.3,
+    "use_speaker_boost": true
+  }
+}

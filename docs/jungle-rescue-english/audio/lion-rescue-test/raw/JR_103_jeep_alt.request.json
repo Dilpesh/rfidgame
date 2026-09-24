@@ -1,0 +1,7 @@
+{
+  "text": "A little open-top four-wheel-drive jeep drives toward us over an uneven dirt road: distinct throaty engine purr, wheels rolling and crunching gravel, slight suspension rattle. It slows to a stop nearby and the motor cuts out cleanly. Friendly adventure-story sound, realistic, not a modern sedan or toy car. No horn, crash, voices, music or jungle ambience.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 4.0,
+  "prompt_influence": 0.8,
+  "loop": false
+}

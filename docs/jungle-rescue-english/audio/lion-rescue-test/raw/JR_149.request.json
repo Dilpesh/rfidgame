@@ -1,0 +1,10 @@
+{
+  "text": "[giggling, quiet whisper] लो! हमारी lori सुनते-सुनते Lion King तो खर्राटे लेने लगे! Mission successful!",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+  }
+}

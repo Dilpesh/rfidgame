@@ -1,0 +1,7 @@
+{
+  "text": "One brief, gentle cool breeze brushes leaves near a jungle cave at night. A soft airy whoosh and light leaf flutter only. No teeth chatter, no animal voice, no rain, no music, not frightening.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 1.3,
+  "prompt_influence": 0.8,
+  "loop": false
+}

@@ -1,0 +1,7 @@
+{
+  "text": "A tiny playful two-note comic mistake sting, like a soft pluck followed by a shorter bouncy pluck. Child-safe, light and funny, clearly after a harmless silly mistake. No wrong-answer buzzer, no alarm, no voice, no music, no ambience.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 0.8,
+  "prompt_influence": 0.8,
+  "loop": false
+}

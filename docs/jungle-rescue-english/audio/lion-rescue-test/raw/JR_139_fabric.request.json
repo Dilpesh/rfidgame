@@ -1,0 +1,7 @@
+{
+  "text": "A thick soft blanket unfurls and settles over a small childlike lion with one gentle fabric rustle. No voice, no sigh, no music.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 1.2,
+  "prompt_influence": 0.8,
+  "loop": false
+}

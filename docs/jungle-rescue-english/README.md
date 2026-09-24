@@ -22,10 +22,15 @@ Baseline source: `jungle_rescue_final_production_script.md`, copied from the sup
 | [Elephant Rescue test manifest](audio/elephant-rescue-test/manifest.json) | Audio producer / developer | Partial JR_021–JR_071 delivery data, including selected Vardan processing and measured audio properties |
 | [Parrot Rescue audio test](parrot_rescue_audio_preview.html) | Story/audio review | Play JR_072–JR_102 from Elephant departure through FIRST AID and the WATER return; the shipped Hinglish hurt effect is selected |
 | [Parrot Rescue test manifest](audio/parrot-rescue-test/manifest.json) | Audio producer / developer | Partial JR_072–JR_102 review assets, including Munni Parrot, card hints, and three-gulp water effect |
+| [Lion Rescue audio test](lion_rescue_audio_preview.html) | Story/audio review | Hear two Bholu sneezes and the selected angry “अरे — A”, compare two Jeep sounds, review अंधेरा pronunciation, immediate FLASHLIGHT response and balanced लोरी; the removed lion SFX has a separate sound-only control |
+| [Jeep sound lab](jeep_sound_lab.html) | Story/audio review | D is selected for JR_103; compare its separate engine/tire/stop mix against C and the archived earlier candidates, alone or before the unchanged Lion-scene weather and narrator |
+| [Lion entrance roar preview](lion_intro_roar_preview.html) | Story/audio review | Compare the current no-roar Lion introduction with two gentle roar auditions after Coco recognizes Lion King; no roar has been added to the full scene |
+| [Lion Rescue audio QA](lion_rescue_audio_qa.md) | Story/audio review | Transcription and cue-flow checks; listening decisions still pending |
+| [Lion Rescue test manifest](audio/lion-rescue-test/manifest.json) | Audio producer / developer | Partial JR_103–JR_149 review assets, including Bholu Lion, split cave ambience and separate लोरी stems |
 | [Saved voice review](voice_auditions/casting_review.json) | Voice casting | User selections: Coco = Saanu, Narrator = Jia, Parrot = Munni; the first Elephant and Lion takes were rejected |
 | [Current casting decisions](voice_auditions/casting_decisions.json) | Audio producer | Selected voice IDs for all five roles |
 | [Subtle character treatments](voice_auditions/selected_character_treatments_manifest.json) | Audio producer | Archived first treatment, rejected as too subtle |
-| [Earlier bold character treatments](voice_auditions/bold_character_treatments_manifest.json) | Audio producer | Bholu Lion remains selected; Vardan Elephant processing superseded after robotic-sound feedback |
+| [Earlier bold character treatments](voice_auditions/bold_character_treatments_manifest.json) | Audio producer | Archived Lion and Elephant experiments; both bold processing chains were superseded after robotic-sound feedback |
 | [Child-like Elephant audition](elephant_rescue_audio_preview.html#elephant-audition) | Voice review | Same revised biscuit lines in natural Vardan and light EQ; no lowered pitch or doubled layers |
 | [Elephant round 2 auditions](voice_auditions/elephant_round2_manifest.json) | Voice casting | Source Vardan audition |
 | [Adult Elephant treatment auditions](voice_auditions/elephant_stronger_manifest.json) | Audio producer | Archived adult Ravi experiment, superseded by Vardan selection |
@@ -45,7 +50,8 @@ Bracketed directions change delivery, not identity, and are never read aloud.
 The confirmed Coco voice is Saanu (`d9BvEI0bp2Tmdpqnjwn0`); match the original shipped intro's
 energy and tone during the final recording pass. Narrator is Jia (`ItmwhOeluca31IEX91Yk`),
 and Parrot is Munni (`VOGEEZj2Kly5dP9LrQy8`). Elephant is Vardan (`bBG9wwa23659EgIkMbc1`)
-and Kid Lion is Bholu (`5krdMTA5HonvWAlY2vSx`). Lion keeps the selected bold filter.
+and Kid Lion is Bholu (`5krdMTA5HonvWAlY2vSx`). The revised Lion review uses light EQ at
+natural pitch; this treatment and the revised bedtime cues await listening approval.
 Elephant uses the approved light EQ at natural pitch. The revised biscuit dialogue and
 the 1.2-second trampoline / 0.8-second pre-count pauses are approved.
 Check intelligibility on a child’s playback device. Keep one

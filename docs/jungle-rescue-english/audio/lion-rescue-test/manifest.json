@@ -1,0 +1,790 @@
+{
+  "JR_103": {
+    "type": "split_sfx",
+    "review_status": "test",
+    "entry_file": "lion-rescue-test/JR_103_entry.mp3",
+    "bed_file": "lion-rescue-test/JR_103_bed.mp3",
+    "entry_duration_seconds": 3.03,
+    "bed_duration_seconds": 12.042,
+    "bed_loop": true,
+    "jeep_file": "lion-rescue-test/JR_103_jeep.mp3",
+    "jeep_duration_seconds": 4.467,
+    "jeep_source_file": "lion-rescue-test/jeep-auditions/jeep_d_layered_engine.mp3",
+    "jeep_components": [
+      "engine_drive",
+      "tire_gravel",
+      "brake_engine_off"
+    ],
+    "jeep_selection": "D — approved by user"
+  },
+  "JR_104": {
+    "file": "lion-rescue-test/JR_104.mp3",
+    "duration_seconds": 8.673,
+    "integrated_lufs": -16.9,
+    "true_peak_dbfs": -2.5,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "NARRATOR",
+    "voice_id": "ItmwhOeluca31IEX91Yk",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.56,
+      "similarity_boost": 0.78,
+      "style": 0.12,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "रेस्क्यू जीप घने जंगलों के बीच आकर रुकी। सूरज ढल चुका था और पेड़-पौधे अंधेरे में अजीब साए जैसे लग रहे थे।",
+    "performance_tag": "[hushed and adventurous]",
+    "source_file": "raw/JR_104_v2.mp3"
+  },
+  "JR_105": {
+    "file": "lion-rescue-test/JR_105.mp3",
+    "duration_seconds": 1.123,
+    "integrated_lufs": -22.3,
+    "true_peak_dbfs": -5.4,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_106": {
+    "file": "lion-rescue-test/JR_106.mp3",
+    "duration_seconds": 2.377,
+    "integrated_lufs": -15.7,
+    "true_peak_dbfs": -2.7,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "LION",
+    "voice_id": "5krdMTA5HonvWAlY2vSx",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.44,
+      "similarity_boost": 0.78,
+      "style": 0.3,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "आ... छी! आ... छी!",
+    "performance_tag": "[two heavy but harmless childlike sneezes; edit the first two from the existing take]",
+    "source_file": "raw/JR_106.mp3",
+    "character_filter": "highpass=f=90,lowpass=f=8000,equalizer=f=280:t=q:w=1.2:g=1,loudnorm=I=-16:TP=-2:LRA=11,alimiter=limit=0.85:level=false",
+    "source_edit": "First two sneezes from raw/JR_106.mp3; trimmed in a silent gap after sneeze two."
+  },
+  "JR_107": {
+    "file": "lion-rescue-test/JR_107.mp3",
+    "duration_seconds": 4.284,
+    "integrated_lufs": -15.4,
+    "true_peak_dbfs": -1.8,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "Captain... उस बड़ी rock के पीछे कोई छुपा है!",
+    "performance_tag": "[whispering, nervous but playful]",
+    "source_file": "raw/JR_107.mp3"
+  },
+  "JR_108": {
+    "file": "lion-rescue-test/JR_108.mp3",
+    "duration_seconds": 3.239,
+    "integrated_lufs": -14.8,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "LION",
+    "voice_id": "5krdMTA5HonvWAlY2vSx",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.44,
+      "similarity_boost": 0.78,
+      "style": 0.3,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "ह-हेलो? कोई है वहाँ?",
+    "performance_tag": "[small and embarrassed]",
+    "source_file": "raw/JR_108.mp3",
+    "character_filter": "highpass=f=90,lowpass=f=8000,equalizer=f=280:t=q:w=1.2:g=1,loudnorm=I=-16:TP=-2:LRA=11,alimiter=limit=0.85:level=false"
+  },
+  "JR_109": {
+    "file": "lion-rescue-test/JR_109.mp3",
+    "duration_seconds": 4.911,
+    "integrated_lufs": -16.1,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "अरे! यह तो Lion King की आवाज़ है! आप rock के पीछे क्या कर रहे हैं?",
+    "performance_tag": "[surprised]",
+    "source_file": "raw/JR_109.mp3"
+  },
+  "JR_110": {
+    "file": "lion-rescue-test/JR_110.mp3",
+    "duration_seconds": 9.091,
+    "integrated_lufs": -16.5,
+    "true_peak_dbfs": -4.3,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "LION",
+    "voice_id": "5krdMTA5HonvWAlY2vSx",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.44,
+      "similarity_boost": 0.78,
+      "style": 0.3,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "कोको... मैं यहाँ रास्ता भूल गया हूँ। और यहाँ इतना अंधेरा है कि मुझे अपनी पूँछ भी दिखाई नहीं दे रही!",
+    "performance_tag": "[worried but gentle]",
+    "source_file": "raw/JR_110_v2.mp3",
+    "character_filter": "highpass=f=90,lowpass=f=8000,equalizer=f=280:t=q:w=1.2:g=1,loudnorm=I=-16:TP=-2:LRA=11,alimiter=limit=0.85:level=false"
+  },
+  "JR_111": {
+    "file": "lion-rescue-test/JR_111.mp3",
+    "duration_seconds": 3.318,
+    "integrated_lufs": -16.4,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "फ़िक्र मत करो! मैं ढूँढता हूँ आपकी पूँछ।",
+    "performance_tag": "[confident, then uncertain]",
+    "source_file": "raw/JR_111.mp3"
+  },
+  "JR_112": {
+    "file": "lion-rescue-test/JR_112.mp3",
+    "duration_seconds": 1.306,
+    "integrated_lufs": -10.4,
+    "true_peak_dbfs": -0.3,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_113": {
+    "file": "lion-rescue-test/JR_113.mp3",
+    "duration_seconds": 3.709,
+    "integrated_lufs": -16.2,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "मेरा मतलब... मैं कुछ करता हूँ... ओह!",
+    "performance_tag": "[nervous, trying to sound brave]",
+    "source_file": "raw/JR_113.mp3"
+  },
+  "JR_114": {
+    "file": "lion-rescue-test/JR_114.mp3",
+    "duration_seconds": 1.045,
+    "integrated_lufs": -24.4,
+    "true_peak_dbfs": -1.4,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_115": {
+    "file": "lion-rescue-test/JR_115.mp3",
+    "duration_seconds": 8.359,
+    "integrated_lufs": -15.9,
+    "true_peak_dbfs": -2.3,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "अरे! इतना अंधेरा है कि मेरी नाक भी नहीं दिख रही! Captain, हमें तुरंत रोशनी चाहिए, वरना हम सब टकरा जाएँगे!",
+    "performance_tag": "[rubbing head, urgent but playful]",
+    "source_file": "raw/JR_115_v2.mp3"
+  },
+  "JR_116": {
+    "file": "lion-rescue-test/JR_116.mp3",
+    "duration_seconds": 5.642,
+    "integrated_lufs": -18.0,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "अपने cards में देखो... कोई ऐसी चीज़ है जो अंधेरे में तेज़ रोशनी दे सके?",
+    "performance_tag": "[clear and warm]",
+    "source_file": "raw/JR_116_v2.mp3"
+  },
+  "JR_117": {
+    "file": "lion-rescue-test/JR_117.mp3",
+    "duration_seconds": 3.971,
+    "integrated_lufs": -16.9,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "इसे ON करते ही अंधेरे में रास्ता साफ़ दिखने लगता है।",
+    "performance_tag": "[clear and warm]",
+    "source_file": "raw/JR_117_v2.mp3"
+  },
+  "JR_118": {
+    "file": "lion-rescue-test/JR_118.mp3",
+    "duration_seconds": 1.881,
+    "integrated_lufs": -16.4,
+    "true_peak_dbfs": -2.8,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "FLASHLIGHT वाला card scan करो!",
+    "performance_tag": "[clear and warm]",
+    "source_file": "raw/JR_118.mp3"
+  },
+  "JR_119": {
+    "file": "lion-rescue-test/JR_119.mp3",
+    "duration_seconds": 1.228,
+    "integrated_lufs": -21.2,
+    "true_peak_dbfs": -3.8,
+    "review_status": "test",
+    "type": "sfx",
+    "alias_of": "JR_040"
+  },
+  "JR_120": {
+    "file": "lion-rescue-test/JR_120.mp3",
+    "duration_seconds": 1.228,
+    "integrated_lufs": -24.7,
+    "true_peak_dbfs": -1.2,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_121": {
+    "file": "lion-rescue-test/JR_121.mp3",
+    "duration_seconds": 2.926,
+    "integrated_lufs": -16.4,
+    "true_peak_dbfs": -2.7,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "YES! FLASHLIGHT!",
+    "performance_tag": "[relieved and bright]",
+    "source_file": "raw/JR_121.mp3"
+  },
+  "JR_122": {
+    "file": "lion-rescue-test/JR_122.mp3",
+    "duration_seconds": 0.731,
+    "integrated_lufs": -20.7,
+    "true_peak_dbfs": -6.0,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_123": {
+    "file": "lion-rescue-test/JR_123.mp3",
+    "duration_seconds": 5.956,
+    "integrated_lufs": -16.7,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "वाह! रोशनी होते ही सब दिखने लगा! ...और rock के ऊपर वो उल्लू भी!",
+    "performance_tag": "[surprised and relieved]",
+    "source_file": "raw/JR_123.mp3"
+  },
+  "JR_124": {
+    "file": "lion-rescue-test/JR_124.mp3",
+    "duration_seconds": 1.515,
+    "integrated_lufs": -20.4,
+    "true_peak_dbfs": -11.3,
+    "review_status": "test",
+    "type": "sfx",
+    "source_file": "audio_candidates/shipped_owl.mp3"
+  },
+  "JR_125": {
+    "file": "lion-rescue-test/JR_125.mp3",
+    "duration_seconds": 7.314,
+    "integrated_lufs": -16.8,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "NARRATOR",
+    "voice_id": "ItmwhOeluca31IEX91Yk",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.56,
+      "similarity_boost": 0.78,
+      "style": 0.12,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "टॉर्च की रोशनी में Lion King rock के पीछे से बाहर आए। पर वो थोड़े काँप रहे थे।",
+    "performance_tag": "[warm]",
+    "source_file": "raw/JR_125.mp3"
+  },
+  "JR_126": {
+    "file": "lion-rescue-test/JR_126.mp3",
+    "duration_seconds": 1.306,
+    "integrated_lufs": -23.6,
+    "true_peak_dbfs": -6.1,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_127": {
+    "file": "lion-rescue-test/JR_127.mp3",
+    "duration_seconds": 8.124,
+    "integrated_lufs": -15.8,
+    "true_peak_dbfs": -2.6,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "LION",
+    "voice_id": "5krdMTA5HonvWAlY2vSx",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.44,
+      "similarity_boost": 0.78,
+      "style": 0.3,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "रोशनी के लिए शुक्रिया... पर रात की हवा बहुत ठंडी है। Brrr!",
+    "performance_tag": "[shivering, small and childlike]",
+    "source_file": "raw/JR_127.mp3",
+    "character_filter": "highpass=f=90,lowpass=f=8000,equalizer=f=280:t=q:w=1.2:g=1,loudnorm=I=-16:TP=-2:LRA=11,alimiter=limit=0.85:level=false"
+  },
+  "JR_128": {
+    "file": "lion-rescue-test/JR_128.mp3",
+    "duration_seconds": 8.986,
+    "integrated_lufs": -16.2,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "NARRATOR",
+    "voice_id": "ItmwhOeluca31IEX91Yk",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.56,
+      "similarity_boost": 0.78,
+      "style": 0.12,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "रोशनी में Lion King को अपनी गुफा दिख गई। कोको उन्हें अंदर ले गया, लेकिन Lion King को अब भी बहुत ठंड लग रही थी।",
+    "performance_tag": "[warm and reassuring; the lion still feels cold inside]",
+    "source_file": "raw/JR_128_v2.mp3"
+  },
+  "JR_129": {
+    "type": "split_sfx",
+    "review_status": "test",
+    "entry_file": "lion-rescue-test/JR_129_entry.mp3",
+    "bed_file": "lion-rescue-test/JR_129_bed.mp3",
+    "entry_duration_seconds": 2.038,
+    "bed_duration_seconds": 12.042,
+    "bed_loop": true
+  },
+  "JR_130": {
+    "file": "lion-rescue-test/JR_130.mp3",
+    "duration_seconds": 6.191,
+    "integrated_lufs": -16.8,
+    "true_peak_dbfs": -2.3,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "रुकिए Lion King, मैं आपको इस बड़े सूखे पत्ते से ढकता हूँ!",
+    "performance_tag": "[helpful and confident]",
+    "source_file": "raw/JR_130.mp3"
+  },
+  "JR_131": {
+    "file": "lion-rescue-test/JR_131.mp3",
+    "duration_seconds": 1.515,
+    "integrated_lufs": -20.4,
+    "true_peak_dbfs": -1.8,
+    "review_status": "test",
+    "type": "sfx"
+  },
+  "JR_132": {
+    "file": "lion-rescue-test/JR_132.mp3",
+    "duration_seconds": 6.844,
+    "integrated_lufs": -17.0,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "अरेरे... पत्ता तो फट गया! पत्ते से ठंड रोकने चला था... ये कौन करता है?!",
+    "performance_tag": "[comic self-mockery right after the leaf tears, then caring]",
+    "source_file": "raw/JR_132_v2.mp3"
+  },
+  "JR_133": {
+    "type": "retired",
+    "review_status": "retired",
+    "reason": "Removed from playback after child-experience review"
+  },
+  "JR_134": {
+    "file": "lion-rescue-test/JR_134.mp3",
+    "duration_seconds": 6.348,
+    "integrated_lufs": -16.5,
+    "true_peak_dbfs": -2.3,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "Captain, हमें Lion King के लिए कोई soft और गर्म चीज़ चाहिए जिसे उन्हें ओढ़ा सकें!",
+    "performance_tag": "[clear and inviting]",
+    "source_file": "raw/JR_134.mp3"
+  },
+  "JR_135": {
+    "file": "lion-rescue-test/JR_135.mp3",
+    "duration_seconds": 5.564,
+    "integrated_lufs": -17.6,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "अपने cards में देखो... कोई soft चीज़ ढूँढो जो ठंड से बचाए।",
+    "performance_tag": "[clear and warm]",
+    "source_file": "raw/JR_135.mp3"
+  },
+  "JR_136": {
+    "file": "lion-rescue-test/JR_136.mp3",
+    "duration_seconds": 4.911,
+    "integrated_lufs": -16.1,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "रात को सोते समय हम इसे अपने ऊपर ओढ़कर warm महसूस करते हैं।",
+    "performance_tag": "[clear and warm]",
+    "source_file": "raw/JR_136.mp3"
+  },
+  "JR_137": {
+    "file": "lion-rescue-test/JR_137.mp3",
+    "duration_seconds": 2.194,
+    "integrated_lufs": -16.4,
+    "true_peak_dbfs": -3.5,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "BLANKET वाला card scan करो!",
+    "performance_tag": "[clear and warm]",
+    "source_file": "raw/JR_137.mp3"
+  },
+  "JR_138": {
+    "file": "lion-rescue-test/JR_138.mp3",
+    "duration_seconds": 1.228,
+    "integrated_lufs": -21.2,
+    "true_peak_dbfs": -3.8,
+    "review_status": "test",
+    "type": "sfx",
+    "alias_of": "JR_040"
+  },
+  "JR_139": {
+    "file": "lion-rescue-test/JR_139.mp3",
+    "duration_seconds": 2.691,
+    "integrated_lufs": -18.8,
+    "true_peak_dbfs": -1.9,
+    "review_status": "test",
+    "type": "character_nonverbal",
+    "components": [
+      "JR_139_fabric.mp3",
+      "JR_139_lion.mp3"
+    ]
+  },
+  "JR_140": {
+    "file": "lion-rescue-test/JR_140.mp3",
+    "duration_seconds": 4.911,
+    "integrated_lufs": -17.6,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "YES! BLANKET! यह blanket कितना soft और warm है!",
+    "performance_tag": "[warm acknowledgement]",
+    "source_file": "raw/JR_140.mp3"
+  },
+  "JR_141": {
+    "file": "lion-rescue-test/JR_141.mp3",
+    "duration_seconds": 4.362,
+    "integrated_lufs": -16.7,
+    "true_peak_dbfs": -3.3,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "NARRATOR",
+    "voice_id": "ItmwhOeluca31IEX91Yk",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.56,
+      "similarity_boost": 0.78,
+      "style": 0.12,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "कोको ने बड़े प्यार से वो blanket Lion King को ओढ़ा दिया।",
+    "performance_tag": "[tender]",
+    "source_file": "raw/JR_141.mp3"
+  },
+  "JR_142": {
+    "file": "lion-rescue-test/JR_142.mp3",
+    "duration_seconds": 6.348,
+    "integrated_lufs": -17.3,
+    "true_peak_dbfs": -5.5,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "LION",
+    "voice_id": "5krdMTA5HonvWAlY2vSx",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.44,
+      "similarity_boost": 0.78,
+      "style": 0.3,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "अहाहा... अब आया ना मज़ा! इतनी गर्मी... इतना आराम...",
+    "performance_tag": "[cozy, relieved, childlike]",
+    "source_file": "raw/JR_142.mp3",
+    "character_filter": "highpass=f=90,lowpass=f=8000,equalizer=f=280:t=q:w=1.2:g=1,loudnorm=I=-16:TP=-2:LRA=11,alimiter=limit=0.85:level=false"
+  },
+  "JR_143": {
+    "file": "lion-rescue-test/JR_143.mp3",
+    "duration_seconds": 6.687,
+    "integrated_lufs": -20.7,
+    "true_peak_dbfs": -4.3,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "Captain, Lion King को आराम से सुलाने के लिए एक छोटी सी लोरी गाएँ? तुम मेरे साथ गाओगे?",
+    "performance_tag": "[tender and empathetic, slower and noticeably softer; invite the child warmly; pronounce लोरी as लो-री]",
+    "source_file": "raw/JR_143_v3.mp3"
+  },
+  "JR_144": {
+    "file": "lion-rescue-test/JR_144.mp3",
+    "duration_seconds": 10.031,
+    "integrated_lufs": -24.5,
+    "true_peak_dbfs": -9.7,
+    "review_status": "test",
+    "type": "music",
+    "model_id": "music_v2",
+    "source_file": "raw/JR_144.mp3",
+    "exact_runtime_seconds": 10.0
+  },
+  "JR_145": {
+    "file": "lion-rescue-test/JR_145.mp3",
+    "duration_seconds": 10.031,
+    "integrated_lufs": -20.8,
+    "true_peak_dbfs": -7.0,
+    "review_status": "test",
+    "type": "character_nonverbal",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "source_file": "raw/JR_145_v3.mp3",
+    "exact_runtime_seconds": 10.0
+  },
+  "JR_146": {
+    "type": "retired",
+    "review_status": "retired",
+    "reason": "Removed from playback after child-experience review"
+  },
+  "JR_147": {
+    "file": "lion-rescue-test/JR_147.mp3",
+    "duration_seconds": 6.478,
+    "integrated_lufs": -21.3,
+    "true_peak_dbfs": -4.0,
+    "review_status": "test",
+    "type": "character_nonverbal",
+    "intended_character": "LION",
+    "model_id": "eleven_text_to_sound_v2",
+    "components": [
+      "JR_147_settle.mp3",
+      "JR_147_snore_1.mp3",
+      "JR_147_gap.mp3",
+      "JR_147_snore_2.mp3",
+      "JR_147_gap.mp3",
+      "JR_147_snore_3.mp3"
+    ],
+    "source_files": [
+      "raw/JR_147_snore_series_v1.mp3",
+      "raw/JR_147_snore_v2.mp3"
+    ]
+  },
+  "JR_148": {
+    "type": "retired",
+    "review_status": "retired",
+    "reason": "Removed from playback after child-experience review"
+  },
+  "JR_149": {
+    "file": "lion-rescue-test/JR_149.mp3",
+    "duration_seconds": 6.844,
+    "integrated_lufs": -16.4,
+    "true_peak_dbfs": -2.3,
+    "review_status": "test",
+    "type": "speech",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "लो! हमारी लोरी सुनते-सुनते Lion King तो खर्राटे लेने लगे! Mission successful!",
+    "performance_tag": "[giggling, quiet whisper]",
+    "source_file": "raw/JR_149_v2.mp3"
+  },
+  "JR_106_lion": {
+    "file": "lion-rescue-test/JR_106_lion.mp3",
+    "type": "sfx",
+    "intended_character": "LION",
+    "review_status": "selected_for_route",
+    "source_file": "intro-roar-auditions/roar_a.mp3",
+    "placement": "immediately after the second sneeze and before JR_107"
+  },
+  "JR_132_sting": {
+    "file": "lion-rescue-test/JR_132_sting.mp3",
+    "type": "sfx",
+    "review_status": "test",
+    "duration_seconds": 0.836,
+    "integrated_lufs": -20.9,
+    "true_peak_dbfs": -1.7,
+    "placement": "immediately after JR_132's spoken Ye kon karta hai line"
+  },
+  "JR_112_huff": {
+    "type": "retired",
+    "review_status": "retired",
+    "reason": "Generic effect did not match Bholu's voice"
+  },
+  "JR_103_jeep_alt": {
+    "file": "lion-rescue-test/JR_103_jeep_alt.mp3",
+    "type": "sfx_audition",
+    "review_status": "audition_only",
+    "duration_seconds": 4.049,
+    "integrated_lufs": -21.7,
+    "true_peak_dbfs": -1.7,
+    "model_id": "eleven_text_to_sound_v2",
+    "source_file": "raw/JR_103_jeep_alt.mp3"
+  },
+  "_batch": {
+    "name": "Lion Rescue production test",
+    "range": "JR_103–JR_149",
+    "format": "mp3_44100_128",
+    "script": "jungle_rescue_final_production_script.md",
+    "note": "Review MP3s; 10-second separate lori stems; childlike Bholu Lion with light natural-pitch treatment pending approval."
+  }
+}

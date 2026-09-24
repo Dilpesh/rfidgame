@@ -1,0 +1,6 @@
+{
+  "prompt": "An original gentle ten-second instrumental lullaby for a four-year-old's jungle story. Soft warm music-box notes, very simple slow three-note motif, spacious and soothing, subtle warm pad, no percussion, no singing, no words, no recognizable traditional tune. Leave clear room for a separate childlike voice humming over it. End with a soft sustained note.",
+  "music_length_ms": 10000,
+  "model_id": "music_v2",
+  "force_instrumental": true
+}

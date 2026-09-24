@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jungle Rescue — Lion entrance roar preview</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;color:#183628;background:#eef6ed}
+    *{box-sizing:border-box}body{margin:0}main{max-width:800px;margin:auto;padding:24px 16px 60px}
+    header,section{background:white;border:1px solid #d4e4d4;border-radius:16px;padding:20px;margin-bottom:14px;box-shadow:0 5px 18px #163a230b}
+    h1{margin:0 0 9px}h2{font-size:1.2rem;margin:0 0 9px}p{line-height:1.5}.muted{color:#526b5b}
+    .actions{display:flex;gap:9px;flex-wrap:wrap}button{border:1px solid #abc5af;border-radius:10px;background:#edf5ec;color:#183628;padding:11px 14px;font:inherit;font-weight:700;cursor:pointer}
+    button.primary{background:#14623f;border-color:#14623f;color:white}.status{padding:13px;background:#edf5ec;border-radius:10px;min-height:50px;font-weight:600}
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:12px}.cue{border:1px solid #d8e6d8;border-radius:12px;padding:13px}audio{width:100%;margin-top:10px}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Lion King entrance: roar or no roar?</h1>
+    <p>This preview plays only the Lion's introduction: leaves rustle, Bholu sneezes twice, then the selected roar happens before Coco speaks. Coco then hears and recognizes Lion King, who explains he is lost.</p>
+    <div class="actions">
+      <button id="baseline">Current entrance · no roar</button>
+      <button class="primary" id="optionA">Entrance with roar A</button>
+      <button class="primary" id="optionB">Entrance with roar B</button>
+      <button id="stop">Stop</button>
+    </div>
+    <p class="status" id="status" role="status" aria-live="polite">Ready. Nothing has been added to the full Lion scene.</p>
+  </header>
+
+  <section>
+    <h2>Complete rendered comparisons</h2>
+    <p class="muted">These are single audio clips, so the pauses and roar are preserved exactly as heard in the entrance.</p>
+    <div class="grid">
+      <div class="cue"><strong>Current entrance — no roar</strong><audio controls preload="metadata" src="audio/lion-rescue-test/intro-roar-auditions/entrance_baseline.mp3?review=lionroar2"></audio></div>
+      <div class="cue"><strong>Entrance with roar A</strong><audio controls preload="metadata" src="audio/lion-rescue-test/intro-roar-auditions/entrance_roar_a.mp3?review=lionroar2"></audio></div>
+      <div class="cue"><strong>Entrance with roar B</strong><audio controls preload="metadata" src="audio/lion-rescue-test/intro-roar-auditions/entrance_roar_b.mp3?review=lionroar2"></audio></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Roars by themselves</h2>
+    <div class="grid">
+      <div class="cue"><strong>A · Selected entrance roar</strong><p class="muted">Short rounded growl rising into a little roar, immediately after the sneezes.</p><audio controls preload="metadata" src="audio/lion-rescue-test/intro-roar-auditions/roar_a.mp3?review=lionroar1"></audio></div>
+      <div class="cue"><strong>B · Proud young Lion King</strong><p class="muted">A slightly fuller but still friendly one-beat roar.</p><audio controls preload="metadata" src="audio/lion-rescue-test/intro-roar-auditions/roar_b.mp3?review=lionroar1"></audio></div>
+    </div>
+    <p class="muted">A is now selected for the story route. It is separate from Bholu's selected angry “अरे” later in the scene.</p>
+  </section>
+</main>
+<script>
+'use strict';
+const dir='audio/lion-rescue-test/';
+const $=id=>document.getElementById(id);
+let run=0,active=null,finishActive=null,bed=null;
+function status(message){$('status').textContent=message}
+function stop(){
+  run++;
+  if(active){active.pause();active.src='';if(finishActive)finishActive(false)}
+  if(bed){bed.pause();bed.src='';bed=null}
+  for(const player of document.querySelectorAll('audio'))player.pause();
+  status('Stopped.');
+}
+function cue(source,token){
+  if(token!==run)return Promise.resolve(false);
+  return new Promise(resolve=>{
+    const audio=new Audio(source);active=audio;
+    const finish=ok=>{if(active===audio){active=null;finishActive=null}resolve(ok)};
+    finishActive=finish;
+    audio.onended=()=>finish(true);
+    audio.onerror=()=>{finish(false);status('Could not load a cue. Check its local audio file.')};
+    audio.play().catch(()=>{finish(false);status('Browser blocked playback. Press Play again.')});
+  });
+}
+async function play(option){
+  stop();const token=run;status(`Playing ${option==='none'?'the current entrance':'roar '+option+' in the Lion entrance'}…`);
+  const clip = option==='none' ? 'entrance_baseline' : `entrance_roar_${option.toLowerCase()}`;
+  if(!await cue(dir+'intro-roar-auditions/'+clip+'.mp3?review=lionroar2',token))return;
+  if(token===run){if(bed){bed.pause();bed.src='';bed=null}status('Entrance comparison complete.')}
+}
+$('baseline').onclick=()=>play('none');
+$('optionA').onclick=()=>play('A');
+$('optionB').onclick=()=>play('B');
+$('stop').onclick=stop;
+</script>
+</body>
+</html>

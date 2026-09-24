@@ -1,0 +1,7 @@
+{
+  "text": "One expressive but child-safe lion cub protest: a brief chesty rumbling growl rising into a small open-mouthed roar, then stopping cleanly. The cub sounds grumpy and dignified, not frightening. Clearly lion-like on laptop speakers. Animal vocal only, no speech, no cat meow, no full-size adult roar, no harsh screech, no music or background noise.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 1.5,
+  "prompt_influence": 0.8,
+  "loop": false
+}

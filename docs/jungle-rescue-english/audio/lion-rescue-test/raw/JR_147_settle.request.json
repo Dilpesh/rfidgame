@@ -1,0 +1,7 @@
+{
+  "text": "A small sleepy animal nestles comfortably into a blanket on a dry cave floor, one soft fabric and body settling movement. No snore, no voice, no music.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 0.8,
+  "prompt_influence": 0.8,
+  "loop": false
+}
