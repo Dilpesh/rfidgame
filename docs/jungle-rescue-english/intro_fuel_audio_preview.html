@@ -24,6 +24,7 @@
     <div class="actions">
       <button class="primary" id="start">Play from beginning</button>
       <button id="stop">Stop</button>
+      <button id="earlyFuel" disabled>Tap FUEL during clue</button>
       <button id="fuel" disabled>Tap FUEL card</button>
       <button id="repeat" disabled>Tap FUEL again</button>
     </div>
@@ -62,7 +63,8 @@ let foreground=null,bed=null,run=0;
 const $=id=>document.getElementById(id);
 const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
 function status(text){$('status').textContent=text}
-function stopAll(){run++;if(foreground){const active=foreground;foreground=null;active.pause();if(active.onended)active.onended();active.src=''}if(bed){bed.pause();bed.src='';bed=null}status('Stopped.')}
+function stopForeground(){if(foreground){const active=foreground;const ended=active.onended;foreground=null;active.onended=null;active.onerror=null;active.pause();active.src='';if(ended)ended()}}
+function stopAll(){run++;stopForeground();if(bed){bed.pause();bed.src='';bed=null}status('Stopped.')}
 function playCue(id,token){
   if(token!==run)return Promise.resolve();
   foreground=new Audio(`${dir}${id}.mp3`);foreground.preload='auto';
@@ -71,8 +73,9 @@ function playCue(id,token){
 }
 async function sequence(ids,token){for(const id of ids){if(token!==run)return;if(id==='PAUSE_1500'){status('Space for the child to answer…');await wait(1500)}else await playCue(id,token)}}
 function startBed(){if(bed)bed.pause();bed=new Audio(`${dir}JR_001.mp3`);bed.loop=true;bed.volume=.18;bed.play().catch(()=>{})}
-$('start').onclick=async()=>{stopAll();const token=run;startBed();$('fuel').disabled=true;$('repeat').disabled=true;await sequence(opening,token);if(token!==run)return;$('fuel').disabled=false;status('Waiting for the child to tap the FUEL card. Try the hints or tap FUEL.')};
+$('start').onclick=async()=>{stopAll();const token=run;startBed();$('earlyFuel').disabled=false;$('fuel').disabled=true;$('repeat').disabled=true;await sequence(opening,token);if(token!==run)return;$('earlyFuel').disabled=true;$('fuel').disabled=false;status('Waiting for the child to tap the FUEL card. Try the hints or tap FUEL.')};
 $('stop').onclick=stopAll;
+$('earlyFuel').onclick=async()=>{if(!$('earlyFuel').disabled){$('earlyFuel').disabled=true;stopForeground();run++;status('Clue stopped. Playing Fuel acknowledgement…');const token=run;await sequence(success,token);if(token===run){$('fuel').disabled=false;status('Early Fuel tap test complete. The clue did not overlap the acknowledgement.')}}};
 $('fuel').onclick=async()=>{const token=run;$('fuel').disabled=true;await sequence(success,token);if(token!==run)return;$('repeat').disabled=false;status('Fuel success complete. Tap FUEL again to audition the optional overflow joke.')};
 $('repeat').onclick=async()=>{const token=run;$('repeat').disabled=true;await sequence(['JR_019','JR_020'],token);if(token!==run)return;status('Optional repeat-card joke complete.')};
 document.querySelectorAll('.hint').forEach(button=>button.onclick=()=>playCue(button.dataset.cue,run));
