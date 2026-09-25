@@ -265,8 +265,10 @@ Coco speaks so the child can identify the sound.
 **JR_053 · ELEPHANT**
 > मेरे पेट में भूख से चूहे दौड़ रहे हैं।
 
-**JR_054 · COCO** `[amused]`
+**JR_054 · COCO** `[playful; speak the exact scripted words and finish "रहे हैं" clearly; no ad-lib after the line]`
 > सिर्फ़ दौड़ नहीं रहे हैं... कूद भी रहे हैं!
+
+**PLAYBACK:** Hold an 800 ms reaction beat after JR_054 before presenting the BISCUIT prompt.
 
 ---
 

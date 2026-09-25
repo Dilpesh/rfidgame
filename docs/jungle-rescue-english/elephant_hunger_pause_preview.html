@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Elephant hunger joke — focused preview</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;color:#173427;background:#f2f7f0}
+    body{margin:0;padding:22px}main{max-width:720px;margin:auto}section{background:white;border:1px solid #dce8dc;border-radius:16px;padding:20px;box-shadow:0 4px 16px #1540270b}
+    h1{margin:0 0 8px;font-size:clamp(25px,6vw,38px)}p{line-height:1.55}.muted{color:#587064}.actions{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}
+    button{border:1px solid #a9c5ae;border-radius:10px;background:#edf5ec;color:#183628;padding:11px 14px;font:inherit;font-weight:750;cursor:pointer}button.primary{background:#14623f;color:white;border-color:#14623f}
+    .script{background:#f7faf6;border-radius:12px;padding:14px;margin-top:14px}.script p{margin:7px 0}.pause{color:#985c10;font-weight:750}.status{min-height:24px;color:#365b45;font-weight:650}
+  </style>
+</head>
+<body>
+<main>
+  <section>
+    <p class="muted">Focused preview · Elephant hunger moment only</p>
+    <h1>“कूद भी रहे हैं!” timing</h1>
+    <p>This preview does not change the main game. It plays the stomach joke, an 800 ms reaction beat, and the next hunger prompt.</p>
+    <div class="actions">
+      <button class="primary" id="playMoment">Play focused moment</button>
+      <button id="playNewPunchline">Play clean regenerated punchline</button>
+      <button id="playOldPunchline">Play old clipped punchline</button>
+      <button id="stop">Stop</button>
+    </div>
+    <div class="script">
+      <p><strong>COCO:</strong> ये क्या था?</p>
+      <p><strong>ELEPHANT:</strong> मेरे पेट में भूख से चूहे दौड़ रहे हैं।</p>
+      <p><strong>COCO:</strong> सिर्फ़ दौड़ नहीं रहे हैं... कूद भी रहे हैं!</p>
+      <p class="pause">800 ms pause</p>
+      <p><strong>COCO:</strong> एलिफेंट दादा को भूख लगी है! Captain, क्या हमारे पास कुछ खाने के लिए है?</p>
+    </div>
+    <p class="status" id="status">Ready.</p>
+  </section>
+</main>
+<script>
+'use strict';
+const dir='audio/elephant-rescue-test/';
+let current=null,run=0;
+const status=document.getElementById('status');
+const wait=ms=>new Promise(resolve=>setTimeout(resolve,ms));
+function stop(){run++;if(current){current.onended=current.onerror=null;current.pause();current.src='';current=null}status.textContent='Stopped.'}
+function play(id,token){
+  if(token!==run)return Promise.resolve();
+  if(current){current.onended=current.onerror=null;current.pause();current.src=''}
+  const player=new Audio(`${dir}${id}.mp3`);current=player;status.textContent=`Playing ${id}…`;
+  return new Promise(resolve=>{let done=false;const finish=()=>{if(done)return;done=true;player.onended=player.onerror=null;if(current===player)current=null;resolve()};player.onended=finish;player.onerror=()=>{status.textContent=`Could not play ${id}.`;finish()};player.play().catch(()=>{status.textContent=`Browser blocked ${id}. Press Play again.`;finish()})});
+}
+document.getElementById('playMoment').onclick=async()=>{stop();const token=run;for(const id of ['JR_051','JR_052','JR_053','alternatives/JR_054_clean']){await play(id,token);if(token!==run)return}status.textContent='Reaction pause…';await wait(800);if(token!==run)return;await play('JR_055',token);if(token===run)status.textContent='Finished.'};
+document.getElementById('playNewPunchline').onclick=async()=>{stop();const token=run;await play('alternatives/JR_054_clean',token);if(token===run)status.textContent='Clean regenerated punchline finished.'};
+document.getElementById('playOldPunchline').onclick=async()=>{stop();const token=run;await play('JR_054',token);if(token===run)status.textContent='Old punchline finished.'};
+document.getElementById('stop').onclick=stop;
+</script>
+</body>
+</html>

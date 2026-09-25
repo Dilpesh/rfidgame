@@ -94,7 +94,7 @@ Hints, alternatives and reusable assets are never played just because they appea
 | State | Narrative leading into prompt | Prompt / expected card | Hints 1, 2, rescue | Success and onward route |
 |---|---|---|---|---|
 | INTRO / FUEL | JR_001–JR_009 | JR_010 / FUEL | JR_011, JR_012, JR_013 | JR_014–JR_018; optional fuel branch; Elephant approach |
-| ELEPHANT / ROPE | JR_021–JR_035 | JR_036 / ROPE | JR_037, JR_038, JR_039 | JR_040–JR_054, including pretend pulls; Biscuit question |
+| ELEPHANT / ROPE | JR_021–JR_035 | JR_036 / ROPE | JR_037, JR_038, JR_039 | JR_040–JR_054, including pretend pulls; hold 800 ms after JR_054; Biscuit question |
 | BISCUIT | None; hunger already established | JR_055 / BISCUIT | JR_056, JR_057, JR_058 for first bite only | Four-bite branch in section 6; JR_072–JR_078; First Aid question |
 | FIRST_AID | Parrot introduction is included above | JR_079 / FIRST_AID | JR_080, JR_081, JR_082 | JR_083–JR_093; Water question |
 | WATER | None | JR_094 / WATER | JR_095 reminders only | JR_096–JR_114; Flashlight question |

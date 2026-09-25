@@ -547,7 +547,7 @@
     "duration_seconds": 3.004,
     "integrated_lufs": -16.4,
     "true_peak_dbfs": -2.4,
-    "review_status": "test",
+    "review_status": "approved-focused-preview",
     "type": "speech",
     "voice": "COCO",
     "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
@@ -559,9 +559,9 @@
       "use_speaker_boost": true
     },
     "spoken_text": "सिर्फ़ दौड़ नहीं रहे हैं... कूद भी रहे हैं!",
-    "performance_tag": "[amused]",
+    "performance_tag": "[playful, exact scripted dialogue]",
     "character_treatment": null,
-    "source_file": "raw/JR_054.mp3"
+    "source_file": "alternatives/JR_054_clean.mp3"
   },
   "JR_055": {
     "file": "elephant-rescue-test/JR_055.mp3",
