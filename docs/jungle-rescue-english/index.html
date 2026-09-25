@@ -121,10 +121,10 @@ function playOverlayCueAndWait(id, volume=.35){
   return new Promise(resolve=>{const done=()=>{overlays.delete(effect);effect.onended=null;effect.onerror=null;resolve()};effect.onended=done;effect.onerror=done;effect.play().catch(done);});
 }
 function playStandaloneSfx(file,volume=.72){const effect=new Audio(file);effect.volume=volume;return new Promise(resolve=>{effect.onended=resolve;effect.onerror=resolve;effect.play().catch(resolve);});}
-function playBedFile(file, volume=.18){if(bedAudio){bedAudio.pause();bedAudio.src='';}const source=assetUrl(file,'v=jr-bed-5');bedAudio=new Audio(source);bedAudio.preload='auto';bedAudio.loop=true;bedAudio.volume=volume;bedAudio.onerror=()=>log(`could not play background ${file}`,'error');bedAudio.play().catch(()=>log(`could not start background ${file}`,'error'));return Promise.resolve();}
+function playBedFile(file, volume=.18){if(bedAudio){bedAudio.pause();bedAudio.src='';}const source=assetUrl(file,'v=jr-bed-6');bedAudio=new Audio(source);bedAudio.preload='auto';bedAudio.loop=true;bedAudio.volume=volume;bedAudio.onerror=()=>log(`could not play background ${file}`,'error');bedAudio.play().catch(()=>log(`could not start background ${file}`,'error'));return Promise.resolve();}
 function crossfadeBedFile(file, volume=.18){
   if(bedFadeTimer){clearInterval(bedFadeTimer);bedFadeTimer=null;}
-  const old=bedAudio;const source=assetUrl(file,'v=jr-bed-5');const next=new Audio(source);next.preload='auto';next.loop=true;next.volume=0;bedAudio=next;next.onerror=()=>log(`could not play background ${file}`,'error');next.play().catch(()=>log(`could not start background ${file}`,'error'));
+  const old=bedAudio;const source=assetUrl(file,'v=jr-bed-6');const next=new Audio(source);next.preload='auto';next.loop=true;next.volume=0;bedAudio=next;next.onerror=()=>log(`could not play background ${file}`,'error');next.play().catch(()=>log(`could not start background ${file}`,'error'));
   return new Promise(resolve=>{let step=0;bedFadeTimer=setInterval(()=>{step++;next.volume=volume*step/8;if(old)old.volume=Math.max(0,old.volume*(8-step)/8);if(step>=8){clearInterval(bedFadeTimer);bedFadeTimer=null;if(old){old.pause();old.src='';}resolve();}},90);});
 }
 async function playCue(id, opts={}){

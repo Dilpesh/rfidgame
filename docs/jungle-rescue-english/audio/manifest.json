@@ -12,15 +12,17 @@
   },
   "JR_001": {
     "file": "intro-fuel-test/JR_001.mp3",
-    "duration_seconds": 18.1,
-    "integrated_lufs": -15.9,
-    "true_peak_dbfs": -5.4,
-    "review_status": "selected-local-reuse",
+    "duration_seconds": 50.05,
+    "integrated_lufs": -25.5,
+    "true_peak_dbfs": -11.9,
+    "review_status": "approved",
     "type": "sfx",
     "bed": true,
     "loop": true,
     "volume": 0.28,
-    "source_file": "audio_candidates/shipped_dayAmb.mp3"
+    "source_file": "audio_candidates/old_sfx_jungle_day.mp3 (highpass 90 Hz, -6 dB, loop fades)",
+    "phone_band_test_worst_gap_db": -26.5,
+    "note": "Replaced near-silent shipped_dayAmb copy (-43.9 LUFS). Option G chosen by ear on phone 2026-09-25, see docs/jungle-rescue-english/claude/day-bed/."
   },
   "JR_002": {
     "file": "intro-fuel-test/JR_002.mp3",
