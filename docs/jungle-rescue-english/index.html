@@ -71,7 +71,9 @@ const DEFAULT_UIDS = {
 /* __CARD_UIDS_END__ */
 
 let manifest = {}, audio = null, bedAudio = null, mode = 'reader', state = 'idle', expected = null;
-let epoch = 0, hintTimers = [], hintIndex = 0, waitingSince = 0, bite = 0, fuelGagOpen = false;
+let epoch = 0, hintTimers = [], waterReminderTimers = [], bedFadeTimer = null, hintIndex = 0, waitingSince = 0, bite = 0, fuelGagOpen = false;
+const overlays = new Set();
+let danceAudio = null;
 let uidToCard = {}, inputBuffer = '', wrongVariant = 0;
 const $ = id => document.getElementById(id);
 const norm = v => String(v == null ? '' : v).trim().toUpperCase().replace(/^0+(?=.)/,'');
@@ -85,17 +87,52 @@ async function loadManifest(){
 }
 function cueEntry(id){ const v=manifest[id]; return typeof v==='string'?{file:v}:v||{}; }
 function speechFallback(text){ if(!('speechSynthesis' in window))return; const u=new SpeechSynthesisUtterance(text); u.lang='hi-IN'; u.rate=.92; speechSynthesis.speak(u); }
-function playCue(id, opts={}){
-  if(id==='JR_129'){ playBed('JR_129_bed'); return playCue('JR_129_entry',opts); }
-  const c=cueEntry(id); if(c.bed || c.loop || ['JR_001','JR_021','JR_103'].includes(id)) return playBed(id);
-  if(!c.file){ log(`cue ${id} missing from manifest`, 'warn'); if(opts.text) speechFallback(opts.text); return Promise.resolve(); }
-  if(audio){audio.pause();audio.src='';} audio=new Audio(AUDIO_DIR+c.file); audio.preload='auto';
-  return new Promise(resolve=>{let done=false;const finish=()=>{if(done)return;done=true;audio.onended=audio.onerror=null;resolve()};audio.onended=finish;audio.onerror=()=>{log(`could not play ${id}`, 'error');if(opts.text)speechFallback(opts.text);finish()};audio.play().catch(()=>{if(opts.text)speechFallback(opts.text);finish()});});
+function playFile(file, opts={}){
+  if(audio){audio.pause();audio.src='';}
+  const source=file+(file.includes('?')?'&':'?')+'v=jr-final-2';
+  audio=new Audio(source); audio.preload='auto';
+  return new Promise(resolve=>{
+    let done=false, retried=false;
+    const finish=()=>{if(done)return;done=true;audio.onended=audio.onerror=null;resolve()};
+    const fallback=()=>{if(opts.text)speechFallback(opts.text);};
+    const retry=()=>{
+      if(done)return;
+      if(!retried){retried=true;audio.src=file+(file.includes('?')?'&':'?')+'retry='+Date.now();audio.load();audio.play().catch(()=>{log(`could not play ${file}`, 'error');fallback();finish();});return;}
+      log(`could not play ${file}`, 'error');fallback();finish();
+    };
+    audio.onended=finish;audio.onerror=retry;
+    audio.play().catch(retry);
+  });
 }
-function playBed(id){const c=cueEntry(id);if(!c.file){log(`bed ${id} missing from manifest`,'warn');return Promise.resolve();}if(bedAudio){bedAudio.pause();bedAudio.src='';}bedAudio=new Audio(AUDIO_DIR+c.file);bedAudio.loop=true;bedAudio.volume=.38;bedAudio.play().catch(()=>{});return Promise.resolve();}
-function stopBed(){if(bedAudio){bedAudio.pause();bedAudio.currentTime=0;bedAudio=null;}}
-function stopAudio(){if(audio){audio.pause();audio.currentTime=0;audio=null;}if('speechSynthesis'in window)speechSynthesis.cancel();}
-function clearTimers(){hintTimers.forEach(clearTimeout);hintTimers=[];}
+function playOverlayCue(id, volume=.35){
+  const c=cueEntry(id);if(!c.file)return;
+  const effect=new Audio(AUDIO_DIR+c.file);effect.volume=volume;overlays.add(effect);
+  const done=()=>{overlays.delete(effect);effect.onended=null;effect.onerror=null};effect.onended=done;effect.onerror=done;effect.play().catch(done);
+}
+function playBedFile(file, volume=.18){if(bedAudio){bedAudio.pause();bedAudio.src='';}bedAudio=new Audio(file);bedAudio.loop=true;bedAudio.volume=volume;bedAudio.play().catch(()=>{});return Promise.resolve();}
+function crossfadeBedFile(file, volume=.18){
+  if(bedFadeTimer){clearInterval(bedFadeTimer);bedFadeTimer=null;}
+  const old=bedAudio;const next=new Audio(file);next.loop=true;next.volume=0;bedAudio=next;next.play().catch(()=>{});
+  return new Promise(resolve=>{let step=0;bedFadeTimer=setInterval(()=>{step++;next.volume=volume*step/8;if(old)old.volume=Math.max(0,old.volume*(8-step)/8);if(step>=8){clearInterval(bedFadeTimer);bedFadeTimer=null;if(old){old.pause();old.src='';}resolve();}},90);});
+}
+async function playCue(id, opts={}){
+  if(id==='JR_129'){const c=cueEntry(id);if(c.bed_file)await crossfadeBedFile(AUDIO_DIR+c.bed_file,c.bed_volume);return playCue('JR_129_entry',opts);}
+  const c=cueEntry(id);
+  if(c.type==='split_sfx'){
+    if(c.bed_file)playBedFile(AUDIO_DIR+c.bed_file, c.bed_volume);
+    if(c.jeep_file)await playFile(AUDIO_DIR+c.jeep_file);
+    if(c.entry_file)return playFile(AUDIO_DIR+c.entry_file);
+    return Promise.resolve();
+  }
+  if(c.bed || c.loop || ['JR_001','JR_021'].includes(id)) return playBed(id);
+  if(!c.file){ log(`cue ${id} missing from manifest`, 'warn'); if(opts.text) speechFallback(opts.text); return Promise.resolve(); }
+  return playFile(AUDIO_DIR+c.file, opts);
+}
+function playBed(id){const c=cueEntry(id);if(!c.file){log(`bed ${id} missing from manifest`,'warn');return Promise.resolve();}if(typeof c.volume!=='number'){log(`bed ${id} has no manifest volume`,'error');return Promise.resolve();}return playBedFile(AUDIO_DIR+c.file,c.volume);}
+function stopBed(){if(bedFadeTimer){clearInterval(bedFadeTimer);bedFadeTimer=null;}if(bedAudio){bedAudio.pause();bedAudio.currentTime=0;bedAudio=null;}}
+function stopDanceTrack(){if(danceAudio){danceAudio.pause();danceAudio.src='';danceAudio=null;}}
+function stopAudio(){if(audio){audio.pause();audio.currentTime=0;audio=null;}stopDanceTrack();for(const effect of overlays){effect.pause();effect.src='';}overlays.clear();if('speechSynthesis'in window)speechSynthesis.cancel();}
+function clearTimers(){hintTimers.forEach(clearTimeout);hintTimers=[];waterReminderTimers.forEach(clearTimeout);waterReminderTimers=[];}
 function invalidate(){epoch++;clearTimers();stopAudio();expected=null;}
 function setProgress(n,total=CARD_ORDER.length){$('bar').style.width=Math.round(n/total*100)+'%';}
 function renderWanted(card){const c=CARD_INFO[card];$('question').classList.remove('hide');$('wantIcon').textContent=c.icon;$('wantLabel').textContent=`${c.label} वाला card tap करो`;$('tapGrid').classList.remove('hide');}
@@ -117,15 +154,14 @@ async function playSequence(ids, token){for(const id of ids){if(token!==epoch)re
 function arm(card, promptCue, hints, onCorrect, onPromptDone){
   invalidate(); state='question'; expected=card; hintIndex=0; waitingSince=performance.now(); renderWanted(card); setStatus(`Waiting for ${CARD_INFO[card].label}.`);
   const token=epoch;
-  playCue(promptCue,{text:ASSET_TEXT[promptCue]}).then(()=>{if(token!==epoch)return; if(onPromptDone)onPromptDone(token); scheduleHints(hints,token);});
+  (promptCue?playCue(promptCue,{text:ASSET_TEXT[promptCue]}):Promise.resolve()).then(()=>{if(token!==epoch)return; if(onPromptDone)onPromptDone(token); scheduleHints(hints,token);});
   arm.onCorrect=onCorrect;
 }
 function scheduleHints(hints, token){ clearTimers(); [8000,17000,28000].forEach((ms,i)=>{if(!hints[i])return;hintTimers.push(setTimeout(async()=>{if(token!==epoch||state!=='question'||hintIndex>i)return;hintIndex=i+1;setStatus('Coco is helping…');await playCue(hints[i]);},ms));}); }
 function acceptCard(card, source='reader'){
   if(state==='done'||state==='idle')return;
   if(state==='question' && card===expected){ clearTimers(); state='success'; const fn=arm.onCorrect; expected=null; hideQuestion(); setStatus(`Accepted ${CARD_INFO[card].label}.`); if(fn)fn(); return; }
-  if(state==='question' && source==='screen' && card!==expected){setStatus('Try another card.','warn');return;}
-  if(state==='question' && source==='reader'){ const variants=['JR_180','JR_182','JR_184']; playCue(variants[wrongVariant++%variants.length]); }
+  if(state==='question'){const variants=[['JR_179','JR_180'],['JR_181','JR_182'],['JR_183','JR_184']];const pair=variants[wrongVariant++%variants.length];const token=epoch;setStatus('Try another card.','warn');playCue(pair[0]).then(()=>{if(token===epoch&&state==='question')return playCue(pair[1]);});}
 }
 function screenOrReaderStart(){
   $('welcome').classList.add('hide');$('play').classList.remove('hide');renderTapGrid();
@@ -134,7 +170,9 @@ function screenOrReaderStart(){
 async function startStory(){
   state='narrative';setStatus('Starting the jungle rescue…');setProgress(0);const token=++epoch;await loadManifest();
   if('wakeLock'in navigator){try{window._jrWake=await navigator.wakeLock.request('screen');}catch(e){log('Wake lock unavailable; keep the screen awake manually.','warn');}}
-  await playSequence(['JR_001','JR_002','JR_003','JR_004','JR_005','JR_006','JR_007','JR_008','JR_009'],token); if(token!==epoch)return;
+  await playSequence(['JR_001','JR_002','JR_003'],token); if(token!==epoch)return;
+  await wait(1500); if(token!==epoch)return;
+  await playSequence(['JR_004','JR_005','JR_006','JR_007','JR_008','JR_009'],token); if(token!==epoch)return;
   arm('FUEL','JR_010',['JR_011','JR_012','JR_013'],()=>fuelSuccess());
 }
 document.addEventListener('visibilitychange',()=>{
@@ -143,19 +181,69 @@ document.addEventListener('visibilitychange',()=>{
   }
 });
 async function fuelSuccess(){setProgress(1);await playSequence(['JR_014','JR_015','JR_016','JR_017','JR_018'],epoch);fuelGagOpen=true;setStatus('Fuel loaded. Jungle Rescue Team, चलो!');setTimeout(()=>{if(fuelGagOpen){fuelGagOpen=false;elephantScene();}},2000);}
-async function elephantScene(){fuelGagOpen=false;state='narrative';setStatus('Elephant rescue');const token=++epoch;await playSequence(['JR_021','JR_022','JR_023','JR_024','JR_025','JR_026','JR_027','JR_028','JR_029','JR_030','JR_031','JR_032','JR_033','JR_034','JR_035'],token);if(token===epoch)arm('ROPE','JR_036',['JR_037','JR_038','JR_039'],ropeSuccess);}
-async function ropeSuccess(){setProgress(2);const token=epoch;await playSequence(['JR_040','JR_041','JR_042']);await wait(2000);await playSequence(['JR_043','JR_044']);await wait(2000);await playSequence(['JR_045','JR_046','JR_047','JR_048','JR_049','JR_050','JR_051','JR_052','JR_053','JR_054']);if(token===epoch)arm('BISCUIT','JR_055',['JR_056','JR_057','JR_058'],biscuitSuccess);}
-function biscuitSuccess(){bite++;setProgress(3);if(bite===1)playSequence(['JR_059','JR_060','JR_061','JR_062']).then(()=>biscuitWait());else if(bite===2)playSequence(['JR_061','JR_063']).then(()=>biscuitWait());else if(bite===3)playSequence(['JR_061','JR_064']).then(()=>biscuitWait());else playSequence(['JR_061','JR_065','JR_066']).then(()=>firstAidScene());}
+async function elephantScene(){fuelGagOpen=false;state='narrative';setStatus('Elephant rescue');const token=++epoch;await playSequence(['JR_021','JR_022','JR_023','JR_024','JR_025','JR_026','JR_027'],token);if(token!==epoch){return;}playBedFile(AUDIO_DIR+cueEntry('JR_001').file,.16);await playSequence(['JR_028','JR_029'],token);await wait(800);await playSequence(['JR_030','JR_031','JR_032','JR_033','JR_034','JR_035'],token);if(token===epoch)arm('ROPE','JR_036',['JR_037','JR_038','JR_039'],ropeSuccess);}
+async function holdEffect(id,token,duration=2000){const started=performance.now();await playCue(id);if(token!==epoch)return;const remaining=duration-(performance.now()-started);if(remaining>0)await wait(remaining);}
+async function ropeSuccess(){setProgress(2);const token=epoch;await playSequence(['JR_040','JR_041','JR_042'],token);await holdEffect('JR_043',token);await playCue('JR_044',token);await holdEffect('JR_045',token);await playSequence(['JR_046','JR_047','JR_048','JR_049','JR_050','JR_051','JR_052','JR_053','JR_054'],token);if(token===epoch)arm('BISCUIT','JR_055',['JR_056','JR_057','JR_058'],biscuitSuccess);}
+function biscuitSuccess(){const token=epoch;bite++;setProgress(3);if(bite===1)playSequence(['JR_059','JR_060','JR_061','JR_062'],token).then(()=>biscuitWait());else if(bite===2)playSequence(['JR_061','JR_063'],token).then(()=>biscuitWait());else if(bite===3)playSequence(['JR_061','JR_064'],token).then(()=>biscuitWait());else playSequence(['JR_061','JR_065','JR_066'],token).then(()=>firstAidScene());}
 function biscuitWait(){arm('BISCUIT',null,['JR_067','JR_068','JR_069'],biscuitSuccess);}
 async function firstAidScene(){state='narrative';const token=++epoch;await playSequence(['JR_072','JR_073','JR_074','JR_075','JR_076','JR_077','JR_078'],token);if(token===epoch)arm('FIRST_AID','JR_079',['JR_080','JR_081','JR_082'],firstAidSuccess);}
-async function firstAidSuccess(){setProgress(4);const token=epoch;await playSequence(['JR_083','JR_084','JR_085','JR_086','JR_087','JR_088','JR_089','JR_090','JR_091','JR_092','JR_093'],token);if(token===epoch)waterBreak();}
-function waterBreak(){state='water';expected='WATER';hideQuestion();clearTimers();setStatus('Drink some real water, then tap WATER.');arm('WATER','JR_094',[],waterSuccess,(token)=>{setTimeout(()=>{if(token===epoch&&state==='question')playCue('JR_095');},30000);});}
-async function waterSuccess(){setProgress(5);const token=epoch;await playSequence(['JR_096','JR_097','JR_098','JR_099','JR_100','JR_101','JR_102'],token);if(token===epoch)lionScene();}
-async function lionScene(){state='narrative';const token=++epoch;await playSequence(['JR_103','JR_104','JR_105','JR_106','JR_107','JR_108','JR_109','JR_110','JR_111','JR_112','JR_113','JR_114'],token);if(token===epoch)arm('FLASHLIGHT','JR_115',['JR_116','JR_117','JR_118'],flashlightSuccess);}
-async function flashlightSuccess(){setProgress(6);const token=epoch;await playSequence(['JR_119','JR_120','JR_121','JR_122','JR_123','JR_124','JR_125','JR_126','JR_127','JR_128','JR_129','JR_130','JR_131','JR_132','JR_133'],token);if(token===epoch)arm('BLANKET','JR_134',['JR_135','JR_136','JR_137'],blanketSuccess);}
-async function blanketSuccess(){setProgress(7);const token=epoch;await playSequence(['JR_138','JR_139','JR_140','JR_141','JR_142','JR_143','JR_144','JR_145','JR_146','JR_147','JR_148','JR_149'],token);if(token===epoch)musicScene();}
-async function musicScene(){state='narrative';const token=++epoch;await playSequence(['JR_150','JR_151','JR_152','JR_153','JR_154'],token);if(token===epoch)arm('MUSIC','JR_154',['JR_155','JR_156','JR_157'],musicSuccess);}
-async function musicSuccess(){setProgress(8);state='dance';expected=null;hideQuestion();const token=++epoch;await playSequence(['JR_158','JR_159'],token);if(token!==epoch)return;setStatus('Dance party!');stopBed();await playCue('JR_160');await playCue('JR_161');await wait(10000);await playCue('JR_162');await wait(10000);await playCue('JR_163');await wait(3000);await playCue('JR_160');await playCue('JR_164');await wait(10000);await playCue('JR_165');await wait(10000);await playCue('JR_166');await wait(3000);await playCue('JR_160');await playCue('JR_167');await wait(10000);await playCue('JR_168');await playCue('JR_169');await playCue('JR_170');await playSequence(['JR_171','JR_172']);await wait(2000);await playCue('JR_173');await wait(2000);await playSequence(['JR_174','JR_175','JR_176','JR_177','JR_178']);state='done';$('sceneLabel').textContent='Mission complete';setStatus('Mission complete. Bye-bye, Captain!');stopBed();if(window._jrWake){try{await window._jrWake.release();}catch(e){}window._jrWake=null;}}
+async function firstAidSuccess(){setProgress(4);const token=epoch;await playSequence(['JR_083','JR_084'],token);if(token!==epoch)return;await wait(250);await playSequence(['JR_085','JR_086','JR_087','JR_088','JR_089','JR_090','JR_091','JR_092','JR_093'],token);if(token===epoch)waterBreak();}
+function waterBreak(){state='water';expected='WATER';hideQuestion();clearTimers();setStatus('Drink some real water, then tap WATER.');arm('WATER','JR_094',[],waterSuccess,(token)=>{stopBed();setStatus('Take a real water break. Tap WATER when you return.');[30000,60000,180000,300000,420000].forEach(delay=>waterReminderTimers.push(setTimeout(()=>{if(token===epoch&&state==='question')playCue('JR_095');},delay)));});}
+async function waterSuccess(){setProgress(5);const token=epoch;await playCue('JR_096',{});if(token!==epoch)return;playBedFile(AUDIO_DIR+cueEntry('JR_001').file,.14);await playSequence(['JR_097','JR_098','JR_099','JR_100','JR_101','JR_102'],token);stopBed();if(token===epoch)lionScene();}
+async function lionScene(){state='narrative';const token=++epoch;await playSequence(['JR_103','JR_104','JR_105','JR_106','JR_107','JR_108','JR_106_lion','JR_109','JR_110','JR_111','JR_106_lion','JR_113','JR_114'],token);if(token===epoch)arm('FLASHLIGHT','JR_115',['JR_116','JR_117','JR_118'],flashlightSuccess);}
+async function flashlightSuccess(){setProgress(6);const token=epoch;playOverlayCue('JR_120',.85);playOverlayCue('JR_119',.25);await playCue('JR_121',{});if(token!==epoch)return;await playSequence(['JR_122','JR_123','JR_124','JR_125','JR_126','JR_127','JR_128','JR_129','JR_130','JR_131','JR_132','JR_132_sting'],token);if(token===epoch)arm('BLANKET','JR_134',['JR_135','JR_136','JR_137'],blanketSuccess);}
+async function blanketSuccess(){setProgress(7);const token=epoch;playOverlayCue('JR_138',.35);await playSequence(['JR_140','JR_139','JR_141','JR_142','JR_143','JR_144','JR_145','JR_147','JR_149'],token);if(token===epoch)musicScene();}
+async function musicScene(){state='narrative';const token=++epoch;stopBed();await playSequence(['JR_150','JR_151','JR_152'],token);if(token!==epoch)return;playOverlayCue('JR_174',.45);await playSequence(['JR_153','JR_154'],token);if(token===epoch)arm('MUSIC',null,['JR_155','JR_156','JR_157'],musicSuccess);}
+async function startDanceTrack(){
+  const cue=cueEntry('JR_160');
+  if(!cue.file||typeof cue.volume!=='number'){setStatus('Dance music is missing. Please try again later.','error');return null;}
+  stopDanceTrack();danceAudio=new Audio(AUDIO_DIR+cue.file);danceAudio.preload='auto';danceAudio.volume=cue.volume;
+  try{await danceAudio.play();return danceAudio;}catch(e){stopDanceTrack();setStatus('Dance music could not play. Please try again.','error');return null;}
+}
+function waitForDanceTime(track,seconds,token){
+  return new Promise(resolve=>{
+    const timer=setInterval(()=>{
+      if(token!==epoch||danceAudio!==track||track.error){clearInterval(timer);resolve(false);return;}
+      if(track.ended||track.currentTime>=seconds){clearInterval(timer);resolve(true);}
+    },25);
+  });
+}
+async function danceVoice(track,id){
+  const full=cueEntry('JR_160').volume;track.volume=full*.60;
+  await playCue(id);
+  if(danceAudio===track&&!track.ended)track.volume=full;
+}
+async function freezeFor(id,token){
+  const started=performance.now();await playCue(id);
+  const remaining=3000-(performance.now()-started);if(remaining>0)await wait(remaining);
+  return token===epoch;
+}
+async function danceRound(callCue,animalCue,freezeCue,token){
+  if(token!==epoch)return false;
+  const track=await startDanceTrack();if(!track)return false;await danceVoice(track,callCue);
+  if(!await waitForDanceTime(track,10,token))return false;
+  playOverlayCue(animalCue,.55);
+  if(!await waitForDanceTime(track,20,token))return false;
+  stopDanceTrack();return freezeFor(freezeCue,token);
+}
+async function musicSuccess(){
+  setProgress(8);state='dance';expected=null;hideQuestion();const token=++epoch;
+  playOverlayCue('JR_158',.35);await playCue('JR_159');if(token!==epoch)return;
+  setStatus('Dance party!');stopBed();
+  if(!await danceRound('JR_161','JR_162','JR_163',token))return;
+  if(!await danceRound('JR_164','JR_165','JR_166',token))return;
+  const track=await startDanceTrack();if(!track)return;await danceVoice(track,'JR_167');
+  if(!await waitForDanceTime(track,10,token))return;
+  await danceVoice(track,'JR_168');await playCue('JR_169');
+  if(!await waitForDanceTime(track,20,token))return;
+  stopDanceTrack();await playCue('JR_170');
+  await playSequence(['JR_171','JR_172'],token);if(token!==epoch)return;
+  await wait(500);if(token!==epoch)return;
+  await playCue('JR_173');await wait(2000);if(token!==epoch)return;
+  await playSequence(['JR_174','JR_175','JR_176','JR_177','JR_178'],token);if(token!==epoch)return;
+  state='done';$('sceneLabel').textContent='Mission complete';setStatus('Mission complete. Bye-bye, Captain!');stopBed();
+  if(window._jrWake){try{await window._jrWake.release();}catch(e){}window._jrWake=null;}
+}
 
 function handleScan(raw){const uid=norm(raw),card=uidToCard[uid]||raw;if(!uid)return;log(`scan ${uid} → ${card}`);if(fuelGagOpen&&card==='FUEL'){fuelGagOpen=false;playSequence(['JR_019','JR_020'],epoch).then(elephantScene);return;}acceptCard(card,'reader');}
 const guardedScan=window.ScanGuard?ScanGuard.wrap(handleScan):handleScan;

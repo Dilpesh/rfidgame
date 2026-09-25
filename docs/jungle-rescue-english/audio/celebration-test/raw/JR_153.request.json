@@ -1,0 +1,7 @@
+{
+  "text": "Two playful little child footsteps or shoe taps on firm ground: tap-tap, close and clear, comic but gentle. No voice, no music, no jungle ambience.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 0.8,
+  "prompt_influence": 0.8,
+  "loop": false
+}

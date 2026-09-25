@@ -1,0 +1,7 @@
+{
+  "text": "One friendly close high-five clap, soft and satisfying for a child's celebration. No voices, no music, no echo.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 0.7,
+  "prompt_influence": 0.8,
+  "loop": false
+}

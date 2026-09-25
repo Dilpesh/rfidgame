@@ -1,0 +1,10 @@
+{
+  "text": "[playfully surprised, encouraging] ओहो! ये वाला काम नहीं करेगा। Captain, एक और card try करो!",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+  }
+}

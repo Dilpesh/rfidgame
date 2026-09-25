@@ -1,0 +1,7 @@
+{
+  "text": "A short happy parrot chirp followed by two quick wing flutters during a children's dance. Bright, friendly and clearly a parrot, no words, no music, no distress.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 1.2,
+  "prompt_influence": 0.8,
+  "loop": false
+}
