@@ -123,6 +123,11 @@ function playOverlayCue(id, volume=.35){
   const effect=new Audio(AUDIO_DIR+c.file);setVol(effect,volume);overlays.add(effect);
   const done=()=>{overlays.delete(effect);effect.onended=null;effect.onerror=null};effect.onended=done;effect.onerror=done;effect.play().catch(done);
 }
+// iOS Safari only lets a page start sound from inside a tap. startStory() used to await the manifest
+// fetch and the wake lock before its first play(), by which time the tap was gone and every clip was
+// refused ("could not play"). Play a 50 ms silent clip synchronously inside the tap to unlock audio.
+const SILENT_MP3='data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4Ljc2LjEwMAAAAAAAAAAAAAAA//NwwAAAAAAAAAAAAEluZm8AAAAPAAAABAAAAR8Aubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm50dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0ejo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Oj/////////////////////////////////AAAAAExhdmM1OC4xMwAAAAAAAAAAAAAAACQCcQAAAAAAAAEfOUBsQwAAAAAAAAAAAAAAAAD/8xDEAAAAA0gAAAAATEFNRTMuMTAwVVVVVf/zEsQNAAADSAAAAABVVVVVVVVVVVVVVVVVVf/zEMQbAAADSAAAAABVVVVVVVVVVVVVVVVV//MQxCgAAANIAAAAAFVVVVVVVVVVVVVVVVU=';
+function unlockAudio(){try{const u=new Audio(SILENT_MP3);u.play().catch(()=>{});}catch(e){}if(typeof audioCtx==='function')audioCtx();}
 function playOverlayCueAndWait(id, volume=.35){
   const c=cueEntry(id);if(!c.file)return Promise.resolve();
   const effect=new Audio(AUDIO_DIR+c.file);setVol(effect,volume);overlays.add(effect);
@@ -212,7 +217,7 @@ function screenOrReaderStart(){
   if(mode==='reader' && window.ReaderCheck && !ReaderCheck.known()) ReaderCheck.run({onWorking:startStory,onSkip:startStory}); else startStory();
 }
 async function startStory(){
-  state='narrative';setStatus('Starting the jungle rescue…');setProgress(0);const token=++epoch;await loadManifest();
+  unlockAudio();state='narrative';setStatus('Starting the jungle rescue…');setProgress(0);const token=++epoch;await loadManifest();
   if('wakeLock'in navigator){try{window._jrWake=await navigator.wakeLock.request('screen');}catch(e){log('Wake lock unavailable; keep the screen awake manually.','warn');}}
   await playSequence(['JR_001','JR_002','JR_003'],token); if(token!==epoch)return;
   await wait(1500); if(token!==epoch)return;
@@ -294,7 +299,7 @@ const guardedScan=window.ScanGuard?ScanGuard.wrap(handleScan):handleScan;
 window.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();const v=inputBuffer;inputBuffer='';if(v)guardedScan(v);}else if(e.key.length===1)inputBuffer+=e.key;});
 document.addEventListener('click',e=>{const b=e.target.closest('button');if(b)setTimeout(()=>b.blur(),0);});
 function loadCards(){try{uidToCard=JSON.parse(localStorage.getItem('rescueGameCards')||'{}');}catch(e){uidToCard={};}Object.entries(DEFAULT_UIDS).forEach(([u,c])=>{if(!uidToCard[u])uidToCard[u]=c;});}
-function begin(modeName){audioCtx();mode=modeName;loadCards();if(window.StoryIntro){StoryIntro.show({key:STORY_KEY,title:'Jungle Rescue English',minutes:9,cards:CARD_ORDER.map(id=>({icon:CARD_INFO[id].icon,label:CARD_INFO[id].label})),activities:['Pull an imaginary rope','Drink real water during the Water break','Hum along with Coco','Dance and freeze'],onStart:screenOrReaderStart});}else screenOrReaderStart();}
+function begin(modeName){unlockAudio();mode=modeName;loadCards();if(window.StoryIntro){StoryIntro.show({key:STORY_KEY,title:'Jungle Rescue English',minutes:9,cards:CARD_ORDER.map(id=>({icon:CARD_INFO[id].icon,label:CARD_INFO[id].label})),activities:['Pull an imaginary rope','Drink real water during the Water break','Hum along with Coco','Dance and freeze'],onStart:screenOrReaderStart});}else screenOrReaderStart();}
 $('readerMode').onclick=()=>begin('reader');$('screenMode').onclick=()=>begin('screen');
 $('nextCue').onclick=advanceCue;
 if(DEV_MODE)$('nextCue').classList.remove('hide');
