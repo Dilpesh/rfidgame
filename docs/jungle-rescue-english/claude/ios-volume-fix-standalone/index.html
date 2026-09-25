@@ -90,11 +90,22 @@ async function loadManifest(){
 }
 function cueEntry(id){ const v=manifest[id]; return typeof v==='string'?{file:v}:v||{}; }
 function speechFallback(text){ if(!('speechSynthesis' in window))return; const u=new SpeechSynthesisUtterance(text); u.lang='hi-IN'; u.rate=.92; speechSynthesis.speak(u); }
+// iOS Safari authorises sound per <audio> ELEMENT, inside a tap. The game used to create a fresh
+// element for every clip, so nothing after the start tap was allowed (NotAllowedError). Instead a
+// fixed pool of elements is created and played silently inside the start tap, then reused forever.
+const POOL={fg:null,bed:[],ovl:[],dance:null,unlocked:false};
+function mkEl(){const a=new Audio();a.preload='auto';return a;}
+function poolInit(){if(POOL.fg)return;POOL.fg=mkEl();POOL.bed=[mkEl(),mkEl()];POOL.ovl=[mkEl(),mkEl(),mkEl(),mkEl()];POOL.dance=mkEl();}
+function poolAll(){return [POOL.fg,...POOL.bed,...POOL.ovl,POOL.dance];}
+function reuseEl(el,src){el.onended=el.onerror=null;try{el.pause();}catch(e){}el.loop=false;el.src=src;el.load();return el;}
+function releaseEl(el){if(!el)return;el.onended=el.onerror=null;try{el.pause();}catch(e){}el.removeAttribute('src');try{el.load();}catch(e){}}
+function takeOverlay(src){poolInit();let el=POOL.ovl.find(a=>!overlays.has(a))||POOL.ovl.find(a=>a.paused||a.ended)||POOL.ovl[0];overlays.delete(el);return reuseEl(el,src);}
+function takeBed(src){poolInit();const el=POOL.bed.find(a=>a!==bedAudio)||POOL.bed[0];return reuseEl(el,src);}
 function playFile(file, opts={}){
   if(audioFinish)audioFinish();
-  if(audio){audio.onended=audio.onerror=null;audio.pause();audio.src='';audio=null;}
-  const source=assetUrl(file,'v=jr-final-4');
-  const player=new Audio(source);player.preload='auto';audio=player;
+  if(audio){releaseEl(audio);audio=null;}
+  const source=assetUrl(file,'v=jr-final-4');poolInit();
+  const player=reuseEl(POOL.fg,source);audio=player;
   const cueId=currentCueId;
   return new Promise(resolve=>{
     let done=false, retried=false;
@@ -120,25 +131,25 @@ function getVol(el){const g=gainNodes.get(el);return g?g.gain.value:el.volume;}
 document.addEventListener('pointerdown',()=>audioCtx(),{capture:true,passive:true});
 function playOverlayCue(id, volume=.35){
   const c=cueEntry(id);if(!c.file)return;
-  const effect=new Audio(AUDIO_DIR+c.file);setVol(effect,volume);overlays.add(effect);
+  const effect=takeOverlay(AUDIO_DIR+c.file);setVol(effect,volume);overlays.add(effect);
   const done=()=>{overlays.delete(effect);effect.onended=null;effect.onerror=null};effect.onended=done;effect.onerror=done;effect.play().catch(done);
 }
 // iOS Safari only lets a page start sound from inside a tap. startStory() used to await the manifest
 // fetch and the wake lock before its first play(), by which time the tap was gone and every clip was
 // refused ("could not play"). Play a 50 ms silent clip synchronously inside the tap to unlock audio.
 const SILENT_MP3='data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4Ljc2LjEwMAAAAAAAAAAAAAAA//NwwAAAAAAAAAAAAEluZm8AAAAPAAAABAAAAR8Aubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm50dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0ejo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Oj/////////////////////////////////AAAAAExhdmM1OC4xMwAAAAAAAAAAAAAAACQCcQAAAAAAAAEfOUBsQwAAAAAAAAAAAAAAAAD/8xDEAAAAA0gAAAAATEFNRTMuMTAwVVVVVf/zEsQNAAADSAAAAABVVVVVVVVVVVVVVVVVVf/zEMQbAAADSAAAAABVVVVVVVVVVVVVVVVV//MQxCgAAANIAAAAAFVVVVVVVVVVVVVVVVU=';
-function unlockAudio(){log('build ios-standalone-3 · '+navigator.userAgent.slice(0,60));try{const u=new Audio(SILENT_MP3);u.play().then(()=>log('silent unlock: played','ok')).catch(e=>log(`silent unlock refused: ${e&&e.name} ${e&&e.message}`,'error'));}catch(e){log('silent unlock threw: '+e,'error');}if(typeof audioCtx==='function'){const c=audioCtx();log('audio context: '+(c?c.state:'none'));}}
+function unlockAudio(){poolInit();log('build ios-standalone-4 · '+navigator.userAgent.slice(0,60));let okc=0,bad=0;poolAll().forEach(el=>{if(!el.paused)return;try{el.src=SILENT_MP3;el.load();el.play().then(()=>{okc++;if(okc+bad===poolAll().length)log(`silent unlock: ${okc} elements authorised`,'ok');}).catch(e=>{bad++;log(`silent unlock refused: ${e&&e.name}`,'error');});}catch(e){bad++;}});if(typeof audioCtx==='function'){const c=audioCtx();log('audio context: '+(c?c.state:'none'));}POOL.unlocked=true;}
 function playOverlayCueAndWait(id, volume=.35){
   const c=cueEntry(id);if(!c.file)return Promise.resolve();
-  const effect=new Audio(AUDIO_DIR+c.file);setVol(effect,volume);overlays.add(effect);
+  const effect=takeOverlay(AUDIO_DIR+c.file);setVol(effect,volume);overlays.add(effect);
   return new Promise(resolve=>{const done=()=>{overlays.delete(effect);effect.onended=null;effect.onerror=null;resolve()};effect.onended=done;effect.onerror=done;effect.play().catch(done);});
 }
-function playStandaloneSfx(file,volume=.72){const effect=new Audio(file);setVol(effect,volume);return new Promise(resolve=>{effect.onended=resolve;effect.onerror=resolve;effect.play().catch(resolve);});}
-function playBedFile(file, volume=.18){if(bedAudio){bedAudio.pause();bedAudio.src='';}const source=assetUrl(file,'v=jr-bed-6');bedAudio=new Audio(source);bedAudio.preload='auto';bedAudio.loop=true;setVol(bedAudio,volume);bedAudio.onerror=()=>log(`could not play background ${file}`,'error');bedAudio.play().catch(e=>log(`could not start background ${file}: ${e&&e.name} ${e&&e.message}`,'error'));return Promise.resolve();}
+function playStandaloneSfx(file,volume=.72){const effect=takeOverlay(file);setVol(effect,volume);overlays.add(effect);return new Promise(resolve=>{const done=()=>{overlays.delete(effect);resolve();};effect.onended=done;effect.onerror=done;effect.play().catch(done);});}
+function playBedFile(file, volume=.18){const prev=bedAudio;const source=assetUrl(file,'v=jr-bed-6');bedAudio=takeBed(source);releaseEl(prev);bedAudio.loop=true;setVol(bedAudio,volume);bedAudio.onerror=()=>log(`could not play background ${file}`,'error');bedAudio.play().catch(e=>log(`could not start background ${file}: ${e&&e.name} ${e&&e.message}`,'error'));return Promise.resolve();}
 function crossfadeBedFile(file, volume=.18){
   if(bedFadeTimer){clearInterval(bedFadeTimer);bedFadeTimer=null;}
-  const old=bedAudio;const source=assetUrl(file,'v=jr-bed-6');const next=new Audio(source);next.preload='auto';next.loop=true;setVol(next,0);bedAudio=next;next.onerror=()=>log(`could not play background ${file}`,'error');next.play().catch(()=>log(`could not start background ${file}`,'error'));
-  return new Promise(resolve=>{let step=0;bedFadeTimer=setInterval(()=>{step++;setVol(next,volume*step/8);if(old)setVol(old,Math.max(0,getVol(old)*(8-step)/8));if(step>=8){clearInterval(bedFadeTimer);bedFadeTimer=null;if(old){old.pause();old.src='';}resolve();}},90);});
+  const old=bedAudio;const source=assetUrl(file,'v=jr-bed-6');const next=takeBed(source);next.loop=true;setVol(next,0);bedAudio=next;next.onerror=()=>log(`could not play background ${file}`,'error');next.play().catch(()=>log(`could not start background ${file}`,'error'));
+  return new Promise(resolve=>{let step=0;bedFadeTimer=setInterval(()=>{step++;setVol(next,volume*step/8);if(old)setVol(old,Math.max(0,getVol(old)*(8-step)/8));if(step>=8){clearInterval(bedFadeTimer);bedFadeTimer=null;if(old){releaseEl(old);}resolve();}},90);});
 }
 async function playCue(id, opts={}){
   currentCueId=id;
@@ -156,9 +167,9 @@ async function playCue(id, opts={}){
 }
 function playBed(id){const c=cueEntry(id);if(!c.file){log(`bed ${id} missing from manifest`,'warn');return Promise.resolve();}if(typeof c.volume!=='number'){log(`bed ${id} has no manifest volume`,'error');return Promise.resolve();}return playBedFile(AUDIO_DIR+c.file,c.volume);}
 function stopBed(){if(bedFadeTimer){clearInterval(bedFadeTimer);bedFadeTimer=null;}if(bedAudio){bedAudio.pause();bedAudio.currentTime=0;bedAudio=null;}}
-function stopDanceTrack(){if(danceAudio){danceAudio.pause();danceAudio.src='';danceAudio=null;}}
+function stopDanceTrack(){if(danceAudio){releaseEl(danceAudio);danceAudio=null;}}
 function stopForeground(){const active=audio;if(audioFinish)audioFinish();if(active){active.onended=active.onerror=null;active.pause();active.currentTime=0;if(audio===active)audio=null;}}
-function stopAudio(){const active=audio;if(audioFinish)audioFinish();if(active){active.onended=active.onerror=null;active.pause();active.currentTime=0;if(audio===active)audio=null;}stopDanceTrack();for(const effect of overlays){effect.pause();effect.src='';}overlays.clear();if('speechSynthesis'in window)speechSynthesis.cancel();}
+function stopAudio(){const active=audio;if(audioFinish)audioFinish();if(active){active.onended=active.onerror=null;active.pause();active.currentTime=0;if(audio===active)audio=null;}stopDanceTrack();for(const effect of overlays){releaseEl(effect);}overlays.clear();if('speechSynthesis'in window)speechSynthesis.cancel();}
 function clearTimers(){hintTimers.forEach(clearTimeout);hintTimers=[];waterReminderTimers.forEach(clearTimeout);waterReminderTimers=[];}
 function invalidate(){epoch++;clearTimers();stopAudio();expected=null;}
 function setProgress(n,total=CARD_ORDER.length){$('bar').style.width=Math.round(n/total*100)+'%';}
@@ -246,7 +257,7 @@ async function musicScene(){state='narrative';const token=++epoch;stopBed();awai
 async function startDanceTrack(){
   const cue=cueEntry('JR_160');
   if(!cue.file||typeof cue.volume!=='number'){setStatus('Dance music is missing. Please try again later.','error');return null;}
-  stopDanceTrack();danceAudio=new Audio(AUDIO_DIR+cue.file);danceAudio.preload='auto';setVol(danceAudio,cue.volume);
+  stopDanceTrack();poolInit();danceAudio=reuseEl(POOL.dance,AUDIO_DIR+cue.file);setVol(danceAudio,cue.volume);
   try{await danceAudio.play();return danceAudio;}catch(e){stopDanceTrack();setStatus('Dance music could not play. Please try again.','error');return null;}
 }
 function waitForDanceTime(track,seconds,token){
