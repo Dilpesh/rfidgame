@@ -414,7 +414,7 @@ total, natural character laughter, no canned laugh track. Match the established 
 **JR_089 · COCO** `[encouraging]`
 > हाँ! धीरे-धीरे—एक, दो, flap!
 
-**JR_090 · SFX** Two uneven flaps, then one successful strong flap. Play this approved flap beat five times with a short gap between repeats so the child clearly hears the wing working.
+**JR_090 · SFX** Two uneven flaps, then one successful strong flap. Play this approved flap beat two times with a short gap between repeats so the child clearly hears the wing working.
 
 **JR_091 · PARROT** `[delighted]`
 > फड़फड़! अब मेरा wing चल रहा है!

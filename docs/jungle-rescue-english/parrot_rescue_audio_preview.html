@@ -23,7 +23,7 @@
     <p>Start just after Elephant Rescue. The opening uses your selected hurt effect from the shipped Hinglish build. Coco’s FIRST AID line has a new complete ending. Help the Parrot with FIRST AID, take the water break, then tap WATER to hear her fly again.</p>
     <div class="actions">
       <button class="primary" id="start">Play Parrot scene</button>
-      <button id="flapTest">Test wing flap ×5</button>
+      <button id="flapTest">Test wing flap ×2</button>
       <button id="handoff">Hear FIRST AID handoff</button>
       <button id="stop">Stop</button>
       <button id="aid" disabled>Tap FIRST AID</button>
@@ -159,12 +159,11 @@ $('handoff').onclick=async()=>{
   if(token===run){stage='idle';status('FIRST AID handoff complete.')}
 };
 $('stop').onclick=()=>stopAll();
-$('flapTest').onclick=async()=>{stopAll();const token=run;status('Testing wing flap five times…');for(let i=0;i<5;i++){if(token!==run)return;await playCue('JR_090',token);if(token!==run)return;if(i<4)await new Promise(resolve=>setTimeout(resolve,250))}if(token===run)status('Wing flap test complete: five flaps played.')};
+$('flapTest').onclick=async()=>{stopAll();const token=run;status('Testing wing flap two times…');for(let i=0;i<2;i++){if(token!==run)return;await playCue('JR_090',token);if(token!==run)return;if(i<1)await new Promise(resolve=>setTimeout(resolve,250))}if(token===run)status('Wing flap test complete: two flaps played.')};
 $('aid').onclick=()=>{
-  if(stage==='aidPrompt'){pending=true;$('aid').disabled=true;status('FIRST AID received. Coco will finish the question.');return}
+  if(stage==='aidPrompt'){clearTimers();stopForeground();$('aid').disabled=true;status('FIRST AID received. The clue stopped; acknowledgement starts now.');aidSuccess(run);return}
   if(stage==='aidWait'&&currentCue==='JR_082'){
-    stage='aidHintLatched';clearTimers();$('aid').disabled=true;
-    status('FIRST AID received. Coco will finish saying the card name.');return;
+    clearTimers();stopForeground();$('aid').disabled=true;status('FIRST AID received. The hint stopped; acknowledgement starts now.');aidSuccess(run);return;
   }
   if(stage==='aidWait')aidSuccess(run);
 };
