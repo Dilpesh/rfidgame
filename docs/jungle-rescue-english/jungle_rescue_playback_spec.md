@@ -232,7 +232,12 @@ during jokes and hints, duck it for speech. JR_021 moving-jeep sound replaces JR
 then crossfades back to quiet JR_001 once Elephant's distress is heard at JR_027. Later jeep
 transitions are short one-shots, not engines that continue beneath rescues.
 
-## 9. Dance: exact shared audio clock
+## 9. Celebration lead-in
+
+After JR_152 completes, play the separate three-second celebration clap and wait for it to finish
+before starting JR_153 and JR_154. Do not overlap the clap with the foot taps or their dialogue.
+
+## 10. Dance: exact shared audio clock
 
 Start the dance immediately after JR_159; t=0 is the first strong beat of JR_160.
 Schedule using the audio playback clock, not chained browser timeouts that drift.

@@ -645,6 +645,10 @@ Rain eases and wind fades. Keep all speech clear.
 **JR_152 · COCO** `[proud, delighted]`
 > Captain, हमने दोस्तों की मदद कर दी! अब हमारी पार्टी!
 
+**CELEBRATION CLAP · SFX** Reuse `JR_152_clap` as a separate
+approximately three-second applause bed. Play it after JR_152 finishes and before the foot taps;
+do not overlap it with JR_153 or JR_154.
+
 **JR_153 · SFX** Coco's two playful foot taps: tap-tap. No dance music yet.
 
 **JR_154 · COCO** `[eager, playful]`

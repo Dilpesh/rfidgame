@@ -23,6 +23,8 @@
       <button class="primary" id="start">Play to MUSIC question</button>
       <button id="music">Tap MUSIC and play ending</button>
       <button id="dance">Play dance and ending</button>
+      <button id="partyClap">Play party line + clap entry</button>
+      <button id="partyApplause">Play party line + 3-second applause</button>
       <button id="closing">Play closing only</button>
       <button id="wrong">Try wrong card</button>
       <button id="stop">Stop</button>
@@ -49,6 +51,14 @@
       <div class="cue"><label>Mud callback · reused approved sound</label><audio controls preload="metadata" src="audio/celebration-test/JR_176.mp3"></audio></div>
       <div class="cue"><label>Goodbye sting and jeep horn</label><audio controls preload="metadata" src="audio/celebration-test/JR_178.mp3"></audio></div>
       <div class="cue"><label>Correct chime · reused approved sound</label><audio controls preload="metadata" src="audio/celebration-test/JR_158.mp3"></audio></div>
+    </div>
+  </section>
+  <section>
+    <h2>Existing music alternatives</h2>
+    <p class="muted">These are earlier local recordings. They are comparison options only; the main game still uses JR_160 until you choose one.</p>
+    <div class="grid">
+      <div class="cue"><label>Alternative A · earlier shipped dance loop</label><audio controls preload="metadata" src="audio_candidates/shipped_dance.mp3"></audio></div>
+      <div class="cue"><label>Alternative B · older disco track</label><audio controls preload="metadata" src="audio_candidates/old_sfx_disco.mp3"></audio></div>
     </div>
   </section>
 </main>
@@ -124,6 +134,8 @@ async function safe(task){try{await task();}catch(error){status(`Playback stoppe
 $('start').onclick=()=>{stop();const token=run;safe(async()=>{if(await sequence(['JR_150','JR_151','JR_152','JR_153','JR_154'],token))status('Waiting for the MUSIC card.');});};
 $('music').onclick=()=>{stop();const token=run;safe(async()=>{overlay('JR_158',.35);if(await playCue('JR_159',token))await danceAndEnding(token);});};
 $('dance').onclick=()=>{stop();const token=run;safe(()=>danceAndEnding(token));};
+$('partyClap').onclick=()=>{stop();const token=run;safe(async()=>{if(await playCue('JR_159',token)){await wait(350);if(check(token))await playCue('JR_160',token);}});};
+$('partyApplause').onclick=()=>{stop();const token=run;safe(async()=>{if(!await playCue('JR_152',token))return;await wait(250);if(!check(token))return;const applause=new Audio('audio/celebration-test/JR_152_clap.mp3');applause.volume=.72;applause.loop=true;status('Three-second celebration applause…');await new Promise(resolve=>{const timer=setTimeout(()=>{applause.pause();applause.currentTime=0;resolve()},3000);applause.onerror=()=>{clearTimeout(timer);resolve()};applause.play().catch(()=>{clearTimeout(timer);resolve()})});if(!check(token))return;await playCue('JR_153',token);if(check(token))await playCue('JR_154',token);});};
 $('closing').onclick=()=>{stop();const token=run;safe(async()=>{if(await playCue('JR_170',token))await closing(token);});};
 $('wrong').onclick=()=>{stop();const token=run;const pair=[['JR_179','JR_180'],['JR_181','JR_182'],['JR_183','JR_184']][wrongIndex++%3];safe(()=>sequence(pair,token));};
 $('stop').onclick=stop;

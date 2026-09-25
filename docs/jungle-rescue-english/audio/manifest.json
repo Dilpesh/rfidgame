@@ -3073,5 +3073,14 @@
     "exact_runtime_seconds": 20.0,
     "model_id": "music_v2",
     "source_file": "raw/JR_160.mp3"
+  },
+  "JR_152_clap": {
+    "file": "celebration-test/JR_152_clap.mp3",
+    "duration_seconds": 2.534,
+    "integrated_lufs": -15.2,
+    "true_peak_dbfs": -1.0,
+    "review_status": "approved",
+    "type": "sfx",
+    "description": "Three-second child-friendly celebration applause after JR_152; play before JR_153 foot taps."
   }
 }
