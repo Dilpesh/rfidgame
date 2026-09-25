@@ -309,7 +309,7 @@ and one laughter cue. Feeding order and additional-tap handling are in the playb
 ### BITE 1
 
 **JR_062 · ELEPHANT** `[playfully incredulous; emphasise एक, rising question; no scolding]`
-> बस एक?
+> बस एक biscuit?
 
 ### BITE 2
 

@@ -689,7 +689,7 @@
     "duration_seconds": 1.489,
     "integrated_lufs": -18.8,
     "true_peak_dbfs": -2.4,
-    "review_status": "test",
+    "review_status": "approved",
     "type": "speech",
     "voice": "ELEPHANT",
     "voice_id": "bBG9wwa23659EgIkMbc1",
@@ -700,10 +700,10 @@
       "style": 0.3,
       "use_speaker_boost": true
     },
-    "spoken_text": "बस एक?",
+    "spoken_text": "बस एक biscuit?",
     "performance_tag": "[surprised]",
-    "character_treatment": "light EQ, natural pitch (audition)",
-    "source_file": "raw/JR_062_v2.mp3",
+    "character_treatment": "Vardan elephant voice; light EQ, natural pitch; approved biscuit wording",
+    "source_file": "alternatives/JR_062_biscuit.mp3",
     "filter": "highpass=f=80,equalizer=f=500:t=q:w=1:g=1.2,loudnorm=I=-16:TP=-2:LRA=11,alimiter=limit=0.85:level=false"
   },
   "JR_063": {

@@ -41,7 +41,7 @@
       <div class="cue"><label>Light warmth · natural pitch</label><audio controls preload="metadata" src="audio/elephant-rescue-test/audition-childlike-v2/elephant_light.wav"></audio></div>
     </div>
     <ol>
-      <li>बस एक?</li>
+      <li>बस एक biscuit?</li>
       <li>बस दो? थोड़ा और दो, कोको!</li>
       <li>कोको, मेरा पेट देखो... बहुत भूख लगी है! और खिलाओ।</li>
       <li>ओके, ओके, बस करो! और खाऊँगा तो balloon बन जाऊँगा!</li>
@@ -147,7 +147,7 @@ $('rope').onclick=async()=>{
   if(stage!=='rope')return;stage='ropeSuccess';$('rope').disabled=true;const token=run;
   await sequence(['JR_040','JR_041','JR_042'],token);await pullInterval('JR_043',token);
   await playCue('JR_044',token);await pullInterval('JR_045',token);
-  await sequence(['JR_046','JR_047','JR_048','JR_049','JR_050','JR_051','JR_052','JR_053','JR_054','JR_055'],token);
+  await sequence(['JR_046','JR_047','JR_048','JR_049','JR_050','JR_051','JR_052','JR_053','alternatives/JR_054_clean','JR_055'],token);
   if(token!==run)return;stage='biscuit';$('biscuit').disabled=false;$('wrong').disabled=false;setStatus('Waiting for the first BISCUIT tap.');
 };
 $('biscuit').onclick=async()=>{

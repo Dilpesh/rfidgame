@@ -141,7 +141,7 @@ Do not introduce an extra mandatory fuel scan.
 
 ## 6. Four-bite Biscuit game
 
-Each accepted fresh presentation is exactly one bite. The first request is “बस एक?”
+Each accepted fresh presentation is exactly one bite. The first request is “बस एक biscuit?”
 with questioning emphasis. Bites three and four do not announce their numbers;
 all four presentations and the four-bite limit remain unchanged.
 
@@ -280,7 +280,7 @@ The implementer must exercise these cases with the final asset manifest and read
 - Holding a card through several seconds and state transitions never counts as another tap.
 - Removal and re-presentation during an Elephant request reserves only the next bite;
   scans during crunches do not queue bites. Four bites produce four crunches and one chime.
-- Ignoring “बस एक!” leads to the explicit same-card hint; a held card still cannot feed twice.
+- Ignoring “बस एक biscuit!” leads to the explicit same-card hint; a held card still cannot feed twice.
 - Multiple wrong cards cannot indefinitely delay a hint or stack correction voices.
 - FUEL repeat produces at most one departure gag; later FUEL scans never trigger overflow.
 - Water stays quiet except its reminders and resumes only on WATER; no fixed drinking test.
