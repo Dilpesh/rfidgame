@@ -1696,7 +1696,7 @@
     "entry_file": "lion-rescue-test/JR_103_entry.mp3",
     "bed_file": "lion-rescue-test/JR_103_bed.mp3",
     "entry_duration_seconds": 3.03,
-    "bed_duration_seconds": 12.042,
+    "bed_duration_seconds": 42.031,
     "bed_loop": true,
     "jeep_file": "lion-rescue-test/JR_103_jeep.mp3",
     "jeep_duration_seconds": 4.467,
@@ -1720,7 +1720,14 @@
     "bed": true,
     "loop": true,
     "source_split_cue": "JR_103",
-    "volume": 0.26
+    "volume": 0.26,
+    "duration_seconds": 42.031,
+    "integrated_lufs": -25.8,
+    "true_peak_dbfs": -4.6,
+    "source_file": "docs/moon/audio/sfx_night_jungle.mp3 + EQ-cut crickets from raw/JR_103_bed.mp3 at 0.5",
+    "review_status": "approved",
+    "phone_band_test_worst_gap_db": -20.6,
+    "note": "Replaced crickets bed (failed phone-speaker band test at -1.9/-1.5 dB). Chosen by ear on phone 2026-09-25, option E in docs/jungle-rescue-english/claude/."
   },
   "JR_104": {
     "file": "lion-rescue-test/JR_104.mp3",
@@ -2139,7 +2146,7 @@
     "entry_file": "lion-rescue-test/JR_129_entry.mp3",
     "bed_file": "lion-rescue-test/JR_129_bed.mp3",
     "entry_duration_seconds": 2.038,
-    "bed_duration_seconds": 12.042,
+    "bed_duration_seconds": 42.031,
     "bed_loop": true,
     "bed_volume": 0.18
   },
@@ -2154,7 +2161,14 @@
     "bed": true,
     "loop": true,
     "source_split_cue": "JR_129",
-    "volume": 0.18
+    "volume": 0.18,
+    "duration_seconds": 42.031,
+    "integrated_lufs": -25.8,
+    "true_peak_dbfs": -4.6,
+    "source_file": "docs/moon/audio/sfx_night_jungle.mp3 + EQ-cut crickets from raw/JR_129_bed.mp3 at 0.5",
+    "review_status": "approved",
+    "phone_band_test_worst_gap_db": -22.0,
+    "note": "Replaced crickets bed (failed phone-speaker band test at -1.9/-1.5 dB). Chosen by ear on phone 2026-09-25, option E in docs/jungle-rescue-english/claude/."
   },
   "JR_130": {
     "file": "lion-rescue-test/JR_130.mp3",
