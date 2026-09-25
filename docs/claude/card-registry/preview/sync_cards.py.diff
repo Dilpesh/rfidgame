@@ -1,0 +1,161 @@
+--- original/sync_cards.py
++++ modified/sync_cards.py
+@@ -10,11 +10,32 @@
+ 
+ A card may have several UIDs — Dilpesh has two water cards and two torch
+ cards, and either one must work.
++
++The shared registry
++-------------------
++A card means the same thing in every game, so the UIDs live in ONE place in
++the browser too: docs/card-registry.js keeps a single localStorage key for the
++whole site, seeded from the block this script writes into it. A game on the
++registry never sees a UID — it gets only a small generated CARD_MAP
++(registry card -> the id that story uses, e.g. SNACK -> BISCUIT), also written
++from cards.json. Games are moved onto the registry one at a time; the ones
++listed in REGISTRY_GAMES are on it, the rest still get the older per-game
++uid -> card block.
++
++A new story that needs a card that is not in cards.json fails here, with the
++card named, until it is added to cards.json under a canonical name. That is
++the rule: cards are global; a story only says which of them it uses.
+ """
+ import json, re, sys, os
+ 
+ ROOT = os.path.dirname(os.path.abspath(__file__))
+ START, END = "/* __CARD_UIDS_START__ */", "/* __CARD_UIDS_END__ */"
++REG_START, REG_END = "/* __CARD_REGISTRY_START__ */", "/* __CARD_REGISTRY_END__ */"
++REGISTRY_FILE = os.path.join("docs", "card-registry.js")
++
++# Games that read cards through docs/card-registry.js. Add a game here when it
++# is migrated; it then gets a CARD_MAP block instead of a DEFAULT_UIDS block.
++REGISTRY_GAMES = ("jungle-rescue-english",)
+ 
+ 
+ def norm(u):
+@@ -51,18 +72,58 @@
+     return "\n".join(lines)
+ 
+ 
+-def splice(path, new_block, check):
+-    s = open(path, encoding="utf-8").read()
+-    i, j = s.find(START), s.find(END)
++def registry_block(cards, seed):
++    """The block inside docs/card-registry.js: every physical UID -> its
++    canonical card, plus the labels, so a game can list the deck by name."""
++    uids = {}
++    for canon, v in cards.items():
++        for u in v["uids"]:
++            uids[norm(u)] = canon
++    lines = [f'const SEED_VERSION = "{seed}";', "const DEFAULT = {"]
++    width = max((len(u) for u in uids), default=0)
++    for u in sorted(uids, key=lambda x: (uids[x], x)):
++        lines.append(f'  "{u}":{" " * (width - len(u))} "{uids[u]}",')
++    if len(lines) > 2:
++        lines[-1] = lines[-1].rstrip(",")
++    lines.append("};")
++    lines.append("const LABELS = {")
++    width = max((len(c) for c in cards), default=0)
++    for canon in sorted(cards):
++        lines.append(f'  {canon}:{" " * (width - len(canon))} {json.dumps(cards[canon]["label"], ensure_ascii=False)},')
++    if len(cards):
++        lines[-1] = lines[-1].rstrip(",")
++    lines.append("};")
++    return "\n".join(lines)
++
++
++def map_block_for(cards, game):
++    """A registry game's block: registry card -> the id that story uses."""
++    m = {canon: v["games"][game] for canon, v in cards.items()
++         if game in v.get("games", {})}
++    lines = ["// registry card -> this story's card. Generated from cards.json by",
++             "// sync_cards.py; the UIDs themselves live in ../card-registry.js.",
++             "const CARD_MAP = {"]
++    width = max((len(c) for c in m), default=0)
++    for canon in sorted(m):
++        lines.append(f'  {canon}:{" " * (width - len(canon))} "{m[canon]}",')
++    if m:
++        lines[-1] = lines[-1].rstrip(",")
++    lines.append("};")
++    return "\n".join(lines)
++
++
++def splice(path, new_block, check, start=START, end=END):
++    s = open(path, encoding="utf-8").read()
++    i, j = s.find(start), s.find(end)
+     if i < 0 or j < 0:
+         sys.exit(f"{path}: missing generated-block markers")
+-    cur = s[i + len(START):j].strip("\n")
++    cur = s[i + len(start):j].strip("\n")
+     if cur == new_block:
+         return False
+     if check:
+         return True
+     open(path, "w", encoding="utf-8").write(
+-        s[:i + len(START)] + "\n" + new_block + "\n" + s[j:])
++        s[:i + len(start)] + "\n" + new_block + "\n" + s[j:])
+     return True
+ 
+ 
+@@ -130,6 +191,11 @@
+         s = open(os.path.join(os.path.dirname(path), "app.js"), encoding="utf-8").read()
+         m = re.search(r"^const CARDS=\[.*?\];$", s, re.M)
+         return set(re.findall(r"\['([a-z]+)',", m.group(0))) if m else set()
++    if game == "jungle-rescue-english":
++        # the deck is the CARD_ORDER list; the old pattern below never matched
++        # this game, so a missing card went unreported
++        m = re.search(r"^const CARD_ORDER\s*=\s*\[(.*?)\];", s, re.M)
++        return set(re.findall(r"'([A-Z_]+)'", m.group(1))) if m else set()
+     return set(re.findall(r'\{ id:"([A-Z]+)"', s))
+ 
+ 
+@@ -157,8 +223,22 @@
+                     if game in v.get("games", {}) and not v["uids"]}
+         missing = deck_of(game, path) - mapped
+         for cid in sorted(missing):
+-            why = " (no UID yet)" if cid in unmapped else " (not in cards.json)"
++            if cid in unmapped:
++                why = " (no UID yet)"
++            elif game in REGISTRY_GAMES:
++                why = (" — not in the global registry. Add it to cards.json under a "
++                       "canonical name (or map an existing card to it under \"games\")")
++            else:
++                why = " (not in cards.json)"
+             problems.append("%s: card %s has no physical card%s" % (game, cid, why))
++    reg = os.path.join(ROOT, REGISTRY_FILE)
++    if REGISTRY_GAMES and not os.path.exists(reg):
++        problems.append("%s is missing, and %s read their cards through it"
++                        % (REGISTRY_FILE, ", ".join(REGISTRY_GAMES)))
++    for game in REGISTRY_GAMES:
++        path = os.path.join(ROOT, "docs", game, "index.html")
++        if os.path.exists(path) and "card-registry.js" not in open(path, encoding="utf-8").read():
++            problems.append("%s: listed in REGISTRY_GAMES but does not load ../card-registry.js" % game)
+     return problems
+ 
+ 
+@@ -167,7 +247,16 @@
+     d = load()
+     cards, seed = d["cards"], d["seed_version"]
+     changed = []
+-    for game in ("moon", "jungle-rescue", "jungle-rescue-english"):
++    # the shared registry first: every UID, once, for every game on it
++    p = os.path.join(ROOT, REGISTRY_FILE)
++    if os.path.exists(p) and splice(p, registry_block(cards, seed), check, REG_START, REG_END):
++        changed.append("card-registry")
++    for game in REGISTRY_GAMES:
++        p = os.path.join(ROOT, "docs", game, "index.html")
++        if os.path.exists(p) and splice(p, map_block_for(cards, game), check):
++            changed.append(game)
++    # games not yet on the registry keep their own uid -> card block
++    for game in ("moon", "jungle-rescue"):
+         p = os.path.join(ROOT, "docs", game, "index.html")
+         if os.path.exists(p) and splice(p, block_for(cards, game, seed), check):
+             changed.append(game)
+@@ -190,6 +279,7 @@
+     print(f"{len(cards)} cards, {total} physical UIDs")
+     for k, v in dupes.items():
+         print(f"  {k}: {len(v)} cards -> {', '.join(v)}")
++    print("on the shared registry: " + (", ".join(REGISTRY_GAMES) or "none yet"))
+     problems = verify(cards)
+     if problems:
+         print("\nNOT PLAYABLE YET:")

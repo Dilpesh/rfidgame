@@ -1,0 +1,69 @@
+--- original_index.html	2026-09-25 12:17:22.200894114 +0000
++++ patched_index.html	2026-09-25 12:17:22.215932177 +0000
+@@ -110,22 +110,30 @@
+     player.play().catch(retry);
+   });
+ }
++// iOS Safari ignores HTMLMediaElement.volume (it is pinned to 1.0), so every level in this game
++// was playing at full volume on iPhone. Levels now go through a Web Audio gain node, which iOS honours.
++// Narration (playFile) is untouched: it always plays at 1.0 anyway.
++let actx=null;const gainNodes=new WeakMap();
++function audioCtx(){if(!actx){const AC=window.AudioContext||window.webkitAudioContext;if(AC){try{actx=new AC();}catch(e){actx=null;}}}if(actx&&actx.state==='suspended')actx.resume().catch(()=>{});return actx;}
++function setVol(el,v){const ctx=audioCtx();if(!ctx){el.volume=v;return;}let g=gainNodes.get(el);if(!g){try{const src=ctx.createMediaElementSource(el);g=ctx.createGain();src.connect(g);g.connect(ctx.destination);gainNodes.set(el,g);}catch(e){el.volume=v;return;}}el.volume=1;g.gain.value=v;}
++function getVol(el){const g=gainNodes.get(el);return g?g.gain.value:el.volume;}
++document.addEventListener('pointerdown',()=>audioCtx(),{capture:true,passive:true});
+ function playOverlayCue(id, volume=.35){
+   const c=cueEntry(id);if(!c.file)return;
+-  const effect=new Audio(AUDIO_DIR+c.file);effect.volume=volume;overlays.add(effect);
++  const effect=new Audio(AUDIO_DIR+c.file);setVol(effect,volume);overlays.add(effect);
+   const done=()=>{overlays.delete(effect);effect.onended=null;effect.onerror=null};effect.onended=done;effect.onerror=done;effect.play().catch(done);
+ }
+ function playOverlayCueAndWait(id, volume=.35){
+   const c=cueEntry(id);if(!c.file)return Promise.resolve();
+-  const effect=new Audio(AUDIO_DIR+c.file);effect.volume=volume;overlays.add(effect);
++  const effect=new Audio(AUDIO_DIR+c.file);setVol(effect,volume);overlays.add(effect);
+   return new Promise(resolve=>{const done=()=>{overlays.delete(effect);effect.onended=null;effect.onerror=null;resolve()};effect.onended=done;effect.onerror=done;effect.play().catch(done);});
+ }
+-function playStandaloneSfx(file,volume=.72){const effect=new Audio(file);effect.volume=volume;return new Promise(resolve=>{effect.onended=resolve;effect.onerror=resolve;effect.play().catch(resolve);});}
+-function playBedFile(file, volume=.18){if(bedAudio){bedAudio.pause();bedAudio.src='';}const source=assetUrl(file,'v=jr-bed-6');bedAudio=new Audio(source);bedAudio.preload='auto';bedAudio.loop=true;bedAudio.volume=volume;bedAudio.onerror=()=>log(`could not play background ${file}`,'error');bedAudio.play().catch(()=>log(`could not start background ${file}`,'error'));return Promise.resolve();}
++function playStandaloneSfx(file,volume=.72){const effect=new Audio(file);setVol(effect,volume);return new Promise(resolve=>{effect.onended=resolve;effect.onerror=resolve;effect.play().catch(resolve);});}
++function playBedFile(file, volume=.18){if(bedAudio){bedAudio.pause();bedAudio.src='';}const source=assetUrl(file,'v=jr-bed-6');bedAudio=new Audio(source);bedAudio.preload='auto';bedAudio.loop=true;setVol(bedAudio,volume);bedAudio.onerror=()=>log(`could not play background ${file}`,'error');bedAudio.play().catch(()=>log(`could not start background ${file}`,'error'));return Promise.resolve();}
+ function crossfadeBedFile(file, volume=.18){
+   if(bedFadeTimer){clearInterval(bedFadeTimer);bedFadeTimer=null;}
+-  const old=bedAudio;const source=assetUrl(file,'v=jr-bed-6');const next=new Audio(source);next.preload='auto';next.loop=true;next.volume=0;bedAudio=next;next.onerror=()=>log(`could not play background ${file}`,'error');next.play().catch(()=>log(`could not start background ${file}`,'error'));
+-  return new Promise(resolve=>{let step=0;bedFadeTimer=setInterval(()=>{step++;next.volume=volume*step/8;if(old)old.volume=Math.max(0,old.volume*(8-step)/8);if(step>=8){clearInterval(bedFadeTimer);bedFadeTimer=null;if(old){old.pause();old.src='';}resolve();}},90);});
++  const old=bedAudio;const source=assetUrl(file,'v=jr-bed-6');const next=new Audio(source);next.preload='auto';next.loop=true;setVol(next,0);bedAudio=next;next.onerror=()=>log(`could not play background ${file}`,'error');next.play().catch(()=>log(`could not start background ${file}`,'error'));
++  return new Promise(resolve=>{let step=0;bedFadeTimer=setInterval(()=>{step++;setVol(next,volume*step/8);if(old)setVol(old,Math.max(0,getVol(old)*(8-step)/8));if(step>=8){clearInterval(bedFadeTimer);bedFadeTimer=null;if(old){old.pause();old.src='';}resolve();}},90);});
+ }
+ async function playCue(id, opts={}){
+   currentCueId=id;
+@@ -233,7 +241,7 @@
+ async function startDanceTrack(){
+   const cue=cueEntry('JR_160');
+   if(!cue.file||typeof cue.volume!=='number'){setStatus('Dance music is missing. Please try again later.','error');return null;}
+-  stopDanceTrack();danceAudio=new Audio(AUDIO_DIR+cue.file);danceAudio.preload='auto';danceAudio.volume=cue.volume;
++  stopDanceTrack();danceAudio=new Audio(AUDIO_DIR+cue.file);danceAudio.preload='auto';setVol(danceAudio,cue.volume);
+   try{await danceAudio.play();return danceAudio;}catch(e){stopDanceTrack();setStatus('Dance music could not play. Please try again.','error');return null;}
+ }
+ function waitForDanceTime(track,seconds,token){
+@@ -245,9 +253,9 @@
+   });
+ }
+ async function danceVoice(track,id){
+-  const full=cueEntry('JR_160').volume;track.volume=full*.60;
++  const full=cueEntry('JR_160').volume;setVol(track,full*.60);
+   await playCue(id);
+-  if(danceAudio===track&&!track.ended)track.volume=full;
++  if(danceAudio===track&&!track.ended)setVol(track,full);
+ }
+ async function freezeFor(id,token){
+   const started=performance.now();await playCue(id);
+@@ -286,7 +294,7 @@
+ window.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();const v=inputBuffer;inputBuffer='';if(v)guardedScan(v);}else if(e.key.length===1)inputBuffer+=e.key;});
+ document.addEventListener('click',e=>{const b=e.target.closest('button');if(b)setTimeout(()=>b.blur(),0);});
+ function loadCards(){try{uidToCard=JSON.parse(localStorage.getItem('rescueGameCards')||'{}');}catch(e){uidToCard={};}Object.entries(DEFAULT_UIDS).forEach(([u,c])=>{if(!uidToCard[u])uidToCard[u]=c;});}
+-function begin(modeName){mode=modeName;loadCards();if(window.StoryIntro){StoryIntro.show({key:STORY_KEY,title:'Jungle Rescue English',minutes:9,cards:CARD_ORDER.map(id=>({icon:CARD_INFO[id].icon,label:CARD_INFO[id].label})),activities:['Pull an imaginary rope','Drink real water during the Water break','Hum along with Coco','Dance and freeze'],onStart:screenOrReaderStart});}else screenOrReaderStart();}
++function begin(modeName){audioCtx();mode=modeName;loadCards();if(window.StoryIntro){StoryIntro.show({key:STORY_KEY,title:'Jungle Rescue English',minutes:9,cards:CARD_ORDER.map(id=>({icon:CARD_INFO[id].icon,label:CARD_INFO[id].label})),activities:['Pull an imaginary rope','Drink real water during the Water break','Hum along with Coco','Dance and freeze'],onStart:screenOrReaderStart});}else screenOrReaderStart();}
+ $('readerMode').onclick=()=>begin('reader');$('screenMode').onclick=()=>begin('screen');
+ $('nextCue').onclick=advanceCue;
+ if(DEV_MODE)$('nextCue').classList.remove('hide');

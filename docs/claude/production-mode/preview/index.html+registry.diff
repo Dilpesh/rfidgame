@@ -1,0 +1,162 @@
+--- original/docs/jungle-rescue-english/index.html
++++ modified+registry/docs/jungle-rescue-english/index.html
+@@ -19,8 +19,8 @@
+ 
+   <section id="welcome" class="panel">
+     <h2>Ready to play?</h2>
+-    <p class="muted">This player uses the shared RFID reader checks, scan protection, wake lock and story introduction used by the other games.</p>
+-    <div class="actions"><button class="primary" id="readerMode">Use card reader</button><button id="screenMode">Play on screen</button></div>
++    <p class="muted">Bring the cards, plug in the reader, and press Start.</p>
++    <div class="actions"><button class="primary" id="readerMode">Start</button><button id="screenMode" class="hide">Play on screen (developer)</button></div>
+     <div id="welcomeStatus" class="status"></div>
+   </section>
+ 
+@@ -34,8 +34,10 @@
+     <div class="actions"><button id="nextCue" class="hide">Next cue</button></div>
+     <div id="log" class="log hide"></div>
+   </section>
++  <div id="modePill" class="status hide">Developer mode — Ctrl+Shift+D on a laptop, or open the page with ?dev=0, switches it off</div>
+ </main>
+ 
++<script src="../card-registry.js"></script>
+ <script src="../scan-guard.js"></script>
+ <script src="../reader-check.js"></script>
+ <script src="../story-intro.js"></script>
+@@ -46,7 +48,24 @@
+ 'use strict';
+ 
+ const STORY_KEY = 'jungle-rescue-english';
+-const DEV_MODE = new URLSearchParams(location.search).has('dev');
++// Production is the default: Start, then the physical cards, nothing else to
++// tap. Developer mode shows the on-screen cards, Next cue and the log. It is
++// remembered in this browser: on a phone open the page once with ?dev (or
++// ?dev=1) and it stays on until you open it with ?dev=0; on a laptop
++// Ctrl+Shift+D toggles it. Either way the choice survives a reload.
++let devMode = false;
++try { devMode = localStorage.getItem('jreDevMode') === '1'; } catch (e) {}
++const devParam = new URLSearchParams(location.search).get('dev');
++if (devParam !== null) { devMode = !/^(0|off|no|false)$/i.test(devParam); try { localStorage.setItem('jreDevMode', devMode ? '1' : '0'); } catch (e) {} }
++function setDevMode(on){ devMode=!!on; try{localStorage.setItem('jreDevMode',devMode?'1':'0');}catch(e){} applyDevMode(); }
++function applyDevMode(){
++  $('screenMode').classList.toggle('hide',!devMode);
++  $('nextCue').classList.toggle('hide',!devMode);
++  $('modePill').classList.toggle('hide',!devMode);
++  $('log').classList.toggle('hide',!devMode);
++  if(devMode&&mode==='reader'&&$('tapGrid').children.length)$('tapGrid').classList.toggle('hide',state!=='question');
++  if(!devMode&&mode==='reader')$('tapGrid').classList.add('hide');
++}
+ const AUDIO_DIR = 'audio/';
+ const CARD_ORDER = ['FUEL','ROPE','BISCUIT','FIRST_AID','WATER','FLASHLIGHT','BLANKET','MUSIC'];
+ const CARD_INFO = {
+@@ -54,21 +73,21 @@
+   FIRST_AID:{label:'First aid',icon:'🩹'}, WATER:{label:'Water',icon:'💧'}, FLASHLIGHT:{label:'Flashlight',icon:'🔦'},
+   BLANKET:{label:'Blanket',icon:'🧣'}, MUSIC:{label:'Music',icon:'🎵'}
+ };
+-// Existing physical UIDs: SNACK is the shared Snack / cookie / biscuit card.
++// Physical cards are global: the UIDs live in ../card-registry.js (one
++// localStorage key for the whole site). This game only says what it calls each
++// registry card — the shared Snack / cookie / biscuit card is BISCUIT here.
+ /* __CARD_UIDS_START__ */
+-const SEED_VERSION = "2026-09-19b";
+-const DEFAULT_UIDS = {
+-  "5720648": "BISCUIT",
+-  "6373651": "BISCUIT",
+-  "6375388": "BLANKET",
+-  "6374815": "FIRST_AID",
+-  "2692483": "FLASHLIGHT",
+-  "6375577": "FLASHLIGHT",
+-  "6359145": "FUEL",
+-  "6360574": "MUSIC",
+-  "6374623": "ROPE",
+-  "2682976": "WATER",
+-  "2690428": "WATER"
++// registry card -> this story's card. Generated from cards.json by
++// sync_cards.py; the UIDs themselves live in ../card-registry.js.
++const CARD_MAP = {
++  BLANKET:  "BLANKET",
++  FIRSTAID: "FIRST_AID",
++  FUEL:     "FUEL",
++  MUSIC:    "MUSIC",
++  ROPE:     "ROPE",
++  SNACK:    "BISCUIT",
++  TORCH:    "FLASHLIGHT",
++  WATER:    "WATER"
+ };
+ /* __CARD_UIDS_END__ */
+ 
+@@ -76,11 +95,11 @@
+ let epoch = 0, hintTimers = [], waterReminderTimers = [], bedFadeTimer = null, hintIndex = 0, waitingSince = 0, bite = 0, fuelGagOpen = false;
+ const overlays = new Set();
+ let danceAudio = null;
+-let uidToCard = {}, inputBuffer = '', wrongVariant = 0, currentCueId = '';
++let inputBuffer = '', wrongVariant = 0, currentCueId = '';
+ const $ = id => document.getElementById(id);
+ const norm = v => String(v == null ? '' : v).trim().toUpperCase().replace(/^0+(?=.)/,'');
+ const assetUrl = (file, tag) => location.protocol === 'file:' ? file : file+(file.includes('?')?'&':'?')+tag;
+-const log = (s, cls='') => { const el=$('log'); if(!el)return; el.classList.remove('hide'); el.innerHTML += `<span class="${cls}">${new Date().toLocaleTimeString()} ${s}</span>\n`; el.scrollTop=el.scrollHeight; };
++const log = (s, cls='') => { const el=$('log'); if(!el)return; if(devMode)el.classList.remove('hide'); el.innerHTML += `<span class="${cls}">${new Date().toLocaleTimeString()} ${s}</span>\n`; el.scrollTop=el.scrollHeight; };
+ const setStatus = (s, cls='') => { $('storyStatus').textContent=s; $('storyStatus').className='status '+cls; };
+ const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+ 
+@@ -149,10 +168,14 @@
+ function clearTimers(){hintTimers.forEach(clearTimeout);hintTimers=[];waterReminderTimers.forEach(clearTimeout);waterReminderTimers=[];}
+ function invalidate(){epoch++;clearTimers();stopAudio();expected=null;}
+ function setProgress(n,total=CARD_ORDER.length){$('bar').style.width=Math.round(n/total*100)+'%';}
+-function renderWanted(card){const c=CARD_INFO[card];$('question').classList.remove('hide');$('wantIcon').textContent=c.icon;$('wantLabel').textContent=`${c.label} वाला card tap करो`;$('tapGrid').classList.remove('hide');}
++// The screen never says which card is wanted — the clue is Coco's, in audio,
++// with hints at 8/17/28 s. The on-screen tray appears only when the parent chose
++// to play on screen (no reader) or in developer mode; in reader mode a child
++// finds the physical card.
++function renderWanted(card){$('question').classList.remove('hide');$('wantIcon').textContent='🎧';$('wantLabel').textContent='Coco की बात सुनो… फिर card लाओ';$('tapGrid').classList.toggle('hide',!(mode==='screen'||devMode));}
+ function renderTapGrid(){ $('tapGrid').innerHTML=CARD_ORDER.map(id=>`<button class="card tap" data-card="${id}"><span class="icon">${CARD_INFO[id].icon}</span><small>${CARD_INFO[id].label}</small></button>`).join('');$('tapGrid').querySelectorAll('button').forEach(b=>b.onclick=()=>acceptCard(b.dataset.card,'screen')); }
+ function hideQuestion(){ $('question').classList.add('hide');$('tapGrid').classList.add('hide'); }
+-function advanceCue(){if(!DEV_MODE)return;stopForeground();setStatus('Skipped to the next cue.');}
++function advanceCue(){if(!devMode)return;stopForeground();setStatus('Skipped to the next cue.');}
+ 
+ const ASSET_TEXT = {
+   'JR_010':'Captain, टंकी खाली है! इसमें क्या डालें कि जीप चल पड़े?',
+@@ -188,7 +211,7 @@
+ async function playSequence(ids, token){for(const id of ids){if(token!==epoch)return;await playCue(id,{text:ASSET_TEXT[id]});}}
+ 
+ function arm(card, promptCue, hints, onCorrect, onPromptDone){
+-  invalidate(); state='question'; expected=card; hintIndex=0; waitingSince=performance.now(); renderWanted(card); setStatus(`Waiting for ${CARD_INFO[card].label}.`);
++  invalidate(); state='question'; expected=card; hintIndex=0; waitingSince=performance.now(); renderWanted(card); setStatus('Waiting for a card…');
+   const token=epoch;
+   (promptCue?playCue(promptCue,{text:ASSET_TEXT[promptCue]}):Promise.resolve()).then(()=>{if(token!==epoch)return; if(onPromptDone)onPromptDone(token); scheduleHints(hints,token);});
+   arm.onCorrect=onCorrect;
+@@ -201,7 +224,7 @@
+ }
+ function screenOrReaderStart(){
+   $('welcome').classList.add('hide');$('play').classList.remove('hide');renderTapGrid();
+-  if(mode==='reader' && window.ReaderCheck && !ReaderCheck.known()) ReaderCheck.run({onWorking:startStory,onSkip:startStory}); else startStory();
++  if(mode==='reader' && window.ReaderCheck && !ReaderCheck.known()) ReaderCheck.run({onWorking:startStory,onSkip:()=>{mode='screen';startStory();}}); else startStory();
+ }
+ async function startStory(){
+   state='narrative';setStatus('Starting the jungle rescue…');setProgress(0);const token=++epoch;await loadManifest();
+@@ -281,15 +304,22 @@
+   if(window._jrWake){try{await window._jrWake.release();}catch(e){}window._jrWake=null;}
+ }
+ 
+-function handleScan(raw){const uid=norm(raw),card=uidToCard[uid]||raw;if(!uid)return;log(`scan ${uid} → ${card}`);if(fuelGagOpen&&card==='FUEL'){fuelGagOpen=false;playSequence(['JR_019','JR_020'],epoch).then(elephantScene);return;}acceptCard(card,'reader');}
++// The registry turns a UID into a card name (SNACK); CARD_MAP turns that into
++// this story's card (BISCUIT). An unknown UID stays a raw string, which the
++// story treats as a wrong card, exactly as before.
++function cardOf(raw){const canon=window.CardRegistry?CardRegistry.lookup(raw):null;return (canon&&CARD_MAP[canon])||null;}
++function handleScan(raw){const uid=norm(raw),card=cardOf(raw)||raw;if(!uid)return;log(`scan ${uid} → ${card}`);if(fuelGagOpen&&card==='FUEL'){fuelGagOpen=false;playSequence(['JR_019','JR_020'],epoch).then(elephantScene);return;}acceptCard(card,'reader');}
+ const guardedScan=window.ScanGuard?ScanGuard.wrap(handleScan):handleScan;
+-window.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();const v=inputBuffer;inputBuffer='';if(v)guardedScan(v);}else if(e.key.length===1)inputBuffer+=e.key;});
++window.addEventListener('keydown',e=>{
++  if(e.ctrlKey&&e.shiftKey&&e.key.toLowerCase()==='d'){e.preventDefault();setDevMode(!devMode);return;}
++  if(e.ctrlKey||e.metaKey||e.altKey)return;
++  if(e.key==='Enter'){e.preventDefault();const v=inputBuffer;inputBuffer='';if(v)guardedScan(v);}else if(e.key.length===1)inputBuffer+=e.key;});
+ document.addEventListener('click',e=>{const b=e.target.closest('button');if(b)setTimeout(()=>b.blur(),0);});
+-function loadCards(){try{uidToCard=JSON.parse(localStorage.getItem('rescueGameCards')||'{}');}catch(e){uidToCard={};}Object.entries(DEFAULT_UIDS).forEach(([u,c])=>{if(!uidToCard[u])uidToCard[u]=c;});}
++function loadCards(){if(!window.CardRegistry){log('card-registry.js did not load; physical cards will not be recognised.','error');return;}const missing=CARD_ORDER.filter(id=>!Object.values(CARD_MAP).includes(id));if(missing.length)log(`no registry card is mapped to: ${missing.join(', ')} — run python3 sync_cards.py`,'error');}
+ function begin(modeName){mode=modeName;loadCards();if(window.StoryIntro){StoryIntro.show({key:STORY_KEY,title:'Jungle Rescue English',minutes:9,cards:CARD_ORDER.map(id=>({icon:CARD_INFO[id].icon,label:CARD_INFO[id].label})),activities:['Pull an imaginary rope','Drink real water during the Water break','Hum along with Coco','Dance and freeze'],onStart:screenOrReaderStart});}else screenOrReaderStart();}
+ $('readerMode').onclick=()=>begin('reader');$('screenMode').onclick=()=>begin('screen');
+ $('nextCue').onclick=advanceCue;
+-if(DEV_MODE)$('nextCue').classList.remove('hide');
++applyDevMode();
+ </script>
+ </body>
+ </html>

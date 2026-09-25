@@ -1,0 +1,67 @@
+--- original/LEARNINGS.md
++++ modified/LEARNINGS.md
+@@ -41,6 +41,7 @@
+ | `scan-guard.js` | a card left on the reader firing over and over |
+ | `reader-check.js` | a dead reader silently doing nothing |
+ | `story-intro.js` | a parent finding out mid-scene that there is jumping |
++| `card-registry.js` | one game reading another game's private card map (learning 21) |
+ 
+ `interrupt-guard.js` and `progress.js` are **parked** — still in `docs/`, but
+ nothing loads them. See `parked/README.md` and learning 20.
+@@ -100,6 +101,10 @@
+ replacing the printed one. Seed the printed set so a fresh browser starts
+ ready. `cards.json` is the source of truth; `python3 sync_cards.py` pushes it
+ into all four games and `node qa_cards.js` verifies.
++
++**Superseded for games on the registry — see 21.** A game on
++`card-registry.js` keeps no UIDs at all, only a generated `CARD_MAP`
++(registry card → its own id); `node qa_registry.js` verifies those.
+ 
+ ## 7. Production vs developer
+ 
+@@ -159,7 +164,8 @@
+ ## Verifying a new story
+ 
+ ```
+-python3 sync_cards.py                 # push card UIDs into it
++python3 sync_cards.py                 # push card UIDs into it (and the registry)
++node qa_registry.js                   # the registry, and every game on it
+ python3 check_audio.py docs/<slug>    # bed vs narration, per band
+ node qa_cards.js                      # every card resolves everywhere
+ node qa_wakelock.js                   # screen stays awake
+@@ -216,3 +222,35 @@
+ `parked/`. `parked/qa_pause.js` models the real state machine rather than
+ stubbing it away and pins the bug; it is the one to make pass first. See
+ `parked/README.md`.
++
++## 21. Cards are global — one registry, not one map per game
++
++Found 2026-09-25, in `jungle-rescue-english`. It read its cards from
++`localStorage['rescueGameCards']` — Jungle Rescue 2's key, on the same origin —
++and only filled in gaps. JR2 had already written `6373651 → SNACK` and
++`6374815 → FIRSTAID`, so on any phone that had ever opened JR2 both biscuit
++cards and the first-aid card came back as "wrong card". Nothing in the code
++looked wrong; the bug lived in another game's storage.
++
++The rule, as Dilpesh put it: **a card means the same thing in every game.**
++So the browser keeps one registry, `docs/card-registry.js`, under one key
++(`kahaniCards`), seeded from the block `sync_cards.py` writes into it from
++`cards.json`. A game never sees a UID. It asks
++`CardRegistry.lookup(raw)` for the canonical card (`SNACK`) and maps that to
++its own id through its generated `CARD_MAP` (`SNACK → BISCUIT` here,
++`→ snack` in Hinglish, `→ biscuit` in Toy Town). Teach a card once, in any
++game, and every game knows it.
++
++Seeding: on a new `seed_version`, `cards.json` wins for the UIDs it names
++(an edit there must reach every phone); between seeds, `teach()` wins; UIDs
++taught by hand that `cards.json` does not know survive a re-seed.
++
++A new story that needs a card `cards.json` does not have fails in
++`sync_cards.py` with the card named, until it is added there under a
++canonical name. Cards are global; a story only says which ones it uses.
++
++`check_games.py` gates on `CardRegistry.lookup`. The six older games are
++excused by name until each is migrated — `moon` and `jungle-rescue` first
++(same shape), then `banana-rescue`, `jungle-rescue-hinglish`, `toy-town-v2`,
++and `toy-town` last, since it is the A/B control.
++
