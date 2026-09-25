@@ -115,6 +115,8 @@ before JR_083 begins, so the spoken card name is never cut off by the chime. Aft
 allow a 0.25-second quiet beat before JR_085's bandage sound. The approved JR_084 recording
 has a complete final word and a short clean tail. Both boundaries keep the
 acknowledgement intelligible; neither adds a new card or hint.
+After JR_089, play the approved JR_090 wing-flap effect five times with a short gap between
+repeats, then continue to JR_091.
 Pulls: play JR_043 after JR_042 and JR_045 after JR_044; each pull gets a two-second action
 interval from the preceding call's end, containing its short creak. Then continue. JR_046
 contains the approved final Pull/gul joke, followed by JR_047 and the success/praise.
