@@ -103,11 +103,11 @@ function playFile(file, opts={}){
     const fallback=()=>{const text=opts.text||ASSET_TEXT[cueId]||(manifest[cueId]&&manifest[cueId].spoken_text);if(text)speechFallback(text);};
     const retry=()=>{
       if(done)return;
-      if(!retried){retried=true;player.src=assetUrl(file,'retry='+Date.now());player.load();player.play().catch(()=>{log(`could not play ${file}`, 'error');fallback();finish();});return;}
+      if(!retried){retried=true;player.src=assetUrl(file,'retry='+Date.now());player.load();player.play().catch(e=>{log(`could not play ${file}: ${e&&e.name} ${e&&e.message}`, 'error');fallback();finish();});return;}
       log(`could not play ${file}`, 'error');fallback();finish();
     };
     player.onended=finish;player.onerror=retry;
-    player.play().catch(retry);
+    player.play().catch(e=>{log(`play refused ${file.split('/').pop()}: ${e&&e.name} ${e&&e.message}`,'warn');retry(e);});
   });
 }
 // iOS Safari ignores HTMLMediaElement.volume (it is pinned to 1.0), so every level in this game
@@ -127,14 +127,14 @@ function playOverlayCue(id, volume=.35){
 // fetch and the wake lock before its first play(), by which time the tap was gone and every clip was
 // refused ("could not play"). Play a 50 ms silent clip synchronously inside the tap to unlock audio.
 const SILENT_MP3='data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4Ljc2LjEwMAAAAAAAAAAAAAAA//NwwAAAAAAAAAAAAEluZm8AAAAPAAAABAAAAR8Aubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm50dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0ejo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Oj/////////////////////////////////AAAAAExhdmM1OC4xMwAAAAAAAAAAAAAAACQCcQAAAAAAAAEfOUBsQwAAAAAAAAAAAAAAAAD/8xDEAAAAA0gAAAAATEFNRTMuMTAwVVVVVf/zEsQNAAADSAAAAABVVVVVVVVVVVVVVVVVVf/zEMQbAAADSAAAAABVVVVVVVVVVVVVVVVV//MQxCgAAANIAAAAAFVVVVVVVVVVVVVVVVU=';
-function unlockAudio(){try{const u=new Audio(SILENT_MP3);u.play().catch(()=>{});}catch(e){}if(typeof audioCtx==='function')audioCtx();}
+function unlockAudio(){log('build ios-standalone-3 · '+navigator.userAgent.slice(0,60));try{const u=new Audio(SILENT_MP3);u.play().then(()=>log('silent unlock: played','ok')).catch(e=>log(`silent unlock refused: ${e&&e.name} ${e&&e.message}`,'error'));}catch(e){log('silent unlock threw: '+e,'error');}if(typeof audioCtx==='function'){const c=audioCtx();log('audio context: '+(c?c.state:'none'));}}
 function playOverlayCueAndWait(id, volume=.35){
   const c=cueEntry(id);if(!c.file)return Promise.resolve();
   const effect=new Audio(AUDIO_DIR+c.file);setVol(effect,volume);overlays.add(effect);
   return new Promise(resolve=>{const done=()=>{overlays.delete(effect);effect.onended=null;effect.onerror=null;resolve()};effect.onended=done;effect.onerror=done;effect.play().catch(done);});
 }
 function playStandaloneSfx(file,volume=.72){const effect=new Audio(file);setVol(effect,volume);return new Promise(resolve=>{effect.onended=resolve;effect.onerror=resolve;effect.play().catch(resolve);});}
-function playBedFile(file, volume=.18){if(bedAudio){bedAudio.pause();bedAudio.src='';}const source=assetUrl(file,'v=jr-bed-6');bedAudio=new Audio(source);bedAudio.preload='auto';bedAudio.loop=true;setVol(bedAudio,volume);bedAudio.onerror=()=>log(`could not play background ${file}`,'error');bedAudio.play().catch(()=>log(`could not start background ${file}`,'error'));return Promise.resolve();}
+function playBedFile(file, volume=.18){if(bedAudio){bedAudio.pause();bedAudio.src='';}const source=assetUrl(file,'v=jr-bed-6');bedAudio=new Audio(source);bedAudio.preload='auto';bedAudio.loop=true;setVol(bedAudio,volume);bedAudio.onerror=()=>log(`could not play background ${file}`,'error');bedAudio.play().catch(e=>log(`could not start background ${file}: ${e&&e.name} ${e&&e.message}`,'error'));return Promise.resolve();}
 function crossfadeBedFile(file, volume=.18){
   if(bedFadeTimer){clearInterval(bedFadeTimer);bedFadeTimer=null;}
   const old=bedAudio;const source=assetUrl(file,'v=jr-bed-6');const next=new Audio(source);next.preload='auto';next.loop=true;setVol(next,0);bedAudio=next;next.onerror=()=>log(`could not play background ${file}`,'error');next.play().catch(()=>log(`could not start background ${file}`,'error'));
