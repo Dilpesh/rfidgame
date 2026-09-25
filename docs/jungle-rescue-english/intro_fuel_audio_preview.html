@@ -23,12 +23,13 @@
     <p>Listen as a child would experience it. The sequence includes the 1.5-second answer space after “क्या तुम Captain बनकर मेरी मदद करोगे?”, then stops after the Fuel question so you can tap the card.</p>
     <div class="actions">
       <button class="primary" id="start">Play from beginning</button>
+      <button id="bedTest">Play daytime jungle bed</button>
       <button id="stop">Stop</button>
       <button id="earlyFuel" disabled>Tap FUEL during clue</button>
       <button id="fuel" disabled>Tap FUEL card</button>
       <button id="repeat" disabled>Tap FUEL again</button>
     </div>
-    <div class="status" id="status" aria-live="polite">Ready. Use “Play from beginning”.</div>
+    <div class="status" id="status" aria-live="polite">Ready. Use “Play from beginning” or test the daytime jungle bed.</div>
   </header>
 
   <section>
@@ -72,7 +73,8 @@ function playCue(id,token){
   return new Promise(resolve=>{let finished=false;const done=()=>{if(finished)return;finished=true;resolve()};foreground.onended=done;foreground.onerror=()=>{status(`Could not play ${id}.`);done()};foreground.play().catch(()=>{status(`Browser blocked ${id}; press Play again.`);done()})});
 }
 async function sequence(ids,token){for(const id of ids){if(token!==run)return;if(id==='PAUSE_1500'){status('Space for the child to answer…');await wait(1500)}else await playCue(id,token)}}
-function startBed(){if(bed)bed.pause();bed=new Audio(`${dir}JR_001.mp3`);bed.loop=true;bed.volume=.18;bed.play().catch(()=>{})}
+function startBed(){if(bed)bed.pause();bed=new Audio(`${dir}JR_001.mp3`);bed.loop=true;bed.volume=.28;bed.play().catch(()=>{})}
+$('bedTest').onclick=()=>{stopAll();bed=new Audio(`${dir}JR_001.mp3`);bed.loop=true;bed.volume=.28;bed.play().then(()=>status('Playing Daytime Jungle — Shipped Build.')).catch(()=>status('Browser blocked the bed; press the button again.'))};
 $('start').onclick=async()=>{stopAll();const token=run;startBed();$('earlyFuel').disabled=false;$('fuel').disabled=true;$('repeat').disabled=true;await sequence(opening,token);if(token!==run)return;$('earlyFuel').disabled=true;$('fuel').disabled=false;status('Waiting for the child to tap the FUEL card. Try the hints or tap FUEL.')};
 $('stop').onclick=stopAll;
 $('earlyFuel').onclick=async()=>{if(!$('earlyFuel').disabled){$('earlyFuel').disabled=true;stopForeground();run++;status('Clue stopped. Playing Fuel acknowledgement…');const token=run;await sequence(success,token);if(token===run){$('fuel').disabled=false;status('Early Fuel tap test complete. The clue did not overlap the acknowledgement.')}}};

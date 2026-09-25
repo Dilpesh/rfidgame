@@ -1,13 +1,15 @@
 {
   "JR_001": {
     "file": "intro-fuel-test/JR_001.mp3",
-    "duration_seconds": 50.051,
+    "duration_seconds": 18.1,
     "integrated_lufs": -15.9,
     "true_peak_dbfs": -5.4,
-    "review_status": "test",
+    "review_status": "selected-local-reuse",
     "type": "sfx",
     "bed": true,
-    "loop": true
+    "loop": true,
+    "volume": 0.28,
+    "source_file": "audio_candidates/shipped_dayAmb.mp3"
   },
   "JR_002": {
     "file": "intro-fuel-test/JR_002.mp3",

@@ -13,7 +13,8 @@ The user exported [audio_reuse_review.json](audio_reuse_review.json) from the pr
 | Use | `old_sfx_jungle_day`, `shipped_engineCough`, `shipped_ting`, `old_sfx_fuel`, `old_sfx_engine`, `old_sfx_elephant`, `shipped_mud`, `old_sfx_munch`, `shipped_munchEle`, `old_sfx_magic`, `shipped_nightAmb`, `shipped_boing` | Retain as source candidates for `JR_001`, `JR_008`, correct chimes, `JR_016`, `JR_017`, `JR_027`/`JR_162`, `JR_031`, `JR_061`, `JR_087`, `JR_103`, wrong-card boings. |
 | Edit / mix | `shipped_owl` | Edit into a gentle comic `JR_124`. |
 | Replace | `shipped_elephant`, `shipped_rope`, `shipped_stomach`, `old_sfx_glug`, `shipped_gulp`, `old_sfx_flashlight`, `shipped_flashlight`, `shipped_dance` | Do not install as final cues; source new sounds for the corresponding moments. |
-| Unreviewed | `shipped_dayAmb`, `old_sfx_disco` | Do not infer approval. The approved daytime ambience candidate is `old_sfx_jungle_day`. |
+| Selected reuse | `shipped_dayAmb` | Selected for `JR_001` daytime jungle ambience in the current English story; keep its short loop under dialogue. |
+| Unreviewed | `old_sfx_disco` | Celebration comparison only; not installed as story-wide ambience. |
 
 Production edits still needed for the accepted sources: add the key turn before the engine cough, shorten the fuel pour, check the day ambience loop seam, combine the healing sparkle with a bandage wrap, and build the evening rain/wind transition around the approved night ambience. Both munch clips were marked Use for `JR_061`; keep both available until the biscuit-bite edit decides whether to use one repeatable crunch or two alternating takes. The rejected dance loop means `JR_160` needs new music even though the legacy clip had the right nominal length.
 
