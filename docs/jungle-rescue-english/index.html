@@ -31,6 +31,7 @@
     <div id="question" class="wanted hide"><span class="icon" id="wantIcon">🎴</span><strong id="wantLabel">Listen…</strong></div>
     <div id="tapGrid" class="tapgrid hide"></div>
     <div id="storyActions" class="actions"></div>
+    <div class="actions"><button id="nextCue" class="hide">Next cue</button></div>
     <div id="log" class="log hide"></div>
   </section>
 </main>
@@ -45,6 +46,7 @@
 'use strict';
 
 const STORY_KEY = 'jungle-rescue-english';
+const DEV_MODE = new URLSearchParams(location.search).has('dev');
 const AUDIO_DIR = 'audio/';
 const CARD_ORDER = ['FUEL','ROPE','BISCUIT','FIRST_AID','WATER','FLASHLIGHT','BLANKET','MUSIC'];
 const CARD_INFO = {
@@ -91,7 +93,7 @@ function speechFallback(text){ if(!('speechSynthesis' in window))return; const u
 function playFile(file, opts={}){
   if(audioFinish)audioFinish();
   if(audio){audio.onended=audio.onerror=null;audio.pause();audio.src='';audio=null;}
-  const source=assetUrl(file,'v=jr-final-3');
+  const source=assetUrl(file,'v=jr-final-4');
   const player=new Audio(source);player.preload='auto';audio=player;
   const cueId=currentCueId;
   return new Promise(resolve=>{
@@ -114,10 +116,10 @@ function playOverlayCue(id, volume=.35){
   const done=()=>{overlays.delete(effect);effect.onended=null;effect.onerror=null};effect.onended=done;effect.onerror=done;effect.play().catch(done);
 }
 function playStandaloneSfx(file,volume=.72){const effect=new Audio(file);effect.volume=volume;return new Promise(resolve=>{effect.onended=resolve;effect.onerror=resolve;effect.play().catch(resolve);});}
-function playBedFile(file, volume=.18){if(bedAudio){bedAudio.pause();bedAudio.src='';}const source=assetUrl(file,'v=jr-bed-3');bedAudio=new Audio(source);bedAudio.preload='auto';bedAudio.loop=true;bedAudio.volume=volume;bedAudio.onerror=()=>log(`could not play background ${file}`,'error');bedAudio.play().catch(()=>log(`could not start background ${file}`,'error'));return Promise.resolve();}
+function playBedFile(file, volume=.18){if(bedAudio){bedAudio.pause();bedAudio.src='';}const source=assetUrl(file,'v=jr-bed-4');bedAudio=new Audio(source);bedAudio.preload='auto';bedAudio.loop=true;bedAudio.volume=volume;bedAudio.onerror=()=>log(`could not play background ${file}`,'error');bedAudio.play().catch(()=>log(`could not start background ${file}`,'error'));return Promise.resolve();}
 function crossfadeBedFile(file, volume=.18){
   if(bedFadeTimer){clearInterval(bedFadeTimer);bedFadeTimer=null;}
-  const old=bedAudio;const source=assetUrl(file,'v=jr-bed-3');const next=new Audio(source);next.preload='auto';next.loop=true;next.volume=0;bedAudio=next;next.onerror=()=>log(`could not play background ${file}`,'error');next.play().catch(()=>log(`could not start background ${file}`,'error'));
+  const old=bedAudio;const source=assetUrl(file,'v=jr-bed-4');const next=new Audio(source);next.preload='auto';next.loop=true;next.volume=0;bedAudio=next;next.onerror=()=>log(`could not play background ${file}`,'error');next.play().catch(()=>log(`could not start background ${file}`,'error'));
   return new Promise(resolve=>{let step=0;bedFadeTimer=setInterval(()=>{step++;next.volume=volume*step/8;if(old)old.volume=Math.max(0,old.volume*(8-step)/8);if(step>=8){clearInterval(bedFadeTimer);bedFadeTimer=null;if(old){old.pause();old.src='';}resolve();}},90);});
 }
 async function playCue(id, opts={}){
@@ -137,14 +139,15 @@ async function playCue(id, opts={}){
 function playBed(id){const c=cueEntry(id);if(!c.file){log(`bed ${id} missing from manifest`,'warn');return Promise.resolve();}if(typeof c.volume!=='number'){log(`bed ${id} has no manifest volume`,'error');return Promise.resolve();}return playBedFile(AUDIO_DIR+c.file,c.volume);}
 function stopBed(){if(bedFadeTimer){clearInterval(bedFadeTimer);bedFadeTimer=null;}if(bedAudio){bedAudio.pause();bedAudio.currentTime=0;bedAudio=null;}}
 function stopDanceTrack(){if(danceAudio){danceAudio.pause();danceAudio.src='';danceAudio=null;}}
-function stopForeground(){if(audioFinish)audioFinish();if(audio){audio.onended=audio.onerror=null;audio.pause();audio.currentTime=0;audio=null;}}
-function stopAudio(){if(audioFinish)audioFinish();if(audio){audio.onended=audio.onerror=null;audio.pause();audio.currentTime=0;audio=null;}stopDanceTrack();for(const effect of overlays){effect.pause();effect.src='';}overlays.clear();if('speechSynthesis'in window)speechSynthesis.cancel();}
+function stopForeground(){const active=audio;if(audioFinish)audioFinish();if(active){active.onended=active.onerror=null;active.pause();active.currentTime=0;if(audio===active)audio=null;}}
+function stopAudio(){const active=audio;if(audioFinish)audioFinish();if(active){active.onended=active.onerror=null;active.pause();active.currentTime=0;if(audio===active)audio=null;}stopDanceTrack();for(const effect of overlays){effect.pause();effect.src='';}overlays.clear();if('speechSynthesis'in window)speechSynthesis.cancel();}
 function clearTimers(){hintTimers.forEach(clearTimeout);hintTimers=[];waterReminderTimers.forEach(clearTimeout);waterReminderTimers=[];}
 function invalidate(){epoch++;clearTimers();stopAudio();expected=null;}
 function setProgress(n,total=CARD_ORDER.length){$('bar').style.width=Math.round(n/total*100)+'%';}
 function renderWanted(card){const c=CARD_INFO[card];$('question').classList.remove('hide');$('wantIcon').textContent=c.icon;$('wantLabel').textContent=`${c.label} वाला card tap करो`;$('tapGrid').classList.remove('hide');}
 function renderTapGrid(){ $('tapGrid').innerHTML=CARD_ORDER.map(id=>`<button class="card tap" data-card="${id}"><span class="icon">${CARD_INFO[id].icon}</span><small>${CARD_INFO[id].label}</small></button>`).join('');$('tapGrid').querySelectorAll('button').forEach(b=>b.onclick=()=>acceptCard(b.dataset.card,'screen')); }
 function hideQuestion(){ $('question').classList.add('hide');$('tapGrid').classList.add('hide'); }
+function advanceCue(){if(!DEV_MODE)return;stopForeground();setStatus('Skipped to the next cue.');}
 
 const ASSET_TEXT = {
   'JR_010':'Captain, टंकी खाली है! इसमें क्या डालें कि जीप चल पड़े?',
@@ -280,6 +283,8 @@ document.addEventListener('click',e=>{const b=e.target.closest('button');if(b)se
 function loadCards(){try{uidToCard=JSON.parse(localStorage.getItem('rescueGameCards')||'{}');}catch(e){uidToCard={};}Object.entries(DEFAULT_UIDS).forEach(([u,c])=>{if(!uidToCard[u])uidToCard[u]=c;});}
 function begin(modeName){mode=modeName;loadCards();if(window.StoryIntro){StoryIntro.show({key:STORY_KEY,title:'Jungle Rescue English',minutes:9,cards:CARD_ORDER.map(id=>({icon:CARD_INFO[id].icon,label:CARD_INFO[id].label})),activities:['Pull an imaginary rope','Drink real water during the Water break','Hum along with Coco','Dance and freeze'],onStart:screenOrReaderStart});}else screenOrReaderStart();}
 $('readerMode').onclick=()=>begin('reader');$('screenMode').onclick=()=>begin('screen');
+$('nextCue').onclick=advanceCue;
+if(DEV_MODE)$('nextCue').classList.remove('hide');
 </script>
 </body>
 </html>
