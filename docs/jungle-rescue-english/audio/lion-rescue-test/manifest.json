@@ -754,7 +754,7 @@
     "intended_character": "LION",
     "review_status": "selected_for_route",
     "source_file": "intro-roar-auditions/roar_a.mp3",
-    "placement": "immediately after the second sneeze and before JR_107"
+    "placement": "immediately before JR_109, after JR_108"
   },
   "JR_132_sting": {
     "file": "lion-rescue-test/JR_132_sting.mp3",

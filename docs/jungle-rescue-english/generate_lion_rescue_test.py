@@ -372,7 +372,7 @@ def main():
         "file": "lion-rescue-test/JR_106_lion.mp3", "type": "sfx",
         "intended_character": "LION", "review_status": "selected_for_route",
         "source_file": "intro-roar-auditions/roar_a.mp3",
-        "placement": "immediately after the second sneeze and before JR_107",
+        "placement": "immediately before JR_109, after JR_108",
     }
     sting_path = OUT / "JR_132_sting.mp3"
     sting_lufs, sting_peak = measure(sting_path)
@@ -399,7 +399,7 @@ def main():
         "file": "lion-rescue-test/JR_106_lion.mp3", "type": "sfx",
         "intended_character": "LION", "review_status": "selected_for_route",
         "source_file": "intro-roar-auditions/roar_a.mp3",
-        "placement": "immediately after the second sneeze and before JR_107",
+        "placement": "immediately before JR_109, after JR_108",
     }
     manifest["_batch"] = {"name": "Lion Rescue production test",
                           "range": "JR_103–JR_149", "format": FORMAT,
