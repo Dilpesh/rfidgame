@@ -85,7 +85,7 @@ const setStatus = (s, cls='') => { $('storyStatus').textContent=s; $('storyStatu
 const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
 
 async function loadManifest(){
-  try { const r=await fetch('audio/manifest.json',{cache:'no-store'}); if(r.ok) manifest=await r.json(); }
+  try { const r=await fetch('audio/manifest.json',{cache:'no-store'}); if(r.ok) manifest=await r.json(); prefetchClips(); }
   catch(e){ log('Audio manifest not installed yet; player will show cue IDs.', 'warn'); }
 }
 function cueEntry(id){ const v=manifest[id]; return typeof v==='string'?{file:v}:v||{}; }
@@ -97,10 +97,25 @@ const POOL={fg:null,bed:[],ovl:[],dance:null,unlocked:false};
 function mkEl(){const a=new Audio();a.preload='auto';return a;}
 function poolInit(){if(POOL.fg)return;POOL.fg=mkEl();POOL.bed=[mkEl(),mkEl()];POOL.ovl=[mkEl(),mkEl(),mkEl(),mkEl()];POOL.dance=mkEl();}
 function poolAll(){return [POOL.fg,...POOL.bed,...POOL.ovl,POOL.dance];}
-function reuseEl(el,src){el.onended=el.onerror=null;try{el.pause();}catch(e){}el.loop=false;el.src=src;el.load();return el;}
+function reuseEl(el,src){el.onended=el.onerror=null;try{el.pause();}catch(e){}el.loop=false;el.src=cachedSrc(src);el.load();return el;}
 function releaseEl(el){if(!el)return;el.onended=el.onerror=null;try{el.pause();}catch(e){}el.removeAttribute('src');try{el.load();}catch(e){}}
 function takeOverlay(src){poolInit();let el=POOL.ovl.find(a=>!overlays.has(a))||POOL.ovl.find(a=>a.paused||a.ended)||POOL.ovl[0];overlays.delete(el);return reuseEl(el,src);}
 function takeBed(src){poolInit();const el=POOL.bed.find(a=>a!==bedAudio)||POOL.bed[0];return reuseEl(el,src);}
+// Every clip used to be downloaded at the moment it was needed, so on a phone network each line
+// started only after its own round trip. Now all production clips are fetched in story order in the
+// background as soon as the manifest is known, kept in memory as blob URLs, and the pooled players
+// read from memory. A clip not yet cached still plays from the network as before.
+const clipCache=new Map();let prefetchStarted=false,prefetchDone=0,prefetchTotal=0;
+function cachedSrc(url){return clipCache.get(url.split('?')[0])||url;}
+async function prefetchClips(){
+  if(prefetchStarted||!Object.keys(manifest).length)return;prefetchStarted=true;
+  const list=[];const seen=new Set();const add=f=>{const u=AUDIO_DIR+f;if(!seen.has(u)){seen.add(u);list.push(u);}};
+  for(const [k,c] of Object.entries(manifest)){if(k==='_build'||!c||typeof c!=='object')continue;for(const key of ['jeep_file','entry_file','bed_file','file'])if(c[key])add(c[key]);}
+  add('celebration-test/JR_152_clap.mp3');prefetchTotal=list.length;const t0=performance.now();
+  let i=0;const worker=async()=>{while(i<list.length){const u=list[i++];try{const r=await fetch(u);if(r.ok){clipCache.set(u,URL.createObjectURL(await r.blob()));prefetchDone++;}}catch(e){}}};
+  await Promise.all([worker(),worker(),worker()]);
+  log(`prefetched ${prefetchDone}/${prefetchTotal} clips in ${Math.round((performance.now()-t0)/1000)} s`);
+}
 function playFile(file, opts={}){
   if(audioFinish)audioFinish();
   if(audio){releaseEl(audio);audio=null;}
@@ -117,7 +132,7 @@ function playFile(file, opts={}){
       if(!retried){retried=true;player.src=assetUrl(file,'retry='+Date.now());player.load();player.play().catch(e=>{log(`could not play ${file}: ${e&&e.name} ${e&&e.message}`, 'error');fallback();finish();});return;}
       log(`could not play ${file}`, 'error');fallback();finish();
     };
-    player.onended=finish;player.onerror=retry;
+    player.onended=finish;player.onerror=retry;if(DEV_MODE){const t0=performance.now();player.onplaying=()=>log(`${file.split('/').pop()} started after ${Math.round(performance.now()-t0)} ms${clipCache.has((AUDIO_DIR+file).split('?')[0])||clipCache.has(file.split('?')[0])?' (cached)':' (network)'}`);}
     player.play().catch(e=>{log(`play refused ${file.split('/').pop()}: ${e&&e.name} ${e&&e.message}`,'warn');retry(e);});
   });
 }
@@ -138,7 +153,7 @@ function playOverlayCue(id, volume=.35){
 // fetch and the wake lock before its first play(), by which time the tap was gone and every clip was
 // refused ("could not play"). Play a 50 ms silent clip synchronously inside the tap to unlock audio.
 const SILENT_MP3='data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4Ljc2LjEwMAAAAAAAAAAAAAAA//NwwAAAAAAAAAAAAEluZm8AAAAPAAAABAAAAR8Aubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm50dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0ejo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Oj/////////////////////////////////AAAAAExhdmM1OC4xMwAAAAAAAAAAAAAAACQCcQAAAAAAAAEfOUBsQwAAAAAAAAAAAAAAAAD/8xDEAAAAA0gAAAAATEFNRTMuMTAwVVVVVf/zEsQNAAADSAAAAABVVVVVVVVVVVVVVVVVVf/zEMQbAAADSAAAAABVVVVVVVVVVVVVVVVV//MQxCgAAANIAAAAAFVVVVVVVVVVVVVVVVU=';
-function unlockAudio(){poolInit();log('build ios-standalone-4 · '+navigator.userAgent.slice(0,60));let okc=0,bad=0;poolAll().forEach(el=>{if(!el.paused)return;try{el.src=SILENT_MP3;el.load();el.play().then(()=>{okc++;if(okc+bad===poolAll().length)log(`silent unlock: ${okc} elements authorised`,'ok');}).catch(e=>{bad++;log(`silent unlock refused: ${e&&e.name}`,'error');});}catch(e){bad++;}});if(typeof audioCtx==='function'){const c=audioCtx();log('audio context: '+(c?c.state:'none'));}POOL.unlocked=true;}
+function unlockAudio(){poolInit();log('build ios-standalone-5 · '+navigator.userAgent.slice(0,60));let okc=0,bad=0;poolAll().forEach(el=>{if(!el.paused)return;try{el.src=SILENT_MP3;el.load();el.play().then(()=>{okc++;if(okc+bad===poolAll().length)log(`silent unlock: ${okc} elements authorised`,'ok');}).catch(e=>{bad++;log(`silent unlock refused: ${e&&e.name}`,'error');});}catch(e){bad++;}});if(typeof audioCtx==='function'){const c=audioCtx();log('audio context: '+(c?c.state:'none'));}POOL.unlocked=true;}
 function playOverlayCueAndWait(id, volume=.35){
   const c=cueEntry(id);if(!c.file)return Promise.resolve();
   const effect=takeOverlay(AUDIO_DIR+c.file);setVol(effect,volume);overlays.add(effect);
@@ -310,6 +325,7 @@ const guardedScan=window.ScanGuard?ScanGuard.wrap(handleScan):handleScan;
 window.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();const v=inputBuffer;inputBuffer='';if(v)guardedScan(v);}else if(e.key.length===1)inputBuffer+=e.key;});
 document.addEventListener('click',e=>{const b=e.target.closest('button');if(b)setTimeout(()=>b.blur(),0);});
 function loadCards(){try{uidToCard=JSON.parse(localStorage.getItem('rescueGameCards')||'{}');}catch(e){uidToCard={};}Object.entries(DEFAULT_UIDS).forEach(([u,c])=>{if(!uidToCard[u])uidToCard[u]=c;});}
+loadManifest();
 function begin(modeName){unlockAudio();mode=modeName;loadCards();if(window.StoryIntro){StoryIntro.show({key:STORY_KEY,title:'Jungle Rescue English',minutes:9,cards:CARD_ORDER.map(id=>({icon:CARD_INFO[id].icon,label:CARD_INFO[id].label})),activities:['Pull an imaginary rope','Drink real water during the Water break','Hum along with Coco','Dance and freeze'],onStart:screenOrReaderStart});}else screenOrReaderStart();}
 $('readerMode').onclick=()=>begin('reader');$('screenMode').onclick=()=>begin('screen');
 $('nextCue').onclick=advanceCue;
