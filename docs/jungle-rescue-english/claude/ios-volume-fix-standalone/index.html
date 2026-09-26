@@ -153,7 +153,7 @@ function playOverlayCue(id, volume=.35){
 // fetch and the wake lock before its first play(), by which time the tap was gone and every clip was
 // refused ("could not play"). Play a 50 ms silent clip synchronously inside the tap to unlock audio.
 const SILENT_MP3='data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4Ljc2LjEwMAAAAAAAAAAAAAAA//NwwAAAAAAAAAAAAEluZm8AAAAPAAAABAAAAR8Aubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm50dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0ejo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Oj/////////////////////////////////AAAAAExhdmM1OC4xMwAAAAAAAAAAAAAAACQCcQAAAAAAAAEfOUBsQwAAAAAAAAAAAAAAAAD/8xDEAAAAA0gAAAAATEFNRTMuMTAwVVVVVf/zEsQNAAADSAAAAABVVVVVVVVVVVVVVVVVVf/zEMQbAAADSAAAAABVVVVVVVVVVVVVVVVV//MQxCgAAANIAAAAAFVVVVVVVVVVVVVVVVU=';
-function unlockAudio(){poolInit();log('build ios-standalone-9 · '+navigator.userAgent.slice(0,60));let okc=0,bad=0;poolAll().forEach(el=>{if(!el.paused)return;try{el.src=SILENT_MP3;el.load();el.play().then(()=>{okc++;if(okc+bad===poolAll().length)log(`silent unlock: ${okc} elements authorised`,'ok');}).catch(e=>{bad++;log(`silent unlock refused: ${e&&e.name}`,'error');});}catch(e){bad++;}});if(typeof audioCtx==='function'){const c=audioCtx();log('audio context: '+(c?c.state:'none'));}POOL.unlocked=true;}
+function unlockAudio(){poolInit();log('build ios-standalone-10 · '+navigator.userAgent.slice(0,60));let okc=0,bad=0;poolAll().forEach(el=>{if(!el.paused)return;try{el.src=SILENT_MP3;el.load();el.play().then(()=>{okc++;if(okc+bad===poolAll().length)log(`silent unlock: ${okc} elements authorised`,'ok');}).catch(e=>{bad++;log(`silent unlock refused: ${e&&e.name}`,'error');});}catch(e){bad++;}});if(typeof audioCtx==='function'){const c=audioCtx();log('audio context: '+(c?c.state:'none'));}POOL.unlocked=true;}
 function playOverlayCueAndWait(id, volume=.35){
   const c=cueEntry(id);if(!c.file)return Promise.resolve();
   const effect=takeOverlay(AUDIO_DIR+c.file);setVol(effect,volume);overlays.add(effect);
@@ -284,7 +284,7 @@ function waitForDanceTime(track,seconds,token){
   });
 }
 async function danceVoice(track,id){
-  const full=cueEntry('JR_160').volume;setVol(track,full*.60);
+  const full=cueEntry('JR_160').volume;setVol(track,full*.30);
   await playCue(id);
   if(danceAudio===track&&!track.ended)setVol(track,full);
 }

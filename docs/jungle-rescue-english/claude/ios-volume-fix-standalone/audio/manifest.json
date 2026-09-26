@@ -3081,14 +3081,15 @@
     "file": "celebration-test/JR_160.mp3",
     "type": "music",
     "duration_seconds": 20.036,
-    "integrated_lufs": -24.9,
-    "true_peak_dbfs": -8.3,
-    "review_status": "test",
+    "integrated_lufs": -15.5,
+    "true_peak_dbfs": -1.4,
+    "review_status": "approved",
     "loop": true,
     "volume": 0.62,
     "exact_runtime_seconds": 20.0,
     "model_id": "music_v2",
-    "source_file": "raw/JR_160.mp3"
+    "source_file": "raw/JR_160.mp3",
+    "note": "Re-levelled +10 dB with limiter (was -24.9 LUFS, too quiet to dance to). Chosen by ear on phone 2026-09-26 (option C). Duck under dance calls deepened to 0.30 in index.html."
   },
   "JR_152_clap": {
     "file": "celebration-test/JR_152_clap.mp3",
