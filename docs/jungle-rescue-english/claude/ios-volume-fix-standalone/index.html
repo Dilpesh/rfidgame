@@ -9,7 +9,8 @@
     *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
     body{margin:0;min-height:100vh;background:radial-gradient(circle at 20% 0,#28543d,var(--bg) 62%);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;padding:18px}
     main{max-width:760px;margin:0 auto}.eyebrow{color:var(--go);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:12px}.panel{background:rgba(23,52,39,.94);border:1px solid var(--line);border-radius:20px;padding:22px;margin-top:14px;box-shadow:0 12px 35px #06120c66}h1{margin:4px 0;font-size:clamp(25px,7vw,42px);line-height:1.05}h2{margin:0 0 8px}.muted{color:var(--muted)}button{font:inherit;border:1px solid #5d7f69;border-radius:12px;background:#234b36;color:var(--ink);padding:12px 16px;cursor:pointer}button.primary{background:var(--go);color:#182a1d;border-color:var(--go);font-weight:800}button:disabled{opacity:.45;cursor:not-allowed}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.hide{display:none!important}.status{min-height:27px;color:var(--muted);margin-top:12px}.progress{height:8px;border-radius:9px;background:#0c1c14;overflow:hidden;margin:18px 0 6px}.progress i{display:block;height:100%;background:var(--go);width:0;transition:width .2s}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}.card{background:#10271b;border:1px solid var(--line);border-radius:12px;padding:10px 5px;text-align:center}.card .icon{font-size:27px;display:block}.card small{display:block;color:var(--muted);font-size:11px;margin-top:3px}.wanted{margin-top:18px;text-align:center;padding:18px;background:#10271b;border-radius:16px;border:1px solid var(--line)}.wanted .icon{font-size:66px;display:block}.wanted strong{font-size:23px}.tapgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px}.tap{min-height:82px;padding:9px 4px}.tap .icon{font-size:28px;display:block}.tap small{font-size:11px}.log{font:12px/1.45 ui-monospace,monospace;white-space:pre-wrap;color:#b9c9bd;background:#0b1811;border-radius:10px;padding:10px;max-height:170px;overflow:auto;margin-top:12px}.ok{color:#b9f6ca}.warn{color:#ffcf83}.error{color:var(--bad)}@media(max-width:480px){body{padding:11px}.panel{padding:17px}.cards,.tapgrid{grid-template-columns:repeat(2,1fr)}}
-  </style>
+  #devJump{font:inherit;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.25);color:inherit}
+</style>
 </head>
 <body>
 <main>
@@ -31,7 +32,7 @@
     <div id="question" class="wanted hide"><span class="icon" id="wantIcon">🎴</span><strong id="wantLabel">Listen…</strong></div>
     <div id="tapGrid" class="tapgrid hide"></div>
     <div id="storyActions" class="actions"></div>
-    <div class="actions"><button id="pauseBtn" aria-pressed="false">⏸ Pause</button><button id="nextCue" class="hide">Next cue</button></div>
+    <div class="actions"><button id="pauseBtn" aria-pressed="false">⏸ Pause</button><button id="nextCue" class="hide">Next cue</button><select id="devJump" class="hide" aria-label="Jump to scene"></select></div>
     <div id="log" class="log hide"></div>
   </section>
 </main>
@@ -162,7 +163,7 @@ function playOverlayCue(id, volume=.35){
 // fetch and the wake lock before its first play(), by which time the tap was gone and every clip was
 // refused ("could not play"). Play a 50 ms silent clip synchronously inside the tap to unlock audio.
 const SILENT_MP3='data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4Ljc2LjEwMAAAAAAAAAAAAAAA//NwwAAAAAAAAAAAAEluZm8AAAAPAAAABAAAAR8Aubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm50dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0ejo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Oj/////////////////////////////////AAAAAExhdmM1OC4xMwAAAAAAAAAAAAAAACQCcQAAAAAAAAEfOUBsQwAAAAAAAAAAAAAAAAD/8xDEAAAAA0gAAAAATEFNRTMuMTAwVVVVVf/zEsQNAAADSAAAAABVVVVVVVVVVVVVVVVVVf/zEMQbAAADSAAAAABVVVVVVVVVVVVVVVVV//MQxCgAAANIAAAAAFVVVVVVVVVVVVVVVVU=';
-function unlockAudio(){poolInit();log('build ios-standalone-12 · '+navigator.userAgent.slice(0,60));let okc=0,bad=0;poolAll().forEach(el=>{if(!el.paused)return;try{el.src=SILENT_MP3;el.load();el.play().then(()=>{okc++;if(okc+bad===poolAll().length)log(`silent unlock: ${okc} elements authorised`,'ok');}).catch(e=>{bad++;log(`silent unlock refused: ${e&&e.name}`,'error');});}catch(e){bad++;}});if(typeof audioCtx==='function'){const c=audioCtx();log('audio context: '+(c?c.state:'none'));}POOL.unlocked=true;}
+function unlockAudio(){poolInit();log('build ios-standalone-13 · '+navigator.userAgent.slice(0,60));let okc=0,bad=0;poolAll().forEach(el=>{if(!el.paused)return;try{el.src=SILENT_MP3;el.load();el.play().then(()=>{okc++;if(okc+bad===poolAll().length)log(`silent unlock: ${okc} elements authorised`,'ok');}).catch(e=>{bad++;log(`silent unlock refused: ${e&&e.name}`,'error');});}catch(e){bad++;}});if(typeof audioCtx==='function'){const c=audioCtx();log('audio context: '+(c?c.state:'none'));}POOL.unlocked=true;}
 function playOverlayCueAndWait(id, volume=.35){
   const c=cueEntry(id);if(!c.file)return Promise.resolve();
   const effect=takeOverlay(AUDIO_DIR+c.file);setVol(effect,volume);overlays.add(effect);
@@ -286,10 +287,19 @@ async function startDanceTrack(){
   try{await danceAudio.play();return danceAudio;}catch(e){stopDanceTrack();setStatus('Dance music could not play. Please try again.','error');return null;}
 }
 function waitForDanceTime(track,seconds,token){
+  // Resolves true when the music reaches `seconds`. Never hangs: if the track stalls it is nudged
+  // with play() once, and after seconds+6 s of wall-clock (pauses excluded) it gives up and moves on.
   return new Promise(resolve=>{
+    let last=-1,stuckSince=0,elapsed=0,nudged=false;
     const timer=setInterval(()=>{
-      if(token!==epoch||danceAudio!==track||track.error){clearInterval(timer);resolve(false);return;}
-      if(track.ended||track.currentTime>=seconds){clearInterval(timer);resolve(true);}
+      if(gamePaused)return;
+      if(token!==epoch||danceAudio!==track){clearInterval(timer);log(`dance wait stopped: ${token!==epoch?'story moved on':'track replaced'}`,'warn');resolve(false);return;}
+      if(track.error){clearInterval(timer);log(`dance track error ${track.error.code}`,'error');resolve(false);return;}
+      if(track.ended||track.currentTime>=seconds){clearInterval(timer);resolve(true);return;}
+      elapsed+=25;
+      if(track.currentTime!==last){last=track.currentTime;stuckSince=0;}else{stuckSince+=25;}
+      if(stuckSince>=1500&&!nudged){nudged=true;log(`dance track stalled at ${track.currentTime.toFixed(1)} s (paused=${track.paused}, ready=${track.readyState}); nudging`,'warn');track.play().catch(e=>log('nudge refused: '+(e&&e.name),'error'));}
+      if(elapsed>=(seconds+6)*1000){clearInterval(timer);log(`dance wait timed out at ${track.currentTime.toFixed(1)} s; moving on`,'warn');resolve(true);}
     },25);
   });
 }
@@ -339,7 +349,24 @@ loadManifest();
 function begin(modeName){unlockAudio();mode=modeName;loadCards();if(window.StoryIntro){StoryIntro.show({key:STORY_KEY,title:'Jungle Rescue English',minutes:9,cards:CARD_ORDER.map(id=>({icon:CARD_INFO[id].icon,label:CARD_INFO[id].label})),activities:['Pull an imaginary rope','Drink real water during the Water break','Hum along with Coco','Dance and freeze'],onStart:screenOrReaderStart});}else screenOrReaderStart();}
 $('readerMode').onclick=()=>begin('reader');$('screenMode').onclick=()=>begin('screen');
 $('nextCue').onclick=advanceCue;$('pauseBtn').onclick=togglePause;
-if(DEV_MODE)$('nextCue').classList.remove('hide');
+if(DEV_MODE){$('nextCue').classList.remove('hide');$('devJump').classList.remove('hide');}
+// Developer mode: jump straight to a scene. Each entry resets the story state and starts the scene
+// with whatever bed it expects, so a scene can be auditioned without playing everything before it.
+const DEV_JUMPS=[
+ ['Intro / fuel',()=>startStory()],
+ ['Elephant rescue',()=>elephantScene()],
+ ['Rope done → biscuits',()=>{bite=0;setProgress(2);playBedFile(AUDIO_DIR+cueEntry('JR_001').file,.25);ropeSuccess();}],
+ ['Parrot / first aid',()=>{playBedFile(AUDIO_DIR+cueEntry('JR_001').file,.25);firstAidScene();}],
+ ['Water break',()=>{setProgress(4);waterBreak();}],
+ ['Lion: jeep arrives',()=>{setProgress(5);lionScene();}],
+ ['Lion: flashlight found',()=>{playBedFile(AUDIO_DIR+cueEntry('JR_103_bed').file,cueEntry('JR_103_bed').volume);flashlightSuccess();}],
+ ['Lion: blanket found (lori)',()=>{playBedFile(AUDIO_DIR+cueEntry('JR_129_bed').file,cueEntry('JR_129_bed').volume);blanketSuccess();}],
+ ['Celebration',()=>musicScene()],
+ ['Dance party',()=>musicSuccess()],
+];
+function devJump(i){const j=DEV_JUMPS[i];if(!j)return;invalidate();stopBed();stopDanceTrack();fuelGagOpen=false;if(gamePaused)resumeGame();hideQuestion();unlockAudio();state='narrative';setStatus('Jumped to: '+j[0]);log('dev jump → '+j[0]);j[1]();}
+$('devJump').innerHTML='<option value="">Jump to scene…</option>'+DEV_JUMPS.map((j,i)=>`<option value="${i}">${j[0]}</option>`).join('');
+$('devJump').onchange=e=>{const v=e.target.value;e.target.value='';if(v!=='')devJump(+v);};
 </script>
 </body>
 </html>
