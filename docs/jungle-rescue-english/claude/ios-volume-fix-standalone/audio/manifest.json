@@ -1695,9 +1695,7 @@
   "JR_103": {
     "type": "split_sfx",
     "review_status": "test",
-    "entry_file": "lion-rescue-test/JR_103_entry.mp3",
     "bed_file": "lion-rescue-test/JR_103_bed.mp3",
-    "entry_duration_seconds": 3.03,
     "bed_duration_seconds": 42.031,
     "bed_loop": true,
     "jeep_file": "lion-rescue-test/JR_103_jeep.mp3",
@@ -1709,12 +1707,14 @@
       "brake_engine_off"
     ],
     "jeep_selection": "D — approved by user",
-    "bed_volume": 0.26
+    "bed_volume": 0.26,
+    "note": "entry_file (wind-and-rain arrival) retired 2026-09-26: the weather bed it led into was replaced by the night-jungle bed, so the rain onset had nothing to continue and read as a stray hiss. Jeep now runs straight into the bed."
   },
   "JR_103_entry": {
     "file": "lion-rescue-test/JR_103_entry.mp3",
     "type": "sfx",
-    "source_split_cue": "JR_103"
+    "source_split_cue": "JR_103",
+    "review_status": "retired"
   },
   "JR_103_bed": {
     "file": "lion-rescue-test/JR_103_bed.mp3",
