@@ -113,12 +113,17 @@ def parse_header(story, line_no, line):
     key, val = key.strip().lower(), val.strip()
     if key.startswith('card '):
         cid = key[5:].strip().upper()
+        say = None
+        m = re.search(r'\ssay=(\S+)\s*$', ' ' + val)
+        if m:
+            say = [w.strip() for w in m.group(1).split('|') if w.strip()]
+            val = (' ' + val)[:m.start()].strip()
         reg = None
         if '=' in val:
             val, reg = [s.strip() for s in val.split('=', 1)]
         parts = val.split(None, 1)
         icon, label = (parts[0], parts[1]) if len(parts) == 2 else ('🎴', parts[0])
-        story.cards.append({'id': cid, 'icon': icon, 'label': label, 'registry': (reg or cid).upper()})
+        story.cards.append({'id': cid, 'icon': icon, 'label': label, 'registry': (reg or cid).upper(), 'say': say or [label]})
     elif key == 'activities':
         story.meta['activities'] = [s.strip() for s in val.split('|') if s.strip()]
     elif key == 'hints at':
@@ -527,6 +532,20 @@ def lint(story, errors):
                                   f'(STORY_CRAFT §2: name the card, name the child, say what changed)')
         if not b['hints'] and not b['remind']:
             story.warnings.append(f'line {b["line"]}: ask {b["card"]} has no hints (the 8/17/28 s ladder has nothing to say)')
+    # the child's own word for a card (card X: … say=word|word): in the last hint and in the praise
+    says = {c['id']: [w.lower() for w in c.get('say', [])] for c in story.cards}
+    def said(text, words): return any(w in (text or '').lower() for w in words)
+    for j, b in enumerate(timeline):
+        if b.get('op') != 'ask' or not says.get(b['card']): continue
+        words = says[b['card']]
+        asked = [x for x in ([b['prompt']] if b['prompt'] else []) + b['hints']]
+        if asked and not said(asked[-1].get('text'), words):
+            story.warnings.append(f'line {asked[-1]["line"]}: the last hint for {b["card"]} never says the child\'s word ({" / ".join(words)}) — STORY_CRAFT: name the card in the child\'s own word')
+        if b['hints'] and not said(b['hints'][-1].get('text'), words) and asked[-1] is not b['hints'][-1]:
+            pass
+        after = [x for x in timeline[j + 1:j + 4] if x.get('op') in ('say', 'duck')]
+        if b['prompt'] and after and not any(said(x.get('text'), words) for x in after):   # a prompt-less re-ask (biscuit bites) is exempt
+            story.warnings.append(f'line {b["line"]}: the praise after {b["card"]} never says the child\'s word ({" / ".join(words)}) — "YES! <word>!"')
     every = []
     walk([b for s in story.scenes for b in s['beats']], lambda b: every.append(b))
     for b in every:

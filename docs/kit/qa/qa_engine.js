@@ -73,7 +73,7 @@ const scan = async (page, uid) => { await page.keyboard.type(uid); await page.ke
   const before = (await plays(page)).length;
   await page.waitForTimeout(17000);
   const after = (await plays(page)).slice(before);
-  ok(after.join(',') === 'JR_011.mp3,JR_012.mp3,JR_013.mp3', 'three hints, in order, at the variant\'s times: ' + after.join(' '));
+  ok(after.join(',').replace(/b\.mp3/g, '.mp3') === 'JR_011.mp3,JR_012.mp3,JR_013.mp3', 'three hints, in order, at the variant\'s times: ' + after.join(' '));
   ok((await st(page)).hintIndex === 3, 'hint index 3');
   const w0 = (await plays(page)).length;
   await scan(page, '2690428'); await page.waitForTimeout(1200);   // WATER: wrong
@@ -127,8 +127,8 @@ const scan = async (page, uid) => { await page.keyboard.type(uid); await page.ke
   ok((await st(page)).earlyScan === 'FUEL', 'and is remembered');
   await waitState(page, "s => s.progressDone === 1", 20000);
   const e2 = await plays(page);
-  ok(!e2.includes('JR_010.mp3'), 'when the FUEL question arms it is answered at once — the prompt never plays');
-  ok(e2.includes('JR_015.mp3') || (await st(page)).state !== 'question', 'praise follows as usual');
+  ok(!e2.includes('JR_010.mp3') && !e2.includes('JR_010b.mp3'), 'when the FUEL question arms it is answered at once — the prompt never plays');
+  ok(e2.includes('JR_015.mp3') || e2.includes('JR_015b.mp3') || (await st(page)).state !== 'question', 'praise follows as usual');
   // a wrong early tap: WATER during the fuel-success narration
   await scan(page, '2690428'); await page.waitForTimeout(200);
   ok((await st(page)).earlyScan === 'WATER', 'a wrong early tap is remembered too, silently');

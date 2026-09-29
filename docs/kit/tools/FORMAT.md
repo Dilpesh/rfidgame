@@ -22,10 +22,18 @@ hints at: 8s 17s 28s                  # the hint ladder, measured from the end o
 voices: COCO=Saanu, NARRATOR=Jia      # for the audio producer; ids live in tts/config.json
 activities: Pull an imaginary rope | Drink real water | Dance and freeze
 
-card FUEL: ⛽ Fuel
-card BISCUIT: 🍪 Biscuit = SNACK      # "= SNACK": its name in cards.json when different
-card FLASHLIGHT: 🔦 Flashlight = TORCH
+card FUEL: ⛽ पेट्रोल say=पेट्रोल
+card BISCUIT: 🍪 Biscuit = SNACK say=biscuit     # "= SNACK": its name in cards.json when different
+card FLASHLIGHT: 🔦 टॉर्च = TORCH say=टॉर्च
 ```
+
+`say=` is the child's own word for the card — what the kids call it when you
+hold it up ("ये क्या है?"). Several are allowed with `|`. The compiler warns when
+an ask's last hint or the praise after it never says that word. If the concept
+behind a card is not something the child has physically done (petrol going into
+a car), teach it in one sentence *before* asking, and describe the picture on
+the card in the last hint ("लाल pump, pipe लगा है") — a machine can't check
+that part; read it.
 
 Card lines are in **progress-bar order**. Every card must exist in `cards.json`
 — by its own name, by the `= NAME` you give, or as that game's alias there.

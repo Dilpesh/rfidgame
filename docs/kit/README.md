@@ -108,6 +108,24 @@ run `compile.py … --suggest`, and only what has no match goes to ElevenLabs.
 prints the clips in order plus anything the engine logged as missing — run it
 on every new story and every variant before the phone.
 
+## The under-5 review, applied (29 Sep)
+
+The review in the project (`claude/under5-review-jungle-rescue-english.md`) is
+in the script: the cards are asked for in the child's own words (पेट्रोल, रस्सी,
+दवाई का डब्बा, टॉर्च, music/गाना — `say=` on each card line, which the compiler
+now checks in the last hint and the praise); the fuel scene teaches before it
+asks and the last hint describes the picture; the parrot scene says पंख and
+प्यास; the lion scene asks for the torch right after the lion speaks, with a
+physical tail joke (Coco grabs the tail in the dark) instead of the misheard
+one; "overflow" is "छलक जाएगा". 25 lines re-said under new ids (`JR_010b`…),
+the old clips untouched in the folder. `generate.py jungle-rescue-english`
+makes them.
+
+`qa_parity.js` now builds its reference from `qa/parity_script.txt` — the kit
+script as first committed, before the review — into `games/_parity/` (ignored
+by git), so the cue-for-cue proof against the original stays alive while the
+real script moves on.
+
 ## The child's name
 
 Story lines say "Captain" and are recorded once; the child's name comes in

@@ -1,10 +1,7 @@
 # Jungle Rescue English — ported cue for cue from
 # docs/jungle-rescue-english/claude/ios-volume-fix-standalone/index.html (build ios-standalone-13).
 # Every story line is pinned to its existing JR_ clip. 29 Sep: name lines added (see the block
-# below); the under-5 review applied — the child's own words for the cards (पेट्रोल, रस्सी, दवाई का
-# डब्बा, टॉर्च), the fuel scene teaches before it asks, the parrot scene says पंख / प्यास, the lion
-# scene asks for the torch sooner with a physical tail joke, and the two gendered lines are neutral.
-# A changed line gets a "b" id (JR_010b); the old clip stays in audio/ and in the manifest, retired.
+# below), JR_003 → JR_003b and JR_143 → JR_143b re-said gender-neutral; the old clips stay in audio/.
 # Format: docs/kit/tools/FORMAT.md
 
 title: Jungle Rescue English
@@ -12,20 +9,20 @@ key: jungle-rescue-english
 language: hi
 minutes: 9
 audio: audio/
-cache: jr-final-6
+cache: jr-final-5
 hints at: 8s 17s 28s
 tap sound: @lib:tap             # a soft tick when a card is tapped while Coco is still talking
 voices: COCO=Saanu, NARRATOR=Jia, ELEPHANT=Vardan, PARROT=Munni, LION=Bholu
 activities: Pull an imaginary rope | Drink real water during the Water break | Hum along with Coco | Dance and freeze
 
-card FUEL: ⛽ पेट्रोल say=पेट्रोल
-card ROPE: 🪢 रस्सी say=रस्सी
-card BISCUIT: 🍪 Biscuit = SNACK say=biscuit
-card FIRST_AID: 🩹 दवाई का डब्बा = FIRSTAID say=दवाई|डब्बा
-card WATER: 💧 Water say=water|पानी
-card FLASHLIGHT: 🔦 टॉर्च = TORCH say=टॉर्च
-card BLANKET: 🧣 Blanket say=blanket|कंबल
-card MUSIC: 🎵 Music say=music|गाना
+card FUEL: ⛽ Fuel
+card ROPE: 🪢 Rope
+card BISCUIT: 🍪 Biscuit = SNACK
+card FIRST_AID: 🩹 First aid
+card WATER: 💧 Water
+card FLASHLIGHT: 🔦 Flashlight = TORCH
+card BLANKET: 🧣 Blanket
+card MUSIC: 🎵 Music
 
 
 # ---- name lines (tools/FORMAT.md, "The name rules"): short, independent, recorded once with
@@ -49,21 +46,21 @@ COCO [warm storytelling] @JR_005: जल्दी चलो, हमारी ज
 sfx jeep_door @JR_006
 NARRATOR [warm and brisk] @JR_007: कोको जीप में बैठा, स्टीयरिंग पकड़ी, चाबी घुमाई।
 sfx key_turn_engine_cough @JR_008
-COCO [surprised, then explaining warmly] @JR_009b: ओह, ये स्टार्ट क्यों नहीं हो रही? हम्म… Jeep का पेट खाली है! गाड़ी को पेट्रोल पीना पड़ता है — जैसे बच्चों को दूध।
+COCO [surprised and amused] @JR_009: ओह, ये स्टार्ट क्यों नहीं हो रही है? हम्म, जीप की टंकी खाली है।
 ask FUEL
-  prompt COCO [inviting, clear] @JR_010b: Captain, अपने cards में पेट्रोल ढूँढो — Jeep को पिलाना है!
-  hint COCO [kind and clear] @JR_011b: Jeep भूखी है… cards में पेट्रोल दिख रहा है?
-  hint COCO [kind and clear] @JR_012b: लाल रंग का पेट्रोल pump — जिसमें एक pipe लगा है।
-  hint COCO [kind and clear] @JR_013b: पेट्रोल वाला card scan करो — लाल pump वाला।
+  prompt COCO [curious and clear] @JR_010: Captain, टंकी खाली है! इसमें क्या डालें कि जीप चल पड़े?
+  hint COCO [kind and clear] @JR_011: अपने सामने वाले cards को देखो... इनमें Jeep को चलाने वाली कोई चीज़ है क्या?
+  hint COCO [kind and clear] @JR_012: जिससे गाड़ी की tank भरती है, वही card ढूँढो.
+  hint COCO [kind and clear] @JR_013: FUEL वाला card scan करो.
 sfx ting @JR_014
-COCO [excited] @JR_015b #praise: YES! पेट्रोल! Jeep का पेट भर गया!
+COCO [excited] @JR_015 #praise: YES! FUEL! टंकी भर गई!
 use praise
 sfx fuel_pour @JR_016
 sfx engine_start @JR_017
 COCO [energetic rallying call] @JR_018: जंगल रेस्क्यू टीम चलो!
 tap window 2s FUEL:
   sfx overflow_bloop @JR_019 #joke
-  COCO [comic surprise and affection] @JR_020b #joke: ओहो! बस करो, Captain! पेट्रोल छलक जाएगा!
+  COCO [comic surprise and affection] @JR_020 #joke: ओहो! बस करो, Captain! Fuel तो overflow हो जाएगा!
 
 
 == scene: Elephant rescue
@@ -89,13 +86,13 @@ ask ROPE
   prompt COCO [clear and warm] @JR_036: Captain, हमें कोई लंबी चीज़ चाहिए जिससे एलिफेंट दादा को अपनी तरफ खींच सकें। क्या हमारे पास ऐसी कोई चीज़ है?
   hint COCO [clear and warm] @JR_037: अपने cards को देखो... कोई लंबी चीज़ दिख रही है जिससे हम खींच सकें?
   hint COCO [clear and warm] @JR_038: इसे पकड़कर किसी चीज़ को अपनी तरफ खींचा जा सकता है.
-  hint COCO [clear and warm] @JR_039b: रस्सी वाला card scan करो.
+  hint COCO [clear and warm] @JR_039: ROPE वाला card scan करो.
 
 
 == scene: Rope done → biscuits
 on jump: bed @JR_001 @0.25
 sfx ting @JR_040
-COCO [bright and encouraging] @JR_041b #praise: YES! रस्सी मिल गई! अब एलिफेंट दादा को बाहर निकालने में कोको की मदद करो।
+COCO [bright and encouraging] @JR_041 #praise: YES! ROPE! रस्सी मिल गई। अब एलिफेंट दादा को बाहर निकालने में कोको की मदद करो।
 use praise
 COCO [playful and encouraging] @JR_042 #action: Captain, बैठे-बैठे रस्सी खींचने का नाटक करो। Pull!
 sfx rope_creak @JR_043 hold 2s
@@ -155,26 +152,26 @@ COCO [bright transition] @JR_073: एलिफेंट दादा safe! Jungl
 sfx parrot_flutter_fall @JR_074
 PARROT [briefly hurt, gentle and childlike] @JR_075: आह! ओह! मेरा wing hurt हो गया!
 sfx small_thud @JR_076
-COCO [concerned and gentle] @JR_077b: अरे पैरट जी! आपका एक पंख हिल रहा है, दूसरा आराम कर रहा है।
+COCO [concerned and gentle] @JR_077: अरे पैरट जी! आपका एक wing flap कर रहा है, दूसरा आराम कर रहा है।
 COCO [warm and reassuring] @JR_078: चिंता मत करो, पैरट जी! Captain और मैं आपकी मदद करेंगे।
 ask FIRST_AID
-  prompt COCO [caring, clear] @JR_079b: पैरट जी को चोट लगी है — हमें पट्टी और दवाई चाहिए! Captain, cards में दवाई का डब्बा ढूँढो!
-  hint COCO [clear and warm] @JR_080b: अपने cards को देखो… दवाई का डब्बा दिख रहा है?
-  hint COCO [clear and warm] @JR_081b: सफ़ेद डब्बा, जिस पर लाल plus बना है — उसमें पट्टी और दवाई रहती है।
-  hint COCO [clear and warm] @JR_082b: दवाई वाले डब्बे का card scan करो — लाल plus वाला।
+  prompt COCO [curious, clear card invitation] @JR_079: चोट लगने पर हमें ऐसी चीज़ चाहिए जिसमें bandage और medicine जैसी चीज़ें होती हैं। Captain, क्या हमारे पास कुछ ऐसा है?
+  hint COCO [clear and warm] @JR_080: अपने cards को देखो... चोट लगने पर काम आने वाली चीज़ ढूँढो.
+  hint COCO [clear and warm] @JR_081: इसमें bandage जैसी चीज़ें रखी होती हैं.
+  hint COCO [clear and warm] @JR_082: FIRST AID वाला card scan करो.
 sfx ting @JR_083
-COCO [happy, clear, unhurried] @JR_084b #praise: YES! दवाई का डब्बा! पट्टी और दवाई मिल गई।
+COCO [happy, clear, unhurried] @JR_084 #praise: YES! FIRST AID! पट्टी और medicine मिल गई।
 use praise
 wait 250ms
 sfx bandage_wrap @JR_085
-COCO [gentle relief] @JR_086b: पैरट का पंख अब ठीक है। पट्टी लग गई!
+COCO [gentle relief] @JR_086: पैरट का wing अब safe है। पट्टी लग गई!
 sfx feather_rustle @JR_087
-PARROT [hopeful and tentative] @JR_088b: Thank you, Captain! अब मैं पंख हिला कर देखूँ?
+PARROT [hopeful and tentative] @JR_088: Thank you, Captain! अब मैं wing हिला कर देखूँ?
 COCO [encouraging, rhythmic] @JR_089 #action: हाँ! धीरे-धीरे—एक, दो, flap!
 sfx wing_flap @JR_090
 sfx wing_flap @JR_090
-PARROT [delighted, bright] @JR_091b: फड़फड़! अब मेरा पंख चल रहा है!
-PARROT [tired and thirsty, not distressed] @JR_093b: लेकिन मुझे बहुत प्यास लगी है। मुझे पानी चाहिए।
+PARROT [delighted, bright] @JR_091: फड़फड़! अब मेरा wing चल रहा है!
+PARROT [tired and thirsty, not distressed] @JR_093: लेकिन मेरी चोंच सूख गई है। मुझे पानी चाहिए।
 
 
 == scene: Water break
@@ -205,15 +202,15 @@ LION [small and embarrassed] @JR_108: ह-हेलो? कोई है वह�
 sfx lion_roar_small @JR_106_lion
 COCO [surprised] @JR_109: अरे! यह तो Lion King की आवाज़ है! आप rock के पीछे क्या कर रहे हैं?
 LION [worried but gentle] @JR_110: कोको... मैं यहाँ रास्ता भूल गया हूँ। और यहाँ इतना अंधेरा है कि मुझे अपनी पूँछ भी दिखाई नहीं दे रही!
-group #joke:
-  COCO [confident, reaching out in the dark] @JR_111b: फ़िक्र मत करो, Lion King! मैं आपका हाथ पकड़ता हूँ… ये लो!
-  LION [surprised yelp, funny not scared] @JR_112b: आऊच! वो मेरा हाथ नहीं — मेरी पूँछ है!
-  COCO [embarrassed laugh] @JR_113b: ओह! अंधेरे में हाथ और पूँछ एक जैसे लगते हैं!
+COCO [confident, then uncertain] @JR_111 #joke: फ़िक्र मत करो! मैं ढूँढता हूँ आपकी पूँछ।
+sfx lion_roar_small @JR_106_lion
+COCO [nervous, trying to sound brave] @JR_113 #joke: मेरा मतलब... मैं कुछ करता हूँ... ओह!
+sfx bonk @JR_114
 ask FLASHLIGHT
   prompt COCO [rubbing head, urgent but playful] @JR_115: अरे! इतना अंधेरा है कि मेरी नाक भी नहीं दिख रही! Captain, हमें तुरंत रोशनी चाहिए, वरना हम सब टकरा जाएँगे!
   hint COCO [clear and warm] @JR_116: अपने cards में देखो... कोई ऐसी चीज़ है जो अंधेरे में तेज़ रोशनी दे सके?
   hint COCO [clear and warm] @JR_117: इसे ON करते ही अंधेरे में रास्ता साफ़ दिखने लगता है।
-  hint COCO [clear and warm] @JR_118b: टॉर्च वाला card scan करो!
+  hint COCO [clear and warm] @JR_118: FLASHLIGHT वाला card scan करो!
 
 
 == scene: Lion: flashlight found
@@ -222,7 +219,7 @@ together:
   sfx torch_click @JR_120 @0.85
   sfx ting @JR_119 @0.25
 wait 150ms
-COCO [relieved and bright] @JR_121b #praise: YES! टॉर्च! रोशनी हो गई!
+COCO [relieved and bright] @JR_121 #praise: YES! FLASHLIGHT!
 use praise
 sfx light_sweep @JR_122
 COCO [surprised and relieved] @JR_123 #joke: वाह! रोशनी होते ही सब दिखने लगा! ...और rock के ऊपर वो उल्लू भी!
@@ -268,7 +265,7 @@ COCO [proud, delighted] @JR_152: Captain, हमने दोस्तों क
 sfx clap @JR_152_clap @0.72
 sfx party_whistle @JR_153
 ask MUSIC
-  prompt COCO [eager, playful] @JR_154b: मेरे पैर तो नाचने लगे! पर गाना कहाँ है? Captain, नाचने के लिए कोई music बजाओ!
+  prompt COCO [eager, playful] @JR_154: मेरे पैर तो नाचने लगे! पर धुन कहाँ है? Captain, नाचने के लिए क्या बजाएँ?
   hint COCO [gently encouraging] @JR_155: पार्टी में नाचने के लिए धुन चाहिए।
   hint COCO [playful, helpful] @JR_156: गाना बजाने वाला card ढूँढो।
   hint COCO [clear, kind] @JR_157: MUSIC वाला card tap करो।

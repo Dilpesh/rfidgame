@@ -13,11 +13,24 @@
 // takes ~3 minutes instead of 9 and works without the real 90 MB of audio.
 const { chromium } = require('playwright');
 const http = require('http'), fs = require('fs'), path = require('path');
+const { execSync } = require('child_process');
 
 const ROOT = process.env.DOCS || path.resolve(__dirname, '..', '..');
 const PORT = 8765;
 const ORIGINAL = `/jungle-rescue-english/claude/ios-volume-fix-standalone/index.html`;
-const KIT = `/kit/games/jungle-rescue-english/index.html?v=classic`;   // the story without the 29 Sep name lines
+// The reference is the kit script as first committed (6da174a), frozen in qa/parity_script.txt:
+// the original story cue for cue plus the name lines, which ?v=classic switches off. Later wording
+// changes (the under-5 review) are deliberate departures, so the reference is built fresh into
+// games/_parity/ from that frozen script, using the same audio folder (old clips are never deleted).
+const KIT = `/kit/games/_parity/index.html?v=classic`;
+function buildReference() {
+  const kit = path.resolve(__dirname, '..');
+  const dir = path.join(kit, 'stories', '_parity'); fs.mkdirSync(path.join(dir, 'variants'), { recursive: true });
+  let script = fs.readFileSync(path.join(__dirname, 'parity_script.txt'), 'utf8').replace(/^audio: .*$/m, 'audio: ../jungle-rescue-english/audio/');
+  fs.writeFileSync(path.join(dir, 'story.txt'), script);
+  fs.copyFileSync(path.join(kit, 'stories', 'jungle-rescue-english', 'variants', 'classic.txt'), path.join(dir, 'variants', 'classic.txt'));
+  execSync(`python3 "${path.join(kit, 'tools', 'build.py')}" _parity`, { stdio: 'inherit' });
+}
 const UIDS = { FUEL: ['6359145'], ROPE: ['6374623'], BISCUIT: ['6373651', '5720648'], FIRST_AID: ['6374815'],
   WATER: ['2690428', '2682976'], FLASHLIGHT: ['2692483', '6375577'], BLANKET: ['6375388'], MUSIC: ['6360574'] };
 
@@ -88,6 +101,7 @@ async function drive(page, url, getState, label) {
 }
 
 (async () => {
+  buildReference();
   const server = serve();
   const browser = await chromium.launch({ args: ['--autoplay-policy=no-user-gesture-required'] });
   const ctx = await browser.newContext();
