@@ -1,0 +1,31 @@
+{
+  "_comment": "Words a 3–5 year old in Hindi/Hinglish is unlikely to have (or that name an adult idea). The compiler warns when a line spoken TO the child uses one. Add to it as the kids teach you; 'why' is for the writer, 'use' is the suggestion. Matching is whole-word, case-insensitive, on the line text.",
+  "avoid": {
+    "overflow":   { "use": "छलक जाएगा / बाहर गिर जाएगा", "why": "not a picture; a spilling glass is" },
+    "tank":       { "use": "पेट (Jeep का पेट)", "why": "invisible part of a car" },
+    "टंकी":       { "use": "पेट", "why": "same as tank" },
+    "fuel":       { "use": "पेट्रोल", "why": "the card says पेट्रोल; nobody says fuel to a child" },
+    "flashlight": { "use": "टॉर्च", "why": "American; kids and the card say टॉर्च" },
+    "first aid":  { "use": "दवाई का डब्बा", "why": "a phrase, not a thing" },
+    "bandage":    { "use": "पट्टी", "why": "English medical word" },
+    "medicine":   { "use": "दवाई", "why": "English medical word" },
+    "wing":       { "use": "पंख", "why": "English; पंख is the child's word" },
+    "चोंच":       { "use": "मुँह", "why": "rare word; 'मुँह सूख गया' or 'प्यास लगी' is lived" },
+    "धुन":        { "use": "गाना / music", "why": "literary" },
+    "mission":    { "use": "काम / मदद", "why": "adult word (tolerated once, in the water break)" },
+    "guard":      { "use": "देखभाल / रखवाली", "why": "adult word" },
+    "fair point": { "use": "(cut)", "why": "an adult concession — STORY_CRAFT cut-on-sight" },
+    "obviously":  { "use": "(cut)", "why": "adult register" },
+    "actually":   { "use": "(cut)", "why": "adult register" }
+  },
+  "idioms": {
+    "बत्ती गुल":  "an idiom — keep only while the kids react to it",
+    "ये कौन करता है": "Coco's signature line — fine, it is a running sound not an idea"
+  },
+  "limits": {
+    "words_per_line": 25,
+    "words_per_prompt": 20,
+    "listening_seconds_before_ask": 60,
+    "something_lands_every_seconds": 30
+  }
+}

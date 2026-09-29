@@ -86,6 +86,7 @@ class Story:
         self.clips = {}          # cue id -> {speaker,text,emotion,kind,scene}
         self.auto_n = 0
         self.warnings = []
+        self.notes = []
 
     def new_id(self, scene_i, kind):
         self.auto_n += 1
@@ -386,6 +387,90 @@ def load_library():
     return d.get('clips', d)
 
 
+def load_under5():
+    p = os.path.join(KIT, 'library', 'under5-words.json')
+    return json.load(open(p, encoding='utf-8')) if os.path.exists(p) else {'avoid': {}, 'idioms': {}, 'limits': {}}
+
+
+def lint_under5(story, durations):
+    """What a machine can check of the under-5 review (library/under5-words.json):
+       words the child won't have; line and prompt length; the first ask names its card in
+       the prompt; no more than 60 s of listening before an ask; something lands every 30 s."""
+    rules = load_under5(); warn = story.warnings.append
+    lim = {'words_per_line': 25, 'words_per_prompt': 20, 'listening_seconds_before_ask': 60, 'something_lands_every_seconds': 30}
+    lim.update(rules.get('limits', {}))
+    avoid = {k.lower(): v for k, v in rules.get('avoid', {}).items()}
+    idioms = rules.get('idioms', {})
+    to_child = ('COCO', 'NARRATOR')
+    every = []
+    walk([b for s in story.scenes for b in s['beats']], lambda b: every.append(b))
+    for v in story.wrong: every.extend(v)
+    seen_idiom = set()
+    for b in every:
+        if b.get('op') not in ('say', 'duck') or b.get('speaker') not in to_child: continue
+        text = b.get('text', ''); low = ' ' + text.lower() + ' '
+        for w, info in avoid.items():
+            if re.search(r'(?<![\w\u0900-\u097F])' + re.escape(w) + r'(?![\w\u0900-\u097F])', low):
+                warn(f'line {b["line"]}: "{w}" — {info.get("why", "")}; use {info.get("use", "?")} (under-5 words)')
+        for idiom, note in idioms.items():
+            if idiom in text and idiom not in seen_idiom:
+                seen_idiom.add(idiom); story.notes.append(f'line {b["line"]}: "{idiom}" — {note}')
+        words = [w for w in text.split() if re.search(r'[\w\u0900-\u097F]', w)]
+        if len(words) > lim['words_per_line']:
+            warn(f'line {b["line"]}: {len(words)} words in one line to the child (limit {lim["words_per_line"]}) — split it or cut')
+    # prompts: length, and the very first ask must name its card
+    first_ask = True
+    for b in every:
+        if b.get('op') != 'ask': continue
+        if b['prompt']:
+            words = [w for w in b['prompt'].get('text', '').split() if re.search(r'[\w\u0900-\u097F]', w)]
+            if len(words) > lim['words_per_prompt']:
+                warn(f'line {b["prompt"]["line"]}: the {b["card"]} prompt is {len(words)} words (limit {lim["words_per_prompt"]}) — under-5s answer short questions')
+            if first_ask:
+                says = next((c.get('say', []) for c in story.cards if c['id'] == b['card']), [])
+                if says and not any(w.lower() in b['prompt'].get('text', '').lower() for w in says):
+                    warn(f'line {b["prompt"]["line"]}: the first ask of the story ({b["card"]}) does not name the card ({" / ".join(says)}) — the child has won nothing yet; make it recognition, not a riddle')
+        first_ask = False
+    # the clock: listening before an ask, and something landing every 30 s
+    def dur(cue, text=''):
+        d = durations.get(cue)
+        return float(d) if d else speech_seconds(text or '')
+    t = [0.0]; last_ask_end = [0.0]; last_land = [0.0]; m0 = [0.0]
+    def land(reason, line):
+        last_land[0] = t[0]
+    def run(beats):
+        for b in beats:
+            op = b['op']
+            if op in ('say', 'duck', 'play'):
+                if set(b.get('tags') or []) & {'praise', 'joke', 'action', 'name'}: land(op, b.get('line'))
+                t[0] += dur(b['cue'], b.get('text', ''))
+                if b.get('hold'): t[0] += max(0, b['hold'] / 1000 - dur(b['cue'], b.get('text', '')))
+            elif op == 'sfx':
+                land('sfx', b.get('line'))
+                if b.get('wait', True): t[0] += dur(b['cue'], '') if b['cue'] in durations else 1.0
+            elif op == 'wait': t[0] += b['ms'] / 1000
+            elif op == 'music':
+                if 'at' in b: t[0] = max(t[0], m0[0] + b['at'])
+                elif b.get('cue'): m0[0] = t[0]; land('music', b.get('line'))
+            elif op == 'together': t[0] += 1.0; land('sfx', b.get('line'))
+            elif op in ('group', 'shuffle'): run(b['beats'])
+            elif op == 'oneof':
+                if b['beats']: run(b['beats'][:1])
+            elif op == 'tapwindow': t[0] += b['ms'] / 1000
+            elif op == 'ask':
+                listening = t[0] - last_ask_end[0]
+                if listening > lim['listening_seconds_before_ask']:
+                    warn(f'line {b["line"]}: about {int(listening)} s of listening before the {b["card"]} ask (limit {lim["listening_seconds_before_ask"]}) — move the ask earlier or cut')
+                if t[0] - last_land[0] > lim['something_lands_every_seconds']:
+                    warn(f'line {b["line"]}: {int(t[0] - last_land[0])} s with nothing landing (no joke, effect, praise or action) before the {b["card"]} ask (DECISIONS 23)')
+                if b['prompt']: run([b['prompt']])
+                t[0] += 3.0; land('ask', b.get('line')); last_ask_end[0] = t[0]
+            if op in ('say', 'duck', 'play', 'wait', 'music', 'tapwindow') and t[0] - last_land[0] > lim['something_lands_every_seconds']:
+                warn(f'line {b.get("line")}: {int(t[0] - last_land[0])} s with nothing landing — a joke, an effect, praise or an action every {lim["something_lands_every_seconds"]} s (DECISIONS 23)')
+                last_land[0] = t[0]
+    for sc in story.scenes: run(sc['beats'])
+
+
 def load_registry():
     p = os.path.join(REPO, 'cards.json')
     if not os.path.exists(p):
@@ -592,6 +677,7 @@ def compile_story(path, variants_dir=None, durations=None):
     for lid, l in story.library.items():
         if l.get('duration_seconds') and f'lib:{lid}' not in durs: durs[f'lib:{lid}'] = l['duration_seconds']
     lint_names(story, durs)
+    lint_under5(story, durs)
 
     variants_dir = variants_dir or os.path.join(os.path.dirname(os.path.abspath(path)), 'variants')
     if os.path.isdir(variants_dir):
@@ -622,6 +708,7 @@ def compile_story(path, variants_dir=None, durations=None):
         'tapSound': story.meta.get('tapSound'),
         'libraryDir': story.meta.get('library', '../../library/'),
     }
+    out['_notes'] = story.notes
     return out, errors, story.warnings
 
 

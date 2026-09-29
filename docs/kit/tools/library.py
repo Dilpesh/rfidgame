@@ -53,7 +53,18 @@ def duration_of(path):
                              capture_output=True, text=True, check=True).stdout.strip()
         return round(float(out), 3)
     except Exception:
+        pass
+    try:                                   # no ffprobe: ffmpeg (or the imageio wheel) can tell us too
+        import shutil, re as _re
+        ff = os.environ.get('FFMPEG') or shutil.which('ffmpeg')
+        if not ff:
+            import imageio_ffmpeg; ff = imageio_ffmpeg.get_ffmpeg_exe()
+        r = subprocess.run([ff, '-hide_banner', '-i', path, '-f', 'null', '-'], capture_output=True, text=True)
+        m = _re.search(r'Duration:\s+(\d+):(\d+):([\d.]+)', r.stderr)
+        if m: h, mi, s = m.groups(); return round(int(h) * 3600 + int(mi) * 60 + float(s), 3)
+    except Exception:
         return None
+    return None
 
 
 def check_id(lib, cid):

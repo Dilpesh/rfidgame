@@ -61,7 +61,14 @@ def slugify(name):
 
 
 def ffmpeg():
-    return os.environ.get('FFMPEG') or shutil.which('ffmpeg') or sys.exit('✗ ffmpeg not found')
+    """ffmpeg from PATH, $FFMPEG, or the imageio-ffmpeg wheel (pip3 install imageio-ffmpeg)."""
+    p = os.environ.get('FFMPEG') or shutil.which('ffmpeg')
+    if p: return p
+    try:
+        import imageio_ffmpeg
+        return imageio_ffmpeg.get_ffmpeg_exe()
+    except Exception:
+        sys.exit('✗ ffmpeg not found — brew install ffmpeg, or pip3 install imageio-ffmpeg')
 
 
 def measure(path):

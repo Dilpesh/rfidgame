@@ -8,7 +8,7 @@ touched by anything here; the only thing the kit reads from outside itself is
 docs/kit/
   engine/      kahani.js + kahani.css — the story-free player; its own copies of
                scan-guard.js, reader-check.js, story-intro.js, card-registry.js
-  tools/       build.py, compile.py, library.py, names.py, generate.py, FORMAT.md (the writing manual)
+  tools/       build.py, compile.py, check.py, library.py, names.py, generate.py, FORMAT.md, UNDER5_REVIEW.md
   library/     shared sounds and lines + manifest.json with searchable descriptions
   stories/     one folder per story: story.txt, variants/*.txt (+ story.json, clips.json after a build)
   games/       built output, one folder per story: index.html, story.json, audio/
@@ -143,6 +143,29 @@ them, which is what `qa_parity.js` now compares against the original.
 `tools/generate.py <slug>` is the ElevenLabs step for any other line a story
 still needs; `library/voices.json` holds the approved voice and settings per
 speaker so new clips match the old.
+
+## Definition of done — `tools/check.py <slug>`
+
+One command runs everything a machine can check before a child hears a story:
+the script lint (cards, praise, hints, the child's word, the three name rules,
+the under-5 rules from `library/under5-words.json`: forbidden words, line and
+prompt length, the first ask names its card, ≤ 60 s of listening before an
+ask, something landing every 30 s); every clip exists and fits its hold; every
+speech clip at −16 LUFS ±1.5 and ≤ −1.5 dBTP with all speech within 3 dB; and
+every bed the story plays under speech ≥ 20 dB below the voice in all seven
+bands through a phone-speaker simulation, at the volume the script plays it.
+`--quick` trusts the manifest's measurements; `--play` adds a browser
+play-through. Exit 0 only when nothing failed. About 8 s for a story.
+
+What a machine can't judge — is the concept lived, is the ask recognition or a
+riddle, can a four-year-old *see* the joke — is `tools/UNDER5_REVIEW.md`: a
+checklist to run by hand or by any AI thread against the script, answered
+puzzle by puzzle. Then the phone, speaker only, two metres.
+
+First real run (Night Drive, 29 Sep): masking passes in every band for both
+beds; four library clips measure 1.5–3 dB quiet (hint_torch_1, hint_music_1,
+hint_music_3, dance_elephant) and the spread is 3.9 dB — inherited from the
+Jungle Rescue clips they came from.
 
 ## Running the checks
 
