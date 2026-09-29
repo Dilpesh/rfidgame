@@ -1,5 +1,5 @@
 {
- "version": "lib-2026-09-29p",
+ "version": "lib-2026-09-29u",
  "clips": {
   "tap": {
    "type": "sfx",
@@ -666,9 +666,9 @@
    "source": "jungle-rescue-english:JR_115"
   },
   "hint_torch_1": {
-   "duration_seconds": 5.642,
-   "integrated_lufs": -18.0,
-   "true_peak_dbfs": -2.4,
+   "duration_seconds": 5.64,
+   "integrated_lufs": -16.2,
+   "true_peak_dbfs": -2.3,
    "type": "voice",
    "voice": "COCO",
    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
@@ -689,8 +689,11 @@
     "flashlight"
    ],
    "added": "2026-09-29",
-   "file": "voice/hint_torch_1.mp3",
-   "source": "jungle-rescue-english:JR_116"
+   "file": "levelled/hint_torch_1.mp3",
+   "source": "jungle-rescue-english:JR_116",
+   "levelled_from": "voice/hint_torch_1.mp3",
+   "source_file": "voice/hint_torch_1.mp3",
+   "levelled": "measured gain, tools/relevel.py"
   },
   "hint_torch_2": {
    "duration_seconds": 3.971,
@@ -940,9 +943,9 @@
   },
   "hint_music_1": {
    "type": "voice",
-   "duration_seconds": 2.926,
-   "integrated_lufs": -19.2,
-   "true_peak_dbfs": -2.4,
+   "duration_seconds": 2.93,
+   "integrated_lufs": -16.2,
+   "true_peak_dbfs": -2.1,
    "voice": "COCO",
    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
    "model_id": "eleven_v3",
@@ -961,8 +964,11 @@
     "music"
    ],
    "added": "2026-09-29",
-   "file": "voice/hint_music_1.mp3",
-   "source": "jungle-rescue-english:JR_155"
+   "file": "levelled/hint_music_1.mp3",
+   "source": "jungle-rescue-english:JR_155",
+   "levelled_from": "voice/hint_music_1.mp3",
+   "source_file": "voice/hint_music_1.mp3",
+   "levelled": "measured gain, tools/relevel.py"
   },
   "hint_music_2": {
    "type": "voice",
@@ -992,9 +998,9 @@
   },
   "hint_music_3": {
    "type": "voice",
-   "duration_seconds": 2.273,
-   "integrated_lufs": -18.1,
-   "true_peak_dbfs": -2.4,
+   "duration_seconds": 2.27,
+   "integrated_lufs": -16.3,
+   "true_peak_dbfs": -2.5,
    "voice": "COCO",
    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
    "model_id": "eleven_v3",
@@ -1014,8 +1020,11 @@
     "rescue"
    ],
    "added": "2026-09-29",
-   "file": "voice/hint_music_3.mp3",
-   "source": "jungle-rescue-english:JR_157"
+   "file": "levelled/hint_music_3.mp3",
+   "source": "jungle-rescue-english:JR_157",
+   "levelled_from": "voice/hint_music_3.mp3",
+   "source_file": "voice/hint_music_3.mp3",
+   "levelled": "measured gain, tools/relevel.py"
   },
   "yes_music": {
    "type": "voice",
@@ -1046,8 +1055,8 @@
   },
   "dance_elephant": {
    "type": "voice",
-   "duration_seconds": 6.191,
-   "integrated_lufs": -17.6,
+   "duration_seconds": 6.19,
+   "integrated_lufs": -16.3,
    "true_peak_dbfs": -2.3,
    "voice": "COCO",
    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
@@ -1068,8 +1077,11 @@
     "action"
    ],
    "added": "2026-09-29",
-   "file": "voice/dance_elephant.mp3",
-   "source": "jungle-rescue-english:JR_161"
+   "file": "levelled/dance_elephant.mp3",
+   "source": "jungle-rescue-english:JR_161",
+   "levelled_from": "voice/dance_elephant.mp3",
+   "source_file": "voice/dance_elephant.mp3",
+   "levelled": "measured gain, tools/relevel.py"
   },
   "freeze_statue": {
    "type": "voice",
@@ -1616,6 +1628,214 @@
    "added": "2026-09-29",
    "file": "sfx/outro_sting.mp3",
    "source": "jungle-rescue-english:JR_178"
+  },
+  "praise_amazing": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Amazing, Captain!",
+   "performance_tag": "[warm, proud]",
+   "review_status": "test",
+   "generated": "2026-09-29",
+   "file": "voice/praise_amazing.mp3",
+   "duration_seconds": 1.88,
+   "integrated_lufs": -16.1,
+   "true_peak_dbfs": -2.4,
+   "name_text": "Amazing, {name}!",
+   "description": "name line (Captain version): Amazing, Captain!",
+   "tags": [
+    "name",
+    "captain"
+   ]
+  },
+  "praise_good_job": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Good job, Captain!",
+   "performance_tag": "[bright]",
+   "review_status": "test",
+   "generated": "2026-09-29",
+   "file": "voice/praise_good_job.mp3",
+   "duration_seconds": 2.04,
+   "integrated_lufs": -16.2,
+   "true_peak_dbfs": -2.4,
+   "name_text": "Good job, {name}!",
+   "description": "name line (Captain version): Good job, Captain!",
+   "tags": [
+    "name",
+    "captain"
+   ]
+  },
+  "praise_excellent": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Excellent work, Captain!",
+   "performance_tag": "[delighted]",
+   "review_status": "test",
+   "generated": "2026-09-29",
+   "file": "voice/praise_excellent.mp3",
+   "duration_seconds": 2.04,
+   "integrated_lufs": -16.1,
+   "true_peak_dbfs": -2.4,
+   "name_text": "Excellent work, {name}!",
+   "description": "name line (Captain version): Excellent work, Captain!",
+   "tags": [
+    "name",
+    "captain"
+   ]
+  },
+  "praise_right": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "You are absolutely right, Captain!",
+   "performance_tag": "[pleased, clear]",
+   "review_status": "test",
+   "generated": "2026-09-29",
+   "file": "voice/praise_right.mp3",
+   "duration_seconds": 2.85,
+   "integrated_lufs": -16.0,
+   "true_peak_dbfs": -2.5,
+   "name_text": "You are absolutely right, {name}!",
+   "description": "name line (Captain version): You are absolutely right, Captain!",
+   "tags": [
+    "name",
+    "captain"
+   ]
+  },
+  "title_captain": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "अब से तुम हो — मेरे Captain!",
+   "performance_tag": "[proud, warm]",
+   "review_status": "test",
+   "generated": "2026-09-29",
+   "file": "voice/title_captain.mp3",
+   "duration_seconds": 2.59,
+   "integrated_lufs": -16.2,
+   "true_peak_dbfs": -2.4,
+   "name_text": "अब से तुम हो — Captain {name}!",
+   "description": "name line (Captain version): अब से तुम हो — मेरे Captain!",
+   "tags": [
+    "name",
+    "captain"
+   ]
+  },
+  "look": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Captain, देखो!",
+   "performance_tag": "[urgent, excited]",
+   "review_status": "test",
+   "generated": "2026-09-29",
+   "file": "voice/look.mp3",
+   "duration_seconds": 2.35,
+   "integrated_lufs": -16.0,
+   "true_peak_dbfs": -2.5,
+   "name_text": "{name}, देखो!",
+   "description": "name line (Captain version): Captain, देखो!",
+   "tags": [
+    "name",
+    "captain"
+   ]
+  },
+  "listen_carefully": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Captain, ध्यान से सुनो…",
+   "performance_tag": "[whispering]",
+   "review_status": "test",
+   "generated": "2026-09-29",
+   "file": "voice/listen_carefully.mp3",
+   "duration_seconds": 2.43,
+   "integrated_lufs": -16.0,
+   "true_peak_dbfs": -2.3,
+   "name_text": "{name}, ध्यान से सुनो…",
+   "description": "name line (Captain version): Captain, ध्यान से सुनो…",
+   "tags": [
+    "name",
+    "captain"
+   ]
+  },
+  "sing_along": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Captain, साथ में गाओ!",
+   "performance_tag": "[tender, inviting]",
+   "review_status": "test",
+   "generated": "2026-09-29",
+   "file": "voice/sing_along.mp3",
+   "duration_seconds": 1.8,
+   "integrated_lufs": -16.1,
+   "true_peak_dbfs": -2.5,
+   "name_text": "{name}, साथ में गाओ!",
+   "description": "name line (Captain version): Captain, साथ में गाओ!",
+   "tags": [
+    "name",
+    "captain"
+   ]
   }
  }
 }

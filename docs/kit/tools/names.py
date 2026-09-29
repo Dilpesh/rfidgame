@@ -9,6 +9,7 @@ both sides in step. The process itself is written in docs/kit/library/names/READ
 
     python3 docs/kit/tools/names.py lines                 what the {name} lines are, across every story
     python3 docs/kit/tools/names.py captain [--dry-run]   generate the once-only "Captain" clips that are missing
+    python3 docs/kit/tools/names.py captain --relevel     re-level every Captain clip from its cached take (no API)
     python3 docs/kit/tools/names.py add "Rida" --hindi रिदा [--alias Ridha,Reeda]
     python3 docs/kit/tools/names.py generate rida [--dry-run]   the child's clips → library/names/rida/
     python3 docs/kit/tools/names.py check rida            every line has a clip, levels within the standard
@@ -84,9 +85,28 @@ def measure(path):
 
 
 def render_levelled(src, dst, extra_filter=None):
-    af = (extra_filter + ',' if extra_filter else '') + SPEECH_FILTER
+    """Level a clip to the standard: −16 LUFS integrated, true peak ≤ −2 dBTP.
+
+    Not with loudnorm: ffmpeg's loudnorm is unreliable on clips under ~3 s (a two-second
+    "Good job, Captain!" came out at −18, and 4.4's two-pass mode at −58). Instead: measure
+    integrated loudness with ebur128 (reliable at any length), apply that gain as a plain
+    volume change, hold the true peak with a limiter, measure again and trim once more."""
+    pre = (extra_filter + ',') if extra_filter else ''
     tmp = dst + '.rendering.mp3'
-    subprocess.run([ffmpeg(), '-hide_banner', '-loglevel', 'error', '-y', '-i', src, '-af', af, '-ac', '1', '-ar', '44100', '-b:a', '128k', tmp], check=True)
+    def render(gain_db):
+        af = f'{pre}volume={gain_db:.2f}dB,alimiter=limit=0.79:attack=5:release=50:level=false'   # 0.79 ≈ −2 dBFS
+        subprocess.run([ffmpeg(), '-hide_banner', '-loglevel', 'error', '-y', '-i', src, '-af', af, '-ac', '1', '-ar', '44100', '-b:a', '128k', tmp], check=True)
+    lufs, peak, _ = measure(src) if not extra_filter else (None, None, None)
+    if extra_filter or lufs is None:
+        render(0.0); lufs, peak, _ = measure(tmp)
+        if lufs is None: os.replace(tmp, dst); return
+        render(-16.0 - lufs)
+    else:
+        render(-16.0 - lufs)
+    lufs2, peak2, _ = measure(tmp)
+    if lufs2 is not None and abs(lufs2 + 16.0) > 0.3:          # the limiter took some back: trim once more
+        base = (-16.0 - lufs) if not extra_filter else (-16.0 - lufs)
+        render(base + (-16.0 - lufs2))
     os.replace(tmp, dst)
 
 
@@ -186,14 +206,14 @@ def cmd_lines(args):
 
 # ---------- once: the Captain versions ----------
 def cmd_captain(args):
-    dry = '--dry-run' in args
+    dry = '--dry-run' in args; relevel = '--relevel' in args
     key = os.environ.get('ELEVENLABS_API_KEY', '').strip() or None
     lib_path = os.path.join(LIB, 'manifest.json')
     lib = load_json(lib_path, {'version': 'lib-0', 'clips': {}})
     if 'clips' not in lib: lib = {'version': 'lib-0', 'clips': lib}
     changed_lib = False; done = 0
     for l in name_lines():
-        if l['file'] and os.path.exists(os.path.join(l['file_dir'], l['file'])):
+        if l['file'] and os.path.exists(os.path.join(l['file_dir'], l['file'])) and not relevel:
             continue
         if l['scope'] == 'library':
             stem = l['key']; dest_rel = f'voice/{stem}.mp3'; raw_dir = os.path.join(LIB, 'raw')
@@ -265,8 +285,8 @@ def rebuild_index(reg):
 
 
 def cmd_generate(args):
-    slug = args[0] if args and not args[0].startswith('--') else sys.exit('✗ names.py generate <slug> [--dry-run]')
-    dry = '--dry-run' in args
+    slug = args[0] if args and not args[0].startswith('--') else sys.exit('✗ names.py generate <slug> [--dry-run] [--relevel]')
+    dry = '--dry-run' in args; relevel = '--relevel' in args
     key = os.environ.get('ELEVENLABS_API_KEY', '').strip() or None
     child = next((c for c in names_registry()['children'] if c['slug'] == slug), None) or sys.exit(f'✗ {slug} not registered — names.py add first')
     out = os.path.join(NAMES, slug); raw_dir = os.path.join(out, 'raw')
@@ -282,7 +302,7 @@ def cmd_generate(args):
             continue
         entry, raw, flt = made
         dest = os.path.join(out, stem + '.mp3')
-        if status == 'generated' or not os.path.exists(dest):
+        if status.startswith('generated') or relevel or not os.path.exists(dest):
             render_levelled(raw, dest, flt)
         lufs, peak, secs = measure(dest)
         entry.update({'file': stem + '.mp3', 'duration_seconds': secs, 'integrated_lufs': lufs, 'true_peak_dbfs': peak})

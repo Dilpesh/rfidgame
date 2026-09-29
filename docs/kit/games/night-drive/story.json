@@ -22,25 +22,37 @@
    "id": "FUEL",
    "icon": "⛽",
    "label": "Fuel",
-   "registry": "FUEL"
+   "registry": "FUEL",
+   "say": [
+    "Fuel"
+   ]
   },
   {
    "id": "FLASHLIGHT",
    "icon": "🔦",
    "label": "Flashlight",
-   "registry": "TORCH"
+   "registry": "TORCH",
+   "say": [
+    "Flashlight"
+   ]
   },
   {
    "id": "WATER",
    "icon": "💧",
    "label": "Water",
-   "registry": "WATER"
+   "registry": "WATER",
+   "say": [
+    "Water"
+   ]
   },
   {
    "id": "MUSIC",
    "icon": "🎵",
    "label": "Music",
-   "registry": "MUSIC"
+   "registry": "MUSIC",
+   "say": [
+    "Music"
+   ]
   }
  ],
  "uids": {
@@ -1282,5 +1294,8 @@
   "NARRATOR": "Jia"
  },
  "tapSound": "lib:tap",
- "libraryDir": "../../library/"
+ "libraryDir": "../../library/",
+ "_notes": [
+  "line 112: \"ये कौन करता है\" — Coco's signature line — fine, it is a running sound not an idea"
+ ]
 }

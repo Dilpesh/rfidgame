@@ -116,7 +116,7 @@ def main(argv):
         if b['op'] == 'bed' and not b.get('stop'):
             vol = b.get('volume') if isinstance(b.get('volume'), (int, float)) else c.get('volume')
             beds[cid] = (os.path.join(base, c['file']), vol)
-        elif b['op'] in ('say', 'duck') or (b['op'] == 'sfx' and c.get('type') == 'speech'):
+        elif b['op'] in ('say', 'duck') or (b['op'] == 'sfx' and c.get('type') in ('speech', 'voice')):
             speech.append((cid, os.path.join(base, c['file']), c))
         elif b['op'] == 'play' and c.get('type') == 'split_sfx' and c.get('bed_file'):
             beds[cid + '/bed'] = (os.path.join(base, c['bed_file']), c.get('bed_volume'))

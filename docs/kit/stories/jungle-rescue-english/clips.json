@@ -1,5 +1,49 @@
 [
  {
+  "id": "lib:praise_amazing",
+  "kind": "speech",
+  "speaker": "COCO",
+  "text": "Amazing, Captain!",
+  "emotion": "warm, proud",
+  "scene": 0,
+  "library": true,
+  "nameText": "Amazing, {name}!",
+  "missing": false
+ },
+ {
+  "id": "lib:praise_good_job",
+  "kind": "speech",
+  "speaker": "COCO",
+  "text": "Good job, Captain!",
+  "emotion": "bright",
+  "scene": 0,
+  "library": true,
+  "nameText": "Good job, {name}!",
+  "missing": false
+ },
+ {
+  "id": "lib:praise_excellent",
+  "kind": "speech",
+  "speaker": "COCO",
+  "text": "Excellent work, Captain!",
+  "emotion": "delighted",
+  "scene": 0,
+  "library": true,
+  "nameText": "Excellent work, {name}!",
+  "missing": false
+ },
+ {
+  "id": "lib:praise_right",
+  "kind": "speech",
+  "speaker": "COCO",
+  "text": "You are absolutely right, Captain!",
+  "emotion": "pleased, clear",
+  "scene": 0,
+  "library": true,
+  "nameText": "You are absolutely right, {name}!",
+  "missing": false
+ },
+ {
   "id": "JR_001",
   "kind": "bed",
   "name": null,
@@ -18,13 +62,14 @@
   "missing": false
  },
  {
-  "id": "JR_003",
+  "id": "JR_003b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम Captain बनकर मेरी मदद करोगे?",
+  "text": "Hello Captain! जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?",
   "emotion": "hopeful and inviting",
   "scene": 1,
   "library": false,
+  "nameText": "Hello {name}! जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?",
   "missing": false
  },
  {
@@ -35,6 +80,17 @@
   "emotion": "delighted and encouraging",
   "scene": 1,
   "library": false,
+  "missing": false
+ },
+ {
+  "id": "lib:title_captain",
+  "kind": "speech",
+  "speaker": "COCO",
+  "text": "अब से तुम हो — मेरे Captain!",
+  "emotion": "proud, warm",
+  "scene": 1,
+  "library": true,
+  "nameText": "अब से तुम हो — Captain {name}!",
   "missing": false
  },
  {
@@ -74,50 +130,50 @@
   "missing": false
  },
  {
-  "id": "JR_009",
+  "id": "JR_009b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "ओह, ये स्टार्ट क्यों नहीं हो रही है? हम्म, जीप की टंकी खाली है।",
-  "emotion": "surprised and amused",
+  "text": "ओह, ये स्टार्ट क्यों नहीं हो रही? हम्म… Jeep का पेट खाली है! गाड़ी को पेट्रोल पीना पड़ता है — जैसे बच्चों को दूध।",
+  "emotion": "surprised, then explaining warmly",
   "scene": 1,
   "library": false,
   "missing": false
  },
  {
-  "id": "JR_010",
+  "id": "JR_010b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "Captain, टंकी खाली है! इसमें क्या डालें कि जीप चल पड़े?",
-  "emotion": "curious and clear",
+  "text": "Captain, अपने cards में पेट्रोल ढूँढो — Jeep को पिलाना है!",
+  "emotion": "inviting, clear",
   "scene": 1,
   "library": false,
   "missing": false
  },
  {
-  "id": "JR_011",
+  "id": "JR_011b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "अपने सामने वाले cards को देखो... इनमें Jeep को चलाने वाली कोई चीज़ है क्या?",
+  "text": "Jeep भूखी है… cards में पेट्रोल दिख रहा है?",
   "emotion": "kind and clear",
   "scene": 1,
   "library": false,
   "missing": false
  },
  {
-  "id": "JR_012",
+  "id": "JR_012b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "जिससे गाड़ी की tank भरती है, वही card ढूँढो.",
+  "text": "लाल रंग का पेट्रोल pump — जिसमें एक pipe लगा है।",
   "emotion": "kind and clear",
   "scene": 1,
   "library": false,
   "missing": false
  },
  {
-  "id": "JR_013",
+  "id": "JR_013b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "FUEL वाला card scan करो.",
+  "text": "पेट्रोल वाला card scan करो — लाल pump वाला।",
   "emotion": "kind and clear",
   "scene": 1,
   "library": false,
@@ -132,10 +188,10 @@
   "missing": false
  },
  {
-  "id": "JR_015",
+  "id": "JR_015b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "YES! FUEL! टंकी भर गई!",
+  "text": "YES! पेट्रोल! Jeep का पेट भर गया!",
   "emotion": "excited",
   "scene": 1,
   "library": false,
@@ -176,10 +232,10 @@
   "missing": false
  },
  {
-  "id": "JR_020",
+  "id": "JR_020b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "ओहो! बस करो, Captain! Fuel तो overflow हो जाएगा!",
+  "text": "ओहो! बस करो, Captain! पेट्रोल छलक जाएगा!",
   "emotion": "comic surprise and affection",
   "scene": 1,
   "library": false,
@@ -243,6 +299,17 @@
   "name": "elephant_trumpet",
   "scene": 2,
   "library": false,
+  "missing": false
+ },
+ {
+  "id": "lib:look",
+  "kind": "speech",
+  "speaker": "COCO",
+  "text": "Captain, देखो!",
+  "emotion": "urgent, excited",
+  "scene": 2,
+  "library": true,
+  "nameText": "{name}, देखो!",
   "missing": false
  },
  {
@@ -352,10 +419,10 @@
   "missing": false
  },
  {
-  "id": "JR_039",
+  "id": "JR_039b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "ROPE वाला card scan करो.",
+  "text": "रस्सी वाला card scan करो.",
   "emotion": "clear and warm",
   "scene": 2,
   "library": false,
@@ -370,10 +437,10 @@
   "missing": false
  },
  {
-  "id": "JR_041",
+  "id": "JR_041b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "YES! ROPE! रस्सी मिल गई। अब एलिफेंट दादा को बाहर निकालने में कोको की मदद करो।",
+  "text": "YES! रस्सी मिल गई! अब एलिफेंट दादा को बाहर निकालने में कोको की मदद करो।",
   "emotion": "bright and encouraging",
   "scene": 3,
   "library": false,
@@ -690,10 +757,10 @@
   "missing": false
  },
  {
-  "id": "JR_077",
+  "id": "JR_077b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "अरे पैरट जी! आपका एक wing flap कर रहा है, दूसरा आराम कर रहा है।",
+  "text": "अरे पैरट जी! आपका एक पंख हिल रहा है, दूसरा आराम कर रहा है।",
   "emotion": "concerned and gentle",
   "scene": 4,
   "library": false,
@@ -710,40 +777,40 @@
   "missing": false
  },
  {
-  "id": "JR_079",
+  "id": "JR_079b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "चोट लगने पर हमें ऐसी चीज़ चाहिए जिसमें bandage और medicine जैसी चीज़ें होती हैं। Captain, क्या हमारे पास कुछ ऐसा है?",
-  "emotion": "curious, clear card invitation",
+  "text": "पैरट जी को चोट लगी है — हमें पट्टी और दवाई चाहिए! Captain, cards में दवाई का डब्बा ढूँढो!",
+  "emotion": "caring, clear",
   "scene": 4,
   "library": false,
   "missing": false
  },
  {
-  "id": "JR_080",
+  "id": "JR_080b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "अपने cards को देखो... चोट लगने पर काम आने वाली चीज़ ढूँढो.",
+  "text": "अपने cards को देखो… दवाई का डब्बा दिख रहा है?",
   "emotion": "clear and warm",
   "scene": 4,
   "library": false,
   "missing": false
  },
  {
-  "id": "JR_081",
+  "id": "JR_081b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "इसमें bandage जैसी चीज़ें रखी होती हैं.",
+  "text": "सफ़ेद डब्बा, जिस पर लाल plus बना है — उसमें पट्टी और दवाई रहती है।",
   "emotion": "clear and warm",
   "scene": 4,
   "library": false,
   "missing": false
  },
  {
-  "id": "JR_082",
+  "id": "JR_082b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "FIRST AID वाला card scan करो.",
+  "text": "दवाई वाले डब्बे का card scan करो — लाल plus वाला।",
   "emotion": "clear and warm",
   "scene": 4,
   "library": false,
@@ -758,10 +825,10 @@
   "missing": false
  },
  {
-  "id": "JR_084",
+  "id": "JR_084b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "YES! FIRST AID! पट्टी और medicine मिल गई।",
+  "text": "YES! दवाई का डब्बा! पट्टी और दवाई मिल गई।",
   "emotion": "happy, clear, unhurried",
   "scene": 4,
   "library": false,
@@ -776,10 +843,10 @@
   "missing": false
  },
  {
-  "id": "JR_086",
+  "id": "JR_086b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "पैरट का wing अब safe है। पट्टी लग गई!",
+  "text": "पैरट का पंख अब ठीक है। पट्टी लग गई!",
   "emotion": "gentle relief",
   "scene": 4,
   "library": false,
@@ -794,10 +861,10 @@
   "missing": false
  },
  {
-  "id": "JR_088",
+  "id": "JR_088b",
   "kind": "speech",
   "speaker": "PARROT",
-  "text": "Thank you, Captain! अब मैं wing हिला कर देखूँ?",
+  "text": "Thank you, Captain! अब मैं पंख हिला कर देखूँ?",
   "emotion": "hopeful and tentative",
   "scene": 4,
   "library": false,
@@ -822,20 +889,20 @@
   "missing": false
  },
  {
-  "id": "JR_091",
+  "id": "JR_091b",
   "kind": "speech",
   "speaker": "PARROT",
-  "text": "फड़फड़! अब मेरा wing चल रहा है!",
+  "text": "फड़फड़! अब मेरा पंख चल रहा है!",
   "emotion": "delighted, bright",
   "scene": 4,
   "library": false,
   "missing": false
  },
  {
-  "id": "JR_093",
+  "id": "JR_093b",
   "kind": "speech",
   "speaker": "PARROT",
-  "text": "लेकिन मेरी चोंच सूख गई है। मुझे पानी चाहिए।",
+  "text": "लेकिन मुझे बहुत प्यास लगी है। मुझे पानी चाहिए।",
   "emotion": "tired and thirsty, not distressed",
   "scene": 4,
   "library": false,
@@ -954,6 +1021,17 @@
   "missing": false
  },
  {
+  "id": "lib:listen_carefully",
+  "kind": "speech",
+  "speaker": "COCO",
+  "text": "Captain, ध्यान से सुनो…",
+  "emotion": "whispering",
+  "scene": 6,
+  "library": true,
+  "nameText": "{name}, ध्यान से सुनो…",
+  "missing": false
+ },
+ {
   "id": "JR_107",
   "kind": "speech",
   "speaker": "COCO",
@@ -1002,29 +1080,31 @@
   "missing": false
  },
  {
-  "id": "JR_111",
+  "id": "JR_111b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "फ़िक्र मत करो! मैं ढूँढता हूँ आपकी पूँछ।",
-  "emotion": "confident, then uncertain",
+  "text": "फ़िक्र मत करो, Lion King! मैं आपका हाथ पकड़ता हूँ… ये लो!",
+  "emotion": "confident, reaching out in the dark",
   "scene": 6,
   "library": false,
   "missing": false
  },
  {
-  "id": "JR_113",
+  "id": "JR_112b",
   "kind": "speech",
-  "speaker": "COCO",
-  "text": "मेरा मतलब... मैं कुछ करता हूँ... ओह!",
-  "emotion": "nervous, trying to sound brave",
+  "speaker": "LION",
+  "text": "आऊच! वो मेरा हाथ नहीं — मेरी पूँछ है!",
+  "emotion": "surprised yelp, funny not scared",
   "scene": 6,
   "library": false,
   "missing": false
  },
  {
-  "id": "JR_114",
-  "kind": "sfx",
-  "name": "bonk",
+  "id": "JR_113b",
+  "kind": "speech",
+  "speaker": "COCO",
+  "text": "ओह! अंधेरे में हाथ और पूँछ एक जैसे लगते हैं!",
+  "emotion": "embarrassed laugh",
   "scene": 6,
   "library": false,
   "missing": false
@@ -1060,10 +1140,10 @@
   "missing": false
  },
  {
-  "id": "JR_118",
+  "id": "JR_118b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "FLASHLIGHT वाला card scan करो!",
+  "text": "टॉर्च वाला card scan करो!",
   "emotion": "clear and warm",
   "scene": 6,
   "library": false,
@@ -1094,10 +1174,10 @@
   "missing": false
  },
  {
-  "id": "JR_121",
+  "id": "JR_121b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "YES! FLASHLIGHT!",
+  "text": "YES! टॉर्च! रोशनी हो गई!",
   "emotion": "relieved and bright",
   "scene": 7,
   "library": false,
@@ -1306,13 +1386,24 @@
   "missing": false
  },
  {
-  "id": "JR_143",
+  "id": "JR_143b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "Captain, Lion King को आराम से सुलाने के लिए एक छोटी सी लोरी गाएँ? तुम मेरे साथ गाओगे?",
+  "text": "Captain, Lion King को आराम से सुलाने के लिए एक छोटी सी लोरी गाएँ? तुम भी मेरे साथ गाओ, ठीक है?",
   "emotion": "tender and empathetic, slower and softer",
   "scene": 8,
   "library": false,
+  "missing": false
+ },
+ {
+  "id": "lib:sing_along",
+  "kind": "speech",
+  "speaker": "COCO",
+  "text": "Captain, साथ में गाओ!",
+  "emotion": "tender, inviting",
+  "scene": 8,
+  "library": true,
+  "nameText": "{name}, साथ में गाओ!",
   "missing": false
  },
  {
@@ -1376,10 +1467,10 @@
   "missing": false
  },
  {
-  "id": "JR_154",
+  "id": "JR_154b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "मेरे पैर तो नाचने लगे! पर धुन कहाँ है? Captain, नाचने के लिए क्या बजाएँ?",
+  "text": "मेरे पैर तो नाचने लगे! पर गाना कहाँ है? Captain, नाचने के लिए कोई music बजाओ!",
   "emotion": "eager, playful",
   "scene": 9,
   "library": false,

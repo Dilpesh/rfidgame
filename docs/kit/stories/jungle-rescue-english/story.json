@@ -6,7 +6,7 @@
  "language": "hi",
  "minutes": 9,
  "audioDir": "audio/",
- "cacheTag": "jr-final-4",
+ "cacheTag": "jr-final-6",
  "hintDelays": [
   8000,
   17000,
@@ -22,50 +22,78 @@
   {
    "id": "FUEL",
    "icon": "⛽",
-   "label": "Fuel",
-   "registry": "FUEL"
+   "label": "पेट्रोल",
+   "registry": "FUEL",
+   "say": [
+    "पेट्रोल"
+   ]
   },
   {
    "id": "ROPE",
    "icon": "🪢",
-   "label": "Rope",
-   "registry": "ROPE"
+   "label": "रस्सी",
+   "registry": "ROPE",
+   "say": [
+    "रस्सी"
+   ]
   },
   {
    "id": "BISCUIT",
    "icon": "🍪",
    "label": "Biscuit",
-   "registry": "SNACK"
+   "registry": "SNACK",
+   "say": [
+    "biscuit"
+   ]
   },
   {
    "id": "FIRST_AID",
    "icon": "🩹",
-   "label": "First aid",
-   "registry": "FIRSTAID"
+   "label": "दवाई का डब्बा",
+   "registry": "FIRSTAID",
+   "say": [
+    "दवाई",
+    "डब्बा"
+   ]
   },
   {
    "id": "WATER",
    "icon": "💧",
    "label": "Water",
-   "registry": "WATER"
+   "registry": "WATER",
+   "say": [
+    "water",
+    "पानी"
+   ]
   },
   {
    "id": "FLASHLIGHT",
    "icon": "🔦",
-   "label": "Flashlight",
-   "registry": "TORCH"
+   "label": "टॉर्च",
+   "registry": "TORCH",
+   "say": [
+    "टॉर्च"
+   ]
   },
   {
    "id": "BLANKET",
    "icon": "🧣",
    "label": "Blanket",
-   "registry": "BLANKET"
+   "registry": "BLANKET",
+   "say": [
+    "blanket",
+    "कंबल"
+   ]
   },
   {
    "id": "MUSIC",
    "icon": "🎵",
    "label": "Music",
-   "registry": "MUSIC"
+   "registry": "MUSIC",
+   "say": [
+    "music",
+    "गाना"
+   ]
   }
  ],
  "uids": {
@@ -88,7 +116,7 @@
     "op": "sfx",
     "cue": "JR_179",
     "tags": [],
-    "line": 290,
+    "line": 320,
     "channel": "fg",
     "wait": true
    },
@@ -98,7 +126,7 @@
     "speaker": "COCO",
     "text": "ओहो! ये वाला काम नहीं करेगा। Captain, एक और card try करो!",
     "tags": [],
-    "line": 291,
+    "line": 321,
     "emotion": "playfully surprised, encouraging"
    }
   ],
@@ -107,7 +135,7 @@
     "op": "sfx",
     "cue": "JR_181",
     "tags": [],
-    "line": 293,
+    "line": 323,
     "channel": "fg",
     "wait": true
    },
@@ -117,7 +145,7 @@
     "speaker": "COCO",
     "text": "ऊप्स! हमें कोई और चीज़ चाहिए। Captain, फिर से सोचो!",
     "tags": [],
-    "line": 294,
+    "line": 324,
     "emotion": "light, encouraging"
    }
   ],
@@ -126,7 +154,7 @@
     "op": "sfx",
     "cue": "JR_183",
     "tags": [],
-    "line": 296,
+    "line": 326,
     "channel": "fg",
     "wait": true
    },
@@ -136,7 +164,7 @@
     "speaker": "COCO",
     "text": "हम्म... ये नहीं। Captain, दूसरा card try करो!",
     "tags": [],
-    "line": 297,
+    "line": 327,
     "emotion": "curious, supportive"
    }
   ]
@@ -150,7 +178,7 @@
     {
      "op": "bed",
      "cue": "JR_001",
-     "line": 28
+     "line": 42
     },
     {
      "op": "say",
@@ -158,22 +186,27 @@
      "speaker": "COCO",
      "text": "हैलो, मैं हूँ कोको। आज हम जंगल बचाओ टीम बनेंगे।",
      "tags": [],
-     "line": 29,
+     "line": 43,
      "emotion": "bright and playful"
     },
     {
      "op": "say",
-     "cue": "JR_003",
+     "cue": "JR_003b",
      "speaker": "COCO",
-     "text": "जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम Captain बनकर मेरी मदद करोगे?",
-     "tags": [],
-     "line": 30,
-     "emotion": "hopeful and inviting"
+     "text": "Hello Captain! जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?",
+     "tags": [
+      "intro",
+      "name"
+     ],
+     "line": 44,
+     "emotion": "hopeful and inviting",
+     "name": true,
+     "nameText": "Hello {name}! जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?"
     },
     {
      "op": "wait",
      "ms": 1500,
-     "line": 31
+     "line": 45
     },
     {
      "op": "say",
@@ -181,8 +214,21 @@
      "speaker": "COCO",
      "text": "Yes! Great! अब Captain और कोको मिलकर सारे animals को बचा लेंगे।",
      "tags": [],
-     "line": 32,
+     "line": 46,
      "emotion": "delighted and encouraging"
+    },
+    {
+     "op": "say",
+     "cue": "lib:title_captain",
+     "speaker": "COCO",
+     "text": "अब से तुम हो — मेरे Captain!",
+     "tags": [
+      "name"
+     ],
+     "line": 47,
+     "emotion": "proud, warm",
+     "name": true,
+     "nameText": "अब से तुम हो — Captain {name}!"
     },
     {
      "op": "say",
@@ -190,14 +236,14 @@
      "speaker": "COCO",
      "text": "जल्दी चलो, हमारी जंगल रेस्क्यू जीप तैयार है।",
      "tags": [],
-     "line": 33,
+     "line": 48,
      "emotion": "warm storytelling"
     },
     {
      "op": "sfx",
      "cue": "JR_006",
      "tags": [],
-     "line": 34,
+     "line": 49,
      "channel": "fg",
      "wait": true
     },
@@ -207,96 +253,166 @@
      "speaker": "NARRATOR",
      "text": "कोको जीप में बैठा, स्टीयरिंग पकड़ी, चाबी घुमाई।",
      "tags": [],
-     "line": 35,
+     "line": 50,
      "emotion": "warm and brisk"
     },
     {
      "op": "sfx",
      "cue": "JR_008",
      "tags": [],
-     "line": 36,
+     "line": 51,
      "channel": "fg",
      "wait": true
     },
     {
      "op": "say",
-     "cue": "JR_009",
+     "cue": "JR_009b",
      "speaker": "COCO",
-     "text": "ओह, ये स्टार्ट क्यों नहीं हो रही है? हम्म, जीप की टंकी खाली है।",
+     "text": "ओह, ये स्टार्ट क्यों नहीं हो रही? हम्म… Jeep का पेट खाली है! गाड़ी को पेट्रोल पीना पड़ता है — जैसे बच्चों को दूध।",
      "tags": [],
-     "line": 37,
-     "emotion": "surprised and amused"
+     "line": 52,
+     "emotion": "surprised, then explaining warmly"
     },
     {
      "op": "ask",
      "card": "FUEL",
      "prompt": {
       "op": "say",
-      "cue": "JR_010",
+      "cue": "JR_010b",
       "speaker": "COCO",
-      "text": "Captain, टंकी खाली है! इसमें क्या डालें कि जीप चल पड़े?",
+      "text": "Captain, अपने cards में पेट्रोल ढूँढो — Jeep को पिलाना है!",
       "tags": [],
-      "line": 39,
-      "emotion": "curious and clear"
+      "line": 54,
+      "emotion": "inviting, clear"
      },
      "hints": [
       {
        "op": "say",
-       "cue": "JR_011",
+       "cue": "JR_011b",
        "speaker": "COCO",
-       "text": "अपने सामने वाले cards को देखो... इनमें Jeep को चलाने वाली कोई चीज़ है क्या?",
+       "text": "Jeep भूखी है… cards में पेट्रोल दिख रहा है?",
        "tags": [],
-       "line": 40,
+       "line": 55,
        "emotion": "kind and clear"
       },
       {
        "op": "say",
-       "cue": "JR_012",
+       "cue": "JR_012b",
        "speaker": "COCO",
-       "text": "जिससे गाड़ी की tank भरती है, वही card ढूँढो.",
+       "text": "लाल रंग का पेट्रोल pump — जिसमें एक pipe लगा है।",
        "tags": [],
-       "line": 41,
+       "line": 56,
        "emotion": "kind and clear"
       },
       {
        "op": "say",
-       "cue": "JR_013",
+       "cue": "JR_013b",
        "speaker": "COCO",
-       "text": "FUEL वाला card scan करो.",
+       "text": "पेट्रोल वाला card scan करो — लाल pump वाला।",
        "tags": [],
-       "line": 42,
+       "line": 57,
        "emotion": "kind and clear"
       }
      ],
      "afterPrompt": [],
      "remind": null,
      "tags": [],
-     "line": 38
+     "line": 53
     },
     {
      "op": "sfx",
      "cue": "JR_014",
      "tags": [],
-     "line": 43,
+     "line": 58,
      "channel": "fg",
      "wait": true
     },
     {
      "op": "say",
-     "cue": "JR_015",
+     "cue": "JR_015b",
      "speaker": "COCO",
-     "text": "YES! FUEL! टंकी भर गई!",
+     "text": "YES! पेट्रोल! Jeep का पेट भर गया!",
      "tags": [
       "praise"
      ],
-     "line": 44,
+     "line": 59,
      "emotion": "excited"
+    },
+    {
+     "op": "group",
+     "tags": [],
+     "block": "praise",
+     "beats": [
+      {
+       "op": "oneof",
+       "beats": [
+        {
+         "op": "say",
+         "cue": "lib:praise_amazing",
+         "speaker": "COCO",
+         "text": "Amazing, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 35,
+         "emotion": "warm, proud",
+         "name": true,
+         "nameText": "Amazing, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_good_job",
+         "speaker": "COCO",
+         "text": "Good job, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 36,
+         "emotion": "bright",
+         "name": true,
+         "nameText": "Good job, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_excellent",
+         "speaker": "COCO",
+         "text": "Excellent work, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 37,
+         "emotion": "delighted",
+         "name": true,
+         "nameText": "Excellent work, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_right",
+         "speaker": "COCO",
+         "text": "You are absolutely right, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 38,
+         "emotion": "pleased, clear",
+         "name": true,
+         "nameText": "You are absolutely right, {name}!"
+        }
+       ],
+       "line": 34
+      }
+     ],
+     "line": 60
     },
     {
      "op": "sfx",
      "cue": "JR_016",
      "tags": [],
-     "line": 45,
+     "line": 61,
      "channel": "fg",
      "wait": true
     },
@@ -304,7 +420,7 @@
      "op": "sfx",
      "cue": "JR_017",
      "tags": [],
-     "line": 46,
+     "line": 62,
      "channel": "fg",
      "wait": true
     },
@@ -314,7 +430,7 @@
      "speaker": "COCO",
      "text": "जंगल रेस्क्यू टीम चलो!",
      "tags": [],
-     "line": 47,
+     "line": 63,
      "emotion": "energetic rallying call"
     },
     {
@@ -328,23 +444,23 @@
        "tags": [
         "joke"
        ],
-       "line": 49,
+       "line": 65,
        "channel": "fg",
        "wait": true
       },
       {
        "op": "say",
-       "cue": "JR_020",
+       "cue": "JR_020b",
        "speaker": "COCO",
-       "text": "ओहो! बस करो, Captain! Fuel तो overflow हो जाएगा!",
+       "text": "ओहो! बस करो, Captain! पेट्रोल छलक जाएगा!",
        "tags": [
         "joke"
        ],
-       "line": 50,
+       "line": 66,
        "emotion": "comic surprise and affection"
       }
      ],
-     "line": 48
+     "line": 64
     }
    ]
   },
@@ -356,7 +472,7 @@
     {
      "op": "bed",
      "cue": "JR_021",
-     "line": 54
+     "line": 70
     },
     {
      "op": "say",
@@ -364,14 +480,14 @@
      "speaker": "NARRATOR",
      "text": "जीप जंगल के अंदर गई। बड़े-बड़े पेड़, छोटी-छोटी नदियाँ, उछलती-कूदती जीप!",
      "tags": [],
-     "line": 55,
+     "line": 71,
      "emotion": "bouncy and curious"
     },
     {
      "op": "sfx",
      "cue": "JR_023",
      "tags": [],
-     "line": 56,
+     "line": 72,
      "channel": "fg",
      "wait": true
     },
@@ -379,7 +495,7 @@
      "op": "sfx",
      "cue": "JR_024",
      "tags": [],
-     "line": 57,
+     "line": 73,
      "channel": "fg",
      "wait": true
     },
@@ -387,7 +503,7 @@
      "op": "sfx",
      "cue": "JR_025",
      "tags": [],
-     "line": 58,
+     "line": 74,
      "channel": "fg",
      "wait": true
     },
@@ -399,22 +515,35 @@
      "tags": [
       "joke"
      ],
-     "line": 59,
+     "line": 75,
      "emotion": "surprised and comic"
     },
     {
      "op": "sfx",
      "cue": "JR_027",
      "tags": [],
-     "line": 60,
+     "line": 76,
      "channel": "fg",
      "wait": true
     },
     {
      "op": "bed",
      "cue": "JR_001",
-     "line": 61,
+     "line": 77,
      "volume": 0.25
+    },
+    {
+     "op": "say",
+     "cue": "lib:look",
+     "speaker": "COCO",
+     "text": "Captain, देखो!",
+     "tags": [
+      "name"
+     ],
+     "line": 78,
+     "emotion": "urgent, excited",
+     "name": true,
+     "nameText": "{name}, देखो!"
     },
     {
      "op": "say",
@@ -422,7 +551,7 @@
      "speaker": "COCO",
      "text": "अरे! एलिफेंट दादा एक बड़े मड्डी गड्ढे में फँसे हैं। चिंता मत करो, कोको सुपर रेस्क्यू आ गया!",
      "tags": [],
-     "line": 62,
+     "line": 79,
      "emotion": "concerned and reassuring"
     },
     {
@@ -431,13 +560,13 @@
      "speaker": "NARRATOR",
      "text": "कोको ने एलिफेंट दादा को खींचा।",
      "tags": [],
-     "line": 63,
+     "line": 80,
      "emotion": "brisk and physical"
     },
     {
      "op": "wait",
      "ms": 800,
-     "line": 64
+     "line": 81
     },
     {
      "op": "say",
@@ -445,14 +574,14 @@
      "speaker": "COCO",
      "text": "एक, दो, तीन!",
      "tags": [],
-     "line": 65,
+     "line": 82,
      "emotion": "effortful and rhythmic"
     },
     {
      "op": "sfx",
      "cue": "JR_031",
      "tags": [],
-     "line": 66,
+     "line": 83,
      "channel": "fg",
      "wait": true
     },
@@ -460,7 +589,7 @@
      "op": "sfx",
      "cue": "JR_032",
      "tags": [],
-     "line": 67,
+     "line": 84,
      "channel": "fg",
      "wait": true
     },
@@ -472,7 +601,7 @@
      "tags": [
       "joke"
      ],
-     "line": 68,
+     "line": 85,
      "emotion": "comic surprise"
     },
     {
@@ -483,7 +612,7 @@
      "tags": [
       "joke"
      ],
-     "line": 69,
+     "line": 86,
      "emotion": "funny signature voice"
     },
     {
@@ -492,7 +621,7 @@
      "speaker": "COCO",
      "text": "ओके, नया प्लान चाहिए.",
      "tags": [],
-     "line": 70,
+     "line": 87,
      "emotion": "small embarrassed laugh, recovering quickly"
     },
     {
@@ -504,7 +633,7 @@
       "speaker": "COCO",
       "text": "Captain, हमें कोई लंबी चीज़ चाहिए जिससे एलिफेंट दादा को अपनी तरफ खींच सकें। क्या हमारे पास ऐसी कोई चीज़ है?",
       "tags": [],
-      "line": 72,
+      "line": 89,
       "emotion": "clear and warm"
      },
      "hints": [
@@ -514,7 +643,7 @@
        "speaker": "COCO",
        "text": "अपने cards को देखो... कोई लंबी चीज़ दिख रही है जिससे हम खींच सकें?",
        "tags": [],
-       "line": 73,
+       "line": 90,
        "emotion": "clear and warm"
       },
       {
@@ -523,23 +652,23 @@
        "speaker": "COCO",
        "text": "इसे पकड़कर किसी चीज़ को अपनी तरफ खींचा जा सकता है.",
        "tags": [],
-       "line": 74,
+       "line": 91,
        "emotion": "clear and warm"
       },
       {
        "op": "say",
-       "cue": "JR_039",
+       "cue": "JR_039b",
        "speaker": "COCO",
-       "text": "ROPE वाला card scan करो.",
+       "text": "रस्सी वाला card scan करो.",
        "tags": [],
-       "line": 75,
+       "line": 92,
        "emotion": "clear and warm"
       }
      ],
      "afterPrompt": [],
      "remind": null,
      "tags": [],
-     "line": 71
+     "line": 88
     }
    ]
   },
@@ -550,7 +679,7 @@
     {
      "op": "bed",
      "cue": "JR_001",
-     "line": 79,
+     "line": 96,
      "volume": 0.25
     }
    ],
@@ -559,20 +688,90 @@
      "op": "sfx",
      "cue": "JR_040",
      "tags": [],
-     "line": 80,
+     "line": 97,
      "channel": "fg",
      "wait": true
     },
     {
      "op": "say",
-     "cue": "JR_041",
+     "cue": "JR_041b",
      "speaker": "COCO",
-     "text": "YES! ROPE! रस्सी मिल गई। अब एलिफेंट दादा को बाहर निकालने में कोको की मदद करो।",
+     "text": "YES! रस्सी मिल गई! अब एलिफेंट दादा को बाहर निकालने में कोको की मदद करो।",
      "tags": [
       "praise"
      ],
-     "line": 81,
+     "line": 98,
      "emotion": "bright and encouraging"
+    },
+    {
+     "op": "group",
+     "tags": [],
+     "block": "praise",
+     "beats": [
+      {
+       "op": "oneof",
+       "beats": [
+        {
+         "op": "say",
+         "cue": "lib:praise_amazing",
+         "speaker": "COCO",
+         "text": "Amazing, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 35,
+         "emotion": "warm, proud",
+         "name": true,
+         "nameText": "Amazing, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_good_job",
+         "speaker": "COCO",
+         "text": "Good job, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 36,
+         "emotion": "bright",
+         "name": true,
+         "nameText": "Good job, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_excellent",
+         "speaker": "COCO",
+         "text": "Excellent work, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 37,
+         "emotion": "delighted",
+         "name": true,
+         "nameText": "Excellent work, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_right",
+         "speaker": "COCO",
+         "text": "You are absolutely right, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 38,
+         "emotion": "pleased, clear",
+         "name": true,
+         "nameText": "You are absolutely right, {name}!"
+        }
+       ],
+       "line": 34
+      }
+     ],
+     "line": 99
     },
     {
      "op": "say",
@@ -582,14 +781,14 @@
      "tags": [
       "action"
      ],
-     "line": 82,
+     "line": 100,
      "emotion": "playful and encouraging"
     },
     {
      "op": "sfx",
      "cue": "JR_043",
      "tags": [],
-     "line": 83,
+     "line": 101,
      "channel": "fg",
      "wait": true,
      "hold": 2000
@@ -602,14 +801,14 @@
      "tags": [
       "action"
      ],
-     "line": 84,
+     "line": 102,
      "emotion": "clear and warm"
     },
     {
      "op": "sfx",
      "cue": "JR_045",
      "tags": [],
-     "line": 85,
+     "line": 103,
      "channel": "fg",
      "wait": true,
      "hold": 2000
@@ -622,14 +821,14 @@
      "tags": [
       "joke"
      ],
-     "line": 86,
+     "line": 104,
      "emotion": "comically breathless"
     },
     {
      "op": "sfx",
      "cue": "JR_047",
      "tags": [],
-     "line": 87,
+     "line": 105,
      "channel": "fg",
      "wait": true
     },
@@ -639,7 +838,7 @@
      "speaker": "COCO",
      "text": "यस, एलिफेंट दादा बाहर आ गए.",
      "tags": [],
-     "line": 88,
+     "line": 106,
      "emotion": "relieved and happy"
     },
     {
@@ -651,7 +850,7 @@
       "praise",
       "effort"
      ],
-     "line": 89,
+     "line": 107,
      "emotion": "proud and impressed"
     },
     {
@@ -660,7 +859,7 @@
      "speaker": "ELEPHANT",
      "text": "Thank you, Captain!",
      "tags": [],
-     "line": 90,
+     "line": 108,
      "emotion": "relieved and grateful"
     },
     {
@@ -673,7 +872,7 @@
        "op": "sfx",
        "cue": "JR_051",
        "tags": [],
-       "line": 92,
+       "line": 110,
        "channel": "fg",
        "wait": true
       },
@@ -683,7 +882,7 @@
        "speaker": "COCO",
        "text": "ये क्या था?",
        "tags": [],
-       "line": 93,
+       "line": 111,
        "emotion": "curious surprise"
       },
       {
@@ -692,7 +891,7 @@
        "speaker": "ELEPHANT",
        "text": "मेरे पेट में भूख से चूहे दौड़ रहे हैं।",
        "tags": [],
-       "line": 94,
+       "line": 112,
        "emotion": "playfully hungry"
       },
       {
@@ -701,16 +900,16 @@
        "speaker": "COCO",
        "text": "सिर्फ़ दौड़ नहीं रहे हैं... कूद भी रहे हैं!",
        "tags": [],
-       "line": 95,
+       "line": 113,
        "emotion": "playful"
       }
      ],
-     "line": 91
+     "line": 109
     },
     {
      "op": "wait",
      "ms": 800,
-     "line": 96
+     "line": 114
     },
     {
      "op": "ask",
@@ -721,7 +920,7 @@
       "speaker": "COCO",
       "text": "एलिफेंट दादा को भूख लगी है! Captain, क्या हमारे पास कुछ खाने के लिए है?",
       "tags": [],
-      "line": 98,
+      "line": 116,
       "emotion": "warm and inviting"
      },
      "hints": [
@@ -731,7 +930,7 @@
        "speaker": "COCO",
        "text": "अपने cards में खाने वाली चीज़ ढूँढो।",
        "tags": [],
-       "line": 99,
+       "line": 117,
        "emotion": "clear and warm"
       },
       {
@@ -740,7 +939,7 @@
        "speaker": "COCO",
        "text": "कुछ खाने वाला card?",
        "tags": [],
-       "line": 100,
+       "line": 118,
        "emotion": "clear and warm"
       },
       {
@@ -749,20 +948,20 @@
        "speaker": "COCO",
        "text": "BISCUIT वाला card tap करो।",
        "tags": [],
-       "line": 101,
+       "line": 119,
        "emotion": "clear and warm"
       }
      ],
      "afterPrompt": [],
      "remind": null,
      "tags": [],
-     "line": 97
+     "line": 115
     },
     {
      "op": "sfx",
      "cue": "JR_059",
      "tags": [],
-     "line": 102,
+     "line": 120,
      "channel": "fg",
      "wait": true
     },
@@ -774,14 +973,84 @@
      "tags": [
       "praise"
      ],
-     "line": 103,
+     "line": 121,
      "emotion": "bright"
+    },
+    {
+     "op": "group",
+     "tags": [],
+     "block": "praise",
+     "beats": [
+      {
+       "op": "oneof",
+       "beats": [
+        {
+         "op": "say",
+         "cue": "lib:praise_amazing",
+         "speaker": "COCO",
+         "text": "Amazing, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 35,
+         "emotion": "warm, proud",
+         "name": true,
+         "nameText": "Amazing, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_good_job",
+         "speaker": "COCO",
+         "text": "Good job, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 36,
+         "emotion": "bright",
+         "name": true,
+         "nameText": "Good job, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_excellent",
+         "speaker": "COCO",
+         "text": "Excellent work, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 37,
+         "emotion": "delighted",
+         "name": true,
+         "nameText": "Excellent work, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_right",
+         "speaker": "COCO",
+         "text": "You are absolutely right, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 38,
+         "emotion": "pleased, clear",
+         "name": true,
+         "nameText": "You are absolutely right, {name}!"
+        }
+       ],
+       "line": 34
+      }
+     ],
+     "line": 122
     },
     {
      "op": "sfx",
      "cue": "JR_061",
      "tags": [],
-     "line": 104,
+     "line": 123,
      "channel": "fg",
      "wait": true
     },
@@ -793,7 +1062,7 @@
      "tags": [
       "joke"
      ],
-     "line": 105,
+     "line": 124,
      "emotion": "surprised"
     },
     {
@@ -813,7 +1082,7 @@
          "speaker": "COCO",
          "text": "Captain, वही BISCUIT वाला card फिर से tap करो।",
          "tags": [],
-         "line": 109,
+         "line": 128,
          "emotion": "gentle and clear"
         },
         {
@@ -822,7 +1091,7 @@
          "speaker": "COCO",
          "text": "BISCUIT वाला card हटाओ, फिर दोबारा tap करो।",
          "tags": [],
-         "line": 110,
+         "line": 129,
          "emotion": "helpful and unhurried"
         },
         {
@@ -831,20 +1100,20 @@
          "speaker": "COCO",
          "text": "BISCUIT वाला card फिर से tap करो।",
          "tags": [],
-         "line": 111,
+         "line": 130,
          "emotion": "clear and kind"
         }
        ],
        "afterPrompt": [],
        "remind": null,
        "tags": [],
-       "line": 107
+       "line": 126
       },
       {
        "op": "sfx",
        "cue": "JR_061",
        "tags": [],
-       "line": 112,
+       "line": 131,
        "channel": "fg",
        "wait": true
       },
@@ -857,7 +1126,7 @@
         "joke",
         "praise"
        ],
-       "line": 113,
+       "line": 132,
        "emotion": "hopeful and cheeky"
       },
       {
@@ -871,7 +1140,7 @@
          "speaker": "COCO",
          "text": "Captain, वही BISCUIT वाला card फिर से tap करो।",
          "tags": [],
-         "line": 116,
+         "line": 135,
          "emotion": "gentle and clear"
         },
         {
@@ -880,7 +1149,7 @@
          "speaker": "COCO",
          "text": "BISCUIT वाला card हटाओ, फिर दोबारा tap करो।",
          "tags": [],
-         "line": 117,
+         "line": 136,
          "emotion": "helpful and unhurried"
         },
         {
@@ -889,20 +1158,20 @@
          "speaker": "COCO",
          "text": "BISCUIT वाला card फिर से tap करो।",
          "tags": [],
-         "line": 118,
+         "line": 137,
          "emotion": "clear and kind"
         }
        ],
        "afterPrompt": [],
        "remind": null,
        "tags": [],
-       "line": 114
+       "line": 133
       },
       {
        "op": "sfx",
        "cue": "JR_061",
        "tags": [],
-       "line": 119,
+       "line": 138,
        "channel": "fg",
        "wait": true
       },
@@ -915,11 +1184,11 @@
         "joke",
         "praise"
        ],
-       "line": 120,
+       "line": 139,
        "emotion": "playfully pleading"
       }
      ],
-     "line": 106
+     "line": 125
     },
     {
      "op": "ask",
@@ -932,7 +1201,7 @@
        "speaker": "COCO",
        "text": "Captain, वही BISCUIT वाला card फिर से tap करो।",
        "tags": [],
-       "line": 123,
+       "line": 142,
        "emotion": "gentle and clear"
       },
       {
@@ -941,7 +1210,7 @@
        "speaker": "COCO",
        "text": "BISCUIT वाला card हटाओ, फिर दोबारा tap करो।",
        "tags": [],
-       "line": 124,
+       "line": 143,
        "emotion": "helpful and unhurried"
       },
       {
@@ -950,20 +1219,20 @@
        "speaker": "COCO",
        "text": "BISCUIT वाला card फिर से tap करो।",
        "tags": [],
-       "line": 125,
+       "line": 144,
        "emotion": "clear and kind"
       }
      ],
      "afterPrompt": [],
      "remind": null,
      "tags": [],
-     "line": 121
+     "line": 140
     },
     {
      "op": "sfx",
      "cue": "JR_061",
      "tags": [],
-     "line": 126,
+     "line": 145,
      "channel": "fg",
      "wait": true
     },
@@ -976,16 +1245,86 @@
       "joke",
       "praise"
      ],
-     "line": 127,
+     "line": 146,
      "emotion": "playfully overwhelmed"
     },
     {
      "op": "sfx",
      "cue": "JR_066",
      "tags": [],
-     "line": 128,
+     "line": 147,
      "channel": "fg",
      "wait": true
+    },
+    {
+     "op": "group",
+     "tags": [],
+     "block": "praise",
+     "beats": [
+      {
+       "op": "oneof",
+       "beats": [
+        {
+         "op": "say",
+         "cue": "lib:praise_amazing",
+         "speaker": "COCO",
+         "text": "Amazing, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 35,
+         "emotion": "warm, proud",
+         "name": true,
+         "nameText": "Amazing, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_good_job",
+         "speaker": "COCO",
+         "text": "Good job, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 36,
+         "emotion": "bright",
+         "name": true,
+         "nameText": "Good job, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_excellent",
+         "speaker": "COCO",
+         "text": "Excellent work, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 37,
+         "emotion": "delighted",
+         "name": true,
+         "nameText": "Excellent work, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_right",
+         "speaker": "COCO",
+         "text": "You are absolutely right, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 38,
+         "emotion": "pleased, clear",
+         "name": true,
+         "nameText": "You are absolutely right, {name}!"
+        }
+       ],
+       "line": 34
+      }
+     ],
+     "line": 148
     }
    ]
   },
@@ -996,7 +1335,7 @@
     {
      "op": "bed",
      "cue": "JR_001",
-     "line": 132,
+     "line": 152,
      "volume": 0.25
     }
    ],
@@ -1005,7 +1344,7 @@
      "op": "sfx",
      "cue": "JR_072",
      "tags": [],
-     "line": 133,
+     "line": 153,
      "channel": "fg",
      "wait": true
     },
@@ -1015,14 +1354,14 @@
      "speaker": "COCO",
      "text": "एलिफेंट दादा safe! Jungle Rescue Team, next mission!",
      "tags": [],
-     "line": 134,
+     "line": 154,
      "emotion": "bright transition"
     },
     {
      "op": "sfx",
      "cue": "JR_074",
      "tags": [],
-     "line": 135,
+     "line": 155,
      "channel": "fg",
      "wait": true
     },
@@ -1032,24 +1371,24 @@
      "speaker": "PARROT",
      "text": "आह! ओह! मेरा wing hurt हो गया!",
      "tags": [],
-     "line": 136,
+     "line": 156,
      "emotion": "briefly hurt, gentle and childlike"
     },
     {
      "op": "sfx",
      "cue": "JR_076",
      "tags": [],
-     "line": 137,
+     "line": 157,
      "channel": "fg",
      "wait": true
     },
     {
      "op": "say",
-     "cue": "JR_077",
+     "cue": "JR_077b",
      "speaker": "COCO",
-     "text": "अरे पैरट जी! आपका एक wing flap कर रहा है, दूसरा आराम कर रहा है।",
+     "text": "अरे पैरट जी! आपका एक पंख हिल रहा है, दूसरा आराम कर रहा है।",
      "tags": [],
-     "line": 138,
+     "line": 158,
      "emotion": "concerned and gentle"
     },
     {
@@ -1058,7 +1397,7 @@
      "speaker": "COCO",
      "text": "चिंता मत करो, पैरट जी! Captain और मैं आपकी मदद करेंगे।",
      "tags": [],
-     "line": 139,
+     "line": 159,
      "emotion": "warm and reassuring"
     },
     {
@@ -1066,103 +1405,173 @@
      "card": "FIRST_AID",
      "prompt": {
       "op": "say",
-      "cue": "JR_079",
+      "cue": "JR_079b",
       "speaker": "COCO",
-      "text": "चोट लगने पर हमें ऐसी चीज़ चाहिए जिसमें bandage और medicine जैसी चीज़ें होती हैं। Captain, क्या हमारे पास कुछ ऐसा है?",
+      "text": "पैरट जी को चोट लगी है — हमें पट्टी और दवाई चाहिए! Captain, cards में दवाई का डब्बा ढूँढो!",
       "tags": [],
-      "line": 141,
-      "emotion": "curious, clear card invitation"
+      "line": 161,
+      "emotion": "caring, clear"
      },
      "hints": [
       {
        "op": "say",
-       "cue": "JR_080",
+       "cue": "JR_080b",
        "speaker": "COCO",
-       "text": "अपने cards को देखो... चोट लगने पर काम आने वाली चीज़ ढूँढो.",
+       "text": "अपने cards को देखो… दवाई का डब्बा दिख रहा है?",
        "tags": [],
-       "line": 142,
+       "line": 162,
        "emotion": "clear and warm"
       },
       {
        "op": "say",
-       "cue": "JR_081",
+       "cue": "JR_081b",
        "speaker": "COCO",
-       "text": "इसमें bandage जैसी चीज़ें रखी होती हैं.",
+       "text": "सफ़ेद डब्बा, जिस पर लाल plus बना है — उसमें पट्टी और दवाई रहती है।",
        "tags": [],
-       "line": 143,
+       "line": 163,
        "emotion": "clear and warm"
       },
       {
        "op": "say",
-       "cue": "JR_082",
+       "cue": "JR_082b",
        "speaker": "COCO",
-       "text": "FIRST AID वाला card scan करो.",
+       "text": "दवाई वाले डब्बे का card scan करो — लाल plus वाला।",
        "tags": [],
-       "line": 144,
+       "line": 164,
        "emotion": "clear and warm"
       }
      ],
      "afterPrompt": [],
      "remind": null,
      "tags": [],
-     "line": 140
+     "line": 160
     },
     {
      "op": "sfx",
      "cue": "JR_083",
      "tags": [],
-     "line": 145,
+     "line": 165,
      "channel": "fg",
      "wait": true
     },
     {
      "op": "say",
-     "cue": "JR_084",
+     "cue": "JR_084b",
      "speaker": "COCO",
-     "text": "YES! FIRST AID! पट्टी और medicine मिल गई।",
+     "text": "YES! दवाई का डब्बा! पट्टी और दवाई मिल गई।",
      "tags": [
       "praise"
      ],
-     "line": 146,
+     "line": 166,
      "emotion": "happy, clear, unhurried"
+    },
+    {
+     "op": "group",
+     "tags": [],
+     "block": "praise",
+     "beats": [
+      {
+       "op": "oneof",
+       "beats": [
+        {
+         "op": "say",
+         "cue": "lib:praise_amazing",
+         "speaker": "COCO",
+         "text": "Amazing, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 35,
+         "emotion": "warm, proud",
+         "name": true,
+         "nameText": "Amazing, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_good_job",
+         "speaker": "COCO",
+         "text": "Good job, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 36,
+         "emotion": "bright",
+         "name": true,
+         "nameText": "Good job, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_excellent",
+         "speaker": "COCO",
+         "text": "Excellent work, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 37,
+         "emotion": "delighted",
+         "name": true,
+         "nameText": "Excellent work, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_right",
+         "speaker": "COCO",
+         "text": "You are absolutely right, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 38,
+         "emotion": "pleased, clear",
+         "name": true,
+         "nameText": "You are absolutely right, {name}!"
+        }
+       ],
+       "line": 34
+      }
+     ],
+     "line": 167
     },
     {
      "op": "wait",
      "ms": 250,
-     "line": 147
+     "line": 168
     },
     {
      "op": "sfx",
      "cue": "JR_085",
      "tags": [],
-     "line": 148,
+     "line": 169,
      "channel": "fg",
      "wait": true
     },
     {
      "op": "say",
-     "cue": "JR_086",
+     "cue": "JR_086b",
      "speaker": "COCO",
-     "text": "पैरट का wing अब safe है। पट्टी लग गई!",
+     "text": "पैरट का पंख अब ठीक है। पट्टी लग गई!",
      "tags": [],
-     "line": 149,
+     "line": 170,
      "emotion": "gentle relief"
     },
     {
      "op": "sfx",
      "cue": "JR_087",
      "tags": [],
-     "line": 150,
+     "line": 171,
      "channel": "fg",
      "wait": true
     },
     {
      "op": "say",
-     "cue": "JR_088",
+     "cue": "JR_088b",
      "speaker": "PARROT",
-     "text": "Thank you, Captain! अब मैं wing हिला कर देखूँ?",
+     "text": "Thank you, Captain! अब मैं पंख हिला कर देखूँ?",
      "tags": [],
-     "line": 151,
+     "line": 172,
      "emotion": "hopeful and tentative"
     },
     {
@@ -1173,14 +1582,14 @@
      "tags": [
       "action"
      ],
-     "line": 152,
+     "line": 173,
      "emotion": "encouraging, rhythmic"
     },
     {
      "op": "sfx",
      "cue": "JR_090",
      "tags": [],
-     "line": 153,
+     "line": 174,
      "channel": "fg",
      "wait": true
     },
@@ -1188,26 +1597,26 @@
      "op": "sfx",
      "cue": "JR_090",
      "tags": [],
-     "line": 154,
+     "line": 175,
      "channel": "fg",
      "wait": true
     },
     {
      "op": "say",
-     "cue": "JR_091",
+     "cue": "JR_091b",
      "speaker": "PARROT",
-     "text": "फड़फड़! अब मेरा wing चल रहा है!",
+     "text": "फड़फड़! अब मेरा पंख चल रहा है!",
      "tags": [],
-     "line": 155,
+     "line": 176,
      "emotion": "delighted, bright"
     },
     {
      "op": "say",
-     "cue": "JR_093",
+     "cue": "JR_093b",
      "speaker": "PARROT",
-     "text": "लेकिन मेरी चोंच सूख गई है। मुझे पानी चाहिए।",
+     "text": "लेकिन मुझे बहुत प्यास लगी है। मुझे पानी चाहिए।",
      "tags": [],
-     "line": 156,
+     "line": 177,
      "emotion": "tired and thirsty, not distressed"
     }
    ]
@@ -1228,7 +1637,7 @@
       "tags": [
        "action"
       ],
-      "line": 161,
+      "line": 182,
       "emotion": "caring, clear water-break instruction"
      },
      "hints": [],
@@ -1236,7 +1645,7 @@
       {
        "op": "bed",
        "stop": true,
-       "line": 162
+       "line": 183
       }
      ],
      "remind": {
@@ -1246,7 +1655,7 @@
        "speaker": "COCO",
        "text": "Captain, Coco यहीं wait कर रहा है। पानी पीकर आओ और WATER वाला card tap कर देना।",
        "tags": [],
-       "line": 163,
+       "line": 184,
        "emotion": "kind and unhurried reminder"
       },
       "at": [
@@ -1258,20 +1667,20 @@
       ]
      },
      "tags": [],
-     "line": 160
+     "line": 181
     },
     {
      "op": "sfx",
      "cue": "JR_096",
      "tags": [],
-     "line": 164,
+     "line": 185,
      "channel": "fg",
      "wait": true
     },
     {
      "op": "bed",
      "cue": "JR_001",
-     "line": 165,
+     "line": 186,
      "volume": 0.23
     },
     {
@@ -1283,14 +1692,84 @@
       "praise",
       "effort"
      ],
-     "line": 166,
+     "line": 187,
      "emotion": "warm welcome back"
+    },
+    {
+     "op": "group",
+     "tags": [],
+     "block": "praise",
+     "beats": [
+      {
+       "op": "oneof",
+       "beats": [
+        {
+         "op": "say",
+         "cue": "lib:praise_amazing",
+         "speaker": "COCO",
+         "text": "Amazing, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 35,
+         "emotion": "warm, proud",
+         "name": true,
+         "nameText": "Amazing, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_good_job",
+         "speaker": "COCO",
+         "text": "Good job, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 36,
+         "emotion": "bright",
+         "name": true,
+         "nameText": "Good job, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_excellent",
+         "speaker": "COCO",
+         "text": "Excellent work, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 37,
+         "emotion": "delighted",
+         "name": true,
+         "nameText": "Excellent work, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_right",
+         "speaker": "COCO",
+         "text": "You are absolutely right, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 38,
+         "emotion": "pleased, clear",
+         "name": true,
+         "nameText": "You are absolutely right, {name}!"
+        }
+       ],
+       "line": 34
+      }
+     ],
+     "line": 188
     },
     {
      "op": "sfx",
      "cue": "JR_098",
      "tags": [],
-     "line": 167,
+     "line": 189,
      "channel": "fg",
      "wait": true
     },
@@ -1300,14 +1779,14 @@
      "speaker": "PARROT",
      "text": "ओहो! पानी मिलते ही मेरी चोंच खुश हो गई!",
      "tags": [],
-     "line": 168,
+     "line": 190,
      "emotion": "surprised and happy"
     },
     {
      "op": "sfx",
      "cue": "JR_100",
      "tags": [],
-     "line": 169,
+     "line": 191,
      "channel": "fg",
      "wait": true
     },
@@ -1317,7 +1796,7 @@
      "speaker": "PARROT",
      "text": "मैं उड़ सकता हूँ! Bye-bye, Captain!",
      "tags": [],
-     "line": 170,
+     "line": 192,
      "emotion": "joyful, calling as she flies away"
     },
     {
@@ -1326,13 +1805,13 @@
      "speaker": "COCO",
      "text": "देखो, पैरट फुर्र से उड़ गया! Jungle Rescue Team, चलो आगे!",
      "tags": [],
-     "line": 171,
+     "line": 193,
      "emotion": "delighted transition"
     },
     {
      "op": "bed",
      "stop": true,
-     "line": 172
+     "line": 194
     }
    ]
   },
@@ -1345,7 +1824,7 @@
      "op": "play",
      "cue": "JR_103",
      "tags": [],
-     "line": 176
+     "line": 198
     },
     {
      "op": "say",
@@ -1353,14 +1832,14 @@
      "speaker": "NARRATOR",
      "text": "रेस्क्यू जीप घने जंगलों के बीच आकर रुकी। सूरज ढल चुका था और पेड़-पौधे अंधेरे में अजीब साए जैसे लग रहे थे।",
      "tags": [],
-     "line": 177,
+     "line": 199,
      "emotion": "hushed and adventurous"
     },
     {
      "op": "sfx",
      "cue": "JR_105",
      "tags": [],
-     "line": 178,
+     "line": 200,
      "channel": "fg",
      "wait": true
     },
@@ -1370,8 +1849,21 @@
      "speaker": "LION",
      "text": "आ... छी! आ... छी!",
      "tags": [],
-     "line": 179,
+     "line": 201,
      "emotion": "two heavy but harmless childlike sneezes"
+    },
+    {
+     "op": "say",
+     "cue": "lib:listen_carefully",
+     "speaker": "COCO",
+     "text": "Captain, ध्यान से सुनो…",
+     "tags": [
+      "name"
+     ],
+     "line": 202,
+     "emotion": "whispering",
+     "name": true,
+     "nameText": "{name}, ध्यान से सुनो…"
     },
     {
      "op": "say",
@@ -1379,7 +1871,7 @@
      "speaker": "COCO",
      "text": "Captain... उस बड़ी rock के पीछे कोई छुपा है!",
      "tags": [],
-     "line": 180,
+     "line": 203,
      "emotion": "whispering, nervous but playful"
     },
     {
@@ -1388,14 +1880,14 @@
      "speaker": "LION",
      "text": "ह-हेलो? कोई है वहाँ?",
      "tags": [],
-     "line": 181,
+     "line": 204,
      "emotion": "small and embarrassed"
     },
     {
      "op": "sfx",
      "cue": "JR_106_lion",
      "tags": [],
-     "line": 182,
+     "line": 205,
      "channel": "fg",
      "wait": true
     },
@@ -1405,7 +1897,7 @@
      "speaker": "COCO",
      "text": "अरे! यह तो Lion King की आवाज़ है! आप rock के पीछे क्या कर रहे हैं?",
      "tags": [],
-     "line": 183,
+     "line": 206,
      "emotion": "surprised"
     },
     {
@@ -1414,46 +1906,44 @@
      "speaker": "LION",
      "text": "कोको... मैं यहाँ रास्ता भूल गया हूँ। और यहाँ इतना अंधेरा है कि मुझे अपनी पूँछ भी दिखाई नहीं दे रही!",
      "tags": [],
-     "line": 184,
+     "line": 207,
      "emotion": "worried but gentle"
     },
     {
-     "op": "say",
-     "cue": "JR_111",
-     "speaker": "COCO",
-     "text": "फ़िक्र मत करो! मैं ढूँढता हूँ आपकी पूँछ।",
+     "op": "group",
      "tags": [
       "joke"
      ],
-     "line": 185,
-     "emotion": "confident, then uncertain"
-    },
-    {
-     "op": "sfx",
-     "cue": "JR_106_lion",
-     "tags": [],
-     "line": 186,
-     "channel": "fg",
-     "wait": true
-    },
-    {
-     "op": "say",
-     "cue": "JR_113",
-     "speaker": "COCO",
-     "text": "मेरा मतलब... मैं कुछ करता हूँ... ओह!",
-     "tags": [
-      "joke"
+     "beats": [
+      {
+       "op": "say",
+       "cue": "JR_111b",
+       "speaker": "COCO",
+       "text": "फ़िक्र मत करो, Lion King! मैं आपका हाथ पकड़ता हूँ… ये लो!",
+       "tags": [],
+       "line": 209,
+       "emotion": "confident, reaching out in the dark"
+      },
+      {
+       "op": "say",
+       "cue": "JR_112b",
+       "speaker": "LION",
+       "text": "आऊच! वो मेरा हाथ नहीं — मेरी पूँछ है!",
+       "tags": [],
+       "line": 210,
+       "emotion": "surprised yelp, funny not scared"
+      },
+      {
+       "op": "say",
+       "cue": "JR_113b",
+       "speaker": "COCO",
+       "text": "ओह! अंधेरे में हाथ और पूँछ एक जैसे लगते हैं!",
+       "tags": [],
+       "line": 211,
+       "emotion": "embarrassed laugh"
+      }
      ],
-     "line": 187,
-     "emotion": "nervous, trying to sound brave"
-    },
-    {
-     "op": "sfx",
-     "cue": "JR_114",
-     "tags": [],
-     "line": 188,
-     "channel": "fg",
-     "wait": true
+     "line": 208
     },
     {
      "op": "ask",
@@ -1464,7 +1954,7 @@
       "speaker": "COCO",
       "text": "अरे! इतना अंधेरा है कि मेरी नाक भी नहीं दिख रही! Captain, हमें तुरंत रोशनी चाहिए, वरना हम सब टकरा जाएँगे!",
       "tags": [],
-      "line": 190,
+      "line": 213,
       "emotion": "rubbing head, urgent but playful"
      },
      "hints": [
@@ -1474,7 +1964,7 @@
        "speaker": "COCO",
        "text": "अपने cards में देखो... कोई ऐसी चीज़ है जो अंधेरे में तेज़ रोशनी दे सके?",
        "tags": [],
-       "line": 191,
+       "line": 214,
        "emotion": "clear and warm"
       },
       {
@@ -1483,23 +1973,23 @@
        "speaker": "COCO",
        "text": "इसे ON करते ही अंधेरे में रास्ता साफ़ दिखने लगता है।",
        "tags": [],
-       "line": 192,
+       "line": 215,
        "emotion": "clear and warm"
       },
       {
        "op": "say",
-       "cue": "JR_118",
+       "cue": "JR_118b",
        "speaker": "COCO",
-       "text": "FLASHLIGHT वाला card scan करो!",
+       "text": "टॉर्च वाला card scan करो!",
        "tags": [],
-       "line": 193,
+       "line": 216,
        "emotion": "clear and warm"
       }
      ],
      "afterPrompt": [],
      "remind": null,
      "tags": [],
-     "line": 189
+     "line": 212
     }
    ]
   },
@@ -1510,7 +2000,7 @@
     {
      "op": "bed",
      "cue": "JR_103_bed",
-     "line": 197
+     "line": 220
     }
    ],
    "beats": [
@@ -1521,7 +2011,7 @@
        "op": "sfx",
        "cue": "JR_120",
        "tags": [],
-       "line": 199,
+       "line": 222,
        "channel": "overlay",
        "volume": 0.85,
        "wait": true
@@ -1530,35 +2020,105 @@
        "op": "sfx",
        "cue": "JR_119",
        "tags": [],
-       "line": 200,
+       "line": 223,
        "channel": "overlay",
        "volume": 0.25,
        "wait": true
       }
      ],
-     "line": 198
+     "line": 221
     },
     {
      "op": "wait",
      "ms": 150,
-     "line": 201
+     "line": 224
     },
     {
      "op": "say",
-     "cue": "JR_121",
+     "cue": "JR_121b",
      "speaker": "COCO",
-     "text": "YES! FLASHLIGHT!",
+     "text": "YES! टॉर्च! रोशनी हो गई!",
      "tags": [
       "praise"
      ],
-     "line": 202,
+     "line": 225,
      "emotion": "relieved and bright"
+    },
+    {
+     "op": "group",
+     "tags": [],
+     "block": "praise",
+     "beats": [
+      {
+       "op": "oneof",
+       "beats": [
+        {
+         "op": "say",
+         "cue": "lib:praise_amazing",
+         "speaker": "COCO",
+         "text": "Amazing, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 35,
+         "emotion": "warm, proud",
+         "name": true,
+         "nameText": "Amazing, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_good_job",
+         "speaker": "COCO",
+         "text": "Good job, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 36,
+         "emotion": "bright",
+         "name": true,
+         "nameText": "Good job, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_excellent",
+         "speaker": "COCO",
+         "text": "Excellent work, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 37,
+         "emotion": "delighted",
+         "name": true,
+         "nameText": "Excellent work, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_right",
+         "speaker": "COCO",
+         "text": "You are absolutely right, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 38,
+         "emotion": "pleased, clear",
+         "name": true,
+         "nameText": "You are absolutely right, {name}!"
+        }
+       ],
+       "line": 34
+      }
+     ],
+     "line": 226
     },
     {
      "op": "sfx",
      "cue": "JR_122",
      "tags": [],
-     "line": 203,
+     "line": 227,
      "channel": "fg",
      "wait": true
     },
@@ -1570,14 +2130,14 @@
      "tags": [
       "joke"
      ],
-     "line": 204,
+     "line": 228,
      "emotion": "surprised and relieved"
     },
     {
      "op": "sfx",
      "cue": "JR_124",
      "tags": [],
-     "line": 205,
+     "line": 229,
      "channel": "fg",
      "wait": true
     },
@@ -1587,14 +2147,14 @@
      "speaker": "NARRATOR",
      "text": "टॉर्च की रोशनी में Lion King rock के पीछे से बाहर आए। पर वो थोड़े काँप रहे थे।",
      "tags": [],
-     "line": 206,
+     "line": 230,
      "emotion": "warm"
     },
     {
      "op": "sfx",
      "cue": "JR_126",
      "tags": [],
-     "line": 207,
+     "line": 231,
      "channel": "fg",
      "wait": true
     },
@@ -1604,7 +2164,7 @@
      "speaker": "LION",
      "text": "रोशनी के लिए शुक्रिया... पर रात की हवा बहुत ठंडी है। Brrr!",
      "tags": [],
-     "line": 208,
+     "line": 232,
      "emotion": "shivering, small and childlike"
     },
     {
@@ -1613,13 +2173,13 @@
      "speaker": "NARRATOR",
      "text": "रोशनी में Lion King को अपनी गुफा दिख गई। कोको उन्हें अंदर ले गया, लेकिन Lion King को अब भी बहुत ठंड लग रही थी।",
      "tags": [],
-     "line": 209,
+     "line": 233,
      "emotion": "warm and reassuring"
     },
     {
      "op": "bed",
      "cue": "JR_129_bed",
-     "line": 210,
+     "line": 234,
      "volume": 0.18,
      "crossfade": true
     },
@@ -1627,9 +2187,22 @@
      "op": "sfx",
      "cue": "JR_129_entry",
      "tags": [],
-     "line": 211,
+     "line": 235,
      "channel": "fg",
      "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "lib:look",
+     "speaker": "COCO",
+     "text": "Captain, देखो!",
+     "tags": [
+      "name"
+     ],
+     "line": 236,
+     "emotion": "urgent, excited",
+     "name": true,
+     "nameText": "{name}, देखो!"
     },
     {
      "op": "say",
@@ -1637,14 +2210,14 @@
      "speaker": "COCO",
      "text": "रुकिए Lion King, मैं आपको इस बड़े सूखे पत्ते से ढकता हूँ!",
      "tags": [],
-     "line": 212,
+     "line": 237,
      "emotion": "helpful and confident"
     },
     {
      "op": "sfx",
      "cue": "JR_131",
      "tags": [],
-     "line": 213,
+     "line": 238,
      "channel": "fg",
      "wait": true
     },
@@ -1656,14 +2229,14 @@
      "tags": [
       "joke"
      ],
-     "line": 214,
+     "line": 239,
      "emotion": "comic self-mockery, then caring"
     },
     {
      "op": "sfx",
      "cue": "JR_132_sting",
      "tags": [],
-     "line": 215,
+     "line": 240,
      "channel": "fg",
      "wait": true
     },
@@ -1676,7 +2249,7 @@
       "speaker": "COCO",
       "text": "Captain, हमें Lion King के लिए कोई soft और गर्म चीज़ चाहिए जिसे उन्हें ओढ़ा सकें!",
       "tags": [],
-      "line": 217,
+      "line": 242,
       "emotion": "clear and inviting"
      },
      "hints": [
@@ -1686,7 +2259,7 @@
        "speaker": "COCO",
        "text": "अपने cards में देखो... कोई soft चीज़ ढूँढो जो ठंड से बचाए।",
        "tags": [],
-       "line": 218,
+       "line": 243,
        "emotion": "clear and warm"
       },
       {
@@ -1695,7 +2268,7 @@
        "speaker": "COCO",
        "text": "रात को सोते समय हम इसे अपने ऊपर ओढ़कर warm महसूस करते हैं।",
        "tags": [],
-       "line": 219,
+       "line": 244,
        "emotion": "clear and warm"
       },
       {
@@ -1704,14 +2277,14 @@
        "speaker": "COCO",
        "text": "BLANKET वाला card scan करो!",
        "tags": [],
-       "line": 220,
+       "line": 245,
        "emotion": "clear and warm"
       }
      ],
      "afterPrompt": [],
      "remind": null,
      "tags": [],
-     "line": 216
+     "line": 241
     }
    ]
   },
@@ -1722,7 +2295,7 @@
     {
      "op": "bed",
      "cue": "JR_129_bed",
-     "line": 224
+     "line": 249
     }
    ],
    "beats": [
@@ -1730,7 +2303,7 @@
      "op": "sfx",
      "cue": "JR_138",
      "tags": [],
-     "line": 225,
+     "line": 250,
      "channel": "overlay",
      "volume": 0.35,
      "wait": true
@@ -1738,7 +2311,7 @@
     {
      "op": "wait",
      "ms": 150,
-     "line": 226
+     "line": 251
     },
     {
      "op": "say",
@@ -1748,14 +2321,84 @@
      "tags": [
       "praise"
      ],
-     "line": 227,
+     "line": 252,
      "emotion": "warm acknowledgement"
+    },
+    {
+     "op": "group",
+     "tags": [],
+     "block": "praise",
+     "beats": [
+      {
+       "op": "oneof",
+       "beats": [
+        {
+         "op": "say",
+         "cue": "lib:praise_amazing",
+         "speaker": "COCO",
+         "text": "Amazing, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 35,
+         "emotion": "warm, proud",
+         "name": true,
+         "nameText": "Amazing, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_good_job",
+         "speaker": "COCO",
+         "text": "Good job, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 36,
+         "emotion": "bright",
+         "name": true,
+         "nameText": "Good job, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_excellent",
+         "speaker": "COCO",
+         "text": "Excellent work, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 37,
+         "emotion": "delighted",
+         "name": true,
+         "nameText": "Excellent work, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_right",
+         "speaker": "COCO",
+         "text": "You are absolutely right, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 38,
+         "emotion": "pleased, clear",
+         "name": true,
+         "nameText": "You are absolutely right, {name}!"
+        }
+       ],
+       "line": 34
+      }
+     ],
+     "line": 253
     },
     {
      "op": "sfx",
      "cue": "JR_139",
      "tags": [],
-     "line": 228,
+     "line": 254,
      "channel": "fg",
      "wait": true
     },
@@ -1765,7 +2408,7 @@
      "speaker": "NARRATOR",
      "text": "कोको ने बड़े प्यार से वो blanket Lion King को ओढ़ा दिया।",
      "tags": [],
-     "line": 229,
+     "line": 255,
      "emotion": "tender"
     },
     {
@@ -1774,25 +2417,38 @@
      "speaker": "LION",
      "text": "अहाहा... अब आया ना मज़ा! इतनी गर्मी... इतना आराम...",
      "tags": [],
-     "line": 230,
+     "line": 256,
      "emotion": "cozy, relieved, childlike"
     },
     {
      "op": "say",
-     "cue": "JR_143",
+     "cue": "JR_143b",
      "speaker": "COCO",
-     "text": "Captain, Lion King को आराम से सुलाने के लिए एक छोटी सी लोरी गाएँ? तुम मेरे साथ गाओगे?",
+     "text": "Captain, Lion King को आराम से सुलाने के लिए एक छोटी सी लोरी गाएँ? तुम भी मेरे साथ गाओ, ठीक है?",
      "tags": [
       "action"
      ],
-     "line": 231,
+     "line": 257,
      "emotion": "tender and empathetic, slower and softer"
+    },
+    {
+     "op": "say",
+     "cue": "lib:sing_along",
+     "speaker": "COCO",
+     "text": "Captain, साथ में गाओ!",
+     "tags": [
+      "name"
+     ],
+     "line": 258,
+     "emotion": "tender, inviting",
+     "name": true,
+     "nameText": "{name}, साथ में गाओ!"
     },
     {
      "op": "sfx",
      "cue": "JR_144",
      "tags": [],
-     "line": 232,
+     "line": 259,
      "channel": "overlay",
      "volume": 0.5,
      "wait": false
@@ -1801,7 +2457,7 @@
      "op": "sfx",
      "cue": "JR_145",
      "tags": [],
-     "line": 233,
+     "line": 260,
      "channel": "fg",
      "wait": true
     },
@@ -1809,7 +2465,7 @@
      "op": "sfx",
      "cue": "JR_147",
      "tags": [],
-     "line": 234,
+     "line": 261,
      "channel": "fg",
      "wait": true
     },
@@ -1819,7 +2475,7 @@
      "speaker": "COCO",
      "text": "लो! हमारी लोरी सुनते-सुनते Lion King तो खर्राटे लेने लगे! Mission successful!",
      "tags": [],
-     "line": 235,
+     "line": 262,
      "emotion": "giggling, quiet whisper"
     }
    ]
@@ -1832,7 +2488,7 @@
     {
      "op": "bed",
      "stop": true,
-     "line": 239
+     "line": 266
     },
     {
      "op": "say",
@@ -1840,14 +2496,14 @@
      "speaker": "COCO",
      "text": "Captain, हमने दोस्तों की मदद कर दी! अब हमारी पार्टी!",
      "tags": [],
-     "line": 240,
+     "line": 267,
      "emotion": "proud, delighted"
     },
     {
      "op": "sfx",
      "cue": "JR_152_clap",
      "tags": [],
-     "line": 241,
+     "line": 268,
      "channel": "overlay",
      "volume": 0.72,
      "wait": true
@@ -1856,7 +2512,7 @@
      "op": "sfx",
      "cue": "JR_153",
      "tags": [],
-     "line": 242,
+     "line": 269,
      "channel": "fg",
      "wait": true
     },
@@ -1865,11 +2521,11 @@
      "card": "MUSIC",
      "prompt": {
       "op": "say",
-      "cue": "JR_154",
+      "cue": "JR_154b",
       "speaker": "COCO",
-      "text": "मेरे पैर तो नाचने लगे! पर धुन कहाँ है? Captain, नाचने के लिए क्या बजाएँ?",
+      "text": "मेरे पैर तो नाचने लगे! पर गाना कहाँ है? Captain, नाचने के लिए कोई music बजाओ!",
       "tags": [],
-      "line": 244,
+      "line": 271,
       "emotion": "eager, playful"
      },
      "hints": [
@@ -1879,7 +2535,7 @@
        "speaker": "COCO",
        "text": "पार्टी में नाचने के लिए धुन चाहिए।",
        "tags": [],
-       "line": 245,
+       "line": 272,
        "emotion": "gently encouraging"
       },
       {
@@ -1888,7 +2544,7 @@
        "speaker": "COCO",
        "text": "गाना बजाने वाला card ढूँढो।",
        "tags": [],
-       "line": 246,
+       "line": 273,
        "emotion": "playful, helpful"
       },
       {
@@ -1897,14 +2553,14 @@
        "speaker": "COCO",
        "text": "MUSIC वाला card tap करो।",
        "tags": [],
-       "line": 247,
+       "line": 274,
        "emotion": "clear, kind"
       }
      ],
      "afterPrompt": [],
      "remind": null,
      "tags": [],
-     "line": 243
+     "line": 270
     }
    ]
   },
@@ -1917,7 +2573,7 @@
      "op": "sfx",
      "cue": "JR_158",
      "tags": [],
-     "line": 251,
+     "line": 278,
      "channel": "overlay",
      "volume": 0.35,
      "wait": true
@@ -1925,7 +2581,7 @@
     {
      "op": "wait",
      "ms": 150,
-     "line": 252
+     "line": 279
     },
     {
      "op": "say",
@@ -1935,18 +2591,88 @@
      "tags": [
       "praise"
      ],
-     "line": 253,
+     "line": 280,
      "emotion": "excited"
+    },
+    {
+     "op": "group",
+     "tags": [],
+     "block": "praise",
+     "beats": [
+      {
+       "op": "oneof",
+       "beats": [
+        {
+         "op": "say",
+         "cue": "lib:praise_amazing",
+         "speaker": "COCO",
+         "text": "Amazing, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 35,
+         "emotion": "warm, proud",
+         "name": true,
+         "nameText": "Amazing, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_good_job",
+         "speaker": "COCO",
+         "text": "Good job, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 36,
+         "emotion": "bright",
+         "name": true,
+         "nameText": "Good job, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_excellent",
+         "speaker": "COCO",
+         "text": "Excellent work, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 37,
+         "emotion": "delighted",
+         "name": true,
+         "nameText": "Excellent work, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_right",
+         "speaker": "COCO",
+         "text": "You are absolutely right, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 38,
+         "emotion": "pleased, clear",
+         "name": true,
+         "nameText": "You are absolutely right, {name}!"
+        }
+       ],
+       "line": 34
+      }
+     ],
+     "line": 281
     },
     {
      "op": "bed",
      "stop": true,
-     "line": 254
+     "line": 282
     },
     {
      "op": "music",
      "cue": "JR_160",
-     "line": 255
+     "line": 283
     },
     {
      "op": "duck",
@@ -1956,19 +2682,19 @@
      "tags": [
       "action"
      ],
-     "line": 256,
+     "line": 284,
      "emotion": "bouncy, inviting"
     },
     {
      "op": "music",
      "at": 10.0,
-     "line": 257
+     "line": 285
     },
     {
      "op": "sfx",
      "cue": "JR_162",
      "tags": [],
-     "line": 258,
+     "line": 286,
      "channel": "overlay",
      "volume": 0.55,
      "wait": false
@@ -1976,12 +2702,12 @@
     {
      "op": "music",
      "at": 20.0,
-     "line": 259
+     "line": 287
     },
     {
      "op": "music",
      "stop": true,
-     "line": 260
+     "line": 288
     },
     {
      "op": "say",
@@ -1991,14 +2717,84 @@
      "tags": [
       "action"
      ],
-     "line": 261,
+     "line": 289,
      "emotion": "playful, clear",
      "hold": 3000
     },
     {
+     "op": "group",
+     "tags": [],
+     "block": "praise",
+     "beats": [
+      {
+       "op": "oneof",
+       "beats": [
+        {
+         "op": "say",
+         "cue": "lib:praise_amazing",
+         "speaker": "COCO",
+         "text": "Amazing, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 35,
+         "emotion": "warm, proud",
+         "name": true,
+         "nameText": "Amazing, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_good_job",
+         "speaker": "COCO",
+         "text": "Good job, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 36,
+         "emotion": "bright",
+         "name": true,
+         "nameText": "Good job, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_excellent",
+         "speaker": "COCO",
+         "text": "Excellent work, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 37,
+         "emotion": "delighted",
+         "name": true,
+         "nameText": "Excellent work, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_right",
+         "speaker": "COCO",
+         "text": "You are absolutely right, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 38,
+         "emotion": "pleased, clear",
+         "name": true,
+         "nameText": "You are absolutely right, {name}!"
+        }
+       ],
+       "line": 34
+      }
+     ],
+     "line": 290
+    },
+    {
      "op": "music",
      "cue": "JR_160",
-     "line": 262
+     "line": 291
     },
     {
      "op": "duck",
@@ -2008,19 +2804,19 @@
      "tags": [
       "action"
      ],
-     "line": 263,
+     "line": 292,
      "emotion": "bright, rhythmic"
     },
     {
      "op": "music",
      "at": 10.0,
-     "line": 264
+     "line": 293
     },
     {
      "op": "sfx",
      "cue": "JR_165",
      "tags": [],
-     "line": 265,
+     "line": 294,
      "channel": "overlay",
      "volume": 0.55,
      "wait": false
@@ -2028,12 +2824,12 @@
     {
      "op": "music",
      "at": 20.0,
-     "line": 266
+     "line": 295
     },
     {
      "op": "music",
      "stop": true,
-     "line": 267
+     "line": 296
     },
     {
      "op": "say",
@@ -2043,14 +2839,14 @@
      "tags": [
       "action"
      ],
-     "line": 268,
+     "line": 297,
      "emotion": "funny, clear",
      "hold": 3000
     },
     {
      "op": "music",
      "cue": "JR_160",
-     "line": 269
+     "line": 298
     },
     {
      "op": "duck",
@@ -2060,13 +2856,13 @@
      "tags": [
       "action"
      ],
-     "line": 270,
+     "line": 299,
      "emotion": "puffed cheeks, funny release"
     },
     {
      "op": "music",
      "at": 10.0,
-     "line": 271
+     "line": 300
     },
     {
      "op": "duck",
@@ -2076,34 +2872,104 @@
      "tags": [
       "joke"
      ],
-     "line": 272,
+     "line": 301,
      "emotion": "puffs cheeks again; laughing at himself"
     },
     {
      "op": "sfx",
      "cue": "JR_169",
      "tags": [],
-     "line": 273,
+     "line": 302,
      "channel": "fg",
      "wait": true
     },
     {
      "op": "music",
      "at": 20.0,
-     "line": 274
+     "line": 303
     },
     {
      "op": "music",
      "stop": true,
-     "line": 275
+     "line": 304
     },
     {
      "op": "sfx",
      "cue": "JR_170",
      "tags": [],
-     "line": 276,
+     "line": 305,
      "channel": "fg",
      "wait": true
+    },
+    {
+     "op": "group",
+     "tags": [],
+     "block": "praise",
+     "beats": [
+      {
+       "op": "oneof",
+       "beats": [
+        {
+         "op": "say",
+         "cue": "lib:praise_amazing",
+         "speaker": "COCO",
+         "text": "Amazing, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 35,
+         "emotion": "warm, proud",
+         "name": true,
+         "nameText": "Amazing, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_good_job",
+         "speaker": "COCO",
+         "text": "Good job, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 36,
+         "emotion": "bright",
+         "name": true,
+         "nameText": "Good job, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_excellent",
+         "speaker": "COCO",
+         "text": "Excellent work, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 37,
+         "emotion": "delighted",
+         "name": true,
+         "nameText": "Excellent work, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "lib:praise_right",
+         "speaker": "COCO",
+         "text": "You are absolutely right, Captain!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 38,
+         "emotion": "pleased, clear",
+         "name": true,
+         "nameText": "You are absolutely right, {name}!"
+        }
+       ],
+       "line": 34
+      }
+     ],
+     "line": 306
     },
     {
      "op": "say",
@@ -2113,7 +2979,7 @@
      "tags": [
       "praise"
      ],
-     "line": 277,
+     "line": 307,
      "emotion": "warm, proud"
     },
     {
@@ -2124,13 +2990,13 @@
      "tags": [
       "action"
      ],
-     "line": 278,
+     "line": 308,
      "emotion": "inviting, joyful"
     },
     {
      "op": "wait",
      "ms": 500,
-     "line": 279
+     "line": 309
     },
     {
      "op": "say",
@@ -2140,19 +3006,19 @@
      "tags": [
       "action"
      ],
-     "line": 280,
+     "line": 310,
      "emotion": "playful"
     },
     {
      "op": "wait",
      "ms": 2000,
-     "line": 281
+     "line": 311
     },
     {
      "op": "sfx",
      "cue": "JR_174",
      "tags": [],
-     "line": 282,
+     "line": 312,
      "channel": "fg",
      "wait": true
     },
@@ -2164,14 +3030,14 @@
      "tags": [
       "joke"
      ],
-     "line": 283,
+     "line": 313,
      "emotion": "comic surprise"
     },
     {
      "op": "sfx",
      "cue": "JR_176",
      "tags": [],
-     "line": 284,
+     "line": 314,
      "channel": "fg",
      "wait": true
     },
@@ -2181,14 +3047,14 @@
      "speaker": "COCO",
      "text": "ये कौन करता है?! पहले हाथ धोऊँगा! Bye-bye, Captain!",
      "tags": [],
-     "line": 285,
+     "line": 315,
      "emotion": "laughing, affectionate"
     },
     {
      "op": "sfx",
      "cue": "JR_178",
      "tags": [],
-     "line": 286,
+     "line": 316,
      "channel": "fg",
      "wait": true
     }
@@ -2196,6 +3062,18 @@
   }
  ],
  "variants": {
+  "classic": {
+   "name": "Classic (no name lines)",
+   "exclude": [
+    "name"
+   ],
+   "keepAlways": [
+    "intro"
+   ],
+   "keepEvery": {},
+   "set": {},
+   "note": "The story as it shipped before 29 Sep — no praise pool, no attention lines, no title line. The intro and lori lines are the gender-neutral re-takes. Used by qa_parity.js."
+  },
   "fast-hints": {
    "name": "Faster hints",
    "exclude": [],
@@ -2254,6 +3132,42 @@
   }
  },
  "clips": {
+  "lib:praise_amazing": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "Amazing, Captain!",
+   "emotion": "warm, proud",
+   "scene": 0,
+   "library": true,
+   "nameText": "Amazing, {name}!"
+  },
+  "lib:praise_good_job": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "Good job, Captain!",
+   "emotion": "bright",
+   "scene": 0,
+   "library": true,
+   "nameText": "Good job, {name}!"
+  },
+  "lib:praise_excellent": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "Excellent work, Captain!",
+   "emotion": "delighted",
+   "scene": 0,
+   "library": true,
+   "nameText": "Excellent work, {name}!"
+  },
+  "lib:praise_right": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "You are absolutely right, Captain!",
+   "emotion": "pleased, clear",
+   "scene": 0,
+   "library": true,
+   "nameText": "You are absolutely right, {name}!"
+  },
   "JR_001": {
    "kind": "bed",
    "name": null,
@@ -2268,13 +3182,14 @@
    "scene": 1,
    "library": false
   },
-  "JR_003": {
+  "JR_003b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम Captain बनकर मेरी मदद करोगे?",
+   "text": "Hello Captain! जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?",
    "emotion": "hopeful and inviting",
    "scene": 1,
-   "library": false
+   "library": false,
+   "nameText": "Hello {name}! जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?"
   },
   "JR_004": {
    "kind": "speech",
@@ -2283,6 +3198,15 @@
    "emotion": "delighted and encouraging",
    "scene": 1,
    "library": false
+  },
+  "lib:title_captain": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "अब से तुम हो — मेरे Captain!",
+   "emotion": "proud, warm",
+   "scene": 1,
+   "library": true,
+   "nameText": "अब से तुम हो — Captain {name}!"
   },
   "JR_005": {
    "kind": "speech",
@@ -2312,42 +3236,42 @@
    "scene": 1,
    "library": false
   },
-  "JR_009": {
+  "JR_009b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "ओह, ये स्टार्ट क्यों नहीं हो रही है? हम्म, जीप की टंकी खाली है।",
-   "emotion": "surprised and amused",
+   "text": "ओह, ये स्टार्ट क्यों नहीं हो रही? हम्म… Jeep का पेट खाली है! गाड़ी को पेट्रोल पीना पड़ता है — जैसे बच्चों को दूध।",
+   "emotion": "surprised, then explaining warmly",
    "scene": 1,
    "library": false
   },
-  "JR_010": {
+  "JR_010b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "Captain, टंकी खाली है! इसमें क्या डालें कि जीप चल पड़े?",
-   "emotion": "curious and clear",
+   "text": "Captain, अपने cards में पेट्रोल ढूँढो — Jeep को पिलाना है!",
+   "emotion": "inviting, clear",
    "scene": 1,
    "library": false
   },
-  "JR_011": {
+  "JR_011b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "अपने सामने वाले cards को देखो... इनमें Jeep को चलाने वाली कोई चीज़ है क्या?",
+   "text": "Jeep भूखी है… cards में पेट्रोल दिख रहा है?",
    "emotion": "kind and clear",
    "scene": 1,
    "library": false
   },
-  "JR_012": {
+  "JR_012b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "जिससे गाड़ी की tank भरती है, वही card ढूँढो.",
+   "text": "लाल रंग का पेट्रोल pump — जिसमें एक pipe लगा है।",
    "emotion": "kind and clear",
    "scene": 1,
    "library": false
   },
-  "JR_013": {
+  "JR_013b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "FUEL वाला card scan करो.",
+   "text": "पेट्रोल वाला card scan करो — लाल pump वाला।",
    "emotion": "kind and clear",
    "scene": 1,
    "library": false
@@ -2358,10 +3282,10 @@
    "scene": 1,
    "library": false
   },
-  "JR_015": {
+  "JR_015b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "YES! FUEL! टंकी भर गई!",
+   "text": "YES! पेट्रोल! Jeep का पेट भर गया!",
    "emotion": "excited",
    "scene": 1,
    "library": false
@@ -2392,10 +3316,10 @@
    "scene": 1,
    "library": false
   },
-  "JR_020": {
+  "JR_020b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "ओहो! बस करो, Captain! Fuel तो overflow हो जाएगा!",
+   "text": "ओहो! बस करो, Captain! पेट्रोल छलक जाएगा!",
    "emotion": "comic surprise and affection",
    "scene": 1,
    "library": false
@@ -2445,6 +3369,15 @@
    "name": "elephant_trumpet",
    "scene": 2,
    "library": false
+  },
+  "lib:look": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "Captain, देखो!",
+   "emotion": "urgent, excited",
+   "scene": 2,
+   "library": true,
+   "nameText": "{name}, देखो!"
   },
   "JR_028": {
    "kind": "speech",
@@ -2530,10 +3463,10 @@
    "scene": 2,
    "library": false
   },
-  "JR_039": {
+  "JR_039b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "ROPE वाला card scan करो.",
+   "text": "रस्सी वाला card scan करो.",
    "emotion": "clear and warm",
    "scene": 2,
    "library": false
@@ -2544,10 +3477,10 @@
    "scene": 3,
    "library": false
   },
-  "JR_041": {
+  "JR_041b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "YES! ROPE! रस्सी मिल गई। अब एलिफेंट दादा को बाहर निकालने में कोको की मदद करो।",
+   "text": "YES! रस्सी मिल गई! अब एलिफेंट दादा को बाहर निकालने में कोको की मदद करो।",
    "emotion": "bright and encouraging",
    "scene": 3,
    "library": false
@@ -2796,10 +3729,10 @@
    "scene": 4,
    "library": false
   },
-  "JR_077": {
+  "JR_077b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "अरे पैरट जी! आपका एक wing flap कर रहा है, दूसरा आराम कर रहा है।",
+   "text": "अरे पैरट जी! आपका एक पंख हिल रहा है, दूसरा आराम कर रहा है।",
    "emotion": "concerned and gentle",
    "scene": 4,
    "library": false
@@ -2812,34 +3745,34 @@
    "scene": 4,
    "library": false
   },
-  "JR_079": {
+  "JR_079b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "चोट लगने पर हमें ऐसी चीज़ चाहिए जिसमें bandage और medicine जैसी चीज़ें होती हैं। Captain, क्या हमारे पास कुछ ऐसा है?",
-   "emotion": "curious, clear card invitation",
+   "text": "पैरट जी को चोट लगी है — हमें पट्टी और दवाई चाहिए! Captain, cards में दवाई का डब्बा ढूँढो!",
+   "emotion": "caring, clear",
    "scene": 4,
    "library": false
   },
-  "JR_080": {
+  "JR_080b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "अपने cards को देखो... चोट लगने पर काम आने वाली चीज़ ढूँढो.",
+   "text": "अपने cards को देखो… दवाई का डब्बा दिख रहा है?",
    "emotion": "clear and warm",
    "scene": 4,
    "library": false
   },
-  "JR_081": {
+  "JR_081b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "इसमें bandage जैसी चीज़ें रखी होती हैं.",
+   "text": "सफ़ेद डब्बा, जिस पर लाल plus बना है — उसमें पट्टी और दवाई रहती है।",
    "emotion": "clear and warm",
    "scene": 4,
    "library": false
   },
-  "JR_082": {
+  "JR_082b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "FIRST AID वाला card scan करो.",
+   "text": "दवाई वाले डब्बे का card scan करो — लाल plus वाला।",
    "emotion": "clear and warm",
    "scene": 4,
    "library": false
@@ -2850,10 +3783,10 @@
    "scene": 4,
    "library": false
   },
-  "JR_084": {
+  "JR_084b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "YES! FIRST AID! पट्टी और medicine मिल गई।",
+   "text": "YES! दवाई का डब्बा! पट्टी और दवाई मिल गई।",
    "emotion": "happy, clear, unhurried",
    "scene": 4,
    "library": false
@@ -2864,10 +3797,10 @@
    "scene": 4,
    "library": false
   },
-  "JR_086": {
+  "JR_086b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "पैरट का wing अब safe है। पट्टी लग गई!",
+   "text": "पैरट का पंख अब ठीक है। पट्टी लग गई!",
    "emotion": "gentle relief",
    "scene": 4,
    "library": false
@@ -2878,10 +3811,10 @@
    "scene": 4,
    "library": false
   },
-  "JR_088": {
+  "JR_088b": {
    "kind": "speech",
    "speaker": "PARROT",
-   "text": "Thank you, Captain! अब मैं wing हिला कर देखूँ?",
+   "text": "Thank you, Captain! अब मैं पंख हिला कर देखूँ?",
    "emotion": "hopeful and tentative",
    "scene": 4,
    "library": false
@@ -2900,18 +3833,18 @@
    "scene": 4,
    "library": false
   },
-  "JR_091": {
+  "JR_091b": {
    "kind": "speech",
    "speaker": "PARROT",
-   "text": "फड़फड़! अब मेरा wing चल रहा है!",
+   "text": "फड़फड़! अब मेरा पंख चल रहा है!",
    "emotion": "delighted, bright",
    "scene": 4,
    "library": false
   },
-  "JR_093": {
+  "JR_093b": {
    "kind": "speech",
    "speaker": "PARROT",
-   "text": "लेकिन मेरी चोंच सूख गई है। मुझे पानी चाहिए।",
+   "text": "लेकिन मुझे बहुत प्यास लगी है। मुझे पानी चाहिए।",
    "emotion": "tired and thirsty, not distressed",
    "scene": 4,
    "library": false
@@ -3004,6 +3937,15 @@
    "scene": 6,
    "library": false
   },
+  "lib:listen_carefully": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "Captain, ध्यान से सुनो…",
+   "emotion": "whispering",
+   "scene": 6,
+   "library": true,
+   "nameText": "{name}, ध्यान से सुनो…"
+  },
   "JR_107": {
    "kind": "speech",
    "speaker": "COCO",
@@ -3042,25 +3984,27 @@
    "scene": 6,
    "library": false
   },
-  "JR_111": {
+  "JR_111b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "फ़िक्र मत करो! मैं ढूँढता हूँ आपकी पूँछ।",
-   "emotion": "confident, then uncertain",
+   "text": "फ़िक्र मत करो, Lion King! मैं आपका हाथ पकड़ता हूँ… ये लो!",
+   "emotion": "confident, reaching out in the dark",
    "scene": 6,
    "library": false
   },
-  "JR_113": {
+  "JR_112b": {
    "kind": "speech",
-   "speaker": "COCO",
-   "text": "मेरा मतलब... मैं कुछ करता हूँ... ओह!",
-   "emotion": "nervous, trying to sound brave",
+   "speaker": "LION",
+   "text": "आऊच! वो मेरा हाथ नहीं — मेरी पूँछ है!",
+   "emotion": "surprised yelp, funny not scared",
    "scene": 6,
    "library": false
   },
-  "JR_114": {
-   "kind": "sfx",
-   "name": "bonk",
+  "JR_113b": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "ओह! अंधेरे में हाथ और पूँछ एक जैसे लगते हैं!",
+   "emotion": "embarrassed laugh",
    "scene": 6,
    "library": false
   },
@@ -3088,10 +4032,10 @@
    "scene": 6,
    "library": false
   },
-  "JR_118": {
+  "JR_118b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "FLASHLIGHT वाला card scan करो!",
+   "text": "टॉर्च वाला card scan करो!",
    "emotion": "clear and warm",
    "scene": 6,
    "library": false
@@ -3114,10 +4058,10 @@
    "scene": 7,
    "library": false
   },
-  "JR_121": {
+  "JR_121b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "YES! FLASHLIGHT!",
+   "text": "YES! टॉर्च! रोशनी हो गई!",
    "emotion": "relieved and bright",
    "scene": 7,
    "library": false
@@ -3280,13 +4224,22 @@
    "scene": 8,
    "library": false
   },
-  "JR_143": {
+  "JR_143b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "Captain, Lion King को आराम से सुलाने के लिए एक छोटी सी लोरी गाएँ? तुम मेरे साथ गाओगे?",
+   "text": "Captain, Lion King को आराम से सुलाने के लिए एक छोटी सी लोरी गाएँ? तुम भी मेरे साथ गाओ, ठीक है?",
    "emotion": "tender and empathetic, slower and softer",
    "scene": 8,
    "library": false
+  },
+  "lib:sing_along": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "Captain, साथ में गाओ!",
+   "emotion": "tender, inviting",
+   "scene": 8,
+   "library": true,
+   "nameText": "{name}, साथ में गाओ!"
   },
   "JR_144": {
    "kind": "sfx",
@@ -3334,10 +4287,10 @@
    "scene": 9,
    "library": false
   },
-  "JR_154": {
+  "JR_154b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "मेरे पैर तो नाचने लगे! पर धुन कहाँ है? Captain, नाचने के लिए क्या बजाएँ?",
+   "text": "मेरे पैर तो नाचने लगे! पर गाना कहाँ है? Captain, नाचने के लिए कोई music बजाओ!",
    "emotion": "eager, playful",
    "scene": 9,
    "library": false
@@ -3567,5 +4520,9 @@
   "LION": "Bholu"
  },
  "tapSound": "lib:tap",
- "libraryDir": "../../library/"
+ "libraryDir": "../../library/",
+ "_notes": [
+  "line 86: \"ये कौन करता है\" — Coco's signature line — fine, it is a running sound not an idea",
+  "line 104: \"बत्ती गुल\" — an idiom — keep only while the kids react to it"
+ ]
 }

@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """generate.py — make the clips a story still needs, with ElevenLabs.
 
-    python3 docs/kit/tools/generate.py <slug> [--dry-run] [--only JR_143b,JR_200]
+    python3 docs/kit/tools/generate.py <slug> [--dry-run] [--only JR_143b,JR_200] [--relevel]
 
 For every speech line in docs/kit/stories/<slug>/story.txt that has no clip in
 docs/kit/games/<slug>/audio/manifest.json: send the text with the line's direction
@@ -28,7 +28,7 @@ import names as nm    # noqa: E402  (synth, render_levelled, measure)
 def main(argv):
     if len(argv) < 2 or argv[1].startswith('--'):
         print(__doc__); return 2
-    slug = argv[1]; dry = '--dry-run' in argv
+    slug = argv[1]; dry = '--dry-run' in argv; relevel = '--relevel' in argv
     only = set((nm.opt(argv, '--only') or '').split(',')) - {''}
     key = os.environ.get('ELEVENLABS_API_KEY', '').strip() or None
     src = os.path.join(KIT, 'stories', slug, 'story.txt')
@@ -44,7 +44,7 @@ def main(argv):
         if cid.startswith('lib:') or (only and cid not in only):
             continue
         e = manifest.get(cid)
-        if e and any(e.get(k) for k in ('file', 'bed_file', 'jeep_file')):
+        if e and any(e.get(k) for k in ('file', 'bed_file', 'jeep_file')) and not (relevel and e.get('generated')):
             continue
         (todo if c['kind'] == 'speech' else sounds).append((cid, c))
     if not todo and not sounds:
