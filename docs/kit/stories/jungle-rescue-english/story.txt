@@ -269,7 +269,7 @@ sfx clap @JR_152_clap @0.72
 sfx party_whistle @JR_153
 ask MUSIC
   prompt COCO [eager, playful] @JR_154b: मेरे पैर तो नाचने लगे! पर गाना कहाँ है? Captain, नाचने के लिए कोई music बजाओ!
-  hint COCO [gently encouraging] @JR_155: पार्टी में नाचने के लिए धुन चाहिए।
+  hint COCO [gently encouraging] @JR_155b: पार्टी में नाचने के लिए music चाहिए।
   hint COCO [playful, helpful] @JR_156: गाना बजाने वाला card ढूँढो।
   hint COCO [clear, kind] @JR_157: MUSIC वाला card tap करो।
 
