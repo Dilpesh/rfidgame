@@ -870,8 +870,8 @@
  "JR_054": {
   "file": "elephant-rescue-test/JR_054.mp3",
   "duration_seconds": 3.004,
-  "integrated_lufs": -16.4,
-  "true_peak_dbfs": -2.4,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -1.6,
   "review_status": "approved-focused-preview",
   "type": "speech",
   "voice": "COCO",
@@ -1014,8 +1014,8 @@
  "JR_062": {
   "file": "elephant-rescue-test/JR_062.mp3",
   "duration_seconds": 1.489,
-  "integrated_lufs": -18.8,
-  "true_peak_dbfs": -2.4,
+  "integrated_lufs": -16.6,
+  "true_peak_dbfs": -1.5,
   "review_status": "approved",
   "type": "speech",
   "voice": "ELEPHANT",

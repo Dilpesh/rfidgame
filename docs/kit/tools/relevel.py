@@ -34,6 +34,10 @@ def relevel_entry(base, manifest, cid, out_sub, force):
     if not os.path.exists(src): return f'{cid}: file missing'
     lufs, peak, _ = nm.measure(src)
     if not force and not off_standard(lufs, peak):
+        # on standard — but refresh a stale number in the manifest so --quick checks stay honest
+        if lufs is not None and (c.get('integrated_lufs') is None or abs(c['integrated_lufs'] - lufs) > 0.5 or c.get('true_peak_dbfs') != peak):
+            c['integrated_lufs'], c['true_peak_dbfs'] = lufs, peak
+            return f'{cid}: measurement refreshed ({lufs} LUFS, {peak} dBTP) — file unchanged'
         return None
     dest_rel = f'{out_sub}/{cid}.mp3'; dest = os.path.join(base, dest_rel)
     os.makedirs(os.path.dirname(dest), exist_ok=True)
