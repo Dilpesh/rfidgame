@@ -137,6 +137,7 @@ window.Kahani = (function () {
   function cachedSrc(url) { return clipCache.get(url.split('?')[0]) || url; }
   async function prefetchClips() {
     if (prefetchStarted || !Object.keys(manifest).length) return; prefetchStarted = true;
+    // prefetch with the same versioned URL playback uses, so a bumped cache tag really re-downloads
     const list = []; const seen = new Set(); const add = (u) => { if (u && !seen.has(u)) { seen.add(u); list.push(u); } };
     const used = new Set(); story.scenes.forEach((sc) => walk(sc.beats, (b) => { if (b.cue) used.add(b.cue); if (b.prompt && b.prompt.cue) used.add(b.prompt.cue); (b.hints || []).forEach((h) => used.add(h.cue)); }));
     story.wrong.forEach((v) => v.forEach((b) => { if (b.cue) used.add(b.cue); })); if (story.tapSound) used.add(story.tapSound);
@@ -144,7 +145,7 @@ window.Kahani = (function () {
     firstCues().forEach((id) => { const c = cueEntry(id); ['jeep_file', 'entry_file', 'bed_file', 'file'].forEach((k) => add(fileUrl(c, k))); });
     for (const [k, c] of Object.entries(manifest)) { if (k === '_build' || !c || typeof c !== 'object') continue; if (c._lib && !used.has(k)) continue; for (const key of ['jeep_file', 'entry_file', 'bed_file', 'file']) add(fileUrl(c, key)); }
     prefetchTotal = list.length; const t0 = performance.now();
-    let i = 0; const worker = async () => { while (i < list.length) { const u = list[i++]; try { const r = await fetch(u); if (r.ok) { clipCache.set(u, URL.createObjectURL(await r.blob())); prefetchDone++; } } catch (e) {} } };
+    let i = 0; const worker = async () => { while (i < list.length) { const u = list[i++]; try { const r = await fetch(assetUrl(u, 'v=' + (u.startsWith(LIB_DIR) ? LIB_TAG : CACHE_TAG))); if (r.ok) { clipCache.set(u, URL.createObjectURL(await r.blob())); prefetchDone++; } } catch (e) {} } };
     await Promise.all([worker(), worker(), worker()]);
     log(`prefetched ${prefetchDone}/${prefetchTotal} clips in ${Math.round((performance.now() - t0) / 1000)} s`);
   }
@@ -173,7 +174,7 @@ window.Kahani = (function () {
   }
   const normName = (t) => String(t || '').normalize('NFC').trim().toLowerCase().replace(/[\s.\-_'’]+/g, '');
   async function prefetchUrls(list) {
-    for (const u of list) { if (clipCache.has(u)) continue; try { const r = await fetch(u); if (r.ok) clipCache.set(u, URL.createObjectURL(await r.blob())); } catch (e) {} }
+    for (const u of list) { if (clipCache.has(u)) continue; try { const r = await fetch(assetUrl(u, 'v=' + LIB_TAG)); if (r.ok) clipCache.set(u, URL.createObjectURL(await r.blob())); } catch (e) {} }
   }
   function firstCues() {
     const out = []; const s = story.scenes[0]; if (!s) return out;

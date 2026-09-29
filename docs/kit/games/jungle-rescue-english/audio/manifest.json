@@ -3663,5 +3663,371 @@
   "duration_seconds": 6.77,
   "integrated_lufs": -17.2,
   "true_peak_dbfs": -2.3
+ },
+ "JR_020c": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "ओहो! बस करो, Captain! पेट्रोल बाहर गिर जाएगा!",
+  "performance_tag": "[comic surprise and affection]",
+  "review_status": "test",
+  "generated": "2026-09-30",
+  "file": "generated/JR_020c.mp3",
+  "duration_seconds": 3.55,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.1
+ },
+ "JR_033b": {
+  "type": "speech",
+  "voice": "NARRATOR",
+  "voice_id": "ItmwhOeluca31IEX91Yk",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.56,
+   "similarity_boost": 0.78,
+   "style": 0.12,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "और कोको खुद कीचड़ में गिर गया!",
+  "performance_tag": "[comic surprise]",
+  "review_status": "test",
+  "generated": "2026-09-30",
+  "file": "generated/JR_033b.mp3",
+  "duration_seconds": 2.51,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.0
+ },
+ "JR_042b": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Captain, बैठे-बैठे रस्सी खींचने की acting करो। Pull!",
+  "performance_tag": "[playful and encouraging]",
+  "review_status": "test",
+  "generated": "2026-09-30",
+  "file": "generated/JR_042b.mp3",
+  "duration_seconds": 4.13,
+  "integrated_lufs": -16.4,
+  "true_peak_dbfs": -2.3
+ },
+ "JR_079c": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "पैरट जी को चोट लगी है — हमें बैंड-एड और दवाई चाहिए! Captain, cards में दवाई का डब्बा ढूँढो!",
+  "performance_tag": "[caring, clear]",
+  "review_status": "test",
+  "generated": "2026-09-30",
+  "file": "generated/JR_079c.mp3",
+  "duration_seconds": 7.55,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.4
+ },
+ "JR_081c": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "सफ़ेद डब्बा, जिस पर लाल plus बना है — उसमें बैंड-एड और दवाई रहती है।",
+  "performance_tag": "[clear and warm]",
+  "review_status": "test",
+  "generated": "2026-09-30",
+  "file": "generated/JR_081c.mp3",
+  "duration_seconds": 5.41,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -2.4
+ },
+ "JR_084c": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "YES! दवाई का डब्बा! बैंड-एड और दवाई मिल गई।",
+  "performance_tag": "[happy, clear, unhurried]",
+  "review_status": "test",
+  "generated": "2026-09-30",
+  "file": "generated/JR_084c.mp3",
+  "duration_seconds": 4.28,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "JR_086c": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "पैरट का पंख अब ठीक है। बैंड-एड लग गई!",
+  "performance_tag": "[gentle relief]",
+  "review_status": "test",
+  "generated": "2026-09-30",
+  "file": "generated/JR_086c.mp3",
+  "duration_seconds": 4.05,
+  "integrated_lufs": -16.3,
+  "true_peak_dbfs": -2.4
+ },
+ "JR_104b": {
+  "type": "speech",
+  "voice": "NARRATOR",
+  "voice_id": "ItmwhOeluca31IEX91Yk",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.56,
+   "similarity_boost": 0.78,
+   "style": 0.12,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "जीप बड़े जंगल में आकर रुकी। सूरज डूब गया था, और चारों तरफ अंधेरा हो गया।",
+  "performance_tag": "[hushed and adventurous]",
+  "review_status": "test",
+  "generated": "2026-09-30",
+  "file": "generated/JR_104b.mp3",
+  "duration_seconds": 7.39,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "JR_115b": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "अरे! इतना अंधेरा है कि मेरी नाक भी नहीं दिख रही! Captain, हमें जल्दी light चाहिए, नहीं तो हम सब टकरा जाएँगे!",
+  "performance_tag": "[rubbing head, urgent but playful]",
+  "review_status": "test",
+  "generated": "2026-09-30",
+  "file": "generated/JR_115b.mp3",
+  "duration_seconds": 7.97,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.3
+ },
+ "JR_116b": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "अपने cards में देखो... कोई ऐसी चीज़ है जो अंधेरे में light दे सके?",
+  "performance_tag": "[clear and warm]",
+  "review_status": "test",
+  "generated": "2026-09-30",
+  "file": "generated/JR_116b.mp3",
+  "duration_seconds": 5.56,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "JR_121c": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "YES! टॉर्च! Light हो गई!",
+  "performance_tag": "[relieved and bright]",
+  "review_status": "test",
+  "generated": "2026-09-30",
+  "file": "generated/JR_121c.mp3",
+  "duration_seconds": 2.69,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -4.6
+ },
+ "JR_123b": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "वाह! Light होते ही सब दिखने लगा! ...और rock के ऊपर वो उल्लू भी!",
+  "performance_tag": "[surprised and relieved]",
+  "review_status": "test",
+  "generated": "2026-09-30",
+  "file": "generated/JR_123b.mp3",
+  "duration_seconds": 5.96,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "JR_125b": {
+  "type": "speech",
+  "voice": "NARRATOR",
+  "voice_id": "ItmwhOeluca31IEX91Yk",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.56,
+   "similarity_boost": 0.78,
+   "style": 0.12,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "टॉर्च की light में Lion King rock के पीछे से बाहर आए। पर वो थोड़े काँप रहे थे।",
+  "performance_tag": "[warm]",
+  "review_status": "test",
+  "generated": "2026-09-30",
+  "file": "generated/JR_125b.mp3",
+  "duration_seconds": 7.0,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.5
+ },
+ "JR_127b": {
+  "type": "speech",
+  "voice": "LION",
+  "voice_id": "5krdMTA5HonvWAlY2vSx",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.44,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Light के लिए thank you... पर रात की हवा बहुत ठंडी है। Brrr!",
+  "performance_tag": "[shivering, small and childlike]",
+  "review_status": "test",
+  "generated": "2026-09-30",
+  "file": "generated/JR_127b.mp3",
+  "duration_seconds": 7.55,
+  "integrated_lufs": -15.8,
+  "true_peak_dbfs": -3.5
+ },
+ "JR_128b": {
+  "type": "speech",
+  "voice": "NARRATOR",
+  "voice_id": "ItmwhOeluca31IEX91Yk",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.56,
+   "similarity_boost": 0.78,
+   "style": 0.12,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Light में Lion King को अपनी गुफा दिख गई। कोको उन्हें अंदर ले गया, लेकिन Lion King को अब भी बहुत ठंड लग रही थी।",
+  "performance_tag": "[warm and reassuring]",
+  "review_status": "test",
+  "generated": "2026-09-30",
+  "file": "generated/JR_128b.mp3",
+  "duration_seconds": 9.25,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "JR_155b": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "पार्टी में नाचने के लिए music चाहिए।",
+  "performance_tag": "[gently encouraging]",
+  "review_status": "test",
+  "generated": "2026-09-30",
+  "file": "generated/JR_155b.mp3",
+  "duration_seconds": 2.59,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.5
+ },
+ "JR_163b": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Freeze! Statue बन जाओ!",
+  "performance_tag": "[playful, clear]",
+  "review_status": "test",
+  "generated": "2026-09-30",
+  "file": "generated/JR_163b.mp3",
+  "duration_seconds": 2.04,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.6
+ },
+ "JR_003c": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Hello Captain! जंगल में हमारे कई दोस्त problem में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?",
+  "performance_tag": "[hopeful and inviting]",
+  "review_status": "test",
+  "generated": "2026-09-30",
+  "file": "names-captain/JR_003c.mp3",
+  "duration_seconds": 8.91,
+  "integrated_lufs": -16.3,
+  "true_peak_dbfs": -2.4,
+  "name_text": "Hello {name}! जंगल में हमारे कई दोस्त problem में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?",
+  "description": "name line (Captain version): Hello Captain! जंगल में हमारे कई दोस्त problem में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?",
+  "tags": [
+   "name",
+   "captain"
+  ]
  }
 }

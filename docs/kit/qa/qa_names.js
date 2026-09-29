@@ -47,7 +47,7 @@ const until = (p, pred, ms = 30000) => p.waitForFunction((src) => eval(src), `(f
   let s = await st(page);
   ok(s.pack === 'rida' && s.name === 'Rida', `pack loaded (${s.pack}, "${s.name}")`);
   let seq = await plays(page);
-  ok(seq.some((x) => x.includes('names/rida/jungle-rescue-english_JR_003b')), 'the intro plays from Rida\'s pack');
+  ok(seq.some((x) => /names\/rida\/jungle-rescue-english_JR_003[bc]/.test(x)), 'the intro plays from Rida\'s pack');
   ok(seq.some((x) => x.includes('names/rida/title_captain')), 'the title line plays from Rida\'s pack');
   ok(!seq.some((x) => x.includes('names-captain') || x.includes('library/voice/title')), 'no Captain version was played');
   await scan(page, '6359145');
@@ -63,7 +63,7 @@ const until = (p, pred, ms = 30000) => p.waitForFunction((src) => eval(src), `(f
   await until(page, "s => s.state === 'question' && s.expected === 'FUEL'");
   s = await st(page); seq = await plays(page);
   ok(!s.pack, 'no pack');
-  ok(seq.some((x) => x.includes('names-captain/JR_003b')), 'the intro is the Captain re-take');
+  ok(seq.some((x) => /names-captain\/JR_003[bc]/.test(x)), 'the intro is the Captain re-take');
   ok(seq.some((x) => x.includes('library/voice/title_captain')), 'the title line is the library Captain clip');
   await scan(page, '6359145'); await until(page, "s => s.state !== 'question'"); await page.waitForTimeout(1500);
   ok((await plays(page)).some((x) => x.includes('library/voice/praise_')), 'praise after FUEL is the library Captain clip');

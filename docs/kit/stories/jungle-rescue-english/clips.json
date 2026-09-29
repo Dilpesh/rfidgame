@@ -62,14 +62,14 @@
   "missing": false
  },
  {
-  "id": "JR_003b",
+  "id": "JR_003c",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "Hello Captain! जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?",
+  "text": "Hello Captain! जंगल में हमारे कई दोस्त problem में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?",
   "emotion": "hopeful and inviting",
   "scene": 1,
   "library": false,
-  "nameText": "Hello {name}! जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?",
+  "nameText": "Hello {name}! जंगल में हमारे कई दोस्त problem में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?",
   "missing": false
  },
  {
@@ -232,10 +232,10 @@
   "missing": false
  },
  {
-  "id": "JR_020b",
+  "id": "JR_020c",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "ओहो! बस करो, Captain! पेट्रोल छलक जाएगा!",
+  "text": "ओहो! बस करो, Captain! पेट्रोल बाहर गिर जाएगा!",
   "emotion": "comic surprise and affection",
   "scene": 1,
   "library": false,
@@ -359,10 +359,10 @@
   "missing": false
  },
  {
-  "id": "JR_033",
+  "id": "JR_033b",
   "kind": "speech",
   "speaker": "NARRATOR",
-  "text": "और कोको खुद मड में गिर गया!",
+  "text": "और कोको खुद कीचड़ में गिर गया!",
   "emotion": "comic surprise",
   "scene": 2,
   "library": false,
@@ -447,10 +447,10 @@
   "missing": false
  },
  {
-  "id": "JR_042",
+  "id": "JR_042b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "Captain, बैठे-बैठे रस्सी खींचने का नाटक करो। Pull!",
+  "text": "Captain, बैठे-बैठे रस्सी खींचने की acting करो। Pull!",
   "emotion": "playful and encouraging",
   "scene": 3,
   "library": false,
@@ -777,10 +777,10 @@
   "missing": false
  },
  {
-  "id": "JR_079b",
+  "id": "JR_079c",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "पैरट जी को चोट लगी है — हमें पट्टी और दवाई चाहिए! Captain, cards में दवाई का डब्बा ढूँढो!",
+  "text": "पैरट जी को चोट लगी है — हमें बैंड-एड और दवाई चाहिए! Captain, cards में दवाई का डब्बा ढूँढो!",
   "emotion": "caring, clear",
   "scene": 4,
   "library": false,
@@ -797,10 +797,10 @@
   "missing": false
  },
  {
-  "id": "JR_081b",
+  "id": "JR_081c",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "सफ़ेद डब्बा, जिस पर लाल plus बना है — उसमें पट्टी और दवाई रहती है।",
+  "text": "सफ़ेद डब्बा, जिस पर लाल plus बना है — उसमें बैंड-एड और दवाई रहती है।",
   "emotion": "clear and warm",
   "scene": 4,
   "library": false,
@@ -825,10 +825,10 @@
   "missing": false
  },
  {
-  "id": "JR_084b",
+  "id": "JR_084c",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "YES! दवाई का डब्बा! पट्टी और दवाई मिल गई।",
+  "text": "YES! दवाई का डब्बा! बैंड-एड और दवाई मिल गई।",
   "emotion": "happy, clear, unhurried",
   "scene": 4,
   "library": false,
@@ -843,10 +843,10 @@
   "missing": false
  },
  {
-  "id": "JR_086b",
+  "id": "JR_086c",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "पैरट का पंख अब ठीक है। पट्टी लग गई!",
+  "text": "पैरट का पंख अब ठीक है। बैंड-एड लग गई!",
   "emotion": "gentle relief",
   "scene": 4,
   "library": false,
@@ -993,10 +993,10 @@
   "missing": false
  },
  {
-  "id": "JR_104",
+  "id": "JR_104b",
   "kind": "speech",
   "speaker": "NARRATOR",
-  "text": "रेस्क्यू जीप घने जंगलों के बीच आकर रुकी। सूरज ढल चुका था और पेड़-पौधे अंधेरे में अजीब साए जैसे लग रहे थे।",
+  "text": "जीप बड़े जंगल में आकर रुकी। सूरज डूब गया था, और चारों तरफ अंधेरा हो गया।",
   "emotion": "hushed and adventurous",
   "scene": 6,
   "library": false,
@@ -1110,20 +1110,20 @@
   "missing": false
  },
  {
-  "id": "JR_115",
+  "id": "JR_115b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "अरे! इतना अंधेरा है कि मेरी नाक भी नहीं दिख रही! Captain, हमें तुरंत रोशनी चाहिए, वरना हम सब टकरा जाएँगे!",
+  "text": "अरे! इतना अंधेरा है कि मेरी नाक भी नहीं दिख रही! Captain, हमें जल्दी light चाहिए, नहीं तो हम सब टकरा जाएँगे!",
   "emotion": "rubbing head, urgent but playful",
   "scene": 6,
   "library": false,
   "missing": false
  },
  {
-  "id": "JR_116",
+  "id": "JR_116b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "अपने cards में देखो... कोई ऐसी चीज़ है जो अंधेरे में तेज़ रोशनी दे सके?",
+  "text": "अपने cards में देखो... कोई ऐसी चीज़ है जो अंधेरे में light दे सके?",
   "emotion": "clear and warm",
   "scene": 6,
   "library": false,
@@ -1174,10 +1174,10 @@
   "missing": false
  },
  {
-  "id": "JR_121b",
+  "id": "JR_121c",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "YES! टॉर्च! रोशनी हो गई!",
+  "text": "YES! टॉर्च! Light हो गई!",
   "emotion": "relieved and bright",
   "scene": 7,
   "library": false,
@@ -1192,10 +1192,10 @@
   "missing": false
  },
  {
-  "id": "JR_123",
+  "id": "JR_123b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "वाह! रोशनी होते ही सब दिखने लगा! ...और rock के ऊपर वो उल्लू भी!",
+  "text": "वाह! Light होते ही सब दिखने लगा! ...और rock के ऊपर वो उल्लू भी!",
   "emotion": "surprised and relieved",
   "scene": 7,
   "library": false,
@@ -1210,10 +1210,10 @@
   "missing": false
  },
  {
-  "id": "JR_125",
+  "id": "JR_125b",
   "kind": "speech",
   "speaker": "NARRATOR",
-  "text": "टॉर्च की रोशनी में Lion King rock के पीछे से बाहर आए। पर वो थोड़े काँप रहे थे।",
+  "text": "टॉर्च की light में Lion King rock के पीछे से बाहर आए। पर वो थोड़े काँप रहे थे।",
   "emotion": "warm",
   "scene": 7,
   "library": false,
@@ -1228,20 +1228,20 @@
   "missing": false
  },
  {
-  "id": "JR_127",
+  "id": "JR_127b",
   "kind": "speech",
   "speaker": "LION",
-  "text": "रोशनी के लिए शुक्रिया... पर रात की हवा बहुत ठंडी है। Brrr!",
+  "text": "Light के लिए thank you... पर रात की हवा बहुत ठंडी है। Brrr!",
   "emotion": "shivering, small and childlike",
   "scene": 7,
   "library": false,
   "missing": false
  },
  {
-  "id": "JR_128",
+  "id": "JR_128b",
   "kind": "speech",
   "speaker": "NARRATOR",
-  "text": "रोशनी में Lion King को अपनी गुफा दिख गई। कोको उन्हें अंदर ले गया, लेकिन Lion King को अब भी बहुत ठंड लग रही थी।",
+  "text": "Light में Lion King को अपनी गुफा दिख गई। कोको उन्हें अंदर ले गया, लेकिन Lion King को अब भी बहुत ठंड लग रही थी।",
   "emotion": "warm and reassuring",
   "scene": 7,
   "library": false,
@@ -1477,10 +1477,10 @@
   "missing": false
  },
  {
-  "id": "JR_155",
+  "id": "JR_155b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "पार्टी में नाचने के लिए धुन चाहिए।",
+  "text": "पार्टी में नाचने के लिए music चाहिए।",
   "emotion": "gently encouraging",
   "scene": 9,
   "library": false,
@@ -1551,10 +1551,10 @@
   "missing": false
  },
  {
-  "id": "JR_163",
+  "id": "JR_163b",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "Freeze! मूर्ति बन जाओ!",
+  "text": "Freeze! Statue बन जाओ!",
   "emotion": "playful, clear",
   "scene": 10,
   "library": false,

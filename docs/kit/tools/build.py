@@ -14,7 +14,7 @@ Everything stays inside docs/kit/. What it does, in order:
 It only ever writes index.html, story.json and a .kahani marker into the game folder;
 the audio/ folder beside them is yours. It refuses a game folder it did not create.
 """
-import json, os, shutil, sys
+import hashlib, json, os, shutil, sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))          # docs/kit/tools
 KIT = os.path.abspath(os.path.join(HERE, '..'))             # docs/kit
@@ -27,15 +27,15 @@ TEMPLATE = """<!doctype html>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{title}</title>
-  <link rel="stylesheet" href="../../engine/kahani.css">
+  <link rel="stylesheet" href="../../engine/kahani.css?v={css}">
 </head>
 <body>
 <div id="kahani"></div>
-<script src="../../engine/scan-guard.js"></script>
-<script src="../../engine/reader-check.js"></script>
-<script src="../../engine/story-intro.js"></script>
-<script src="../../engine/card-registry.js"></script>
-<script src="../../engine/kahani.js"></script>
+<script src="../../engine/scan-guard.js?v={shared}"></script>
+<script src="../../engine/reader-check.js?v={shared}"></script>
+<script src="../../engine/story-intro.js?v={shared}"></script>
+<script src="../../engine/card-registry.js?v={registry}"></script>
+<script src="../../engine/kahani.js?v={engine}"></script>
 <script>Kahani.boot({{ story: 'story.json' }});</script>
 </body>
 </html>
@@ -139,8 +139,13 @@ def main(argv):
     if os.path.exists(os.path.join(game_dir, 'index.html')) and not os.path.exists(marker):
         print(f'✗ docs/kit/games/{out_name}/ exists and was not built by this kit — pass --out <new-folder> or move it aside'); return 1
     os.makedirs(game_dir, exist_ok=True)
+    # every engine file is loaded with a hash of its contents, so a phone never keeps an old engine after a deploy
+    eng = os.path.join(KIT, 'engine')
+    h = lambda *names: hashlib.md5(b''.join(open(os.path.join(eng, n), 'rb').read() for n in names)).hexdigest()[:8]
     with open(os.path.join(game_dir, 'index.html'), 'w', encoding='utf-8') as f:
-        f.write(TEMPLATE.format(lang=out['language'], title=out['title'].replace('<', '&lt;')))
+        f.write(TEMPLATE.format(lang=out['language'], title=out['title'].replace('<', '&lt;'),
+                                css=h('kahani.css'), engine=h('kahani.js'), registry=h('card-registry.js'),
+                                shared=h('scan-guard.js', 'reader-check.js', 'story-intro.js')))
     with open(os.path.join(game_dir, 'story.json'), 'w', encoding='utf-8') as f:
         json.dump(out, f, ensure_ascii=False, indent=1)
     with open(marker, 'w') as f:

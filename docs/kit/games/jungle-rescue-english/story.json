@@ -6,7 +6,7 @@
  "language": "hi",
  "minutes": 9,
  "audioDir": "audio/",
- "cacheTag": "jr-final-6",
+ "cacheTag": "jr-final-7",
  "hintDelays": [
   8000,
   17000,
@@ -191,9 +191,9 @@
     },
     {
      "op": "say",
-     "cue": "JR_003b",
+     "cue": "JR_003c",
      "speaker": "COCO",
-     "text": "Hello Captain! जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?",
+     "text": "Hello Captain! जंगल में हमारे कई दोस्त problem में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?",
      "tags": [
       "intro",
       "name"
@@ -201,7 +201,7 @@
      "line": 44,
      "emotion": "hopeful and inviting",
      "name": true,
-     "nameText": "Hello {name}! जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?"
+     "nameText": "Hello {name}! जंगल में हमारे कई दोस्त problem में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?"
     },
     {
      "op": "wait",
@@ -450,9 +450,9 @@
       },
       {
        "op": "say",
-       "cue": "JR_020b",
+       "cue": "JR_020c",
        "speaker": "COCO",
-       "text": "ओहो! बस करो, Captain! पेट्रोल छलक जाएगा!",
+       "text": "ओहो! बस करो, Captain! पेट्रोल बाहर गिर जाएगा!",
        "tags": [
         "joke"
        ],
@@ -595,9 +595,9 @@
     },
     {
      "op": "say",
-     "cue": "JR_033",
+     "cue": "JR_033b",
      "speaker": "NARRATOR",
-     "text": "और कोको खुद मड में गिर गया!",
+     "text": "और कोको खुद कीचड़ में गिर गया!",
      "tags": [
       "joke"
      ],
@@ -775,9 +775,9 @@
     },
     {
      "op": "say",
-     "cue": "JR_042",
+     "cue": "JR_042b",
      "speaker": "COCO",
-     "text": "Captain, बैठे-बैठे रस्सी खींचने का नाटक करो। Pull!",
+     "text": "Captain, बैठे-बैठे रस्सी खींचने की acting करो। Pull!",
      "tags": [
       "action"
      ],
@@ -1405,9 +1405,9 @@
      "card": "FIRST_AID",
      "prompt": {
       "op": "say",
-      "cue": "JR_079b",
+      "cue": "JR_079c",
       "speaker": "COCO",
-      "text": "पैरट जी को चोट लगी है — हमें पट्टी और दवाई चाहिए! Captain, cards में दवाई का डब्बा ढूँढो!",
+      "text": "पैरट जी को चोट लगी है — हमें बैंड-एड और दवाई चाहिए! Captain, cards में दवाई का डब्बा ढूँढो!",
       "tags": [],
       "line": 161,
       "emotion": "caring, clear"
@@ -1424,9 +1424,9 @@
       },
       {
        "op": "say",
-       "cue": "JR_081b",
+       "cue": "JR_081c",
        "speaker": "COCO",
-       "text": "सफ़ेद डब्बा, जिस पर लाल plus बना है — उसमें पट्टी और दवाई रहती है।",
+       "text": "सफ़ेद डब्बा, जिस पर लाल plus बना है — उसमें बैंड-एड और दवाई रहती है।",
        "tags": [],
        "line": 163,
        "emotion": "clear and warm"
@@ -1456,9 +1456,9 @@
     },
     {
      "op": "say",
-     "cue": "JR_084b",
+     "cue": "JR_084c",
      "speaker": "COCO",
-     "text": "YES! दवाई का डब्बा! पट्टी और दवाई मिल गई।",
+     "text": "YES! दवाई का डब्बा! बैंड-एड और दवाई मिल गई।",
      "tags": [
       "praise"
      ],
@@ -1550,9 +1550,9 @@
     },
     {
      "op": "say",
-     "cue": "JR_086b",
+     "cue": "JR_086c",
      "speaker": "COCO",
-     "text": "पैरट का पंख अब ठीक है। पट्टी लग गई!",
+     "text": "पैरट का पंख अब ठीक है। बैंड-एड लग गई!",
      "tags": [],
      "line": 170,
      "emotion": "gentle relief"
@@ -1828,9 +1828,9 @@
     },
     {
      "op": "say",
-     "cue": "JR_104",
+     "cue": "JR_104b",
      "speaker": "NARRATOR",
-     "text": "रेस्क्यू जीप घने जंगलों के बीच आकर रुकी। सूरज ढल चुका था और पेड़-पौधे अंधेरे में अजीब साए जैसे लग रहे थे।",
+     "text": "जीप बड़े जंगल में आकर रुकी। सूरज डूब गया था, और चारों तरफ अंधेरा हो गया।",
      "tags": [],
      "line": 199,
      "emotion": "hushed and adventurous"
@@ -1950,9 +1950,9 @@
      "card": "FLASHLIGHT",
      "prompt": {
       "op": "say",
-      "cue": "JR_115",
+      "cue": "JR_115b",
       "speaker": "COCO",
-      "text": "अरे! इतना अंधेरा है कि मेरी नाक भी नहीं दिख रही! Captain, हमें तुरंत रोशनी चाहिए, वरना हम सब टकरा जाएँगे!",
+      "text": "अरे! इतना अंधेरा है कि मेरी नाक भी नहीं दिख रही! Captain, हमें जल्दी light चाहिए, नहीं तो हम सब टकरा जाएँगे!",
       "tags": [],
       "line": 213,
       "emotion": "rubbing head, urgent but playful"
@@ -1960,9 +1960,9 @@
      "hints": [
       {
        "op": "say",
-       "cue": "JR_116",
+       "cue": "JR_116b",
        "speaker": "COCO",
-       "text": "अपने cards में देखो... कोई ऐसी चीज़ है जो अंधेरे में तेज़ रोशनी दे सके?",
+       "text": "अपने cards में देखो... कोई ऐसी चीज़ है जो अंधेरे में light दे सके?",
        "tags": [],
        "line": 214,
        "emotion": "clear and warm"
@@ -2035,9 +2035,9 @@
     },
     {
      "op": "say",
-     "cue": "JR_121b",
+     "cue": "JR_121c",
      "speaker": "COCO",
-     "text": "YES! टॉर्च! रोशनी हो गई!",
+     "text": "YES! टॉर्च! Light हो गई!",
      "tags": [
       "praise"
      ],
@@ -2124,9 +2124,9 @@
     },
     {
      "op": "say",
-     "cue": "JR_123",
+     "cue": "JR_123b",
      "speaker": "COCO",
-     "text": "वाह! रोशनी होते ही सब दिखने लगा! ...और rock के ऊपर वो उल्लू भी!",
+     "text": "वाह! Light होते ही सब दिखने लगा! ...और rock के ऊपर वो उल्लू भी!",
      "tags": [
       "joke"
      ],
@@ -2143,9 +2143,9 @@
     },
     {
      "op": "say",
-     "cue": "JR_125",
+     "cue": "JR_125b",
      "speaker": "NARRATOR",
-     "text": "टॉर्च की रोशनी में Lion King rock के पीछे से बाहर आए। पर वो थोड़े काँप रहे थे।",
+     "text": "टॉर्च की light में Lion King rock के पीछे से बाहर आए। पर वो थोड़े काँप रहे थे।",
      "tags": [],
      "line": 230,
      "emotion": "warm"
@@ -2160,18 +2160,18 @@
     },
     {
      "op": "say",
-     "cue": "JR_127",
+     "cue": "JR_127b",
      "speaker": "LION",
-     "text": "रोशनी के लिए शुक्रिया... पर रात की हवा बहुत ठंडी है। Brrr!",
+     "text": "Light के लिए thank you... पर रात की हवा बहुत ठंडी है। Brrr!",
      "tags": [],
      "line": 232,
      "emotion": "shivering, small and childlike"
     },
     {
      "op": "say",
-     "cue": "JR_128",
+     "cue": "JR_128b",
      "speaker": "NARRATOR",
-     "text": "रोशनी में Lion King को अपनी गुफा दिख गई। कोको उन्हें अंदर ले गया, लेकिन Lion King को अब भी बहुत ठंड लग रही थी।",
+     "text": "Light में Lion King को अपनी गुफा दिख गई। कोको उन्हें अंदर ले गया, लेकिन Lion King को अब भी बहुत ठंड लग रही थी।",
      "tags": [],
      "line": 233,
      "emotion": "warm and reassuring"
@@ -2531,9 +2531,9 @@
      "hints": [
       {
        "op": "say",
-       "cue": "JR_155",
+       "cue": "JR_155b",
        "speaker": "COCO",
-       "text": "पार्टी में नाचने के लिए धुन चाहिए।",
+       "text": "पार्टी में नाचने के लिए music चाहिए।",
        "tags": [],
        "line": 272,
        "emotion": "gently encouraging"
@@ -2711,9 +2711,9 @@
     },
     {
      "op": "say",
-     "cue": "JR_163",
+     "cue": "JR_163b",
      "speaker": "COCO",
-     "text": "Freeze! मूर्ति बन जाओ!",
+     "text": "Freeze! Statue बन जाओ!",
      "tags": [
       "action"
      ],
@@ -3182,14 +3182,14 @@
    "scene": 1,
    "library": false
   },
-  "JR_003b": {
+  "JR_003c": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "Hello Captain! जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?",
+   "text": "Hello Captain! जंगल में हमारे कई दोस्त problem में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?",
    "emotion": "hopeful and inviting",
    "scene": 1,
    "library": false,
-   "nameText": "Hello {name}! जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?"
+   "nameText": "Hello {name}! जंगल में हमारे कई दोस्त problem में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?"
   },
   "JR_004": {
    "kind": "speech",
@@ -3316,10 +3316,10 @@
    "scene": 1,
    "library": false
   },
-  "JR_020b": {
+  "JR_020c": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "ओहो! बस करो, Captain! पेट्रोल छलक जाएगा!",
+   "text": "ओहो! बस करो, Captain! पेट्रोल बाहर गिर जाएगा!",
    "emotion": "comic surprise and affection",
    "scene": 1,
    "library": false
@@ -3415,10 +3415,10 @@
    "scene": 2,
    "library": false
   },
-  "JR_033": {
+  "JR_033b": {
    "kind": "speech",
    "speaker": "NARRATOR",
-   "text": "और कोको खुद मड में गिर गया!",
+   "text": "और कोको खुद कीचड़ में गिर गया!",
    "emotion": "comic surprise",
    "scene": 2,
    "library": false
@@ -3485,10 +3485,10 @@
    "scene": 3,
    "library": false
   },
-  "JR_042": {
+  "JR_042b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "Captain, बैठे-बैठे रस्सी खींचने का नाटक करो। Pull!",
+   "text": "Captain, बैठे-बैठे रस्सी खींचने की acting करो। Pull!",
    "emotion": "playful and encouraging",
    "scene": 3,
    "library": false
@@ -3745,10 +3745,10 @@
    "scene": 4,
    "library": false
   },
-  "JR_079b": {
+  "JR_079c": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "पैरट जी को चोट लगी है — हमें पट्टी और दवाई चाहिए! Captain, cards में दवाई का डब्बा ढूँढो!",
+   "text": "पैरट जी को चोट लगी है — हमें बैंड-एड और दवाई चाहिए! Captain, cards में दवाई का डब्बा ढूँढो!",
    "emotion": "caring, clear",
    "scene": 4,
    "library": false
@@ -3761,10 +3761,10 @@
    "scene": 4,
    "library": false
   },
-  "JR_081b": {
+  "JR_081c": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "सफ़ेद डब्बा, जिस पर लाल plus बना है — उसमें पट्टी और दवाई रहती है।",
+   "text": "सफ़ेद डब्बा, जिस पर लाल plus बना है — उसमें बैंड-एड और दवाई रहती है।",
    "emotion": "clear and warm",
    "scene": 4,
    "library": false
@@ -3783,10 +3783,10 @@
    "scene": 4,
    "library": false
   },
-  "JR_084b": {
+  "JR_084c": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "YES! दवाई का डब्बा! पट्टी और दवाई मिल गई।",
+   "text": "YES! दवाई का डब्बा! बैंड-एड और दवाई मिल गई।",
    "emotion": "happy, clear, unhurried",
    "scene": 4,
    "library": false
@@ -3797,10 +3797,10 @@
    "scene": 4,
    "library": false
   },
-  "JR_086b": {
+  "JR_086c": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "पैरट का पंख अब ठीक है। पट्टी लग गई!",
+   "text": "पैरट का पंख अब ठीक है। बैंड-एड लग गई!",
    "emotion": "gentle relief",
    "scene": 4,
    "library": false
@@ -3915,10 +3915,10 @@
    "scene": 5,
    "library": false
   },
-  "JR_104": {
+  "JR_104b": {
    "kind": "speech",
    "speaker": "NARRATOR",
-   "text": "रेस्क्यू जीप घने जंगलों के बीच आकर रुकी। सूरज ढल चुका था और पेड़-पौधे अंधेरे में अजीब साए जैसे लग रहे थे।",
+   "text": "जीप बड़े जंगल में आकर रुकी। सूरज डूब गया था, और चारों तरफ अंधेरा हो गया।",
    "emotion": "hushed and adventurous",
    "scene": 6,
    "library": false
@@ -4008,18 +4008,18 @@
    "scene": 6,
    "library": false
   },
-  "JR_115": {
+  "JR_115b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "अरे! इतना अंधेरा है कि मेरी नाक भी नहीं दिख रही! Captain, हमें तुरंत रोशनी चाहिए, वरना हम सब टकरा जाएँगे!",
+   "text": "अरे! इतना अंधेरा है कि मेरी नाक भी नहीं दिख रही! Captain, हमें जल्दी light चाहिए, नहीं तो हम सब टकरा जाएँगे!",
    "emotion": "rubbing head, urgent but playful",
    "scene": 6,
    "library": false
   },
-  "JR_116": {
+  "JR_116b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "अपने cards में देखो... कोई ऐसी चीज़ है जो अंधेरे में तेज़ रोशनी दे सके?",
+   "text": "अपने cards में देखो... कोई ऐसी चीज़ है जो अंधेरे में light दे सके?",
    "emotion": "clear and warm",
    "scene": 6,
    "library": false
@@ -4058,10 +4058,10 @@
    "scene": 7,
    "library": false
   },
-  "JR_121b": {
+  "JR_121c": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "YES! टॉर्च! रोशनी हो गई!",
+   "text": "YES! टॉर्च! Light हो गई!",
    "emotion": "relieved and bright",
    "scene": 7,
    "library": false
@@ -4072,10 +4072,10 @@
    "scene": 7,
    "library": false
   },
-  "JR_123": {
+  "JR_123b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "वाह! रोशनी होते ही सब दिखने लगा! ...और rock के ऊपर वो उल्लू भी!",
+   "text": "वाह! Light होते ही सब दिखने लगा! ...और rock के ऊपर वो उल्लू भी!",
    "emotion": "surprised and relieved",
    "scene": 7,
    "library": false
@@ -4086,10 +4086,10 @@
    "scene": 7,
    "library": false
   },
-  "JR_125": {
+  "JR_125b": {
    "kind": "speech",
    "speaker": "NARRATOR",
-   "text": "टॉर्च की रोशनी में Lion King rock के पीछे से बाहर आए। पर वो थोड़े काँप रहे थे।",
+   "text": "टॉर्च की light में Lion King rock के पीछे से बाहर आए। पर वो थोड़े काँप रहे थे।",
    "emotion": "warm",
    "scene": 7,
    "library": false
@@ -4100,18 +4100,18 @@
    "scene": 7,
    "library": false
   },
-  "JR_127": {
+  "JR_127b": {
    "kind": "speech",
    "speaker": "LION",
-   "text": "रोशनी के लिए शुक्रिया... पर रात की हवा बहुत ठंडी है। Brrr!",
+   "text": "Light के लिए thank you... पर रात की हवा बहुत ठंडी है। Brrr!",
    "emotion": "shivering, small and childlike",
    "scene": 7,
    "library": false
   },
-  "JR_128": {
+  "JR_128b": {
    "kind": "speech",
    "speaker": "NARRATOR",
-   "text": "रोशनी में Lion King को अपनी गुफा दिख गई। कोको उन्हें अंदर ले गया, लेकिन Lion King को अब भी बहुत ठंड लग रही थी।",
+   "text": "Light में Lion King को अपनी गुफा दिख गई। कोको उन्हें अंदर ले गया, लेकिन Lion King को अब भी बहुत ठंड लग रही थी।",
    "emotion": "warm and reassuring",
    "scene": 7,
    "library": false
@@ -4295,10 +4295,10 @@
    "scene": 9,
    "library": false
   },
-  "JR_155": {
+  "JR_155b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "पार्टी में नाचने के लिए धुन चाहिए।",
+   "text": "पार्टी में नाचने के लिए music चाहिए।",
    "emotion": "gently encouraging",
    "scene": 9,
    "library": false
@@ -4353,10 +4353,10 @@
    "scene": 10,
    "library": false
   },
-  "JR_163": {
+  "JR_163b": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "Freeze! मूर्ति बन जाओ!",
+   "text": "Freeze! Statue बन जाओ!",
    "emotion": "playful, clear",
    "scene": 10,
    "library": false
