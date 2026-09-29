@@ -1,0 +1,75 @@
+# Copy this folder to docs/kit/stories/<your-slug>/ and write. Full format: docs/kit/tools/FORMAT.md
+# Build:  python3 docs/kit/tools/build.py <your-slug>
+# Lines without @JR_… get a clip id from the compiler; docs/kit/tools/compile.py … --clips lists what to record.
+
+title: My New Story
+language: hi
+minutes: 8
+audio: audio/
+cache: v1
+hints at: 8s 17s 28s
+tap sound: @lib:tap             # a soft tick when a card is tapped while Coco is still talking
+voices: COCO=Saanu
+activities: Clap along | Drink real water
+
+# progress-bar order; every card must exist in cards.json (= its name there when different)
+card TORCH: 🔦 Torch
+card WATER: 💧 Water
+card CLAP: 👏 Clap
+
+
+# The name rules (tools/FORMAT.md): write to the child gender-neutral; {name} only in
+# short independent lines (praise, "{name}, देखो!"); the child named at least every 60 s.
+== block praise
+one of:
+  COCO [warm, proud] #praise: Amazing, {name}!
+  COCO [bright] #praise: Good job, {name}!
+  COCO [delighted] #praise: Excellent work, {name}!
+  COCO [pleased, clear] #praise: You are absolutely right, {name}!
+
+
+== scene: Opening
+bed jungle_day @0.25
+COCO [bright and playful]: हैलो, मैं हूँ कोको। आज हम…
+COCO [hopeful and inviting] #intro: Hello {name}! क्या तुम मेरी मदद के लिए तैयार हो?
+wait 1.5s
+COCO [delighted]: Yes! Great!
+COCO [proud]: अब से तुम हो — मेरे Captain! || अब से तुम हो — Captain {name}!
+ask TORCH
+  prompt COCO [curious and clear]: Captain, यहाँ बहुत अँधेरा है! हमें रोशनी चाहिए!
+  hint COCO [kind and clear]: अपने cards में देखो… कोई ऐसी चीज़ है जो रोशनी दे?
+  hint COCO [kind and clear]: इसे ON करते ही रास्ता दिखने लगता है.
+  hint COCO [kind and clear]: TORCH वाला card scan करो.
+sfx ting
+COCO [excited] #praise: YES! TORCH! अब सब दिखने लगा!
+use praise
+COCO [comic surprise] #joke: अरे! मेरी नाक पर एक तितली बैठी है!
+
+
+== scene: Water break
+ask WATER
+  prompt COCO [caring] #action: Captain, पहले असली पानी पियो, फिर WATER वाला card tap करो।
+  after prompt: bed stop
+  remind COCO [kind and unhurried] at 30s 60s 3m: Captain, Coco यहीं wait कर रहा है।
+sfx ting
+COCO [warm] #praise #effort: Welcome back, Captain!
+use praise
+
+
+== scene: Clap party
+ask CLAP
+  prompt COCO [eager]: अब ताली की बारी! CLAP वाला card लाओ!
+  hint COCO: ताली वाला card ढूँढो.
+  hint COCO: CLAP वाला card tap करो.
+sfx ting
+COCO [excited] #praise #action: YES! CLAP! ताली बजाओ — एक, दो, तीन!
+use praise
+COCO [laughing, affectionate]: Bye-bye, Captain!
+
+
+== wrong card
+sfx boing
+COCO [playfully surprised, encouraging]: ओहो! ये वाला काम नहीं करेगा। Captain, एक और card try करो!
+--
+sfx boing
+COCO [light, encouraging]: ऊप्स! हमें कोई और चीज़ चाहिए। Captain, फिर से सोचो!

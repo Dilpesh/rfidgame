@@ -1,0 +1,3 @@
+name: Faster hints
+note: Hints at 5 / 10 / 15 s instead of 8 / 17 / 28 s — for a younger child who goes quiet.
+hints at: 5s 10s 15s

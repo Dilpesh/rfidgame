@@ -1,0 +1,135 @@
+{
+ "_build": {
+  "story": "Find & Tap",
+  "source": "audio_human/*.mp3 (human voice, luvvoice) + audio/bg_loop.mp3, copied 2026-09-29; texts and durations from voice_manifest.json"
+ },
+ "intro": {
+  "file": "intro.mp3",
+  "type": "speech",
+  "voice": "NARRATOR",
+  "spoken_text": "Hi there! Let's play a fun finding game! Listen carefully, and go find the card I ask for.",
+  "duration_seconds": 9.144,
+  "review_status": "shipped"
+ },
+ "card_red": {
+  "file": "card_red.mp3",
+  "type": "speech",
+  "voice": "NARRATOR",
+  "spoken_text": "Can you find something that is red?",
+  "duration_seconds": 3.12,
+  "review_status": "shipped"
+ },
+ "card_blue": {
+  "file": "card_blue.mp3",
+  "type": "speech",
+  "voice": "NARRATOR",
+  "spoken_text": "Now, find something blue!",
+  "duration_seconds": 3.144,
+  "review_status": "shipped"
+ },
+ "card_yellow": {
+  "file": "card_yellow.mp3",
+  "type": "speech",
+  "voice": "NARRATOR",
+  "spoken_text": "Look around... can you find something yellow?",
+  "duration_seconds": 3.792,
+  "review_status": "shipped"
+ },
+ "card_green": {
+  "file": "card_green.mp3",
+  "type": "speech",
+  "voice": "NARRATOR",
+  "spoken_text": "Where is something green? Go find it!",
+  "duration_seconds": 4.416,
+  "review_status": "shipped"
+ },
+ "card_circle": {
+  "file": "card_circle.mp3",
+  "type": "speech",
+  "voice": "NARRATOR",
+  "spoken_text": "Can you find the circle?",
+  "duration_seconds": 2.616,
+  "review_status": "shipped"
+ },
+ "card_square": {
+  "file": "card_square.mp3",
+  "type": "speech",
+  "voice": "NARRATOR",
+  "spoken_text": "Now let's find the square!",
+  "duration_seconds": 2.928,
+  "review_status": "shipped"
+ },
+ "card_triangle": {
+  "file": "card_triangle.mp3",
+  "type": "speech",
+  "voice": "NARRATOR",
+  "spoken_text": "Where is the triangle? Go find it!",
+  "duration_seconds": 4.368,
+  "review_status": "shipped"
+ },
+ "card_star": {
+  "file": "card_star.mp3",
+  "type": "speech",
+  "voice": "NARRATOR",
+  "spoken_text": "Can you find the star?",
+  "duration_seconds": 2.496,
+  "review_status": "shipped"
+ },
+ "correct_1": {
+  "file": "correct_1.mp3",
+  "type": "speech",
+  "voice": "NARRATOR",
+  "spoken_text": "Yay! You found it! Great job!",
+  "duration_seconds": 5.304,
+  "review_status": "shipped"
+ },
+ "correct_2": {
+  "file": "correct_2.mp3",
+  "type": "speech",
+  "voice": "NARRATOR",
+  "spoken_text": "Wonderful! That's exactly right!",
+  "duration_seconds": 4.416,
+  "review_status": "shipped"
+ },
+ "retry_1": {
+  "file": "retry_1.mp3",
+  "type": "speech",
+  "voice": "NARRATOR",
+  "spoken_text": "Hmm, not quite. Try again!",
+  "duration_seconds": 4.488,
+  "review_status": "shipped"
+ },
+ "retry_2": {
+  "file": "retry_2.mp3",
+  "type": "speech",
+  "voice": "NARRATOR",
+  "spoken_text": "Almost! Look one more time!",
+  "duration_seconds": 4.128,
+  "review_status": "shipped"
+ },
+ "outro": {
+  "file": "outro.mp3",
+  "type": "speech",
+  "voice": "NARRATOR",
+  "spoken_text": "Wow, you found everything! You are amazing! Great job today!",
+  "duration_seconds": 7.32,
+  "review_status": "shipped"
+ },
+ "setup_hint": {
+  "file": "setup_hint.mp3",
+  "type": "speech",
+  "voice": "NARRATOR",
+  "spoken_text": "Scan a card now to assign it.",
+  "duration_seconds": 3.24,
+  "review_status": "shipped"
+ },
+ "bg_loop": {
+  "file": "bg_loop.mp3",
+  "type": "music",
+  "bed": true,
+  "loop": true,
+  "volume": 0.16,
+  "review_status": "shipped",
+  "note": "volume 0.16 as in the old game"
+ }
+}

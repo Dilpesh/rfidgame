@@ -1,0 +1,3 @@
+name: No jokes
+note: Every #joke line and group is dropped — the story as pure rescue, for a child who loses the thread when Coco clowns.
+exclude: joke

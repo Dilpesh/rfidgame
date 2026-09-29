@@ -1,0 +1,3 @@
+name: Colours only
+note: Card-frequency experiment for the youngest — the four shape asks are dropped, the four colours stay.
+exclude: shape

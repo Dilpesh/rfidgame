@@ -1,0 +1,1621 @@
+{
+ "version": "lib-2026-09-29p",
+ "clips": {
+  "tap": {
+   "type": "sfx",
+   "description": "soft neutral tick: a card was tapped while Coco was still talking (synthetic placeholder, replace with a nicer one)",
+   "tags": [
+    "tick",
+    "tap",
+    "acknowledge",
+    "ui"
+   ],
+   "added": "2026-09-29",
+   "file": "sfx/tap.mp3",
+   "source": "library/sfx/tap.mp3",
+   "duration_seconds": 0.157
+  },
+  "ting": {
+   "duration_seconds": 1.228,
+   "integrated_lufs": -19.4,
+   "true_peak_dbfs": -2.6,
+   "type": "sfx",
+   "description": "two-note glass chime — the 'correct card' sound in Jungle Rescue",
+   "tags": [
+    "chime",
+    "correct",
+    "bright",
+    "ting"
+   ],
+   "added": "2026-09-29",
+   "file": "sfx/ting.mp3",
+   "source": "jungle-rescue-english:JR_014"
+  },
+  "boing": {
+   "type": "sfx",
+   "duration_seconds": 1.045,
+   "integrated_lufs": -20.4,
+   "true_peak_dbfs": -5.5,
+   "alias_of": "JR_070",
+   "reuse_reason": "approved shipped soft boing",
+   "description": "soft cartoon boing — wrong card, never harsh",
+   "tags": [
+    "boing",
+    "wrong",
+    "soft",
+    "funny"
+   ],
+   "added": "2026-09-29",
+   "file": "sfx/boing.mp3",
+   "source": "jungle-rescue-english:JR_179"
+  },
+  "jungle_day": {
+   "duration_seconds": 50.05,
+   "integrated_lufs": -19.5,
+   "true_peak_dbfs": -5.9,
+   "type": "bed",
+   "bed": true,
+   "loop": true,
+   "volume": 0.25,
+   "phone_band_test_worst_gap_db": -20.5,
+   "note": "Day bed raised 6 dB (option F) after option G was judged too low on the phone in context, 2026-09-26. Intro volume 0.28 -> 0.25 so it passes the band test there too.",
+   "description": "daytime jungle bed: birds, distant insects; loopable, high-passed at 90 Hz",
+   "tags": [
+    "bed",
+    "jungle",
+    "day",
+    "birds",
+    "ambience"
+   ],
+   "added": "2026-09-29",
+   "file": "music/jungle_day.mp3",
+   "source": "jungle-rescue-english:JR_001"
+  },
+  "jungle_night": {
+   "type": "bed",
+   "bed": true,
+   "loop": true,
+   "source_split_cue": "JR_103",
+   "volume": 0.26,
+   "duration_seconds": 42.031,
+   "integrated_lufs": -25.8,
+   "true_peak_dbfs": -4.6,
+   "phone_band_test_worst_gap_db": -20.6,
+   "note": "Replaced crickets bed (failed phone-speaker band test at -1.9/-1.5 dB). Chosen by ear on phone 2026-09-25, option E in docs/jungle-rescue-english/claude/.",
+   "description": "night jungle bed: crickets, soft wind; loopable",
+   "tags": [
+    "bed",
+    "jungle",
+    "night",
+    "crickets",
+    "ambience"
+   ],
+   "added": "2026-09-29",
+   "file": "music/jungle_night.mp3",
+   "source": "jungle-rescue-english:JR_103_bed"
+  },
+  "clap": {
+   "duration_seconds": 2.534,
+   "integrated_lufs": -15.2,
+   "true_peak_dbfs": -1.0,
+   "type": "sfx",
+   "description": "a small group clapping, celebration",
+   "tags": [
+    "clap",
+    "applause",
+    "celebration",
+    "party"
+   ],
+   "added": "2026-09-29",
+   "file": "sfx/clap.mp3",
+   "source": "jungle-rescue-english:JR_152_clap"
+  },
+  "party_whistle": {
+   "type": "sfx",
+   "duration_seconds": 0.836,
+   "integrated_lufs": -26.1,
+   "true_peak_dbfs": -1.3,
+   "model_id": "eleven_text_to_sound_v2",
+   "description": "party whistle / blower, short and silly",
+   "tags": [
+    "party",
+    "whistle",
+    "celebration",
+    "funny"
+   ],
+   "added": "2026-09-29",
+   "file": "sfx/party_whistle.mp3",
+   "source": "jungle-rescue-english:JR_153"
+  },
+  "dance_loop": {
+   "type": "music",
+   "duration_seconds": 20.036,
+   "integrated_lufs": -15.5,
+   "true_peak_dbfs": -1.4,
+   "loop": true,
+   "volume": 0.62,
+   "exact_runtime_seconds": 20.0,
+   "model_id": "music_v2",
+   "note": "Re-levelled +10 dB with limiter (was -24.9 LUFS, too quiet to dance to). Chosen by ear on phone 2026-09-26 (option C). Duck under dance calls deepened to 0.30 in index.html.",
+   "description": "20-second upbeat dance loop used for freeze-dance rounds (music_v2)",
+   "tags": [
+    "dance",
+    "music",
+    "loop",
+    "party",
+    "upbeat"
+   ],
+   "added": "2026-09-29",
+   "file": "music/dance_loop.mp3",
+   "source": "jungle-rescue-english:JR_160"
+  },
+  "great_job_en": {
+   "type": "voice",
+   "voice": "NARRATOR",
+   "spoken_text": "Yay! You found it! Great job!",
+   "duration_seconds": 5.304,
+   "description": "English praise, human voice: Yay! You found it! Great job!",
+   "tags": [
+    "praise",
+    "english",
+    "correct",
+    "great",
+    "job"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/great_job_en.mp3",
+   "source": "find-and-tap:correct_1"
+  },
+  "exactly_right_en": {
+   "type": "voice",
+   "voice": "NARRATOR",
+   "spoken_text": "Wonderful! That's exactly right!",
+   "duration_seconds": 4.416,
+   "description": "English praise, human voice: Wonderful! That's exactly right!",
+   "tags": [
+    "praise",
+    "english",
+    "correct",
+    "wonderful"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/exactly_right_en.mp3",
+   "source": "find-and-tap:correct_2"
+  },
+  "try_again_en": {
+   "type": "voice",
+   "voice": "NARRATOR",
+   "spoken_text": "Hmm, not quite. Try again!",
+   "duration_seconds": 4.488,
+   "description": "English wrong-card line, human voice: Hmm, not quite. Try again!",
+   "tags": [
+    "wrong",
+    "english",
+    "retry",
+    "gentle"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/try_again_en.mp3",
+   "source": "find-and-tap:retry_1"
+  },
+  "look_again_en": {
+   "type": "voice",
+   "voice": "NARRATOR",
+   "spoken_text": "Almost! Look one more time!",
+   "duration_seconds": 4.128,
+   "description": "English wrong-card line, human voice: Almost! Look one more time!",
+   "tags": [
+    "wrong",
+    "english",
+    "retry",
+    "gentle"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/look_again_en.mp3",
+   "source": "find-and-tap:retry_2"
+  },
+  "bg_soft_loop": {
+   "type": "bed",
+   "bed": true,
+   "loop": true,
+   "volume": 0.16,
+   "note": "volume 0.16 as in the old game",
+   "description": "soft background music loop from Find & Tap, plays under the whole game at 0.16",
+   "tags": [
+    "bed",
+    "music",
+    "soft",
+    "loop",
+    "background"
+   ],
+   "added": "2026-09-29",
+   "file": "music/bg_soft_loop.mp3",
+   "source": "find-and-tap:bg_loop",
+   "duration_seconds": 8.064
+  },
+  "hello_coco": {
+   "duration_seconds": 5.329,
+   "integrated_lufs": -15.6,
+   "true_peak_dbfs": -1.9,
+   "type": "voice",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "हैलो, मैं हूँ कोको। आज हम जंगल बचाओ टीम बनेंगे।",
+   "performance_tag": "[bright and playful]",
+   "description": "Coco's hello: हैलो, मैं हूँ कोको। आज हम जंगल बचाओ टीम बनेंगे।",
+   "tags": [
+    "coco",
+    "hello",
+    "intro",
+    "jungle"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/hello_coco.mp3",
+   "source": "jungle-rescue-english:JR_002"
+  },
+  "captain_help": {
+   "duration_seconds": 7.628,
+   "integrated_lufs": -16.2,
+   "true_peak_dbfs": -1.7,
+   "type": "voice",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम Captain बनकर मेरी मदद करोगे?",
+   "performance_tag": "[hopeful and inviting]",
+   "description": "Coco asks the child to be Captain and help: जंगल में हमारे कई दोस्त मुसीबत में हैं… क्या तुम Captain बनकर मेरी मदद करोगे?",
+   "tags": [
+    "coco",
+    "intro",
+    "captain",
+    "invite"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/captain_help.mp3",
+   "source": "jungle-rescue-english:JR_003"
+  },
+  "yes_great": {
+   "duration_seconds": 5.799,
+   "integrated_lufs": -15.8,
+   "true_peak_dbfs": -1.9,
+   "type": "voice",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Yes! Great! अब Captain और कोको मिलकर सारे animals को बचा लेंगे।",
+   "performance_tag": "[delighted and encouraging]",
+   "description": "Coco, delighted: Yes! Great! अब Captain और कोको मिलकर सारे animals को बचा लेंगे।",
+   "tags": [
+    "coco",
+    "yes",
+    "great",
+    "intro"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/yes_great.mp3",
+   "source": "jungle-rescue-english:JR_004"
+  },
+  "jeep_ready": {
+   "duration_seconds": 3.082,
+   "integrated_lufs": -16.8,
+   "true_peak_dbfs": -2.5,
+   "type": "voice",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "जल्दी चलो, हमारी जंगल रेस्क्यू जीप तैयार है।",
+   "performance_tag": "[warm storytelling]",
+   "description": "Coco: जल्दी चलो, हमारी जंगल रेस्क्यू जीप तैयार है।",
+   "tags": [
+    "coco",
+    "jeep",
+    "go"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/jeep_ready.mp3",
+   "source": "jungle-rescue-english:JR_005"
+  },
+  "narr_jeep_start": {
+   "duration_seconds": 4.598,
+   "integrated_lufs": -16.2,
+   "true_peak_dbfs": -2.5,
+   "type": "voice",
+   "voice": "NARRATOR",
+   "voice_id": "ItmwhOeluca31IEX91Yk",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.56,
+    "similarity_boost": 0.78,
+    "style": 0.12,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "कोको जीप में बैठा, स्टीयरिंग पकड़ी, चाबी घुमाई।",
+   "performance_tag": "[warm and brisk]",
+   "description": "Narrator (Jia): कोको जीप में बैठा, स्टीयरिंग पकड़ी, चाबी घुमाई।",
+   "tags": [
+    "narrator",
+    "jeep",
+    "start"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/narr_jeep_start.mp3",
+   "source": "jungle-rescue-english:JR_007"
+  },
+  "tank_empty": {
+   "duration_seconds": 6.113,
+   "integrated_lufs": -17.2,
+   "true_peak_dbfs": -1.9,
+   "type": "voice",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "ओह, ये स्टार्ट क्यों नहीं हो रही है? हम्म, जीप की टंकी खाली है।",
+   "performance_tag": "[surprised and amused]",
+   "description": "Coco, surprised: ओह, ये स्टार्ट क्यों नहीं हो रही है? हम्म, जीप की टंकी खाली है।",
+   "tags": [
+    "coco",
+    "jeep",
+    "fuel",
+    "empty"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/tank_empty.mp3",
+   "source": "jungle-rescue-english:JR_009"
+  },
+  "ask_fuel": {
+   "duration_seconds": 4.206,
+   "integrated_lufs": -17.0,
+   "true_peak_dbfs": -1.8,
+   "type": "voice",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Captain, टंकी खाली है! इसमें क्या डालें कि जीप चल पड़े?",
+   "performance_tag": "[curious and clear]",
+   "description": "FUEL question: Captain, टंकी खाली है! इसमें क्या डालें कि जीप चल पड़े?",
+   "tags": [
+    "coco",
+    "ask",
+    "fuel",
+    "question"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/ask_fuel.mp3",
+   "source": "jungle-rescue-english:JR_010"
+  },
+  "hint_fuel_1": {
+   "duration_seconds": 5.642,
+   "integrated_lufs": -17.0,
+   "true_peak_dbfs": -1.9,
+   "type": "voice",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "अपने सामने वाले cards को देखो... इनमें Jeep को चलाने वाली कोई चीज़ है क्या?",
+   "performance_tag": "[kind and clear]",
+   "description": "FUEL hint 1: अपने सामने वाले cards को देखो... इनमें Jeep को चलाने वाली कोई चीज़ है क्या?",
+   "tags": [
+    "coco",
+    "hint",
+    "fuel"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/hint_fuel_1.mp3",
+   "source": "jungle-rescue-english:JR_011"
+  },
+  "hint_fuel_2": {
+   "duration_seconds": 3.971,
+   "integrated_lufs": -15.8,
+   "true_peak_dbfs": -1.9,
+   "type": "voice",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "जिससे गाड़ी की tank भरती है, वही card ढूँढो.",
+   "performance_tag": "[kind and clear]",
+   "description": "FUEL hint 2: जिससे गाड़ी की tank भरती है, वही card ढूँढो.",
+   "tags": [
+    "coco",
+    "hint",
+    "fuel"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/hint_fuel_2.mp3",
+   "source": "jungle-rescue-english:JR_012"
+  },
+  "hint_fuel_3": {
+   "duration_seconds": 2.038,
+   "integrated_lufs": -17.0,
+   "true_peak_dbfs": -2.0,
+   "type": "voice",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "FUEL वाला card scan करो.",
+   "performance_tag": "[kind and clear]",
+   "description": "FUEL rescue hint: FUEL वाला card scan करो.",
+   "tags": [
+    "coco",
+    "hint",
+    "fuel",
+    "rescue"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/hint_fuel_3.mp3",
+   "source": "jungle-rescue-english:JR_013"
+  },
+  "yes_fuel": {
+   "duration_seconds": 2.769,
+   "integrated_lufs": -16.6,
+   "true_peak_dbfs": -2.8,
+   "type": "voice",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "YES! FUEL! टंकी भर गई!",
+   "performance_tag": "[excited]",
+   "description": "FUEL praise: YES! FUEL! टंकी भर गई!",
+   "tags": [
+    "coco",
+    "praise",
+    "yes",
+    "fuel"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/yes_fuel.mp3",
+   "source": "jungle-rescue-english:JR_015"
+  },
+  "rescue_team_chalo": {
+   "duration_seconds": 2.508,
+   "integrated_lufs": -16.4,
+   "true_peak_dbfs": -7.5,
+   "type": "voice",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "जंगल रेस्क्यू टीम चलो!",
+   "performance_tag": "[energetic rallying call]",
+   "description": "Coco's rallying call: जंगल रेस्क्यू टीम चलो!",
+   "tags": [
+    "coco",
+    "rally",
+    "go",
+    "chalo"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/rescue_team_chalo.mp3",
+   "source": "jungle-rescue-english:JR_018"
+  },
+  "narr_jungle_drive": {
+   "duration_seconds": 7.471,
+   "integrated_lufs": -16.3,
+   "true_peak_dbfs": -2.4,
+   "type": "voice",
+   "voice": "NARRATOR",
+   "voice_id": "ItmwhOeluca31IEX91Yk",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.56,
+    "similarity_boost": 0.78,
+    "style": 0.12,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "जीप जंगल के अंदर गई। बड़े-बड़े पेड़, छोटी-छोटी नदियाँ, उछलती-कूदती जीप!",
+   "performance_tag": "[bouncy and curious]",
+   "character_treatment": null,
+   "description": "Narrator: जीप जंगल के अंदर गई। बड़े-बड़े पेड़, छोटी-छोटी नदियाँ, उछलती-कूदती जीप!",
+   "tags": [
+    "narrator",
+    "jeep",
+    "drive",
+    "jungle"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/narr_jungle_drive.mp3",
+   "source": "jungle-rescue-english:JR_022"
+  },
+  "trampoline_joke": {
+   "duration_seconds": 2.508,
+   "integrated_lufs": -17.4,
+   "true_peak_dbfs": -2.5,
+   "type": "voice",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "वो! ये रोड है या ट्रैम्पोलीन?",
+   "performance_tag": "[surprised and comic]",
+   "character_treatment": null,
+   "description": "Coco joke on a bumpy road: वो! ये रोड है या ट्रैम्पोलीन?",
+   "tags": [
+    "coco",
+    "joke",
+    "jeep",
+    "bump"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/trampoline_joke.mp3",
+   "source": "jungle-rescue-english:JR_026"
+  },
+  "narr_night_arrival": {
+   "duration_seconds": 8.673,
+   "integrated_lufs": -16.9,
+   "true_peak_dbfs": -2.5,
+   "type": "voice",
+   "voice": "NARRATOR",
+   "voice_id": "ItmwhOeluca31IEX91Yk",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.56,
+    "similarity_boost": 0.78,
+    "style": 0.12,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "रेस्क्यू जीप घने जंगलों के बीच आकर रुकी। सूरज ढल चुका था और पेड़-पौधे अंधेरे में अजीब साए जैसे लग रहे थे।",
+   "performance_tag": "[hushed and adventurous]",
+   "description": "Narrator, hushed: रेस्क्यू जीप घने जंगलों के बीच आकर रुकी। सूरज ढल चुका था…",
+   "tags": [
+    "narrator",
+    "night",
+    "dark",
+    "arrive"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/narr_night_arrival.mp3",
+   "source": "jungle-rescue-english:JR_104"
+  },
+  "ask_torch": {
+   "duration_seconds": 8.359,
+   "integrated_lufs": -15.9,
+   "true_peak_dbfs": -2.3,
+   "type": "voice",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "अरे! इतना अंधेरा है कि मेरी नाक भी नहीं दिख रही! Captain, हमें तुरंत रोशनी चाहिए, वरना हम सब टकरा जाएँगे!",
+   "performance_tag": "[rubbing head, urgent but playful]",
+   "description": "FLASHLIGHT question: अरे! इतना अंधेरा है कि मेरी नाक भी नहीं दिख रही! Captain, हमें तुरंत रोशनी चाहिए…",
+   "tags": [
+    "coco",
+    "ask",
+    "torch",
+    "flashlight",
+    "dark",
+    "question"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/ask_torch.mp3",
+   "source": "jungle-rescue-english:JR_115"
+  },
+  "hint_torch_1": {
+   "duration_seconds": 5.642,
+   "integrated_lufs": -18.0,
+   "true_peak_dbfs": -2.4,
+   "type": "voice",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "अपने cards में देखो... कोई ऐसी चीज़ है जो अंधेरे में तेज़ रोशनी दे सके?",
+   "performance_tag": "[clear and warm]",
+   "description": "FLASHLIGHT hint 1: अपने cards में देखो... कोई ऐसी चीज़ है जो अंधेरे में तेज़ रोशनी दे सके?",
+   "tags": [
+    "coco",
+    "hint",
+    "torch",
+    "flashlight"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/hint_torch_1.mp3",
+   "source": "jungle-rescue-english:JR_116"
+  },
+  "hint_torch_2": {
+   "duration_seconds": 3.971,
+   "integrated_lufs": -16.9,
+   "true_peak_dbfs": -2.4,
+   "type": "voice",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "इसे ON करते ही अंधेरे में रास्ता साफ़ दिखने लगता है।",
+   "performance_tag": "[clear and warm]",
+   "description": "FLASHLIGHT hint 2: इसे ON करते ही अंधेरे में रास्ता साफ़ दिखने लगता है।",
+   "tags": [
+    "coco",
+    "hint",
+    "torch",
+    "flashlight"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/hint_torch_2.mp3",
+   "source": "jungle-rescue-english:JR_117"
+  },
+  "hint_torch_3": {
+   "duration_seconds": 1.881,
+   "integrated_lufs": -16.4,
+   "true_peak_dbfs": -2.8,
+   "type": "voice",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "FLASHLIGHT वाला card scan करो!",
+   "performance_tag": "[clear and warm]",
+   "description": "FLASHLIGHT rescue hint: FLASHLIGHT वाला card scan करो!",
+   "tags": [
+    "coco",
+    "hint",
+    "torch",
+    "flashlight",
+    "rescue"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/hint_torch_3.mp3",
+   "source": "jungle-rescue-english:JR_118"
+  },
+  "yes_torch": {
+   "duration_seconds": 2.926,
+   "integrated_lufs": -16.4,
+   "true_peak_dbfs": -2.7,
+   "type": "voice",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "YES! FLASHLIGHT!",
+   "performance_tag": "[relieved and bright]",
+   "description": "FLASHLIGHT praise: YES! FLASHLIGHT!",
+   "tags": [
+    "coco",
+    "praise",
+    "yes",
+    "torch",
+    "flashlight"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/yes_torch.mp3",
+   "source": "jungle-rescue-english:JR_121"
+  },
+  "owl_joke": {
+   "duration_seconds": 5.956,
+   "integrated_lufs": -16.7,
+   "true_peak_dbfs": -2.4,
+   "type": "voice",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "वाह! रोशनी होते ही सब दिखने लगा! ...और rock के ऊपर वो उल्लू भी!",
+   "performance_tag": "[surprised and relieved]",
+   "description": "Coco, light comes on: वाह! रोशनी होते ही सब दिखने लगा! ...और rock के ऊपर वो उल्लू भी!",
+   "tags": [
+    "coco",
+    "joke",
+    "owl",
+    "light"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/owl_joke.mp3",
+   "source": "jungle-rescue-english:JR_123"
+  },
+  "ask_water": {
+   "duration_seconds": 11.389,
+   "integrated_lufs": -16.4,
+   "true_peak_dbfs": -2.4,
+   "type": "voice",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "इतने rescue missions के बाद Captain को भी थोड़ी प्यास लगी होगी। पहले तुम जाकर थोड़ा असली पानी पियो। पानी पीकर वापस आना और WATER वाला card tap करना।",
+   "performance_tag": "[caring, clear water-break instruction]",
+   "description": "WATER break instruction: पहले असली पानी पियो, फिर WATER वाला card tap करो (action first, card second)",
+   "tags": [
+    "coco",
+    "ask",
+    "water",
+    "break",
+    "action",
+    "question"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/ask_water.mp3",
+   "source": "jungle-rescue-english:JR_094"
+  },
+  "remind_water": {
+   "duration_seconds": 5.642,
+   "integrated_lufs": -15.8,
+   "true_peak_dbfs": -2.4,
+   "type": "voice",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Captain, Coco यहीं wait कर रहा है। पानी पीकर आओ और WATER वाला card tap कर देना।",
+   "performance_tag": "[kind and unhurried reminder]",
+   "description": "WATER break reminder: Captain, Coco यहीं wait कर रहा है। पानी पीकर आओ और WATER वाला card tap कर देना।",
+   "tags": [
+    "coco",
+    "water",
+    "remind"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/remind_water.mp3",
+   "source": "jungle-rescue-english:JR_095"
+  },
+  "welcome_back": {
+   "duration_seconds": 4.362,
+   "integrated_lufs": -16.9,
+   "true_peak_dbfs": -2.3,
+   "type": "voice",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Welcome back, Captain! अब पैरट को भी थोड़ा water देते हैं।",
+   "performance_tag": "[warm welcome back]",
+   "description": "After the water break: Welcome back, Captain! अब पैरट को भी थोड़ा water देते हैं। (mentions the parrot)",
+   "tags": [
+    "coco",
+    "water",
+    "welcome",
+    "parrot"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/welcome_back.mp3",
+   "source": "jungle-rescue-english:JR_097"
+  },
+  "party_time": {
+   "type": "voice",
+   "duration_seconds": 4.754,
+   "integrated_lufs": -15.6,
+   "true_peak_dbfs": -2.3,
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Captain, हमने दोस्तों की मदद कर दी! अब हमारी पार्टी!",
+   "performance_tag": "[proud, delighted]",
+   "description": "Coco, proud: Captain, हमने दोस्तों की मदद कर दी! अब हमारी पार्टी!",
+   "tags": [
+    "coco",
+    "party",
+    "celebrate"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/party_time.mp3",
+   "source": "jungle-rescue-english:JR_152"
+  },
+  "ask_music": {
+   "type": "voice",
+   "duration_seconds": 5.564,
+   "integrated_lufs": -16.9,
+   "true_peak_dbfs": -2.4,
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "मेरे पैर तो नाचने लगे! पर धुन कहाँ है? Captain, नाचने के लिए क्या बजाएँ?",
+   "performance_tag": "[eager, playful]",
+   "description": "MUSIC question: मेरे पैर तो नाचने लगे! पर धुन कहाँ है? Captain, नाचने के लिए क्या बजाएँ?",
+   "tags": [
+    "coco",
+    "ask",
+    "music",
+    "dance",
+    "question"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/ask_music.mp3",
+   "source": "jungle-rescue-english:JR_154"
+  },
+  "hint_music_1": {
+   "type": "voice",
+   "duration_seconds": 2.926,
+   "integrated_lufs": -19.2,
+   "true_peak_dbfs": -2.4,
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "पार्टी में नाचने के लिए धुन चाहिए।",
+   "performance_tag": "[gently encouraging]",
+   "description": "MUSIC hint 1: पार्टी में नाचने के लिए धुन चाहिए।",
+   "tags": [
+    "coco",
+    "hint",
+    "music"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/hint_music_1.mp3",
+   "source": "jungle-rescue-english:JR_155"
+  },
+  "hint_music_2": {
+   "type": "voice",
+   "duration_seconds": 2.194,
+   "integrated_lufs": -16.5,
+   "true_peak_dbfs": -2.5,
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "गाना बजाने वाला card ढूँढो।",
+   "performance_tag": "[playful, helpful]",
+   "description": "MUSIC hint 2: गाना बजाने वाला card ढूँढो।",
+   "tags": [
+    "coco",
+    "hint",
+    "music"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/hint_music_2.mp3",
+   "source": "jungle-rescue-english:JR_156"
+  },
+  "hint_music_3": {
+   "type": "voice",
+   "duration_seconds": 2.273,
+   "integrated_lufs": -18.1,
+   "true_peak_dbfs": -2.4,
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "MUSIC वाला card tap करो।",
+   "performance_tag": "[clear, kind]",
+   "description": "MUSIC rescue hint: MUSIC वाला card tap करो।",
+   "tags": [
+    "coco",
+    "hint",
+    "music",
+    "rescue"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/hint_music_3.mp3",
+   "source": "jungle-rescue-english:JR_157"
+  },
+  "yes_music": {
+   "type": "voice",
+   "duration_seconds": 1.881,
+   "integrated_lufs": -16.4,
+   "true_peak_dbfs": -4.8,
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "YES! MUSIC!",
+   "performance_tag": "[excited]",
+   "description": "MUSIC praise: YES! MUSIC!",
+   "tags": [
+    "coco",
+    "praise",
+    "yes",
+    "music"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/yes_music.mp3",
+   "source": "jungle-rescue-english:JR_159"
+  },
+  "dance_elephant": {
+   "type": "voice",
+   "duration_seconds": 6.191,
+   "integrated_lufs": -17.6,
+   "true_peak_dbfs": -2.3,
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Elephant dance! हाथ की सूँड़ बनाओ — इधर, उधर! बैठे-बैठे भी!",
+   "performance_tag": "[bouncy, inviting]",
+   "description": "Dance call, over the music: Elephant dance! हाथ की सूँड़ बनाओ — इधर, उधर! बैठे-बैठे भी!",
+   "tags": [
+    "coco",
+    "dance",
+    "elephant",
+    "action"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/dance_elephant.mp3",
+   "source": "jungle-rescue-english:JR_161"
+  },
+  "freeze_statue": {
+   "type": "voice",
+   "duration_seconds": 2.429,
+   "integrated_lufs": -16.4,
+   "true_peak_dbfs": -3.6,
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Freeze! मूर्ति बन जाओ!",
+   "performance_tag": "[playful, clear]",
+   "description": "Freeze call (fits in 3 s): Freeze! मूर्ति बन जाओ!",
+   "tags": [
+    "coco",
+    "dance",
+    "freeze",
+    "action"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/freeze_statue.mp3",
+   "source": "jungle-rescue-english:JR_163"
+  },
+  "dance_parrot": {
+   "type": "voice",
+   "duration_seconds": 4.441,
+   "integrated_lufs": -15.5,
+   "true_peak_dbfs": -2.4,
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Parrot dance! हाथों के पंख — फड़फड़, फड़फड़!",
+   "performance_tag": "[bright, rhythmic]",
+   "description": "Dance call: Parrot dance! हाथों के पंख — फड़फड़, फड़फड़!",
+   "tags": [
+    "coco",
+    "dance",
+    "parrot",
+    "action"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/dance_parrot.mp3",
+   "source": "jungle-rescue-english:JR_164"
+  },
+  "freeze_cheeks": {
+   "type": "voice",
+   "duration_seconds": 2.194,
+   "integrated_lufs": -16.4,
+   "true_peak_dbfs": -5.4,
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Freeze! गाल फुलाओ!",
+   "performance_tag": "[funny, clear]",
+   "description": "Freeze call (fits in 3 s): Freeze! गाल फुलाओ!",
+   "tags": [
+    "coco",
+    "dance",
+    "freeze",
+    "action",
+    "cheeks"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/freeze_cheeks.mp3",
+   "source": "jungle-rescue-english:JR_166"
+  },
+  "dance_captain": {
+   "type": "voice",
+   "duration_seconds": 4.598,
+   "integrated_lufs": -16.2,
+   "true_peak_dbfs": -2.4,
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "पुफ्फ! अब Captain वाला dance! हाथ हिलाओ या ताली बजाओ!",
+   "performance_tag": "[puffed cheeks, funny release]",
+   "description": "Dance call: पुफ्फ! अब Captain वाला dance! हाथ हिलाओ या ताली बजाओ!",
+   "tags": [
+    "coco",
+    "dance",
+    "captain",
+    "action"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/dance_captain.mp3",
+   "source": "jungle-rescue-english:JR_167"
+  },
+  "thank_you_captain": {
+   "type": "voice",
+   "duration_seconds": 5.721,
+   "integrated_lufs": -16.8,
+   "true_peak_dbfs": -2.4,
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Captain, तुम्हारी मदद से हमारे दोस्त फिर खुश हैं। Thank you, Captain!",
+   "performance_tag": "[warm, proud; gently catching his breath]",
+   "description": "Ending: Captain, तुम्हारी मदद से हमारे दोस्त फिर खुश हैं। Thank you, Captain!",
+   "tags": [
+    "coco",
+    "thanks",
+    "ending",
+    "praise"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/thank_you_captain.mp3",
+   "source": "jungle-rescue-english:JR_171"
+  },
+  "hands_up": {
+   "type": "voice",
+   "duration_seconds": 4.911,
+   "integrated_lufs": -15.3,
+   "true_peak_dbfs": -2.7,
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "हाथ ऊपर! साथ बोलो — हम हैं जंगल बचाओ टीम!",
+   "performance_tag": "[inviting, joyful]",
+   "description": "Ending chant: हाथ ऊपर! साथ बोलो — हम हैं जंगल बचाओ टीम!",
+   "tags": [
+    "coco",
+    "ending",
+    "chant",
+    "action"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/hands_up.mp3",
+   "source": "jungle-rescue-english:JR_172"
+  },
+  "high_five": {
+   "type": "voice",
+   "duration_seconds": 2.691,
+   "integrated_lufs": -16.4,
+   "true_peak_dbfs": -2.7,
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "मेरी तरफ हवा में high-five!",
+   "performance_tag": "[playful]",
+   "description": "Coco: मेरी तरफ हवा में high-five!",
+   "tags": [
+    "coco",
+    "ending",
+    "high-five",
+    "action"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/high_five.mp3",
+   "source": "jungle-rescue-english:JR_173"
+  },
+  "mud_hands_joke": {
+   "type": "voice",
+   "duration_seconds": 2.691,
+   "integrated_lufs": -16.6,
+   "true_peak_dbfs": -3.1,
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "अरे! मेरे हाथ पर अभी भी कीचड़ है!",
+   "performance_tag": "[comic surprise]",
+   "description": "Coco joke after the high-five: अरे! मेरे हाथ पर अभी भी कीचड़ है!",
+   "tags": [
+    "coco",
+    "joke",
+    "mud",
+    "ending"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/mud_hands_joke.mp3",
+   "source": "jungle-rescue-english:JR_175"
+  },
+  "bye_captain": {
+   "type": "voice",
+   "duration_seconds": 4.911,
+   "integrated_lufs": -15.5,
+   "true_peak_dbfs": -2.4,
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "ये कौन करता है?! पहले हाथ धोऊँगा! Bye-bye, Captain!",
+   "performance_tag": "[laughing, affectionate]",
+   "description": "Coco's goodbye: ये कौन करता है?! पहले हाथ धोऊँगा! Bye-bye, Captain!",
+   "tags": [
+    "coco",
+    "bye",
+    "ending"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/bye_captain.mp3",
+   "source": "jungle-rescue-english:JR_177"
+  },
+  "wrong_1": {
+   "type": "voice",
+   "duration_seconds": 4.989,
+   "integrated_lufs": -16.3,
+   "true_peak_dbfs": -2.4,
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "ओहो! ये वाला काम नहीं करेगा। Captain, एक और card try करो!",
+   "performance_tag": "[playfully surprised, encouraging]",
+   "description": "Wrong card, warm: ओहो! ये वाला काम नहीं करेगा। Captain, एक और card try करो!",
+   "tags": [
+    "coco",
+    "wrong",
+    "retry",
+    "warm"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/wrong_1.mp3",
+   "source": "jungle-rescue-english:JR_180"
+  },
+  "wrong_2": {
+   "type": "voice",
+   "duration_seconds": 5.068,
+   "integrated_lufs": -16.7,
+   "true_peak_dbfs": -2.4,
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "ऊप्स! हमें कोई और चीज़ चाहिए। Captain, फिर से सोचो!",
+   "performance_tag": "[light, encouraging]",
+   "description": "Wrong card, warm: ऊप्स! हमें कोई और चीज़ चाहिए। Captain, फिर से सोचो!",
+   "tags": [
+    "coco",
+    "wrong",
+    "retry",
+    "warm"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/wrong_2.mp3",
+   "source": "jungle-rescue-english:JR_182"
+  },
+  "wrong_3": {
+   "type": "voice",
+   "duration_seconds": 4.676,
+   "integrated_lufs": -15.4,
+   "true_peak_dbfs": -2.4,
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "हम्म... ये नहीं। Captain, दूसरा card try करो!",
+   "performance_tag": "[curious, supportive]",
+   "description": "Wrong card, warm: हम्म... ये नहीं। Captain, दूसरा card try करो!",
+   "tags": [
+    "coco",
+    "wrong",
+    "retry",
+    "warm"
+   ],
+   "added": "2026-09-29",
+   "file": "voice/wrong_3.mp3",
+   "source": "jungle-rescue-english:JR_184"
+  },
+  "jeep_door": {
+   "duration_seconds": 1.228,
+   "integrated_lufs": -19.5,
+   "true_peak_dbfs": -0.9,
+   "type": "sfx",
+   "description": "jeep door opens, quick",
+   "tags": [
+    "jeep",
+    "door",
+    "sfx"
+   ],
+   "added": "2026-09-29",
+   "file": "sfx/jeep_door.mp3",
+   "source": "jungle-rescue-english:JR_006"
+  },
+  "key_engine_cough": {
+   "duration_seconds": 3.37,
+   "integrated_lufs": -19.6,
+   "true_peak_dbfs": -3.1,
+   "type": "sfx",
+   "description": "key turn then two comic engine coughs — the jeep will not start",
+   "tags": [
+    "jeep",
+    "key",
+    "engine",
+    "cough",
+    "funny"
+   ],
+   "added": "2026-09-29",
+   "file": "sfx/key_engine_cough.mp3",
+   "source": "jungle-rescue-english:JR_008"
+  },
+  "fuel_pour": {
+   "duration_seconds": 6.139,
+   "integrated_lufs": -19.4,
+   "true_peak_dbfs": -0.2,
+   "type": "sfx",
+   "description": "short fuel pouring / tank filling",
+   "tags": [
+    "fuel",
+    "pour",
+    "jeep"
+   ],
+   "added": "2026-09-29",
+   "file": "sfx/fuel_pour.mp3",
+   "source": "jungle-rescue-english:JR_016"
+  },
+  "engine_start": {
+   "duration_seconds": 3.109,
+   "integrated_lufs": -16.7,
+   "true_peak_dbfs": -0.4,
+   "type": "sfx",
+   "description": "engine catches and starts",
+   "tags": [
+    "engine",
+    "start",
+    "jeep"
+   ],
+   "added": "2026-09-29",
+   "file": "sfx/engine_start.mp3",
+   "source": "jungle-rescue-english:JR_017"
+  },
+  "jeep_bump": {
+   "duration_seconds": 0.627,
+   "integrated_lufs": -22.0,
+   "true_peak_dbfs": -2.0,
+   "type": "sfx",
+   "description": "one soft jeep bump on a bad road",
+   "tags": [
+    "jeep",
+    "bump",
+    "road"
+   ],
+   "added": "2026-09-29",
+   "file": "sfx/jeep_bump.mp3",
+   "source": "jungle-rescue-english:JR_023"
+  },
+  "elephant_trumpet": {
+   "duration_seconds": 2.142,
+   "integrated_lufs": -20.5,
+   "true_peak_dbfs": -12.8,
+   "type": "sfx",
+   "description": "friendly elephant trumpet, full and clear",
+   "tags": [
+    "elephant",
+    "trumpet",
+    "animal"
+   ],
+   "added": "2026-09-29",
+   "file": "sfx/elephant_trumpet.mp3",
+   "source": "jungle-rescue-english:JR_027"
+  },
+  "jeep_arrive_stop": {
+   "type": "sfx",
+   "duration_seconds": 4.467,
+   "description": "jeep drives up on gravel and stops, engine off (~4.5 s)",
+   "tags": [
+    "jeep",
+    "arrive",
+    "stop",
+    "gravel"
+   ],
+   "added": "2026-09-29",
+   "file": "sfx/jeep_arrive_stop.mp3",
+   "source": "jungle-rescue-english:JR_103"
+  },
+  "torch_click": {
+   "duration_seconds": 1.228,
+   "integrated_lufs": -24.7,
+   "true_peak_dbfs": -1.2,
+   "type": "sfx",
+   "description": "torch / flashlight click on",
+   "tags": [
+    "torch",
+    "click",
+    "light"
+   ],
+   "added": "2026-09-29",
+   "file": "sfx/torch_click.mp3",
+   "source": "jungle-rescue-english:JR_120"
+  },
+  "light_sweep": {
+   "duration_seconds": 0.731,
+   "integrated_lufs": -20.7,
+   "true_peak_dbfs": -6.0,
+   "type": "sfx",
+   "description": "light sweeping across a scene",
+   "tags": [
+    "light",
+    "sweep",
+    "torch"
+   ],
+   "added": "2026-09-29",
+   "file": "sfx/light_sweep.mp3",
+   "source": "jungle-rescue-english:JR_122"
+  },
+  "owl_hoot": {
+   "duration_seconds": 1.515,
+   "integrated_lufs": -20.4,
+   "true_peak_dbfs": -11.3,
+   "type": "sfx",
+   "description": "an owl hoots, night",
+   "tags": [
+    "owl",
+    "hoot",
+    "night",
+    "animal"
+   ],
+   "added": "2026-09-29",
+   "file": "sfx/owl_hoot.mp3",
+   "source": "jungle-rescue-english:JR_124"
+  },
+  "music_end_flourish": {
+   "type": "music",
+   "duration_seconds": 1.384,
+   "integrated_lufs": -19.9,
+   "true_peak_dbfs": -8.2,
+   "model_id": "eleven_text_to_sound_v2",
+   "description": "short musical flourish that ends the dance",
+   "tags": [
+    "music",
+    "end",
+    "flourish"
+   ],
+   "added": "2026-09-29",
+   "file": "music/music_end_flourish.mp3",
+   "source": "jungle-rescue-english:JR_170"
+  },
+  "high_five_slap": {
+   "type": "sfx",
+   "duration_seconds": 0.731,
+   "integrated_lufs": -18.4,
+   "true_peak_dbfs": -0.5,
+   "model_id": "eleven_text_to_sound_v2",
+   "description": "a high-five slap",
+   "tags": [
+    "high-five",
+    "slap",
+    "hands"
+   ],
+   "added": "2026-09-29",
+   "file": "sfx/high_five_slap.mp3",
+   "source": "jungle-rescue-english:JR_174"
+  },
+  "squelch": {
+   "type": "sfx",
+   "duration_seconds": 1.802,
+   "integrated_lufs": -20.6,
+   "true_peak_dbfs": -1.7,
+   "alias_of": "JR_031",
+   "reuse_reason": "established approved mud sound for the closing callback",
+   "description": "wet mud squelch, funny",
+   "tags": [
+    "mud",
+    "squelch",
+    "funny"
+   ],
+   "added": "2026-09-29",
+   "file": "sfx/squelch.mp3",
+   "source": "jungle-rescue-english:JR_176"
+  },
+  "outro_sting": {
+   "type": "sfx",
+   "duration_seconds": 2.377,
+   "integrated_lufs": -18.4,
+   "true_peak_dbfs": -8.4,
+   "model_id": "eleven_text_to_sound_v2",
+   "components": [
+    "JR_170.mp3",
+    "raw/JR_178.mp3"
+   ],
+   "production_edit": "Dance resolving hook, then trimmed jeep horn.",
+   "description": "warm outro sting, story over",
+   "tags": [
+    "outro",
+    "sting",
+    "ending"
+   ],
+   "added": "2026-09-29",
+   "file": "sfx/outro_sting.mp3",
+   "source": "jungle-rescue-english:JR_178"
+  }
+ }
+}

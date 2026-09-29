@@ -1,0 +1,4 @@
+name: Short (one dance, no jokes)
+note: The two-minute version — second dance round and the three jokes dropped.
+exclude: second-dance
+exclude: joke
