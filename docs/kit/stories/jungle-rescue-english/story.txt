@@ -12,7 +12,7 @@ key: jungle-rescue-english
 language: hi
 minutes: 9
 audio: audio/
-cache: jr-final-6
+cache: jr-final-7
 hints at: 8s 17s 28s
 tap sound: @lib:tap             # a soft tick when a card is tapped while Coco is still talking
 voices: COCO=Saanu, NARRATOR=Jia, ELEPHANT=Vardan, PARROT=Munni, LION=Bholu
@@ -41,7 +41,7 @@ one of:
 == scene: Intro / fuel
 bed @JR_001
 COCO [bright and playful] @JR_002: हैलो, मैं हूँ कोको। आज हम जंगल बचाओ टीम बनेंगे।
-COCO [hopeful and inviting] @JR_003b #intro: Hello {name}! जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?
+COCO [hopeful and inviting] @JR_003c #intro: Hello {name}! जंगल में हमारे कई दोस्त problem में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?
 wait 1.5s
 COCO [delighted and encouraging] @JR_004: Yes! Great! अब Captain और कोको मिलकर सारे animals को बचा लेंगे।
 COCO [proud, warm] @lib:title_captain: अब से तुम हो — मेरे Captain! || अब से तुम हो — Captain {name}!
@@ -63,7 +63,7 @@ sfx engine_start @JR_017
 COCO [energetic rallying call] @JR_018: जंगल रेस्क्यू टीम चलो!
 tap window 2s FUEL:
   sfx overflow_bloop @JR_019 #joke
-  COCO [comic surprise and affection] @JR_020b #joke: ओहो! बस करो, Captain! पेट्रोल छलक जाएगा!
+  COCO [comic surprise and affection] @JR_020c #joke: ओहो! बस करो, Captain! पेट्रोल बाहर गिर जाएगा!
 
 
 == scene: Elephant rescue
@@ -82,7 +82,7 @@ wait 800ms
 COCO [effortful and rhythmic] @JR_030: एक, दो, तीन!
 sfx pull_strain @JR_031
 sfx mud_splat @JR_032
-NARRATOR [comic surprise] @JR_033 #joke: और कोको खुद मड में गिर गया!
+NARRATOR [comic surprise] @JR_033b #joke: और कोको खुद कीचड़ में गिर गया!
 COCO [funny signature voice] @JR_034 #joke: ये कौन करता है?!
 COCO [small embarrassed laugh, recovering quickly] @JR_035: ओके, नया प्लान चाहिए.
 ask ROPE
@@ -97,7 +97,7 @@ on jump: bed @JR_001 @0.25
 sfx ting @JR_040
 COCO [bright and encouraging] @JR_041b #praise: YES! रस्सी मिल गई! अब एलिफेंट दादा को बाहर निकालने में कोको की मदद करो।
 use praise
-COCO [playful and encouraging] @JR_042 #action: Captain, बैठे-बैठे रस्सी खींचने का नाटक करो। Pull!
+COCO [playful and encouraging] @JR_042b #action: Captain, बैठे-बैठे रस्सी खींचने की acting करो। Pull!
 sfx rope_creak @JR_043 hold 2s
 COCO [clear and warm] @JR_044 #action: फिर से। Pull!
 sfx rope_creak @JR_045 hold 2s
@@ -158,16 +158,16 @@ sfx small_thud @JR_076
 COCO [concerned and gentle] @JR_077b: अरे पैरट जी! आपका एक पंख हिल रहा है, दूसरा आराम कर रहा है।
 COCO [warm and reassuring] @JR_078: चिंता मत करो, पैरट जी! Captain और मैं आपकी मदद करेंगे।
 ask FIRST_AID
-  prompt COCO [caring, clear] @JR_079b: पैरट जी को चोट लगी है — हमें पट्टी और दवाई चाहिए! Captain, cards में दवाई का डब्बा ढूँढो!
+  prompt COCO [caring, clear] @JR_079c: पैरट जी को चोट लगी है — हमें बैंड-एड और दवाई चाहिए! Captain, cards में दवाई का डब्बा ढूँढो!
   hint COCO [clear and warm] @JR_080b: अपने cards को देखो… दवाई का डब्बा दिख रहा है?
-  hint COCO [clear and warm] @JR_081b: सफ़ेद डब्बा, जिस पर लाल plus बना है — उसमें पट्टी और दवाई रहती है।
+  hint COCO [clear and warm] @JR_081c: सफ़ेद डब्बा, जिस पर लाल plus बना है — उसमें बैंड-एड और दवाई रहती है।
   hint COCO [clear and warm] @JR_082b: दवाई वाले डब्बे का card scan करो — लाल plus वाला।
 sfx ting @JR_083
-COCO [happy, clear, unhurried] @JR_084b #praise: YES! दवाई का डब्बा! पट्टी और दवाई मिल गई।
+COCO [happy, clear, unhurried] @JR_084c #praise: YES! दवाई का डब्बा! बैंड-एड और दवाई मिल गई।
 use praise
 wait 250ms
 sfx bandage_wrap @JR_085
-COCO [gentle relief] @JR_086b: पैरट का पंख अब ठीक है। पट्टी लग गई!
+COCO [gentle relief] @JR_086c: पैरट का पंख अब ठीक है। बैंड-एड लग गई!
 sfx feather_rustle @JR_087
 PARROT [hopeful and tentative] @JR_088b: Thank you, Captain! अब मैं पंख हिला कर देखूँ?
 COCO [encouraging, rhythmic] @JR_089 #action: हाँ! धीरे-धीरे—एक, दो, flap!
@@ -196,7 +196,7 @@ bed stop
 
 == scene: Lion: jeep arrives
 play @JR_103
-NARRATOR [hushed and adventurous] @JR_104: रेस्क्यू जीप घने जंगलों के बीच आकर रुकी। सूरज ढल चुका था और पेड़-पौधे अंधेरे में अजीब साए जैसे लग रहे थे।
+NARRATOR [hushed and adventurous] @JR_104b: जीप बड़े जंगल में आकर रुकी। सूरज डूब गया था, और चारों तरफ अंधेरा हो गया।
 sfx rustle_behind_rock @JR_105
 LION [two heavy but harmless childlike sneezes] @JR_106: आ... छी! आ... छी!
 COCO [whispering] @lib:listen_carefully: {name}, ध्यान से सुनो…
@@ -210,8 +210,8 @@ group #joke:
   LION [surprised yelp, funny not scared] @JR_112b: आऊच! वो मेरा हाथ नहीं — मेरी पूँछ है!
   COCO [embarrassed laugh] @JR_113b: ओह! अंधेरे में हाथ और पूँछ एक जैसे लगते हैं!
 ask FLASHLIGHT
-  prompt COCO [rubbing head, urgent but playful] @JR_115: अरे! इतना अंधेरा है कि मेरी नाक भी नहीं दिख रही! Captain, हमें तुरंत रोशनी चाहिए, वरना हम सब टकरा जाएँगे!
-  hint COCO [clear and warm] @JR_116: अपने cards में देखो... कोई ऐसी चीज़ है जो अंधेरे में तेज़ रोशनी दे सके?
+  prompt COCO [rubbing head, urgent but playful] @JR_115b: अरे! इतना अंधेरा है कि मेरी नाक भी नहीं दिख रही! Captain, हमें जल्दी light चाहिए, नहीं तो हम सब टकरा जाएँगे!
+  hint COCO [clear and warm] @JR_116b: अपने cards में देखो... कोई ऐसी चीज़ है जो अंधेरे में light दे सके?
   hint COCO [clear and warm] @JR_117: इसे ON करते ही अंधेरे में रास्ता साफ़ दिखने लगता है।
   hint COCO [clear and warm] @JR_118b: टॉर्च वाला card scan करो!
 
@@ -222,15 +222,15 @@ together:
   sfx torch_click @JR_120 @0.85
   sfx ting @JR_119 @0.25
 wait 150ms
-COCO [relieved and bright] @JR_121b #praise: YES! टॉर्च! रोशनी हो गई!
+COCO [relieved and bright] @JR_121c #praise: YES! टॉर्च! Light हो गई!
 use praise
 sfx light_sweep @JR_122
-COCO [surprised and relieved] @JR_123 #joke: वाह! रोशनी होते ही सब दिखने लगा! ...और rock के ऊपर वो उल्लू भी!
+COCO [surprised and relieved] @JR_123b #joke: वाह! Light होते ही सब दिखने लगा! ...और rock के ऊपर वो उल्लू भी!
 sfx owl_hoot @JR_124
-NARRATOR [warm] @JR_125: टॉर्च की रोशनी में Lion King rock के पीछे से बाहर आए। पर वो थोड़े काँप रहे थे।
+NARRATOR [warm] @JR_125b: टॉर्च की light में Lion King rock के पीछे से बाहर आए। पर वो थोड़े काँप रहे थे।
 sfx shiver @JR_126
-LION [shivering, small and childlike] @JR_127: रोशनी के लिए शुक्रिया... पर रात की हवा बहुत ठंडी है। Brrr!
-NARRATOR [warm and reassuring] @JR_128: रोशनी में Lion King को अपनी गुफा दिख गई। कोको उन्हें अंदर ले गया, लेकिन Lion King को अब भी बहुत ठंड लग रही थी।
+LION [shivering, small and childlike] @JR_127b: Light के लिए thank you... पर रात की हवा बहुत ठंडी है। Brrr!
+NARRATOR [warm and reassuring] @JR_128b: Light में Lion King को अपनी गुफा दिख गई। कोको उन्हें अंदर ले गया, लेकिन Lion King को अब भी बहुत ठंड लग रही थी।
 bed @JR_129_bed @0.18 crossfade
 sfx cave_entry_footsteps @JR_129_entry
 COCO [urgent, excited] @lib:look: {name}, देखो!
@@ -286,7 +286,7 @@ music at 10s
 sfx elephant_trumpet @JR_162 @0.55 under
 music at 20s
 music stop
-COCO [playful, clear] @JR_163 hold 3s #action: Freeze! मूर्ति बन जाओ!
+COCO [playful, clear] @JR_163b hold 3s #action: Freeze! Statue बन जाओ!
 use praise
 music @JR_160
 duck COCO [bright, rhythmic] @JR_164 #action: Parrot dance! हाथों के पंख — फड़फड़, फड़फड़!

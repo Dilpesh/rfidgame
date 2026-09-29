@@ -1,26 +1,128 @@
 {
   "_comment": "Words a 3–5 year old in Hindi/Hinglish is unlikely to have (or that name an adult idea). The compiler warns when a line spoken TO the child uses one. Add to it as the kids teach you; 'why' is for the writer, 'use' is the suggestion. Matching is whole-word, case-insensitive, on the line text.",
   "avoid": {
-    "overflow":   { "use": "छलक जाएगा / बाहर गिर जाएगा", "why": "not a picture; a spilling glass is" },
-    "tank":       { "use": "पेट (Jeep का पेट)", "why": "invisible part of a car" },
-    "टंकी":       { "use": "पेट", "why": "same as tank" },
-    "fuel":       { "use": "पेट्रोल", "why": "the card says पेट्रोल; nobody says fuel to a child" },
-    "flashlight": { "use": "टॉर्च", "why": "American; kids and the card say टॉर्च" },
-    "first aid":  { "use": "दवाई का डब्बा", "why": "a phrase, not a thing" },
-    "bandage":    { "use": "पट्टी", "why": "English medical word" },
-    "medicine":   { "use": "दवाई", "why": "English medical word" },
-    "wing":       { "use": "पंख", "why": "English; पंख is the child's word" },
-    "चोंच":       { "use": "मुँह", "why": "rare word; 'मुँह सूख गया' or 'प्यास लगी' is lived" },
-    "धुन":        { "use": "गाना / music", "why": "literary" },
-    "mission":    { "use": "काम / मदद", "why": "adult word (tolerated once, in the water break)" },
-    "guard":      { "use": "देखभाल / रखवाली", "why": "adult word" },
-    "fair point": { "use": "(cut)", "why": "an adult concession — STORY_CRAFT cut-on-sight" },
-    "obviously":  { "use": "(cut)", "why": "adult register" },
-    "actually":   { "use": "(cut)", "why": "adult register" }
+    "overflow": {
+      "use": "छलक जाएगा / बाहर गिर जाएगा",
+      "why": "not a picture; a spilling glass is"
+    },
+    "tank": {
+      "use": "पेट (Jeep का पेट)",
+      "why": "invisible part of a car"
+    },
+    "टंकी": {
+      "use": "पेट",
+      "why": "same as tank"
+    },
+    "fuel": {
+      "use": "पेट्रोल",
+      "why": "the card says पेट्रोल; nobody says fuel to a child"
+    },
+    "flashlight": {
+      "use": "टॉर्च",
+      "why": "American; kids and the card say टॉर्च"
+    },
+    "first aid": {
+      "use": "दवाई का डब्बा",
+      "why": "a phrase, not a thing"
+    },
+    "bandage": {
+      "use": "पट्टी",
+      "why": "English medical word"
+    },
+    "medicine": {
+      "use": "दवाई",
+      "why": "English medical word"
+    },
+    "wing": {
+      "use": "पंख",
+      "why": "English; पंख is the child's word"
+    },
+    "चोंच": {
+      "use": "मुँह",
+      "why": "rare word; 'मुँह सूख गया' or 'प्यास लगी' is lived"
+    },
+    "धुन": {
+      "use": "गाना / music",
+      "why": "literary"
+    },
+    "mission": {
+      "use": "काम / मदद",
+      "why": "adult word (tolerated once, in the water break)"
+    },
+    "guard": {
+      "use": "देखभाल / रखवाली",
+      "why": "adult word"
+    },
+    "fair point": {
+      "use": "(cut)",
+      "why": "an adult concession — STORY_CRAFT cut-on-sight"
+    },
+    "obviously": {
+      "use": "(cut)",
+      "why": "adult register"
+    },
+    "actually": {
+      "use": "(cut)",
+      "why": "adult register"
+    },
+    "रोशनी": {
+      "use": "light",
+      "why": "kids say light; रोशनी is a speed bump every time (Dilpesh, 30 Sep)"
+    },
+    "मूर्ति": {
+      "use": "statue",
+      "why": "'Statue!' is the playground word"
+    },
+    "शुक्रिया": {
+      "use": "thank you",
+      "why": "the animals already say thank you"
+    },
+    "तुरंत": {
+      "use": "जल्दी / अभी",
+      "why": "formal"
+    },
+    "वरना": {
+      "use": "नहीं तो",
+      "why": "formal"
+    },
+    "साए": {
+      "use": "अंधेरा",
+      "why": "literary"
+    },
+    "घने": {
+      "use": "बड़े",
+      "why": "literary"
+    },
+    "ढल चुका": {
+      "use": "डूब गया",
+      "why": "literary"
+    },
+    "मुसीबत": {
+      "use": "problem",
+      "why": "English is the household word"
+    },
+    "छलक": {
+      "use": "बाहर गिर",
+      "why": "गिरना is the plainer picture"
+    },
+    "मड": {
+      "use": "कीचड़",
+      "why": "one word for mud, the one they say"
+    },
+    "पट्टी": {
+      "use": "बैंड-एड",
+      "why": "kids say band-aid (Dilpesh, 30 Sep); feminine: बैंड-एड लग गई"
+    },
+    "नाटक": {
+      "use": "acting",
+      "why": "kids say acting करो (Dilpesh, 30 Sep)"
+    }
   },
   "idioms": {
-    "बत्ती गुल":  "an idiom — keep only while the kids react to it",
-    "ये कौन करता है": "Coco's signature line — fine, it is a running sound not an idea"
+    "बत्ती गुल": "an idiom — keep only while the kids react to it",
+    "ये कौन करता है": "Coco's signature line — fine, it is a running sound not an idea",
+    "चूहे दौड़ रहे": "an idiom dressed as a joke — watch whether the kids get it",
+    "मड्डी गड्ढा": "kept on purpose (Dilpesh): 'मड्डी गड्ढा' stays; plain mud is कीचड़"
   },
   "limits": {
     "words_per_line": 25,
