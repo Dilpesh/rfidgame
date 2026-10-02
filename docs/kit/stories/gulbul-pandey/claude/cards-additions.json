@@ -1,0 +1,8 @@
+{
+  "_comment": "Five cards Gulbul Pandey needs that are not in cards.json. Paste into cards.json → cards, fill uids from the physical cards (teach in developer mode or read with the reader), then python3 sync_cards.py. Labels are the printed word — confirm each with the kids first (ये क्या है?).",
+  "CAP":      { "uids": [], "label": "Cap & Goggles", "games": { "gulbul-pandey": "CAP" } },
+  "CAR":      { "uids": [], "label": "Car",           "games": { "gulbul-pandey": "CAR" } },
+  "ELEPHANT": { "uids": [], "label": "Elephant",      "games": { "gulbul-pandey": "ELEPHANT" } },
+  "DOG":      { "uids": [], "label": "Doggy",         "games": { "gulbul-pandey": "DOG" } },
+  "KITCHEN":  { "uids": [], "label": "Kitchen",       "games": { "gulbul-pandey": "KITCHEN" } }
+}

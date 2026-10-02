@@ -1,0 +1,2019 @@
+{
+ "_build": {
+  "story": "Inspector Gulbul Pandey — Doctor का Box"
+ },
+ "GULBUL_PANDEY_S01_007_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Hello! [dramatically] मेरा नाम है… [shouts] INSPECTOR GULBUL PANDEY!",
+  "performance_tag": "[booming, proud]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S01_007_INSPECTOR.mp3",
+  "duration_seconds": 5.33,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -4.1
+ },
+ "GULBUL_PANDEY_S01_008_MUNMUN": {
+  "type": "speech",
+  "voice": "MUNMUN",
+  "voice_id": "ItmwhOeluca31IEX91Yk",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.35,
+   "similarity_boost": 0.78,
+   "style": 0.55,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Inspector साहब! Inspector साहब! [gasps] मेरा box… मेरा box मिल नहीं रहा! [worried] उसके बिना मैं patients को ठीक कैसे करूँगी? आप ढूँढने में help करेंगे?",
+  "performance_tag": "[panicked, breathless]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S01_008_MUNMUN.mp3",
+  "duration_seconds": 10.11,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.5
+ },
+ "GULBUL_PANDEY_S01_009_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Team! [shouts] Doctor Munmun का box ढूँढना है!",
+  "performance_tag": "[excited, commanding]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S01_009_INSPECTOR.mp3",
+  "duration_seconds": 3.47,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.1
+ },
+ "GULBUL_PANDEY_S01_011_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "तो सामने रखी हुई Detective Cap और Goggles पहन लो!",
+  "performance_tag": "[warm, encouraging]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S01_011_INSPECTOR.mp3",
+  "duration_seconds": 3.47,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S01_012_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "जब ready हो जाओ, तब Cap and Goggles वाला card tap करो!",
+  "performance_tag": "[relaxed, friendly]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S01_012_INSPECTOR.mp3",
+  "duration_seconds": 3.55,
+  "integrated_lufs": -16.4,
+  "true_peak_dbfs": -2.2
+ },
+ "GULBUL_PANDEY_S01_013_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "आराम से पहन लो। Ready होने पर Cap and Goggles वाला card tap करना!",
+  "performance_tag": "[relaxed, reassuring]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S01_013_INSPECTOR.mp3",
+  "duration_seconds": 5.07,
+  "integrated_lufs": -16.3,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S01_014_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Cap and Goggles वाला card ढूँढो — जिस पर Detective की टोपी और चश्मा बना है।",
+  "performance_tag": "[kind, clear]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S01_014_INSPECTOR.mp3",
+  "duration_seconds": 5.49,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S01_015_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Cap and Goggles वाला card tap करो!",
+  "performance_tag": "[kind, clear]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S01_015_INSPECTOR.mp3",
+  "duration_seconds": 2.04,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.0
+ },
+ "GULBUL_PANDEY_S01_016_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "हाँ, Cap and Goggles!",
+  "performance_tag": "[excited]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S01_016_INSPECTOR.mp3",
+  "duration_seconds": 2.43,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.6
+ },
+ "GULBUL_PANDEY_S01_017_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Great, our Detective is ready!",
+  "performance_tag": "[heroic, proud]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S01_017_INSPECTOR.mp3",
+  "duration_seconds": 2.59,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S00_104_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "चलो, एक बार और try करते हैं!",
+  "performance_tag": "[playfully surprised, encouraging]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S00_104_INSPECTOR.mp3",
+  "duration_seconds": 2.27,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S00_105_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "ओहो! ये वाला नहीं। Detective, एक और card try करो!",
+  "performance_tag": "[light, encouraging]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S00_105_INSPECTOR.mp3",
+  "duration_seconds": 4.6,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.5
+ },
+ "GULBUL_PANDEY_S00_001_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Amazing, Detective!",
+  "performance_tag": "[warm, proud]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/GULBUL_PANDEY_S00_001_INSPECTOR.mp3",
+  "duration_seconds": 1.65,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4,
+  "name_text": "Amazing, {name}!",
+  "description": "name line (Captain version): Amazing, Detective!",
+  "tags": [
+   "name",
+   "captain"
+  ]
+ },
+ "GULBUL_PANDEY_S00_002_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Good job, Detective!",
+  "performance_tag": "[bright, cheerful]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/GULBUL_PANDEY_S00_002_INSPECTOR.mp3",
+  "duration_seconds": 1.8,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.5,
+  "name_text": "Good job, {name}!",
+  "description": "name line (Captain version): Good job, Detective!",
+  "tags": [
+   "name",
+   "captain"
+  ]
+ },
+ "GULBUL_PANDEY_S00_003_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Excellent work, Detective!",
+  "performance_tag": "[delighted]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/GULBUL_PANDEY_S00_003_INSPECTOR.mp3",
+  "duration_seconds": 2.27,
+  "integrated_lufs": -16.6,
+  "true_peak_dbfs": -2.4,
+  "name_text": "Excellent work, {name}!",
+  "description": "name line (Captain version): Excellent work, Detective!",
+  "tags": [
+   "name",
+   "captain"
+  ]
+ },
+ "GULBUL_PANDEY_S00_004_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "You are absolutely right, Detective!",
+  "performance_tag": "[pleased, clear]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/GULBUL_PANDEY_S00_004_INSPECTOR.mp3",
+  "duration_seconds": 3.08,
+  "integrated_lufs": -16.5,
+  "true_peak_dbfs": -2.4,
+  "name_text": "You are absolutely right, {name}!",
+  "description": "name line (Captain version): You are absolutely right, Detective!",
+  "tags": [
+   "name",
+   "captain"
+  ]
+ },
+ "GULBUL_PANDEY_S01_010_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "अरे! क्या तुम हमारे Detective बनोगे?",
+  "performance_tag": "[warm, inviting]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/GULBUL_PANDEY_S01_010_INSPECTOR.mp3",
+  "duration_seconds": 2.77,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4,
+  "name_text": "अरे {name}! क्या तुम हमारे Detective बनोगे?",
+  "description": "name line (Captain version): अरे! क्या तुम हमारे Detective बनोगे?",
+  "tags": [
+   "name",
+   "captain"
+  ]
+ },
+ "GULBUL_PANDEY_S01_018_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Ready, Detective!",
+  "performance_tag": "[heroic, proud]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/GULBUL_PANDEY_S01_018_INSPECTOR.mp3",
+  "duration_seconds": 2.19,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.4,
+  "name_text": "Ready, Detective {name}!",
+  "description": "name line (Captain version): Ready, Detective!",
+  "tags": [
+   "name",
+   "captain"
+  ]
+ },
+ "GULBUL_PANDEY_S03_043_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Detective, देखो!",
+  "performance_tag": "[calling, warm]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/GULBUL_PANDEY_S03_043_INSPECTOR.mp3",
+  "duration_seconds": 2.43,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.5,
+  "name_text": "{name}, देखो!",
+  "description": "name line (Captain version): Detective, देखो!",
+  "tags": [
+   "name",
+   "captain"
+  ]
+ },
+ "GULBUL_PANDEY_S04_057_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Detective, ध्यान से सुनो…",
+  "performance_tag": "[hushed]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/GULBUL_PANDEY_S04_057_INSPECTOR.mp3",
+  "duration_seconds": 2.19,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.1,
+  "name_text": "{name}, ध्यान से सुनो…",
+  "description": "name line (Captain version): Detective, ध्यान से सुनो…",
+  "tags": [
+   "name",
+   "captain"
+  ]
+ },
+ "GULBUL_PANDEY_S04_067_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Detective, ध्यान से सुनो…",
+  "performance_tag": "[hushed]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/GULBUL_PANDEY_S04_067_INSPECTOR.mp3",
+  "duration_seconds": 2.12,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -1.8,
+  "name_text": "{name}, ध्यान से सुनो…",
+  "description": "name line (Captain version): Detective, ध्यान से सुनो…",
+  "tags": [
+   "name",
+   "captain"
+  ]
+ },
+ "GULBUL_PANDEY_S02_020_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Detective… मैं, तुम और हमारे दो हवलदार — हम चार लोग हैं! [mischievously] Bike पर चलें? हवलदार जी… बैठो!",
+  "performance_tag": "[inquisitive, then mischievous]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S02_020_INSPECTOR.mp3",
+  "duration_seconds": 9.48,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -2.2
+ },
+ "GULBUL_PANDEY_S02_023_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "अरे! [laughs] हवलदार जी तो गिर गए! [shouts] धड़ाम!",
+  "performance_tag": "[alarmed, laughing]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S02_023_INSPECTOR.mp3",
+  "duration_seconds": 3.71,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.6
+ },
+ "GULBUL_PANDEY_S02_024_HAVALDAR": {
+  "type": "speech",
+  "voice": "HAVALDAR",
+  "voice_id": "5krdMTA5HonvWAlY2vSx",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.5,
+   "similarity_boost": 0.78,
+   "style": 0.25,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "ऊऊऊह…",
+  "performance_tag": "[dazed, groaning]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S02_024_HAVALDAR.mp3",
+  "duration_seconds": 2.12,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -5.2
+ },
+ "GULBUL_PANDEY_S02_025_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "चार लोग एक Bike पर?! नहीं नहीं…",
+  "performance_tag": "[shaking his head, amused]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S02_025_INSPECTOR.mp3",
+  "duration_seconds": 3.0,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S02_026_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Detective… किस गाड़ी में हम चारों बैठ सकते हैं? उसका card tap करो!",
+  "performance_tag": "[inquisitive]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S02_026_INSPECTOR.mp3",
+  "duration_seconds": 5.33,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -2.3
+ },
+ "GULBUL_PANDEY_S02_027_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "कोई बड़ी गाड़ी ढूँढो — जिसमें चार लोग आराम से बैठ जाएँ!",
+  "performance_tag": "[kind]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S02_027_INSPECTOR.mp3",
+  "duration_seconds": 4.28,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S02_028_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Car में हम सब बैठ सकते हैं! Car वाला card ढूँढो।",
+  "performance_tag": "[kind]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S02_028_INSPECTOR.mp3",
+  "duration_seconds": 4.21,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.3
+ },
+ "GULBUL_PANDEY_S02_029_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Car वाला card tap करो!",
+  "performance_tag": "[kind, clear]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S02_029_INSPECTOR.mp3",
+  "duration_seconds": 2.19,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -4.0
+ },
+ "GULBUL_PANDEY_S02_031_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "हाँ, Car!",
+  "performance_tag": "[excited]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S02_031_INSPECTOR.mp3",
+  "duration_seconds": 1.72,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -5.5
+ },
+ "GULBUL_PANDEY_S02_032_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "हवलदार… [shouts] गाड़ी निकालो! [excited] चलो… Vroom Vroom!",
+  "performance_tag": "[shouting dramatically]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S02_032_INSPECTOR.mp3",
+  "duration_seconds": 5.8,
+  "integrated_lufs": -15.9,
+  "true_peak_dbfs": -5.0
+ },
+ "GULBUL_PANDEY_S03_034_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Doctor Munmun! हम आपके घर आ गए!",
+  "performance_tag": "[cheerful, calling out]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S03_034_INSPECTOR.mp3",
+  "duration_seconds": 2.69,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S03_035_MUNMUN": {
+  "type": "speech",
+  "voice": "MUNMUN",
+  "voice_id": "ItmwhOeluca31IEX91Yk",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.35,
+   "similarity_boost": 0.78,
+   "style": 0.55,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Thank you…",
+  "performance_tag": "[cheerful, squeaky, sing-song]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S03_035_MUNMUN.mp3",
+  "duration_seconds": 1.31,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -4.5
+ },
+ "gadbad_tag": {
+  "type": "speech",
+  "voice": "MUNMUN",
+  "voice_id": "ItmwhOeluca31IEX91Yk",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.35,
+   "similarity_boost": 0.78,
+   "style": 0.55,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "…Inspector Gadbad Pandey!",
+  "performance_tag": "[cheerful, squeaky, sing-song]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/gadbad_tag.mp3",
+  "duration_seconds": 2.69,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -2.5
+ },
+ "gadbad_fix": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Gadbad नहीं… [shouts] GULBUL Pandey!",
+  "performance_tag": "[annoyed, booming]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/gadbad_fix.mp3",
+  "duration_seconds": 3.24,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.8
+ },
+ "GULBUL_PANDEY_S03_036_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Anyway… आपने last time अपना box कहाँ देखा था?",
+  "performance_tag": "[sighs, then businesslike]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S03_036_INSPECTOR.mp3",
+  "duration_seconds": 4.91,
+  "integrated_lufs": -16.7,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S03_037_MUNMUN": {
+  "type": "speech",
+  "voice": "MUNMUN",
+  "voice_id": "ItmwhOeluca31IEX91Yk",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.35,
+   "similarity_boost": 0.78,
+   "style": 0.55,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "उम्म… [nervous laugh] मुझे याद नहीं! जब मैं Kitchen में कपड़े सुखा रही थी, तब box मेरे हाथ में ही था! [giggles] फिर पता नहीं कहाँ रख दिया!",
+  "performance_tag": "[flustered, thinking aloud, squeaky]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S03_037_MUNMUN.mp3",
+  "duration_seconds": 9.48,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S03_038_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Kitchen में कपड़े…?!",
+  "performance_tag": "[gasps, extremely shocked]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S03_038_INSPECTOR.mp3",
+  "duration_seconds": 2.43,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.3
+ },
+ "kaun_karta": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "ये कौन करता है?!",
+  "performance_tag": "[dramatic — the same funny voice every time]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/kaun_karta.mp3",
+  "duration_seconds": 1.57,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.5
+ },
+ "GULBUL_PANDEY_S03_039_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "तो खाना कहाँ बनाती हैं आप?",
+  "performance_tag": "[lower voice, suspicious]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S03_039_INSPECTOR.mp3",
+  "duration_seconds": 2.04,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S03_040_MUNMUN": {
+  "type": "speech",
+  "voice": "MUNMUN",
+  "voice_id": "ItmwhOeluca31IEX91Yk",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.35,
+   "similarity_boost": 0.78,
+   "style": 0.55,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "अरे… Bedroom में!",
+  "performance_tag": "[giggles, squeaky]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S03_040_MUNMUN.mp3",
+  "duration_seconds": 2.59,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.5
+ },
+ "GULBUL_PANDEY_S03_041_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Bedroom में खाना?!",
+  "performance_tag": "[wailing, hands on head]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S03_041_INSPECTOR.mp3",
+  "duration_seconds": 1.8,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.0
+ },
+ "GULBUL_PANDEY_S03_044_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "यहाँ तो बड़े-बड़े पैरों के निशान हैं! कौनसा animal आया होगा यहाँ… जिसके इतने बड़े-बड़े, मोटे-मोटे पैर हैं?",
+  "performance_tag": "[stage whisper, curious — full level]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S03_044_INSPECTOR.mp3",
+  "duration_seconds": 10.11,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S03_045_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "क्या लगता है? उस animal का card tap करो!",
+  "performance_tag": "[curious]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S03_045_INSPECTOR.mp3",
+  "duration_seconds": 3.24,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S03_046_MUNMUN": {
+  "type": "speech",
+  "voice": "MUNMUN",
+  "voice_id": "ItmwhOeluca31IEX91Yk",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.35,
+   "similarity_boost": 0.78,
+   "style": 0.55,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "हाँ! याद आया! मेरा friend आया था… जिसकी बहुत बड़ी-सी सूँड़ थी!",
+  "performance_tag": "[suddenly remembering, excited, squeaky]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S03_046_MUNMUN.mp3",
+  "duration_seconds": 5.64,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.6
+ },
+ "GULBUL_PANDEY_S03_047_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Elephant! लंबी सूँड़ वाला Elephant card ढूँढो और tap करो!",
+  "performance_tag": "[warm and clear]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S03_047_INSPECTOR.mp3",
+  "duration_seconds": 5.56,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -2.3
+ },
+ "GULBUL_PANDEY_S03_048_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "हाँ, Elephant!",
+  "performance_tag": "[excited]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S03_048_INSPECTOR.mp3",
+  "duration_seconds": 1.88,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S03_049_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "तुमने पहचान लिया!",
+  "performance_tag": "[proud]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S03_049_INSPECTOR.mp3",
+  "duration_seconds": 1.88,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.9
+ },
+ "GULBUL_PANDEY_S03_050_MUNMUN": {
+  "type": "speech",
+  "voice": "MUNMUN",
+  "voice_id": "ItmwhOeluca31IEX91Yk",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.35,
+   "similarity_boost": 0.78,
+   "style": 0.55,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Elephant दादा तो garden की तरफ़ गए थे…",
+  "performance_tag": "[chirpy, helpful, squeaky]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S03_050_MUNMUN.mp3",
+  "duration_seconds": 2.59,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.6
+ },
+ "GULBUL_PANDEY_S03_051_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "चलो garden में! उनसे box के बारे में पूछते हैं!",
+  "performance_tag": "[eager]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S03_051_INSPECTOR.mp3",
+  "duration_seconds": 3.0,
+  "integrated_lufs": -16.3,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S04_052_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "देखो Detective! Elephant दादा तो सो रहे हैं! उन्हें जगाना है… ताली बजाओ — दादा को जगाओ!",
+  "performance_tag": "[stage whisper rising to a chant — full level]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S04_052_INSPECTOR.mp3",
+  "duration_seconds": 8.52,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S04_053_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "सब साथ में — ताली बजाओ, दादा को जगाओ!",
+  "performance_tag": "[chanting, rhythmic]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S04_053_INSPECTOR.mp3",
+  "duration_seconds": 3.87,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S04_054_ELEPHANT": {
+  "type": "speech",
+  "voice": "ELEPHANT",
+  "voice_id": "bBG9wwa23659EgIkMbc1",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.42,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "उह… उह…? क्या हुआ? मुझे क्यों जगाया?",
+  "performance_tag": "[sleepy, slow, yawning]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S04_054_ELEPHANT.mp3",
+  "duration_seconds": 5.56,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S04_055_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Elephant दादा! क्या आपने Doctor Munmun का box देखा है?",
+  "performance_tag": "[polite, clear]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S04_055_INSPECTOR.mp3",
+  "duration_seconds": 4.6,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S04_056_ELEPHANT": {
+  "type": "speech",
+  "voice": "ELEPHANT",
+  "voice_id": "bBG9wwa23659EgIkMbc1",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.42,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Box तो नहीं देखा। मैं खाना ढूँढने गया था… पर Kitchen में तो कपड़े सूख रहे थे!",
+  "performance_tag": "[sleepy, grumbling]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S04_056_ELEPHANT.mp3",
+  "duration_seconds": 7.24,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S04_058_ELEPHANT": {
+  "type": "speech",
+  "voice": "ELEPHANT",
+  "voice_id": "bBG9wwa23659EgIkMbc1",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.42,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "मुझे अभी भी भूख लग रही है! पहले मैं कुछ खाऊँगा… फिर ही बात कर पाऊँगा!",
+  "performance_tag": "[hungry, dramatic, grumbling]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S04_058_ELEPHANT.mp3",
+  "duration_seconds": 5.33,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S04_059_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Detective… क्या तुम्हारे पास कुछ खाने को है? Elephant दादा को खिलाओ!",
+  "performance_tag": "[warm, turning to the child]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S04_059_INSPECTOR.mp3",
+  "duration_seconds": 5.72,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S04_060_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Elephant दादा को biscuit बहुत पसंद है! Biscuit ढूँढो।",
+  "performance_tag": "[kind]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S04_060_INSPECTOR.mp3",
+  "duration_seconds": 4.83,
+  "integrated_lufs": -16.4,
+  "true_peak_dbfs": -2.3
+ },
+ "GULBUL_PANDEY_S04_061_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Biscuit वाला card — जिस पर गोल, भूरा biscuit बना है।",
+  "performance_tag": "[kind]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S04_061_INSPECTOR.mp3",
+  "duration_seconds": 4.05,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S04_062_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Biscuit वाला card tap करो!",
+  "performance_tag": "[kind, clear]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S04_062_INSPECTOR.mp3",
+  "duration_seconds": 1.8,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.5
+ },
+ "GULBUL_PANDEY_S04_063_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "हाँ, Biscuit!",
+  "performance_tag": "[excited]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S04_063_INSPECTOR.mp3",
+  "duration_seconds": 1.8,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.6
+ },
+ "GULBUL_PANDEY_S04_064_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Elephant दादा को खाना मिल गया!",
+  "performance_tag": "[pleased]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S04_064_INSPECTOR.mp3",
+  "duration_seconds": 2.35,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.9
+ },
+ "GULBUL_PANDEY_S04_065_ELEPHANT": {
+  "type": "speech",
+  "voice": "ELEPHANT",
+  "voice_id": "bBG9wwa23659EgIkMbc1",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.42,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "आहा! [laughs] YUMMY! Thank you, Detective! [curious] जब मैं Doctor के घर गया था… तो मैंने ऐसी आवाज़ सुनी थी!",
+  "performance_tag": "[happy, energetic]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S04_065_ELEPHANT.mp3",
+  "duration_seconds": 9.48,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S04_066_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "अहा! Detective… ये किसकी आवाज़ है?",
+  "performance_tag": "[inquisitive]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S04_066_INSPECTOR.mp3",
+  "duration_seconds": 4.05,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S04_068_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Doggy! Doggy वाला card ढूँढो और tap करो!",
+  "performance_tag": "[kind, clear]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S04_068_INSPECTOR.mp3",
+  "duration_seconds": 3.16,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S04_069_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "हाँ, Doggy!",
+  "performance_tag": "[excited]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S04_069_INSPECTOR.mp3",
+  "duration_seconds": 2.19,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -5.3
+ },
+ "GULBUL_PANDEY_S04_070_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "ये तो Doggy जी की आवाज़ है! चलो, Doggy जी से मिलते हैं!",
+  "performance_tag": "[cheerful]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S04_070_INSPECTOR.mp3",
+  "duration_seconds": 4.13,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.5
+ },
+ "GULBUL_PANDEY_S05_071_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "सुनो Doggy जी… आप Doctor Munmun के घर गए थे?",
+  "performance_tag": "[friendly, inquisitive]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S05_071_INSPECTOR.mp3",
+  "duration_seconds": 4.05,
+  "integrated_lufs": -16.4,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S05_072_DOG": {
+  "type": "speech",
+  "voice": "DOG",
+  "voice_id": "aPE0uHZbwrQVPMm3ihPH",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.35,
+   "similarity_boost": 0.78,
+   "style": 0.55,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "हाँ! मुझे बहुत dance करने का मन था, तो मैं वहाँ speaker ढूँढने गया था… पर Bedroom में speaker मिला ही नहीं… [shouts] वहाँ तो कोई खाना बना रहा था!",
+  "performance_tag": "[playful, bouncy, fast]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S05_072_DOG.mp3",
+  "duration_seconds": 10.45,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.5
+ },
+ "GULBUL_PANDEY_S05_073_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Bedroom में खाना?!",
+  "performance_tag": "[gasps, playfully shocked]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S05_073_INSPECTOR.mp3",
+  "duration_seconds": 1.8,
+  "integrated_lufs": -16.3,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S05_074_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Doggy जी… क्या तुम्हें पता है Doctor का box कहाँ गया?",
+  "performance_tag": "[curious]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S05_074_INSPECTOR.mp3",
+  "duration_seconds": 3.47,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S05_075_DOG": {
+  "type": "speech",
+  "voice": "DOG",
+  "voice_id": "aPE0uHZbwrQVPMm3ihPH",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.35,
+   "similarity_boost": 0.78,
+   "style": 0.55,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "हाँ! मुझे कुछ तो पता है! [laughs] पर मेरा अभी DANCE करने का बहुत मन कर रहा है! पहले कुछ music लगाओ, Detective के साथ dance करेंगे… उसके बाद बताऊँगा!",
+  "performance_tag": "[excited, bouncy]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S05_075_DOG.mp3",
+  "duration_seconds": 12.28,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.3
+ },
+ "GULBUL_PANDEY_S05_076_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Detective, ज़रा music लगाओ!",
+  "performance_tag": "[inviting]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S05_076_INSPECTOR.mp3",
+  "duration_seconds": 2.04,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S05_077_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Music वाला card tap करो — फिर हम dance करेंगे!",
+  "performance_tag": "[kind]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S05_077_INSPECTOR.mp3",
+  "duration_seconds": 3.24,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.9
+ },
+ "GULBUL_PANDEY_S05_078_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Music वाला card — जिस पर गाने का निशान बना है।",
+  "performance_tag": "[kind]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S05_078_INSPECTOR.mp3",
+  "duration_seconds": 3.63,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -2.3
+ },
+ "GULBUL_PANDEY_S05_079_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Music वाला card tap करो!",
+  "performance_tag": "[kind, clear]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S05_079_INSPECTOR.mp3",
+  "duration_seconds": 1.72,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.9
+ },
+ "GULBUL_PANDEY_S05_080_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "हाँ, Music!",
+  "performance_tag": "[excited]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S05_080_INSPECTOR.mp3",
+  "duration_seconds": 1.88,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.5
+ },
+ "GULBUL_PANDEY_S05_081_DOG": {
+  "type": "speech",
+  "voice": "DOG",
+  "voice_id": "aPE0uHZbwrQVPMm3ihPH",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.35,
+   "similarity_boost": 0.78,
+   "style": 0.55,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "WOOHOOO! Detective, मेरे साथ ताली बजाओ! Clap! Clap! Clap!",
+  "performance_tag": "[shouting over music, super excited]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S05_081_DOG.mp3",
+  "duration_seconds": 5.25,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -5.3
+ },
+ "GULBUL_PANDEY_S05_082_DOG": {
+  "type": "speech",
+  "voice": "DOG",
+  "voice_id": "aPE0uHZbwrQVPMm3ihPH",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.35,
+   "similarity_boost": 0.78,
+   "style": 0.55,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "अब हाथ ऊपर… हिलाओ, हिलाओ! YAYYY!",
+  "performance_tag": "[shouting over music, playful]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S05_082_DOG.mp3",
+  "duration_seconds": 4.83,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -4.2
+ },
+ "GULBUL_PANDEY_S05_083_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "वाह Detective! Great dance!",
+  "performance_tag": "[excited]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S05_083_INSPECTOR.mp3",
+  "duration_seconds": 3.24,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S05_084_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "मज़ा आ गया!",
+  "performance_tag": "[happy, laughing]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S05_084_INSPECTOR.mp3",
+  "duration_seconds": 2.04,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.8
+ },
+ "GULBUL_PANDEY_S06_085_DOG": {
+  "type": "speech",
+  "voice": "DOG",
+  "voice_id": "aPE0uHZbwrQVPMm3ihPH",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.35,
+   "similarity_boost": 0.78,
+   "style": 0.55,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "WOOHOOO! मज़ा आ गया! क्या dance किया है Detective जी! अच्छा अब secret सुनो…",
+  "performance_tag": "[panting, happy]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S06_085_DOG.mp3",
+  "duration_seconds": 7.89,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -4.6
+ },
+ "GULBUL_PANDEY_S06_086_DOG": {
+  "type": "speech",
+  "voice": "DOG",
+  "voice_id": "aPE0uHZbwrQVPMm3ihPH",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.35,
+   "similarity_boost": 0.78,
+   "style": 0.55,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "मैंने Doctor का box देखा था… गीले कपड़ों के पास! वहाँ कपड़े सूख रहे थे!",
+  "performance_tag": "[whispering playfully, conspiratorial]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S06_086_DOG.mp3",
+  "duration_seconds": 6.11,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.3
+ },
+ "GULBUL_PANDEY_S06_087_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "गीले कपड़ों के पास?",
+  "performance_tag": "[curious, thinking]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S06_087_INSPECTOR.mp3",
+  "duration_seconds": 1.88,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S06_088_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Detective… Doctor Munmun ने कपड़े किस room में सुखाए थे — Kitchen या Bedroom? उस room का card tap करो!",
+  "performance_tag": "[inviting the child to think]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S06_088_INSPECTOR.mp3",
+  "duration_seconds": 8.52,
+  "integrated_lufs": -16.6,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S06_089_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Bedroom में तो खाना बन रहा था! कपड़े दूसरे room में सूख रहे थे…",
+  "performance_tag": "[warm, gently redirecting]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S06_089_INSPECTOR.mp3",
+  "duration_seconds": 4.6,
+  "integrated_lufs": -16.3,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S06_090_MUNMUN": {
+  "type": "speech",
+  "voice": "MUNMUN",
+  "voice_id": "ItmwhOeluca31IEX91Yk",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.35,
+   "similarity_boost": 0.78,
+   "style": 0.55,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "मैं Kitchen में कपड़े सुखा रही थी…",
+  "performance_tag": "[thinking aloud, squeaky]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S06_090_MUNMUN.mp3",
+  "duration_seconds": 3.16,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.4
+ },
+ "GULBUL_PANDEY_S06_091_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Kitchen वाला card ढूँढो — जिस पर गैस और बर्तन बने हैं — और tap करो!",
+  "performance_tag": "[kind, clear]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S06_091_INSPECTOR.mp3",
+  "duration_seconds": 5.88,
+  "integrated_lufs": -16.4,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S06_092_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "हाँ, Kitchen!",
+  "performance_tag": "[excited]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S06_092_INSPECTOR.mp3",
+  "duration_seconds": 2.04,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.7
+ },
+ "GULBUL_PANDEY_S06_093_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "चलो वहीं ढूँढते हैं!",
+  "performance_tag": "[eager]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S06_093_INSPECTOR.mp3",
+  "duration_seconds": 2.59,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.0
+ },
+ "GULBUL_PANDEY_S06_095_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "ये towel ज़रा हटाओ… [gasps] अरे! इसके पीछे क्या है?",
+  "performance_tag": "[building suspense, stage whisper rising]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S06_095_INSPECTOR.mp3",
+  "duration_seconds": 4.6,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.3
+ },
+ "GULBUL_PANDEY_S06_096_MUNMUN": {
+  "type": "speech",
+  "voice": "MUNMUN",
+  "voice_id": "ItmwhOeluca31IEX91Yk",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.35,
+   "similarity_boost": 0.78,
+   "style": 0.55,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "मेरा box! [laughs] अरे, मैं ही इसे यहाँ रखकर भूल गई थी!",
+  "performance_tag": "[relieved, squeaky, laughing]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S06_096_MUNMUN.mp3",
+  "duration_seconds": 5.07,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.9
+ },
+ "GULBUL_PANDEY_S06_097_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "तुमने सही room ढूँढा, Detective! Box मिल गया!",
+  "performance_tag": "[warm, proud]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S06_097_INSPECTOR.mp3",
+  "duration_seconds": 3.47,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S06_098_MUNMUN": {
+  "type": "speech",
+  "voice": "MUNMUN",
+  "voice_id": "ItmwhOeluca31IEX91Yk",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.35,
+   "similarity_boost": 0.78,
+   "style": 0.55,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "YAYYY!! मेरा box मिल गया! Thank you Detective जी! Thank you…",
+  "performance_tag": "[overjoyed, squealing]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S06_098_MUNMUN.mp3",
+  "duration_seconds": 5.49,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.8
+ },
+ "GULBUL_PANDEY_S06_099_MUNMUN": {
+  "type": "speech",
+  "voice": "MUNMUN",
+  "voice_id": "ItmwhOeluca31IEX91Yk",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.35,
+   "similarity_boost": 0.78,
+   "style": 0.55,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "हाँ हाँ! अब मैं bedroom में जाकर सबका खाना — [gasps] oops… patients को ठीक कर सकती हूँ!",
+  "performance_tag": "[joyful, squeaky]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S06_099_MUNMUN.mp3",
+  "duration_seconds": 7.47,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S06_100_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Bedroom में patients?!",
+  "performance_tag": "[exaggerated scream]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S06_100_INSPECTOR.mp3",
+  "duration_seconds": 1.65,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.5
+ },
+ "GULBUL_PANDEY_S06_101_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "वाह Detective, तुमने तो कमाल कर दिया!",
+  "performance_tag": "[warm and proud, to the child]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S06_101_INSPECTOR.mp3",
+  "duration_seconds": 3.24,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.5
+ },
+ "GULBUL_PANDEY_S06_102_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.5,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "SALUTE!",
+  "performance_tag": "[heroic, shouting]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S06_102_INSPECTOR.mp3",
+  "duration_seconds": 1.23,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -4.2
+ }
+}

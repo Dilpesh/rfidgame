@@ -1,0 +1,214 @@
+# Inspector Gulbul Pandey & Doctor का Box — kit script (proposal, 1 Oct 2026)
+# Built from the v2 script + the 20 decisions in claude/review-gulbul-pandey.md.
+# Hindi in Devanagari, English words in Latin, as in every other kit story (ElevenLabs
+# reads Devanagari reliably; the compiler's gender check only sees Devanagari).
+
+title: Inspector Gulbul Pandey — Doctor का Box
+key: gulbul-pandey
+language: hi
+minutes: 8
+audio: audio/
+cache: v1
+hints at: 8s 17s 28s
+tap sound: @lib:tap
+fallback name: Detective
+voices: INSPECTOR=Saanu, MUNMUN=Munni, ELEPHANT=Vardan, DOG=Bholu, HAVALDAR=Jia
+activities: Detective Cap और Goggles पहनो | ताली बजाकर Elephant दादा को जगाओ | Doggy के साथ dance
+
+# progress-bar order. CAP, CAR, ELEPHANT, DOG, KITCHEN are new to cards.json (see claude/cards-additions.json);
+# SNACK and MUSIC already exist. say= is the kids' word — Dilpesh: plain English is fine for these (1 Oct).
+card CAP: 🕵️ Cap & Goggles say=cap|goggles
+card CAR: 🚗 Car say=car
+card ELEPHANT: 🐘 Elephant say=elephant
+card SNACK: 🍪 Biscuit say=biscuit
+card DOG: 🐶 Doggy say=doggy|dog
+card MUSIC: 🎵 Music say=music
+card KITCHEN: 🍳 Kitchen say=kitchen
+
+
+# Praise after every card. Not pinned to @lib: — the fallback here is "…, Detective!", not "…, Captain!",
+# so this story records its own Detective versions (names.py captain) and the child packs add the names.
+== block praise
+one of:
+  INSPECTOR [warm, proud] @GULBUL_PANDEY_S00_001_INSPECTOR #praise: Amazing, {name}!
+  INSPECTOR [bright, cheerful] @GULBUL_PANDEY_S00_002_INSPECTOR #praise: Good job, {name}!
+  INSPECTOR [delighted] @GULBUL_PANDEY_S00_003_INSPECTOR #praise: Excellent work, {name}!
+  INSPECTOR [pleased, clear] @GULBUL_PANDEY_S00_004_INSPECTOR #praise: You are absolutely right, {name}!
+
+
+== scene: Phone call
+sfx phone_ring
+sfx phone_beep
+INSPECTOR [booming, proud] @GULBUL_PANDEY_S01_007_INSPECTOR: Hello! [dramatically] मेरा नाम है… [shouts] INSPECTOR GULBUL PANDEY!
+MUNMUN [panicked, breathless] @GULBUL_PANDEY_S01_008_MUNMUN: Inspector साहब! Inspector साहब! [gasps] मेरा box… मेरा box मिल नहीं रहा! [worried] उसके बिना मैं patients को ठीक कैसे करूँगी? आप ढूँढने में help करेंगे?
+INSPECTOR [excited, commanding] @GULBUL_PANDEY_S01_009_INSPECTOR: Team! [shouts] Doctor Munmun का box ढूँढना है!
+INSPECTOR [warm, inviting] @GULBUL_PANDEY_S01_010_INSPECTOR #intro: अरे! क्या तुम हमारे Detective बनोगे? || अरे {name}! क्या तुम हमारे Detective बनोगे?
+wait 1.5s
+INSPECTOR [warm, encouraging] @GULBUL_PANDEY_S01_011_INSPECTOR: तो सामने रखी हुई Detective Cap और Goggles पहन लो!
+ask CAP
+  prompt INSPECTOR [relaxed, friendly] @GULBUL_PANDEY_S01_012_INSPECTOR: जब ready हो जाओ, तब Cap and Goggles वाला card tap करो!
+  hint INSPECTOR [relaxed, reassuring] @GULBUL_PANDEY_S01_013_INSPECTOR: आराम से पहन लो। Ready होने पर Cap and Goggles वाला card tap करना!
+  hint INSPECTOR [kind, clear] @GULBUL_PANDEY_S01_014_INSPECTOR: Cap and Goggles वाला card ढूँढो — जिस पर Detective की टोपी और चश्मा बना है।
+  hint INSPECTOR [kind, clear] @GULBUL_PANDEY_S01_015_INSPECTOR: Cap and Goggles वाला card tap करो!
+sfx magic_sparkle
+INSPECTOR [excited] @GULBUL_PANDEY_S01_016_INSPECTOR #praise: हाँ, Cap and Goggles!
+INSPECTOR [heroic, proud] @GULBUL_PANDEY_S01_017_INSPECTOR #praise: Great, our Detective is ready!
+INSPECTOR [heroic, proud] @GULBUL_PANDEY_S01_018_INSPECTOR #praise: Ready, Detective! || Ready, Detective {name}!
+
+
+== scene: कौनसी गाड़ी
+sfx brass_sting
+# Bike scene — decided 1 Oct (option A): the Inspector tries the bike himself; the fall is the joke,
+# the ask is pure recognition. No BIKE card. (A card-triggered version would need per-ask wrong-card
+# blocks in the engine — a separate proposal, not needed for this story.)
+INSPECTOR [inquisitive, then mischievous] @GULBUL_PANDEY_S02_020_INSPECTOR: Detective… मैं, तुम और हमारे दो हवलदार — हम चार लोग हैं! [mischievously] Bike पर चलें? हवलदार जी… बैठो!
+sfx slide_whistle_wobble
+sfx thud
+INSPECTOR [alarmed, laughing] @GULBUL_PANDEY_S02_023_INSPECTOR #joke: अरे! [laughs] हवलदार जी तो गिर गए! [shouts] धड़ाम!
+HAVALDAR [dazed, groaning] @GULBUL_PANDEY_S02_024_HAVALDAR #joke: ऊऊऊह…
+INSPECTOR [shaking his head, amused] @GULBUL_PANDEY_S02_025_INSPECTOR: चार लोग एक Bike पर?! नहीं नहीं…
+ask CAR
+  prompt INSPECTOR [inquisitive] @GULBUL_PANDEY_S02_026_INSPECTOR: Detective… किस गाड़ी में हम चारों बैठ सकते हैं? उसका card tap करो!
+  hint INSPECTOR [kind] @GULBUL_PANDEY_S02_027_INSPECTOR: कोई बड़ी गाड़ी ढूँढो — जिसमें चार लोग आराम से बैठ जाएँ!
+  hint INSPECTOR [kind] @GULBUL_PANDEY_S02_028_INSPECTOR: Car में हम सब बैठ सकते हैं! Car वाला card ढूँढो।
+  hint INSPECTOR [kind, clear] @GULBUL_PANDEY_S02_029_INSPECTOR: Car वाला card tap करो!
+sfx siren_engine
+INSPECTOR [excited] @GULBUL_PANDEY_S02_031_INSPECTOR #praise: हाँ, Car!
+use praise
+INSPECTOR [shouting dramatically] @GULBUL_PANDEY_S02_032_INSPECTOR: हवलदार… [shouts] गाड़ी निकालो! [excited] चलो… Vroom Vroom!
+
+
+== scene: Doctor Munmun का घर
+sfx doorbell_door_creak
+INSPECTOR [cheerful, calling out] @GULBUL_PANDEY_S03_034_INSPECTOR: Doctor Munmun! हम आपके घर आ गए!
+MUNMUN [cheerful, squeaky, sing-song] @GULBUL_PANDEY_S03_035_MUNMUN: Thank you…
+MUNMUN [cheerful, squeaky, sing-song] @gadbad_tag #joke: …Inspector Gadbad Pandey!
+INSPECTOR [annoyed, booming] @gadbad_fix #joke: Gadbad नहीं… [shouts] GULBUL Pandey!
+INSPECTOR [sighs, then businesslike] @GULBUL_PANDEY_S03_036_INSPECTOR: Anyway… आपने last time अपना box कहाँ देखा था?
+MUNMUN [flustered, thinking aloud, squeaky] @GULBUL_PANDEY_S03_037_MUNMUN: उम्म… [nervous laugh] मुझे याद नहीं! जब मैं Kitchen में कपड़े सुखा रही थी, तब box मेरे हाथ में ही था! [giggles] फिर पता नहीं कहाँ रख दिया!
+INSPECTOR [gasps, extremely shocked] @GULBUL_PANDEY_S03_038_INSPECTOR #joke: Kitchen में कपड़े…?!
+INSPECTOR [dramatic — the same funny voice every time] @kaun_karta #joke: ये कौन करता है?!
+INSPECTOR [lower voice, suspicious] @GULBUL_PANDEY_S03_039_INSPECTOR: तो खाना कहाँ बनाती हैं आप?
+MUNMUN [giggles, squeaky] @GULBUL_PANDEY_S03_040_MUNMUN #joke: अरे… Bedroom में!
+INSPECTOR [wailing, hands on head] @GULBUL_PANDEY_S03_041_INSPECTOR #joke: Bedroom में खाना?!
+INSPECTOR @kaun_karta #joke: ये कौन करता है?!
+sfx mystery_sting
+INSPECTOR [calling, warm] @GULBUL_PANDEY_S03_043_INSPECTOR: {name}, देखो!
+INSPECTOR [stage whisper, curious — full level] @GULBUL_PANDEY_S03_044_INSPECTOR: यहाँ तो बड़े-बड़े पैरों के निशान हैं! कौनसा animal आया होगा यहाँ… जिसके इतने बड़े-बड़े, मोटे-मोटे पैर हैं?
+ask ELEPHANT
+  prompt INSPECTOR [curious] @GULBUL_PANDEY_S03_045_INSPECTOR: क्या लगता है? उस animal का card tap करो!
+  hint MUNMUN [suddenly remembering, excited, squeaky] @GULBUL_PANDEY_S03_046_MUNMUN: हाँ! याद आया! मेरा friend आया था… जिसकी बहुत बड़ी-सी सूँड़ थी!
+  hint sfx elephant_trumpet
+  hint INSPECTOR [warm and clear] @GULBUL_PANDEY_S03_047_INSPECTOR: Elephant! लंबी सूँड़ वाला Elephant card ढूँढो और tap करो!
+sfx ting
+INSPECTOR [excited] @GULBUL_PANDEY_S03_048_INSPECTOR #praise: हाँ, Elephant!
+use praise
+INSPECTOR [proud] @GULBUL_PANDEY_S03_049_INSPECTOR: तुमने पहचान लिया!
+MUNMUN [chirpy, helpful, squeaky] @GULBUL_PANDEY_S03_050_MUNMUN: Elephant दादा तो garden की तरफ़ गए थे…
+MUNMUN [cheerful, squeaky, sing-song] @gadbad_tag #joke: …Inspector Gadbad Pandey!
+INSPECTOR [annoyed, booming] @gadbad_fix #joke: Gadbad नहीं… [shouts] GULBUL Pandey!
+INSPECTOR [eager] @GULBUL_PANDEY_S03_051_INSPECTOR: चलो garden में! उनसे box के बारे में पूछते हैं!
+
+
+== scene: सोता हुआ Elephant
+bed jungle_day @0.2
+sfx snore
+INSPECTOR [stage whisper rising to a chant — full level] @GULBUL_PANDEY_S04_052_INSPECTOR: देखो Detective! Elephant दादा तो सो रहे हैं! उन्हें जगाना है… ताली बजाओ — दादा को जगाओ!
+INSPECTOR [chanting, rhythmic] @GULBUL_PANDEY_S04_053_INSPECTOR #action: सब साथ में — ताली बजाओ, दादा को जगाओ!
+wait 4s
+sfx clap
+sfx elephant_trumpet
+ELEPHANT [sleepy, slow, yawning] @GULBUL_PANDEY_S04_054_ELEPHANT: उह… उह…? क्या हुआ? मुझे क्यों जगाया?
+INSPECTOR [polite, clear] @GULBUL_PANDEY_S04_055_INSPECTOR: Elephant दादा! क्या आपने Doctor Munmun का box देखा है?
+ELEPHANT [sleepy, grumbling] @GULBUL_PANDEY_S04_056_ELEPHANT: Box तो नहीं देखा। मैं खाना ढूँढने गया था… पर Kitchen में तो कपड़े सूख रहे थे!
+INSPECTOR [hushed] @GULBUL_PANDEY_S04_057_INSPECTOR: {name}, ध्यान से सुनो…
+ELEPHANT [hungry, dramatic, grumbling] @GULBUL_PANDEY_S04_058_ELEPHANT: मुझे अभी भी भूख लग रही है! पहले मैं कुछ खाऊँगा… फिर ही बात कर पाऊँगा!
+# Biscuit only: the kit accepts one card per ask, so "Biscuit or Banana" needs an engine change (see README).
+ask SNACK
+  prompt INSPECTOR [warm, turning to the child] @GULBUL_PANDEY_S04_059_INSPECTOR: Detective… क्या तुम्हारे पास कुछ खाने को है? Elephant दादा को खिलाओ!
+  hint INSPECTOR [kind] @GULBUL_PANDEY_S04_060_INSPECTOR: Elephant दादा को biscuit बहुत पसंद है! Biscuit ढूँढो।
+  hint INSPECTOR [kind] @GULBUL_PANDEY_S04_061_INSPECTOR: Biscuit वाला card — जिस पर गोल, भूरा biscuit बना है।
+  hint INSPECTOR [kind, clear] @GULBUL_PANDEY_S04_062_INSPECTOR: Biscuit वाला card tap करो!
+sfx biscuit_crunch
+INSPECTOR [excited] @GULBUL_PANDEY_S04_063_INSPECTOR #praise: हाँ, Biscuit!
+use praise
+INSPECTOR [pleased] @GULBUL_PANDEY_S04_064_INSPECTOR: Elephant दादा को खाना मिल गया!
+ELEPHANT [happy, energetic] @GULBUL_PANDEY_S04_065_ELEPHANT: आहा! [laughs] YUMMY! Thank you, Detective! [curious] जब मैं Doctor के घर गया था… तो मैंने ऐसी आवाज़ सुनी थी!
+sfx dog_bark
+ask DOG
+  prompt INSPECTOR [inquisitive] @GULBUL_PANDEY_S04_066_INSPECTOR: अहा! Detective… ये किसकी आवाज़ है?
+  hint INSPECTOR [hushed] @GULBUL_PANDEY_S04_067_INSPECTOR: {name}, ध्यान से सुनो…
+  hint sfx dog_bark
+  hint INSPECTOR [kind, clear] @GULBUL_PANDEY_S04_068_INSPECTOR: Doggy! Doggy वाला card ढूँढो और tap करो!
+sfx ting
+INSPECTOR [excited] @GULBUL_PANDEY_S04_069_INSPECTOR #praise: हाँ, Doggy!
+use praise
+INSPECTOR [cheerful] @GULBUL_PANDEY_S04_070_INSPECTOR: ये तो Doggy जी की आवाज़ है! चलो, Doggy जी से मिलते हैं!
+bed stop
+
+
+== scene: Doggy का dance
+sfx dog_pant_bark
+INSPECTOR [friendly, inquisitive] @GULBUL_PANDEY_S05_071_INSPECTOR: सुनो Doggy जी… आप Doctor Munmun के घर गए थे?
+DOG [playful, bouncy, fast] @GULBUL_PANDEY_S05_072_DOG: हाँ! मुझे बहुत dance करने का मन था, तो मैं वहाँ speaker ढूँढने गया था… पर Bedroom में speaker मिला ही नहीं… [shouts] वहाँ तो कोई खाना बना रहा था!
+INSPECTOR [gasps, playfully shocked] @GULBUL_PANDEY_S05_073_INSPECTOR #joke: Bedroom में खाना?!
+INSPECTOR [dramatic — the same funny voice every time] @kaun_karta #joke: ये कौन करता है?!
+INSPECTOR [curious] @GULBUL_PANDEY_S05_074_INSPECTOR: Doggy जी… क्या तुम्हें पता है Doctor का box कहाँ गया?
+DOG [excited, bouncy] @GULBUL_PANDEY_S05_075_DOG: हाँ! मुझे कुछ तो पता है! [laughs] पर मेरा अभी DANCE करने का बहुत मन कर रहा है! पहले कुछ music लगाओ, Detective के साथ dance करेंगे… उसके बाद बताऊँगा!
+ask MUSIC
+  prompt INSPECTOR [inviting] @GULBUL_PANDEY_S05_076_INSPECTOR: Detective, ज़रा music लगाओ!
+  hint INSPECTOR [kind] @GULBUL_PANDEY_S05_077_INSPECTOR: Music वाला card tap करो — फिर हम dance करेंगे!
+  hint INSPECTOR [kind] @GULBUL_PANDEY_S05_078_INSPECTOR: Music वाला card — जिस पर गाने का निशान बना है।
+  hint INSPECTOR [kind, clear] @GULBUL_PANDEY_S05_079_INSPECTOR: Music वाला card tap करो!
+INSPECTOR [excited] @GULBUL_PANDEY_S05_080_INSPECTOR #praise: हाँ, Music!
+use praise
+music dance_loop
+duck DOG [shouting over music, super excited] @GULBUL_PANDEY_S05_081_DOG #action: WOOHOOO! Detective, मेरे साथ ताली बजाओ! Clap! Clap! Clap!
+music at 8s
+duck DOG [shouting over music, playful] @GULBUL_PANDEY_S05_082_DOG #action: अब हाथ ऊपर… हिलाओ, हिलाओ! YAYYY!
+music at 19s
+music stop
+sfx clap
+INSPECTOR [excited] @GULBUL_PANDEY_S05_083_INSPECTOR #praise: वाह Detective! Great dance!
+use praise
+INSPECTOR [happy, laughing] @GULBUL_PANDEY_S05_084_INSPECTOR: मज़ा आ गया!
+
+
+== scene: कपड़ों का clue
+sfx dog_pant_bark
+DOG [panting, happy] @GULBUL_PANDEY_S06_085_DOG: WOOHOOO! मज़ा आ गया! क्या dance किया है Detective जी! अच्छा अब secret सुनो…
+DOG [whispering playfully, conspiratorial] @GULBUL_PANDEY_S06_086_DOG: मैंने Doctor का box देखा था… गीले कपड़ों के पास! वहाँ कपड़े सूख रहे थे!
+# No BEDROOM card (decision 8): a wrong tap gets the global wrong-card line; hint 1 is the bedroom redirect.
+INSPECTOR [curious, thinking] @GULBUL_PANDEY_S06_087_INSPECTOR: गीले कपड़ों के पास?
+ask KITCHEN
+  prompt INSPECTOR [inviting the child to think] @GULBUL_PANDEY_S06_088_INSPECTOR: Detective… Doctor Munmun ने कपड़े किस room में सुखाए थे — Kitchen या Bedroom? उस room का card tap करो!
+  hint INSPECTOR [warm, gently redirecting] @GULBUL_PANDEY_S06_089_INSPECTOR: Bedroom में तो खाना बन रहा था! कपड़े दूसरे room में सूख रहे थे…
+  hint MUNMUN [thinking aloud, squeaky] @GULBUL_PANDEY_S06_090_MUNMUN: मैं Kitchen में कपड़े सुखा रही थी…
+  hint INSPECTOR [kind, clear] @GULBUL_PANDEY_S06_091_INSPECTOR: Kitchen वाला card ढूँढो — जिस पर गैस और बर्तन बने हैं — और tap करो!
+sfx ting
+INSPECTOR [excited] @GULBUL_PANDEY_S06_092_INSPECTOR #praise: हाँ, Kitchen!
+use praise
+INSPECTOR [eager] @GULBUL_PANDEY_S06_093_INSPECTOR: चलो वहीं ढूँढते हैं!
+sfx footsteps_cloth_rustle
+INSPECTOR [building suspense, stage whisper rising] @GULBUL_PANDEY_S06_095_INSPECTOR: ये towel ज़रा हटाओ… [gasps] अरे! इसके पीछे क्या है?
+sfx ting
+MUNMUN [relieved, squeaky, laughing] @GULBUL_PANDEY_S06_096_MUNMUN: मेरा box! [laughs] अरे, मैं ही इसे यहाँ रखकर भूल गई थी!
+INSPECTOR [warm, proud] @GULBUL_PANDEY_S06_097_INSPECTOR: तुमने सही room ढूँढा, Detective! Box मिल गया!
+MUNMUN [overjoyed, squealing] @GULBUL_PANDEY_S06_098_MUNMUN: YAYYY!! मेरा box मिल गया! Thank you Detective जी! Thank you…
+MUNMUN [cheerful, squeaky, sing-song] @gadbad_tag #joke: …Inspector Gadbad Pandey!
+INSPECTOR [annoyed, booming] @gadbad_fix #joke: Gadbad नहीं… [shouts] GULBUL Pandey!
+MUNMUN [joyful, squeaky] @GULBUL_PANDEY_S06_099_MUNMUN: हाँ हाँ! अब मैं bedroom में जाकर सबका खाना — [gasps] oops… patients को ठीक कर सकती हूँ!
+INSPECTOR [exaggerated scream] @GULBUL_PANDEY_S06_100_INSPECTOR #joke: Bedroom में patients?!
+INSPECTOR [dramatic — the same funny voice every time] @kaun_karta #joke: ये कौन करता है?!
+INSPECTOR [warm and proud, to the child] @GULBUL_PANDEY_S06_101_INSPECTOR: वाह Detective, तुमने तो कमाल कर दिया!
+use praise
+INSPECTOR [heroic, shouting] @GULBUL_PANDEY_S06_102_INSPECTOR: SALUTE!
+sfx police_whistle_drums
+
+
+== wrong card
+sfx boing
+INSPECTOR [playfully surprised, encouraging] @GULBUL_PANDEY_S00_104_INSPECTOR: चलो, एक बार और try करते हैं!
+--
+sfx boing
+INSPECTOR [light, encouraging] @GULBUL_PANDEY_S00_105_INSPECTOR: ओहो! ये वाला नहीं। Detective, एक और card try करो!

@@ -3,10 +3,14 @@
   "model_id": "eleven_v3",
   "output_format": "mp3_44100_128",
   "speakers": {
-    "COCO":     { "name": "Saanu",  "voice_id": "d9BvEI0bp2Tmdpqnjwn0", "voice_settings": { "stability": 0.40, "similarity_boost": 0.78, "style": 0.28, "use_speaker_boost": true } },
-    "NARRATOR": { "name": "Jia",    "voice_id": "ItmwhOeluca31IEX91Yk", "voice_settings": { "stability": 0.56, "similarity_boost": 0.78, "style": 0.12, "use_speaker_boost": true } },
-    "ELEPHANT": { "name": "Vardan", "voice_id": "bBG9wwa23659EgIkMbc1", "voice_settings": { "stability": 0.42, "similarity_boost": 0.78, "style": 0.30, "use_speaker_boost": true }, "note": "light EQ, natural pitch — see the elephant audition manifest" },
-    "PARROT":   { "name": "Munni",  "voice_id": "VOGEEZj2Kly5dP9LrQy8", "voice_settings": { "stability": 0.45, "similarity_boost": 0.78, "style": 0.30, "use_speaker_boost": true } },
-    "LION":     { "name": "Bholu",  "voice_id": "5krdMTA5HonvWAlY2vSx", "voice_settings": { "stability": 0.44, "similarity_boost": 0.78, "style": 0.30, "use_speaker_boost": true }, "filter": "highpass=f=90,lowpass=f=8000,equalizer=f=280:t=q:w=1.2:g=1" }
+    "COCO":      { "name": "Saanu", "voice_id": "d9BvEI0bp2Tmdpqnjwn0", "voice_settings": {"stability": 0.4, "similarity_boost": 0.78, "style": 0.28, "use_speaker_boost": true} },
+    "NARRATOR":  { "name": "Jia", "voice_id": "ItmwhOeluca31IEX91Yk", "voice_settings": {"stability": 0.56, "similarity_boost": 0.78, "style": 0.12, "use_speaker_boost": true} },
+    "ELEPHANT":  { "name": "Vardan", "voice_id": "bBG9wwa23659EgIkMbc1", "voice_settings": {"stability": 0.42, "similarity_boost": 0.78, "style": 0.3, "use_speaker_boost": true}, "note": "light EQ, natural pitch — see the elephant audition manifest" },
+    "PARROT":    { "name": "Munni", "voice_id": "VOGEEZj2Kly5dP9LrQy8", "voice_settings": {"stability": 0.45, "similarity_boost": 0.78, "style": 0.3, "use_speaker_boost": true} },
+    "LION":      { "name": "Bholu", "voice_id": "5krdMTA5HonvWAlY2vSx", "voice_settings": {"stability": 0.44, "similarity_boost": 0.78, "style": 0.3, "use_speaker_boost": true}, "filter": "highpass=f=90,lowpass=f=8000,equalizer=f=280:t=q:w=1.2:g=1" },
+    "INSPECTOR": { "name": "Saanu", "voice_id": "d9BvEI0bp2Tmdpqnjwn0", "voice_settings": {"stability": 0.4, "similarity_boost": 0.78, "style": 0.5, "use_speaker_boost": true} },
+    "MUNMUN":    { "name": "Jia", "voice_id": "ItmwhOeluca31IEX91Yk", "voice_settings": {"stability": 0.35, "similarity_boost": 0.78, "style": 0.55, "use_speaker_boost": true} },
+    "DOG":       { "name": "Chintu", "voice_id": "aPE0uHZbwrQVPMm3ihPH", "voice_settings": {"stability": 0.35, "similarity_boost": 0.78, "style": 0.55, "use_speaker_boost": true}, "note": "Gulbul Pandey — Voice Library voice \"Chintu\", added to the account 1 Oct 2026" },
+    "HAVALDAR":  { "name": "Bholu", "voice_id": "5krdMTA5HonvWAlY2vSx", "voice_settings": {"stability": 0.5, "similarity_boost": 0.78, "style": 0.25, "use_speaker_boost": true} }
   }
 }

@@ -1964,6 +1964,206 @@
    "file": "sfx/welcome_chime.mp3",
    "source": "games/bobo-birthday/audio/sfx-in/welcome_chime.mp3",
    "duration_seconds": 1.52
+  },
+  "snore": {
+   "type": "sfx",
+   "description": "soft cartoon snoring, two breaths (~2 s) — the sleeping-animal sound from the Moon story",
+   "tags": [
+    "snore",
+    "sleep",
+    "funny",
+    "animal"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/snore.mp3",
+   "source": "../moon/audio/sfx_snore.mp3",
+   "duration_seconds": 2.194
+  },
+  "biscuit_crunch": {
+   "type": "sfx",
+   "description": "biscuit crunch / munching (~2 s) — from Toy Town v2",
+   "tags": [
+    "crunch",
+    "munch",
+    "biscuit",
+    "eat",
+    "funny"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/biscuit_crunch.mp3",
+   "source": "../toy-town-v2/audio/biscuit_crunch.mp3",
+   "duration_seconds": 2.038
+  },
+  "phone_ring": {
+   "type": "sfx",
+   "description": "old telephone bell, two rings (ElevenLabs sound-generation, placeholder until replaced)",
+   "tags": [
+    "phone",
+    "ring",
+    "bell",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/phone_ring.mp3",
+   "source": "stories/gulbul-pandey/claude/sfx-in/phone_ring.mp3",
+   "duration_seconds": 3.53
+  },
+  "phone_beep": {
+   "type": "sfx",
+   "description": "single short beep, phone pick-up (ElevenLabs sound-generation, placeholder until replaced)",
+   "tags": [
+    "beep",
+    "phone",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/phone_beep.mp3",
+   "source": "stories/gulbul-pandey/claude/sfx-in/phone_beep.mp3",
+   "duration_seconds": 0.63
+  },
+  "brass_sting": {
+   "type": "sfx",
+   "description": "cartoon dun-dun-DUN brass sting (ElevenLabs sound-generation, placeholder until replaced)",
+   "tags": [
+    "sting",
+    "brass",
+    "dramatic",
+    "funny",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/brass_sting.mp3",
+   "source": "stories/gulbul-pandey/claude/sfx-in/brass_sting.mp3",
+   "duration_seconds": 2.51
+  },
+  "slide_whistle_wobble": {
+   "type": "sfx",
+   "description": "slide whistle falling + wobble (ElevenLabs sound-generation, placeholder until replaced)",
+   "tags": [
+    "slide",
+    "whistle",
+    "fall",
+    "funny",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/slide_whistle_wobble.mp3",
+   "source": "stories/gulbul-pandey/claude/sfx-in/slide_whistle_wobble.mp3",
+   "duration_seconds": 1.8
+  },
+  "thud": {
+   "type": "sfx",
+   "description": "big cartoon fall thud, dry and punchy (ElevenLabs sound-generation, placeholder until replaced)",
+   "tags": [
+    "thud",
+    "fall",
+    "funny",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/thud.mp3",
+   "source": "stories/gulbul-pandey/claude/sfx-in/thud.mp3",
+   "duration_seconds": 1.04
+  },
+  "siren_engine": {
+   "type": "sfx",
+   "description": "police siren ×2 then car drives off (ElevenLabs sound-generation, placeholder until replaced)",
+   "tags": [
+    "siren",
+    "police",
+    "car",
+    "engine",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/siren_engine.mp3",
+   "source": "stories/gulbul-pandey/claude/sfx-in/siren_engine.mp3",
+   "duration_seconds": 4.52
+  },
+  "doorbell_door_creak": {
+   "type": "sfx",
+   "description": "doorbell ding-dong then door creak (ElevenLabs sound-generation, placeholder until replaced)",
+   "tags": [
+    "doorbell",
+    "door",
+    "creak",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/doorbell_door_creak.mp3",
+   "source": "stories/gulbul-pandey/claude/sfx-in/doorbell_door_creak.mp3",
+   "duration_seconds": 3.53
+  },
+  "mystery_sting": {
+   "type": "sfx",
+   "description": "gentle curious mystery sting (ElevenLabs sound-generation, placeholder until replaced)",
+   "tags": [
+    "sting",
+    "mystery",
+    "curious",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/mystery_sting.mp3",
+   "source": "stories/gulbul-pandey/claude/sfx-in/mystery_sting.mp3",
+   "duration_seconds": 1.8
+  },
+  "dog_bark": {
+   "type": "sfx",
+   "description": "friendly dog, two clear barks (ElevenLabs sound-generation, placeholder until replaced)",
+   "tags": [
+    "dog",
+    "bark",
+    "animal",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/dog_bark.mp3",
+   "source": "stories/gulbul-pandey/claude/sfx-in/dog_bark.mp3",
+   "duration_seconds": 1.8
+  },
+  "dog_pant_bark": {
+   "type": "sfx",
+   "description": "happy dog panting + one small woof (ElevenLabs sound-generation, placeholder until replaced)",
+   "tags": [
+    "dog",
+    "pant",
+    "animal",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/dog_pant_bark.mp3",
+   "source": "stories/gulbul-pandey/claude/sfx-in/dog_pant_bark.mp3",
+   "duration_seconds": 2.51
+  },
+  "footsteps_cloth_rustle": {
+   "type": "sfx",
+   "description": "quick indoor footsteps then cloth rustle (ElevenLabs sound-generation, placeholder until replaced)",
+   "tags": [
+    "footsteps",
+    "cloth",
+    "rustle",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/footsteps_cloth_rustle.mp3",
+   "source": "stories/gulbul-pandey/claude/sfx-in/footsteps_cloth_rustle.mp3",
+   "duration_seconds": 3.53
+  },
+  "police_whistle_drums": {
+   "type": "sfx",
+   "description": "two whistle blasts + marching snare roll (ElevenLabs sound-generation, placeholder until replaced)",
+   "tags": [
+    "whistle",
+    "drums",
+    "march",
+    "outro",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/police_whistle_drums.mp3",
+   "source": "stories/gulbul-pandey/claude/sfx-in/police_whistle_drums.mp3",
+   "duration_seconds": 4.52
   }
  }
 }

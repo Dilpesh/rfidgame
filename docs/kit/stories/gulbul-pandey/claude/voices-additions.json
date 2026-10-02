@@ -1,0 +1,7 @@
+{
+  "_comment": "Rows for library/voices.json → speakers (Dilpesh's picks, 1 Oct). ELEPHANT keeps the existing Vardan row — Elephant Dada is the same character as in Jungle Rescue. Chintu is a Voice Library voice: 'Add to my voices' at elevenlabs.io/voices/aPE0uHZbwrQVPMm3ihPH before generating, or the API reports it not found. Settings start from the approved rows; Inspector has the lowest stability (most expressive).",
+  "INSPECTOR": { "name": "Saanu",  "voice_id": "d9BvEI0bp2Tmdpqnjwn0", "voice_settings": { "stability": 0.38, "similarity_boost": 0.78, "style": 0.30, "use_speaker_boost": true } },
+  "MUNMUN":    { "name": "Jia",    "voice_id": "ItmwhOeluca31IEX91Yk", "voice_settings": { "stability": 0.45, "similarity_boost": 0.78, "style": 0.25, "use_speaker_boost": true } },
+  "DOG":       { "name": "Chintu", "voice_id": "aPE0uHZbwrQVPMm3ihPH", "voice_settings": { "stability": 0.42, "similarity_boost": 0.78, "style": 0.30, "use_speaker_boost": true } },
+  "HAVALDAR":  { "name": "Bholu",  "voice_id": "5krdMTA5HonvWAlY2vSx", "voice_settings": { "stability": 0.50, "similarity_boost": 0.78, "style": 0.25, "use_speaker_boost": true } }
+}

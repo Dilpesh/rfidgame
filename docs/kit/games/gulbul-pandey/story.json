@@ -1,0 +1,2950 @@
+{
+ "format": "kahani-story/1",
+ "title": "Inspector Gulbul Pandey — Doctor का Box",
+ "heading": "Inspector Gulbul Pandey — Doctor का Box",
+ "key": "gulbul-pandey",
+ "language": "hi",
+ "minutes": 8,
+ "audioDir": "audio/",
+ "cacheTag": "v1",
+ "hintDelays": [
+  8000,
+  17000,
+  28000
+ ],
+ "activities": [
+  "Detective Cap और Goggles पहनो",
+  "ताली बजाकर Elephant दादा को जगाओ",
+  "Doggy के साथ dance"
+ ],
+ "cards": [
+  {
+   "id": "CAP",
+   "icon": "🕵️",
+   "label": "Cap & Goggles",
+   "registry": "CAP",
+   "say": [
+    "cap",
+    "goggles"
+   ]
+  },
+  {
+   "id": "CAR",
+   "icon": "🚗",
+   "label": "Car",
+   "registry": "CAR",
+   "say": [
+    "car"
+   ]
+  },
+  {
+   "id": "ELEPHANT",
+   "icon": "🐘",
+   "label": "Elephant",
+   "registry": "ELEPHANT",
+   "say": [
+    "elephant"
+   ]
+  },
+  {
+   "id": "SNACK",
+   "icon": "🍪",
+   "label": "Biscuit",
+   "registry": "SNACK",
+   "say": [
+    "biscuit"
+   ]
+  },
+  {
+   "id": "DOG",
+   "icon": "🐶",
+   "label": "Doggy",
+   "registry": "DOG",
+   "say": [
+    "doggy",
+    "dog"
+   ]
+  },
+  {
+   "id": "MUSIC",
+   "icon": "🎵",
+   "label": "Music",
+   "registry": "MUSIC",
+   "say": [
+    "music"
+   ]
+  },
+  {
+   "id": "KITCHEN",
+   "icon": "🍳",
+   "label": "Kitchen",
+   "registry": "KITCHEN",
+   "say": [
+    "kitchen"
+   ]
+  }
+ ],
+ "uids": {
+  "6373651": "SNACK",
+  "5720648": "SNACK",
+  "6360574": "MUSIC"
+ },
+ "seedVersion": "2026-09-19b",
+ "wrong": [
+  [
+   {
+    "op": "sfx",
+    "cue": "lib:boing",
+    "tags": [],
+    "line": 210,
+    "channel": "fg",
+    "wait": true
+   },
+   {
+    "op": "say",
+    "cue": "GULBUL_PANDEY_S00_104_INSPECTOR",
+    "speaker": "INSPECTOR",
+    "text": "चलो, एक बार और try करते हैं!",
+    "tags": [],
+    "line": 211,
+    "emotion": "playfully surprised, encouraging"
+   }
+  ],
+  [
+   {
+    "op": "sfx",
+    "cue": "lib:boing",
+    "tags": [],
+    "line": 213,
+    "channel": "fg",
+    "wait": true
+   },
+   {
+    "op": "say",
+    "cue": "GULBUL_PANDEY_S00_105_INSPECTOR",
+    "speaker": "INSPECTOR",
+    "text": "ओहो! ये वाला नहीं। Detective, एक और card try करो!",
+    "tags": [],
+    "line": 214,
+    "emotion": "light, encouraging"
+   }
+  ]
+ ],
+ "scenes": [
+  {
+   "id": "s01",
+   "title": "Phone call",
+   "onJump": [],
+   "beats": [
+    {
+     "op": "sfx",
+     "cue": "lib:phone_ring",
+     "tags": [],
+     "line": 40,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:phone_beep",
+     "tags": [],
+     "line": 41,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S01_007_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "Hello! [dramatically] मेरा नाम है… [shouts] INSPECTOR GULBUL PANDEY!",
+     "tags": [],
+     "line": 42,
+     "emotion": "booming, proud"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S01_008_MUNMUN",
+     "speaker": "MUNMUN",
+     "text": "Inspector साहब! Inspector साहब! [gasps] मेरा box… मेरा box मिल नहीं रहा! [worried] उसके बिना मैं patients को ठीक कैसे करूँगी? आप ढूँढने में help करेंगे?",
+     "tags": [],
+     "line": 43,
+     "emotion": "panicked, breathless"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S01_009_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "Team! [shouts] Doctor Munmun का box ढूँढना है!",
+     "tags": [],
+     "line": 44,
+     "emotion": "excited, commanding"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S01_010_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "अरे! क्या तुम हमारे Detective बनोगे?",
+     "tags": [
+      "intro",
+      "name"
+     ],
+     "line": 45,
+     "emotion": "warm, inviting",
+     "name": true,
+     "nameText": "अरे {name}! क्या तुम हमारे Detective बनोगे?"
+    },
+    {
+     "op": "wait",
+     "ms": 1500,
+     "line": 46
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S01_011_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "तो सामने रखी हुई Detective Cap और Goggles पहन लो!",
+     "tags": [],
+     "line": 47,
+     "emotion": "warm, encouraging"
+    },
+    {
+     "op": "ask",
+     "card": "CAP",
+     "prompt": {
+      "op": "say",
+      "cue": "GULBUL_PANDEY_S01_012_INSPECTOR",
+      "speaker": "INSPECTOR",
+      "text": "जब ready हो जाओ, तब Cap and Goggles वाला card tap करो!",
+      "tags": [],
+      "line": 49,
+      "emotion": "relaxed, friendly"
+     },
+     "hints": [
+      {
+       "op": "say",
+       "cue": "GULBUL_PANDEY_S01_013_INSPECTOR",
+       "speaker": "INSPECTOR",
+       "text": "आराम से पहन लो। Ready होने पर Cap and Goggles वाला card tap करना!",
+       "tags": [],
+       "line": 50,
+       "emotion": "relaxed, reassuring"
+      },
+      {
+       "op": "say",
+       "cue": "GULBUL_PANDEY_S01_014_INSPECTOR",
+       "speaker": "INSPECTOR",
+       "text": "Cap and Goggles वाला card ढूँढो — जिस पर Detective की टोपी और चश्मा बना है।",
+       "tags": [],
+       "line": 51,
+       "emotion": "kind, clear"
+      },
+      {
+       "op": "say",
+       "cue": "GULBUL_PANDEY_S01_015_INSPECTOR",
+       "speaker": "INSPECTOR",
+       "text": "Cap and Goggles वाला card tap करो!",
+       "tags": [],
+       "line": 52,
+       "emotion": "kind, clear"
+      }
+     ],
+     "afterPrompt": [],
+     "remind": null,
+     "tags": [],
+     "line": 48
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:magic_sparkle",
+     "tags": [],
+     "line": 53,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S01_016_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "हाँ, Cap and Goggles!",
+     "tags": [
+      "praise"
+     ],
+     "line": 54,
+     "emotion": "excited"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S01_017_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "Great, our Detective is ready!",
+     "tags": [
+      "praise"
+     ],
+     "line": 55,
+     "emotion": "heroic, proud"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S01_018_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "Ready, Detective!",
+     "tags": [
+      "praise",
+      "name"
+     ],
+     "line": 56,
+     "emotion": "heroic, proud",
+     "name": true,
+     "nameText": "Ready, Detective {name}!"
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "title": "कौनसी गाड़ी",
+   "onJump": [],
+   "beats": [
+    {
+     "op": "sfx",
+     "cue": "lib:brass_sting",
+     "tags": [],
+     "line": 60,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S02_020_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "Detective… मैं, तुम और हमारे दो हवलदार — हम चार लोग हैं! [mischievously] Bike पर चलें? हवलदार जी… बैठो!",
+     "tags": [],
+     "line": 64,
+     "emotion": "inquisitive, then mischievous"
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:slide_whistle_wobble",
+     "tags": [],
+     "line": 65,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:thud",
+     "tags": [],
+     "line": 66,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S02_023_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "अरे! [laughs] हवलदार जी तो गिर गए! [shouts] धड़ाम!",
+     "tags": [
+      "joke"
+     ],
+     "line": 67,
+     "emotion": "alarmed, laughing"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S02_024_HAVALDAR",
+     "speaker": "HAVALDAR",
+     "text": "ऊऊऊह…",
+     "tags": [
+      "joke"
+     ],
+     "line": 68,
+     "emotion": "dazed, groaning"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S02_025_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "चार लोग एक Bike पर?! नहीं नहीं…",
+     "tags": [],
+     "line": 69,
+     "emotion": "shaking his head, amused"
+    },
+    {
+     "op": "ask",
+     "card": "CAR",
+     "prompt": {
+      "op": "say",
+      "cue": "GULBUL_PANDEY_S02_026_INSPECTOR",
+      "speaker": "INSPECTOR",
+      "text": "Detective… किस गाड़ी में हम चारों बैठ सकते हैं? उसका card tap करो!",
+      "tags": [],
+      "line": 71,
+      "emotion": "inquisitive"
+     },
+     "hints": [
+      {
+       "op": "say",
+       "cue": "GULBUL_PANDEY_S02_027_INSPECTOR",
+       "speaker": "INSPECTOR",
+       "text": "कोई बड़ी गाड़ी ढूँढो — जिसमें चार लोग आराम से बैठ जाएँ!",
+       "tags": [],
+       "line": 72,
+       "emotion": "kind"
+      },
+      {
+       "op": "say",
+       "cue": "GULBUL_PANDEY_S02_028_INSPECTOR",
+       "speaker": "INSPECTOR",
+       "text": "Car में हम सब बैठ सकते हैं! Car वाला card ढूँढो।",
+       "tags": [],
+       "line": 73,
+       "emotion": "kind"
+      },
+      {
+       "op": "say",
+       "cue": "GULBUL_PANDEY_S02_029_INSPECTOR",
+       "speaker": "INSPECTOR",
+       "text": "Car वाला card tap करो!",
+       "tags": [],
+       "line": 74,
+       "emotion": "kind, clear"
+      }
+     ],
+     "afterPrompt": [],
+     "remind": null,
+     "tags": [],
+     "line": 70
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:siren_engine",
+     "tags": [],
+     "line": 75,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S02_031_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "हाँ, Car!",
+     "tags": [
+      "praise"
+     ],
+     "line": 76,
+     "emotion": "excited"
+    },
+    {
+     "op": "group",
+     "tags": [],
+     "block": "praise",
+     "beats": [
+      {
+       "op": "oneof",
+       "beats": [
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_001_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Amazing, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 33,
+         "emotion": "warm, proud",
+         "name": true,
+         "nameText": "Amazing, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_002_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Good job, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 34,
+         "emotion": "bright, cheerful",
+         "name": true,
+         "nameText": "Good job, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_003_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Excellent work, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 35,
+         "emotion": "delighted",
+         "name": true,
+         "nameText": "Excellent work, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_004_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "You are absolutely right, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 36,
+         "emotion": "pleased, clear",
+         "name": true,
+         "nameText": "You are absolutely right, {name}!"
+        }
+       ],
+       "line": 32
+      }
+     ],
+     "line": 77
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S02_032_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "हवलदार… [shouts] गाड़ी निकालो! [excited] चलो… Vroom Vroom!",
+     "tags": [],
+     "line": 78,
+     "emotion": "shouting dramatically"
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "title": "Doctor Munmun का घर",
+   "onJump": [],
+   "beats": [
+    {
+     "op": "sfx",
+     "cue": "lib:doorbell_door_creak",
+     "tags": [],
+     "line": 82,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S03_034_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "Doctor Munmun! हम आपके घर आ गए!",
+     "tags": [],
+     "line": 83,
+     "emotion": "cheerful, calling out"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S03_035_MUNMUN",
+     "speaker": "MUNMUN",
+     "text": "Thank you…",
+     "tags": [],
+     "line": 84,
+     "emotion": "cheerful, squeaky, sing-song"
+    },
+    {
+     "op": "say",
+     "cue": "gadbad_tag",
+     "speaker": "MUNMUN",
+     "text": "…Inspector Gadbad Pandey!",
+     "tags": [
+      "joke"
+     ],
+     "line": 85,
+     "emotion": "cheerful, squeaky, sing-song"
+    },
+    {
+     "op": "say",
+     "cue": "gadbad_fix",
+     "speaker": "INSPECTOR",
+     "text": "Gadbad नहीं… [shouts] GULBUL Pandey!",
+     "tags": [
+      "joke"
+     ],
+     "line": 86,
+     "emotion": "annoyed, booming"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S03_036_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "Anyway… आपने last time अपना box कहाँ देखा था?",
+     "tags": [],
+     "line": 87,
+     "emotion": "sighs, then businesslike"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S03_037_MUNMUN",
+     "speaker": "MUNMUN",
+     "text": "उम्म… [nervous laugh] मुझे याद नहीं! जब मैं Kitchen में कपड़े सुखा रही थी, तब box मेरे हाथ में ही था! [giggles] फिर पता नहीं कहाँ रख दिया!",
+     "tags": [],
+     "line": 88,
+     "emotion": "flustered, thinking aloud, squeaky"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S03_038_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "Kitchen में कपड़े…?!",
+     "tags": [
+      "joke"
+     ],
+     "line": 89,
+     "emotion": "gasps, extremely shocked"
+    },
+    {
+     "op": "say",
+     "cue": "kaun_karta",
+     "speaker": "INSPECTOR",
+     "text": "ये कौन करता है?!",
+     "tags": [
+      "joke"
+     ],
+     "line": 90,
+     "emotion": "dramatic — the same funny voice every time"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S03_039_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "तो खाना कहाँ बनाती हैं आप?",
+     "tags": [],
+     "line": 91,
+     "emotion": "lower voice, suspicious"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S03_040_MUNMUN",
+     "speaker": "MUNMUN",
+     "text": "अरे… Bedroom में!",
+     "tags": [
+      "joke"
+     ],
+     "line": 92,
+     "emotion": "giggles, squeaky"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S03_041_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "Bedroom में खाना?!",
+     "tags": [
+      "joke"
+     ],
+     "line": 93,
+     "emotion": "wailing, hands on head"
+    },
+    {
+     "op": "say",
+     "cue": "kaun_karta",
+     "speaker": "INSPECTOR",
+     "text": "ये कौन करता है?!",
+     "tags": [
+      "joke"
+     ],
+     "line": 94
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:mystery_sting",
+     "tags": [],
+     "line": 95,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S03_043_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "Detective, देखो!",
+     "tags": [
+      "name"
+     ],
+     "line": 96,
+     "emotion": "calling, warm",
+     "name": true,
+     "nameText": "{name}, देखो!"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S03_044_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "यहाँ तो बड़े-बड़े पैरों के निशान हैं! कौनसा animal आया होगा यहाँ… जिसके इतने बड़े-बड़े, मोटे-मोटे पैर हैं?",
+     "tags": [],
+     "line": 97,
+     "emotion": "stage whisper, curious — full level"
+    },
+    {
+     "op": "ask",
+     "card": "ELEPHANT",
+     "prompt": {
+      "op": "say",
+      "cue": "GULBUL_PANDEY_S03_045_INSPECTOR",
+      "speaker": "INSPECTOR",
+      "text": "क्या लगता है? उस animal का card tap करो!",
+      "tags": [],
+      "line": 99,
+      "emotion": "curious"
+     },
+     "hints": [
+      {
+       "op": "say",
+       "cue": "GULBUL_PANDEY_S03_046_MUNMUN",
+       "speaker": "MUNMUN",
+       "text": "हाँ! याद आया! मेरा friend आया था… जिसकी बहुत बड़ी-सी सूँड़ थी!",
+       "tags": [],
+       "line": 100,
+       "emotion": "suddenly remembering, excited, squeaky"
+      },
+      {
+       "op": "sfx",
+       "cue": "lib:elephant_trumpet",
+       "tags": [],
+       "line": 101,
+       "channel": "fg",
+       "wait": true
+      },
+      {
+       "op": "say",
+       "cue": "GULBUL_PANDEY_S03_047_INSPECTOR",
+       "speaker": "INSPECTOR",
+       "text": "Elephant! लंबी सूँड़ वाला Elephant card ढूँढो और tap करो!",
+       "tags": [],
+       "line": 102,
+       "emotion": "warm and clear"
+      }
+     ],
+     "afterPrompt": [],
+     "remind": null,
+     "tags": [],
+     "line": 98
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:ting",
+     "tags": [],
+     "line": 103,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S03_048_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "हाँ, Elephant!",
+     "tags": [
+      "praise"
+     ],
+     "line": 104,
+     "emotion": "excited"
+    },
+    {
+     "op": "group",
+     "tags": [],
+     "block": "praise",
+     "beats": [
+      {
+       "op": "oneof",
+       "beats": [
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_001_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Amazing, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 33,
+         "emotion": "warm, proud",
+         "name": true,
+         "nameText": "Amazing, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_002_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Good job, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 34,
+         "emotion": "bright, cheerful",
+         "name": true,
+         "nameText": "Good job, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_003_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Excellent work, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 35,
+         "emotion": "delighted",
+         "name": true,
+         "nameText": "Excellent work, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_004_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "You are absolutely right, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 36,
+         "emotion": "pleased, clear",
+         "name": true,
+         "nameText": "You are absolutely right, {name}!"
+        }
+       ],
+       "line": 32
+      }
+     ],
+     "line": 105
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S03_049_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "तुमने पहचान लिया!",
+     "tags": [],
+     "line": 106,
+     "emotion": "proud"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S03_050_MUNMUN",
+     "speaker": "MUNMUN",
+     "text": "Elephant दादा तो garden की तरफ़ गए थे…",
+     "tags": [],
+     "line": 107,
+     "emotion": "chirpy, helpful, squeaky"
+    },
+    {
+     "op": "say",
+     "cue": "gadbad_tag",
+     "speaker": "MUNMUN",
+     "text": "…Inspector Gadbad Pandey!",
+     "tags": [
+      "joke"
+     ],
+     "line": 108,
+     "emotion": "cheerful, squeaky, sing-song"
+    },
+    {
+     "op": "say",
+     "cue": "gadbad_fix",
+     "speaker": "INSPECTOR",
+     "text": "Gadbad नहीं… [shouts] GULBUL Pandey!",
+     "tags": [
+      "joke"
+     ],
+     "line": 109,
+     "emotion": "annoyed, booming"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S03_051_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "चलो garden में! उनसे box के बारे में पूछते हैं!",
+     "tags": [],
+     "line": 110,
+     "emotion": "eager"
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "title": "सोता हुआ Elephant",
+   "onJump": [],
+   "beats": [
+    {
+     "op": "bed",
+     "cue": "lib:jungle_day",
+     "line": 114,
+     "volume": 0.2
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:snore",
+     "tags": [],
+     "line": 115,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S04_052_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "देखो Detective! Elephant दादा तो सो रहे हैं! उन्हें जगाना है… ताली बजाओ — दादा को जगाओ!",
+     "tags": [],
+     "line": 116,
+     "emotion": "stage whisper rising to a chant — full level"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S04_053_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "सब साथ में — ताली बजाओ, दादा को जगाओ!",
+     "tags": [
+      "action"
+     ],
+     "line": 117,
+     "emotion": "chanting, rhythmic"
+    },
+    {
+     "op": "wait",
+     "ms": 4000,
+     "line": 118
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:clap",
+     "tags": [],
+     "line": 119,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:elephant_trumpet",
+     "tags": [],
+     "line": 120,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S04_054_ELEPHANT",
+     "speaker": "ELEPHANT",
+     "text": "उह… उह…? क्या हुआ? मुझे क्यों जगाया?",
+     "tags": [],
+     "line": 121,
+     "emotion": "sleepy, slow, yawning"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S04_055_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "Elephant दादा! क्या आपने Doctor Munmun का box देखा है?",
+     "tags": [],
+     "line": 122,
+     "emotion": "polite, clear"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S04_056_ELEPHANT",
+     "speaker": "ELEPHANT",
+     "text": "Box तो नहीं देखा। मैं खाना ढूँढने गया था… पर Kitchen में तो कपड़े सूख रहे थे!",
+     "tags": [],
+     "line": 123,
+     "emotion": "sleepy, grumbling"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S04_057_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "Detective, ध्यान से सुनो…",
+     "tags": [
+      "name"
+     ],
+     "line": 124,
+     "emotion": "hushed",
+     "name": true,
+     "nameText": "{name}, ध्यान से सुनो…"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S04_058_ELEPHANT",
+     "speaker": "ELEPHANT",
+     "text": "मुझे अभी भी भूख लग रही है! पहले मैं कुछ खाऊँगा… फिर ही बात कर पाऊँगा!",
+     "tags": [],
+     "line": 125,
+     "emotion": "hungry, dramatic, grumbling"
+    },
+    {
+     "op": "ask",
+     "card": "SNACK",
+     "prompt": {
+      "op": "say",
+      "cue": "GULBUL_PANDEY_S04_059_INSPECTOR",
+      "speaker": "INSPECTOR",
+      "text": "Detective… क्या तुम्हारे पास कुछ खाने को है? Elephant दादा को खिलाओ!",
+      "tags": [],
+      "line": 128,
+      "emotion": "warm, turning to the child"
+     },
+     "hints": [
+      {
+       "op": "say",
+       "cue": "GULBUL_PANDEY_S04_060_INSPECTOR",
+       "speaker": "INSPECTOR",
+       "text": "Elephant दादा को biscuit बहुत पसंद है! Biscuit ढूँढो।",
+       "tags": [],
+       "line": 129,
+       "emotion": "kind"
+      },
+      {
+       "op": "say",
+       "cue": "GULBUL_PANDEY_S04_061_INSPECTOR",
+       "speaker": "INSPECTOR",
+       "text": "Biscuit वाला card — जिस पर गोल, भूरा biscuit बना है।",
+       "tags": [],
+       "line": 130,
+       "emotion": "kind"
+      },
+      {
+       "op": "say",
+       "cue": "GULBUL_PANDEY_S04_062_INSPECTOR",
+       "speaker": "INSPECTOR",
+       "text": "Biscuit वाला card tap करो!",
+       "tags": [],
+       "line": 131,
+       "emotion": "kind, clear"
+      }
+     ],
+     "afterPrompt": [],
+     "remind": null,
+     "tags": [],
+     "line": 127
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:biscuit_crunch",
+     "tags": [],
+     "line": 132,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S04_063_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "हाँ, Biscuit!",
+     "tags": [
+      "praise"
+     ],
+     "line": 133,
+     "emotion": "excited"
+    },
+    {
+     "op": "group",
+     "tags": [],
+     "block": "praise",
+     "beats": [
+      {
+       "op": "oneof",
+       "beats": [
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_001_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Amazing, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 33,
+         "emotion": "warm, proud",
+         "name": true,
+         "nameText": "Amazing, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_002_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Good job, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 34,
+         "emotion": "bright, cheerful",
+         "name": true,
+         "nameText": "Good job, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_003_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Excellent work, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 35,
+         "emotion": "delighted",
+         "name": true,
+         "nameText": "Excellent work, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_004_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "You are absolutely right, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 36,
+         "emotion": "pleased, clear",
+         "name": true,
+         "nameText": "You are absolutely right, {name}!"
+        }
+       ],
+       "line": 32
+      }
+     ],
+     "line": 134
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S04_064_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "Elephant दादा को खाना मिल गया!",
+     "tags": [],
+     "line": 135,
+     "emotion": "pleased"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S04_065_ELEPHANT",
+     "speaker": "ELEPHANT",
+     "text": "आहा! [laughs] YUMMY! Thank you, Detective! [curious] जब मैं Doctor के घर गया था… तो मैंने ऐसी आवाज़ सुनी थी!",
+     "tags": [],
+     "line": 136,
+     "emotion": "happy, energetic"
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:dog_bark",
+     "tags": [],
+     "line": 137,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "ask",
+     "card": "DOG",
+     "prompt": {
+      "op": "say",
+      "cue": "GULBUL_PANDEY_S04_066_INSPECTOR",
+      "speaker": "INSPECTOR",
+      "text": "अहा! Detective… ये किसकी आवाज़ है?",
+      "tags": [],
+      "line": 139,
+      "emotion": "inquisitive"
+     },
+     "hints": [
+      {
+       "op": "say",
+       "cue": "GULBUL_PANDEY_S04_067_INSPECTOR",
+       "speaker": "INSPECTOR",
+       "text": "Detective, ध्यान से सुनो…",
+       "tags": [
+        "name"
+       ],
+       "line": 140,
+       "emotion": "hushed",
+       "name": true,
+       "nameText": "{name}, ध्यान से सुनो…"
+      },
+      {
+       "op": "sfx",
+       "cue": "lib:dog_bark",
+       "tags": [],
+       "line": 141,
+       "channel": "fg",
+       "wait": true
+      },
+      {
+       "op": "say",
+       "cue": "GULBUL_PANDEY_S04_068_INSPECTOR",
+       "speaker": "INSPECTOR",
+       "text": "Doggy! Doggy वाला card ढूँढो और tap करो!",
+       "tags": [],
+       "line": 142,
+       "emotion": "kind, clear"
+      }
+     ],
+     "afterPrompt": [],
+     "remind": null,
+     "tags": [],
+     "line": 138
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:ting",
+     "tags": [],
+     "line": 143,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S04_069_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "हाँ, Doggy!",
+     "tags": [
+      "praise"
+     ],
+     "line": 144,
+     "emotion": "excited"
+    },
+    {
+     "op": "group",
+     "tags": [],
+     "block": "praise",
+     "beats": [
+      {
+       "op": "oneof",
+       "beats": [
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_001_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Amazing, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 33,
+         "emotion": "warm, proud",
+         "name": true,
+         "nameText": "Amazing, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_002_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Good job, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 34,
+         "emotion": "bright, cheerful",
+         "name": true,
+         "nameText": "Good job, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_003_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Excellent work, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 35,
+         "emotion": "delighted",
+         "name": true,
+         "nameText": "Excellent work, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_004_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "You are absolutely right, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 36,
+         "emotion": "pleased, clear",
+         "name": true,
+         "nameText": "You are absolutely right, {name}!"
+        }
+       ],
+       "line": 32
+      }
+     ],
+     "line": 145
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S04_070_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "ये तो Doggy जी की आवाज़ है! चलो, Doggy जी से मिलते हैं!",
+     "tags": [],
+     "line": 146,
+     "emotion": "cheerful"
+    },
+    {
+     "op": "bed",
+     "stop": true,
+     "line": 147
+    }
+   ]
+  },
+  {
+   "id": "s05",
+   "title": "Doggy का dance",
+   "onJump": [],
+   "beats": [
+    {
+     "op": "sfx",
+     "cue": "lib:dog_pant_bark",
+     "tags": [],
+     "line": 151,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S05_071_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "सुनो Doggy जी… आप Doctor Munmun के घर गए थे?",
+     "tags": [],
+     "line": 152,
+     "emotion": "friendly, inquisitive"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S05_072_DOG",
+     "speaker": "DOG",
+     "text": "हाँ! मुझे बहुत dance करने का मन था, तो मैं वहाँ speaker ढूँढने गया था… पर Bedroom में speaker मिला ही नहीं… [shouts] वहाँ तो कोई खाना बना रहा था!",
+     "tags": [],
+     "line": 153,
+     "emotion": "playful, bouncy, fast"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S05_073_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "Bedroom में खाना?!",
+     "tags": [
+      "joke"
+     ],
+     "line": 154,
+     "emotion": "gasps, playfully shocked"
+    },
+    {
+     "op": "say",
+     "cue": "kaun_karta",
+     "speaker": "INSPECTOR",
+     "text": "ये कौन करता है?!",
+     "tags": [
+      "joke"
+     ],
+     "line": 155,
+     "emotion": "dramatic — the same funny voice every time"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S05_074_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "Doggy जी… क्या तुम्हें पता है Doctor का box कहाँ गया?",
+     "tags": [],
+     "line": 156,
+     "emotion": "curious"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S05_075_DOG",
+     "speaker": "DOG",
+     "text": "हाँ! मुझे कुछ तो पता है! [laughs] पर मेरा अभी DANCE करने का बहुत मन कर रहा है! पहले कुछ music लगाओ, Detective के साथ dance करेंगे… उसके बाद बताऊँगा!",
+     "tags": [],
+     "line": 157,
+     "emotion": "excited, bouncy"
+    },
+    {
+     "op": "ask",
+     "card": "MUSIC",
+     "prompt": {
+      "op": "say",
+      "cue": "GULBUL_PANDEY_S05_076_INSPECTOR",
+      "speaker": "INSPECTOR",
+      "text": "Detective, ज़रा music लगाओ!",
+      "tags": [],
+      "line": 159,
+      "emotion": "inviting"
+     },
+     "hints": [
+      {
+       "op": "say",
+       "cue": "GULBUL_PANDEY_S05_077_INSPECTOR",
+       "speaker": "INSPECTOR",
+       "text": "Music वाला card tap करो — फिर हम dance करेंगे!",
+       "tags": [],
+       "line": 160,
+       "emotion": "kind"
+      },
+      {
+       "op": "say",
+       "cue": "GULBUL_PANDEY_S05_078_INSPECTOR",
+       "speaker": "INSPECTOR",
+       "text": "Music वाला card — जिस पर गाने का निशान बना है।",
+       "tags": [],
+       "line": 161,
+       "emotion": "kind"
+      },
+      {
+       "op": "say",
+       "cue": "GULBUL_PANDEY_S05_079_INSPECTOR",
+       "speaker": "INSPECTOR",
+       "text": "Music वाला card tap करो!",
+       "tags": [],
+       "line": 162,
+       "emotion": "kind, clear"
+      }
+     ],
+     "afterPrompt": [],
+     "remind": null,
+     "tags": [],
+     "line": 158
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S05_080_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "हाँ, Music!",
+     "tags": [
+      "praise"
+     ],
+     "line": 163,
+     "emotion": "excited"
+    },
+    {
+     "op": "group",
+     "tags": [],
+     "block": "praise",
+     "beats": [
+      {
+       "op": "oneof",
+       "beats": [
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_001_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Amazing, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 33,
+         "emotion": "warm, proud",
+         "name": true,
+         "nameText": "Amazing, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_002_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Good job, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 34,
+         "emotion": "bright, cheerful",
+         "name": true,
+         "nameText": "Good job, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_003_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Excellent work, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 35,
+         "emotion": "delighted",
+         "name": true,
+         "nameText": "Excellent work, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_004_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "You are absolutely right, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 36,
+         "emotion": "pleased, clear",
+         "name": true,
+         "nameText": "You are absolutely right, {name}!"
+        }
+       ],
+       "line": 32
+      }
+     ],
+     "line": 164
+    },
+    {
+     "op": "music",
+     "cue": "lib:dance_loop",
+     "line": 165
+    },
+    {
+     "op": "duck",
+     "cue": "GULBUL_PANDEY_S05_081_DOG",
+     "speaker": "DOG",
+     "text": "WOOHOOO! Detective, मेरे साथ ताली बजाओ! Clap! Clap! Clap!",
+     "tags": [
+      "action"
+     ],
+     "line": 166,
+     "emotion": "shouting over music, super excited"
+    },
+    {
+     "op": "music",
+     "at": 8.0,
+     "line": 167
+    },
+    {
+     "op": "duck",
+     "cue": "GULBUL_PANDEY_S05_082_DOG",
+     "speaker": "DOG",
+     "text": "अब हाथ ऊपर… हिलाओ, हिलाओ! YAYYY!",
+     "tags": [
+      "action"
+     ],
+     "line": 168,
+     "emotion": "shouting over music, playful"
+    },
+    {
+     "op": "music",
+     "at": 19.0,
+     "line": 169
+    },
+    {
+     "op": "music",
+     "stop": true,
+     "line": 170
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:clap",
+     "tags": [],
+     "line": 171,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S05_083_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "वाह Detective! Great dance!",
+     "tags": [
+      "praise"
+     ],
+     "line": 172,
+     "emotion": "excited"
+    },
+    {
+     "op": "group",
+     "tags": [],
+     "block": "praise",
+     "beats": [
+      {
+       "op": "oneof",
+       "beats": [
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_001_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Amazing, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 33,
+         "emotion": "warm, proud",
+         "name": true,
+         "nameText": "Amazing, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_002_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Good job, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 34,
+         "emotion": "bright, cheerful",
+         "name": true,
+         "nameText": "Good job, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_003_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Excellent work, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 35,
+         "emotion": "delighted",
+         "name": true,
+         "nameText": "Excellent work, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_004_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "You are absolutely right, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 36,
+         "emotion": "pleased, clear",
+         "name": true,
+         "nameText": "You are absolutely right, {name}!"
+        }
+       ],
+       "line": 32
+      }
+     ],
+     "line": 173
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S05_084_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "मज़ा आ गया!",
+     "tags": [],
+     "line": 174,
+     "emotion": "happy, laughing"
+    }
+   ]
+  },
+  {
+   "id": "s06",
+   "title": "कपड़ों का clue",
+   "onJump": [],
+   "beats": [
+    {
+     "op": "sfx",
+     "cue": "lib:dog_pant_bark",
+     "tags": [],
+     "line": 178,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S06_085_DOG",
+     "speaker": "DOG",
+     "text": "WOOHOOO! मज़ा आ गया! क्या dance किया है Detective जी! अच्छा अब secret सुनो…",
+     "tags": [],
+     "line": 179,
+     "emotion": "panting, happy"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S06_086_DOG",
+     "speaker": "DOG",
+     "text": "मैंने Doctor का box देखा था… गीले कपड़ों के पास! वहाँ कपड़े सूख रहे थे!",
+     "tags": [],
+     "line": 180,
+     "emotion": "whispering playfully, conspiratorial"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S06_087_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "गीले कपड़ों के पास?",
+     "tags": [],
+     "line": 182,
+     "emotion": "curious, thinking"
+    },
+    {
+     "op": "ask",
+     "card": "KITCHEN",
+     "prompt": {
+      "op": "say",
+      "cue": "GULBUL_PANDEY_S06_088_INSPECTOR",
+      "speaker": "INSPECTOR",
+      "text": "Detective… Doctor Munmun ने कपड़े किस room में सुखाए थे — Kitchen या Bedroom? उस room का card tap करो!",
+      "tags": [],
+      "line": 184,
+      "emotion": "inviting the child to think"
+     },
+     "hints": [
+      {
+       "op": "say",
+       "cue": "GULBUL_PANDEY_S06_089_INSPECTOR",
+       "speaker": "INSPECTOR",
+       "text": "Bedroom में तो खाना बन रहा था! कपड़े दूसरे room में सूख रहे थे…",
+       "tags": [],
+       "line": 185,
+       "emotion": "warm, gently redirecting"
+      },
+      {
+       "op": "say",
+       "cue": "GULBUL_PANDEY_S06_090_MUNMUN",
+       "speaker": "MUNMUN",
+       "text": "मैं Kitchen में कपड़े सुखा रही थी…",
+       "tags": [],
+       "line": 186,
+       "emotion": "thinking aloud, squeaky"
+      },
+      {
+       "op": "say",
+       "cue": "GULBUL_PANDEY_S06_091_INSPECTOR",
+       "speaker": "INSPECTOR",
+       "text": "Kitchen वाला card ढूँढो — जिस पर गैस और बर्तन बने हैं — और tap करो!",
+       "tags": [],
+       "line": 187,
+       "emotion": "kind, clear"
+      }
+     ],
+     "afterPrompt": [],
+     "remind": null,
+     "tags": [],
+     "line": 183
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:ting",
+     "tags": [],
+     "line": 188,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S06_092_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "हाँ, Kitchen!",
+     "tags": [
+      "praise"
+     ],
+     "line": 189,
+     "emotion": "excited"
+    },
+    {
+     "op": "group",
+     "tags": [],
+     "block": "praise",
+     "beats": [
+      {
+       "op": "oneof",
+       "beats": [
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_001_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Amazing, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 33,
+         "emotion": "warm, proud",
+         "name": true,
+         "nameText": "Amazing, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_002_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Good job, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 34,
+         "emotion": "bright, cheerful",
+         "name": true,
+         "nameText": "Good job, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_003_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Excellent work, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 35,
+         "emotion": "delighted",
+         "name": true,
+         "nameText": "Excellent work, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_004_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "You are absolutely right, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 36,
+         "emotion": "pleased, clear",
+         "name": true,
+         "nameText": "You are absolutely right, {name}!"
+        }
+       ],
+       "line": 32
+      }
+     ],
+     "line": 190
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S06_093_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "चलो वहीं ढूँढते हैं!",
+     "tags": [],
+     "line": 191,
+     "emotion": "eager"
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:footsteps_cloth_rustle",
+     "tags": [],
+     "line": 192,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S06_095_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "ये towel ज़रा हटाओ… [gasps] अरे! इसके पीछे क्या है?",
+     "tags": [],
+     "line": 193,
+     "emotion": "building suspense, stage whisper rising"
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:ting",
+     "tags": [],
+     "line": 194,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S06_096_MUNMUN",
+     "speaker": "MUNMUN",
+     "text": "मेरा box! [laughs] अरे, मैं ही इसे यहाँ रखकर भूल गई थी!",
+     "tags": [],
+     "line": 195,
+     "emotion": "relieved, squeaky, laughing"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S06_097_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "तुमने सही room ढूँढा, Detective! Box मिल गया!",
+     "tags": [],
+     "line": 196,
+     "emotion": "warm, proud"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S06_098_MUNMUN",
+     "speaker": "MUNMUN",
+     "text": "YAYYY!! मेरा box मिल गया! Thank you Detective जी! Thank you…",
+     "tags": [],
+     "line": 197,
+     "emotion": "overjoyed, squealing"
+    },
+    {
+     "op": "say",
+     "cue": "gadbad_tag",
+     "speaker": "MUNMUN",
+     "text": "…Inspector Gadbad Pandey!",
+     "tags": [
+      "joke"
+     ],
+     "line": 198,
+     "emotion": "cheerful, squeaky, sing-song"
+    },
+    {
+     "op": "say",
+     "cue": "gadbad_fix",
+     "speaker": "INSPECTOR",
+     "text": "Gadbad नहीं… [shouts] GULBUL Pandey!",
+     "tags": [
+      "joke"
+     ],
+     "line": 199,
+     "emotion": "annoyed, booming"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S06_099_MUNMUN",
+     "speaker": "MUNMUN",
+     "text": "हाँ हाँ! अब मैं bedroom में जाकर सबका खाना — [gasps] oops… patients को ठीक कर सकती हूँ!",
+     "tags": [],
+     "line": 200,
+     "emotion": "joyful, squeaky"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S06_100_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "Bedroom में patients?!",
+     "tags": [
+      "joke"
+     ],
+     "line": 201,
+     "emotion": "exaggerated scream"
+    },
+    {
+     "op": "say",
+     "cue": "kaun_karta",
+     "speaker": "INSPECTOR",
+     "text": "ये कौन करता है?!",
+     "tags": [
+      "joke"
+     ],
+     "line": 202,
+     "emotion": "dramatic — the same funny voice every time"
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S06_101_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "वाह Detective, तुमने तो कमाल कर दिया!",
+     "tags": [],
+     "line": 203,
+     "emotion": "warm and proud, to the child"
+    },
+    {
+     "op": "group",
+     "tags": [],
+     "block": "praise",
+     "beats": [
+      {
+       "op": "oneof",
+       "beats": [
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_001_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Amazing, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 33,
+         "emotion": "warm, proud",
+         "name": true,
+         "nameText": "Amazing, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_002_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Good job, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 34,
+         "emotion": "bright, cheerful",
+         "name": true,
+         "nameText": "Good job, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_003_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "Excellent work, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 35,
+         "emotion": "delighted",
+         "name": true,
+         "nameText": "Excellent work, {name}!"
+        },
+        {
+         "op": "say",
+         "cue": "GULBUL_PANDEY_S00_004_INSPECTOR",
+         "speaker": "INSPECTOR",
+         "text": "You are absolutely right, Detective!",
+         "tags": [
+          "praise",
+          "name"
+         ],
+         "line": 36,
+         "emotion": "pleased, clear",
+         "name": true,
+         "nameText": "You are absolutely right, {name}!"
+        }
+       ],
+       "line": 32
+      }
+     ],
+     "line": 204
+    },
+    {
+     "op": "say",
+     "cue": "GULBUL_PANDEY_S06_102_INSPECTOR",
+     "speaker": "INSPECTOR",
+     "text": "SALUTE!",
+     "tags": [],
+     "line": 205,
+     "emotion": "heroic, shouting"
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:police_whistle_drums",
+     "tags": [],
+     "line": 206,
+     "channel": "fg",
+     "wait": true
+    }
+   ]
+  }
+ ],
+ "variants": {},
+ "clips": {
+  "GULBUL_PANDEY_S00_001_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Amazing, Detective!",
+   "emotion": "warm, proud",
+   "scene": 0,
+   "library": false,
+   "nameText": "Amazing, {name}!"
+  },
+  "GULBUL_PANDEY_S00_002_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Good job, Detective!",
+   "emotion": "bright, cheerful",
+   "scene": 0,
+   "library": false,
+   "nameText": "Good job, {name}!"
+  },
+  "GULBUL_PANDEY_S00_003_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Excellent work, Detective!",
+   "emotion": "delighted",
+   "scene": 0,
+   "library": false,
+   "nameText": "Excellent work, {name}!"
+  },
+  "GULBUL_PANDEY_S00_004_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "You are absolutely right, Detective!",
+   "emotion": "pleased, clear",
+   "scene": 0,
+   "library": false,
+   "nameText": "You are absolutely right, {name}!"
+  },
+  "lib:phone_ring": {
+   "kind": "sfx",
+   "name": "phone_ring",
+   "scene": 1,
+   "library": true
+  },
+  "lib:phone_beep": {
+   "kind": "sfx",
+   "name": "phone_beep",
+   "scene": 1,
+   "library": true
+  },
+  "GULBUL_PANDEY_S01_007_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Hello! [dramatically] मेरा नाम है… [shouts] INSPECTOR GULBUL PANDEY!",
+   "emotion": "booming, proud",
+   "scene": 1,
+   "library": false
+  },
+  "GULBUL_PANDEY_S01_008_MUNMUN": {
+   "kind": "speech",
+   "speaker": "MUNMUN",
+   "text": "Inspector साहब! Inspector साहब! [gasps] मेरा box… मेरा box मिल नहीं रहा! [worried] उसके बिना मैं patients को ठीक कैसे करूँगी? आप ढूँढने में help करेंगे?",
+   "emotion": "panicked, breathless",
+   "scene": 1,
+   "library": false
+  },
+  "GULBUL_PANDEY_S01_009_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Team! [shouts] Doctor Munmun का box ढूँढना है!",
+   "emotion": "excited, commanding",
+   "scene": 1,
+   "library": false
+  },
+  "GULBUL_PANDEY_S01_010_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "अरे! क्या तुम हमारे Detective बनोगे?",
+   "emotion": "warm, inviting",
+   "scene": 1,
+   "library": false,
+   "nameText": "अरे {name}! क्या तुम हमारे Detective बनोगे?"
+  },
+  "GULBUL_PANDEY_S01_011_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "तो सामने रखी हुई Detective Cap और Goggles पहन लो!",
+   "emotion": "warm, encouraging",
+   "scene": 1,
+   "library": false
+  },
+  "GULBUL_PANDEY_S01_012_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "जब ready हो जाओ, तब Cap and Goggles वाला card tap करो!",
+   "emotion": "relaxed, friendly",
+   "scene": 1,
+   "library": false
+  },
+  "GULBUL_PANDEY_S01_013_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "आराम से पहन लो। Ready होने पर Cap and Goggles वाला card tap करना!",
+   "emotion": "relaxed, reassuring",
+   "scene": 1,
+   "library": false
+  },
+  "GULBUL_PANDEY_S01_014_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Cap and Goggles वाला card ढूँढो — जिस पर Detective की टोपी और चश्मा बना है।",
+   "emotion": "kind, clear",
+   "scene": 1,
+   "library": false
+  },
+  "GULBUL_PANDEY_S01_015_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Cap and Goggles वाला card tap करो!",
+   "emotion": "kind, clear",
+   "scene": 1,
+   "library": false
+  },
+  "lib:magic_sparkle": {
+   "kind": "sfx",
+   "name": "magic_sparkle",
+   "scene": 1,
+   "library": true
+  },
+  "GULBUL_PANDEY_S01_016_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "हाँ, Cap and Goggles!",
+   "emotion": "excited",
+   "scene": 1,
+   "library": false
+  },
+  "GULBUL_PANDEY_S01_017_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Great, our Detective is ready!",
+   "emotion": "heroic, proud",
+   "scene": 1,
+   "library": false
+  },
+  "GULBUL_PANDEY_S01_018_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Ready, Detective!",
+   "emotion": "heroic, proud",
+   "scene": 1,
+   "library": false,
+   "nameText": "Ready, Detective {name}!"
+  },
+  "lib:brass_sting": {
+   "kind": "sfx",
+   "name": "brass_sting",
+   "scene": 2,
+   "library": true
+  },
+  "GULBUL_PANDEY_S02_020_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Detective… मैं, तुम और हमारे दो हवलदार — हम चार लोग हैं! [mischievously] Bike पर चलें? हवलदार जी… बैठो!",
+   "emotion": "inquisitive, then mischievous",
+   "scene": 2,
+   "library": false
+  },
+  "lib:slide_whistle_wobble": {
+   "kind": "sfx",
+   "name": "slide_whistle_wobble",
+   "scene": 2,
+   "library": true
+  },
+  "lib:thud": {
+   "kind": "sfx",
+   "name": "thud",
+   "scene": 2,
+   "library": true
+  },
+  "GULBUL_PANDEY_S02_023_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "अरे! [laughs] हवलदार जी तो गिर गए! [shouts] धड़ाम!",
+   "emotion": "alarmed, laughing",
+   "scene": 2,
+   "library": false
+  },
+  "GULBUL_PANDEY_S02_024_HAVALDAR": {
+   "kind": "speech",
+   "speaker": "HAVALDAR",
+   "text": "ऊऊऊह…",
+   "emotion": "dazed, groaning",
+   "scene": 2,
+   "library": false
+  },
+  "GULBUL_PANDEY_S02_025_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "चार लोग एक Bike पर?! नहीं नहीं…",
+   "emotion": "shaking his head, amused",
+   "scene": 2,
+   "library": false
+  },
+  "GULBUL_PANDEY_S02_026_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Detective… किस गाड़ी में हम चारों बैठ सकते हैं? उसका card tap करो!",
+   "emotion": "inquisitive",
+   "scene": 2,
+   "library": false
+  },
+  "GULBUL_PANDEY_S02_027_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "कोई बड़ी गाड़ी ढूँढो — जिसमें चार लोग आराम से बैठ जाएँ!",
+   "emotion": "kind",
+   "scene": 2,
+   "library": false
+  },
+  "GULBUL_PANDEY_S02_028_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Car में हम सब बैठ सकते हैं! Car वाला card ढूँढो।",
+   "emotion": "kind",
+   "scene": 2,
+   "library": false
+  },
+  "GULBUL_PANDEY_S02_029_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Car वाला card tap करो!",
+   "emotion": "kind, clear",
+   "scene": 2,
+   "library": false
+  },
+  "lib:siren_engine": {
+   "kind": "sfx",
+   "name": "siren_engine",
+   "scene": 2,
+   "library": true
+  },
+  "GULBUL_PANDEY_S02_031_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "हाँ, Car!",
+   "emotion": "excited",
+   "scene": 2,
+   "library": false
+  },
+  "GULBUL_PANDEY_S02_032_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "हवलदार… [shouts] गाड़ी निकालो! [excited] चलो… Vroom Vroom!",
+   "emotion": "shouting dramatically",
+   "scene": 2,
+   "library": false
+  },
+  "lib:doorbell_door_creak": {
+   "kind": "sfx",
+   "name": "doorbell_door_creak",
+   "scene": 3,
+   "library": true
+  },
+  "GULBUL_PANDEY_S03_034_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Doctor Munmun! हम आपके घर आ गए!",
+   "emotion": "cheerful, calling out",
+   "scene": 3,
+   "library": false
+  },
+  "GULBUL_PANDEY_S03_035_MUNMUN": {
+   "kind": "speech",
+   "speaker": "MUNMUN",
+   "text": "Thank you…",
+   "emotion": "cheerful, squeaky, sing-song",
+   "scene": 3,
+   "library": false
+  },
+  "gadbad_tag": {
+   "kind": "speech",
+   "speaker": "MUNMUN",
+   "text": "…Inspector Gadbad Pandey!",
+   "emotion": "cheerful, squeaky, sing-song",
+   "scene": 3,
+   "library": false
+  },
+  "gadbad_fix": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Gadbad नहीं… [shouts] GULBUL Pandey!",
+   "emotion": "annoyed, booming",
+   "scene": 3,
+   "library": false
+  },
+  "GULBUL_PANDEY_S03_036_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Anyway… आपने last time अपना box कहाँ देखा था?",
+   "emotion": "sighs, then businesslike",
+   "scene": 3,
+   "library": false
+  },
+  "GULBUL_PANDEY_S03_037_MUNMUN": {
+   "kind": "speech",
+   "speaker": "MUNMUN",
+   "text": "उम्म… [nervous laugh] मुझे याद नहीं! जब मैं Kitchen में कपड़े सुखा रही थी, तब box मेरे हाथ में ही था! [giggles] फिर पता नहीं कहाँ रख दिया!",
+   "emotion": "flustered, thinking aloud, squeaky",
+   "scene": 3,
+   "library": false
+  },
+  "GULBUL_PANDEY_S03_038_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Kitchen में कपड़े…?!",
+   "emotion": "gasps, extremely shocked",
+   "scene": 3,
+   "library": false
+  },
+  "kaun_karta": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "ये कौन करता है?!",
+   "emotion": "dramatic — the same funny voice every time",
+   "scene": 3,
+   "library": false
+  },
+  "GULBUL_PANDEY_S03_039_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "तो खाना कहाँ बनाती हैं आप?",
+   "emotion": "lower voice, suspicious",
+   "scene": 3,
+   "library": false
+  },
+  "GULBUL_PANDEY_S03_040_MUNMUN": {
+   "kind": "speech",
+   "speaker": "MUNMUN",
+   "text": "अरे… Bedroom में!",
+   "emotion": "giggles, squeaky",
+   "scene": 3,
+   "library": false
+  },
+  "GULBUL_PANDEY_S03_041_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Bedroom में खाना?!",
+   "emotion": "wailing, hands on head",
+   "scene": 3,
+   "library": false
+  },
+  "lib:mystery_sting": {
+   "kind": "sfx",
+   "name": "mystery_sting",
+   "scene": 3,
+   "library": true
+  },
+  "GULBUL_PANDEY_S03_043_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Detective, देखो!",
+   "emotion": "calling, warm",
+   "scene": 3,
+   "library": false,
+   "nameText": "{name}, देखो!"
+  },
+  "GULBUL_PANDEY_S03_044_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "यहाँ तो बड़े-बड़े पैरों के निशान हैं! कौनसा animal आया होगा यहाँ… जिसके इतने बड़े-बड़े, मोटे-मोटे पैर हैं?",
+   "emotion": "stage whisper, curious — full level",
+   "scene": 3,
+   "library": false
+  },
+  "GULBUL_PANDEY_S03_045_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "क्या लगता है? उस animal का card tap करो!",
+   "emotion": "curious",
+   "scene": 3,
+   "library": false
+  },
+  "GULBUL_PANDEY_S03_046_MUNMUN": {
+   "kind": "speech",
+   "speaker": "MUNMUN",
+   "text": "हाँ! याद आया! मेरा friend आया था… जिसकी बहुत बड़ी-सी सूँड़ थी!",
+   "emotion": "suddenly remembering, excited, squeaky",
+   "scene": 3,
+   "library": false
+  },
+  "lib:elephant_trumpet": {
+   "kind": "sfx",
+   "name": "elephant_trumpet",
+   "scene": 3,
+   "library": true
+  },
+  "GULBUL_PANDEY_S03_047_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Elephant! लंबी सूँड़ वाला Elephant card ढूँढो और tap करो!",
+   "emotion": "warm and clear",
+   "scene": 3,
+   "library": false
+  },
+  "lib:ting": {
+   "kind": "sfx",
+   "name": "ting",
+   "scene": 3,
+   "library": true
+  },
+  "GULBUL_PANDEY_S03_048_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "हाँ, Elephant!",
+   "emotion": "excited",
+   "scene": 3,
+   "library": false
+  },
+  "GULBUL_PANDEY_S03_049_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "तुमने पहचान लिया!",
+   "emotion": "proud",
+   "scene": 3,
+   "library": false
+  },
+  "GULBUL_PANDEY_S03_050_MUNMUN": {
+   "kind": "speech",
+   "speaker": "MUNMUN",
+   "text": "Elephant दादा तो garden की तरफ़ गए थे…",
+   "emotion": "chirpy, helpful, squeaky",
+   "scene": 3,
+   "library": false
+  },
+  "GULBUL_PANDEY_S03_051_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "चलो garden में! उनसे box के बारे में पूछते हैं!",
+   "emotion": "eager",
+   "scene": 3,
+   "library": false
+  },
+  "lib:jungle_day": {
+   "kind": "bed",
+   "name": "jungle_day",
+   "scene": 4,
+   "library": true
+  },
+  "lib:snore": {
+   "kind": "sfx",
+   "name": "snore",
+   "scene": 4,
+   "library": true
+  },
+  "GULBUL_PANDEY_S04_052_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "देखो Detective! Elephant दादा तो सो रहे हैं! उन्हें जगाना है… ताली बजाओ — दादा को जगाओ!",
+   "emotion": "stage whisper rising to a chant — full level",
+   "scene": 4,
+   "library": false
+  },
+  "GULBUL_PANDEY_S04_053_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "सब साथ में — ताली बजाओ, दादा को जगाओ!",
+   "emotion": "chanting, rhythmic",
+   "scene": 4,
+   "library": false
+  },
+  "lib:clap": {
+   "kind": "sfx",
+   "name": "clap",
+   "scene": 4,
+   "library": true
+  },
+  "GULBUL_PANDEY_S04_054_ELEPHANT": {
+   "kind": "speech",
+   "speaker": "ELEPHANT",
+   "text": "उह… उह…? क्या हुआ? मुझे क्यों जगाया?",
+   "emotion": "sleepy, slow, yawning",
+   "scene": 4,
+   "library": false
+  },
+  "GULBUL_PANDEY_S04_055_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Elephant दादा! क्या आपने Doctor Munmun का box देखा है?",
+   "emotion": "polite, clear",
+   "scene": 4,
+   "library": false
+  },
+  "GULBUL_PANDEY_S04_056_ELEPHANT": {
+   "kind": "speech",
+   "speaker": "ELEPHANT",
+   "text": "Box तो नहीं देखा। मैं खाना ढूँढने गया था… पर Kitchen में तो कपड़े सूख रहे थे!",
+   "emotion": "sleepy, grumbling",
+   "scene": 4,
+   "library": false
+  },
+  "GULBUL_PANDEY_S04_057_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Detective, ध्यान से सुनो…",
+   "emotion": "hushed",
+   "scene": 4,
+   "library": false,
+   "nameText": "{name}, ध्यान से सुनो…"
+  },
+  "GULBUL_PANDEY_S04_058_ELEPHANT": {
+   "kind": "speech",
+   "speaker": "ELEPHANT",
+   "text": "मुझे अभी भी भूख लग रही है! पहले मैं कुछ खाऊँगा… फिर ही बात कर पाऊँगा!",
+   "emotion": "hungry, dramatic, grumbling",
+   "scene": 4,
+   "library": false
+  },
+  "GULBUL_PANDEY_S04_059_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Detective… क्या तुम्हारे पास कुछ खाने को है? Elephant दादा को खिलाओ!",
+   "emotion": "warm, turning to the child",
+   "scene": 4,
+   "library": false
+  },
+  "GULBUL_PANDEY_S04_060_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Elephant दादा को biscuit बहुत पसंद है! Biscuit ढूँढो।",
+   "emotion": "kind",
+   "scene": 4,
+   "library": false
+  },
+  "GULBUL_PANDEY_S04_061_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Biscuit वाला card — जिस पर गोल, भूरा biscuit बना है।",
+   "emotion": "kind",
+   "scene": 4,
+   "library": false
+  },
+  "GULBUL_PANDEY_S04_062_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Biscuit वाला card tap करो!",
+   "emotion": "kind, clear",
+   "scene": 4,
+   "library": false
+  },
+  "lib:biscuit_crunch": {
+   "kind": "sfx",
+   "name": "biscuit_crunch",
+   "scene": 4,
+   "library": true
+  },
+  "GULBUL_PANDEY_S04_063_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "हाँ, Biscuit!",
+   "emotion": "excited",
+   "scene": 4,
+   "library": false
+  },
+  "GULBUL_PANDEY_S04_064_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Elephant दादा को खाना मिल गया!",
+   "emotion": "pleased",
+   "scene": 4,
+   "library": false
+  },
+  "GULBUL_PANDEY_S04_065_ELEPHANT": {
+   "kind": "speech",
+   "speaker": "ELEPHANT",
+   "text": "आहा! [laughs] YUMMY! Thank you, Detective! [curious] जब मैं Doctor के घर गया था… तो मैंने ऐसी आवाज़ सुनी थी!",
+   "emotion": "happy, energetic",
+   "scene": 4,
+   "library": false
+  },
+  "lib:dog_bark": {
+   "kind": "sfx",
+   "name": "dog_bark",
+   "scene": 4,
+   "library": true
+  },
+  "GULBUL_PANDEY_S04_066_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "अहा! Detective… ये किसकी आवाज़ है?",
+   "emotion": "inquisitive",
+   "scene": 4,
+   "library": false
+  },
+  "GULBUL_PANDEY_S04_067_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Detective, ध्यान से सुनो…",
+   "emotion": "hushed",
+   "scene": 4,
+   "library": false,
+   "nameText": "{name}, ध्यान से सुनो…"
+  },
+  "GULBUL_PANDEY_S04_068_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Doggy! Doggy वाला card ढूँढो और tap करो!",
+   "emotion": "kind, clear",
+   "scene": 4,
+   "library": false
+  },
+  "GULBUL_PANDEY_S04_069_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "हाँ, Doggy!",
+   "emotion": "excited",
+   "scene": 4,
+   "library": false
+  },
+  "GULBUL_PANDEY_S04_070_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "ये तो Doggy जी की आवाज़ है! चलो, Doggy जी से मिलते हैं!",
+   "emotion": "cheerful",
+   "scene": 4,
+   "library": false
+  },
+  "lib:dog_pant_bark": {
+   "kind": "sfx",
+   "name": "dog_pant_bark",
+   "scene": 5,
+   "library": true
+  },
+  "GULBUL_PANDEY_S05_071_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "सुनो Doggy जी… आप Doctor Munmun के घर गए थे?",
+   "emotion": "friendly, inquisitive",
+   "scene": 5,
+   "library": false
+  },
+  "GULBUL_PANDEY_S05_072_DOG": {
+   "kind": "speech",
+   "speaker": "DOG",
+   "text": "हाँ! मुझे बहुत dance करने का मन था, तो मैं वहाँ speaker ढूँढने गया था… पर Bedroom में speaker मिला ही नहीं… [shouts] वहाँ तो कोई खाना बना रहा था!",
+   "emotion": "playful, bouncy, fast",
+   "scene": 5,
+   "library": false
+  },
+  "GULBUL_PANDEY_S05_073_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Bedroom में खाना?!",
+   "emotion": "gasps, playfully shocked",
+   "scene": 5,
+   "library": false
+  },
+  "GULBUL_PANDEY_S05_074_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Doggy जी… क्या तुम्हें पता है Doctor का box कहाँ गया?",
+   "emotion": "curious",
+   "scene": 5,
+   "library": false
+  },
+  "GULBUL_PANDEY_S05_075_DOG": {
+   "kind": "speech",
+   "speaker": "DOG",
+   "text": "हाँ! मुझे कुछ तो पता है! [laughs] पर मेरा अभी DANCE करने का बहुत मन कर रहा है! पहले कुछ music लगाओ, Detective के साथ dance करेंगे… उसके बाद बताऊँगा!",
+   "emotion": "excited, bouncy",
+   "scene": 5,
+   "library": false
+  },
+  "GULBUL_PANDEY_S05_076_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Detective, ज़रा music लगाओ!",
+   "emotion": "inviting",
+   "scene": 5,
+   "library": false
+  },
+  "GULBUL_PANDEY_S05_077_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Music वाला card tap करो — फिर हम dance करेंगे!",
+   "emotion": "kind",
+   "scene": 5,
+   "library": false
+  },
+  "GULBUL_PANDEY_S05_078_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Music वाला card — जिस पर गाने का निशान बना है।",
+   "emotion": "kind",
+   "scene": 5,
+   "library": false
+  },
+  "GULBUL_PANDEY_S05_079_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Music वाला card tap करो!",
+   "emotion": "kind, clear",
+   "scene": 5,
+   "library": false
+  },
+  "GULBUL_PANDEY_S05_080_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "हाँ, Music!",
+   "emotion": "excited",
+   "scene": 5,
+   "library": false
+  },
+  "lib:dance_loop": {
+   "kind": "music",
+   "name": "dance_loop",
+   "scene": 5,
+   "library": true
+  },
+  "GULBUL_PANDEY_S05_081_DOG": {
+   "kind": "speech",
+   "speaker": "DOG",
+   "text": "WOOHOOO! Detective, मेरे साथ ताली बजाओ! Clap! Clap! Clap!",
+   "emotion": "shouting over music, super excited",
+   "scene": 5,
+   "library": false
+  },
+  "GULBUL_PANDEY_S05_082_DOG": {
+   "kind": "speech",
+   "speaker": "DOG",
+   "text": "अब हाथ ऊपर… हिलाओ, हिलाओ! YAYYY!",
+   "emotion": "shouting over music, playful",
+   "scene": 5,
+   "library": false
+  },
+  "GULBUL_PANDEY_S05_083_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "वाह Detective! Great dance!",
+   "emotion": "excited",
+   "scene": 5,
+   "library": false
+  },
+  "GULBUL_PANDEY_S05_084_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "मज़ा आ गया!",
+   "emotion": "happy, laughing",
+   "scene": 5,
+   "library": false
+  },
+  "GULBUL_PANDEY_S06_085_DOG": {
+   "kind": "speech",
+   "speaker": "DOG",
+   "text": "WOOHOOO! मज़ा आ गया! क्या dance किया है Detective जी! अच्छा अब secret सुनो…",
+   "emotion": "panting, happy",
+   "scene": 6,
+   "library": false
+  },
+  "GULBUL_PANDEY_S06_086_DOG": {
+   "kind": "speech",
+   "speaker": "DOG",
+   "text": "मैंने Doctor का box देखा था… गीले कपड़ों के पास! वहाँ कपड़े सूख रहे थे!",
+   "emotion": "whispering playfully, conspiratorial",
+   "scene": 6,
+   "library": false
+  },
+  "GULBUL_PANDEY_S06_087_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "गीले कपड़ों के पास?",
+   "emotion": "curious, thinking",
+   "scene": 6,
+   "library": false
+  },
+  "GULBUL_PANDEY_S06_088_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Detective… Doctor Munmun ने कपड़े किस room में सुखाए थे — Kitchen या Bedroom? उस room का card tap करो!",
+   "emotion": "inviting the child to think",
+   "scene": 6,
+   "library": false
+  },
+  "GULBUL_PANDEY_S06_089_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Bedroom में तो खाना बन रहा था! कपड़े दूसरे room में सूख रहे थे…",
+   "emotion": "warm, gently redirecting",
+   "scene": 6,
+   "library": false
+  },
+  "GULBUL_PANDEY_S06_090_MUNMUN": {
+   "kind": "speech",
+   "speaker": "MUNMUN",
+   "text": "मैं Kitchen में कपड़े सुखा रही थी…",
+   "emotion": "thinking aloud, squeaky",
+   "scene": 6,
+   "library": false
+  },
+  "GULBUL_PANDEY_S06_091_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Kitchen वाला card ढूँढो — जिस पर गैस और बर्तन बने हैं — और tap करो!",
+   "emotion": "kind, clear",
+   "scene": 6,
+   "library": false
+  },
+  "GULBUL_PANDEY_S06_092_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "हाँ, Kitchen!",
+   "emotion": "excited",
+   "scene": 6,
+   "library": false
+  },
+  "GULBUL_PANDEY_S06_093_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "चलो वहीं ढूँढते हैं!",
+   "emotion": "eager",
+   "scene": 6,
+   "library": false
+  },
+  "lib:footsteps_cloth_rustle": {
+   "kind": "sfx",
+   "name": "footsteps_cloth_rustle",
+   "scene": 6,
+   "library": true
+  },
+  "GULBUL_PANDEY_S06_095_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "ये towel ज़रा हटाओ… [gasps] अरे! इसके पीछे क्या है?",
+   "emotion": "building suspense, stage whisper rising",
+   "scene": 6,
+   "library": false
+  },
+  "GULBUL_PANDEY_S06_096_MUNMUN": {
+   "kind": "speech",
+   "speaker": "MUNMUN",
+   "text": "मेरा box! [laughs] अरे, मैं ही इसे यहाँ रखकर भूल गई थी!",
+   "emotion": "relieved, squeaky, laughing",
+   "scene": 6,
+   "library": false
+  },
+  "GULBUL_PANDEY_S06_097_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "तुमने सही room ढूँढा, Detective! Box मिल गया!",
+   "emotion": "warm, proud",
+   "scene": 6,
+   "library": false
+  },
+  "GULBUL_PANDEY_S06_098_MUNMUN": {
+   "kind": "speech",
+   "speaker": "MUNMUN",
+   "text": "YAYYY!! मेरा box मिल गया! Thank you Detective जी! Thank you…",
+   "emotion": "overjoyed, squealing",
+   "scene": 6,
+   "library": false
+  },
+  "GULBUL_PANDEY_S06_099_MUNMUN": {
+   "kind": "speech",
+   "speaker": "MUNMUN",
+   "text": "हाँ हाँ! अब मैं bedroom में जाकर सबका खाना — [gasps] oops… patients को ठीक कर सकती हूँ!",
+   "emotion": "joyful, squeaky",
+   "scene": 6,
+   "library": false
+  },
+  "GULBUL_PANDEY_S06_100_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "Bedroom में patients?!",
+   "emotion": "exaggerated scream",
+   "scene": 6,
+   "library": false
+  },
+  "GULBUL_PANDEY_S06_101_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "वाह Detective, तुमने तो कमाल कर दिया!",
+   "emotion": "warm and proud, to the child",
+   "scene": 6,
+   "library": false
+  },
+  "GULBUL_PANDEY_S06_102_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "SALUTE!",
+   "emotion": "heroic, shouting",
+   "scene": 6,
+   "library": false
+  },
+  "lib:police_whistle_drums": {
+   "kind": "sfx",
+   "name": "police_whistle_drums",
+   "scene": 6,
+   "library": true
+  },
+  "lib:boing": {
+   "kind": "sfx",
+   "name": "boing",
+   "scene": 0,
+   "library": true
+  },
+  "GULBUL_PANDEY_S00_104_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "चलो, एक बार और try करते हैं!",
+   "emotion": "playfully surprised, encouraging",
+   "scene": 0,
+   "library": false
+  },
+  "GULBUL_PANDEY_S00_105_INSPECTOR": {
+   "kind": "speech",
+   "speaker": "INSPECTOR",
+   "text": "ओहो! ये वाला नहीं। Detective, एक और card try करो!",
+   "emotion": "light, encouraging",
+   "scene": 0,
+   "library": false
+  }
+ },
+ "voices": {
+  "INSPECTOR": "Saanu",
+  "MUNMUN": "Munni",
+  "ELEPHANT": "Vardan",
+  "DOG": "Bholu",
+  "HAVALDAR": "Jia"
+ },
+ "tapSound": "lib:tap",
+ "libraryDir": "../../library/",
+ "_notes": []
+}
