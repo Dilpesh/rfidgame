@@ -33,11 +33,14 @@ window.CardRegistry = (function () {
   const KEY = 'kahaniCards';
 
   /* __CARD_REGISTRY_START__ */
-const SEED_VERSION = "2026-09-19b";
+const SEED_VERSION = "2026-10-02a";
 const DEFAULT = {
   "6170247": "BALLOONS",
   "6358547": "BANANA",
+  "1778089577": "BANANA",
   "6375388": "BLANKET",
+  "88154103": "CAKE",
+  "1778512553": "CANDLE",
   "6358348": "CLAP",
   "6373847": "DANCE",
   "6375198": "DISCOBALL",
@@ -53,6 +56,8 @@ const DEFAULT = {
   "6360778": "MANGO",
   "2692278": "MOON",
   "6360574": "MUSIC",
+  "819667906": "MUSIC",
+  "87959223": "PARTYCAP",
   "2696012": "PARTYHORN",
   "6358150": "PRUNERS",
   "6374623": "ROPE",

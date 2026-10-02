@@ -1,4 +1,31 @@
 {
+ "BOBO_BIRTHDAY_S01_001_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Hey! Hi, Captain! मैं हूँ Coco और आज मेरे friend Bobo का birthday है। क्या तुम Bobo की birthday party arrange करने में मेरी help करोगे?",
+  "performance_tag": "[upbeat, welcoming]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/BOBO_BIRTHDAY_S01_001_COCO.mp3",
+  "duration_seconds": 10.37,
+  "integrated_lufs": -16.6,
+  "true_peak_dbfs": -2.1,
+  "name_text": "Hey! Hi, {name}! मैं हूँ Coco और आज मेरे friend Bobo का birthday है। क्या तुम Bobo की birthday party arrange करने में मेरी help करोगे?",
+  "description": "name line (Captain version): Hey! Hi, Captain! मैं हूँ Coco और आज मेरे friend Bobo का birthday है। क्या तुम Bobo की birthday party arrange करने में मेरी help करोगे?",
+  "tags": [
+   "name",
+   "captain"
+  ],
+  "remapped_from": "disk:BOBO_BIRTHDAY_S01_001_COCO"
+ },
  "BOBO_BIRTHDAY_S01_002_COCO": {
   "type": "speech",
   "voice": "COCO",
@@ -14,132 +41,11 @@
   "performance_tag": "[bright]",
   "review_status": "test",
   "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S01_003_COCO.mp3",
+  "file": "generated/BOBO_BIRTHDAY_S01_002_COCO.mp3",
   "duration_seconds": 5.49,
   "integrated_lufs": -16.2,
   "true_peak_dbfs": -2.3,
-  "remapped_from": "BOBO_BIRTHDAY_S01_003_COCO"
- },
- "BOBO_BIRTHDAY_S02_009_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "अगर Bobo और हम सिर्फ cake खाएँगे, तो tummy ache हो सकता है। Party में non-stop मस्ती और dance करने के लिए हमें super energy चाहिए!",
-  "performance_tag": "[explaining, playful]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S02_010_COCO.mp3",
-  "duration_seconds": 10.45,
-  "integrated_lufs": -16.2,
-  "true_peak_dbfs": -2.3,
-  "remapped_from": "BOBO_BIRTHDAY_S02_010_COCO"
- },
- "BOBO_BIRTHDAY_S03_023_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "अब देखो, तुम्हारी table पर एक real Birthday Cap रखी है। पहले उस cap को उठाओ और अपने सर पर पहन लो! पहन लिया?",
-  "performance_tag": "[warm, slow]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S03_028_COCO.mp3",
-  "duration_seconds": 11.23,
-  "integrated_lufs": -16.2,
-  "true_peak_dbfs": -2.2,
-  "remapped_from": "BOBO_BIRTHDAY_S03_028_COCO"
- },
- "BOBO_BIRTHDAY_S04_040_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Captain, clap with me!",
-  "performance_tag": "[calling, rhythmic]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "names-captain/BOBO_BIRTHDAY_S04_046_COCO.mp3",
-  "duration_seconds": 1.96,
-  "integrated_lufs": -16.0,
-  "true_peak_dbfs": -4.0,
-  "name_text": "{name}, clap with me!",
-  "description": "name line (Captain version): Captain, clap with me!",
-  "tags": [
-   "name",
-   "captain"
-  ],
-  "remapped_from": "BOBO_BIRTHDAY_S04_046_COCO"
- },
- "BOBO_BIRTHDAY_S04_046_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Captain, clap with me!",
-  "performance_tag": "[calling, rhythmic]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "names-captain/BOBO_BIRTHDAY_S04_046_COCO.mp3",
-  "duration_seconds": 1.96,
-  "integrated_lufs": -16.0,
-  "true_peak_dbfs": -4.0,
-  "name_text": "{name}, clap with me!",
-  "description": "name line (Captain version): Captain, clap with me!",
-  "tags": [
-   "name",
-   "captain"
-  ]
- },
- "BOBO_BIRTHDAY_S05_048_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Thank you so much, Captain, for helping me plan Bobo's birthday!",
-  "performance_tag": "[खुश होकर, warm]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "names-captain/BOBO_BIRTHDAY_S05_048_COCO.mp3",
-  "duration_seconds": 4.28,
-  "integrated_lufs": -16.3,
-  "true_peak_dbfs": -2.3,
-  "name_text": "Thank you so much, {name}, for helping me plan Bobo's birthday!",
-  "description": "name line (Captain version): Thank you so much, Captain, for helping me plan Bobo's birthday!",
-  "tags": [
-   "name",
-   "captain"
-  ]
+  "remapped_from": "HEAD:BOBO_BIRTHDAY_S01_002_COCO"
  },
  "BOBO_BIRTHDAY_S01_003_COCO": {
   "type": "speech",
@@ -152,15 +58,15 @@
    "style": 0.28,
    "use_speaker_boost": true
   },
-  "spoken_text": "कुछ ऐसा जो मीठा होता है, soft होता है, और birthday पर cut किया जाता है!",
+  "spoken_text": "कुछ ऐसा जो मीठा होता है, soft होता है, और birthday पर cut किया जाता है! उसका card ढूँढो और please tap करो!",
   "performance_tag": "[playful, riddling]",
   "review_status": "test",
   "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S01_004_COCO.mp3",
-  "duration_seconds": 6.61,
-  "integrated_lufs": -16.2,
-  "true_peak_dbfs": -2.3,
-  "remapped_from": "BOBO_BIRTHDAY_S01_004_COCO"
+  "file": "generated/BOBO_BIRTHDAY_S01_003_COCO.mp3",
+  "duration_seconds": 10.45,
+  "integrated_lufs": -16.3,
+  "true_peak_dbfs": -2.2,
+  "remapped_from": "disk:BOBO_BIRTHDAY_S01_003_COCO"
  },
  "BOBO_BIRTHDAY_S01_004_COCO": {
   "type": "speech",
@@ -177,11 +83,11 @@
   "performance_tag": "[bright, revealing]",
   "review_status": "test",
   "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S01_005_COCO.mp3",
+  "file": "generated/BOBO_BIRTHDAY_S01_004_COCO.mp3",
   "duration_seconds": 5.8,
   "integrated_lufs": -16.2,
   "true_peak_dbfs": -2.4,
-  "remapped_from": "BOBO_BIRTHDAY_S01_005_COCO"
+  "remapped_from": "disk:BOBO_BIRTHDAY_S01_004_COCO"
  },
  "BOBO_BIRTHDAY_S01_005_COCO": {
   "type": "speech",
@@ -198,11 +104,11 @@
   "performance_tag": "[kind]",
   "review_status": "test",
   "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S01_006_COCO.mp3",
+  "file": "generated/BOBO_BIRTHDAY_S01_005_COCO.mp3",
   "duration_seconds": 4.05,
   "integrated_lufs": -16.4,
   "true_peak_dbfs": -2.3,
-  "remapped_from": "BOBO_BIRTHDAY_S01_006_COCO"
+  "remapped_from": "disk:BOBO_BIRTHDAY_S01_005_COCO"
  },
  "BOBO_BIRTHDAY_S01_006_COCO": {
   "type": "speech",
@@ -219,736 +125,11 @@
   "performance_tag": "[kind, clear]",
   "review_status": "test",
   "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S01_007_COCO.mp3",
+  "file": "generated/BOBO_BIRTHDAY_S01_006_COCO.mp3",
   "duration_seconds": 2.04,
   "integrated_lufs": -16.0,
   "true_peak_dbfs": -2.9,
-  "remapped_from": "BOBO_BIRTHDAY_S01_007_COCO"
- },
- "BOBO_BIRTHDAY_S01_007_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Cake वाला card tap करो!",
-  "performance_tag": "[kind, clear]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S01_007_COCO.mp3",
-  "duration_seconds": 2.04,
-  "integrated_lufs": -16.0,
-  "true_peak_dbfs": -2.9
- },
- "BOBO_BIRTHDAY_S02_008_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "पर पता है Captain?",
-  "performance_tag": "[leaning in]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "names-captain/BOBO_BIRTHDAY_S02_009_COCO.mp3",
-  "duration_seconds": 1.96,
-  "integrated_lufs": -16.0,
-  "true_peak_dbfs": -3.4,
-  "name_text": "पर पता है {name}?",
-  "description": "name line (Captain version): पर पता है Captain?",
-  "tags": [
-   "name",
-   "captain"
-  ],
-  "remapped_from": "BOBO_BIRTHDAY_S02_009_COCO"
- },
- "BOBO_BIRTHDAY_S02_010_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "क्या तुम cards में से कोई ऐसा healthy food ढूँढ सकते हो जो हमें strong बनाए और super-energy दे?",
-  "performance_tag": "[inviting]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S02_011_COCO.mp3",
-  "duration_seconds": 6.69,
-  "integrated_lufs": -16.2,
-  "true_peak_dbfs": -2.3,
-  "remapped_from": "BOBO_BIRTHDAY_S02_011_COCO"
- },
- "BOBO_BIRTHDAY_S02_011_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "ध्यान से देखो… yummy, healthy banana! Fast-fast Banana Card को tap करो और healthy power लो!",
-  "performance_tag": "[bright, revealing]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S02_012_COCO.mp3",
-  "duration_seconds": 7.63,
-  "integrated_lufs": -16.0,
-  "true_peak_dbfs": -2.3,
-  "remapped_from": "BOBO_BIRTHDAY_S02_012_COCO"
- },
- "BOBO_BIRTHDAY_S02_012_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Banana वाला card — पीला, लंबा केला।",
-  "performance_tag": "[kind]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S02_013_COCO.mp3",
-  "duration_seconds": 3.47,
-  "integrated_lufs": -16.0,
-  "true_peak_dbfs": -2.3,
-  "remapped_from": "BOBO_BIRTHDAY_S02_013_COCO"
- },
- "BOBO_BIRTHDAY_S02_013_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Banana वाला card tap करो!",
-  "performance_tag": "[kind, clear]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S02_014_COCO.mp3",
-  "duration_seconds": 2.04,
-  "integrated_lufs": -16.0,
-  "true_peak_dbfs": -2.9,
-  "remapped_from": "BOBO_BIRTHDAY_S02_014_COCO"
- },
- "BOBO_BIRTHDAY_S02_014_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Yum! Yummy banana! अब आई ना असली birthday energy!",
-  "performance_tag": "[excited]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S02_016_COCO.mp3",
-  "duration_seconds": 4.83,
-  "integrated_lufs": -16.0,
-  "true_peak_dbfs": -2.4,
-  "remapped_from": "BOBO_BIRTHDAY_S02_016_COCO"
- },
- "BOBO_BIRTHDAY_S02_016_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Yum! Yummy banana! अब आई ना असली birthday energy!",
-  "performance_tag": "[excited]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S02_016_COCO.mp3",
-  "duration_seconds": 4.83,
-  "integrated_lufs": -16.0,
-  "true_peak_dbfs": -2.4
- },
- "BOBO_BIRTHDAY_S03_017_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Candle वाला card — जलती हुई candle वाला।",
-  "performance_tag": "[kind]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S03_019_COCO.mp3",
-  "duration_seconds": 3.16,
-  "integrated_lufs": -16.1,
-  "true_peak_dbfs": -2.4,
-  "remapped_from": "BOBO_BIRTHDAY_S03_019_COCO"
- },
- "BOBO_BIRTHDAY_S03_018_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Candle वाला card tap करो!",
-  "performance_tag": "[kind, clear]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S03_020_COCO.mp3",
-  "duration_seconds": 1.72,
-  "integrated_lufs": -16.0,
-  "true_peak_dbfs": -3.6,
-  "remapped_from": "BOBO_BIRTHDAY_S03_020_COCO"
- },
- "BOBO_BIRTHDAY_S03_019_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Yes! देखो — 1, 2, 3, 4… FIVE candles!",
-  "performance_tag": "[excited, counting]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S03_022_COCO.mp3",
-  "duration_seconds": 7.08,
-  "integrated_lufs": -16.1,
-  "true_peak_dbfs": -2.4,
-  "remapped_from": "BOBO_BIRTHDAY_S03_022_COCO"
- },
- "BOBO_BIRTHDAY_S03_020_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Make a wish Captain… अब गहरी साँस लो, और ज़ोर से फूँक मारो!",
-  "performance_tag": "[warm, building up]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "names-captain/BOBO_BIRTHDAY_S03_023_COCO.mp3",
-  "duration_seconds": 5.72,
-  "integrated_lufs": -16.3,
-  "true_peak_dbfs": -2.3,
-  "name_text": "Make a wish {name}… अब गहरी साँस लो, और ज़ोर से फूँक मारो!",
-  "description": "name line (Captain version): Make a wish Captain… अब गहरी साँस लो, और ज़ोर से फूँक मारो!",
-  "tags": [
-   "name",
-   "captain"
-  ],
-  "remapped_from": "BOBO_BIRTHDAY_S03_023_COCO"
- },
- "BOBO_BIRTHDAY_S03_022_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "अरे! इतनी ज़ोर की फूँक… मेरी cap उड़ गई! Woooosh!",
-  "performance_tag": "[surprised, laughing]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S03_027_COCO.mp3",
-  "duration_seconds": 5.8,
-  "integrated_lufs": -16.1,
-  "true_peak_dbfs": -2.4,
-  "remapped_from": "BOBO_BIRTHDAY_S03_027_COCO"
- },
- "BOBO_BIRTHDAY_S03_025_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "आराम से पहनो। Cap पहन कर, Cap वाला card tap करना।",
-  "performance_tag": "[relaxed, reassuring]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S03_030_COCO.mp3",
-  "duration_seconds": 4.75,
-  "integrated_lufs": -16.4,
-  "true_peak_dbfs": -2.2,
-  "remapped_from": "BOBO_BIRTHDAY_S03_030_COCO"
- },
- "BOBO_BIRTHDAY_S03_027_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Woohoo! Birthday cap ready!",
-  "performance_tag": "[cheering]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S03_032_COCO.mp3",
-  "duration_seconds": 3.32,
-  "integrated_lufs": -16.0,
-  "true_peak_dbfs": -3.9,
-  "remapped_from": "BOBO_BIRTHDAY_S03_032_COCO"
- },
- "BOBO_BIRTHDAY_S03_028_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "अब देखो, तुम्हारी table पर एक real Birthday Cap रखी है। पहले उस cap को उठाओ और अपने सर पर पहन लो! पहन लिया?",
-  "performance_tag": "[warm, slow]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S03_028_COCO.mp3",
-  "duration_seconds": 11.23,
-  "integrated_lufs": -16.2,
-  "true_peak_dbfs": -2.2
- },
- "BOBO_BIRTHDAY_S03_029_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "अब जल्दी से table पर रखे Birthday Cap Card को भी tap कर दो!",
-  "performance_tag": "[bright]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S03_029_COCO.mp3",
-  "duration_seconds": 4.52,
-  "integrated_lufs": -16.2,
-  "true_peak_dbfs": -2.0
- },
- "BOBO_BIRTHDAY_S03_030_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "आराम से पहनो। Cap पहन कर, Cap वाला card tap करना।",
-  "performance_tag": "[relaxed, reassuring]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S03_030_COCO.mp3",
-  "duration_seconds": 4.75,
-  "integrated_lufs": -16.4,
-  "true_peak_dbfs": -2.2
- },
- "BOBO_BIRTHDAY_S03_031_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Cap वाला card tap करो!",
-  "performance_tag": "[kind, clear]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S03_031_COCO.mp3",
-  "duration_seconds": 2.04,
-  "integrated_lufs": -16.1,
-  "true_peak_dbfs": -2.5
- },
- "BOBO_BIRTHDAY_S03_032_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Woohoo! Birthday cap ready!",
-  "performance_tag": "[cheering]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S03_032_COCO.mp3",
-  "duration_seconds": 3.32,
-  "integrated_lufs": -16.0,
-  "true_peak_dbfs": -3.9
- },
- "BOBO_BIRTHDAY_S04_033_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "YES! Speaker ready! Party mode ON!",
-  "performance_tag": "[excited]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S04_039_COCO.mp3",
-  "duration_seconds": 3.87,
-  "integrated_lufs": -16.0,
-  "true_peak_dbfs": -3.3,
-  "remapped_from": "BOBO_BIRTHDAY_S04_039_COCO"
- },
- "BOBO_BIRTHDAY_S04_034_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Let's DANCE, Captain!",
-  "performance_tag": "[party voice]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "names-captain/BOBO_BIRTHDAY_S04_040_COCO.mp3",
-  "duration_seconds": 2.04,
-  "integrated_lufs": -16.1,
-  "true_peak_dbfs": -3.3,
-  "name_text": "Let's DANCE, {name}!",
-  "description": "name line (Captain version): Let's DANCE, Captain!",
-  "tags": [
-   "name",
-   "captain"
-  ],
-  "remapped_from": "BOBO_BIRTHDAY_S04_040_COCO"
- },
- "BOBO_BIRTHDAY_S04_035_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "अपनी banana वाली super energy और birthday cap के साथ jump करो, spin करो, and clap!",
-  "performance_tag": "[bouncy]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S04_041_COCO.mp3",
-  "duration_seconds": 7.47,
-  "integrated_lufs": -16.1,
-  "true_peak_dbfs": -2.3,
-  "remapped_from": "BOBO_BIRTHDAY_S04_041_COCO"
- },
- "BOBO_BIRTHDAY_S04_036_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Hands up in the air!",
-  "performance_tag": "[calling out]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S04_042_COCO.mp3",
-  "duration_seconds": 2.04,
-  "integrated_lufs": -16.0,
-  "true_peak_dbfs": -4.0,
-  "remapped_from": "BOBO_BIRTHDAY_S04_042_COCO"
- },
- "BOBO_BIRTHDAY_S04_037_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Spin around! Keep moving!",
-  "performance_tag": "[calling out]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S04_043_COCO.mp3",
-  "duration_seconds": 2.27,
-  "integrated_lufs": -16.0,
-  "true_peak_dbfs": -2.8,
-  "remapped_from": "BOBO_BIRTHDAY_S04_043_COCO"
- },
- "BOBO_BIRTHDAY_S04_039_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Happy birthday, Bobo~ Happy birthday, Bobo~ Clap, clap, clap, clap, clap!",
-  "performance_tag": "[singing to the Happy Birthday tune, clapping on the beat]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S04_045_COCO.mp3",
-  "duration_seconds": 8.2,
-  "integrated_lufs": -16.1,
-  "true_peak_dbfs": -2.3,
-  "remapped_from": "BOBO_BIRTHDAY_S04_045_COCO"
- },
- "BOBO_BIRTHDAY_S04_041_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Clap, clap, clap, clap, clap!",
-  "performance_tag": "[singing, clapping on the beat]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S04_047_COCO.mp3",
-  "duration_seconds": 2.19,
-  "integrated_lufs": -16.0,
-  "true_peak_dbfs": -2.6,
-  "remapped_from": "BOBO_BIRTHDAY_S04_047_COCO"
- },
- "BOBO_BIRTHDAY_S04_042_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Hands up in the air!",
-  "performance_tag": "[calling out]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S04_042_COCO.mp3",
-  "duration_seconds": 2.04,
-  "integrated_lufs": -16.0,
-  "true_peak_dbfs": -4.0
- },
- "BOBO_BIRTHDAY_S04_043_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Spin around! Keep moving!",
-  "performance_tag": "[calling out]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S04_043_COCO.mp3",
-  "duration_seconds": 2.27,
-  "integrated_lufs": -16.0,
-  "true_peak_dbfs": -2.8
- },
- "BOBO_BIRTHDAY_S04_044_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Now, क्या तुम मेरे साथ गाना गाओगे? चलो मिलकर गाते हैं और clap करते हैं!",
-  "performance_tag": "[inviting]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S04_044_COCO.mp3",
-  "duration_seconds": 5.88,
-  "integrated_lufs": -16.3,
-  "true_peak_dbfs": -2.2
- },
- "BOBO_BIRTHDAY_S04_045_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Happy birthday, Bobo~ Happy birthday, Bobo~ Clap, clap, clap, clap, clap!",
-  "performance_tag": "[singing to the Happy Birthday tune, clapping on the beat]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S04_045_COCO.mp3",
-  "duration_seconds": 8.2,
-  "integrated_lufs": -16.1,
-  "true_peak_dbfs": -2.3
- },
- "BOBO_BIRTHDAY_S04_047_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Clap, clap, clap, clap, clap!",
-  "performance_tag": "[singing, clapping on the beat]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S04_047_COCO.mp3",
-  "duration_seconds": 2.19,
-  "integrated_lufs": -16.0,
-  "true_peak_dbfs": -2.6
- },
- "BOBO_BIRTHDAY_S05_049_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "What an amazing birthday party! Thank you so much! You are such a hero!",
-  "performance_tag": "[proud, big finish]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S05_049_COCO.mp3",
-  "duration_seconds": 5.8,
-  "integrated_lufs": -16.2,
-  "true_peak_dbfs": -2.4
- },
- "BOBO_BIRTHDAY_S01_001_COCO": {
-  "type": "speech",
-  "voice": "COCO",
-  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
-  "model_id": "eleven_v3",
-  "voice_settings": {
-   "stability": 0.4,
-   "similarity_boost": 0.78,
-   "style": 0.28,
-   "use_speaker_boost": true
-  },
-  "spoken_text": "Hey! Hi, Captain! मैं हूँ Coco और आज मेरे friend Bobo का birthday है। क्या तुम Bobo की birthday party arrange करने में मेरी help करोगे?",
-  "performance_tag": "[upbeat, welcoming]",
-  "review_status": "test",
-  "generated": "2026-10-02",
-  "file": "names-captain/BOBO_BIRTHDAY_S01_002_COCO.mp3",
-  "duration_seconds": 10.37,
-  "integrated_lufs": -16.6,
-  "true_peak_dbfs": -2.1,
-  "name_text": "Hey! Hi, {name}! मैं हूँ Coco और आज मेरे friend Bobo का birthday है। क्या तुम Bobo की birthday party arrange करने में मेरी help करोगे?",
-  "description": "name line (Captain version): Hey! Hi, Captain! मैं हूँ Coco और आज मेरे friend Bobo का birthday है। क्या तुम Bobo की birthday party arrange करने में मेरी help करोगे?",
-  "tags": [
-   "name",
-   "captain"
-  ],
-  "remapped_from": "BOBO_BIRTHDAY_S01_002_COCO"
+  "remapped_from": "disk:BOBO_BIRTHDAY_S01_007_COCO"
  },
  "BOBO_BIRTHDAY_S02_007_COCO": {
   "type": "speech",
@@ -965,11 +146,164 @@
   "performance_tag": "[excited]",
   "review_status": "test",
   "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S02_008_COCO.mp3",
+  "file": "generated/BOBO_BIRTHDAY_S02_007_COCO.mp3",
   "duration_seconds": 4.28,
   "integrated_lufs": -16.4,
   "true_peak_dbfs": -2.1,
-  "remapped_from": "BOBO_BIRTHDAY_S02_008_COCO"
+  "remapped_from": "disk:BOBO_BIRTHDAY_S02_007_COCO"
+ },
+ "BOBO_BIRTHDAY_S02_008_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "पर पता है Captain?",
+  "performance_tag": "[leaning in]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/BOBO_BIRTHDAY_S02_008_COCO.mp3",
+  "duration_seconds": 1.96,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.4,
+  "name_text": "पर पता है {name}?",
+  "description": "name line (Captain version): पर पता है Captain?",
+  "tags": [
+   "name",
+   "captain"
+  ],
+  "remapped_from": "disk:BOBO_BIRTHDAY_S02_008_COCO"
+ },
+ "BOBO_BIRTHDAY_S02_009_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "अगर Bobo और हम सिर्फ cake खाएँगे, तो tummy ache हो सकता है। Party में non-stop मस्ती और dance करने के लिए हमें super energy चाहिए!",
+  "performance_tag": "[explaining, playful]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/BOBO_BIRTHDAY_S02_009_COCO.mp3",
+  "duration_seconds": 10.45,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -2.3,
+  "remapped_from": "disk:BOBO_BIRTHDAY_S02_009_COCO"
+ },
+ "BOBO_BIRTHDAY_S02_010_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "क्या तुम cards में से कोई ऐसा healthy food ढूँढ सकते हो जो हमें strong बनाए और super-energy दे?",
+  "performance_tag": "[inviting]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/BOBO_BIRTHDAY_S02_010_COCO.mp3",
+  "duration_seconds": 6.69,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -2.3,
+  "remapped_from": "disk:BOBO_BIRTHDAY_S02_010_COCO"
+ },
+ "BOBO_BIRTHDAY_S02_011_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "ध्यान से देखो… yummy, healthy banana! Fast-fast Banana Card को tap करो और healthy power लो!",
+  "performance_tag": "[bright, revealing]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/BOBO_BIRTHDAY_S02_011_COCO.mp3",
+  "duration_seconds": 7.63,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.3,
+  "remapped_from": "disk:BOBO_BIRTHDAY_S02_011_COCO"
+ },
+ "BOBO_BIRTHDAY_S02_012_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Banana वाला card — पीला, लंबा केला।",
+  "performance_tag": "[kind]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/BOBO_BIRTHDAY_S02_012_COCO.mp3",
+  "duration_seconds": 3.47,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.3,
+  "remapped_from": "disk:BOBO_BIRTHDAY_S02_012_COCO"
+ },
+ "BOBO_BIRTHDAY_S02_013_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Banana वाला card tap करो!",
+  "performance_tag": "[kind, clear]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/BOBO_BIRTHDAY_S02_013_COCO.mp3",
+  "duration_seconds": 2.04,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.9,
+  "remapped_from": "disk:BOBO_BIRTHDAY_S02_013_COCO"
+ },
+ "BOBO_BIRTHDAY_S02_014_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Yum! Yummy banana! अब आई ना असली birthday energy!",
+  "performance_tag": "[excited]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/BOBO_BIRTHDAY_S02_014_COCO.mp3",
+  "duration_seconds": 4.83,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.4,
+  "remapped_from": "disk:BOBO_BIRTHDAY_S02_016_COCO"
  },
  "BOBO_BIRTHDAY_S03_015_COCO": {
   "type": "speech",
@@ -986,11 +320,11 @@
   "performance_tag": "[curious, leading]",
   "review_status": "test",
   "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S03_017_COCO.mp3",
+  "file": "generated/BOBO_BIRTHDAY_S03_015_COCO.mp3",
   "duration_seconds": 7.89,
   "integrated_lufs": -16.3,
   "true_peak_dbfs": -2.4,
-  "remapped_from": "BOBO_BIRTHDAY_S03_017_COCO"
+  "remapped_from": "disk:BOBO_BIRTHDAY_S03_015_COCO"
  },
  "BOBO_BIRTHDAY_S03_016_COCO": {
   "type": "speech",
@@ -1007,13 +341,76 @@
   "performance_tag": "[bright, revealing]",
   "review_status": "test",
   "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S03_018_COCO.mp3",
+  "file": "generated/BOBO_BIRTHDAY_S03_016_COCO.mp3",
   "duration_seconds": 3.4,
   "integrated_lufs": -16.0,
   "true_peak_dbfs": -2.6,
-  "remapped_from": "BOBO_BIRTHDAY_S03_018_COCO"
+  "remapped_from": "disk:BOBO_BIRTHDAY_S03_016_COCO"
  },
- "BOBO_BIRTHDAY_S03_021_COCO": {
+ "BOBO_BIRTHDAY_S03_017_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Candle वाला card — जलती हुई candle वाला।",
+  "performance_tag": "[kind]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/BOBO_BIRTHDAY_S03_017_COCO.mp3",
+  "duration_seconds": 3.16,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4,
+  "remapped_from": "HEAD:BOBO_BIRTHDAY_S03_017_COCO"
+ },
+ "BOBO_BIRTHDAY_S03_018_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Candle वाला card tap करो!",
+  "performance_tag": "[kind, clear]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/BOBO_BIRTHDAY_S03_018_COCO.mp3",
+  "duration_seconds": 1.72,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.6,
+  "remapped_from": "HEAD:BOBO_BIRTHDAY_S03_018_COCO"
+ },
+ "BOBO_BIRTHDAY_S03_019_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Yes! Candle!",
+  "performance_tag": "[excited]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/BOBO_BIRTHDAY_S03_019_COCO.mp3",
+  "duration_seconds": 3.0,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4,
+  "remapped_from": "disk:BOBO_BIRTHDAY_S03_019_COCO"
+ },
+ "BOBO_BIRTHDAY_S03_022_COCO": {
   "type": "speech",
   "voice": "COCO",
   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
@@ -1028,13 +425,55 @@
   "performance_tag": "[delighted]",
   "review_status": "test",
   "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S03_025_COCO.mp3",
+  "file": "generated/BOBO_BIRTHDAY_S03_022_COCO.mp3",
   "duration_seconds": 2.43,
   "integrated_lufs": -16.2,
   "true_peak_dbfs": -2.5,
-  "remapped_from": "BOBO_BIRTHDAY_S03_025_COCO"
+  "remapped_from": "HEAD:BOBO_BIRTHDAY_S03_021_COCO"
+ },
+ "BOBO_BIRTHDAY_S03_023_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "अरे! इतनी ज़ोर की फूँक… मेरी cap उड़ गई! Woooosh!",
+  "performance_tag": "[surprised, laughing]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/BOBO_BIRTHDAY_S03_023_COCO.mp3",
+  "duration_seconds": 5.8,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4,
+  "remapped_from": "disk:BOBO_BIRTHDAY_S03_023_COCO"
  },
  "BOBO_BIRTHDAY_S03_024_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "अब देखो, तुम्हारी table पर एक real Birthday Cap रखी है। पहले उस cap को उठाओ और अपने सर पर पहन लो! पहन लिया?",
+  "performance_tag": "[warm, slow]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/BOBO_BIRTHDAY_S03_024_COCO.mp3",
+  "duration_seconds": 11.23,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -2.2,
+  "remapped_from": "HEAD:BOBO_BIRTHDAY_S03_023_COCO"
+ },
+ "BOBO_BIRTHDAY_S03_025_COCO": {
   "type": "speech",
   "voice": "COCO",
   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
@@ -1049,13 +488,34 @@
   "performance_tag": "[bright]",
   "review_status": "test",
   "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S03_029_COCO.mp3",
+  "file": "generated/BOBO_BIRTHDAY_S03_025_COCO.mp3",
   "duration_seconds": 4.52,
   "integrated_lufs": -16.2,
   "true_peak_dbfs": -2.0,
-  "remapped_from": "BOBO_BIRTHDAY_S03_029_COCO"
+  "remapped_from": "disk:BOBO_BIRTHDAY_S03_025_COCO"
  },
  "BOBO_BIRTHDAY_S03_026_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "आराम से पहनो। Cap पहन कर, Cap वाला card tap करना।",
+  "performance_tag": "[relaxed, reassuring]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/BOBO_BIRTHDAY_S03_026_COCO.mp3",
+  "duration_seconds": 4.75,
+  "integrated_lufs": -16.4,
+  "true_peak_dbfs": -2.2,
+  "remapped_from": "disk:BOBO_BIRTHDAY_S03_030_COCO"
+ },
+ "BOBO_BIRTHDAY_S03_027_COCO": {
   "type": "speech",
   "voice": "COCO",
   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
@@ -1070,13 +530,13 @@
   "performance_tag": "[kind, clear]",
   "review_status": "test",
   "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S03_031_COCO.mp3",
+  "file": "generated/BOBO_BIRTHDAY_S03_027_COCO.mp3",
   "duration_seconds": 2.04,
   "integrated_lufs": -16.1,
   "true_peak_dbfs": -2.5,
-  "remapped_from": "BOBO_BIRTHDAY_S03_031_COCO"
+  "remapped_from": "disk:BOBO_BIRTHDAY_S03_031_COCO"
  },
- "BOBO_BIRTHDAY_S04_028_COCO": {
+ "BOBO_BIRTHDAY_S03_028_COCO": {
   "type": "speech",
   "voice": "COCO",
   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
@@ -1087,17 +547,38 @@
    "style": 0.28,
    "use_speaker_boost": true
   },
-  "spoken_text": "Cake ready, banana खा लिया, candles blow हो गईं, और birthday cap भी पहन ली! अब birthday party की जान बाकी है… Dhun-ts-dhun-ts!",
+  "spoken_text": "Woohoo! Birthday cap ready!",
+  "performance_tag": "[cheering]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/BOBO_BIRTHDAY_S03_028_COCO.mp3",
+  "duration_seconds": 3.32,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.9,
+  "remapped_from": "disk:BOBO_BIRTHDAY_S03_032_COCO"
+ },
+ "BOBO_BIRTHDAY_S04_029_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Cake ready, banana खा लिया, candles blow हो गईं, और birthday cap भी पहन ली! अब birthday party की जान बाकी है… धन-टना-टन… Music!",
   "performance_tag": "[listing, building up]",
   "review_status": "test",
   "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S04_033_COCO.mp3",
-  "duration_seconds": 10.92,
-  "integrated_lufs": -16.2,
+  "file": "generated/BOBO_BIRTHDAY_S04_029_COCO.mp3",
+  "duration_seconds": 12.12,
+  "integrated_lufs": -16.1,
   "true_peak_dbfs": -2.3,
-  "remapped_from": "BOBO_BIRTHDAY_S04_033_COCO"
+  "remapped_from": "disk:BOBO_BIRTHDAY_S04_029_COCO"
  },
- "BOBO_BIRTHDAY_S04_029_COCO": {
+ "BOBO_BIRTHDAY_S04_030_COCO": {
   "type": "speech",
   "voice": "COCO",
   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
@@ -1112,13 +593,13 @@
   "performance_tag": "[playful, riddling]",
   "review_status": "test",
   "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S04_034_COCO.mp3",
+  "file": "generated/BOBO_BIRTHDAY_S04_030_COCO.mp3",
   "duration_seconds": 4.91,
   "integrated_lufs": -16.2,
   "true_peak_dbfs": -2.1,
-  "remapped_from": "BOBO_BIRTHDAY_S04_034_COCO"
+  "remapped_from": "HEAD:BOBO_BIRTHDAY_S04_029_COCO"
  },
- "BOBO_BIRTHDAY_S04_030_COCO": {
+ "BOBO_BIRTHDAY_S04_031_COCO": {
   "type": "speech",
   "voice": "COCO",
   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
@@ -1133,13 +614,13 @@
   "performance_tag": "[bright, revealing]",
   "review_status": "test",
   "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S04_035_COCO.mp3",
+  "file": "generated/BOBO_BIRTHDAY_S04_031_COCO.mp3",
   "duration_seconds": 2.12,
   "integrated_lufs": -16.1,
   "true_peak_dbfs": -2.4,
-  "remapped_from": "BOBO_BIRTHDAY_S04_035_COCO"
+  "remapped_from": "HEAD:BOBO_BIRTHDAY_S04_030_COCO"
  },
- "BOBO_BIRTHDAY_S04_031_COCO": {
+ "BOBO_BIRTHDAY_S04_032_COCO": {
   "type": "speech",
   "voice": "COCO",
   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
@@ -1154,13 +635,13 @@
   "performance_tag": "[kind]",
   "review_status": "test",
   "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S04_036_COCO.mp3",
+  "file": "generated/BOBO_BIRTHDAY_S04_032_COCO.mp3",
   "duration_seconds": 2.93,
   "integrated_lufs": -16.1,
   "true_peak_dbfs": -2.4,
-  "remapped_from": "BOBO_BIRTHDAY_S04_036_COCO"
+  "remapped_from": "HEAD:BOBO_BIRTHDAY_S04_031_COCO"
  },
- "BOBO_BIRTHDAY_S04_032_COCO": {
+ "BOBO_BIRTHDAY_S04_033_COCO": {
   "type": "speech",
   "voice": "COCO",
   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
@@ -1175,11 +656,101 @@
   "performance_tag": "[kind, clear]",
   "review_status": "test",
   "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S04_037_COCO.mp3",
+  "file": "generated/BOBO_BIRTHDAY_S04_033_COCO.mp3",
   "duration_seconds": 1.88,
   "integrated_lufs": -16.0,
   "true_peak_dbfs": -2.7,
-  "remapped_from": "BOBO_BIRTHDAY_S04_037_COCO"
+  "remapped_from": "HEAD:BOBO_BIRTHDAY_S04_032_COCO"
+ },
+ "BOBO_BIRTHDAY_S04_034_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "YES! Speaker ready! Party mode ON!",
+  "performance_tag": "[excited]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/BOBO_BIRTHDAY_S04_034_COCO.mp3",
+  "duration_seconds": 3.87,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.3,
+  "remapped_from": "HEAD:BOBO_BIRTHDAY_S04_033_COCO"
+ },
+ "BOBO_BIRTHDAY_S04_035_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Let's DANCE, Captain!",
+  "performance_tag": "[party voice]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/BOBO_BIRTHDAY_S04_035_COCO.mp3",
+  "duration_seconds": 1.8,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.8,
+  "name_text": "Let's DANCE, {name}!",
+  "description": "name line (Captain version): Let's DANCE, Captain!",
+  "tags": [
+   "name",
+   "captain"
+  ],
+  "remapped_from": "disk:BOBO_BIRTHDAY_S04_035_COCO"
+ },
+ "BOBO_BIRTHDAY_S04_036_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "अपनी banana वाली super energy और birthday cap के साथ jump करो, spin करो, and clap!",
+  "performance_tag": "[bouncy]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/BOBO_BIRTHDAY_S04_036_COCO.mp3",
+  "duration_seconds": 7.39,
+  "integrated_lufs": -16.4,
+  "true_peak_dbfs": -2.2,
+  "remapped_from": "disk:BOBO_BIRTHDAY_S04_036_COCO"
+ },
+ "BOBO_BIRTHDAY_S04_037_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Hands up in the air!",
+  "performance_tag": "[calling out]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/BOBO_BIRTHDAY_S04_037_COCO.mp3",
+  "duration_seconds": 2.04,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.9,
+  "remapped_from": "disk:BOBO_BIRTHDAY_S04_037_COCO"
  },
  "BOBO_BIRTHDAY_S04_038_COCO": {
   "type": "speech",
@@ -1192,15 +763,84 @@
    "style": 0.28,
    "use_speaker_boost": true
   },
-  "spoken_text": "Now, क्या तुम मेरे साथ गाना गाओगे? चलो मिलकर गाते हैं और clap करते हैं!",
+  "spoken_text": "Spin around! Keep moving!",
+  "performance_tag": "[calling out]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/BOBO_BIRTHDAY_S04_038_COCO.mp3",
+  "duration_seconds": 2.27,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.8,
+  "remapped_from": "disk:BOBO_BIRTHDAY_S04_043_COCO"
+ },
+ "BOBO_BIRTHDAY_S04_039_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Now, क्या तुम मेरे साथ Bobo को birthday wish करोगे? चलो मिलकर गाते हैं और clap करते हैं!",
   "performance_tag": "[inviting]",
   "review_status": "test",
   "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S04_044_COCO.mp3",
-  "duration_seconds": 5.88,
-  "integrated_lufs": -16.3,
+  "file": "generated/BOBO_BIRTHDAY_S04_039_COCO.mp3",
+  "duration_seconds": 6.69,
+  "integrated_lufs": -16.4,
   "true_peak_dbfs": -2.2,
-  "remapped_from": "BOBO_BIRTHDAY_S04_044_COCO"
+  "remapped_from": "disk:BOBO_BIRTHDAY_S04_039_COCO"
+ },
+ "BOBO_BIRTHDAY_S04_040_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Happy birthday, Bobo~ Happy birthday, Bobo~",
+  "performance_tag": "[singing to the Happy Birthday tune]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/BOBO_BIRTHDAY_S04_040_COCO.mp3",
+  "duration_seconds": 7.0,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.5,
+  "remapped_from": "disk:BOBO_BIRTHDAY_S04_040_COCO"
+ },
+ "BOBO_BIRTHDAY_S04_041_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Captain, clap with me!",
+  "performance_tag": "[calling, rhythmic]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/BOBO_BIRTHDAY_S04_041_COCO.mp3",
+  "duration_seconds": 1.96,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -4.0,
+  "name_text": "{name}, clap with me!",
+  "description": "name line (Captain version): Captain, clap with me!",
+  "tags": [
+   "name",
+   "captain"
+  ],
+  "remapped_from": "disk:BOBO_BIRTHDAY_S04_046_COCO"
  },
  "BOBO_BIRTHDAY_S05_042_COCO": {
   "type": "speech",
@@ -1217,7 +857,7 @@
   "performance_tag": "[खुश होकर, warm]",
   "review_status": "test",
   "generated": "2026-10-02",
-  "file": "names-captain/BOBO_BIRTHDAY_S05_048_COCO.mp3",
+  "file": "names-captain/BOBO_BIRTHDAY_S05_042_COCO.mp3",
   "duration_seconds": 4.28,
   "integrated_lufs": -16.3,
   "true_peak_dbfs": -2.3,
@@ -1227,7 +867,7 @@
    "name",
    "captain"
   ],
-  "remapped_from": "BOBO_BIRTHDAY_S05_048_COCO"
+  "remapped_from": "disk:BOBO_BIRTHDAY_S05_048_COCO"
  },
  "BOBO_BIRTHDAY_S05_043_COCO": {
   "type": "speech",
@@ -1244,10 +884,50 @@
   "performance_tag": "[proud, big finish]",
   "review_status": "test",
   "generated": "2026-10-02",
-  "file": "generated/BOBO_BIRTHDAY_S05_049_COCO.mp3",
+  "file": "generated/BOBO_BIRTHDAY_S05_043_COCO.mp3",
   "duration_seconds": 5.8,
   "integrated_lufs": -16.2,
   "true_peak_dbfs": -2.4,
-  "remapped_from": "BOBO_BIRTHDAY_S05_049_COCO"
+  "remapped_from": "disk:BOBO_BIRTHDAY_S05_049_COCO"
+ },
+ "BOBO_BIRTHDAY_S03_020_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Bobo five साल का हो गया, तो five candles!",
+  "performance_tag": "[bright, proud]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/BOBO_BIRTHDAY_S03_020_COCO.mp3",
+  "duration_seconds": 3.55,
+  "integrated_lufs": -16.4,
+  "true_peak_dbfs": -2.3
+ },
+ "BOBO_BIRTHDAY_S03_021_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Look! One, two, three, four… FIVE candles!",
+  "performance_tag": "[excited, counting]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/BOBO_BIRTHDAY_S03_021_COCO.mp3",
+  "duration_seconds": 5.8,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.9
  }
 }

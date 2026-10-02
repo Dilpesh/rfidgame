@@ -8,6 +8,10 @@
 #   6. joke A: Coco's cap flies off after the blow
 #   7. the Speaker card IS the Music card (= MUSIC in cards.json; the print changes, not the UID)
 #   8. aap → tum everywhere
+#   After the kids' first play (2 Oct): 1.5 s after the opening ask; धन-टना-टन… Music!; "Bobo को birthday wish";
+#   birthday music bed under the singing only; clap-clap-clap as the clap_five SFX, not words; "please tap" in the
+#   first prompt; Candle: 5 साल का → 5 candles, फूँक Bobo के साथ; cap sound cap_flies_off_2 (A of 3); praise_action
+#   (no "absolutely right") after the cap.
 # Hindi in Devanagari, English words in Latin (what ElevenLabs reads reliably); nothing reworded.
 # Where a sentence with the name sits inside a longer speech it is its own line, so only that
 # sentence is a per-child clip. Format: tools/FORMAT.md
@@ -40,13 +44,21 @@ one of:
   COCO [pleased, clear] @lib:praise_right #praise: You are absolutely right, {name}!
 
 
+# Praise after an ACTION (wearing the cap) — no "You are absolutely right", which only fits a puzzle answered.
+== block praise_action
+one of:
+  COCO [warm, proud] @lib:praise_amazing #praise: Amazing, {name}!
+  COCO [bright] @lib:praise_good_job #praise: Good job, {name}!
+  COCO [delighted] @lib:praise_excellent #praise: Excellent work, {name}!
+
+
 == scene: Mission setup
 sfx welcome_chime
 COCO [upbeat, welcoming] #intro: Hey! Hi, {name}! मैं हूँ Coco और आज मेरे friend Bobo का birthday है। क्या तुम Bobo की birthday party arrange करने में मेरी help करोगे?
-wait 3s
+wait 1.5s
 COCO [bright]: Great! तो चलो सबसे पहले party की सबसे yummy चीज़ ढूँढते हैं…
 ask CAKE
-  prompt COCO [playful, riddling]: कुछ ऐसा जो मीठा होता है, soft होता है, और birthday पर cut किया जाता है!
+  prompt COCO [playful, riddling]: कुछ ऐसा जो मीठा होता है, soft होता है, और birthday पर cut किया जाता है! उसका card ढूँढो और please tap करो!
   hint COCO [bright, revealing]: नहीं मिला? अरे, हम बात कर रहे हैं Cake की! जल्दी से Cake Card को tap करो!
   hint COCO [kind]: Cake वाला card ढूँढो — गोल cake, ऊपर cream वाला।
   hint COCO [kind, clear]: Cake वाला card tap करो!
@@ -63,7 +75,7 @@ ask BANANA
   hint COCO [bright, revealing]: ध्यान से देखो… yummy, healthy banana! Fast-fast Banana Card को tap करो और healthy power लो!
   hint COCO [kind]: Banana वाला card — पीला, लंबा केला।
   hint COCO [kind, clear]: Banana वाला card tap करो!
-sfx crunch_powerup
+sfx biscuit_crunch
 COCO [excited] #praise: Yum! Yummy banana! अब आई ना असली birthday energy!
 use praise
 
@@ -75,14 +87,16 @@ ask CANDLE
   hint COCO [kind]: Candle वाला card — जलती हुई candle वाला।
   hint COCO [kind, clear]: Candle वाला card tap करो!
 sfx candle_pop_flame
-COCO [excited, counting] #praise: Yes! देखो — 1, 2, 3, 4… FIVE candles!
+COCO [excited] #praise: Yes! Candle!
 use praise
-COCO [warm, building up] #action: Make a wish {name}… अब गहरी साँस लो, और ज़ोर से फूँक मारो!
-wait 3s
+COCO [bright, proud]: Bobo five साल का हो गया, तो five candles!
+COCO [excited, counting]: Look! One, two, three, four… FIVE candles!
+wait 1.5s
 sfx blow_candles_out
 COCO [delighted]: Poof! सारी candles बुझ गईं!
-sfx cap_flies_off
+sfx cap_flies_off_2
 COCO [surprised, laughing] #joke: अरे! इतनी ज़ोर की फूँक… मेरी cap उड़ गई! Woooosh!
+wait 1.5s
 COCO [warm, slow]: अब देखो, तुम्हारी table पर एक real Birthday Cap रखी है। पहले उस cap को उठाओ और अपने सर पर पहन लो! पहन लिया?
 wait 3s
 ask PARTYCAP
@@ -91,11 +105,11 @@ ask PARTYCAP
   hint COCO [kind, clear]: Cap वाला card tap करो!
 sfx party_whistle
 COCO [cheering] #praise: Woohoo! Birthday cap ready!
-use praise
+use praise_action
 
 
 == scene: Speaker, dance & birthday song
-COCO [listing, building up]: Cake ready, banana खा लिया, candles blow हो गईं, और birthday cap भी पहन ली! अब birthday party की जान बाकी है… Dhun-ts-dhun-ts!
+COCO [listing, building up]: Cake ready, banana खा लिया, candles blow हो गईं, और birthday cap भी पहन ली! अब birthday party की जान बाकी है… धन-टना-टन… Music!
 ask SPEAKER
   prompt COCO [playful, riddling]: जिससे loud आवाज़ में birthday music बजता है… वो कौनसा card है?
   hint COCO [bright, revealing]: जल्दी से Speaker Card को tap करो!
@@ -114,11 +128,12 @@ duck COCO [calling out] #action: Spin around! Keep moving!
 music at 19s
 music stop
 sfx music_end_flourish
-bed bg_soft_loop @0.16
-COCO [inviting]: Now, क्या तुम मेरे साथ गाना गाओगे? चलो मिलकर गाते हैं और clap करते हैं!
-COCO [singing to the Happy Birthday tune, clapping on the beat] #action: Happy birthday, Bobo~ Happy birthday, Bobo~ Clap, clap, clap, clap, clap!
+bed birthday_bg @0.25
+COCO [inviting]: Now, क्या तुम मेरे साथ Bobo को birthday wish करोगे? चलो मिलकर गाते हैं और clap करते हैं!
+COCO [singing to the Happy Birthday tune] #action: Happy birthday, Bobo~ Happy birthday, Bobo~
+sfx clap_five
 COCO [calling, rhythmic] #action: {name}, clap with me!
-COCO [singing, clapping on the beat] #action: Clap, clap, clap, clap, clap!
+sfx clap_five
 wait 3s
 bed stop
 

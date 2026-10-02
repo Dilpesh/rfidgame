@@ -1,5 +1,5 @@
 {
- "version": "lib-2026-10-02x",
+ "version": "lib-2026-10-02z",
  "clips": {
   "tap": {
    "type": "sfx",
@@ -1643,7 +1643,7 @@
    "spoken_text": "Amazing, Captain!",
    "performance_tag": "[warm, proud]",
    "review_status": "test",
-   "generated": "2026-09-29",
+   "generated": "2026-10-02",
    "file": "voice/praise_amazing.mp3",
    "duration_seconds": 1.88,
    "integrated_lufs": -16.1,
@@ -1669,7 +1669,7 @@
    "spoken_text": "Good job, Captain!",
    "performance_tag": "[bright]",
    "review_status": "test",
-   "generated": "2026-09-29",
+   "generated": "2026-10-02",
    "file": "voice/praise_good_job.mp3",
    "duration_seconds": 2.04,
    "integrated_lufs": -16.2,
@@ -1695,7 +1695,7 @@
    "spoken_text": "Excellent work, Captain!",
    "performance_tag": "[delighted]",
    "review_status": "test",
-   "generated": "2026-09-29",
+   "generated": "2026-10-02",
    "file": "voice/praise_excellent.mp3",
    "duration_seconds": 2.04,
    "integrated_lufs": -16.1,
@@ -1721,11 +1721,11 @@
    "spoken_text": "You are absolutely right, Captain!",
    "performance_tag": "[pleased, clear]",
    "review_status": "test",
-   "generated": "2026-09-29",
+   "generated": "2026-10-02",
    "file": "voice/praise_right.mp3",
    "duration_seconds": 2.85,
-   "integrated_lufs": -16.0,
-   "true_peak_dbfs": -2.5,
+   "integrated_lufs": -16.1,
+   "true_peak_dbfs": -2.4,
    "name_text": "You are absolutely right, {name}!",
    "description": "name line (Captain version): You are absolutely right, Captain!",
    "tags": [
@@ -1747,7 +1747,7 @@
    "spoken_text": "अब से तुम हो — मेरे Captain!",
    "performance_tag": "[proud, warm]",
    "review_status": "test",
-   "generated": "2026-09-29",
+   "generated": "2026-10-02",
    "file": "voice/title_captain.mp3",
    "duration_seconds": 2.59,
    "integrated_lufs": -16.2,
@@ -1773,7 +1773,7 @@
    "spoken_text": "Captain, देखो!",
    "performance_tag": "[urgent, excited]",
    "review_status": "test",
-   "generated": "2026-09-29",
+   "generated": "2026-10-02",
    "file": "voice/look.mp3",
    "duration_seconds": 2.35,
    "integrated_lufs": -16.0,
@@ -1799,7 +1799,7 @@
    "spoken_text": "Captain, ध्यान से सुनो…",
    "performance_tag": "[whispering]",
    "review_status": "test",
-   "generated": "2026-09-29",
+   "generated": "2026-10-02",
    "file": "voice/listen_carefully.mp3",
    "duration_seconds": 2.43,
    "integrated_lufs": -16.0,
@@ -1825,7 +1825,7 @@
    "spoken_text": "Captain, साथ में गाओ!",
    "performance_tag": "[tender, inviting]",
    "review_status": "test",
-   "generated": "2026-09-29",
+   "generated": "2026-10-02",
    "file": "voice/sing_along.mp3",
    "duration_seconds": 1.8,
    "integrated_lufs": -16.1,
@@ -1836,134 +1836,6 @@
     "name",
     "captain"
    ]
-  },
-  "audience_cheer": {
-   "type": "sfx",
-   "description": "children cheering hooray with applause (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
-   "tags": [
-    "cheer",
-    "applause",
-    "celebration",
-    "kids",
-    "generated"
-   ],
-   "added": "2026-10-02",
-   "file": "sfx/audience_cheer.mp3",
-   "source": "games/bobo-birthday/audio/sfx-in/audience_cheer.mp3",
-   "duration_seconds": 3.53
-  },
-  "blow_candles_out": {
-   "type": "sfx",
-   "description": "a big blow, candles out, tiny fizzle (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
-   "tags": [
-    "blow",
-    "candle",
-    "birthday",
-    "generated"
-   ],
-   "added": "2026-10-02",
-   "file": "sfx/blow_candles_out.mp3",
-   "source": "games/bobo-birthday/audio/sfx-in/blow_candles_out.mp3",
-   "duration_seconds": 2.04
-  },
-  "button_click": {
-   "type": "sfx",
-   "description": "speaker button click (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
-   "tags": [
-    "click",
-    "button",
-    "speaker",
-    "generated"
-   ],
-   "added": "2026-10-02",
-   "file": "sfx/button_click.mp3",
-   "source": "games/bobo-birthday/audio/sfx-in/button_click.mp3",
-   "duration_seconds": 0.63
-  },
-  "candle_pop_flame": {
-   "type": "sfx",
-   "description": "pop then a small flame catching (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
-   "tags": [
-    "candle",
-    "pop",
-    "flame",
-    "generated"
-   ],
-   "added": "2026-10-02",
-   "file": "sfx/candle_pop_flame.mp3",
-   "source": "games/bobo-birthday/audio/sfx-in/candle_pop_flame.mp3",
-   "duration_seconds": 1.8
-  },
-  "cap_flies_off": {
-   "type": "sfx",
-   "description": "whoosh of a cap flying off then a soft thud — the joke (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
-   "tags": [
-    "whoosh",
-    "cap",
-    "thud",
-    "funny",
-    "generated"
-   ],
-   "added": "2026-10-02",
-   "file": "sfx/cap_flies_off.mp3",
-   "source": "games/bobo-birthday/audio/sfx-in/cap_flies_off.mp3",
-   "duration_seconds": 1.52
-  },
-  "crunch_powerup": {
-   "type": "sfx",
-   "description": "one crunch then a cartoon power-up rise (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
-   "tags": [
-    "crunch",
-    "powerup",
-    "eat",
-    "energy",
-    "generated"
-   ],
-   "added": "2026-10-02",
-   "file": "sfx/crunch_powerup.mp3",
-   "source": "games/bobo-birthday/audio/sfx-in/crunch_powerup.mp3",
-   "duration_seconds": 2.04
-  },
-  "fireworks": {
-   "type": "sfx",
-   "description": "fireworks, whistle up then bursts (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
-   "tags": [
-    "fireworks",
-    "celebration",
-    "generated"
-   ],
-   "added": "2026-10-02",
-   "file": "sfx/fireworks.mp3",
-   "source": "games/bobo-birthday/audio/sfx-in/fireworks.mp3",
-   "duration_seconds": 3.53
-  },
-  "magic_sparkle": {
-   "type": "sfx",
-   "description": "magic sparkle / twinkle (~2 s) — dress-up, transformation, reveal; from the Moon story",
-   "tags": [
-    "magic",
-    "sparkle",
-    "twinkle",
-    "reveal"
-   ],
-   "added": "2026-10-02",
-   "file": "sfx/magic_sparkle.mp3",
-   "source": "../moon/audio/sfx_magic.mp3",
-   "duration_seconds": 2.038
-  },
-  "welcome_chime": {
-   "type": "sfx",
-   "description": "upbeat welcoming chime, three rising notes (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
-   "tags": [
-    "chime",
-    "welcome",
-    "bright",
-    "generated"
-   ],
-   "added": "2026-10-02",
-   "file": "sfx/welcome_chime.mp3",
-   "source": "games/bobo-birthday/audio/sfx-in/welcome_chime.mp3",
-   "duration_seconds": 1.52
   },
   "snore": {
    "type": "sfx",
@@ -1992,6 +1864,20 @@
    "added": "2026-10-02",
    "file": "sfx/biscuit_crunch.mp3",
    "source": "../toy-town-v2/audio/biscuit_crunch.mp3",
+   "duration_seconds": 2.038
+  },
+  "magic_sparkle": {
+   "type": "sfx",
+   "description": "magic sparkle / twinkle (~2 s) — dress-up, transformation, reveal; from the Moon story",
+   "tags": [
+    "magic",
+    "sparkle",
+    "twinkle",
+    "reveal"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/magic_sparkle.mp3",
+   "source": "../moon/audio/sfx_magic.mp3",
    "duration_seconds": 2.038
   },
   "phone_ring": {
@@ -2164,6 +2050,168 @@
    "file": "sfx/police_whistle_drums.mp3",
    "source": "stories/gulbul-pandey/claude/sfx-in/police_whistle_drums.mp3",
    "duration_seconds": 4.52
+  },
+  "welcome_chime": {
+   "type": "sfx",
+   "description": "upbeat welcoming chime, three rising notes (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
+   "tags": [
+    "chime",
+    "welcome",
+    "bright",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/welcome_chime.mp3",
+   "source": "games/bobo-birthday/audio/sfx-in/welcome_chime.mp3",
+   "duration_seconds": 1.52
+  },
+  "crunch_powerup": {
+   "type": "sfx",
+   "description": "one crunch then a cartoon power-up rise (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
+   "tags": [
+    "crunch",
+    "powerup",
+    "eat",
+    "energy",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/crunch_powerup.mp3",
+   "source": "games/bobo-birthday/audio/sfx-in/crunch_powerup.mp3",
+   "duration_seconds": 2.04
+  },
+  "candle_pop_flame": {
+   "type": "sfx",
+   "description": "pop then a small flame catching (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
+   "tags": [
+    "candle",
+    "pop",
+    "flame",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/candle_pop_flame.mp3",
+   "source": "games/bobo-birthday/audio/sfx-in/candle_pop_flame.mp3",
+   "duration_seconds": 1.8
+  },
+  "blow_candles_out": {
+   "type": "sfx",
+   "description": "a big blow, candles out, tiny fizzle (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
+   "tags": [
+    "blow",
+    "candle",
+    "birthday",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/blow_candles_out.mp3",
+   "source": "games/bobo-birthday/audio/sfx-in/blow_candles_out.mp3",
+   "duration_seconds": 2.04
+  },
+  "cap_flies_off": {
+   "type": "sfx",
+   "description": "whoosh of a cap flying off then a soft thud — the joke (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
+   "tags": [
+    "whoosh",
+    "cap",
+    "thud",
+    "funny",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/cap_flies_off.mp3",
+   "source": "games/bobo-birthday/audio/sfx-in/cap_flies_off.mp3",
+   "duration_seconds": 1.52
+  },
+  "button_click": {
+   "type": "sfx",
+   "description": "speaker button click (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
+   "tags": [
+    "click",
+    "button",
+    "speaker",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/button_click.mp3",
+   "source": "games/bobo-birthday/audio/sfx-in/button_click.mp3",
+   "duration_seconds": 0.63
+  },
+  "audience_cheer": {
+   "type": "sfx",
+   "description": "children cheering hooray with applause (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
+   "tags": [
+    "cheer",
+    "applause",
+    "celebration",
+    "kids",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/audience_cheer.mp3",
+   "source": "games/bobo-birthday/audio/sfx-in/audience_cheer.mp3",
+   "duration_seconds": 3.53
+  },
+  "fireworks": {
+   "type": "sfx",
+   "description": "fireworks, whistle up then bursts (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
+   "tags": [
+    "fireworks",
+    "celebration",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/fireworks.mp3",
+   "source": "games/bobo-birthday/audio/sfx-in/fireworks.mp3",
+   "duration_seconds": 3.53
+  },
+  "cap_flies_off_2": {
+   "type": "sfx",
+   "description": "cartoon slide whistle rising then a cheeky pop — a cap flying off a head (chosen over B and C, 2 Oct)",
+   "tags": [
+    "whoosh",
+    "cap",
+    "pop",
+    "funny",
+    "slide-whistle"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/cap_flies_off_2.mp3",
+   "source": "stories/bobo-birthday/claude/ab/cap_A.mp3",
+   "duration_seconds": 2.038
+  },
+  "birthday_bg": {
+   "type": "bed",
+   "description": "birthday song instrumental bed, background under the birthday wish (replaced with a downloaded track; from birthday_bg_downloaded.mp3)",
+   "tags": [
+    "birthday",
+    "party",
+    "music",
+    "bed",
+    "soft"
+   ],
+   "volume": 0.25,
+   "bed": true,
+   "loop": true,
+   "added": "2026-10-02",
+   "file": "music/birthday_bg.mp3",
+   "source": "birthday_bg_downloaded.mp3",
+   "duration_seconds": 69.43
+  },
+  "clap_five": {
+   "type": "sfx",
+   "description": "five evenly spaced claps, children (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
+   "tags": [
+    "clap",
+    "five",
+    "rhythm",
+    "kids",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/clap_five.mp3",
+   "source": "games/bobo-birthday/audio/sfx-in/clap_five.mp3",
+   "duration_seconds": 2.51
   }
  }
 }

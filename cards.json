@@ -1,6 +1,6 @@
 {
   "_comment": "Single source of truth for physical RFID card UIDs. Edit this, then run: python3 sync_cards.py",
-  "seed_version": "2026-09-19b",
+  "seed_version": "2026-10-02a",
   "cards": {
     "JUMP": {
       "uids": [
@@ -14,7 +14,8 @@
     },
     "BANANA": {
       "uids": [
-        "0006358547"
+        "0006358547",
+        "1778089577"
       ],
       "label": "Banana",
       "games": {
@@ -190,7 +191,8 @@
     },
     "MUSIC": {
       "uids": [
-        "0006360574"
+        "0006360574",
+        "0819667906"
       ],
       "label": "Speaker / Music",
       "games": {
@@ -295,21 +297,27 @@
       }
     },
     "CAKE": {
-      "uids": [],
+      "uids": [
+        "0088154103"
+      ],
       "label": "Cake",
       "games": {
         "bobo-birthday": "CAKE"
       }
     },
     "CANDLE": {
-      "uids": [],
+      "uids": [
+        "1778512553"
+      ],
       "label": "Candle",
       "games": {
         "bobo-birthday": "CANDLE"
       }
     },
     "PARTYCAP": {
-      "uids": [],
+      "uids": [
+        "0087959223"
+      ],
       "label": "Birthday cap",
       "games": {
         "bobo-birthday": "PARTYCAP"

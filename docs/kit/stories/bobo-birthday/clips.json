@@ -78,7 +78,7 @@
   "id": "BOBO_BIRTHDAY_S01_003_COCO",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "कुछ ऐसा जो मीठा होता है, soft होता है, और birthday पर cut किया जाता है!",
+  "text": "कुछ ऐसा जो मीठा होता है, soft होता है, और birthday पर cut किया जाता है! उसका card ढूँढो और please tap करो!",
   "emotion": "playful, riddling",
   "scene": 1,
   "library": false,
@@ -205,9 +205,9 @@
   "missing": false
  },
  {
-  "id": "lib:crunch_powerup",
+  "id": "lib:biscuit_crunch",
   "kind": "sfx",
-  "name": "crunch_powerup",
+  "name": "biscuit_crunch",
   "scene": 2,
   "library": true,
   "missing": false
@@ -279,8 +279,8 @@
   "id": "BOBO_BIRTHDAY_S03_019_COCO",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "Yes! देखो — 1, 2, 3, 4… FIVE candles!",
-  "emotion": "excited, counting",
+  "text": "Yes! Candle!",
+  "emotion": "excited",
   "scene": 3,
   "library": false,
   "auto": true,
@@ -290,11 +290,21 @@
   "id": "BOBO_BIRTHDAY_S03_020_COCO",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "Make a wish Captain… अब गहरी साँस लो, और ज़ोर से फूँक मारो!",
-  "emotion": "warm, building up",
+  "text": "Bobo five साल का हो गया, तो five candles!",
+  "emotion": "bright, proud",
   "scene": 3,
   "library": false,
-  "nameText": "Make a wish {name}… अब गहरी साँस लो, और ज़ोर से फूँक मारो!",
+  "auto": true,
+  "missing": false
+ },
+ {
+  "id": "BOBO_BIRTHDAY_S03_021_COCO",
+  "kind": "speech",
+  "speaker": "COCO",
+  "text": "Look! One, two, three, four… FIVE candles!",
+  "emotion": "excited, counting",
+  "scene": 3,
+  "library": false,
   "auto": true,
   "missing": false
  },
@@ -307,7 +317,7 @@
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S03_021_COCO",
+  "id": "BOBO_BIRTHDAY_S03_022_COCO",
   "kind": "speech",
   "speaker": "COCO",
   "text": "Poof! सारी candles बुझ गईं!",
@@ -318,15 +328,15 @@
   "missing": false
  },
  {
-  "id": "lib:cap_flies_off",
+  "id": "lib:cap_flies_off_2",
   "kind": "sfx",
-  "name": "cap_flies_off",
+  "name": "cap_flies_off_2",
   "scene": 3,
   "library": true,
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S03_022_COCO",
+  "id": "BOBO_BIRTHDAY_S03_023_COCO",
   "kind": "speech",
   "speaker": "COCO",
   "text": "अरे! इतनी ज़ोर की फूँक… मेरी cap उड़ गई! Woooosh!",
@@ -337,7 +347,7 @@
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S03_023_COCO",
+  "id": "BOBO_BIRTHDAY_S03_024_COCO",
   "kind": "speech",
   "speaker": "COCO",
   "text": "अब देखो, तुम्हारी table पर एक real Birthday Cap रखी है। पहले उस cap को उठाओ और अपने सर पर पहन लो! पहन लिया?",
@@ -348,7 +358,7 @@
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S03_024_COCO",
+  "id": "BOBO_BIRTHDAY_S03_025_COCO",
   "kind": "speech",
   "speaker": "COCO",
   "text": "अब जल्दी से table पर रखे Birthday Cap Card को भी tap कर दो!",
@@ -359,7 +369,7 @@
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S03_025_COCO",
+  "id": "BOBO_BIRTHDAY_S03_026_COCO",
   "kind": "speech",
   "speaker": "COCO",
   "text": "आराम से पहनो। Cap पहन कर, Cap वाला card tap करना।",
@@ -370,7 +380,7 @@
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S03_026_COCO",
+  "id": "BOBO_BIRTHDAY_S03_027_COCO",
   "kind": "speech",
   "speaker": "COCO",
   "text": "Cap वाला card tap करो!",
@@ -389,7 +399,7 @@
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S03_027_COCO",
+  "id": "BOBO_BIRTHDAY_S03_028_COCO",
   "kind": "speech",
   "speaker": "COCO",
   "text": "Woohoo! Birthday cap ready!",
@@ -400,10 +410,10 @@
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S04_028_COCO",
+  "id": "BOBO_BIRTHDAY_S04_029_COCO",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "Cake ready, banana खा लिया, candles blow हो गईं, और birthday cap भी पहन ली! अब birthday party की जान बाकी है… Dhun-ts-dhun-ts!",
+  "text": "Cake ready, banana खा लिया, candles blow हो गईं, और birthday cap भी पहन ली! अब birthday party की जान बाकी है… धन-टना-टन… Music!",
   "emotion": "listing, building up",
   "scene": 4,
   "library": false,
@@ -411,7 +421,7 @@
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S04_029_COCO",
+  "id": "BOBO_BIRTHDAY_S04_030_COCO",
   "kind": "speech",
   "speaker": "COCO",
   "text": "जिससे loud आवाज़ में birthday music बजता है… वो कौनसा card है?",
@@ -422,7 +432,7 @@
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S04_030_COCO",
+  "id": "BOBO_BIRTHDAY_S04_031_COCO",
   "kind": "speech",
   "speaker": "COCO",
   "text": "जल्दी से Speaker Card को tap करो!",
@@ -433,7 +443,7 @@
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S04_031_COCO",
+  "id": "BOBO_BIRTHDAY_S04_032_COCO",
   "kind": "speech",
   "speaker": "COCO",
   "text": "Speaker वाला card — जिससे music बजता है।",
@@ -444,7 +454,7 @@
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S04_032_COCO",
+  "id": "BOBO_BIRTHDAY_S04_033_COCO",
   "kind": "speech",
   "speaker": "COCO",
   "text": "Speaker वाला card tap करो!",
@@ -463,7 +473,7 @@
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S04_033_COCO",
+  "id": "BOBO_BIRTHDAY_S04_034_COCO",
   "kind": "speech",
   "speaker": "COCO",
   "text": "YES! Speaker ready! Party mode ON!",
@@ -482,7 +492,7 @@
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S04_034_COCO",
+  "id": "BOBO_BIRTHDAY_S04_035_COCO",
   "kind": "speech",
   "speaker": "COCO",
   "text": "Let's DANCE, Captain!",
@@ -494,7 +504,7 @@
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S04_035_COCO",
+  "id": "BOBO_BIRTHDAY_S04_036_COCO",
   "kind": "speech",
   "speaker": "COCO",
   "text": "अपनी banana वाली super energy और birthday cap के साथ jump करो, spin करो, and clap!",
@@ -505,7 +515,7 @@
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S04_036_COCO",
+  "id": "BOBO_BIRTHDAY_S04_037_COCO",
   "kind": "speech",
   "speaker": "COCO",
   "text": "Hands up in the air!",
@@ -516,7 +526,7 @@
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S04_037_COCO",
+  "id": "BOBO_BIRTHDAY_S04_038_COCO",
   "kind": "speech",
   "speaker": "COCO",
   "text": "Spin around! Keep moving!",
@@ -535,30 +545,19 @@
   "missing": false
  },
  {
-  "id": "lib:bg_soft_loop",
+  "id": "lib:birthday_bg",
   "kind": "bed",
-  "name": "bg_soft_loop",
+  "name": "birthday_bg",
   "scene": 4,
   "library": true,
-  "missing": false
- },
- {
-  "id": "BOBO_BIRTHDAY_S04_038_COCO",
-  "kind": "speech",
-  "speaker": "COCO",
-  "text": "Now, क्या तुम मेरे साथ गाना गाओगे? चलो मिलकर गाते हैं और clap करते हैं!",
-  "emotion": "inviting",
-  "scene": 4,
-  "library": false,
-  "auto": true,
   "missing": false
  },
  {
   "id": "BOBO_BIRTHDAY_S04_039_COCO",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "Happy birthday, Bobo~ Happy birthday, Bobo~ Clap, clap, clap, clap, clap!",
-  "emotion": "singing to the Happy Birthday tune, clapping on the beat",
+  "text": "Now, क्या तुम मेरे साथ Bobo को birthday wish करोगे? चलो मिलकर गाते हैं और clap करते हैं!",
+  "emotion": "inviting",
   "scene": 4,
   "library": false,
   "auto": true,
@@ -568,22 +567,30 @@
   "id": "BOBO_BIRTHDAY_S04_040_COCO",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "Captain, clap with me!",
-  "emotion": "calling, rhythmic",
+  "text": "Happy birthday, Bobo~ Happy birthday, Bobo~",
+  "emotion": "singing to the Happy Birthday tune",
   "scene": 4,
   "library": false,
-  "nameText": "{name}, clap with me!",
   "auto": true,
+  "missing": false
+ },
+ {
+  "id": "lib:clap_five",
+  "kind": "sfx",
+  "name": "clap_five",
+  "scene": 4,
+  "library": true,
   "missing": false
  },
  {
   "id": "BOBO_BIRTHDAY_S04_041_COCO",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "Clap, clap, clap, clap, clap!",
-  "emotion": "singing, clapping on the beat",
+  "text": "Captain, clap with me!",
+  "emotion": "calling, rhythmic",
   "scene": 4,
   "library": false,
+  "nameText": "{name}, clap with me!",
   "auto": true,
   "missing": false
  },
