@@ -78,8 +78,9 @@ async function open(browser, { nfc, query = '' } = {}) {
   console.log('A. a browser without Web NFC (iPhone Safari, a laptop)');
   {
     const { ctx, page, errors } = await open(browser, { nfc: null });
-    ok(await page.$eval('#kNfc', (b) => b.disabled), 'the Phone NFC button is there but disabled');
-    ok(/Chrome on Android/.test(await text(page, '#kNfcLine')), 'and says why');
+    ok(!(await page.$eval('#kNfc', (b) => b.disabled)), 'the Phone NFC button is there and usable (no up-front browser check)');
+    await page.click('#kNfc'); await page.waitForTimeout(300);
+    ok(/no Web NFC/.test(await text(page, '#kNfcLine')), 'tapping it says this browser has no Web NFC');
     await page.evaluate(() => localStorage.setItem('readerCheck:ok', '1'));
     await page.click('#kStart'); await page.waitForTimeout(800);
     ok((await st(page)).state !== 'idle', 'Start · RFID reader still starts the story (engine path untouched)');

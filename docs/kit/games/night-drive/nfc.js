@@ -126,6 +126,8 @@
     if (n === 'NotSupportedError') return 'NFC is off or not available on this phone. Turn NFC on in the phone settings and try again.';
     if (n === 'NotReadableError') return 'The NFC antenna is busy (another app?) — close it and try again.';
     if (n === 'AbortError') return 'NFC scan stopped.';
+    if (!supported) return 'This browser has no Web NFC (NDEFReader is missing), so it cannot read NFC cards.';
+    if (!secure) return 'Phone NFC needs an https address (or localhost) — open the game from its https address.';
     return 'NFC could not start: ' + (e && (e.message || n) || 'unknown error');
   }
 
@@ -153,12 +155,9 @@
     // the dev line toggles when developer mode does; mirror it for the taught list
     new MutationObserver(renderTaught).observe($('kDevLine'), { attributes: true, attributeFilter: ['class'] });
 
-    if (!supported || !secure) {
-      nfc.disabled = true;
-      say(!secure ? 'Phone NFC needs an https address (or localhost) — open the game from taptales.netlify.app.'
-                  : 'Phone NFC needs Chrome on Android. iPhone Safari cannot read NFC tags from a web page.', 'warn');
-      return;
-    }
+    // No up-front browser check (removed 3 Oct 2026): the Phone NFC button is always usable,
+    // so it can be tried in any browser, e.g. an NFC app's built-in browser on iPhone. If the
+    // browser has no Web NFC, the tap shows why in the status line instead.
 
     guarded = window.ScanGuard ? ScanGuard.wrap(Kahani.handleScan) : Kahani.handleScan;
 
