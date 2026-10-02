@@ -19,7 +19,8 @@
       "label": "Banana",
       "games": {
         "moon": "BANANA",
-        "banana-rescue": "BANANA"
+        "banana-rescue": "BANANA",
+        "bobo-birthday": "BANANA"
       }
     },
     "DANCE": {
@@ -190,12 +191,13 @@
       "uids": [
         "0006360574"
       ],
-      "label": "Music",
+      "label": "Speaker / Music",
       "games": {
         "jungle-rescue": "MUSIC",
         "jungle-rescue-hinglish": "music",
         "toy-town": "music",
-        "jungle-rescue-english": "MUSIC"
+        "jungle-rescue-english": "MUSIC",
+        "bobo-birthday": "SPEAKER"
       }
     },
     "MANGO": {
@@ -253,6 +255,27 @@
       "label": "Fan",
       "games": {
         "toy-town": "fan"
+      }
+    },
+    "CAKE": {
+      "uids": [],
+      "label": "Cake",
+      "games": {
+        "bobo-birthday": "CAKE"
+      }
+    },
+    "CANDLE": {
+      "uids": [],
+      "label": "Candle",
+      "games": {
+        "bobo-birthday": "CANDLE"
+      }
+    },
+    "PARTYCAP": {
+      "uids": [],
+      "label": "Birthday cap",
+      "games": {
+        "bobo-birthday": "PARTYCAP"
       }
     }
   }

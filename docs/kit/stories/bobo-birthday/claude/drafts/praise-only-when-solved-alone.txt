@@ -1,0 +1,21 @@
+# DRAFT — how "praise only when the child solved it alone" would read. NOT buildable today:
+# the engine already knows hintIndex (how many hints played before the correct tap), but the
+# script format has no way to say "play this only if hintIndex == 0". That needs a small
+# compiler + engine addition (an `if unhinted:` block), which would touch every story's engine,
+# so it is parked here to read, not to build. Shown on the Cake ask; every ask would look the same.
+
+ask CAKE
+  prompt COCO [playful, riddling]: कुछ ऐसा जो मीठा होता है, soft होता है, और birthday पर cut किया जाता है!
+  hint COCO [bright, revealing]: नहीं मिला? अरे, हम बात कर रहे हैं Cake की! जल्दी से Cake Card को tap करो!
+  hint COCO [kind]: Cake वाला card ढूँढो — गोल cake, ऊपर cream वाला।
+  hint COCO [kind, clear]: Cake वाला card tap करो!
+sfx magic_sparkle
+COCO [excited] #praise: YES! Cake! एक sweet, sweet birthday cake!     # the acknowledgement — always
+if unhinted:                                                            # only when no hint had played
+  use praise                                                            # "Amazing, {name}!" etc.
+
+# What the child hears:
+#   tapped Cake before 8 s  → sparkle → "YES! Cake! …" → "Amazing, Kishu!"
+#   tapped after a hint     → sparkle → "YES! Cake! …" → story carries on (no praise line)
+# Nothing else changes: same clips, same hints, same wrong-card lines. The praise clips exist
+# already, so the only cost of building this later is the engine/compiler change itself.

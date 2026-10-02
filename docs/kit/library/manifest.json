@@ -1,5 +1,5 @@
 {
- "version": "lib-2026-09-29u",
+ "version": "lib-2026-10-02x",
  "clips": {
   "tap": {
    "type": "sfx",
@@ -1836,6 +1836,134 @@
     "name",
     "captain"
    ]
+  },
+  "audience_cheer": {
+   "type": "sfx",
+   "description": "children cheering hooray with applause (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
+   "tags": [
+    "cheer",
+    "applause",
+    "celebration",
+    "kids",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/audience_cheer.mp3",
+   "source": "games/bobo-birthday/audio/sfx-in/audience_cheer.mp3",
+   "duration_seconds": 3.53
+  },
+  "blow_candles_out": {
+   "type": "sfx",
+   "description": "a big blow, candles out, tiny fizzle (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
+   "tags": [
+    "blow",
+    "candle",
+    "birthday",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/blow_candles_out.mp3",
+   "source": "games/bobo-birthday/audio/sfx-in/blow_candles_out.mp3",
+   "duration_seconds": 2.04
+  },
+  "button_click": {
+   "type": "sfx",
+   "description": "speaker button click (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
+   "tags": [
+    "click",
+    "button",
+    "speaker",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/button_click.mp3",
+   "source": "games/bobo-birthday/audio/sfx-in/button_click.mp3",
+   "duration_seconds": 0.63
+  },
+  "candle_pop_flame": {
+   "type": "sfx",
+   "description": "pop then a small flame catching (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
+   "tags": [
+    "candle",
+    "pop",
+    "flame",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/candle_pop_flame.mp3",
+   "source": "games/bobo-birthday/audio/sfx-in/candle_pop_flame.mp3",
+   "duration_seconds": 1.8
+  },
+  "cap_flies_off": {
+   "type": "sfx",
+   "description": "whoosh of a cap flying off then a soft thud — the joke (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
+   "tags": [
+    "whoosh",
+    "cap",
+    "thud",
+    "funny",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/cap_flies_off.mp3",
+   "source": "games/bobo-birthday/audio/sfx-in/cap_flies_off.mp3",
+   "duration_seconds": 1.52
+  },
+  "crunch_powerup": {
+   "type": "sfx",
+   "description": "one crunch then a cartoon power-up rise (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
+   "tags": [
+    "crunch",
+    "powerup",
+    "eat",
+    "energy",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/crunch_powerup.mp3",
+   "source": "games/bobo-birthday/audio/sfx-in/crunch_powerup.mp3",
+   "duration_seconds": 2.04
+  },
+  "fireworks": {
+   "type": "sfx",
+   "description": "fireworks, whistle up then bursts (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
+   "tags": [
+    "fireworks",
+    "celebration",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/fireworks.mp3",
+   "source": "games/bobo-birthday/audio/sfx-in/fireworks.mp3",
+   "duration_seconds": 3.53
+  },
+  "magic_sparkle": {
+   "type": "sfx",
+   "description": "magic sparkle / twinkle (~2 s) — dress-up, transformation, reveal; from the Moon story",
+   "tags": [
+    "magic",
+    "sparkle",
+    "twinkle",
+    "reveal"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/magic_sparkle.mp3",
+   "source": "../moon/audio/sfx_magic.mp3",
+   "duration_seconds": 2.038
+  },
+  "welcome_chime": {
+   "type": "sfx",
+   "description": "upbeat welcoming chime, three rising notes (ElevenLabs sound-generation for bobo-birthday; replace with a better file any time)",
+   "tags": [
+    "chime",
+    "welcome",
+    "bright",
+    "generated"
+   ],
+   "added": "2026-10-02",
+   "file": "sfx/welcome_chime.mp3",
+   "source": "games/bobo-birthday/audio/sfx-in/welcome_chime.mp3",
+   "duration_seconds": 1.52
   }
  }
 }

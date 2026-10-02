@@ -1,0 +1,143 @@
+# Bobo की Birthday Party — Dilpesh's script in the kit format (2 Oct 2026, evening)
+# This is his finalised script, line for line, with ONLY the changes he approved on 2 Oct:
+#   1. two short extra hints per ask (his reveal line stays hint 1; "Sahi pakde" → "Candle!")
+#   2. one praise line (library, with the name) after every tap — "praise every time" for this story
+#   3. the child's name stays inside sentences (his call; the name-rule warnings are expected)
+#   4. the child blows the candles (3 s silence, then the blow-out sound)
+#   5. the existing BANANA card instead of a Fruit card — the healthy / energy lines stay
+#   6. joke A: Coco's cap flies off after the blow
+#   7. the Speaker card IS the Music card (= MUSIC in cards.json; the print changes, not the UID)
+#   8. aap → tum everywhere
+# Hindi in Devanagari, English words in Latin (what ElevenLabs reads reliably); nothing reworded.
+# Where a sentence with the name sits inside a longer speech it is its own line, so only that
+# sentence is a per-child clip. Format: tools/FORMAT.md
+
+title: Bobo की Birthday Party
+key: bobo-birthday
+language: hi
+minutes: 3
+audio: audio/
+cache: bb-1
+hints at: 8s 17s 28s
+tap sound: @lib:tap
+voices: COCO=Saanu
+activities: ज़ोर से फूँक मारकर candles बुझाओ | असली birthday cap पहनो | Dance — hands up, spin around | Happy birthday गाओ और clap करो
+
+# progress-bar order. CAKE, CANDLE, PARTYCAP are new to cards.json (claude/cards-additions.json);
+# BANANA exists; SPEAKER is the existing MUSIC card with a new print (label "Speaker / Music").
+card CAKE: 🎂 Cake say=cake
+card BANANA: 🍌 Banana say=banana|केला
+card CANDLE: 🕯️ Candle say=candle
+card PARTYCAP: 🥳 Birthday cap say=cap|टोपी
+card SPEAKER: 🔊 Speaker = MUSIC say=speaker|music
+
+
+== block praise
+one of:
+  COCO [warm, proud] @lib:praise_amazing #praise: Amazing, {name}!
+  COCO [bright] @lib:praise_good_job #praise: Good job, {name}!
+  COCO [delighted] @lib:praise_excellent #praise: Excellent work, {name}!
+  COCO [pleased, clear] @lib:praise_right #praise: You are absolutely right, {name}!
+
+
+== scene: Mission setup
+sfx welcome_chime
+COCO [upbeat, welcoming] #intro: Hey! Hi, {name}! मैं हूँ Coco और आज मेरे friend Bobo का birthday है। क्या तुम Bobo की birthday party arrange करने में मेरी help करोगे?
+wait 3s
+COCO [bright]: Great! तो चलो सबसे पहले party की सबसे yummy चीज़ ढूँढते हैं…
+ask CAKE
+  prompt COCO [playful, riddling]: कुछ ऐसा जो मीठा होता है, soft होता है, और birthday पर cut किया जाता है!
+  hint COCO [bright, revealing]: नहीं मिला? अरे, हम बात कर रहे हैं Cake की! जल्दी से Cake Card को tap करो!
+  hint COCO [kind]: Cake वाला card ढूँढो — गोल cake, ऊपर cream वाला।
+  hint COCO [kind, clear]: Cake वाला card tap करो!
+sfx magic_sparkle
+
+
+== scene: Cake & healthy power-up
+COCO [excited] #praise: YES! Cake! एक sweet, sweet birthday cake!
+use praise
+COCO [leaning in]: पर पता है {name}?
+COCO [explaining, playful]: अगर Bobo और हम सिर्फ cake खाएँगे, तो tummy ache हो सकता है। Party में non-stop मस्ती और dance करने के लिए हमें super energy चाहिए!
+ask BANANA
+  prompt COCO [inviting]: क्या तुम cards में से कोई ऐसा healthy food ढूँढ सकते हो जो हमें strong बनाए और super-energy दे?
+  hint COCO [bright, revealing]: ध्यान से देखो… yummy, healthy banana! Fast-fast Banana Card को tap करो और healthy power लो!
+  hint COCO [kind]: Banana वाला card — पीला, लंबा केला।
+  hint COCO [kind, clear]: Banana वाला card tap करो!
+sfx crunch_powerup
+COCO [excited] #praise: Yum! Yummy banana! अब आई ना असली birthday energy!
+use praise
+
+
+== scene: Candles & wearing the birthday cap
+ask CANDLE
+  prompt COCO [curious, leading]: अब हमारा cake ready है! लेकिन birthday cake के ऊपर हम क्या लगाते हैं जिसे फूँक मारकर blow करते हैं?
+  hint COCO [bright, revealing]: Candle! जल्दी से Candle Card को tap करो!
+  hint COCO [kind]: Candle वाला card — जलती हुई candle वाला।
+  hint COCO [kind, clear]: Candle वाला card tap करो!
+sfx candle_pop_flame
+COCO [excited, counting] #praise: Yes! देखो — 1, 2, 3, 4… FIVE candles!
+use praise
+COCO [warm, building up] #action: Make a wish {name}… अब गहरी साँस लो, और ज़ोर से फूँक मारो!
+wait 3s
+sfx blow_candles_out
+COCO [delighted]: Poof! सारी candles बुझ गईं!
+sfx cap_flies_off
+COCO [surprised, laughing] #joke: अरे! इतनी ज़ोर की फूँक… मेरी cap उड़ गई! Woooosh!
+COCO [warm, slow]: अब देखो, तुम्हारी table पर एक real Birthday Cap रखी है। पहले उस cap को उठाओ और अपने सर पर पहन लो! पहन लिया?
+wait 3s
+ask PARTYCAP
+  prompt COCO [bright]: अब जल्दी से table पर रखे Birthday Cap Card को भी tap कर दो!
+  hint COCO [relaxed, reassuring]: आराम से पहनो। Cap पहन कर, Cap वाला card tap करना।
+  hint COCO [kind, clear]: Cap वाला card tap करो!
+sfx party_whistle
+COCO [cheering] #praise: Woohoo! Birthday cap ready!
+use praise
+
+
+== scene: Speaker, dance & birthday song
+COCO [listing, building up]: Cake ready, banana खा लिया, candles blow हो गईं, और birthday cap भी पहन ली! अब birthday party की जान बाकी है… Dhun-ts-dhun-ts!
+ask SPEAKER
+  prompt COCO [playful, riddling]: जिससे loud आवाज़ में birthday music बजता है… वो कौनसा card है?
+  hint COCO [bright, revealing]: जल्दी से Speaker Card को tap करो!
+  hint COCO [kind]: Speaker वाला card — जिससे music बजता है।
+  hint COCO [kind, clear]: Speaker वाला card tap करो!
+sfx button_click
+COCO [excited] #praise: YES! Speaker ready! Party mode ON!
+use praise
+music dance_loop
+duck COCO [party voice] #action: Let's DANCE, {name}!
+duck COCO [bouncy] #action: अपनी banana वाली super energy और birthday cap के साथ jump करो, spin करो, and clap!
+music at 9s
+duck COCO [calling out] #action: Hands up in the air!
+music at 14s
+duck COCO [calling out] #action: Spin around! Keep moving!
+music at 19s
+music stop
+sfx music_end_flourish
+bed bg_soft_loop @0.16
+COCO [inviting]: Now, क्या तुम मेरे साथ गाना गाओगे? चलो मिलकर गाते हैं और clap करते हैं!
+COCO [singing to the Happy Birthday tune, clapping on the beat] #action: Happy birthday, Bobo~ Happy birthday, Bobo~ Clap, clap, clap, clap, clap!
+COCO [calling, rhythmic] #action: {name}, clap with me!
+COCO [singing, clapping on the beat] #action: Clap, clap, clap, clap, clap!
+wait 3s
+bed stop
+
+
+== scene: Thank you & hero praise
+COCO [खुश होकर, warm]: Thank you so much, {name}, for helping me plan Bobo's birthday!
+COCO [proud, big finish]: What an amazing birthday party! Thank you so much! You are such a hero!
+together:
+  sfx audience_cheer
+  sfx fireworks
+  sfx clap
+
+
+== wrong card
+sfx boing
+COCO [warm] @lib:wrong_1: ओहो! ये वाला काम नहीं करेगा। Captain, एक और card try करो!
+--
+sfx boing
+COCO [warm] @lib:wrong_2: ऊप्स! हमें कोई और चीज़ चाहिए। Captain, फिर से सोचो!
+--
+sfx boing
+COCO [warm] @lib:wrong_3: हम्म... ये नहीं। Captain, दूसरा card try करो!
