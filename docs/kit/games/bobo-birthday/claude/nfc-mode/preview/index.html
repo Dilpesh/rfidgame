@@ -1,0 +1,176 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Bobo — Phone NFC proposal</title><style>
+body{font:15px/1.5 system-ui,sans-serif;max-width:960px;margin:0 auto;padding:16px;background:#fff;color:#222}
+pre{background:#f6f6f6;padding:12px;overflow:auto;font-size:12px;border-radius:6px}
+.add{background:#e6ffec;color:#116329}.del{background:#ffebe9;color:#82071e}.hunk{color:#0550ae}
+code{background:#f0f0f0;padding:1px 4px;border-radius:3px} td,th{padding:4px 10px;border-bottom:1px solid #ddd;text-align:left}
+</style></head><body>
+<h1>Bobo की Birthday Party — Phone NFC mode (proposal, 3 Oct 2026)</h1>
+<p><b>Why:</b> on the phone, tapping a card showed Android's own "Scan result / Empty tag" screen — Bobo never asked Chrome to listen for NFC. On the laptop it works because the USB reader types the card number.</p>
+<p><b>What changes:</b> one added line in <code>index.html</code> and a new <code>nfc.js</code> (a copy of Night Drive's, plus serial conversion). The shared engine and every other game are untouched.</p>
+<p><b>The conversion:</b> Chrome reports the Speaker card as <code>c2:23:db:30</code>; the laptop reader types those 4 bytes reversed as a 10-digit number: <code>30 DB 23 C2 → 0819667906</code> (you confirmed this). So all five Bobo cards already in <code>cards.json</code> work on the phone with no teaching.</p>
+<table><tr><th>card</th><th>laptop (cards.json)</th><th>phone serial</th></tr>
+<tr><td>Speaker</td><td>0819667906</td><td>c2:23:db:30</td></tr>
+<tr><td>Cake</td><td>0088154103</td><td>f7:1f:41:05</td></tr>
+<tr><td>Candle</td><td>1778512553</td><td>a9:f2:01:6a</td></tr>
+<tr><td>Birthday cap</td><td>0087959223</td><td>b7:26:3e:05</td></tr>
+<tr><td>Banana</td><td>1778089577</td><td>69:7e:fb:69</td></tr></table>
+<p><b>Verified:</b> <code>new/qa_nfc.js</code> 30/30 in headless Chromium with a fake NFC reader — conversion for all five cards, no-NFC browser, wrong card, unknown tag ignored / taught in ?dev, permission prompt and refusal, and the whole story to the end (CAKE BANANA CANDLE PARTYCAP SPEAKER) by phone NFC. <b>Not yet:</b> your OnePlus with the real cards.</p>
+<p><b>To keep it:</b></p><pre>cd ~/Documents/Game/rfidgame/docs/kit/games/bobo-birthday
+cp claude/nfc-mode/modified/index.html index.html
+cp claude/nfc-mode/new/nfc.js nfc.js
+cp claude/nfc-mode/new/qa_nfc.js qa_nfc.js</pre>
+<p>Then on the phone: open the game in Chrome, tap <b>Start · Phone NFC</b>, allow NFC, and hold each card to the back of the phone. The "Empty tag" screen still appears if you tap a card <i>before</i> pressing that button — that's expected.</p>
+<h2>index.html</h2><pre><span class="">--- original/index.html</span>
+<span class="">+++ modified/index.html</span>
+<span class="hunk">@@ -14,4 +14,5 @@</span>
+<span class=""> &lt;script src=&quot;../../engine/card-registry.js?v=94f97e16&quot;&gt;&lt;/script&gt;</span>
+<span class=""> &lt;script src=&quot;../../engine/kahani.js?v=e26b081b&quot;&gt;&lt;/script&gt;</span>
+<span class="add">+&lt;script src=&quot;nfc.js?v=nfc-1&quot;&gt;&lt;/script&gt;   &lt;!-- Phone NFC mode, this story only (see nfc.js) --&gt;</span>
+<span class=""> &lt;script&gt;Kahani.boot({ story: &#x27;story.json&#x27; });&lt;/script&gt;</span>
+<span class=""> &lt;/body&gt;</span></pre>
+<h2>nfc.js vs Night Drive's nfc.js</h2><pre><span class="">--- night-drive/nfc.js</span>
+<span class="">+++ bobo-birthday/nfc.js (new)</span>
+<span class="hunk">@@ -1,42 +1,45 @@</span>
+<span class="del">-/* nfc.js — &quot;Phone NFC&quot; mode for Coco की Night Drive. This story only.</span>
+<span class="add">+/* nfc.js — &quot;Phone NFC&quot; mode for Bobo की Birthday Party. This story only.</span>
+<span class="add">+ *</span>
+<span class="add">+ * A copy of night-drive/nfc.js (30 Sep 2026) with one addition: the phone&#x27;s tag</span>
+<span class="add">+ * serial is converted to the number the laptop&#x27;s USB reader types, so every card</span>
+<span class="add">+ * already in cards.json works on the phone with no teaching.</span>
+<span class="">  *</span>
+<span class="">  * The engine (../../engine/kahani.js) is shared by every kit story and is not</span>
+<span class="del">- * touched. This file is loaded by night-drive/index.html alone and bolts a</span>
+<span class="del">- * second way of answering onto the welcome page:</span>
+<span class="del">- *</span>
+<span class="del">- *   Start · RFID reader   the engine&#x27;s own start — the 125 kHz reader typing UIDs</span>
+<span class="del">- *   Start · Phone NFC     the phone&#x27;s NFC antenna reads 13.56 MHz tags (NTAG213 …)</span>
+<span class="del">- *                         through Web NFC, and every tag serial is handed to the</span>
+<span class="del">- *                         engine exactly as a reader keystroke would be</span>
+<span class="del">- *</span>
+<span class="del">- * How a tag becomes a card (decision, 30 Sep 2026: teach by serial only):</span>
+<span class="del">- *   - a tag&#x27;s serial number is looked up in the card registry</span>
+<span class="del">- *     (card-registry.js — the same one the RFID cards live in, one localStorage</span>
+<span class="del">- *     key for the whole site, so a tag taught here is known in every kit game)</span>
+<span class="del">- *   - an unknown tag in developer mode (?dev, or Ctrl+Shift+D) shows a small</span>
+<span class="del">- *     &quot;which card is this?&quot; panel; pick one and the serial is taught with</span>
+<span class="del">- *     CardRegistry.teach() and counted at once</span>
+<span class="del">- *   - an unknown tag outside developer mode is ignored with a status line</span>
+<span class="del">- *   - the serials taught on this phone are listed in developer mode with a Copy</span>
+<span class="del">- *     button, so they can go into cards.json later (cards are global)</span>
+<span class="del">- *</span>
+<span class="del">- * What the engine sees: Kahani.handleScan(serial), wrapped in ScanGuard, so</span>
+<span class="del">- * early scans, tap windows, wrong-card lines and the progress bar all behave as</span>
+<span class="del">- * for a reader. The engine&#x27;s reader check is skipped for this play (no keyboard</span>
+<span class="del">- * wedge to test); nothing about it is written to storage.</span>
+<span class="add">+ * touched. This file is loaded by bobo-birthday/index.html alone and adds a</span>
+<span class="add">+ * second way of answering to the welcome page:</span>
+<span class="add">+ *</span>
+<span class="add">+ *   Start · RFID reader   the engine&#x27;s own start — the USB reader typing card numbers</span>
+<span class="add">+ *   Start · Phone NFC     the phone&#x27;s NFC antenna reads the same 13.56 MHz cards</span>
+<span class="add">+ *                         through Web NFC, and each card is handed to the engine</span>
+<span class="add">+ *                         exactly as a reader keystroke would be</span>
+<span class="add">+ *</span>
+<span class="add">+ * Phone serial → laptop number (3 Oct 2026):</span>
+<span class="add">+ *   Chrome gives the tag&#x27;s ID as hex bytes, e.g. &quot;c2:23:db:30&quot; (the Speaker card).</span>
+<span class="add">+ *   The USB reader types the same 4 bytes read the other way round, as a 10-digit</span>
+<span class="add">+ *   decimal: 30 DB 23 C2 → 0819667906, which is what cards.json holds. Dilpesh</span>
+<span class="add">+ *   confirmed that number on the laptop for this card. So for a tag we try, in order:</span>
+<span class="add">+ *     1. bytes reversed → decimal   (the laptop reader&#x27;s way — every card in cards.json)</span>
+<span class="add">+ *     2. bytes as read  → decimal   (in case another reader model does it this way)</span>
+<span class="add">+ *     3. the hex serial itself      (tags taught on a phone before this conversion)</span>
+<span class="add">+ *   and hand the engine the first one the card registry knows.</span>
+<span class="add">+ *</span>
+<span class="add">+ * Unknown tag: in developer mode (?dev) a &quot;which card is this?&quot; panel teaches it</span>
+<span class="add">+ * with CardRegistry.teach(), under the laptop-style number (rule 1), so the Copy</span>
+<span class="add">+ * list can go straight into cards.json and the same card then works on the laptop</span>
+<span class="add">+ * too. Outside developer mode an unknown tag is ignored with a status line.</span>
+<span class="">  *</span>
+<span class="">  * Limits that are the platform&#x27;s, not ours:</span>
+<span class="del">- *   - Web NFC exists only in Chrome (and Chromium browsers) on Android, on a</span>
+<span class="del">- *     secure origin (https, or localhost). iPhone Safari cannot read NFC tags</span>
+<span class="del">- *     from a web page at all — that needs a native app. The button is shown</span>
+<span class="add">+ *   - Web NFC exists only in Chrome on Android, on https (GitHub Pages and Netlify</span>
+<span class="add">+ *     are fine; a laptop&#x27;s http://192.168… address is not). iPhone Safari cannot</span>
+<span class="add">+ *     read NFC from a web page — that needs the native app. The button is shown</span>
+<span class="">  *     disabled with the reason on such phones.</span>
+<span class="del">- *   - NDEFReader.scan() must be called inside a user tap, and the first time</span>
+<span class="del">- *     Chrome asks &quot;Allow NFC?&quot;. If that prompt takes longer than a few seconds</span>
+<span class="del">- *     the tap&#x27;s activation has expired for audio, so the story is not started</span>
+<span class="del">- *     behind the prompt; the button says &quot;tap again&quot; and the second tap starts it.</span>
+<span class="del">- *   - Reading pauses while the page is hidden; Chrome resumes it when the page</span>
+<span class="del">- *     is visible again.</span>
+<span class="del">- *   - The 125 kHz cards cannot be read by a phone and the NFC tags cannot be</span>
+<span class="del">- *     read by the 125 kHz reader: NFC mode needs its own set of tags.</span>
+<span class="add">+ *   - NDEFReader.scan() must be called inside a user tap, and the first time Chrome</span>
+<span class="add">+ *     asks &quot;Allow NFC?&quot;. If that takes more than a few seconds the tap no longer</span>
+<span class="add">+ *     counts for audio, so the button says &quot;tap to start&quot; and a second tap starts it.</span>
+<span class="add">+ *   - While the page is scanning, Chrome gets the tag, not Android&#x27;s NFC app. Before</span>
+<span class="add">+ *     Start · Phone NFC is tapped (or with the screen off) Android&#x27;s own</span>
+<span class="add">+ *     &quot;Scan result / Empty tag&quot; screen still appears — that is expected.</span>
+<span class="add">+ *   - Reading pauses while the page is hidden; Chrome resumes it when it is visible.</span>
+<span class="add">+ *   - A card with no text on it is normal: only its ID is used.</span>
+<span class="">  */</span>
+<span class=""> (function () {</span>
+<span class="hunk">@@ -44,5 +47,5 @@</span>
+<span class=""> </span>
+<span class="">   const $ = (id) =&gt; document.getElementById(id);</span>
+<span class="del">-  const TAUGHT_KEY = &#x27;nightDriveNfcTags&#x27;;           // {serial: CANON} — only what was taught here, for cards.json later</span>
+<span class="add">+  const TAUGHT_KEY = &#x27;boboBirthdayNfcTags&#x27;;           // {serial: CANON} — only what was taught here, for cards.json later</span>
+<span class="">   const FAST_MS = 3000;                            // permission already granted: scan() resolves well within this</span>
+<span class=""> </span>
+<span class="hunk">@@ -52,4 +55,24 @@</span>
+<span class=""> </span>
+<span class="">   const esc = (s) =&gt; String(s).replace(/[&amp;&lt;&gt;&quot;]/g, (c) =&gt; ({ &#x27;&amp;&#x27;: &#x27;&amp;amp;&#x27;, &#x27;&lt;&#x27;: &#x27;&amp;lt;&#x27;, &#x27;&gt;&#x27;: &#x27;&amp;gt;&#x27;, &#x27;&quot;&#x27;: &#x27;&amp;quot;&#x27; }[c]));</span>
+<span class="add">+  /* ───────── phone serial → the number the laptop reader types ───────── */</span>
+<span class="add">+  const bytesOf = (serial) =&gt; {</span>
+<span class="add">+    const hex = String(serial || &#x27;&#x27;).replace(/[^0-9a-f]/gi, &#x27;&#x27;);</span>
+<span class="add">+    if (!hex || hex.length % 2) return null;</span>
+<span class="add">+    const out = []; for (let i = 0; i &lt; hex.length; i += 2) out.push(parseInt(hex.slice(i, i + 2), 16));</span>
+<span class="add">+    return out;</span>
+<span class="add">+  };</span>
+<span class="add">+  const decimal = (bytes) =&gt; { let n = 0n; for (const b of bytes) n = n * 256n + BigInt(b); return n.toString(); };</span>
+<span class="add">+  const pad10 = (d) =&gt; (d.length &lt; 10 ? &#x27;0&#x27;.repeat(10 - d.length) + d : d);</span>
+<span class="add">+  function candidates(serial) {</span>
+<span class="add">+    const hex = String(serial || &#x27;&#x27;).trim().toUpperCase();</span>
+<span class="add">+    const b = bytesOf(hex);</span>
+<span class="add">+    if (!b) return hex ? [hex] : [];</span>
+<span class="add">+    const reversed = pad10(decimal(b.slice().reverse()));</span>
+<span class="add">+    const asRead = pad10(decimal(b));</span>
+<span class="add">+    return [...new Set([reversed, asRead, hex])];</span>
+<span class="add">+  }</span>
+<span class="add">+  // the key a new tag is taught under: the laptop-style number, so it fits cards.json as it is</span>
+<span class="add">+  const teachKey = (serial) =&gt; candidates(serial)[0] || &#x27;&#x27;;</span>
+<span class="add">+</span>
+<span class="">   const isDev = () =&gt; { const d = $(&#x27;kDevLine&#x27;); return !!d &amp;&amp; !d.classList.contains(&#x27;hide&#x27;); };</span>
+<span class="">   const story = () =&gt; (window.Kahani &amp;&amp; Kahani._story &amp;&amp; Kahani._story()) || null;</span>
+<span class="hunk">@@ -111,9 +134,11 @@</span>
+<span class="">     const serial = String(ev.serialNumber || &#x27;&#x27;).trim().toUpperCase();</span>
+<span class="">     if (!serial) { say(&#x27;That tag has no serial number — try another tag.&#x27;, &#x27;warn&#x27;); return; }</span>
+<span class="del">-    const canon = window.CardRegistry ? CardRegistry.lookup(serial) : null;</span>
+<span class="del">-    if (canon &amp;&amp; inStory(canon)) { hideTeach(); say(&#x27;&#x27;); guarded(serial); return; }</span>
+<span class="add">+    let key = null, canon = null;</span>
+<span class="add">+    if (window.CardRegistry) for (const c of candidates(serial)) { const k = CardRegistry.lookup(c); if (k) { key = c; canon = k; break; } }</span>
+<span class="add">+    if (canon &amp;&amp; inStory(canon)) { hideTeach(); say(&#x27;&#x27;); guarded(key); return; }</span>
+<span class="">     if (canon) { say(`That tag is ${canon}, which this story does not use.`, &#x27;warn&#x27;); return; }</span>
+<span class="del">-    lastUnknown = serial;</span>
+<span class="del">-    if (isDev()) { say(`Unknown tag ${serial}.`, &#x27;warn&#x27;); showTeach(serial); }</span>
+<span class="add">+    const k = teachKey(serial);</span>
+<span class="add">+    lastUnknown = k;</span>
+<span class="add">+    if (isDev()) { say(`Unknown tag ${serial} (reader number ${k}).`, &#x27;warn&#x27;); showTeach(k); }</span>
+<span class="">     else say(&#x27;Unknown tag — teach it in developer mode (?dev).&#x27;, &#x27;warn&#x27;);</span>
+<span class="">   }</span>
+<span class="hunk">@@ -156,5 +181,5 @@</span>
+<span class="">     if (!supported || !secure) {</span>
+<span class="">       nfc.disabled = true;</span>
+<span class="del">-      say(!secure ? &#x27;Phone NFC needs an https address (or localhost) — open the game from taptales.netlify.app.&#x27;</span>
+<span class="add">+      say(!secure ? &#x27;Phone NFC needs an https address (or localhost) — open the game from its https address (GitHub Pages or Netlify).&#x27;</span>
+<span class="">                   : &#x27;Phone NFC needs Chrome on Android. iPhone Safari cannot read NFC tags from a web page.&#x27;, &#x27;warn&#x27;);</span>
+<span class="">       return;</span>
+<span class="hunk">@@ -201,4 +226,4 @@</span>
+<span class="">   else new MutationObserver((_, o) =&gt; { if ($(&#x27;kStart&#x27;)) { o.disconnect(); install(); } }).observe(document.body, { childList: true, subtree: true });</span>
+<span class=""> </span>
+<span class="del">-  window.NightDriveNFC = { supported, secure, _reading: onReading, _ready: () =&gt; ready, _scanning: () =&gt; scanning, _lastUnknown: () =&gt; lastUnknown, taught: readTaught };</span>
+<span class="add">+  window.BoboNFC = { candidates, teachKey, supported, secure, _reading: onReading, _ready: () =&gt; ready, _scanning: () =&gt; scanning, _lastUnknown: () =&gt; lastUnknown, taught: readTaught };</span>
+<span class=""> })();</span></pre>
+</body></html>
