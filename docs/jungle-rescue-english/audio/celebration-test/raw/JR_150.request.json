@@ -1,0 +1,7 @@
+{
+  "text": "The last soft snore of a small sleeping lion fades in the distance as a few gentle footsteps move toward a rescue jeep. Light rain eases and evening wind fades. One continuous child-safe transition, no voices, no music, no loud engine.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 4.0,
+  "prompt_influence": 0.8,
+  "loop": false
+}

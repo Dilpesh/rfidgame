@@ -1,0 +1,38 @@
+{
+  "purpose": "Adult-voice Elephant treatment audition only; not final JR_NNN cues",
+  "source_voice": "Ravi",
+  "source_voice_id": "FF20guQVlAWTxmSRcTSk",
+  "source_file": "elephant_ravi.mp3",
+  "source_cues": [
+    "JR_053",
+    "JR_062",
+    "JR_063",
+    "JR_065"
+  ],
+  "approved_elephant_call": "audio_candidates/old_sfx_elephant.mp3",
+  "options": [
+    {
+      "file": "elephant_adult_ravi_levelmatched.mp3",
+      "type": "adult voice, loudness matched",
+      "duration_seconds": 14.602,
+      "integrated_lufs": -15.0,
+      "true_peak_dbfs": -3.0,
+      "filter": "loudnorm=I=-16:TP=-1.5:LRA=11,alimiter=limit=0.95"
+    },
+    {
+      "file": "elephant_adult_ravi_character.mp3",
+      "type": "adult voice with light Elephant character treatment",
+      "duration_seconds": 14.602,
+      "integrated_lufs": -15.1,
+      "true_peak_dbfs": -1.5,
+      "filter": "[0:a]asplit=2[clear0][body0];[clear0]highpass=f=100,equalizer=f=650:t=q:w=1:g=2.5,equalizer=f=1000:t=q:w=1.2:g=1.5,equalizer=f=2500:t=q:w=0.9:g=2[clear];[body0]asetrate=39690,aresample=44100,atempo=1.111111,highpass=f=400,lowpass=f=1050,volume=0.16[body];[clear][body]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=11,alimiter=limit=0.95[out]"
+    },
+    {
+      "file": "elephant_adult_ravi_character_with_call.mp3",
+      "type": "treated voice after approved Elephant call",
+      "duration_seconds": 16.953,
+      "filter": "[0:a]aformat=channel_layouts=mono,loudnorm=I=-21:TP=-3:LRA=11[call];anullsrc=r=44100:cl=mono:d=0.25[gap];[1:a]anull[voice];[call][gap][voice]concat=n=3:v=0:a=1[out]"
+    }
+  ],
+  "note": "The adult source was a previous flat TTS audition. Processing adds body but cannot create a more expressive performance; a newly acted adult take may improve the result."
+}

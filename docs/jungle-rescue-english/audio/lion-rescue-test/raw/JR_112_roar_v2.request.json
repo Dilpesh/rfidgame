@@ -1,0 +1,7 @@
+{
+  "text": "A young lion cub's single grumpy, comical mini-roar in response to someone offering to find his tail: a clear low 'grrr-ROW' with a quick firm onset and rounded finish. Recognizably a lion, small and child-friendly, annoyed rather than scary. Natural animal vocal only; no human words, no meow, no adult attack roar, no distortion, no thunder, no music or ambience.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 1.4,
+  "prompt_influence": 0.8,
+  "loop": false
+}

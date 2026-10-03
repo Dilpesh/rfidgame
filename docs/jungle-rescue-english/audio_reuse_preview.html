@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jungle Rescue — legacy audio review</title>
+  <style>
+    :root { font-family: system-ui, -apple-system, sans-serif; color: #183228; background: #f3f7f1; }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    main { max-width: 900px; margin: 0 auto; padding: 24px 16px 60px; }
+    h1 { font-size: clamp(1.7rem, 5vw, 2.5rem); line-height: 1.1; margin: 0 0 12px; }
+    h2 { font-size: 1.25rem; margin: 32px 0 12px; }
+    p { line-height: 1.5; }
+    .intro, .card { background: white; border: 1px solid #dbe6d9; border-radius: 16px; box-shadow: 0 3px 14px #16482b0a; }
+    .intro { padding: 20px; }
+    .intro p { margin: 10px 0; }
+    .toolbar { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; margin-top: 16px; }
+    .toolbar button { border: 0; background: #145c3d; color: white; font: inherit; font-weight: 700; padding: 10px 14px; border-radius: 10px; cursor: pointer; }
+    .toolbar button:focus-visible, .choices button:focus-visible { outline: 3px solid #e0a82b; outline-offset: 2px; }
+    #progress { font-weight: 700; }
+    .grid { display: grid; gap: 12px; }
+    .card { padding: 16px; }
+    .top { display: flex; align-items: start; justify-content: space-between; gap: 12px; }
+    .card h3 { font-size: 1.03rem; margin: 0 0 5px; }
+    .cue { color: #426451; font-size: .86rem; font-weight: 700; }
+    .source { font-size: .82rem; color: #5b6c60; overflow-wrap: anywhere; margin: 7px 0; }
+    .note { margin: 7px 0 13px; font-size: .93rem; }
+    audio { width: 100%; height: 44px; }
+    .choices { display: flex; gap: 7px; flex-wrap: wrap; margin-top: 12px; }
+    .choices button { padding: 7px 11px; background: #edf3ec; color: #1a3a2b; border: 1px solid #b6cbb9; border-radius: 8px; font: inherit; cursor: pointer; }
+    .choices button[aria-pressed="true"] { background: #145c3d; color: white; border-color: #145c3d; }
+    .length { font-size: .8rem; color: #53665a; white-space: nowrap; }
+    .foot { color: #53665a; font-size: .9rem; margin-top: 30px; }
+    a { color: #145c3d; }
+  </style>
+</head>
+<body>
+<main>
+  <div class="intro">
+    <h1>Jungle Rescue audio review</h1>
+    <p>These are <strong>legacy MP3 previews</strong>, not approved final cues. Play them on the speaker your child will use. Each row shows the current script cue it might serve and what to listen for. The old dialogue is deliberately excluded because its names and card flow changed.</p>
+    <p>Mark <strong>Use</strong> if the sound fits, <strong>Edit / mix</strong> if it has a useful part, or <strong>Replace</strong> if it does not. Your choices stay in this browser; <strong>Export choices</strong> saves a small JSON file you can share for the next production pass.</p>
+    <div class="toolbar"><button id="export" type="button">Export choices</button><span id="progress" aria-live="polite"></span></div>
+  </div>
+  <div id="reviews"></div>
+  <p class="foot">Source audio was copied without modification from the older Jungle Rescue builds. See <a href="audio_reuse_audit.md">the reuse audit</a> and <a href="jungle_rescue_final_production_script.md">the current production script</a>. No voice generation or new credits were used.</p>
+</main>
+<script>
+const clips = [
+  {group:'Opening and shared sounds', cue:'JR_001', label:'Daytime jungle — standalone', file:'old_sfx_jungle_day.mp3', note:'50.1 seconds. Does the ambience feel friendly and loop without a noticeable jump?'},
+  {group:'Opening and shared sounds', cue:'JR_001', label:'Daytime jungle — shipped build', file:'shipped_dayAmb.mp3', note:'18.1 seconds. Compare this shorter version with the standalone ambience.'},
+  {group:'Opening and shared sounds', cue:'JR_008', label:'Engine cough — shipped build', file:'shipped_engineCough.mp3', note:'Check for two brief, funny coughs after the key turn; the key turn itself is still needed.'},
+  {group:'Opening and shared sounds', cue:'JR_014 and seven later correct-card cues', label:'Correct chime — shipped build', file:'shipped_ting.mp3', note:'Does this sound like the gentle “ting-ting” in the script? It would be shared across all correct cards.'},
+  {group:'Opening and shared sounds', cue:'JR_016', label:'Fuel pour — standalone', file:'old_sfx_fuel.mp3', note:'6.1 seconds. It will need a short edit after Coco says the tank is full.'},
+  {group:'Opening and shared sounds', cue:'JR_017', label:'Engine starts — standalone', file:'old_sfx_engine.mp3', note:'Should sound like the rescue jeep starting, with no harsh rev.'},
+  {group:'Elephant rescue', cue:'JR_027 / JR_162', label:'Elephant call — standalone', file:'old_sfx_elephant.mp3', note:'Friendly and easy to recognize, never startling.'},
+  {group:'Elephant rescue', cue:'JR_027 / JR_162', label:'Elephant call — shipped build', file:'shipped_elephant.mp3', note:'Compare with the standalone version; pick the gentler one.'},
+  {group:'Elephant rescue', cue:'JR_031', label:'Mud splat — shipped build', file:'shipped_mud.mp3', note:'Should land as Coco’s comic fall; it must not sound like a wrong answer.'},
+  {group:'Elephant rescue', cue:'JR_043 / JR_045', label:'Rope effort — shipped build', file:'shipped_rope.mp3', note:'Could supply a short rope creak if the sound reads clearly.'},
+  {group:'Elephant rescue', cue:'JR_051', label:'Stomach sound — shipped build', file:'shipped_stomach.mp3', note:'Can a four-year-old identify this as a huge hungry belly, without it sounding frightening?'},
+  {group:'Elephant rescue', cue:'JR_061', label:'Biscuit crunch — standalone', file:'old_sfx_munch.mp3', note:'One clear crunch; should repeat cleanly for each biscuit.'},
+  {group:'Elephant rescue', cue:'JR_061', label:'Munch — shipped build', file:'shipped_munchEle.mp3', note:'Compare with the standalone crunch; avoid a long sound that slows the counting joke.'},
+  {group:'Parrot rescue', cue:'JR_087', label:'Healing sparkle layer — standalone', file:'old_sfx_magic.mp3', note:'Only the sparkle layer. A bandage-wrap sound is still required.'},
+  {group:'Parrot rescue', cue:'JR_098', label:'Three gulps — standalone', file:'old_sfx_glug.mp3', note:'Needs a glass pour and clearly separated “glug, glug, GULP!”; this may be a source layer.'},
+  {group:'Parrot rescue', cue:'JR_098', label:'Gulp — shipped build', file:'shipped_gulp.mp3', note:'Compare the clarity and comic rhythm against the standalone version.'},
+  {group:'Lion rescue', cue:'JR_103', label:'Night jungle — shipped build', file:'shipped_nightAmb.mp3', note:'Reference only unless mixed with the current script’s wind and rain transition.'},
+  {group:'Lion rescue', cue:'JR_120', label:'Flashlight click — standalone', file:'old_sfx_flashlight.mp3', note:'A short click; the script also asks for a gentle beam hum.'},
+  {group:'Lion rescue', cue:'JR_120', label:'Flashlight — shipped build', file:'shipped_flashlight.mp3', note:'Compare with the standalone click; check whether any hum is already present.'},
+  {group:'Lion rescue', cue:'JR_124', label:'Owl — shipped build', file:'shipped_owl.mp3', note:'Small, comic and gentle.'},
+  {group:'Finale and wrong cards', cue:'JR_070 / JR_179 / JR_181 / JR_183', label:'Boing — shipped build', file:'shipped_boing.mp3', note:'Good for wrong-card feedback if it is clearly different from Coco’s accident boink.'},
+  {group:'Finale and wrong cards', cue:'JR_160', label:'Dance loop — shipped build', file:'shipped_dance.mp3', note:'20.01 seconds. Check energy, strong first beat and whether restarting it three times feels seamless.'},
+  {group:'Finale and wrong cards', cue:'JR_160 reference', label:'Old disco music — standalone', file:'old_sfx_disco.mp3', note:'72.3 seconds; a musical reference only unless edited into the required 20-second loop.'}
+];
+
+const storageKey = 'jungle-rescue-english-audio-reuse-review-v1';
+let choices = {};
+try { choices = JSON.parse(localStorage.getItem(storageKey) || '{}') || {}; } catch (_) { choices = {}; }
+const reviews = document.getElementById('reviews');
+const allAudios = [];
+let section, grid, lastGroup = '';
+for (const clip of clips) {
+  if (clip.group !== lastGroup) {
+    section = document.createElement('section');
+    const h = document.createElement('h2'); h.textContent = clip.group;
+    grid = document.createElement('div'); grid.className = 'grid';
+    section.append(h, grid); reviews.append(section); lastGroup = clip.group;
+  }
+  const card = document.createElement('article'); card.className = 'card';
+  const top = document.createElement('div'); top.className = 'top';
+  const title = document.createElement('div');
+  const h = document.createElement('h3'); h.textContent = clip.label;
+  const cue = document.createElement('div'); cue.className = 'cue'; cue.textContent = clip.cue;
+  title.append(h, cue);
+  const length = document.createElement('span'); length.className = 'length'; length.textContent = 'Loading length…';
+  top.append(title, length);
+  const source = document.createElement('p'); source.className = 'source'; source.textContent = `audio_candidates/${clip.file}`;
+  const note = document.createElement('p'); note.className = 'note'; note.textContent = clip.note;
+  const player = document.createElement('audio'); player.controls = true; player.preload = 'metadata'; player.src = `audio_candidates/${clip.file}`;
+  player.addEventListener('loadedmetadata', () => { length.textContent = `${player.duration.toFixed(1)} s`; });
+  player.addEventListener('error', () => { length.textContent = 'File missing'; });
+  player.addEventListener('play', () => { for (const other of allAudios) if (other !== player) other.pause(); });
+  allAudios.push(player);
+  const buttons = document.createElement('div'); buttons.className = 'choices';
+  for (const [value, caption] of [['use','Use'], ['edit','Edit / mix'], ['replace','Replace']]) {
+    const button = document.createElement('button'); button.type = 'button'; button.textContent = caption;
+    button.setAttribute('aria-pressed', choices[clip.file] === value ? 'true' : 'false');
+    button.addEventListener('click', () => {
+      choices[clip.file] = value;
+      try { localStorage.setItem(storageKey, JSON.stringify(choices)); } catch (_) { /* File previews may block storage. */ }
+      for (const b of buttons.children) b.setAttribute('aria-pressed', b === button ? 'true' : 'false');
+      updateProgress();
+    });
+    buttons.append(button);
+  }
+  card.append(top, source, note, player, buttons); grid.append(card);
+}
+function updateProgress() {
+  const done = clips.filter(clip => choices[clip.file]).length;
+  document.getElementById('progress').textContent = `${done} of ${clips.length} reviewed`;
+}
+updateProgress();
+document.getElementById('export').addEventListener('click', () => {
+  const results = clips.map(({group, cue, label, file}) => ({group, cue, label, file, choice: choices[file] || 'unreviewed'}));
+  const blob = new Blob([JSON.stringify({story:'Jungle Rescue English', reviewedAt:new Date().toISOString(), results}, null, 2)], {type:'application/json'});
+  const url = URL.createObjectURL(blob);
+  const link = document.createElement('a'); link.href = url; link.download = 'jungle-rescue-audio-review.json';
+  document.body.append(link); link.click(); link.remove();
+  setTimeout(() => URL.revokeObjectURL(url), 1000);
+});
+</script>
+</body>
+</html>

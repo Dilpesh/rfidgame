@@ -1,0 +1,7 @@
+{
+  "text": "A few leaves rustle quietly behind a large rock in an evening jungle, brief and close, curious but safe. No creature vocal, no voices, no music.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 1.1,
+  "prompt_influence": 0.8,
+  "loop": false
+}

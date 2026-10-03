@@ -1,0 +1,7 @@
+{
+  "text": "A small character trips on a tree root: one little scuff and soft padded comedy thud, harmless and funny, no scream, no voices, no music.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 1.0,
+  "prompt_influence": 0.8,
+  "loop": false
+}

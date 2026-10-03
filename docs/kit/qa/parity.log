@@ -1,0 +1,7 @@
+✓ Jungle Rescue English: 10 scenes, 187 clips, 1 variants
+✓ 8 clips come from the shared library
+✓ every clip the story needs is in the manifest
+✓ wrote docs/kit/games/_parity/index.html + story.json
+  open docs/kit/games/_parity/index.html?dev on a laptop, or /kit/games/_parity/ on the phone
+original: 161 plays in 155 s · kit: 161 plays in 154 s
+✓ identical sequence of 161 plays; worst timing drift 1505 ms

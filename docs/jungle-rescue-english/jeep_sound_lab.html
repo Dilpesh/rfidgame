@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jungle Rescue — Jeep sound comparison</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,sans-serif;color:#183628;background:#eef6ed}
+    *{box-sizing:border-box}body{margin:0}main{max-width:840px;margin:auto;padding:24px 16px 60px}
+    section,header{background:#fff;border:1px solid #d4e4d4;border-radius:16px;padding:20px;margin-bottom:14px;box-shadow:0 5px 18px #163a230b}
+    h1{margin:0 0 9px}h2{margin:0 0 9px;font-size:1.24rem}p{line-height:1.5;margin:8px 0 14px}
+    .options{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:13px}.candidate{border:1px solid #d6e4d5;border-radius:12px;padding:14px}
+    .buttons{display:flex;gap:8px;flex-wrap:wrap}button{border:1px solid #abc5af;border-radius:10px;background:#edf5ec;color:#183628;padding:10px 12px;font:inherit;font-weight:700;cursor:pointer}
+    button.primary{background:#14623f;border-color:#14623f;color:#fff}audio{width:100%;margin-top:10px}.muted{color:#526b5b}.status{padding:12px;background:#edf5ec;border-radius:10px;min-height:45px;font-weight:600}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Jeep sound comparison</h1>
+    <p>Option D is now selected for the Lion scene. This page keeps C and the earlier candidates available for comparison.</p>
+    <button id="stop">Stop all audio</button>
+    <p class="status" id="status" role="status" aria-live="polite">Ready.</p>
+  </header>
+
+  <section>
+    <h2>New options</h2>
+    <div class="options">
+      <div class="candidate">
+        <strong>C · Same Jeep texture heard earlier</strong>
+        <p>Uses the Elephant-scene moving Jeep sound, then a separate stop. This tests whether a familiar vehicle sound helps continuity.</p>
+        <div class="buttons"><button id="cAlone">Play C alone</button><button id="cScene" class="primary">Play C in scene</button></div>
+        <audio controls preload="metadata" src="audio/lion-rescue-test/jeep-auditions/jeep_c_story_continuity.mp3?review=jeep1"></audio>
+      </div>
+      <div class="candidate">
+        <strong>D · Selected Jeep: engine + tires + stop</strong>
+        <p>Separately layered engine, gravel tires and brake/engine-off. The engine remains the focus until the Jeep stops.</p>
+        <div class="buttons"><button id="dAlone">Play D alone</button><button id="dScene" class="primary">Play D in scene</button></div>
+        <audio controls preload="metadata" src="audio/lion-rescue-test/jeep-auditions/jeep_d_layered_engine.mp3?review=jeep1"></audio>
+      </div>
+    </div>
+    <p class="muted">“In scene” plays the Jeep, then the unchanged wind/rain entry, then the narrator. D now matches the Lion scene's production cue.</p>
+  </section>
+
+  <section>
+    <h2>Which part is unclear?</h2>
+    <div class="options">
+      <div class="candidate"><strong>Engine only</strong><audio controls preload="metadata" src="audio/lion-rescue-test/jeep-auditions/raw/engine_drive.mp3"></audio></div>
+      <div class="candidate"><strong>Gravel tires only</strong><audio controls preload="metadata" src="audio/lion-rescue-test/jeep-auditions/raw/tire_gravel.mp3"></audio></div>
+      <div class="candidate"><strong>Brake and engine off only</strong><audio controls preload="metadata" src="audio/lion-rescue-test/jeep-auditions/raw/brake_engine_off.mp3"></audio></div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Previous candidates, for reference</h2>
+    <div class="options">
+      <div class="candidate"><strong>A · Earlier Lion-scene cue</strong><audio controls preload="metadata" src="audio/lion-rescue-test/jeep-auditions/prior_jeep_a.mp3"></audio></div>
+      <div class="candidate"><strong>B · Earlier alternate</strong><audio controls preload="metadata" src="audio/lion-rescue-test/JR_103_jeep_alt.mp3"></audio></div>
+    </div>
+  </section>
+</main>
+<script>
+'use strict';
+const root='audio/lion-rescue-test/';
+const c=root+'jeep-auditions/jeep_c_story_continuity.mp3?review=jeep1';
+const d=root+'jeep-auditions/jeep_d_layered_engine.mp3?review=jeep1';
+let active=null,finishActive=null,run=0;
+const $=id=>document.getElementById(id);
+function status(message){$('status').textContent=message}
+function stop(){
+  run++;
+  if(active){active.pause();active.src='';if(finishActive)finishActive(false)}
+  for(const audio of document.querySelectorAll('audio'))audio.pause();
+  status('Stopped.');
+}
+function cue(source,token){
+  if(token!==run)return Promise.resolve();
+  return new Promise(resolve=>{
+    const audio=new Audio(source);active=audio;
+    const finish=ok=>{if(active===audio){active=null;finishActive=null}resolve(ok)};
+    finishActive=finish;
+    audio.onended=()=>finish(true);
+    audio.onerror=()=>{finish(false);status('Audio could not play. Check the local file.')};
+    audio.play().catch(()=>{finish(false);status('Browser blocked playback. Press Play again.')});
+  });
+}
+async function play(option,inScene){
+  stop();const token=run;status(`Playing option ${option}${inScene?' in the Lion scene':''}…`);
+  if(!await cue(option==='C'?c:d,token)||token!==run)return;
+  if(inScene){
+    if(!await cue(root+'JR_103_entry.mp3',token)||token!==run)return;
+    if(!await cue(root+'JR_104.mp3',token)||token!==run)return;
+  }
+  if(token===run)status(`Option ${option} complete.`);
+}
+$('stop').onclick=stop;
+$('cAlone').onclick=()=>play('C',false);
+$('cScene').onclick=()=>play('C',true);
+$('dAlone').onclick=()=>play('D',false);
+$('dScene').onclick=()=>play('D',true);
+</script>
+</body>
+</html>

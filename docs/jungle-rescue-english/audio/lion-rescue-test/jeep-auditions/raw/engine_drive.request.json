@@ -1,0 +1,7 @@
+{
+  "text": "Close, dry field recording of a small open-top four-wheel-drive Jeep's gasoline engine running while it moves slowly. Clearly audible low-mid four-cylinder combustion chug, a slight rev and mechanical vibration; it must sound like a real off-road vehicle engine throughout. No tires, gravel, birds, voices, music, horn, other cars, or ambient jungle.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 4.0,
+  "prompt_influence": 0.85,
+  "loop": false
+}

@@ -1,0 +1,7 @@
+{
+  "_comment": "Three cards Bobo की Birthday Party needs that are not in cards.json. Paste into cards.json → cards, fill uids from the physical cards (teach in developer mode or read with the reader), then python3 sync_cards.py. BANANA already exists and is used as-is. Labels are the printed word — confirm each with the kids first (ये क्या है?).",
+  "CAKE":     { "uids": [], "label": "Cake",         "games": { "bobo-birthday": "CAKE" } },
+  "CANDLE":   { "uids": [], "label": "Candle",       "games": { "bobo-birthday": "CANDLE" } },
+  "PARTYCAP": { "uids": [], "label": "Birthday cap", "games": { "bobo-birthday": "PARTYCAP" } },
+  "_music_note": "No new Speaker card: the existing MUSIC entry (uid 0006360574) is the Speaker card. Change its label to \"Speaker / Music\" and add \"bobo-birthday\": \"SPEAKER\" to its games; the new print shows a speaker with music notes so both words match."
+}

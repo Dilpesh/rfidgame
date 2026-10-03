@@ -1,0 +1,29 @@
+/* kahani.css — the shared look of every story. A story may override the four colours in :root. */
+:root{--bg:#10231b;--panel:#173427;--ink:#f6f2df;--muted:#bdd0c0;--go:#ffd166;--line:#315844;--bad:#ff9b88}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;min-height:100vh;background:radial-gradient(circle at 20% 0,#28543d,var(--bg) 62%);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;padding:18px}
+.k-main{max-width:760px;margin:0 auto}
+.eyebrow{color:var(--go);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:12px}
+.panel{background:rgba(23,52,39,.94);border:1px solid var(--line);border-radius:20px;padding:22px;margin-top:14px;box-shadow:0 12px 35px #06120c66}
+h1{margin:4px 0;font-size:clamp(25px,7vw,42px);line-height:1.05}h2{margin:0 0 8px}
+.muted{color:var(--muted)}.small{font-size:12px;margin-top:10px}
+button{font:inherit;border:1px solid #5d7f69;border-radius:12px;background:#234b36;color:var(--ink);padding:12px 16px;cursor:pointer}
+button.primary{background:var(--go);color:#182a1d;border-color:var(--go);font-weight:800}
+button:disabled{opacity:.45;cursor:not-allowed}
+.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.hide{display:none!important}
+.status{min-height:27px;color:var(--muted);margin-top:12px}
+.progress{height:8px;border-radius:9px;background:#0c1c14;overflow:hidden;margin:18px 0 6px}
+.progress i{display:block;height:100%;background:var(--go);width:0;transition:width .2s}
+.card{background:#10271b;border:1px solid var(--line);border-radius:12px;padding:10px 5px;text-align:center}
+.card .icon{font-size:27px;display:block}.card small{display:block;color:var(--muted);font-size:11px;margin-top:3px}
+.wanted{margin-top:18px;text-align:center;padding:18px;background:#10271b;border-radius:16px;border:1px solid var(--line)}
+.wanted .icon{font-size:66px;display:block}.wanted strong{font-size:23px}
+.tapgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px}
+.tap{min-height:82px;padding:9px 4px}.tap .icon{font-size:28px;display:block}.tap small{font-size:11px}
+.log{font:12px/1.45 ui-monospace,monospace;white-space:pre-wrap;color:#b9c9bd;background:#0b1811;border-radius:10px;padding:10px;max-height:170px;overflow:auto;margin-top:12px}
+.ok{color:#b9f6ca}.warn{color:#ffcf83}.error{color:var(--bad)}
+input[type=text]{font:inherit;width:100%;max-width:320px;padding:10px 12px;border-radius:12px;border:1px solid var(--line);background:#0c1c14;color:var(--ink);margin:6px 0 4px}
+label.small{display:block;margin-top:10px}
+select{font:inherit;padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,.25);background:rgba(0,0,0,.25);color:inherit}
+@media(max-width:480px){body{padding:11px}.panel{padding:17px}.tapgrid{grid-template-columns:repeat(2,1fr)}}

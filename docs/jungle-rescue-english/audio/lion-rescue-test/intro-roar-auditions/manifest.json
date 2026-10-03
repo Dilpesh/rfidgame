@@ -1,0 +1,24 @@
+{
+  "purpose": "After-Coco-recognizes-Lion entrance SFX auditions only; no script or route change",
+  "placement": "after JR_109, before JR_110",
+  "assets": {
+    "roar_a": {
+      "file": "roar_a.mp3",
+      "source_file": "raw/roar_a.mp3",
+      "prompt": "One unmistakable but gentle young lion roar from nearby: a rounded chesty growl rises into a small warm 'rawwr' and fades cleanly. The lion has just been recognized by a friend; he is shy and safe, not attacking. Natural feline lion resonance, no human voice or words, no cat meow, no harsh scream, no adult jungle attack, no thunder or music.",
+      "duration_seconds": 1.358,
+      "integrated_lufs": -20.4,
+      "true_peak_dbfs": -4.0,
+      "review_status": "audition_only"
+    },
+    "roar_b": {
+      "file": "roar_b.mp3",
+      "source_file": "raw/roar_b.mp3",
+      "prompt": "A young Lion King gives one brief proud but child-friendly roar: low soft rumble, clearly leonine open-mouthed 'rrraow', then a friendly short tail. Distinct lion sound that reads on a laptop speaker, expressive but not loud or frightening. No human speech, no generic dog growl, no house-cat meow, no attack, no music or ambience.",
+      "duration_seconds": 1.515,
+      "integrated_lufs": -20.4,
+      "true_peak_dbfs": -6.7,
+      "review_status": "audition_only"
+    }
+  }
+}

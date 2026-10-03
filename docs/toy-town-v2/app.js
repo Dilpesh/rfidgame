@@ -2,7 +2,7 @@ const $=id=>document.getElementById(id);
 const CARDS=[['key','🔑','KEY'],['light','💡','LIGHT'],['fan','🌀','FAN'],['water','💧','WATER'],['music','🎵','MUSIC'],['biscuit','🍪','BISCUIT']];
 /* ===== CARD UIDS - generated from cards.json by sync_cards.py, do not edit ===== */
 /* __CARD_UIDS_START__ */
-const SEED_VERSION = "2026-09-19b";
+const SEED_VERSION = "2026-10-03c";
 const DEFAULT_UIDS = {
 };
 /* __CARD_UIDS_END__ */

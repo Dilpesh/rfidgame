@@ -1,6 +1,6 @@
 {
   "_comment": "Single source of truth for physical RFID card UIDs. Edit this, then run: python3 sync_cards.py",
-  "seed_version": "2026-09-19b",
+  "seed_version": "2026-10-03c",
   "cards": {
     "JUMP": {
       "uids": [
@@ -14,17 +14,20 @@
     },
     "BANANA": {
       "uids": [
-        "0006358547"
+        "0006358547",
+        "1778089577"
       ],
       "label": "Banana",
       "games": {
         "moon": "BANANA",
-        "banana-rescue": "BANANA"
+        "banana-rescue": "BANANA",
+        "bobo-birthday": "BANANA"
       }
     },
     "DANCE": {
       "uids": [
-        "0006373847"
+        "0006373847",
+        "0002675113"
       ],
       "label": "Dance",
       "games": {
@@ -42,7 +45,8 @@
         "moon": "TORCH",
         "banana-rescue": "TORCH",
         "jungle-rescue": "FLASHLIGHT",
-        "jungle-rescue-hinglish": "flashlight"
+        "jungle-rescue-hinglish": "flashlight",
+        "jungle-rescue-english": "FLASHLIGHT"
       }
     },
     "WATER": {
@@ -56,7 +60,8 @@
         "banana-rescue": "WATER",
         "jungle-rescue": "WATER",
         "jungle-rescue-hinglish": "water",
-        "toy-town": "water"
+        "toy-town": "water",
+        "jungle-rescue-english": "WATER"
       }
     },
     "LAUGH": {
@@ -81,7 +86,8 @@
     },
     "MOON": {
       "uids": [
-        "0002692278"
+        "0002692278",
+        "0002694257"
       ],
       "label": "Moon",
       "games": {
@@ -97,7 +103,8 @@
       "games": {
         "banana-rescue": "ROPE",
         "jungle-rescue": "ROPE",
-        "jungle-rescue-hinglish": "rope"
+        "jungle-rescue-hinglish": "rope",
+        "jungle-rescue-english": "ROPE"
       }
     },
     "LADDER": {
@@ -128,7 +135,8 @@
       "label": "Fuel",
       "games": {
         "jungle-rescue": "FUEL",
-        "jungle-rescue-hinglish": "fuel"
+        "jungle-rescue-hinglish": "fuel",
+        "jungle-rescue-english": "FUEL"
       }
     },
     "BALLOONS": {
@@ -143,13 +151,16 @@
     "SNACK": {
       "uids": [
         "0006373651",
-        "0005720648"
+        "0005720648",
+        "0819771714"
       ],
       "label": "Snack / cookie / biscuit",
       "games": {
         "jungle-rescue": "SNACK",
         "jungle-rescue-hinglish": "snack",
-        "toy-town": "biscuit"
+        "toy-town": "biscuit",
+        "jungle-rescue-english": "BISCUIT",
+        "gulbul-pandey": "SNACK"
       }
     },
     "PRUNERS": {
@@ -177,18 +188,23 @@
       "label": "First aid",
       "games": {
         "jungle-rescue": "FIRSTAID",
-        "jungle-rescue-hinglish": "firstaid"
+        "jungle-rescue-hinglish": "firstaid",
+        "jungle-rescue-english": "FIRST_AID"
       }
     },
     "MUSIC": {
       "uids": [
-        "0006360574"
+        "0006360574",
+        "0819667906"
       ],
-      "label": "Music",
+      "label": "Speaker / Music",
       "games": {
         "jungle-rescue": "MUSIC",
         "jungle-rescue-hinglish": "music",
-        "toy-town": "music"
+        "toy-town": "music",
+        "jungle-rescue-english": "MUSIC",
+        "gulbul-pandey": "MUSIC",
+        "bobo-birthday": "SPEAKER"
       }
     },
     "MANGO": {
@@ -217,7 +233,8 @@
       "label": "Blanket",
       "games": {
         "jungle-rescue": "BLANKET",
-        "jungle-rescue-hinglish": "blanket"
+        "jungle-rescue-hinglish": "blanket",
+        "jungle-rescue-english": "BLANKET"
       }
     },
     "KEY": {
@@ -245,6 +262,78 @@
       "label": "Fan",
       "games": {
         "toy-town": "fan"
+      }
+    },
+    "CAP": {
+      "uids": [
+        "3395744772"
+      ],
+      "label": "Cap & Goggles",
+      "games": {
+        "gulbul-pandey": "CAP"
+      }
+    },
+    "CAR": {
+      "uids": [
+        "3842956061"
+      ],
+      "label": "Police car",
+      "games": {
+        "gulbul-pandey": "CAR"
+      }
+    },
+    "ELEPHANT": {
+      "uids": [
+        "0034545395"
+      ],
+      "label": "Elephant",
+      "games": {
+        "gulbul-pandey": "ELEPHANT"
+      }
+    },
+    "DOG": {
+      "uids": [
+        "3400869124"
+      ],
+      "label": "Doggy",
+      "games": {
+        "gulbul-pandey": "DOG"
+      }
+    },
+    "KITCHEN": {
+      "uids": [
+        "3834713885"
+      ],
+      "label": "Kitchen",
+      "games": {
+        "gulbul-pandey": "KITCHEN"
+      }
+    },
+    "CAKE": {
+      "uids": [
+        "0088154103"
+      ],
+      "label": "Cake",
+      "games": {
+        "bobo-birthday": "CAKE"
+      }
+    },
+    "CANDLE": {
+      "uids": [
+        "1778512553"
+      ],
+      "label": "Candle",
+      "games": {
+        "bobo-birthday": "CANDLE"
+      }
+    },
+    "PARTYCAP": {
+      "uids": [
+        "0087959223"
+      ],
+      "label": "Birthday cap",
+      "games": {
+        "bobo-birthday": "PARTYCAP"
       }
     }
   }

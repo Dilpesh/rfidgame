@@ -1,0 +1,78 @@
+<!doctype html><html lang='en'><head><meta charset='utf-8'><meta name='viewport' content='width=device-width,initial-scale=1'><title>Jungle Rescue audio — proposed changes</title><style>
+:root{--bg:#fbfaf7;--fg:#1e1d1a;--mut:#6b675e;--line:#e2ddd2;--ok:#1f7a3f;--bad:#b3261e;--card:#fff;--acc:#7c4d1a}
+@media(prefers-color-scheme:dark){:root{--bg:#161512;--fg:#ece8df;--mut:#a39d90;--line:#332f28;--ok:#5fc27f;--bad:#ff7b6e;--card:#1f1d19;--acc:#e0a86b}}
+*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 -apple-system,Segoe UI,Helvetica,Arial,sans-serif}
+main{max-width:960px;margin:0 auto;padding:24px 16px 80px}h1{font-size:26px;margin:0 0 4px}h2{font-size:20px;margin:40px 0 8px;border-top:1px solid var(--line);padding-top:24px}
+p.lead{color:var(--mut);margin-top:0}.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;margin:14px 0}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:12px}@media(max-width:640px){.pair{grid-template-columns:1fr}}
+.side{border:1px solid var(--line);border-radius:10px;padding:12px}.side h4{margin:0 0 6px;font-size:14px;letter-spacing:.04em;text-transform:uppercase;color:var(--mut)}
+audio{width:100%;margin-top:6px}table{border-collapse:collapse;width:100%;font-size:14px;margin:8px 0}th,td{text-align:right;padding:5px 8px;border-bottom:1px solid var(--line)}th:first-child,td:first-child{text-align:left}
+.ok{color:var(--ok);font-weight:600}.bad{color:var(--bad);font-weight:600}code,pre{font:13px/1.45 ui-monospace,SFMono-Regular,Menlo,monospace}pre{background:var(--bg);border:1px solid var(--line);border-radius:8px;padding:10px;overflow:auto}
+.tag{display:inline-block;font-size:12px;padding:2px 8px;border-radius:999px;border:1px solid var(--line);color:var(--mut);margin-left:6px}.note{color:var(--mut);font-size:14px}
+</style></head><body><main>
+<h1>Jungle Rescue English — proposed audio changes</h1><p class='lead'>Preview only. Nothing in <code>audio/</code> or <code>index.html</code> has been changed. Each card shows the file as it ships today (left) and the proposed version (right), with the measurement that motivated it. Listen on the phone speaker, not the laptop.</p>
+<h2>1 · Phone test — decided 2026-09-25: lion bed → E, flashlight → B</h2>
+<div class='card'><strong>Lion scene, JR_103 → JR_114, exactly as the game sequences it</strong><span class='tag'>only the bed differs</span>
+<p class='note'>Narration is byte-identical in both; bed loops at 0.26. A was judged "too much jungleness", the fully EQ'd crickets (B) "completely gone"; C/D/E were auditioned and E chosen. Rejected renders are in <code>candidates/</code>.</p>
+<div class='pair'><div class='side'><h4>A · original bed</h4><audio controls preload='none' src='ab/lion_scene_A_original_bed.mp3'></audio></div><div class='side'><h4>E · chosen: moon night bed + faint crickets</h4><audio controls preload='none' src='ab/lion_scene_E_CHOSEN.mp3'></audio></div></div></div>
+<div class='card'><strong>Flashlight reward: effect on top of the line vs effect first</strong><span class='tag'>code change, no file change</span>
+<p class='note'>A = JR_120 @0.85 and JR_119 @0.25 fired at the same instant as “YES! FLASHLIGHT!” (what <code>playOverlayCue</code> does now; true peak +0.1 dBFS — it clips today too). B = the same two effects, then 150 ms, then the line. No bed in either.</p>
+<div class='pair'><div class='side'><h4>A · effect over voice (current)</h4><audio controls preload='none' src='ab/flashlight_A_effect_over_voice.mp3'></audio></div><div class='side'><h4>B · effect, then voice</h4><audio controls preload='none' src='ab/flashlight_B_effect_then_voice.mp3'></audio></div></div></div>
+<h2>2 · Lion beds — phone-speaker band test</h2><p class='note'><strong>Superseded:</strong> the tables below are for the first proposal (EQ'd crickets, B). The chosen E bed measures −20.6 dB (JR_103_bed @0.26) and −22.0 dB (JR_129_bed @0.18), both PASS; the files in <code>modified/</code> are now E. See HOW_TO_ADOPT.md.</p><p class='note'>Gap = bed minus voice, through the phone simulation, bed at its in-game volume. Needs ≤ −20 dB in every band; standard targets −25 to −30.</p>
+<div class='card'><strong>JR_103_bed</strong><span class='tag'>volume 0.26 under JR_104-JR_128</span>
+<div class='pair'><div class='side'><h4>Original · -23.6 LUFS, TP -14.1 dBFS</h4><audio controls preload='none' src='original/JR_103_bed.mp3'></audio></div>
+<div class='side'><h4>Modified · -45.1 LUFS, TP -34.7 dBFS</h4><audio controls preload='none' src='modified/JR_103_bed.mp3'></audio></div></div>
+<table><tr><th>band</th><th>voice dB</th><th>gap · original</th><th>gap · modified</th></tr><tr><td>80-300 Hz</td><td>-41.4</td><td class="ok">-48.9</td><td class="ok">-48.9</td></tr><tr><td>300-1000 Hz</td><td>-25.7</td><td class="ok">-49.7</td><td class="ok">-51.0</td></tr><tr><td>1000-2000 Hz</td><td>-26.8</td><td class="ok">-41.6</td><td class="ok">-48.9</td></tr><tr><td>2000-3000 Hz</td><td>-32.5</td><td class="ok">-31.2</td><td class="ok">-46.7</td></tr><tr><td>3000-4000 Hz</td><td>-35.9</td><td class="ok">-20.0</td><td class="ok">-41.0</td></tr><tr><td>4000-6000 Hz</td><td>-38.3</td><td class="bad">-7.6</td><td class="ok">-29.8</td></tr><tr><td>6000-8000 Hz</td><td>-43.8</td><td class="bad">-1.9</td><td class="ok">-24.3</td></tr></table>
+<pre>ffmpeg -i original/JR_103_bed.mp3 -af "highshelf=f=1500:g=-20,lowpass=f=4500,highpass=f=90,volume=4dB,alimiter=limit=0.9:level=false" -c:a libmp3lame -b:a 128k -ar 44100 -ac 1 modified/JR_103_bed.mp3</pre>
+<p class='note'>Loudness drops ~21 LU because 91 % of this file's energy was above 3 kHz — the EQ removes almost the whole thing. That is the finding, not a mistake: this bed is crickets, and crickets cannot be made phone-safe and audible at the same time.</p></div>
+<div class='card'><strong>JR_129_bed</strong><span class='tag'>volume 0.18 under JR_130-JR_149</span>
+<div class='pair'><div class='side'><h4>Original · -21.8 LUFS, TP -10.8 dBFS</h4><audio controls preload='none' src='original/JR_129_bed.mp3'></audio></div>
+<div class='side'><h4>Modified · -43.7 LUFS, TP -32.7 dBFS</h4><audio controls preload='none' src='modified/JR_129_bed.mp3'></audio></div></div>
+<table><tr><th>band</th><th>voice dB</th><th>gap · original</th><th>gap · modified</th></tr><tr><td>80-300 Hz</td><td>-42.3</td><td class="ok">-48.7</td><td class="ok">-48.7</td></tr><tr><td>300-1000 Hz</td><td>-25.4</td><td class="ok">-61.9</td><td class="ok">-61.9</td></tr><tr><td>1000-2000 Hz</td><td>-27.7</td><td class="ok">-50.8</td><td class="ok">-62.6</td></tr><tr><td>2000-3000 Hz</td><td>-32.8</td><td class="ok">-33.2</td><td class="ok">-54.5</td></tr><tr><td>3000-4000 Hz</td><td>-37.1</td><td class="bad">-19.8</td><td class="ok">-41.7</td></tr><tr><td>4000-6000 Hz</td><td>-40.2</td><td class="bad">-6.7</td><td class="ok">-28.8</td></tr><tr><td>6000-8000 Hz</td><td>-45.6</td><td class="bad">-1.5</td><td class="ok">-23.6</td></tr></table>
+<pre>ffmpeg -i original/JR_129_bed.mp3 -af "highshelf=f=1500:g=-20,lowpass=f=4500,highpass=f=90,volume=4dB,alimiter=limit=0.9:level=false" -c:a libmp3lame -b:a 128k -ar 44100 -ac 1 modified/JR_129_bed.mp3</pre>
+<p class='note'>Loudness drops ~21 LU because 91 % of this file's energy was above 3 kHz — the EQ removes almost the whole thing. That is the finding, not a mistake: this bed is crickets, and crickets cannot be made phone-safe and audible at the same time.</p></div>
+<h2>3 · Hint lines lifted to the −16 LUFS narration target</h2><p class='note'>These are the “find the card” lines — the ones the kids most need to catch — and they were 1.6 to 3.2 LU under the story lines. Gain only, limiter at −1.4 dBFS, durations unchanged.</p>
+<div class='card'><strong>JR_155</strong><span class='tag'>COCO</span> <span class='note'>पार्टी में नाचने के लिए धुन चाहिए।</span>
+<div class='pair'><div class='side'><h4>Original · -19.2 LUFS, TP -2.4</h4><audio controls preload='none' src='original/JR_155.mp3'></audio></div>
+<div class='side'><h4>Modified · -16.7 LUFS, TP -1.8</h4><audio controls preload='none' src='modified/JR_155.mp3'></audio></div></div>
+<pre>-af "volume=3.2dB,alimiter=limit=0.85:level=false"</pre></div>
+<div class='card'><strong>JR_056</strong><span class='tag'>COCO</span> <span class='note'>अपने cards में खाने वाली चीज़ ढूँढो।</span>
+<div class='pair'><div class='side'><h4>Original · -18.9 LUFS, TP -2.4</h4><audio controls preload='none' src='original/JR_056.mp3'></audio></div>
+<div class='side'><h4>Modified · -16.6 LUFS, TP -1.8</h4><audio controls preload='none' src='modified/JR_056.mp3'></audio></div></div>
+<pre>-af "volume=2.9dB,alimiter=limit=0.85:level=false"</pre></div>
+<div class='card'><strong>JR_036</strong><span class='tag'>COCO</span> <span class='note'>Captain, हमें कोई लंबी चीज़ चाहिए जिससे एलिफेंट दादा को अपनी तरफ खींच सकें। क्या हमारे पास</span>
+<div class='pair'><div class='side'><h4>Original · -18.1 LUFS, TP -2.3</h4><audio controls preload='none' src='original/JR_036.mp3'></audio></div>
+<div class='side'><h4>Modified · -16.6 LUFS, TP -1.7</h4><audio controls preload='none' src='modified/JR_036.mp3'></audio></div></div>
+<pre>-af "volume=2.1dB,alimiter=limit=0.85:level=false"</pre></div>
+<div class='card'><strong>JR_157</strong><span class='tag'>COCO</span> <span class='note'>MUSIC वाला card tap करो।</span>
+<div class='pair'><div class='side'><h4>Original · -18.1 LUFS, TP -2.4</h4><audio controls preload='none' src='original/JR_157.mp3'></audio></div>
+<div class='side'><h4>Modified · -16.5 LUFS, TP -1.8</h4><audio controls preload='none' src='modified/JR_157.mp3'></audio></div></div>
+<pre>-af "volume=2.1dB,alimiter=limit=0.85:level=false"</pre></div>
+<div class='card'><strong>JR_116</strong><span class='tag'>COCO</span> <span class='note'>अपने cards में देखो... कोई ऐसी चीज़ है जो अंधेरे में तेज़ रोशनी दे सके?</span>
+<div class='pair'><div class='side'><h4>Original · -18.0 LUFS, TP -2.4</h4><audio controls preload='none' src='original/JR_116.mp3'></audio></div>
+<div class='side'><h4>Modified · -16.5 LUFS, TP -1.7</h4><audio controls preload='none' src='modified/JR_116.mp3'></audio></div></div>
+<pre>-af "volume=2.0dB,alimiter=limit=0.85:level=false"</pre></div>
+<div class='card'><strong>JR_050</strong><span class='tag'>ELEPHANT</span> <span class='note'>Thank you, Captain!</span>
+<div class='pair'><div class='side'><h4>Original · -17.8 LUFS, TP -2.4</h4><audio controls preload='none' src='original/JR_050.mp3'></audio></div>
+<div class='side'><h4>Modified · -16.5 LUFS, TP -1.7</h4><audio controls preload='none' src='modified/JR_050.mp3'></audio></div></div>
+<pre>-af "volume=1.8dB,alimiter=limit=0.85:level=false"</pre></div>
+<div class='card'><strong>JR_135</strong><span class='tag'>COCO</span> <span class='note'>अपने cards में देखो... कोई soft चीज़ ढूँढो जो ठंड से बचाए।</span>
+<div class='pair'><div class='side'><h4>Original · -17.6 LUFS, TP -2.4</h4><audio controls preload='none' src='original/JR_135.mp3'></audio></div>
+<div class='side'><h4>Modified · -16.5 LUFS, TP -1.8</h4><audio controls preload='none' src='modified/JR_135.mp3'></audio></div></div>
+<pre>-af "volume=1.6dB,alimiter=limit=0.85:level=false"</pre></div>
+<div class='card'><strong>JR_140</strong><span class='tag'>COCO</span> <span class='note'>YES! BLANKET! यह blanket कितना soft और warm है!</span>
+<div class='pair'><div class='side'><h4>Original · -17.6 LUFS, TP -2.4</h4><audio controls preload='none' src='original/JR_140.mp3'></audio></div>
+<div class='side'><h4>Modified · -16.5 LUFS, TP -1.7</h4><audio controls preload='none' src='modified/JR_140.mp3'></audio></div></div>
+<pre>-af "volume=1.6dB,alimiter=limit=0.85:level=false"</pre></div>
+<div class='card'><strong>JR_161</strong><span class='tag'>COCO</span> <span class='note'>Elephant dance! हाथ की सूँड़ बनाओ — इधर, उधर! बैठे-बैठे भी!</span>
+<div class='pair'><div class='side'><h4>Original · -17.6 LUFS, TP -2.3</h4><audio controls preload='none' src='original/JR_161.mp3'></audio></div>
+<div class='side'><h4>Modified · -16.8 LUFS, TP -1.7</h4><audio controls preload='none' src='modified/JR_161.mp3'></audio></div></div>
+<pre>-af "volume=1.6dB,alimiter=limit=0.85:level=false"</pre></div>
+<h2>4 · Flagged but no file proposed</h2>
+<div class='card'><strong>JR_001 daytime bed</strong> — on disk it is −43.9 LUFS (manifest claims −15.9); at 0.25 it is inaudible, and after EQ it is −60 LUFS. Needs a different source. <span class='note'>Decide: new low-mid day bed, or no day bed.</span></div>
+<div class='card'><strong>Overlays JR_138 @0.35 under “YES! BLANKET!” and JR_158 @0.35 under “YES! MUSIC!”</strong> — same problem as the flashlight pair; same fix (sequence, don't overlay). EQ was tried and still fails (−13 to −15 dB).</div>
+<div class='card'><strong>Dance music JR_160 under the dance calls</strong> — 14–19 dB under voice at 3–8 kHz, borderline. Judge on the phone.</div>
+<div class='card'><strong>Hot effects</strong> — JR_152_clap true peak +0.1 dBFS (clipped; manifest wrong), JR_016/017/019/174/006 between −0.2 and −0.9. <strong>Stereo</strong> — JR_001, JR_074, JR_112, JR_152_clap. <strong>Stale</strong> — JR_112.mp3 (−10.4 LUFS) is not referenced by index.html. <strong>Manifest drift</strong> — JR_054, JR_062, JR_001, JR_152_clap.</div>
+<div class='card'><strong>iPhone</strong> — every level in the game is set with <code>audio.volume</code>, which iOS Safari ignores (always 1.0). All bed and overlay numbers above assume Android. On an iPhone the lion beds play at full level, 4–10 dB <em>above</em> the voice at 4–8 kHz. Fix is a Web Audio GainNode per element; verify on a real iPhone first.</div>
+<p class='note'>Full per-file measurements: <code>measurements_all_187_files.json</code>. Audit text: <code>AUDIO_AUDIT_FINDINGS.md</code>.</p>
+</main></body></html>

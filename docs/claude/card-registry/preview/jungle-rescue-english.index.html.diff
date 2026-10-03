@@ -1,0 +1,73 @@
+--- original/docs/jungle-rescue-english/index.html
++++ modified/docs/jungle-rescue-english/index.html
+@@ -36,6 +36,7 @@
+   </section>
+ </main>
+ 
++<script src="../card-registry.js"></script>
+ <script src="../scan-guard.js"></script>
+ <script src="../reader-check.js"></script>
+ <script src="../story-intro.js"></script>
+@@ -54,21 +55,21 @@
+   FIRST_AID:{label:'First aid',icon:'🩹'}, WATER:{label:'Water',icon:'💧'}, FLASHLIGHT:{label:'Flashlight',icon:'🔦'},
+   BLANKET:{label:'Blanket',icon:'🧣'}, MUSIC:{label:'Music',icon:'🎵'}
+ };
+-// Existing physical UIDs: SNACK is the shared Snack / cookie / biscuit card.
++// Physical cards are global: the UIDs live in ../card-registry.js (one
++// localStorage key for the whole site). This game only says what it calls each
++// registry card — the shared Snack / cookie / biscuit card is BISCUIT here.
+ /* __CARD_UIDS_START__ */
+-const SEED_VERSION = "2026-09-19b";
+-const DEFAULT_UIDS = {
+-  "5720648": "BISCUIT",
+-  "6373651": "BISCUIT",
+-  "6375388": "BLANKET",
+-  "6374815": "FIRST_AID",
+-  "2692483": "FLASHLIGHT",
+-  "6375577": "FLASHLIGHT",
+-  "6359145": "FUEL",
+-  "6360574": "MUSIC",
+-  "6374623": "ROPE",
+-  "2682976": "WATER",
+-  "2690428": "WATER"
++// registry card -> this story's card. Generated from cards.json by
++// sync_cards.py; the UIDs themselves live in ../card-registry.js.
++const CARD_MAP = {
++  BLANKET:  "BLANKET",
++  FIRSTAID: "FIRST_AID",
++  FUEL:     "FUEL",
++  MUSIC:    "MUSIC",
++  ROPE:     "ROPE",
++  SNACK:    "BISCUIT",
++  TORCH:    "FLASHLIGHT",
++  WATER:    "WATER"
+ };
+ /* __CARD_UIDS_END__ */
+ 
+@@ -76,7 +77,7 @@
+ let epoch = 0, hintTimers = [], waterReminderTimers = [], bedFadeTimer = null, hintIndex = 0, waitingSince = 0, bite = 0, fuelGagOpen = false;
+ const overlays = new Set();
+ let danceAudio = null;
+-let uidToCard = {}, inputBuffer = '', wrongVariant = 0, currentCueId = '';
++let inputBuffer = '', wrongVariant = 0, currentCueId = '';
+ const $ = id => document.getElementById(id);
+ const norm = v => String(v == null ? '' : v).trim().toUpperCase().replace(/^0+(?=.)/,'');
+ const assetUrl = (file, tag) => location.protocol === 'file:' ? file : file+(file.includes('?')?'&':'?')+tag;
+@@ -281,11 +282,15 @@
+   if(window._jrWake){try{await window._jrWake.release();}catch(e){}window._jrWake=null;}
+ }
+ 
+-function handleScan(raw){const uid=norm(raw),card=uidToCard[uid]||raw;if(!uid)return;log(`scan ${uid} → ${card}`);if(fuelGagOpen&&card==='FUEL'){fuelGagOpen=false;playSequence(['JR_019','JR_020'],epoch).then(elephantScene);return;}acceptCard(card,'reader');}
++// The registry turns a UID into a card name (SNACK); CARD_MAP turns that into
++// this story's card (BISCUIT). An unknown UID stays a raw string, which the
++// story treats as a wrong card, exactly as before.
++function cardOf(raw){const canon=window.CardRegistry?CardRegistry.lookup(raw):null;return (canon&&CARD_MAP[canon])||null;}
++function handleScan(raw){const uid=norm(raw),card=cardOf(raw)||raw;if(!uid)return;log(`scan ${uid} → ${card}`);if(fuelGagOpen&&card==='FUEL'){fuelGagOpen=false;playSequence(['JR_019','JR_020'],epoch).then(elephantScene);return;}acceptCard(card,'reader');}
+ const guardedScan=window.ScanGuard?ScanGuard.wrap(handleScan):handleScan;
+ window.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();const v=inputBuffer;inputBuffer='';if(v)guardedScan(v);}else if(e.key.length===1)inputBuffer+=e.key;});
+ document.addEventListener('click',e=>{const b=e.target.closest('button');if(b)setTimeout(()=>b.blur(),0);});
+-function loadCards(){try{uidToCard=JSON.parse(localStorage.getItem('rescueGameCards')||'{}');}catch(e){uidToCard={};}Object.entries(DEFAULT_UIDS).forEach(([u,c])=>{if(!uidToCard[u])uidToCard[u]=c;});}
++function loadCards(){if(!window.CardRegistry){log('card-registry.js did not load; physical cards will not be recognised.','error');return;}const missing=CARD_ORDER.filter(id=>!Object.values(CARD_MAP).includes(id));if(missing.length)log(`no registry card is mapped to: ${missing.join(', ')} — run python3 sync_cards.py`,'error');}
+ function begin(modeName){mode=modeName;loadCards();if(window.StoryIntro){StoryIntro.show({key:STORY_KEY,title:'Jungle Rescue English',minutes:9,cards:CARD_ORDER.map(id=>({icon:CARD_INFO[id].icon,label:CARD_INFO[id].label})),activities:['Pull an imaginary rope','Drink real water during the Water break','Hum along with Coco','Dance and freeze'],onStart:screenOrReaderStart});}else screenOrReaderStart();}
+ $('readerMode').onclick=()=>begin('reader');$('screenMode').onclick=()=>begin('screen');
+ $('nextCue').onclick=advanceCue;

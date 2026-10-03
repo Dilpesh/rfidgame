@@ -1,0 +1,37 @@
+--- original/check_games.py
++++ modified/check_games.py
+@@ -25,6 +25,8 @@
+   r"StoryIntro\.show"),
+  ("enter key fix",    "the reader's Enter must not re-fire a focused button",
+   r"preventDefault"),
++ ("card registry",    "cards are global: read them through docs/card-registry.js, never a private map",
++  r"CardRegistry\.lookup"),
+ ]
+ 
+ # Parked on purpose, 2026-09-19. The Carry on screens went out of all five
+@@ -40,12 +42,25 @@
+ ]
+ 
+ # game -> requirement -> why it is allowed to be missing
++# The shared card registry (docs/card-registry.js) went into
++# jungle-rescue-english first. The other games still keep their own uid map and
++# move over one at a time; each is excused here until it does, so the gate
++# names exactly who is still off it.
++_NOT_ON_REGISTRY_YET = "still on its own uid map; migrate to card-registry.js (next: moon, jungle-rescue)"
++
+ EXCEPTIONS = {
+  "find-and-tap": {
+    "scan guard": "built artifact; its source pipeline needs fixing first (BACKLOG 10)",
+    "reader check": "built artifact; same",
+    "before-you-start": "built artifact; same",
++   "card registry": "colours and shapes, not the shared card deck",
+  },
++ "moon":                   {"card registry": _NOT_ON_REGISTRY_YET},
++ "jungle-rescue":          {"card registry": _NOT_ON_REGISTRY_YET},
++ "banana-rescue":          {"card registry": _NOT_ON_REGISTRY_YET},
++ "jungle-rescue-hinglish": {"card registry": _NOT_ON_REGISTRY_YET},
++ "toy-town":               {"card registry": _NOT_ON_REGISTRY_YET + " — the A/B control, last"},
++ "toy-town-v2":            {"card registry": _NOT_ON_REGISTRY_YET},
+ }
+ 
+ # a deck that legitimately reuses another story's printed labels

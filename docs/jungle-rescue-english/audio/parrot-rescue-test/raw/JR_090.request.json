@@ -1,0 +1,7 @@
+{
+  "text": "Small bird wing test: two tentative uneven flaps followed by one clear strong happy flap. A gentle physical improvement, no bird vocal, no voices, no music.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 2.1,
+  "prompt_influence": 0.8,
+  "loop": false
+}

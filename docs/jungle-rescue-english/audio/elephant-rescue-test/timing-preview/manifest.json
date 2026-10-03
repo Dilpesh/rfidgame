@@ -1,0 +1,394 @@
+{
+  "purpose": "Preview of joke timing only; source cues and production specifications unchanged",
+  "source_hashes": {
+    "JR_023": "cf8947b3363f5c812a2d925ce2ccf1068bec36088b4a134dfe42135dbbf7315f",
+    "JR_024": "5891c15481a9c176890e8e742851d932d38163b34f6bb84b48ef39f2cc551836",
+    "JR_031": "f18bb085d90c8df99b0cbd9d11e89f17a144896eccb83b75c7552d9508f2c0b2",
+    "JR_054": "0a58042f5cd01808d46815f7ba2debf6a1287571e50b4f248d04f8b93e7693ed",
+    "JR_029": "12489e712c594f87654bc8b0f3691ec6b0359f7bc62bfbaea9cbe62921259b5b",
+    "JR_065": "91b7895e65ed4bbeb095bf174ab88d1bea8045128b65e8065b7c233ba7ba8a0f",
+    "JR_066": "83b8d36080ff39aeffafd87c75f4fa2c313b6faa182be1a0b0935c0be8a6739a",
+    "JR_047": "c32ce756d95007ad50af18d8b5e44c7f84920487a38b62854040e5679fc875e1",
+    "JR_051": "946b5d107b0790ec5c81ad9e9b92acc93f5473915329136f09a6df54a5e71159",
+    "JR_035": "2c6e4adef3f29be2e2e377a8aa490fd6f04bdf2906a96c54efa4cf0470d98fb6",
+    "JR_025": "9fc31cb59bc0f7696166092fc0392da7883ed939c1685dab32a74b7d674dbf88",
+    "JR_050": "7106d01ae60941c169ceb7b49bfc06860ed52289925ebc86a0f07618101f2603",
+    "JR_032": "145c4cbcc0d68628050cbda78e1d0914ce9bbe2a05e07b51f349c0abad03c93f",
+    "JR_027": "ad74f0db20053e096bb01ac3bedbae51dac05a459bf212160666bfaa5f2c1915",
+    "JR_030": "0a23397a1a26969605067eea18d0ce53dd194958c5699d0b6c4aaddde3721fd9",
+    "JR_033": "da93b1f5673a095db73afc4f3e232d8f3d854becd5b7c83fa4d408a6a8e8c6a1",
+    "JR_048": "dd396cfda7452e3f5f88af36fe19a1cc4e36f9925945661b7ed2b0da3666b167",
+    "JR_055": "63db5490f4a7074a6d127a65ea51e3c0ef9969a38bd93608d5e30cb6590a310d",
+    "JR_052": "3c11ca4ec0952bb2ee8e70bad5dc062c43c0362b817f75853844fc8b7d708d57",
+    "JR_022": "528e50ee05539cc14ed7cd57aa6a270f08a8a4b490fd034d837a2fd267baa2ca",
+    "JR_034": "9545f37ecba499b98059a61e0528dae38022f51e3fe10edf2f948e4a3206aa92",
+    "JR_053": "6f7d31c70e0f832371b59d232616d78ae85cfa7d1a7292f4b3fad7a1449be534",
+    "JR_061": "61d0438597ed842585a4b3d5063862a98bb3e6aa9d761c57745b362528ecc49d",
+    "JR_046": "d7a13b59a95737e0e76b3a3b54dd2a3f6f9a083b1074a1f86f7ec81d3510ccd6",
+    "JR_026": "8ebeb957ea05f67dab6a385f60b0f0269b70d42e5d41a43f36d8671537601662"
+  },
+  "changes": {
+    "trampoline": "Add 1.20s after JR_026 before the Elephant trumpet.",
+    "mud": "Add 0.80s after JR_029 before the count. Narrator JR_033 starts 0.40s after splat begins. Splat/boink at half amplitude underneath; speech remains sequential. Preserve catchphrase tail. Overlap remains an audition only.",
+    "stomach": "JR_052 excerpt ends at 1.32s, removing trailing quiet after the question. Retain growl tail and internal JR_054 pause; add 0.60s after JR_054.",
+    "balloon": "Add 0.30s after JR_065 before JR_066 laughter; performance unchanged.",
+    "pull": "Unchanged reference; timing edits cannot replace the requested acting contrast."
+  },
+  "mix": "Identical dry cue gains for A/B except ducked mud effects. No ambience; no browser loading gaps. 44.1kHz mono PCM WAV.",
+  "clips": {
+    "trampoline_current": {
+      "file": "trampoline_current.wav",
+      "duration_seconds": 14.312,
+      "integrated_lufs": -17.4,
+      "true_peak_dbfs": -1.5,
+      "events": [
+        {
+          "cue": "JR_022",
+          "start": 0,
+          "duration": 7.44,
+          "gain": 1
+        },
+        {
+          "cue": "JR_023",
+          "start": 7.44,
+          "duration": 0.6,
+          "gain": 1
+        },
+        {
+          "cue": "JR_024",
+          "start": 8.04,
+          "duration": 0.8,
+          "gain": 1
+        },
+        {
+          "cue": "JR_025",
+          "start": 8.84,
+          "duration": 0.88,
+          "gain": 1
+        },
+        {
+          "cue": "JR_026",
+          "start": 9.72,
+          "duration": 2.48,
+          "gain": 1
+        },
+        {
+          "cue": "JR_027",
+          "start": 12.2,
+          "duration": 2.1120181405895693,
+          "gain": 1
+        }
+      ]
+    },
+    "trampoline_proposed": {
+      "file": "trampoline_proposed.wav",
+      "duration_seconds": 15.512,
+      "integrated_lufs": -17.5,
+      "true_peak_dbfs": -1.5,
+      "events": [
+        {
+          "cue": "JR_022",
+          "start": 0,
+          "duration": 7.44,
+          "gain": 1
+        },
+        {
+          "cue": "JR_023",
+          "start": 7.44,
+          "duration": 0.6,
+          "gain": 1
+        },
+        {
+          "cue": "JR_024",
+          "start": 8.04,
+          "duration": 0.8,
+          "gain": 1
+        },
+        {
+          "cue": "JR_025",
+          "start": 8.84,
+          "duration": 0.88,
+          "gain": 1
+        },
+        {
+          "cue": "JR_026",
+          "start": 9.72,
+          "duration": 2.48,
+          "gain": 1
+        },
+        {
+          "cue": "JR_027",
+          "start": 13.4,
+          "duration": 2.1120181405895693,
+          "gain": 1
+        }
+      ]
+    },
+    "mud_current": {
+      "file": "mud_current.wav",
+      "duration_seconds": 14.6,
+      "integrated_lufs": -17.1,
+      "true_peak_dbfs": -1.7,
+      "events": [
+        {
+          "cue": "JR_029",
+          "start": 0,
+          "duration": 2.48,
+          "gain": 1
+        },
+        {
+          "cue": "JR_030",
+          "start": 2.48,
+          "duration": 2.16,
+          "gain": 1
+        },
+        {
+          "cue": "JR_031",
+          "start": 4.64,
+          "duration": 1.76,
+          "gain": 1
+        },
+        {
+          "cue": "JR_032",
+          "start": 6.4,
+          "duration": 0.6,
+          "gain": 1
+        },
+        {
+          "cue": "JR_033",
+          "start": 7.0,
+          "duration": 2.48,
+          "gain": 1
+        },
+        {
+          "cue": "JR_034",
+          "start": 9.48,
+          "duration": 1.92,
+          "gain": 1
+        },
+        {
+          "cue": "JR_035",
+          "start": 11.4,
+          "duration": 3.2,
+          "gain": 1
+        }
+      ]
+    },
+    "mud_proposed": {
+      "file": "mud_proposed.wav",
+      "duration_seconds": 13.44,
+      "integrated_lufs": -16.9,
+      "true_peak_dbfs": -2.3,
+      "events": [
+        {
+          "cue": "JR_029",
+          "start": 0,
+          "duration": 2.48,
+          "gain": 1
+        },
+        {
+          "cue": "JR_030",
+          "start": 3.28,
+          "duration": 2.16,
+          "gain": 1
+        },
+        {
+          "cue": "JR_031",
+          "start": 5.44,
+          "duration": 1.76,
+          "gain": 0.5
+        },
+        {
+          "cue": "JR_032",
+          "start": 7.2,
+          "duration": 0.6,
+          "gain": 0.5
+        },
+        {
+          "cue": "JR_033",
+          "start": 5.84,
+          "duration": 2.48,
+          "gain": 1
+        },
+        {
+          "cue": "JR_034",
+          "start": 8.32,
+          "duration": 1.92,
+          "gain": 1
+        },
+        {
+          "cue": "JR_035",
+          "start": 10.24,
+          "duration": 3.2,
+          "gain": 1
+        }
+      ]
+    },
+    "stomach_current": {
+      "file": "stomach_current.wav",
+      "duration_seconds": 17.52,
+      "integrated_lufs": -17.3,
+      "true_peak_dbfs": -2.4,
+      "events": [
+        {
+          "cue": "JR_050",
+          "start": 0,
+          "duration": 1.36,
+          "gain": 1
+        },
+        {
+          "cue": "JR_051",
+          "start": 1.36,
+          "duration": 2.4,
+          "gain": 1
+        },
+        {
+          "cue": "JR_052",
+          "start": 3.76,
+          "duration": 2.32,
+          "gain": 1
+        },
+        {
+          "cue": "JR_053",
+          "start": 6.08,
+          "duration": 2.88,
+          "gain": 1
+        },
+        {
+          "cue": "JR_054",
+          "start": 8.96,
+          "duration": 2.96,
+          "gain": 1
+        },
+        {
+          "cue": "JR_055",
+          "start": 11.92,
+          "duration": 5.6,
+          "gain": 1
+        }
+      ]
+    },
+    "stomach_proposed": {
+      "file": "stomach_proposed.wav",
+      "duration_seconds": 17.12,
+      "integrated_lufs": -17.4,
+      "true_peak_dbfs": -2.4,
+      "events": [
+        {
+          "cue": "JR_050",
+          "start": 0,
+          "duration": 1.36,
+          "gain": 1
+        },
+        {
+          "cue": "JR_051",
+          "start": 1.36,
+          "duration": 2.4,
+          "gain": 1
+        },
+        {
+          "cue": "JR_052",
+          "start": 3.76,
+          "duration": 1.32,
+          "gain": 1
+        },
+        {
+          "cue": "JR_053",
+          "start": 5.08,
+          "duration": 2.88,
+          "gain": 1
+        },
+        {
+          "cue": "JR_054",
+          "start": 7.96,
+          "duration": 2.96,
+          "gain": 1
+        },
+        {
+          "cue": "JR_055",
+          "start": 11.52,
+          "duration": 5.6,
+          "gain": 1
+        }
+      ]
+    },
+    "balloon_current": {
+      "file": "balloon_current.wav",
+      "duration_seconds": 7.29,
+      "integrated_lufs": -16.9,
+      "true_peak_dbfs": -1.3,
+      "events": [
+        {
+          "cue": "JR_061",
+          "start": 0,
+          "duration": 0.96,
+          "gain": 1
+        },
+        {
+          "cue": "JR_065",
+          "start": 0.96,
+          "duration": 4.72,
+          "gain": 1
+        },
+        {
+          "cue": "JR_066",
+          "start": 5.68,
+          "duration": 1.61,
+          "gain": 1
+        }
+      ]
+    },
+    "balloon_proposed": {
+      "file": "balloon_proposed.wav",
+      "duration_seconds": 7.59,
+      "integrated_lufs": -16.9,
+      "true_peak_dbfs": -1.3,
+      "events": [
+        {
+          "cue": "JR_061",
+          "start": 0,
+          "duration": 0.96,
+          "gain": 1
+        },
+        {
+          "cue": "JR_065",
+          "start": 0.96,
+          "duration": 4.72,
+          "gain": 1
+        },
+        {
+          "cue": "JR_066",
+          "start": 5.98,
+          "duration": 1.61,
+          "gain": 1
+        }
+      ]
+    },
+    "pull_reference": {
+      "file": "pull_reference.wav",
+      "duration_seconds": 12.4,
+      "integrated_lufs": -16.9,
+      "true_peak_dbfs": -2.4,
+      "events": [
+        {
+          "cue": "JR_046",
+          "start": 0,
+          "duration": 7.76,
+          "gain": 1
+        },
+        {
+          "cue": "JR_047",
+          "start": 7.76,
+          "duration": 1.76,
+          "gain": 1
+        },
+        {
+          "cue": "JR_048",
+          "start": 9.52,
+          "duration": 2.88,
+          "gain": 1
+        }
+      ]
+    }
+  }
+}

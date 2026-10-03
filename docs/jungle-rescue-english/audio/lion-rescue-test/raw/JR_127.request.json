@@ -1,0 +1,10 @@
+{
+  "text": "[shivering, small and childlike] रोशनी के लिए शुक्रिया... पर रात की हवा बहुत ठंडी है। Brrr!",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+    "stability": 0.44,
+    "similarity_boost": 0.78,
+    "style": 0.3,
+    "use_speaker_boost": true
+  }
+}

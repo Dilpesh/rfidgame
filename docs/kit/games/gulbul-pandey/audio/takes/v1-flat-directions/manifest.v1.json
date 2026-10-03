@@ -1,0 +1,479 @@
+{
+ "_build": {
+  "story": "Inspector Gulbul Pandey — Doctor का Box"
+ },
+ "GULBUL_PANDEY_S01_007_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.38,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Hello! मेरा नाम है… Inspector Gulbul Pandey!",
+  "performance_tag": "[boastful, funny deep voice]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S01_007_INSPECTOR.mp3",
+  "duration_seconds": 4.6,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.8
+ },
+ "GULBUL_PANDEY_S01_008_MUNMUN": {
+  "type": "speech",
+  "voice": "MUNMUN",
+  "voice_id": "ItmwhOeluca31IEX91Yk",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.45,
+   "similarity_boost": 0.78,
+   "style": 0.25,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Inspector साहब! मैं Doctor Munmun बोल रही हूँ। मेरा box मिल नहीं रहा! उसके बिना मैं patients को ठीक कैसे करूँगी? आप ढूँढने में help करेंगे?",
+  "performance_tag": "[worried, but lively — slow enough to follow on a phone]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S01_008_MUNMUN.mp3",
+  "duration_seconds": 10.03,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S01_009_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.38,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Team! Doctor Munmun का box ढूँढना है!",
+  "performance_tag": "[energetic, ready for action]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S01_009_INSPECTOR.mp3",
+  "duration_seconds": 3.63,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S01_011_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.38,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "तो सामने रखी हुई Detective Cap और Goggles पहन लो!",
+  "performance_tag": "[warm]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S01_011_INSPECTOR.mp3",
+  "duration_seconds": 3.47,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S01_012_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.38,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "जब ready हो जाओ, तब Cap and Goggles वाला card tap करो!",
+  "performance_tag": "[relaxed]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S01_012_INSPECTOR.mp3",
+  "duration_seconds": 3.97,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.3
+ },
+ "GULBUL_PANDEY_S01_013_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.38,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "आराम से पहन लो। Ready होने पर Cap and Goggles वाला card tap करना!",
+  "performance_tag": "[relaxed, reassuring]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S01_013_INSPECTOR.mp3",
+  "duration_seconds": 4.99,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S01_014_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.38,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Cap and Goggles वाला card ढूँढो — जिस पर Detective की टोपी और चश्मा बना है।",
+  "performance_tag": "[kind]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S01_014_INSPECTOR.mp3",
+  "duration_seconds": 6.11,
+  "integrated_lufs": -16.3,
+  "true_peak_dbfs": -2.3
+ },
+ "GULBUL_PANDEY_S01_015_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.38,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Cap and Goggles वाला card tap करो!",
+  "performance_tag": "[kind, clear]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S01_015_INSPECTOR.mp3",
+  "duration_seconds": 2.19,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.5
+ },
+ "GULBUL_PANDEY_S01_016_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.38,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "हाँ, Cap and Goggles!",
+  "performance_tag": "[heroic, proud]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S01_016_INSPECTOR.mp3",
+  "duration_seconds": 2.43,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.1
+ },
+ "GULBUL_PANDEY_S01_017_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.38,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Great, our Detective is ready!",
+  "performance_tag": "[heroic, proud]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S01_017_INSPECTOR.mp3",
+  "duration_seconds": 2.19,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -2.3
+ },
+ "GULBUL_PANDEY_S00_104_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.38,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "चलो, एक बार और try करते हैं!",
+  "performance_tag": "[playfully surprised, encouraging]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S00_104_INSPECTOR.mp3",
+  "duration_seconds": 2.27,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.5
+ },
+ "GULBUL_PANDEY_S00_105_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.38,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "ओहो! ये वाला नहीं। Detective, एक और card try करो!",
+  "performance_tag": "[light, encouraging]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "generated/GULBUL_PANDEY_S00_105_INSPECTOR.mp3",
+  "duration_seconds": 4.52,
+  "integrated_lufs": -16.4,
+  "true_peak_dbfs": -2.4
+ },
+ "GULBUL_PANDEY_S00_001_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.38,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Amazing, Detective!",
+  "performance_tag": "[warm, proud]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/GULBUL_PANDEY_S00_001_INSPECTOR.mp3",
+  "duration_seconds": 1.88,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4,
+  "name_text": "Amazing, {name}!",
+  "description": "name line (Captain version): Amazing, Detective!",
+  "tags": [
+   "name",
+   "captain"
+  ]
+ },
+ "GULBUL_PANDEY_S00_002_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.38,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Good job, Detective!",
+  "performance_tag": "[bright]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/GULBUL_PANDEY_S00_002_INSPECTOR.mp3",
+  "duration_seconds": 1.96,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.5,
+  "name_text": "Good job, {name}!",
+  "description": "name line (Captain version): Good job, Detective!",
+  "tags": [
+   "name",
+   "captain"
+  ]
+ },
+ "GULBUL_PANDEY_S00_003_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.38,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Excellent work, Detective!",
+  "performance_tag": "[delighted]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/GULBUL_PANDEY_S00_003_INSPECTOR.mp3",
+  "duration_seconds": 2.69,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -2.5,
+  "name_text": "Excellent work, {name}!",
+  "description": "name line (Captain version): Excellent work, Detective!",
+  "tags": [
+   "name",
+   "captain"
+  ]
+ },
+ "GULBUL_PANDEY_S00_004_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.38,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "You are absolutely right, Detective!",
+  "performance_tag": "[pleased, clear]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/GULBUL_PANDEY_S00_004_INSPECTOR.mp3",
+  "duration_seconds": 2.93,
+  "integrated_lufs": -16.3,
+  "true_peak_dbfs": -2.4,
+  "name_text": "You are absolutely right, {name}!",
+  "description": "name line (Captain version): You are absolutely right, Detective!",
+  "tags": [
+   "name",
+   "captain"
+  ]
+ },
+ "GULBUL_PANDEY_S01_010_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.38,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "अरे! क्या तुम हमारे Detective बनोगे?",
+  "performance_tag": "[turning to the child, warm]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/GULBUL_PANDEY_S01_010_INSPECTOR.mp3",
+  "duration_seconds": 2.69,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.3,
+  "name_text": "अरे {name}! क्या तुम हमारे Detective बनोगे?",
+  "description": "name line (Captain version): अरे! क्या तुम हमारे Detective बनोगे?",
+  "tags": [
+   "name",
+   "captain"
+  ]
+ },
+ "GULBUL_PANDEY_S01_018_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.38,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Ready, Detective!",
+  "performance_tag": "[heroic, proud]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/GULBUL_PANDEY_S01_018_INSPECTOR.mp3",
+  "duration_seconds": 1.8,
+  "integrated_lufs": -16.6,
+  "true_peak_dbfs": -2.4,
+  "name_text": "Ready, Detective {name}!",
+  "description": "name line (Captain version): Ready, Detective!",
+  "tags": [
+   "name",
+   "captain"
+  ]
+ },
+ "GULBUL_PANDEY_S03_043_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.38,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Detective, देखो!",
+  "performance_tag": "[calling, warm]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/GULBUL_PANDEY_S03_043_INSPECTOR.mp3",
+  "duration_seconds": 2.35,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4,
+  "name_text": "{name}, देखो!",
+  "description": "name line (Captain version): Detective, देखो!",
+  "tags": [
+   "name",
+   "captain"
+  ]
+ },
+ "GULBUL_PANDEY_S04_057_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.38,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Detective, ध्यान से सुनो…",
+  "performance_tag": "[hushed]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/GULBUL_PANDEY_S04_057_INSPECTOR.mp3",
+  "duration_seconds": 2.12,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.5,
+  "name_text": "{name}, ध्यान से सुनो…",
+  "description": "name line (Captain version): Detective, ध्यान से सुनो…",
+  "tags": [
+   "name",
+   "captain"
+  ]
+ },
+ "GULBUL_PANDEY_S04_067_INSPECTOR": {
+  "type": "speech",
+  "voice": "INSPECTOR",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.38,
+   "similarity_boost": 0.78,
+   "style": 0.3,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Detective, ध्यान से सुनो…",
+  "performance_tag": "[hushed]",
+  "review_status": "test",
+  "generated": "2026-10-02",
+  "file": "names-captain/GULBUL_PANDEY_S04_067_INSPECTOR.mp3",
+  "duration_seconds": 1.96,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4,
+  "name_text": "{name}, ध्यान से सुनो…",
+  "description": "name line (Captain version): Detective, ध्यान से सुनो…",
+  "tags": [
+   "name",
+   "captain"
+  ]
+ }
+}

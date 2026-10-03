@@ -1,0 +1,10 @@
+{
+  "text": "[delighted transition] देखो, पैरट फुर्र से उड़ गया! Jungle Rescue Team, चलो आगे!",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+  }
+}

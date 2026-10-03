@@ -1,0 +1,10 @@
+{
+  "text": "[comic self-mockery right after the leaf tears, then caring] अरेरे... पत्ता तो फट गया! पत्ते से ठंड रोकने चला था... ये कौन करता है?!",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+  }
+}

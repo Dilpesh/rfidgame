@@ -1,0 +1,324 @@
+# Jungle Rescue English — ported cue for cue from
+# docs/jungle-rescue-english/claude/ios-volume-fix-standalone/index.html (build ios-standalone-13).
+# Every story line is pinned to its existing JR_ clip. 29 Sep: name lines added (see the block
+# below), JR_003 → JR_003b and JR_143 → JR_143b re-said gender-neutral; the old clips stay in audio/.
+# Format: docs/kit/tools/FORMAT.md
+
+title: Jungle Rescue English
+key: jungle-rescue-english
+language: hi
+minutes: 9
+audio: audio/
+cache: jr-final-5
+hints at: 8s 17s 28s
+tap sound: @lib:tap             # a soft tick when a card is tapped while Coco is still talking
+voices: COCO=Saanu, NARRATOR=Jia, ELEPHANT=Vardan, PARROT=Munni, LION=Bholu
+activities: Pull an imaginary rope | Drink real water during the Water break | Hum along with Coco | Dance and freeze
+
+card FUEL: ⛽ Fuel
+card ROPE: 🪢 Rope
+card BISCUIT: 🍪 Biscuit = SNACK
+card FIRST_AID: 🩹 First aid
+card WATER: 💧 Water
+card FLASHLIGHT: 🔦 Flashlight = TORCH
+card BLANKET: 🧣 Blanket
+card MUSIC: 🎵 Music
+
+
+# ---- name lines (tools/FORMAT.md, "The name rules"): short, independent, recorded once with
+# "Captain" into the library and once per child; the story lines below keep "Captain".
+== block praise
+one of:
+  COCO [warm, proud] @lib:praise_amazing #praise: Amazing, {name}!
+  COCO [bright] @lib:praise_good_job #praise: Good job, {name}!
+  COCO [delighted] @lib:praise_excellent #praise: Excellent work, {name}!
+  COCO [pleased, clear] @lib:praise_right #praise: You are absolutely right, {name}!
+
+
+== scene: Intro / fuel
+bed @JR_001
+COCO [bright and playful] @JR_002: हैलो, मैं हूँ कोको। आज हम जंगल बचाओ टीम बनेंगे।
+COCO [hopeful and inviting] @JR_003b #intro: Hello {name}! जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?
+wait 1.5s
+COCO [delighted and encouraging] @JR_004: Yes! Great! अब Captain और कोको मिलकर सारे animals को बचा लेंगे।
+COCO [proud, warm] @lib:title_captain: अब से तुम हो — मेरे Captain! || अब से तुम हो — Captain {name}!
+COCO [warm storytelling] @JR_005: जल्दी चलो, हमारी जंगल रेस्क्यू जीप तैयार है।
+sfx jeep_door @JR_006
+NARRATOR [warm and brisk] @JR_007: कोको जीप में बैठा, स्टीयरिंग पकड़ी, चाबी घुमाई।
+sfx key_turn_engine_cough @JR_008
+COCO [surprised and amused] @JR_009: ओह, ये स्टार्ट क्यों नहीं हो रही है? हम्म, जीप की टंकी खाली है।
+ask FUEL
+  prompt COCO [curious and clear] @JR_010: Captain, टंकी खाली है! इसमें क्या डालें कि जीप चल पड़े?
+  hint COCO [kind and clear] @JR_011: अपने सामने वाले cards को देखो... इनमें Jeep को चलाने वाली कोई चीज़ है क्या?
+  hint COCO [kind and clear] @JR_012: जिससे गाड़ी की tank भरती है, वही card ढूँढो.
+  hint COCO [kind and clear] @JR_013: FUEL वाला card scan करो.
+sfx ting @JR_014
+COCO [excited] @JR_015 #praise: YES! FUEL! टंकी भर गई!
+use praise
+sfx fuel_pour @JR_016
+sfx engine_start @JR_017
+COCO [energetic rallying call] @JR_018: जंगल रेस्क्यू टीम चलो!
+tap window 2s FUEL:
+  sfx overflow_bloop @JR_019 #joke
+  COCO [comic surprise and affection] @JR_020 #joke: ओहो! बस करो, Captain! Fuel तो overflow हो जाएगा!
+
+
+== scene: Elephant rescue
+bed @JR_021
+NARRATOR [bouncy and curious] @JR_022: जीप जंगल के अंदर गई। बड़े-बड़े पेड़, छोटी-छोटी नदियाँ, उछलती-कूदती जीप!
+sfx jeep_bump @JR_023
+sfx jeep_bump @JR_024
+sfx jeep_bump @JR_025
+COCO [surprised and comic] @JR_026 #joke: वो! ये रोड है या ट्रैम्पोलीन?
+sfx elephant_trumpet @JR_027
+bed @JR_001 @0.25
+COCO [urgent, excited] @lib:look: {name}, देखो!
+COCO [concerned and reassuring] @JR_028: अरे! एलिफेंट दादा एक बड़े मड्डी गड्ढे में फँसे हैं। चिंता मत करो, कोको सुपर रेस्क्यू आ गया!
+NARRATOR [brisk and physical] @JR_029: कोको ने एलिफेंट दादा को खींचा।
+wait 800ms
+COCO [effortful and rhythmic] @JR_030: एक, दो, तीन!
+sfx pull_strain @JR_031
+sfx mud_splat @JR_032
+NARRATOR [comic surprise] @JR_033 #joke: और कोको खुद मड में गिर गया!
+COCO [funny signature voice] @JR_034 #joke: ये कौन करता है?!
+COCO [small embarrassed laugh, recovering quickly] @JR_035: ओके, नया प्लान चाहिए.
+ask ROPE
+  prompt COCO [clear and warm] @JR_036: Captain, हमें कोई लंबी चीज़ चाहिए जिससे एलिफेंट दादा को अपनी तरफ खींच सकें। क्या हमारे पास ऐसी कोई चीज़ है?
+  hint COCO [clear and warm] @JR_037: अपने cards को देखो... कोई लंबी चीज़ दिख रही है जिससे हम खींच सकें?
+  hint COCO [clear and warm] @JR_038: इसे पकड़कर किसी चीज़ को अपनी तरफ खींचा जा सकता है.
+  hint COCO [clear and warm] @JR_039: ROPE वाला card scan करो.
+
+
+== scene: Rope done → biscuits
+on jump: bed @JR_001 @0.25
+sfx ting @JR_040
+COCO [bright and encouraging] @JR_041 #praise: YES! ROPE! रस्सी मिल गई। अब एलिफेंट दादा को बाहर निकालने में कोको की मदद करो।
+use praise
+COCO [playful and encouraging] @JR_042 #action: Captain, बैठे-बैठे रस्सी खींचने का नाटक करो। Pull!
+sfx rope_creak @JR_043 hold 2s
+COCO [clear and warm] @JR_044 #action: फिर से। Pull!
+sfx rope_creak @JR_045 hold 2s
+COCO [comically breathless] @JR_046 #joke: एक आखिरी बार। Pull, pull… अरे, pull-pull करते-करते दिमाग़ की बत्ती गुल हो गई!
+sfx mud_pop_release @JR_047
+COCO [relieved and happy] @JR_048: यस, एलिफेंट दादा बाहर आ गए.
+COCO [proud and impressed] @JR_049 #praise #effort: वाह Captain! तुमने कितना ज़ोर लगाया!
+ELEPHANT [relieved and grateful] @JR_050: Thank you, Captain!
+group #joke:
+  sfx stomach_growl @JR_051
+  COCO [curious surprise] @JR_052: ये क्या था?
+  ELEPHANT [playfully hungry] @JR_053: मेरे पेट में भूख से चूहे दौड़ रहे हैं।
+  COCO [playful] @JR_054: सिर्फ़ दौड़ नहीं रहे हैं... कूद भी रहे हैं!
+wait 800ms
+ask BISCUIT
+  prompt COCO [warm and inviting] @JR_055: एलिफेंट दादा को भूख लगी है! Captain, क्या हमारे पास कुछ खाने के लिए है?
+  hint COCO [clear and warm] @JR_056: अपने cards में खाने वाली चीज़ ढूँढो।
+  hint COCO [clear and warm] @JR_057: कुछ खाने वाला card?
+  hint COCO [clear and warm] @JR_058: BISCUIT वाला card tap करो।
+sfx ting @JR_059
+COCO [bright] @JR_060 #praise: YES! BISCUIT!
+use praise
+sfx gulp @JR_061
+ELEPHANT [surprised] @JR_062 #joke: बस एक biscuit?
+group #more-bites:
+  ask BISCUIT
+    prompt none
+    hint COCO [gentle and clear] @JR_067: Captain, वही BISCUIT वाला card फिर से tap करो।
+    hint COCO [helpful and unhurried] @JR_068: BISCUIT वाला card हटाओ, फिर दोबारा tap करो।
+    hint COCO [clear and kind] @JR_069: BISCUIT वाला card फिर से tap करो।
+  sfx gulp @JR_061
+  ELEPHANT [hopeful and cheeky] @JR_063 #joke #praise: बस दो? थोड़ा और दो, कोको!
+  ask BISCUIT
+    prompt none
+    hint COCO [gentle and clear] @JR_067: Captain, वही BISCUIT वाला card फिर से tap करो।
+    hint COCO [helpful and unhurried] @JR_068: BISCUIT वाला card हटाओ, फिर दोबारा tap करो।
+    hint COCO [clear and kind] @JR_069: BISCUIT वाला card फिर से tap करो।
+  sfx gulp @JR_061
+  ELEPHANT [playfully pleading] @JR_064 #joke #praise: कोको, मेरा पेट देखो... बहुत भूख लगी है! और खिलाओ।
+ask BISCUIT
+  prompt none
+  hint COCO [gentle and clear] @JR_067: Captain, वही BISCUIT वाला card फिर से tap करो।
+  hint COCO [helpful and unhurried] @JR_068: BISCUIT वाला card हटाओ, फिर दोबारा tap करो।
+  hint COCO [clear and kind] @JR_069: BISCUIT वाला card फिर से tap करो।
+sfx gulp @JR_061
+ELEPHANT [playfully overwhelmed] @JR_065 #joke #praise: ओके, ओके, बस करो! और खाऊँगा तो balloon बन जाऊँगा!
+sfx elephant_laugh @JR_066
+use praise
+
+
+== scene: Parrot / first aid
+on jump: bed @JR_001 @0.25
+sfx ting @JR_072
+COCO [bright transition] @JR_073: एलिफेंट दादा safe! Jungle Rescue Team, next mission!
+sfx parrot_flutter_fall @JR_074
+PARROT [briefly hurt, gentle and childlike] @JR_075: आह! ओह! मेरा wing hurt हो गया!
+sfx small_thud @JR_076
+COCO [concerned and gentle] @JR_077: अरे पैरट जी! आपका एक wing flap कर रहा है, दूसरा आराम कर रहा है।
+COCO [warm and reassuring] @JR_078: चिंता मत करो, पैरट जी! Captain और मैं आपकी मदद करेंगे।
+ask FIRST_AID
+  prompt COCO [curious, clear card invitation] @JR_079: चोट लगने पर हमें ऐसी चीज़ चाहिए जिसमें bandage और medicine जैसी चीज़ें होती हैं। Captain, क्या हमारे पास कुछ ऐसा है?
+  hint COCO [clear and warm] @JR_080: अपने cards को देखो... चोट लगने पर काम आने वाली चीज़ ढूँढो.
+  hint COCO [clear and warm] @JR_081: इसमें bandage जैसी चीज़ें रखी होती हैं.
+  hint COCO [clear and warm] @JR_082: FIRST AID वाला card scan करो.
+sfx ting @JR_083
+COCO [happy, clear, unhurried] @JR_084 #praise: YES! FIRST AID! पट्टी और medicine मिल गई।
+use praise
+wait 250ms
+sfx bandage_wrap @JR_085
+COCO [gentle relief] @JR_086: पैरट का wing अब safe है। पट्टी लग गई!
+sfx feather_rustle @JR_087
+PARROT [hopeful and tentative] @JR_088: Thank you, Captain! अब मैं wing हिला कर देखूँ?
+COCO [encouraging, rhythmic] @JR_089 #action: हाँ! धीरे-धीरे—एक, दो, flap!
+sfx wing_flap @JR_090
+sfx wing_flap @JR_090
+PARROT [delighted, bright] @JR_091: फड़फड़! अब मेरा wing चल रहा है!
+PARROT [tired and thirsty, not distressed] @JR_093: लेकिन मेरी चोंच सूख गई है। मुझे पानी चाहिए।
+
+
+== scene: Water break
+ask WATER
+  prompt COCO [caring, clear water-break instruction] @JR_094 #action: इतने rescue missions के बाद Captain को भी थोड़ी प्यास लगी होगी। पहले तुम जाकर थोड़ा असली पानी पियो। पानी पीकर वापस आना और WATER वाला card tap करना।
+  after prompt: bed stop
+  remind COCO [kind and unhurried reminder] @JR_095 at 30s 60s 3m 5m 7m: Captain, Coco यहीं wait कर रहा है। पानी पीकर आओ और WATER वाला card tap कर देना।
+sfx ting @JR_096
+bed @JR_001 @0.23
+COCO [warm welcome back] @JR_097 #praise #effort: Welcome back, Captain! अब पैरट को भी थोड़ा water देते हैं।
+use praise
+sfx water_pour @JR_098
+PARROT [surprised and happy] @JR_099: ओहो! पानी मिलते ही मेरी चोंच खुश हो गई!
+sfx wings_fly_away @JR_100
+PARROT [joyful, calling as she flies away] @JR_101: मैं उड़ सकता हूँ! Bye-bye, Captain!
+COCO [delighted transition] @JR_102: देखो, पैरट फुर्र से उड़ गया! Jungle Rescue Team, चलो आगे!
+bed stop
+
+
+== scene: Lion: jeep arrives
+play @JR_103
+NARRATOR [hushed and adventurous] @JR_104: रेस्क्यू जीप घने जंगलों के बीच आकर रुकी। सूरज ढल चुका था और पेड़-पौधे अंधेरे में अजीब साए जैसे लग रहे थे।
+sfx rustle_behind_rock @JR_105
+LION [two heavy but harmless childlike sneezes] @JR_106: आ... छी! आ... छी!
+COCO [whispering] @lib:listen_carefully: {name}, ध्यान से सुनो…
+COCO [whispering, nervous but playful] @JR_107: Captain... उस बड़ी rock के पीछे कोई छुपा है!
+LION [small and embarrassed] @JR_108: ह-हेलो? कोई है वहाँ?
+sfx lion_roar_small @JR_106_lion
+COCO [surprised] @JR_109: अरे! यह तो Lion King की आवाज़ है! आप rock के पीछे क्या कर रहे हैं?
+LION [worried but gentle] @JR_110: कोको... मैं यहाँ रास्ता भूल गया हूँ। और यहाँ इतना अंधेरा है कि मुझे अपनी पूँछ भी दिखाई नहीं दे रही!
+COCO [confident, then uncertain] @JR_111 #joke: फ़िक्र मत करो! मैं ढूँढता हूँ आपकी पूँछ।
+sfx lion_roar_small @JR_106_lion
+COCO [nervous, trying to sound brave] @JR_113 #joke: मेरा मतलब... मैं कुछ करता हूँ... ओह!
+sfx bonk @JR_114
+ask FLASHLIGHT
+  prompt COCO [rubbing head, urgent but playful] @JR_115: अरे! इतना अंधेरा है कि मेरी नाक भी नहीं दिख रही! Captain, हमें तुरंत रोशनी चाहिए, वरना हम सब टकरा जाएँगे!
+  hint COCO [clear and warm] @JR_116: अपने cards में देखो... कोई ऐसी चीज़ है जो अंधेरे में तेज़ रोशनी दे सके?
+  hint COCO [clear and warm] @JR_117: इसे ON करते ही अंधेरे में रास्ता साफ़ दिखने लगता है।
+  hint COCO [clear and warm] @JR_118: FLASHLIGHT वाला card scan करो!
+
+
+== scene: Lion: flashlight found
+on jump: bed @JR_103_bed
+together:
+  sfx torch_click @JR_120 @0.85
+  sfx ting @JR_119 @0.25
+wait 150ms
+COCO [relieved and bright] @JR_121 #praise: YES! FLASHLIGHT!
+use praise
+sfx light_sweep @JR_122
+COCO [surprised and relieved] @JR_123 #joke: वाह! रोशनी होते ही सब दिखने लगा! ...और rock के ऊपर वो उल्लू भी!
+sfx owl_hoot @JR_124
+NARRATOR [warm] @JR_125: टॉर्च की रोशनी में Lion King rock के पीछे से बाहर आए। पर वो थोड़े काँप रहे थे।
+sfx shiver @JR_126
+LION [shivering, small and childlike] @JR_127: रोशनी के लिए शुक्रिया... पर रात की हवा बहुत ठंडी है। Brrr!
+NARRATOR [warm and reassuring] @JR_128: रोशनी में Lion King को अपनी गुफा दिख गई। कोको उन्हें अंदर ले गया, लेकिन Lion King को अब भी बहुत ठंड लग रही थी।
+bed @JR_129_bed @0.18 crossfade
+sfx cave_entry_footsteps @JR_129_entry
+COCO [urgent, excited] @lib:look: {name}, देखो!
+COCO [helpful and confident] @JR_130: रुकिए Lion King, मैं आपको इस बड़े सूखे पत्ते से ढकता हूँ!
+sfx leaf_tear @JR_131
+COCO [comic self-mockery, then caring] @JR_132 #joke: अरेरे... पत्ता तो फट गया! पत्ते से ठंड रोकने चला था... ये कौन करता है?!
+sfx sting @JR_132_sting
+ask BLANKET
+  prompt COCO [clear and inviting] @JR_134: Captain, हमें Lion King के लिए कोई soft और गर्म चीज़ चाहिए जिसे उन्हें ओढ़ा सकें!
+  hint COCO [clear and warm] @JR_135: अपने cards में देखो... कोई soft चीज़ ढूँढो जो ठंड से बचाए।
+  hint COCO [clear and warm] @JR_136: रात को सोते समय हम इसे अपने ऊपर ओढ़कर warm महसूस करते हैं।
+  hint COCO [clear and warm] @JR_137: BLANKET वाला card scan करो!
+
+
+== scene: Lion: blanket found (lori)
+on jump: bed @JR_129_bed
+sfx ting @JR_138 @0.35
+wait 150ms
+COCO [warm acknowledgement] @JR_140 #praise: YES! BLANKET! यह blanket कितना soft और warm है!
+use praise
+sfx blanket_rustle_sigh @JR_139
+NARRATOR [tender] @JR_141: कोको ने बड़े प्यार से वो blanket Lion King को ओढ़ा दिया।
+LION [cozy, relieved, childlike] @JR_142: अहाहा... अब आया ना मज़ा! इतनी गर्मी... इतना आराम...
+COCO [tender and empathetic, slower and softer] @JR_143b #action: Captain, Lion King को आराम से सुलाने के लिए एक छोटी सी लोरी गाएँ? तुम भी मेरे साथ गाओ, ठीक है?
+COCO [tender, inviting] @lib:sing_along: {name}, साथ में गाओ!
+sfx lori_music_box @JR_144 @0.5 under
+sfx coco_humming @JR_145
+sfx lion_snore @JR_147
+COCO [giggling, quiet whisper] @JR_149: लो! हमारी लोरी सुनते-सुनते Lion King तो खर्राटे लेने लगे! Mission successful!
+
+
+== scene: Celebration
+bed stop
+COCO [proud, delighted] @JR_152: Captain, हमने दोस्तों की मदद कर दी! अब हमारी पार्टी!
+sfx clap @JR_152_clap @0.72
+sfx party_whistle @JR_153
+ask MUSIC
+  prompt COCO [eager, playful] @JR_154: मेरे पैर तो नाचने लगे! पर धुन कहाँ है? Captain, नाचने के लिए क्या बजाएँ?
+  hint COCO [gently encouraging] @JR_155: पार्टी में नाचने के लिए धुन चाहिए।
+  hint COCO [playful, helpful] @JR_156: गाना बजाने वाला card ढूँढो।
+  hint COCO [clear, kind] @JR_157: MUSIC वाला card tap करो।
+
+
+== scene: Dance party
+sfx ting @JR_158 @0.35
+wait 150ms
+COCO [excited] @JR_159 #praise: YES! MUSIC!
+use praise
+bed stop
+music @JR_160
+duck COCO [bouncy, inviting] @JR_161 #action: Elephant dance! हाथ की सूँड़ बनाओ — इधर, उधर! बैठे-बैठे भी!
+music at 10s
+sfx elephant_trumpet @JR_162 @0.55 under
+music at 20s
+music stop
+COCO [playful, clear] @JR_163 hold 3s #action: Freeze! मूर्ति बन जाओ!
+use praise
+music @JR_160
+duck COCO [bright, rhythmic] @JR_164 #action: Parrot dance! हाथों के पंख — फड़फड़, फड़फड़!
+music at 10s
+sfx parrot_squawk @JR_165 @0.55 under
+music at 20s
+music stop
+COCO [funny, clear] @JR_166 hold 3s #action: Freeze! गाल फुलाओ!
+music @JR_160
+duck COCO [puffed cheeks, funny release] @JR_167 #action: पुफ्फ! अब Captain वाला dance! हाथ हिलाओ या ताली बजाओ!
+music at 10s
+duck COCO [puffs cheeks again; laughing at himself] @JR_168 #joke: अरे! मेरे गाल फिर से गुब्बारे बन गए! पुफ्फ!
+sfx cheek_pop @JR_169
+music at 20s
+music stop
+sfx music_ending_flourish @JR_170
+use praise
+COCO [warm, proud] @JR_171 #praise: Captain, तुम्हारी मदद से हमारे दोस्त फिर खुश हैं। Thank you, Captain!
+COCO [inviting, joyful] @JR_172 #action: हाथ ऊपर! साथ बोलो — हम हैं जंगल बचाओ टीम!
+wait 500ms
+COCO [playful] @JR_173 #action: मेरी तरफ हवा में high-five!
+wait 2s
+sfx high_five_slap @JR_174
+COCO [comic surprise] @JR_175 #joke: अरे! मेरे हाथ पर अभी भी कीचड़ है!
+sfx squelch @JR_176
+COCO [laughing, affectionate] @JR_177: ये कौन करता है?! पहले हाथ धोऊँगा! Bye-bye, Captain!
+sfx outro_sting @JR_178
+
+
+== wrong card
+sfx boing @JR_179
+COCO [playfully surprised, encouraging] @JR_180: ओहो! ये वाला काम नहीं करेगा। Captain, एक और card try करो!
+--
+sfx boing @JR_181
+COCO [light, encouraging] @JR_182: ऊप्स! हमें कोई और चीज़ चाहिए। Captain, फिर से सोचो!
+--
+sfx boing @JR_183
+COCO [curious, supportive] @JR_184: हम्म... ये नहीं। Captain, दूसरा card try करो!

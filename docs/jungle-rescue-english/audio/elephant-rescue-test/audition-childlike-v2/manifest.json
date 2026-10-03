@@ -1,0 +1,26 @@
+{
+  "purpose": "Natural and light-EQ Vardan audition; identical updated takes",
+  "voice_id": "bBG9wwa23659EgIkMbc1",
+  "spoken_text": {
+    "JR_062": "बस एक?",
+    "JR_063": "बस दो? थोड़ा और दो, कोको!",
+    "JR_064": "कोको, मेरा पेट देखो... बहुत भूख लगी है! और खिलाओ।",
+    "JR_065": "ओके, ओके, बस करो! और खाऊँगा तो balloon बन जाऊँगा!"
+  },
+  "options": {
+    "natural": {
+      "file": "elephant_natural.wav",
+      "filter": "loudnorm=I=-16:TP=-2:LRA=11,alimiter=limit=0.85:level=false",
+      "duration_seconds": 14.71,
+      "integrated_lufs": -15.9,
+      "true_peak_dbfs": -2.0
+    },
+    "light": {
+      "file": "elephant_light.wav",
+      "filter": "highpass=f=80,equalizer=f=500:t=q:w=1:g=1.2,loudnorm=I=-16:TP=-2:LRA=11,alimiter=limit=0.85:level=false",
+      "duration_seconds": 14.71,
+      "integrated_lufs": -16.1,
+      "true_peak_dbfs": -2.0
+    }
+  }
+}

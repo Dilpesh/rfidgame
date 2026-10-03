@@ -1,0 +1,176 @@
+[
+ [
+  "sfx_jeep_horn.mp3",
+  "S0",
+  "A cheerful small jeep horn, two short friendly toots. Clean, no background.",
+  1.2
+ ],
+ [
+  "sfx_engine_cough.mp3",
+  "S0",
+  "A small jeep engine trying to start and failing, two weak coughs then silence. Comic, not mechanical.",
+  1.8
+ ],
+ [
+  "sfx_engine_start.mp3",
+  "S0",
+  "A small jeep engine catching and settling into a steady friendly idle.",
+  2.0
+ ],
+ [
+  "sfx_cheer_small.mp3",
+  "S0",
+  "Two or three young children cheering briefly, warm and close, no room echo.",
+  1.5
+ ],
+ [
+  "sfx_jeep_drive.mp3",
+  "S1",
+  "A small jeep driving on a dirt track, steady, to sit quietly under narration. Loopable.",
+  8.0
+ ],
+ [
+  "sfx_jeep_bump.mp3",
+  "S1",
+  "A jeep hitting a bump - a single soft suspension thump with a rattle. Comic, not violent.",
+  0.8
+ ],
+ [
+  "sfx_elephant_trumpet.mp3",
+  "S2",
+  "A friendly elephant trumpeting, bright and comic, not frightening. Clean.",
+  1.8
+ ],
+ [
+  "sfx_mud_squelch.mp3",
+  "S2",
+  "Thick wet mud squelching as something heavy shifts in it. Juicy and gross.",
+  1.5
+ ],
+ [
+  "sfx_mud_splat.mp3",
+  "S2",
+  "A single wet splat of mud landing on someone. Comic.",
+  0.8
+ ],
+ [
+  "sfx_coco_fall.mp3",
+  "S2",
+  "A light comic tumble and landing - a small character slipping over. No pain.",
+  1.2
+ ],
+ [
+  "sfx_rope_creak.mp3",
+  "S2",
+  "A thick rope pulling taut and creaking under strain.",
+  2.0
+ ],
+ [
+  "sfx_stomach_rumble.mp3",
+  "S2",
+  "An enormous comic stomach rumble, long and gurgling, clearly from something huge.",
+  2.2
+ ],
+ [
+  "sfx_munch_big.mp3",
+  "S2",
+  "Enormous happy chewing, big crunchy mouthfuls. Comic.",
+  1.5
+ ],
+ [
+  "sfx_ting.mp3",
+  "ALL",
+  "A bright short positive chime for a correct answer. Warm, not electronic.",
+  1.0
+ ],
+ [
+  "sfx_frog_croak.mp3",
+  "S3",
+  "A comic cartoon frog croak, squeaky and bright, two croaks.",
+  1.2
+ ],
+ [
+  "sfx_hiccup.mp3",
+  "S3",
+  "A single small comic hiccup, high and squeaky, like a tiny character. Very short.",
+  0.5
+ ],
+ [
+  "sfx_clap_kids.mp3",
+  "S3",
+  "Several young children clapping loudly and happily together, close, no echo.",
+  2.5
+ ],
+ [
+  "sfx_giraffe_bleat.mp3",
+  "S4",
+  "A gentle giraffe hum or bleat, soft and high, friendly and a little odd.",
+  1.5
+ ],
+ [
+  "sfx_giraffe_bend.mp3",
+  "S4",
+  "A long slow whoosh of something very tall bending down gently.",
+  1.5
+ ],
+ [
+  "sfx_boing.mp3",
+  "S4",
+  "A comic cartoon boing - a small character jumping and springing.",
+  0.8
+ ],
+ [
+  "sfx_soft_bonk.mp3",
+  "S4",
+  "A soft comic bonk, someone landing badly. Gentle, no pain.",
+  0.6
+ ],
+ [
+  "sfx_ladder_climb.mp3",
+  "S4",
+  "Feet climbing a wooden ladder, four distinct rungs, hollow and light.",
+  3.0
+ ],
+ [
+  "sfx_munch_juicy.mp3",
+  "S4",
+  "A big juicy bite of a soft ripe fruit, very wet and satisfying.",
+  1.2
+ ],
+ [
+  "sfx_splash.mp3",
+  "S4",
+  "A small splash of juice landing on someone. Wet and comic.",
+  0.8
+ ],
+ [
+  "sfx_night_amb.mp3",
+  "S6",
+  "Quiet night jungle - distant crickets, very soft, nothing sharp. Loopable bed.",
+  12.0
+ ],
+ [
+  "sfx_lion_snore.mp3",
+  "S6",
+  "An enormous comic snore from something very large and very asleep. Rumbling, harmless.",
+  2.5
+ ],
+ [
+  "sfx_torch_click.mp3",
+  "S6",
+  "A torch switch clicking on, then a soft warm hum.",
+  0.8
+ ],
+ [
+  "sfx_gulp.mp3",
+  "S5",
+  "Happy gulping of water from a glass, three good swallows, then a satisfied ahh.",
+  2.0
+ ],
+ [
+  "sfx_disco.mp3",
+  "S7",
+  "An upbeat cheerful kids' dance loop, simple rhythm, bright and silly. Must loop cleanly.",
+  20.0
+ ]
+]

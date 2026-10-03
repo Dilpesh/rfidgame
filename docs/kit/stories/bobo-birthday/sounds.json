@@ -1,0 +1,67 @@
+{
+  "_comment": "Prompts for the sounds Bobo की Birthday Party still needs (python3 docs/kit/tools/sounds.py bobo-birthday). Names alone would do; these just make them better. loud = the joke sound, 2 dB hotter.",
+  "welcome_chime": {
+    "prompt": "upbeat welcoming chime, three bright ascending notes, friendly app welcome sound, dry, no music",
+    "seconds": 1.5,
+    "desc": "upbeat welcoming chime, three rising notes",
+    "tags": "chime,welcome,bright"
+  },
+  "crunch_powerup": {
+    "prompt": "one crisp bite crunch, then a short cartoon power-up rising sparkle, video game energy sound",
+    "seconds": 2.0,
+    "desc": "one crunch then a cartoon power-up rise",
+    "tags": "crunch,powerup,eat,energy"
+  },
+  "candle_pop_flame": {
+    "prompt": "small cartoon pop, then a tiny flame catching with a soft whoosh and gentle crackle",
+    "seconds": 1.8,
+    "desc": "pop then a small flame catching",
+    "tags": "candle,pop,flame"
+  },
+  "blow_candles_out": {
+    "prompt": "a big breath blowing out birthday candles, strong puff of air, then a tiny fizzle of the wicks going out",
+    "seconds": 2.0,
+    "desc": "a big blow, candles out, tiny fizzle",
+    "tags": "blow,candle,birthday"
+  },
+  "cap_flies_off": {
+    "prompt": "cartoon fast whoosh of a hat flying off a head, then a soft comedic thud landing, dry, punchy",
+    "seconds": 1.5,
+    "loud": true,
+    "desc": "whoosh of a cap flying off then a soft thud — the joke",
+    "tags": "whoosh,cap,thud,funny"
+  },
+  "button_click": {
+    "prompt": "single plastic speaker power button click, short and clean",
+    "seconds": 0.6,
+    "desc": "speaker button click",
+    "tags": "click,button,speaker"
+  },
+  "audience_cheer": {
+    "prompt": "big happy crowd of children cheering hooray with applause, celebration, bright and joyful",
+    "seconds": 3.5,
+    "desc": "children cheering hooray with applause",
+    "tags": "cheer,applause,celebration,kids"
+  },
+  "fireworks": {
+    "prompt": "celebration fireworks, two whistles rising then bursts and crackles, festive, no music",
+    "seconds": 3.5,
+    "desc": "fireworks, whistle up then bursts",
+    "tags": "fireworks,celebration"
+  },
+  "clap_five": {
+    "prompt": "five evenly spaced hand claps, clap clap clap clap clap, a small group of children, steady rhythm, bright, dry, no music, no voices",
+    "seconds": 2.5,
+    "desc": "five evenly spaced claps, children",
+    "tags": "clap,five,rhythm,kids"
+  },
+  "birthday_bg": {
+    "music": true,
+    "volume": 0.25,
+    "lufs": -16,
+    "prompt": "soft cheerful birthday party instrumental loop, music box and gentle xylophone with light pizzicato, warm and playful, around 100 bpm, steady and loopable, no vocals, no drums that overpower",
+    "seconds": 20,
+    "desc": "soft cheerful birthday-party instrumental loop, background bed under the birthday singing",
+    "tags": "birthday,party,music,bed,soft"
+  }
+}

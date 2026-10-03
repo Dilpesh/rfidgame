@@ -1,0 +1,890 @@
+[
+ [
+  "vo_s0_01.mp3",
+  "S0 Opening",
+  "Coco",
+  "Big bright hello, straight at the child. Energy from the first syllable.",
+  "हैलो! मैं हूँ कोको!",
+  "[excited]"
+ ],
+ [
+  "vo_s0_02.mp3",
+  "S0 Opening",
+  "Coco",
+  "Worried but comic, not frightening. He is a bit helpless.",
+  "आज जंगल में हमारे दोस्त मुसीबत में हैं… पर मैं अकेला हूँ!",
+  "[worried]"
+ ],
+ [
+  "vo_s0_03.mp3",
+  "S0 Opening",
+  "Coco",
+  "THE invitation. Asking a friend for help, not assigning a job. End on a real question and leave room.",
+  "क्या तुम मेरी जंगल बचाओ टीम में शामिल होगे?",
+  "[hopeful]"
+ ],
+ [
+  "vo_s0_04.mp3",
+  "S0 Opening",
+  "Narrator",
+  "Lands right after the child says yes. Warm, not triumphant.",
+  "अरे वाह! टीम पूरी हो गई!",
+  "[delighted]"
+ ],
+ [
+  "vo_s0_05.mp3",
+  "S0 Opening",
+  "Coco",
+  "Proud, then the problem. The engine coughs under the last words.",
+  "तो सुनो, टीम! जीप तैयार है… पर टंकी खाली है!",
+  "[proud]"
+ ],
+ [
+  "vo_s0_06.mp3",
+  "S0 Opening",
+  "Coco",
+  "The rhyming ask. Sing-song, two beats, identical rhythm every time a card is asked for.",
+  "ईंधन लाओ — जीप चलाओ!",
+  "[rhythmic]"
+ ],
+ [
+  "vo_s0_ok.mp3",
+  "S0 Opening",
+  "Coco",
+  "Acknowledgement. Name the card, name the child, say what changed. Same shape every single time.",
+  "YES! FUEL! शाबाश किशु मिशु! टंकी फुल!",
+  "[triumphant]"
+ ],
+ [
+  "vo_s0_rally.mp3",
+  "S0 Opening",
+  "Coco",
+  "The rally. Call and response - leave a clear beat of silence after 'तैयार' for them to shout back.",
+  "जंगल बचाओ टीम… तैयार?!",
+  "[joyful]"
+ ],
+ [
+  "vo_s1_01.mp3",
+  "S1 Drive",
+  "Narrator",
+  "Travelling narration, calm, jeep engine under it.",
+  "जीप जंगल के अंदर चली… बड़े-बड़े पेड़… छोटी नदी…",
+  "[calm]"
+ ],
+ [
+  "vo_s1_02.mp3",
+  "S1 Drive",
+  "Narrator",
+  "Bounce the voice with the bumps. Physical.",
+  "उछलती-कूदती जीप! धड़ाम! धड़ाम!",
+  "[bouncing]"
+ ],
+ [
+  "vo_s1_03.mp3",
+  "S1 Drive",
+  "Coco",
+  "This line already made them laugh. Indignant, slightly winded.",
+  "Whoa! ये road है या trampoline?!",
+  "[indignant]"
+ ],
+ [
+  "vo_s1_04.mp3",
+  "S1 Drive",
+  "Coco",
+  "Alarmed but not scared. The trumpet has just sounded.",
+  "सुनो! कोई बुला रहा है!",
+  "[alarmed]"
+ ],
+ [
+  "vo_s2_01.mp3",
+  "S2 Elephant",
+  "Narrator",
+  "Shocked and delighted. Lean on कीचड़ - mess got the biggest laugh of the session.",
+  "अरे! Elephant Dada एक बड़े कीचड़ वाले गड्ढे में फँसे हैं!",
+  "[shocked]"
+ ],
+ [
+  "vo_s2_02.mp3",
+  "S2 Elephant",
+  "Elephant",
+  "Enormous, slow, glum. Completely matter-of-fact - that is the joke.",
+  "मैं बस थोड़ा नहाने आया था…",
+  "[booming]"
+ ],
+ [
+  "vo_s2_03.mp3",
+  "S2 Elephant",
+  "Coco",
+  "THE MESS CRY. Three syllables, same pitch and rhythm every time. Kids should be able to join in.",
+  "गंदा! गंदा! बहुत गंदा!",
+  "[delighted disbelief]"
+ ],
+ [
+  "vo_s2_04.mp3",
+  "S2 Elephant",
+  "Coco",
+  "Rhyming ask, urgent.",
+  "रस्सी लाओ — ताक़त लगाओ!",
+  "[urgent]"
+ ],
+ [
+  "vo_s2_ok.mp3",
+  "S2 Elephant",
+  "Coco",
+  "Acknowledgement.",
+  "YES! ROPE! शाबाश किशु मिशु!",
+  "[triumphant]"
+ ],
+ [
+  "vo_s2_05.mp3",
+  "S2 Elephant",
+  "Coco",
+  "Straining, teeth gritted. Invite them to pull with you.",
+  "सब मिलकर खींचो! एक… दो… तीन!",
+  "[straining]"
+ ],
+ [
+  "vo_s2_06.mp3",
+  "S2 Elephant",
+  "Coco",
+  "Straining harder, then the punchline lands flat and funny on 'गुल'.",
+  "खींचो, खींचो… दिमाग़ की बत्ती गुल!",
+  "[straining]"
+ ],
+ [
+  "vo_s2_07.mp3",
+  "S2 Elephant",
+  "Elephant",
+  "Cheerful now, still enormous. He is pleased Coco is dirty too.",
+  "अब तुम भी गंदे!",
+  "[booming, cheerful]"
+ ],
+ [
+  "vo_s2_08.mp3",
+  "S2 Elephant",
+  "Coco",
+  "Second mess cry - covered in mud and thrilled about it.",
+  "गंदा! गंदा! बहुत गंदा!",
+  "[muddy, happy]"
+ ],
+ [
+  "vo_s2_09.mp3",
+  "S2 Elephant",
+  "Narrator",
+  "Appreciation. Credit the child by name.",
+  "Elephant Dada बाहर आ गए! तुमने किया, किशु मिशु!",
+  "[warm]"
+ ],
+ [
+  "vo_s2_10.mp3",
+  "S2 Elephant",
+  "Elephant",
+  "Embarrassed, quiet for him - which is still loud. The stomach has just rumbled.",
+  "वो… वो मैं नहीं था.",
+  "[embarrassed]"
+ ],
+ [
+  "vo_s2_11.mp3",
+  "S2 Elephant",
+  "Coco",
+  "Rhyming ask.",
+  "नाश्ता लाओ — पेट भराओ!",
+  "[rhythmic]"
+ ],
+ [
+  "vo_s2_ok2.mp3",
+  "S2 Elephant",
+  "Coco",
+  "Acknowledgement.",
+  "YES! SNACK! शाबाश किशु मिशु!",
+  "[triumphant]"
+ ],
+ [
+  "vo_s2_12.mp3",
+  "S2 Elephant",
+  "Elephant",
+  "Deeply content. A long satisfied sigh in it.",
+  "आहाहा! अब पेट खुश!",
+  "[content]"
+ ],
+ [
+  "vo_s3_01.mp3",
+  "S3 Frog",
+  "Narrator",
+  "Introduce him with delight. टर्र टर्र is repeated sound - say it, do not rush it.",
+  "पत्ते पर बैठे हैं मेंढक जी — टर्र! टर्र!",
+  "[playful]"
+ ],
+ [
+  "vo_s3_02.mp3",
+  "S3 Frog",
+  "Frog",
+  "Squeaky and small. The hiccup CUTS HIM OFF mid-word - do not say the hiccup, let the sfx be it.",
+  "नमस्ते! मैं मेंढक — हिक!",
+  "[squeaky]"
+ ],
+ [
+  "vo_s3_03.mp3",
+  "S3 Frog",
+  "Coco",
+  "Genuinely curious, leaning in.",
+  "मेंढक जी, आप ठीक हो?",
+  "[curious]"
+ ],
+ [
+  "vo_s3_04.mp3",
+  "S3 Frog",
+  "Frog",
+  "Insisting he is fine while being interrupted twice. The more he insists the funnier.",
+  "बिलकुल ठीक — हिक! — बिलकुल — हिक!",
+  "[squeaky]"
+ ],
+ [
+  "vo_s3_05.mp3",
+  "S3 Frog",
+  "Coco",
+  "Amused. Land the contrast between the two repeated sounds.",
+  "टर्र टर्र नहीं… हिक हिक!",
+  "[amused]"
+ ],
+ [
+  "vo_s3_06.mp3",
+  "S3 Frog",
+  "Narrator",
+  "Set up the task clearly - this is the instruction.",
+  "हिचकी भगाने का एक ही तरीका है — ज़ोर की आवाज़!",
+  "[conspiratorial]"
+ ],
+ [
+  "vo_s3_07.mp3",
+  "S3 Frog",
+  "Coco",
+  "Rhyming ask.",
+  "ताली लाओ — हिचकी भगाओ!",
+  "[rhythmic]"
+ ],
+ [
+  "vo_s3_ok.mp3",
+  "S3 Frog",
+  "Coco",
+  "Acknowledgement.",
+  "YES! CLAP! शाबाश किशु मिशु!",
+  "[triumphant]"
+ ],
+ [
+  "vo_s3_08.mp3",
+  "S3 Frog",
+  "Coco",
+  "Loud, rhythmic, leading them. Leave room to actually clap after 'तीन'.",
+  "सब मिलकर — ज़ोर से ताली! एक… दो… तीन!",
+  "[loud]"
+ ],
+ [
+  "vo_s3_09.mp3",
+  "S3 Frog",
+  "Frog",
+  "Amazed and thrilled. Full croak, no hiccup.",
+  "अरे! हिचकी गई! टर्र! टर्र!",
+  "[delighted]"
+ ],
+ [
+  "vo_s3_10.mp3",
+  "S3 Frog",
+  "Frog",
+  "Proud, and about to overdo it.",
+  "अब मैं फिर से गा सकता हूँ! टर्र टर्र टर्र!",
+  "[proud]"
+ ],
+ [
+  "vo_s3_11.mp3",
+  "S3 Frog",
+  "Coco",
+  "Completely deadpan. The joke is the flatness.",
+  "…मेंढक जी, हिचकी वापस आ जाए?",
+  "[flat]"
+ ],
+ [
+  "vo_s4_01.mp3",
+  "S4 Giraffe",
+  "Narrator",
+  "Introduce her, high and far away.",
+  "आगे मिलीं जिराफ़ दीदी — बहुत ऊँची!",
+  "[bright]"
+ ],
+ [
+  "vo_s4_02.mp3",
+  "S4 Giraffe",
+  "Giraffe",
+  "VERY slow, stretched vowels, sing-song. Each word its own little journey.",
+  "न… म… स्ते…",
+  "[slow, stretchy]"
+ ],
+ [
+  "vo_s4_03.mp3",
+  "S4 Giraffe",
+  "Coco",
+  "Impatient, fast - the contrast with her is the joke.",
+  "जिराफ़ दीदी बोलती इतनी धीरे क्यों हैं?",
+  "[impatient]"
+ ],
+ [
+  "vo_s4_04.mp3",
+  "S4 Giraffe",
+  "Giraffe",
+  "Same slow delivery, explaining it perfectly seriously.",
+  "क्यों… कि… आवाज़… को… ऊपर… तक… आना… पड़ता… है!",
+  "[slow, stretchy]"
+ ],
+ [
+  "vo_s4_05.mp3",
+  "S4 Giraffe",
+  "Giraffe",
+  "Sad, still slow. The problem.",
+  "मुझे भूख लगी है… पर सब आम बहुत नीचे हैं!",
+  "[slow, sad]"
+ ],
+ [
+  "vo_s4_06.mp3",
+  "S4 Giraffe",
+  "Coco",
+  "Overconfident. He is about to fail.",
+  "कोई बात नहीं! कोको सुपर रेस्क्यू!",
+  "[confident]"
+ ],
+ [
+  "vo_s4_07.mp3",
+  "S4 Giraffe",
+  "Coco",
+  "Winded, defeated, after the boing and the bonk.",
+  "…दीदी बहुत ऊँची हैं.",
+  "[winded]"
+ ],
+ [
+  "vo_s4_08.mp3",
+  "S4 Giraffe",
+  "Coco",
+  "Rhyming ask.",
+  "सीढ़ी लाओ — ऊपर जाओ!",
+  "[rhythmic]"
+ ],
+ [
+  "vo_s4_ok.mp3",
+  "S4 Giraffe",
+  "Coco",
+  "Acknowledgement.",
+  "YES! LADDER! शाबाश किशु मिशु!",
+  "[triumphant]"
+ ],
+ [
+  "vo_s4_09.mp3",
+  "S4 Giraffe",
+  "Coco",
+  "Counting while climbing, effortful, one rung per number.",
+  "एक… दो… तीन… चार…",
+  "[climbing]"
+ ],
+ [
+  "vo_s4_10.mp3",
+  "S4 Giraffe",
+  "Coco",
+  "Tiny and far away, as if calling from high up.",
+  "दीदी! मैं ऊपर आ गया!",
+  "[tiny, distant]"
+ ],
+ [
+  "vo_s4_11.mp3",
+  "S4 Giraffe",
+  "Giraffe",
+  "THE PUNCHLINE. Slow, kind, not mocking. Let 'घुटने' land on its own.",
+  "तुम अभी भी मेरे घुटने तक हो.",
+  "[slow, amused]"
+ ],
+ [
+  "vo_s4_12.mp3",
+  "S4 Giraffe",
+  "Coco",
+  "One syllable of pure deflation.",
+  "…ओह.",
+  "[deflated]"
+ ],
+ [
+  "vo_s4_13.mp3",
+  "S4 Giraffe",
+  "Giraffe",
+  "Kind. She solves it herself.",
+  "रुको, मैं नीचे आती हूँ.",
+  "[slow, kind]"
+ ],
+ [
+  "vo_s4_14.mp3",
+  "S4 Giraffe",
+  "Coco",
+  "Rhyming ask.",
+  "आम लाओ — मुँह खिलाओ!",
+  "[rhythmic]"
+ ],
+ [
+  "vo_s4_ok2.mp3",
+  "S4 Giraffe",
+  "Coco",
+  "Acknowledgement.",
+  "YES! MANGO! शाबाश किशु मिशु!",
+  "[triumphant]"
+ ],
+ [
+  "vo_s4_15.mp3",
+  "S4 Giraffe",
+  "Narrator",
+  "A physical instruction - give them a moment to do it.",
+  "अपना हाथ आगे करो… जैसे तुम दीदी को आम खिला रहे हो.",
+  "[warm]"
+ ],
+ [
+  "vo_s4_16.mp3",
+  "S4 Giraffe",
+  "Coco",
+  "Spluttering, covered in juice.",
+  "दीदी! रस… मेरे ऊपर!",
+  "[spluttering]"
+ ],
+ [
+  "vo_s4_17.mp3",
+  "S4 Giraffe",
+  "Coco",
+  "Third and last mess cry. Same rhythm as the other two.",
+  "गंदा! गंदा! बहुत गंदा!",
+  "[delighted]"
+ ],
+ [
+  "vo_s4_18.mp3",
+  "S4 Giraffe",
+  "Giraffe",
+  "Slow, warm, genuinely grateful. Her name for the child, stretched.",
+  "मीठा… था… धन्यवाद… किशु… मिशु…",
+  "[slow, pleased]"
+ ],
+ [
+  "vo_s5_01.mp3",
+  "S5 Water",
+  "Narrator",
+  "Send them away kindly. Unhurried. No joke anywhere near this.",
+  "इतनी मेहनत के बाद टीम को प्यास लगी होगी! किशु मिशु, जाओ और सच में थोड़ा पानी पियो. हम यहीं रुकेंगे.",
+  "[warm]"
+ ],
+ [
+  "vo_s5_02.mp3",
+  "S5 Water",
+  "Narrator",
+  "How to come back. Then silence - nothing else is said until they return.",
+  "पानी पीकर वापस आ जाओ, फिर WATER वाला card tap करना.",
+  "[calm]"
+ ],
+ [
+  "vo_s5_ok.mp3",
+  "S5 Water",
+  "Narrator",
+  "PRAISE, not just acknowledgement - this one cost real effort.",
+  "Welcome back! तुम सच में पानी पीकर आए — Energy Tank FULL!",
+  "[proud]"
+ ],
+ [
+  "vo_s5_cheat.mp3",
+  "S5 Water",
+  "Narrator",
+  "Gentle, never scolding. Played ONCE if the card comes back within 10 seconds.",
+  "अरे! तुम गए ही नहीं! पहले जाकर पानी पियो, फिर आना.",
+  "[gentle]"
+ ],
+ [
+  "vo_s6_01.mp3",
+  "S6 Lion",
+  "Narrator",
+  "The light changes. Slower, quieter.",
+  "शाम हो गई… जंगल अँधेरा हो गया.",
+  "[hushed]"
+ ],
+ [
+  "vo_s6_02.mp3",
+  "S6 Lion",
+  "Coco",
+  "A real whisper, close to the mic.",
+  "श्श्श! कुछ बहुत बड़ा… सो रहा है!",
+  "[whispering]"
+ ],
+ [
+  "vo_s6_03.mp3",
+  "S6 Lion",
+  "Coco",
+  "Still whispering, then the rhyming ask.",
+  "कुछ दिख नहीं रहा! टॉर्च लाओ — उजाला लाओ!",
+  "[whispering]"
+ ],
+ [
+  "vo_s6_ok.mp3",
+  "S6 Lion",
+  "Coco",
+  "Acknowledgement.",
+  "YES! TORCH! शाबाश किशु मिशु!",
+  "[triumphant]"
+ ],
+ [
+  "vo_s6_04.mp3",
+  "S6 Lion",
+  "Narrator",
+  "The reveal. Big, then immediately silly.",
+  "अरे! ये तो शेर दादा हैं… और वो खर्राटे ले रहे हैं!",
+  "[revealing]"
+ ],
+ [
+  "vo_s6_05.mp3",
+  "S6 Lion",
+  "Coco",
+  "Relieved, then cheeky.",
+  "मुझे लगा शेर! …ये तो सिर्फ़ बड़ी बिल्ली है!",
+  "[relieved]"
+ ],
+ [
+  "vo_s6_06.mp3",
+  "S6 Lion",
+  "Lion",
+  "Enormous, sleepy, absolutely deadpan. Four words, no threat in them.",
+  "मैंने सुन लिया.",
+  "[enormous, sleepy]"
+ ],
+ [
+  "vo_s6_07.mp3",
+  "S6 Lion",
+  "Coco",
+  "Tiny and squeaky - maximum contrast with the lion.",
+  "…नमस्ते शेर दादा!",
+  "[squeaky]"
+ ],
+ [
+  "vo_s6_08.mp3",
+  "S6 Lion",
+  "Lion",
+  "Sleepy and kind. He approves of them.",
+  "जंगल बचाओ टीम? शाबाश. अब जाओ — मुझे सोना है.",
+  "[sleepy, kind]"
+ ],
+ [
+  "vo_s7_01.mp3",
+  "S7 Finish",
+  "Coco",
+  "Building the energy up into the party.",
+  "टीम! सब दोस्त safe हैं! अब पार्टी!",
+  "[building]"
+ ],
+ [
+  "vo_s7_02.mp3",
+  "S7 Finish",
+  "Coco",
+  "Rhyming ask.",
+  "म्यूज़िक लाओ — सब नाचो!",
+  "[rhythmic]"
+ ],
+ [
+  "vo_s7_ok.mp3",
+  "S7 Finish",
+  "Coco",
+  "Acknowledgement.",
+  "YES! MUSIC! शाबाश किशु मिशु!",
+  "[triumphant]"
+ ],
+ [
+  "vo_s7_03.mp3",
+  "S7 Finish",
+  "Coco",
+  "The list of achievements. A SOUND PLAYS AFTER EACH ONE - leave a clear beat at the end of each line.",
+  "किशु मिशु! तुमने Elephant Dada को कीचड़ से निकाला…",
+  "[proud]"
+ ],
+ [
+  "vo_s7_04.mp3",
+  "S7 Finish",
+  "Coco",
+  "Second item.",
+  "मेंढक जी की हिचकी भगाई…",
+  "[proud]"
+ ],
+ [
+  "vo_s7_05.mp3",
+  "S7 Finish",
+  "Coco",
+  "Third item.",
+  "जिराफ़ दीदी को आम खिलाया…",
+  "[proud]"
+ ],
+ [
+  "vo_s7_06.mp3",
+  "S7 Finish",
+  "Coco",
+  "Fourth item, biggest.",
+  "और शेर दादा को जगा दिया!",
+  "[proud]"
+ ],
+ [
+  "vo_s7_07.mp3",
+  "S7 Finish",
+  "Lion",
+  "The callback, and the last joke of the story. Sleepy, mildly put out.",
+  "मैंने फिर सुन लिया.",
+  "[sleepy, annoyed]"
+ ],
+ [
+  "vo_s7_08.mp3",
+  "S7 Finish",
+  "Coco",
+  "One word, delighted panic.",
+  "भागो!",
+  "[laughing]"
+ ],
+ [
+  "vo_s7_09.mp3",
+  "S7 Finish",
+  "Narrator",
+  "Warm goodbye. The horn is the last sound of the story.",
+  "जंगल बचाओ टीम — फिर मिलेंगे!",
+  "[warm]"
+ ],
+ [
+  "vo_hint_fuel_1.mp3",
+  "Hints · FUEL",
+  "Coco",
+  "Gentle nudge, no answer yet. Never impatient.",
+  "जीप चलेगी नहीं… टंकी खाली है.",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_fuel_2.mp3",
+  "Hints · FUEL",
+  "Coco",
+  "Narrower, still a question.",
+  "गाड़ी में क्या भरते हैं?",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_fuel_3.mp3",
+  "Hints · FUEL",
+  "Coco",
+  "Name the card outright. Calm, helpful, never disappointed.",
+  "ईंधन वाला FUEL card tap करो.",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_rope_1.mp3",
+  "Hints · ROPE",
+  "Coco",
+  "Gentle nudge, no answer yet. Never impatient.",
+  "Elephant Dada को खींचना है.",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_rope_2.mp3",
+  "Hints · ROPE",
+  "Coco",
+  "Narrower, still a question.",
+  "लंबी सी चीज़, जिससे खींच सकें?",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_rope_3.mp3",
+  "Hints · ROPE",
+  "Coco",
+  "Name the card outright. Calm, helpful, never disappointed.",
+  "रस्सी वाला ROPE card tap करो.",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_snack_1.mp3",
+  "Hints · SNACK",
+  "Coco",
+  "Gentle nudge, no answer yet. Never impatient.",
+  "पेट अभी भी गुड़गुड़ कर रहा है.",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_snack_2.mp3",
+  "Hints · SNACK",
+  "Coco",
+  "Narrower, still a question.",
+  "कुछ खाने वाला… crunchy?",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_snack_3.mp3",
+  "Hints · SNACK",
+  "Coco",
+  "Name the card outright. Calm, helpful, never disappointed.",
+  "नाश्ते वाला SNACK card tap करो.",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_clap_1.mp3",
+  "Hints · CLAP",
+  "Coco",
+  "Gentle nudge, no answer yet. Never impatient.",
+  "हिचकी अभी भी है — हिक!",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_clap_2.mp3",
+  "Hints · CLAP",
+  "Coco",
+  "Narrower, still a question.",
+  "ज़ोर की आवाज़ कैसे करें? हाथों से!",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_clap_3.mp3",
+  "Hints · CLAP",
+  "Coco",
+  "Name the card outright. Calm, helpful, never disappointed.",
+  "ताली वाला CLAP card tap करो.",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_ladder_1.mp3",
+  "Hints · LADDER",
+  "Coco",
+  "Gentle nudge, no answer yet. Never impatient.",
+  "दीदी बहुत ऊँची हैं.",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_ladder_2.mp3",
+  "Hints · LADDER",
+  "Coco",
+  "Narrower, still a question.",
+  "ऊपर चढ़ने के लिए क्या चाहिए?",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_ladder_3.mp3",
+  "Hints · LADDER",
+  "Coco",
+  "Name the card outright. Calm, helpful, never disappointed.",
+  "सीढ़ी वाला LADDER card tap करो.",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_mango_1.mp3",
+  "Hints · MANGO",
+  "Coco",
+  "Gentle nudge, no answer yet. Never impatient.",
+  "दीदी को कुछ मीठा चाहिए.",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_mango_2.mp3",
+  "Hints · MANGO",
+  "Coco",
+  "Narrower, still a question.",
+  "पीला-नारंगी, रसीला फल?",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_mango_3.mp3",
+  "Hints · MANGO",
+  "Coco",
+  "Name the card outright. Calm, helpful, never disappointed.",
+  "आम वाला MANGO card tap करो.",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_torch_1.mp3",
+  "Hints · TORCH",
+  "Coco",
+  "Gentle nudge, no answer yet. Never impatient.",
+  "कुछ दिख नहीं रहा.",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_torch_2.mp3",
+  "Hints · TORCH",
+  "Coco",
+  "Narrower, still a question.",
+  "अँधेरे में उजाला कौन करता है?",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_torch_3.mp3",
+  "Hints · TORCH",
+  "Coco",
+  "Name the card outright. Calm, helpful, never disappointed.",
+  "टॉर्च वाला TORCH card tap करो.",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_music_1.mp3",
+  "Hints · MUSIC",
+  "Coco",
+  "Gentle nudge, no answer yet. Never impatient.",
+  "नाचने का मन है… पर धुन कहाँ है?",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_music_2.mp3",
+  "Hints · MUSIC",
+  "Coco",
+  "Narrower, still a question.",
+  "पार्टी वाली चीज़ कौन सी है?",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_music_3.mp3",
+  "Hints · MUSIC",
+  "Coco",
+  "Name the card outright. Calm, helpful, never disappointed.",
+  "म्यूज़िक वाला MUSIC card tap करो.",
+  "[friendly]"
+ ],
+ [
+  "vo_hint_water_1.mp3",
+  "Hints · WATER",
+  "Narrator",
+  "Calm, unhurried. A child away from the phone is doing the right thing.",
+  "अगर पानी पी लिया हो, तो आराम से वापस आओ और WATER card tap कर देना.",
+  "[calm]"
+ ],
+ [
+  "vo_hint_water_2.mp3",
+  "Hints · WATER",
+  "Narrator",
+  "Calm, unhurried. A child away from the phone is doing the right thing.",
+  "किशु मिशु, हम यहीं हैं! पानी पी लिया हो तो WATER card tap करना.",
+  "[calm]"
+ ],
+ [
+  "vo_wrong_1.mp3",
+  "Wrong card",
+  "Coco",
+  "Generic, kind, shorter than any success line. Never a telling-off.",
+  "हम्म… ये अभी काम नहीं आएगा. एक और सोचो!",
+  "[friendly]"
+ ],
+ [
+  "vo_wrong_2.mp3",
+  "Wrong card",
+  "Coco",
+  "Second variant so it does not repeat.",
+  "अच्छा idea! पर अभी कुछ और चाहिए.",
+  "[friendly]"
+ ],
+ [
+  "vo_wrong_3.mp3",
+  "Wrong card",
+  "Coco",
+  "Third variant.",
+  "कोई बात नहीं! सवाल फिर से सुनो.",
+  "[friendly]"
+ ],
+ [
+  "vo_wrong_unknown.mp3",
+  "Wrong card",
+  "Coco",
+  "An unrecognised card. Send them to a grown-up without alarm.",
+  "ये card मैंने पहचाना नहीं! किसी बड़े से check करवा लो.",
+  "[friendly]"
+ ]
+]

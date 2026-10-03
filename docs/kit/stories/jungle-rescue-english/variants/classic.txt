@@ -1,0 +1,4 @@
+name: Classic (no name lines)
+note: The story as it shipped before 29 Sep — no praise pool, no attention lines, no title line. The intro and lori lines are the gender-neutral re-takes. Used by qa_parity.js.
+exclude: name
+keep: intro

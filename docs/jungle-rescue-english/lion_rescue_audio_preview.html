@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jungle Rescue — Lion Rescue audio review</title>
+  <style>
+    :root{font-family:system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;color:#183628;background:#eef6ed}
+    *{box-sizing:border-box}body{margin:0}main{max-width:880px;margin:auto;padding:22px 15px 60px}
+    header,section{background:#fff;border:1px solid #d4e4d4;border-radius:16px;padding:20px;margin-bottom:15px;box-shadow:0 5px 18px #163a230b}
+    h1{font-size:clamp(1.7rem,5vw,2.5rem);line-height:1.1;margin:0 0 10px}h2{margin:0 0 8px;font-size:1.2rem}p{line-height:1.5}.muted{color:#526b5b}
+    .actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px}button{border:1px solid #abc5af;border-radius:10px;background:#edf5ec;color:#183628;padding:11px 14px;font:inherit;font-weight:700;cursor:pointer}
+    button.primary{background:#14623f;border-color:#14623f;color:#fff}button:disabled{opacity:.42;cursor:not-allowed}
+    .status{border-radius:11px;background:#edf5ec;padding:13px;margin-top:14px;min-height:50px;font-weight:650}
+    .flow{display:grid;grid-template-columns:repeat(auto-fit,minmax(205px,1fr));gap:10px;margin-top:14px}.step{border:1px solid #d8e6d8;border-radius:12px;padding:13px;background:#fbfdfb}.step strong{display:block}.step small{color:#607364}
+    .sfx{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}.cue{border:1px solid #d8e6d8;border-radius:12px;padding:12px}.cue label{display:block;font-weight:700;margin-bottom:5px}audio{width:100%;height:42px}
+  </style>
+</head>
+<body>
+<main>
+  <header>
+    <h1>Lion Rescue audio review</h1>
+    <p>Help the young Lion find his cave, make him warm, then sing a short लोरी together.</p>
+    <p><a href="jeep_sound_lab.html">Jeep-only sound comparison: new C and D auditions</a></p>
+    <p><a href="lion_intro_roar_preview.html">Lion entrance roar-only preview</a></p>
+    <div class="actions">
+      <button class="primary" id="start">Play Lion scene</button>
+      <button id="windOnly">Hear jeep and weather</button>
+      <button id="jeepOnly">Hear selected Jeep D</button>
+      <button id="jeepAlt">Hear earlier Jeep B</button>
+      <button id="lionOnly">Hear grumpy Lion roar</button>
+      <button id="grumpyOptions">Compare grumpy-roar options</button>
+      <button id="flashOnly">Hear FLASHLIGHT tap</button>
+      <button id="caveOnly">Hear cold and leaf moment</button>
+      <button id="bedtimeOnly">Hear bedtime ending</button>
+      <button id="loriOnly">Hear the लोरी together</button>
+      <button id="stop">Stop</button>
+      <button id="flashlight" disabled>Tap FLASHLIGHT</button>
+      <button id="blanket" disabled>Tap BLANKET</button>
+    </div>
+    <div class="status" id="status" role="status" aria-live="polite">Ready. Start the Lion scene.</div>
+  </header>
+
+  <section>
+    <h2>Sound-only comparison — removed from the story</h2>
+    <p>This is the short generated lion sound that was placed after the sneezes in the earlier review. It is <strong>not played</strong> in the full Lion scene. Use the button to hear it three times, with a gap between repeats.</p>
+    <div class="actions"><button id="lionSoundOnly">Play the removed lion sound three times</button></div>
+    <audio controls preload="metadata" src="audio/lion-rescue-test/JR_106_lion.mp3?review=lion8"></audio>
+  </section>
+
+  <section>
+    <h2>Child-experience checkpoints</h2>
+    <div class="flow">
+      <div class="step"><strong>Whose sneeze?</strong><small>Two Bholu sneezes; Coco hears someone behind the rock. The extra lion sound is removed.</small></div>
+      <div class="step"><strong>FLASHLIGHT</strong><small>Coco answers immediately at the tap; the chime sits under his voice. Hints follow after 8, 17 and 28 seconds.</small></div>
+      <div class="step"><strong>Dry cave and BLANKET</strong><small>The team gets inside before trying the leaf and then the blanket.</small></div>
+      <div class="step"><strong>Ten-second लोरी</strong><small>Music and Coco’s voice play together; the child may sing or listen.</small></div>
+    </div>
+    <p class="muted">The buttons simulate fresh card taps for listening review. The deployed game handles real RFID presence, wrong cards and pauses.</p>
+  </section>
+
+  <section>
+    <h2>Individual sound checks</h2>
+    <div class="sfx">
+      <div class="cue"><label>Two small-Lion sneezes</label><audio controls preload="metadata" src="audio/lion-rescue-test/JR_106.mp3?review=lion8"></audio></div>
+      <div class="cue"><label>Narrator's opening · check अंधेरे</label><audio controls preload="metadata" src="audio/lion-rescue-test/JR_104.mp3?review=lion8"></audio></div>
+      <div class="cue"><label>Lion's lost-way line · check अंधेरा</label><audio controls preload="metadata" src="audio/lion-rescue-test/JR_110.mp3?review=lion8"></audio></div>
+      <div class="cue"><label>Coco's flashlight question · check अंधेरा</label><audio controls preload="metadata" src="audio/lion-rescue-test/JR_115.mp3?review=lion8"></audio></div>
+      <div class="cue"><label>Hint 1 · check अंधेरे</label><audio controls preload="metadata" src="audio/lion-rescue-test/JR_116.mp3?review=lion8"></audio></div>
+      <div class="cue"><label>Hint 2 · check अंधेरे</label><audio controls preload="metadata" src="audio/lion-rescue-test/JR_117.mp3?review=lion8"></audio></div>
+      <div class="cue"><label>Earlier bold Lion (compare)</label><audio controls preload="metadata" src="audio/lion-rescue-test/alternatives/review_before_light_lion/JR_110.mp3"></audio></div>
+      <div class="cue"><label>JR_106_lion — grumpy Lion reaction after tail joke</label><audio controls preload="metadata" src="audio/lion-rescue-test/JR_106_lion.mp3?review=lion10"></audio></div>
+      <section class="review-box">
+        <h2>Grumpy roar options — exact story context</h2>
+        <p>Each option plays Coco’s tail-joke line, the candidate reaction, and Coco’s next line. The production route is unchanged while you choose.</p>
+        <div class="cue"><label>Option 1 — current grumpy roar v2</label><audio controls preload="metadata" src="audio/lion-rescue-test/raw/JR_112_roar_v2.mp3"></audio><button class="grumpy-option" data-file="raw/JR_112_roar_v2.mp3">Play in context</button></div>
+        <div class="cue"><label>Option 2 — alternate grumpy roar</label><audio controls preload="metadata" src="audio/lion-rescue-test/raw/JR_112_roar_alt.mp3"></audio><button class="grumpy-option" data-file="raw/JR_112_roar_alt.mp3">Play in context</button></div>
+        <div class="cue"><label>Option 3 — earlier roar take</label><audio controls preload="metadata" src="audio/lion-rescue-test/raw/JR_112_roar_v1.mp3"></audio><button class="grumpy-option" data-file="raw/JR_112_roar_v1.mp3">Play in context</button></div>
+      </section>
+      <div class="cue"><label>Jeep D · selected in full scene</label><audio controls preload="metadata" src="audio/lion-rescue-test/JR_103_jeep.mp3?review=lion9"></audio></div>
+      <div class="cue"><label>Jeep run and stop — B, compare</label><audio controls preload="metadata" src="audio/lion-rescue-test/JR_103_jeep_alt.mp3?review=lion8"></audio></div>
+      <div class="cue"><label>Opening wind and rain</label><audio controls preload="metadata" src="audio/lion-rescue-test/JR_103_entry.mp3?review=wind3"></audio></div>
+      <div class="cue"><label>Evening weather bed</label><audio controls preload="metadata" src="audio/lion-rescue-test/JR_103_bed.mp3?review=wind3"></audio></div>
+      <div class="cue"><label>Revised cool breeze</label><audio controls preload="metadata" src="audio/lion-rescue-test/JR_126.mp3?review=wind3"></audio></div>
+      <div class="cue"><label>Dry sheltered cave ambience</label><audio controls preload="metadata" src="audio/lion-rescue-test/JR_129_bed.mp3"></audio></div>
+      <div class="cue"><label>Lion's cozy line</label><audio controls preload="metadata" src="audio/lion-rescue-test/JR_142.mp3"></audio></div>
+      <div class="cue"><label>Coco invites a लोरी</label><audio controls preload="metadata" src="audio/lion-rescue-test/JR_143.mp3?review=wind3"></audio></div>
+      <div class="cue"><label>Three sleepy Lion snores</label><audio controls preload="metadata" src="audio/lion-rescue-test/JR_147.mp3?review=lion5"></audio></div>
+    </div>
+  </section>
+</main>
+<script>
+'use strict';
+const dir='audio/lion-rescue-test/';
+const review='?review=lion9';
+const dayBed='audio/intro-fuel-test/JR_001.mp3';
+const $=id=>document.getElementById(id);
+let run=0,stage='idle',foreground=null,resolveForeground=null,bed=null,fadingBed=null;
+let music=null,humming=null,pending=false,flashClickPlayed=false,timers=[];
+const overlays=new Set();
+function status(message){$('status').textContent=message}
+function delay(ms){return new Promise(resolve=>setTimeout(resolve,ms))}
+function schedule(callback,ms){const id=setTimeout(callback,ms);timers.push(id)}
+function clearTimers(){for(const id of timers)clearTimeout(id);timers=[]}
+function stopForeground(){if(!foreground)return;const audio=foreground;foreground=null;audio.pause();audio.onended=null;audio.onerror=null;audio.src='';const done=resolveForeground;resolveForeground=null;if(done)done()}
+function stopBed(audio){if(audio){audio.pause();audio.src=''}}
+function stopLori(){for(const audio of [music,humming]){if(audio){audio.pause();audio.src=''}}music=null;humming=null}
+function playOverlay(id,volume=.35){
+  const audio=new Audio(`${dir}${id}.mp3${review}`);audio.volume=volume;overlays.add(audio);
+  const clear=()=>{overlays.delete(audio);audio.onended=null;audio.onerror=null};
+  audio.onended=clear;audio.onerror=clear;audio.play().catch(clear);
+}
+function stopAll(exceptPlayer=null){
+  run++;stage='idle';pending=false;flashClickPlayed=false;clearTimers();stopForeground();stopBed(bed);stopBed(fadingBed);bed=null;fadingBed=null;stopLori();
+  for(const audio of overlays){audio.pause();audio.src=''}overlays.clear();
+  for(const player of document.querySelectorAll('audio'))if(player!==exceptPlayer)player.pause();
+  $('flashlight').disabled=true;$('blanket').disabled=true;status('Stopped. Start again to replay the scene.');
+}
+function playCue(id,token=run){
+  if(token!==run)return Promise.resolve();
+  stopForeground();
+  const audio=new Audio(`${dir}${id}.mp3${review}`);foreground=audio;audio.preload='auto';status(`Playing ${id}…`);
+  return new Promise(resolve=>{
+    let finished=false;
+    const done=()=>{if(finished)return;finished=true;if(foreground===audio){foreground=null;resolveForeground=null}resolve()};
+    resolveForeground=done;audio.onended=done;
+    audio.onerror=()=>{if(foreground===audio){stopAll();status(`Could not play ${id}. Check its audio file.`)}};
+    audio.play().catch(()=>{if(foreground===audio){stopAll();status(`Browser blocked ${id}. Press Play Lion scene again.`)}});
+  });
+}
+function playFile(file,token=run){
+  if(token!==run)return Promise.resolve();
+  stopForeground();
+  const audio=new Audio(file);foreground=audio;audio.preload='auto';status('Playing selected roar…');
+  return new Promise(resolve=>{
+    let finished=false;
+    const done=()=>{if(finished)return;finished=true;if(foreground===audio){foreground=null;resolveForeground=null}resolve()};
+    resolveForeground=done;audio.onended=done;
+    audio.onerror=done;
+    audio.play().catch(done);
+  });
+}
+async function sequence(ids,token=run){for(const id of ids){if(token!==run)return;await playCue(id,token)}}
+function startDayBed(){bed=new Audio(dayBed);bed.loop=true;bed.volume=.14;bed.play().catch(()=>{})}
+async function crossfadeBed(source,volume,token=run){
+  const old=bed;fadingBed=old;
+  const next=new Audio(source);next.loop=true;next.volume=0;bed=next;
+  next.play().catch(()=>{});
+  for(let step=1;step<=8;step++){
+    await delay(90);
+    if(token!==run){stopBed(old);return}
+    next.volume=volume*step/8;
+    if(old)old.volume=Math.max(0,old.volume*(8-step)/(9-step));
+  }
+  stopBed(old);if(fadingBed===old)fadingBed=null;
+}
+function playHintWhenFree(id,wantStage,token){
+  if(token!==run||stage!==wantStage)return;
+  if(foreground){schedule(()=>playHintWhenFree(id,wantStage,token),200);return}
+  playCue(id,token).then(()=>{if(token===run&&stage===wantStage)status(`Waiting for ${wantStage==='flashWait'?'FLASHLIGHT':'BLANKET'}.`)});
+}
+function waitForCard(which,token){
+  const wantStage=which==='flashlight'?'flashWait':'blanketWait';
+  stage=wantStage;status(`Waiting for ${which.toUpperCase()}. Hints begin after 8 seconds.`);
+  const cues=which==='flashlight'?['JR_116','JR_117','JR_118']:['JR_135','JR_136','JR_137'];
+  for(const [index,ms] of [8000,17000,28000].entries())
+    schedule(()=>playHintWhenFree(cues[index],wantStage,token),ms);
+}
+async function flashlightSuccess(token){
+  if(token!==run)return;
+  stage='flashSuccess';clearTimers();$('flashlight').disabled=true;stopForeground();
+  if(!flashClickPlayed)playOverlay('JR_120',.85);
+  flashClickPlayed=false;
+  playOverlay('JR_119',.25);
+  const acknowledgement=playCue('JR_121',token);
+  await acknowledgement;
+  if(token!==run)return;
+  if(bed)bed.volume=.18;
+  await sequence(['JR_122','JR_123','JR_124','JR_125','JR_126','JR_127','JR_128'],token);
+  if(token!==run)return;
+  await Promise.all([crossfadeBed(`${dir}JR_129_bed.mp3`,.12,token),playCue('JR_129_entry',token)]);
+  if(token!==run)return;
+  await sequence(['JR_130','JR_131','JR_132','JR_132_sting'],token);
+  await delay(250);
+  if(token!==run)return;
+  stage='blanketPrompt';$('blanket').disabled=false;
+  await playCue('JR_134',token);
+  if(token!==run)return;
+  if(pending){pending=false;blanketSuccess(token)}else waitForCard('blanket',token);
+}
+async function playLori(token){
+  if(token!==run)return;
+  music=new Audio(`${dir}JR_144.mp3${review}`);humming=new Audio(`${dir}JR_145.mp3${review}`);
+  music.volume=.94;humming.volume=.94;status('Ten-second लोरी: sing, hum or listen with Coco.');
+  try{await Promise.all([music.play(),humming.play()])}
+  catch{if(token===run){stopAll();status('Could not play the लोरी tracks.')}return}
+  await delay(10000);
+  stopLori();
+}
+async function blanketSuccess(token){
+  if(token!==run)return;
+  stage='blanketSuccess';clearTimers();$('blanket').disabled=true;stopForeground();
+  const acknowledgement=playCue('JR_140',token);playOverlay('JR_138',.35);
+  await acknowledgement;
+  if(token!==run)return;
+  await sequence(['JR_139','JR_141','JR_142','JR_143'],token);
+  if(token!==run)return;
+  await playLori(token);
+  if(token!==run)return;
+  await playCue('JR_147',token);
+  await delay(350);
+  await sequence(['JR_149'],token);
+  if(token!==run)return;
+  stopBed(bed);bed=null;stage='complete';status('Lion Rescue complete. Lion King is sleeping peacefully.');
+}
+$('start').onclick=async()=>{
+  stopAll();const token=run;stage='scene';startDayBed();
+  await playCue('JR_103_jeep',token);
+  if(token!==run)return;
+  await Promise.all([crossfadeBed(`${dir}JR_103_bed.mp3${review}`,.26,token),playCue('JR_103_entry',token)]);
+  if(token!==run)return;
+  await sequence(['JR_104','JR_105','JR_106','JR_107','JR_108','JR_106_lion','JR_109','JR_110','JR_111','JR_106_lion','JR_113','JR_114'],token);
+  if(token!==run)return;
+  stage='flashPrompt';$('flashlight').disabled=false;
+  await playCue('JR_115',token);
+  if(token!==run)return;
+  if(pending){pending=false;flashlightSuccess(token)}else waitForCard('flashlight',token);
+};
+$('windOnly').onclick=async()=>{
+  stopAll();const token=run;stage='windReview';startDayBed();
+  await playCue('JR_103_jeep',token);
+  if(token!==run)return;
+  await Promise.all([crossfadeBed(`${dir}JR_103_bed.mp3${review}`,.26,token),playCue('JR_103_entry',token)]);
+  if(token!==run)return;
+  await sequence(['JR_104','JR_105','JR_106','JR_107','JR_108','JR_106_lion','JR_109'],token);
+  if(token===run){stopBed(bed);bed=null;stage='idle';status('Opening weather review complete.')}
+};
+$('lionSoundOnly').onclick=async()=>{
+  stopAll();const token=run;stage='retiredSoundReview';
+  for(let i=0;i<3;i++){
+    if(token!==run)return;
+    await playCue('JR_106_lion',token);
+    if(i<2)await delay(400);
+  }
+  if(token===run){stage='idle';status('Removed lion sound comparison complete. This does not play in the story.')}
+};
+$('jeepOnly').onclick=async()=>{
+  stopAll();const token=run;stage='jeepReview';await playCue('JR_103_jeep',token);
+  if(token===run){stage='idle';status('Selected Jeep D review complete.')}
+};
+$('jeepAlt').onclick=async()=>{
+  stopAll();const token=run;stage='jeepAltReview';await playCue('JR_103_jeep_alt',token);
+  if(token===run){stage='idle';status('Earlier Jeep B review complete.')}
+};
+$('lionOnly').onclick=async()=>{
+  stopAll();const token=run;stage='lionReview';
+  await sequence(['JR_111','JR_106_lion','JR_113'],token);
+  if(token===run){stage='idle';status('Grumpy Lion roar review complete.')}
+};
+document.querySelectorAll('.grumpy-option').forEach(btn=>btn.onclick=async()=>{
+  const run=++token; stopAll(); stage='running'; status('Playing selected grumpy-roar option in context…');
+  await sequence(['JR_111'],run);
+  if(token!==run)return;
+  await playFile('audio/lion-rescue-test/'+btn.dataset.file,run);
+  if(token!==run)return;
+  await sequence(['JR_113'],run);
+  if(token===run){stage='idle';status('Grumpy-roar option complete.');}
+});
+$('grumpyOptions').onclick=()=>document.querySelector('.review-box').scrollIntoView({behavior:'smooth'});
+$('flashOnly').onclick=async()=>{
+  stopAll();const token=run;stage='flashReview';
+  playOverlay('JR_120',.85);playOverlay('JR_119',.25);
+  const acknowledgement=playCue('JR_121',token);
+  await acknowledgement;
+  if(token!==run)return;
+  await sequence(['JR_122','JR_123'],token);
+  if(token===run){stage='idle';status('FLASHLIGHT response review complete.')}
+};
+$('loriOnly').onclick=async()=>{
+  stopAll();const token=run;stage='loriOnly';
+  await playLori(token);
+  if(token===run){stage='idle';status('The ten-second लोरी is complete.')}
+};
+$('caveOnly').onclick=async()=>{
+  stopAll();const token=run;stage='caveReview';
+  await sequence(['JR_125','JR_126','JR_127','JR_128','JR_129_entry','JR_130','JR_131','JR_132','JR_132_sting'],token);
+  await delay(250);
+  await playCue('JR_134',token);
+  if(token===run){stage='idle';status('Cold and leaf moment complete.')}
+};
+$('bedtimeOnly').onclick=async()=>{
+  stopAll();const token=run;stage='bedtimeReview';
+  await sequence(['JR_141','JR_142','JR_143'],token);
+  if(token!==run)return;
+  await playLori(token);
+  if(token!==run)return;
+  await playCue('JR_147',token);
+  await delay(350);
+  await sequence(['JR_149'],token);
+  if(token===run){stage='idle';status('Bedtime ending complete.')}
+};
+$('stop').onclick=()=>stopAll();
+$('flashlight').onclick=()=>{
+  if(stage==='flashPrompt'){
+    playOverlay('JR_120',.85);flashClickPlayed=true;pending=true;
+    $('flashlight').disabled=true;status('FLASHLIGHT received. Coco will finish the question.');return
+  }
+  if(stage==='flashWait')flashlightSuccess(run);
+};
+$('blanket').onclick=()=>{
+  if(stage==='blanketPrompt'){pending=true;$('blanket').disabled=true;status('BLANKET received. Coco will finish the question.');return}
+  if(stage==='blanketWait')blanketSuccess(run);
+};
+document.querySelectorAll('audio').forEach(player=>player.addEventListener('play',()=>{stopAll(player);status('Playing an individual cue.')}));
+</script>
+</body>
+</html>

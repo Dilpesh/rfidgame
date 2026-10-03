@@ -1,0 +1,7 @@
+{
+  "text": "Seamless loop of windy evening jungle atmosphere for a child's story: continuous soft wind moving through leaves, light steady rain, and a few quiet crickets. Wind remains recognizable in pauses but the bed stays gentle beneath speech. No thunder, no voices, no music.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 12.0,
+  "prompt_influence": 0.8,
+  "loop": true
+}

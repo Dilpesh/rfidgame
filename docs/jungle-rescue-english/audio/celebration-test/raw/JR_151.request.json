@@ -1,0 +1,10 @@
+{
+  "text": "[warm, relieved] बारिश थम गई। Lion King को सोने देकर टीम जीप के पास लौट आई।",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+    "stability": 0.56,
+    "similarity_boost": 0.78,
+    "style": 0.12,
+    "use_speaker_boost": true
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "text": "[clear and inviting] Captain, हमें Lion King के लिए कोई soft और गर्म चीज़ चाहिए जिसे उन्हें ओढ़ा सकें!",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+  }
+}

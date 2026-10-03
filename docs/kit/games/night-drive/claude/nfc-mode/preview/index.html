@@ -1,0 +1,332 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Night Drive — Phone NFC mode (proposal)</title>
+<style>
+body{font:15px/1.55 system-ui,-apple-system,sans-serif;color:#1c2620;background:#f6f7f4;margin:0;padding:24px}
+main{max-width:1080px;margin:0 auto} h1{font-size:26px;margin:0 0 4px} h2{font-size:18px;margin:34px 0 8px;border-bottom:2px solid #d9e2dc;padding-bottom:4px}
+.eyebrow{color:#6b7c72;font-weight:700;letter-spacing:.06em;text-transform:uppercase;font-size:12px}
+.box{background:#fff;border:1px solid #d9e2dc;border-radius:14px;padding:16px 18px;margin:12px 0}
+.warn{background:#fff7e6;border-color:#f0d494} .ok{background:#eef8f0;border-color:#b9dcc2}
+code,pre{font:13px/1.45 ui-monospace,Menlo,monospace} pre{background:#0f1a14;color:#dfe8e2;padding:14px;border-radius:12px;overflow:auto;max-height:520px}
+table.diff{font:12px/1.4 ui-monospace,monospace;border-collapse:collapse;width:100%} table.diff td,table.diff th{padding:1px 6px;vertical-align:top}
+.diff_header{background:#e9eee9} .diff_next{background:#e9eee9} .diff_add{background:#c8f0cf} .diff_chg{background:#ffe9a8} .diff_sub{background:#f8c9c4}
+th{text-align:left} td{vertical-align:top} table.plain td{padding:6px 10px;border-bottom:1px solid #e3e8e4}
+kbd{background:#eef1ee;border:1px solid #cfd8d1;border-radius:6px;padding:1px 6px;font:12px ui-monospace,monospace}
+</style></head><body><main>
+<div class="eyebrow">Proposal · Coco की Night Drive only · 30 Sep 2026</div>
+<h1>Phone NFC as a second way to answer</h1>
+<p>Two ways to start on the welcome page: <b>Start · RFID reader</b> (exactly what exists today) and <b>Start · Phone NFC</b> (the phone's own antenna reads 13.56&nbsp;MHz tags). One line is added to night-drive's <code>index.html</code>; everything else is a new file, <code>nfc.js</code>, loaded by this story alone. <b>The shared engine (<code>kahani.js</code>) and the other stories are not touched.</b> Nothing in the repo has been modified — this folder is the proposal.</p>
+
+<h2>What is in this package</h2>
+<table class="plain">
+<tr><td><code>original/index.html</code></td><td>the repo file as of today (md5 <code>562d5798…</code>), untouched</td></tr>
+<tr><td><code>modified/index.html</code></td><td>the same file with one added <code>&lt;script&gt;</code> line</td></tr>
+<tr><td><code>new/nfc.js</code></td><td>the Phone NFC mode — buttons, Web NFC scan, serial → card registry, teach panel</td></tr>
+<tr><td><code>new/qa_nfc.js</code></td><td>38 checks in a real headless Chromium with a fake <code>NDEFReader</code> (laptops have no NFC)</td></tr>
+</table>
+<div class="box">To apply: copy <code>modified/index.html</code> over <code>docs/kit/games/night-drive/index.html</code> and <code>new/nfc.js</code> into <code>docs/kit/games/night-drive/</code>. To test: <code>node docs/kit/games/night-drive/claude/nfc-mode/new/qa_nfc.js</code> (it finds <code>docs/</code> by itself). Deploy the folder to Netlify as usual.</div>
+
+<h2>The challenges — read this first</h2>
+<div class="box warn"><b>1. It only works in Chrome on Android.</b> Web NFC (<code>NDEFReader</code>) is implemented by Chrome and Chromium browsers on Android only. iPhone Safari cannot read NFC tags from a web page at all; on an iPhone the button is shown disabled with that sentence. Reading NFC on iPhone needs a native app (Core NFC) — which fits the later native-app option, not this web version. So: <b>this mode is for your Android phone; the iPhone keeps using the RFID reader.</b></div>
+<div class="box warn"><b>2. It needs https.</b> Web NFC only exists on a secure origin. <code>taptales.netlify.app</code> is https, so that is fine; <code>http://&lt;your Mac's IP&gt;:8000/…</code> on the phone is not, and the button will say so. (<code>localhost</code> counts as secure, which is how the QA runs.)</div>
+<div class="box warn"><b>3. Your 23 cards will not work with it.</b> They are 125&nbsp;kHz; a phone reads 13.56&nbsp;MHz. NFC mode needs its own tags (NTAG213 stickers or cards). The same tag cannot be read by the 125&nbsp;kHz reader either, so it is one set per mode — the two modes are two different physical products, which matters for the boxed version.</div>
+<div class="box warn"><b>4. Teaching is per phone (until cards.json knows the serials).</b> You chose "teach by serial only". A tag is taught in developer mode and stored in the same card registry the RFID cards use (<code>localStorage</code> key <code>kahaniCards</code>), so it is known in every kit game on that phone — but only on that phone. The developer line lists the taught serials with a Copy button; pasting them into <code>cards.json</code> is a separate step (<code>sync_cards.py</code> would need to accept colon-separated hex serials beside the decimal UIDs — not done here, because cards are global and that is not "this story only").</div>
+<div class="box warn"><b>5. The first tap may need a second tap.</b> The first time, Chrome shows an "Allow NFC?" sheet. If you take more than ~3&nbsp;s to answer it, the tap that started everything is too old for Android to allow audio, so the story is <i>not</i> started behind the sheet: the button changes to "NFC ready — tap to start" and the next tap starts it. After that first time there is no prompt and one tap does everything.</div>
+<div class="box warn"><b>6. <code>build.py</code> will overwrite the added line.</b> The build writes <code>index.html</code> from its template, so a rebuild of night-drive drops the <code>nfc.js</code> line (the file itself stays). If you keep the mode, the honest fix is a small <code>build.py</code> option (a <code>scripts:</code> header in <code>story.txt</code>) — that is a tool change I have not made, on purpose.</div>
+<div class="box">Also worth knowing: reading pauses while the page is in the background (Chrome only reads for a visible tab); a tag resting on the phone fires once, and the scan guard drops repeats within 1.5&nbsp;s like a reader; the reader check ("tap any card on the reader") is skipped for an NFC play and nothing is written to storage about it, so choosing RFID later on the same phone still runs the check.</div>
+
+<h2>How it behaves</h2>
+<table class="plain">
+<tr><td>Welcome page</td><td>Two primary buttons. On a phone without Web NFC the second is disabled with the reason underneath.</td></tr>
+<tr><td>Start · Phone NFC</td><td><code>NDEFReader.scan()</code> is called inside the tap (required), then the engine's own start runs — audio unlock, story intro, story. The reader check is bypassed for this play.</td></tr>
+<tr><td>A tag is read</td><td>Its serial (e.g. <code>04:A1:B2:C3:D4:E5:01</code>) goes to <code>CardRegistry.lookup()</code>. Known → <code>Kahani.handleScan(serial)</code> through the scan guard, so early scans, tap windows, wrong-card lines and the progress bar behave exactly as for a reader.</td></tr>
+<tr><td>Unknown tag, normal play</td><td>Ignored; a line says "Unknown tag — teach it in developer mode (?dev)". The story never names the card.</td></tr>
+<tr><td>Unknown tag, developer mode</td><td>A small panel: "New tag 04:… — which card is it?" with the story's four cards (⛽ 🔦 💧 🎵). Choose one → <code>CardRegistry.teach(serial, TORCH)</code>, and it counts immediately. FLASHLIGHT is taught as <code>TORCH</code>, its registry name, so the same tag is Torch in every game.</td></tr>
+<tr><td>Developer line</td><td>"NFC tags taught on this phone" with each serial → card and a Copy button (JSON grouped by card, for cards.json).</td></tr>
+<tr><td>Permission refused / NFC off</td><td>A plain sentence under the buttons, and both start buttons come back so RFID can be chosen instead.</td></tr>
+</table>
+
+<h2>Trying it on your Android phone</h2>
+<ol>
+<li>Apply the two files, deploy, open <code>https://taptales.netlify.app/kit/games/night-drive/?dev</code> in Chrome. Turn NFC on in the phone's settings.</li>
+<li>Tap <b>Start · Phone NFC</b>, allow NFC when Chrome asks (first time only; if it asked, tap the button again).</li>
+<li>When Coco asks for fuel, hold a blank NTAG213 tag against the back of the phone (the antenna is usually near the camera or the middle). The teach panel appears — tap ⛽ Fuel. Do the same for Torch, Water and Music as they come.</li>
+<li>Play again without <code>?dev</code> (open <code>?dev=0</code> once to leave developer mode): the four tags now answer on their own.</li>
+<li>Then the usual: phone speaker, screen down, from two metres.</li>
+</ol>
+
+<h2>Verified</h2>
+<div class="box ok"><b>qa_nfc.js — 38/38</b> in headless Chromium 1194 with a fake NDEFReader, and <b>qa_play.js night-drive</b> on the modified game (RFID path, keyboard UIDs): ✓ reached the end in 177 s · 4 cards asked (FUEL FLASHLIGHT WATER MUSIC) · progress 4/4 — the same 53 clips in the same order as before the change.</div>
+<pre>A. a browser without Web NFC (iPhone Safari, a laptop)
+  ✓ the Phone NFC button is there but disabled
+  ✓ and says why: Phone NFC needs Chrome on Android. iPhone Safari cannot read NFC tags from a web page.
+  ✓ the engine start is labelled &quot;Start · RFID reader&quot;
+  ✓ RFID start still starts the story (engine path untouched)
+  ✓ no page errors
+B. Phone NFC, permission already granted: start, teach, answer
+  ✓ NDEFReader.scan() was called inside the tap
+  ✓ one tap starts the story
+  ✓ the reader check overlay is skipped
+  ✓ and nothing about the reader was written to storage
+  ✓ both start buttons are disabled once playing
+  ✓ an unknown tag outside developer mode does not count
+  ✓ and the line says to teach it in developer mode
+  ✓ no teach panel outside developer mode
+  ✓ developer mode shows the taught-tags list
+  ✓ in developer mode the unknown tag opens the teach panel
+  ✓ offering the four registry cards of this story: FUEL TORCH WATER MUSIC
+  ✓ teaching it as FUEL counts it at once (progress 1/4)
+  ✓ the serial is in the shared card registry
+  ✓ and in the taught list for cards.json
+  ✓ which the developer line shows
+  ✓ a known tag while Coco talks is remembered as an early scan
+  ✓ the same tag twice in a row is one tap (tap sound played once)
+  ✓ a taught tag for the wrong card gets &quot;Try another card&quot;
+  ✓ a tag taught as TORCH answers the FLASHLIGHT question (registry name → story card)
+  ✓ no page errors
+C. the first-time permission prompt (scan resolves after 4 s)
+  ✓ the button waits while Chrome asks
+  ✓ the story does not start behind the prompt
+  ✓ after the prompt the button says &quot;tap to start&quot;
+  ✓ still idle until that second tap
+  ✓ the second tap starts the story
+  ✓ without a second scan()
+D. permission refused
+  ✓ the story does not start
+  ✓ the line explains: NFC was not allowed. Check Chrome › Site settings › NFC for this site, then try again.
+  ✓ both start buttons are usable again
+  ✓ so the RFID reader can be chosen instead
+E. the whole story by NFC, four taught tags, production mode
+  ✓ reached the end in 177 s · asked FUEL FLASHLIGHT WATER MUSIC · progress 4/4
+  ✓ the on-screen card tray never appeared (production mode)
+  ✓ no page errors
+
+38 passed, 0 failed
+</pre>
+
+<h2>The one-line change to index.html</h2>
+
+    <table class="diff" id="difflib_chg_to0__top"
+           cellspacing="0" cellpadding="0" rules="groups" >
+        <colgroup></colgroup> <colgroup></colgroup> <colgroup></colgroup>
+        <colgroup></colgroup> <colgroup></colgroup> <colgroup></colgroup>
+        <thead><tr><th class="diff_next"><br /></th><th colspan="2" class="diff_header">original/index.html (repo, md5 562d5798)</th><th class="diff_next"><br /></th><th colspan="2" class="diff_header">modified/index.html</th></tr></thead>
+        <tbody>
+            <tr><td class="diff_next" id="difflib_chg_to0__0"></td><td class="diff_header" id="from0_12">12</td><td nowrap="nowrap">&lt;script&nbsp;src="../../engine/reader-check.js?v=38b52081"&gt;&lt;/script&gt;</td><td class="diff_next"></td><td class="diff_header" id="to0_12">12</td><td nowrap="nowrap">&lt;script&nbsp;src="../../engine/reader-check.js?v=38b52081"&gt;&lt;/script&gt;</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from0_13">13</td><td nowrap="nowrap">&lt;script&nbsp;src="../../engine/story-intro.js?v=38b52081"&gt;&lt;/script&gt;</td><td class="diff_next"></td><td class="diff_header" id="to0_13">13</td><td nowrap="nowrap">&lt;script&nbsp;src="../../engine/story-intro.js?v=38b52081"&gt;&lt;/script&gt;</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from0_14">14</td><td nowrap="nowrap">&lt;script&nbsp;src="../../engine/card-registry.js?v=704886a5"&gt;&lt;/script&gt;</td><td class="diff_next"></td><td class="diff_header" id="to0_14">14</td><td nowrap="nowrap">&lt;script&nbsp;src="../../engine/card-registry.js?v=704886a5"&gt;&lt;/script&gt;</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from0_15">15</td><td nowrap="nowrap">&lt;script&nbsp;src="../../engine/kahani.js?v=e26b081b"&gt;&lt;/script&gt;</td><td class="diff_next"></td><td class="diff_header" id="to0_15">15</td><td nowrap="nowrap">&lt;script&nbsp;src="../../engine/kahani.js?v=e26b081b"&gt;&lt;/script&gt;</td></tr>
+            <tr><td class="diff_next"><a href="#difflib_chg_to0__top">t</a></td><td class="diff_header"></td><td nowrap="nowrap"></td><td class="diff_next"><a href="#difflib_chg_to0__top">t</a></td><td class="diff_header" id="to0_16">16</td><td nowrap="nowrap"><span class="diff_add">&lt;script&nbsp;src="nfc.js?v=nfc-1"&gt;&lt;/script&gt;&nbsp;&nbsp;&nbsp;&lt;!--&nbsp;Phone&nbsp;NFC&nbsp;mode,&nbsp;this&nbsp;story&nbsp;only&nbsp;(see&nbsp;nfc.js)</span></td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header"></td><td nowrap="nowrap">&nbsp;</td><td class="diff_next"></td><td class="diff_header">></td><td nowrap="nowrap"><span class="diff_add">&nbsp;--&gt;</span></td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from0_16">16</td><td nowrap="nowrap">&lt;script&gt;Kahani.boot({&nbsp;story:&nbsp;'story.json'&nbsp;});&lt;/script&gt;</td><td class="diff_next"></td><td class="diff_header" id="to0_17">17</td><td nowrap="nowrap">&lt;script&gt;Kahani.boot({&nbsp;story:&nbsp;'story.json'&nbsp;});&lt;/script&gt;</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from0_17">17</td><td nowrap="nowrap">&lt;/body&gt;</td><td class="diff_next"></td><td class="diff_header" id="to0_18">18</td><td nowrap="nowrap">&lt;/body&gt;</td></tr>
+            <tr><td class="diff_next"></td><td class="diff_header" id="from0_18">18</td><td nowrap="nowrap">&lt;/html&gt;</td><td class="diff_next"></td><td class="diff_header" id="to0_19">19</td><td nowrap="nowrap">&lt;/html&gt;</td></tr>
+        </tbody>
+    </table>
+
+<h2>new/nfc.js</h2>
+<pre>/* nfc.js — &quot;Phone NFC&quot; mode for Coco की Night Drive. This story only.
+ *
+ * The engine (../../engine/kahani.js) is shared by every kit story and is not
+ * touched. This file is loaded by night-drive/index.html alone and bolts a
+ * second way of answering onto the welcome page:
+ *
+ *   Start · RFID reader   the engine&#x27;s own start — the 125 kHz reader typing UIDs
+ *   Start · Phone NFC     the phone&#x27;s NFC antenna reads 13.56 MHz tags (NTAG213 …)
+ *                         through Web NFC, and every tag serial is handed to the
+ *                         engine exactly as a reader keystroke would be
+ *
+ * How a tag becomes a card (decision, 30 Sep 2026: teach by serial only):
+ *   - a tag&#x27;s serial number is looked up in the card registry
+ *     (card-registry.js — the same one the RFID cards live in, one localStorage
+ *     key for the whole site, so a tag taught here is known in every kit game)
+ *   - an unknown tag in developer mode (?dev, or Ctrl+Shift+D) shows a small
+ *     &quot;which card is this?&quot; panel; pick one and the serial is taught with
+ *     CardRegistry.teach() and counted at once
+ *   - an unknown tag outside developer mode is ignored with a status line
+ *   - the serials taught on this phone are listed in developer mode with a Copy
+ *     button, so they can go into cards.json later (cards are global)
+ *
+ * What the engine sees: Kahani.handleScan(serial), wrapped in ScanGuard, so
+ * early scans, tap windows, wrong-card lines and the progress bar all behave as
+ * for a reader. The engine&#x27;s reader check is skipped for this play (no keyboard
+ * wedge to test); nothing about it is written to storage.
+ *
+ * Limits that are the platform&#x27;s, not ours:
+ *   - Web NFC exists only in Chrome (and Chromium browsers) on Android, on a
+ *     secure origin (https, or localhost). iPhone Safari cannot read NFC tags
+ *     from a web page at all — that needs a native app. The button is shown
+ *     disabled with the reason on such phones.
+ *   - NDEFReader.scan() must be called inside a user tap, and the first time
+ *     Chrome asks &quot;Allow NFC?&quot;. If that prompt takes longer than a few seconds
+ *     the tap&#x27;s activation has expired for audio, so the story is not started
+ *     behind the prompt; the button says &quot;tap again&quot; and the second tap starts it.
+ *   - Reading pauses while the page is hidden; Chrome resumes it when the page
+ *     is visible again.
+ *   - The 125 kHz cards cannot be read by a phone and the NFC tags cannot be
+ *     read by the 125 kHz reader: NFC mode needs its own set of tags.
+ */
+(function () {
+  &#x27;use strict&#x27;;
+
+  const $ = (id) =&gt; document.getElementById(id);
+  const TAUGHT_KEY = &#x27;nightDriveNfcTags&#x27;;           // {serial: CANON} — only what was taught here, for cards.json later
+  const FAST_MS = 3000;                            // permission already granted: scan() resolves well within this
+
+  const supported = &#x27;NDEFReader&#x27; in window;
+  const secure = window.isSecureContext;
+  let reader = null, scanning = false, ready = false, guarded = null, lastUnknown = null;
+
+  const esc = (s) =&gt; String(s).replace(/[&amp;&lt;&gt;&quot;]/g, (c) =&gt; ({ &#x27;&amp;&#x27;: &#x27;&amp;amp;&#x27;, &#x27;&lt;&#x27;: &#x27;&amp;lt;&#x27;, &#x27;&gt;&#x27;: &#x27;&amp;gt;&#x27;, &#x27;&quot;&#x27;: &#x27;&amp;quot;&#x27; }[c]));
+  const isDev = () =&gt; { const d = $(&#x27;kDevLine&#x27;); return !!d &amp;&amp; !d.classList.contains(&#x27;hide&#x27;); };
+  const story = () =&gt; (window.Kahani &amp;&amp; Kahani._story &amp;&amp; Kahani._story()) || null;
+  const storyCards = () =&gt; (story() ? story().cards : []);
+  const inStory = (canon) =&gt; storyCards().some((c) =&gt; c.registry === canon);
+  const label = (canon) =&gt; { const c = storyCards().find((x) =&gt; x.registry === canon); return c ? `${c.icon} ${c.label}` : canon; };
+
+  function say(msg, cls) {
+    // the welcome line before the story starts, the play-panel line after
+    const el = $(&#x27;kWelcome&#x27;) &amp;&amp; !$(&#x27;kWelcome&#x27;).classList.contains(&#x27;hide&#x27;) ? $(&#x27;kNfcLine&#x27;) : $(&#x27;kNfcPlayLine&#x27;);
+    if (!el) return;
+    el.textContent = msg; el.className = &#x27;status &#x27; + (cls || &#x27;&#x27;);
+    el.classList.toggle(&#x27;hide&#x27;, !msg);
+  }
+
+  /* ───────── taught serials (for cards.json) ───────── */
+  const readTaught = () =&gt; { try { return JSON.parse(localStorage.getItem(TAUGHT_KEY) || &#x27;{}&#x27;) || {}; } catch (e) { return {}; } };
+  const writeTaught = (m) =&gt; { try { localStorage.setItem(TAUGHT_KEY, JSON.stringify(m)); } catch (e) {} };
+  function renderTaught() {
+    const el = $(&#x27;kNfcTaught&#x27;); if (!el) return;
+    const m = readTaught(); const serials = Object.keys(m);
+    el.classList.toggle(&#x27;hide&#x27;, !isDev());
+    if (!serials.length) { el.innerHTML = &#x27;&lt;span class=&quot;muted&quot;&gt;No NFC tags taught on this phone yet.&lt;/span&gt;&#x27;; return; }
+    const byCard = {}; serials.forEach((s) =&gt; { (byCard[m[s]] = byCard[m[s]] || []).push(s); });
+    el.innerHTML = `&lt;span class=&quot;muted&quot;&gt;NFC tags taught on this phone (for cards.json):&lt;/span&gt; ` +
+      serials.map((s) =&gt; `&lt;code&gt;${esc(s)}&lt;/code&gt; → ${esc(m[s])}`).join(&#x27; · &#x27;) +
+      ` &lt;button id=&quot;kNfcCopy&quot; style=&quot;padding:4px 10px;font-size:12px&quot;&gt;Copy&lt;/button&gt;`;
+    $(&#x27;kNfcCopy&#x27;).onclick = () =&gt; {
+      const text = JSON.stringify(byCard, null, 2);
+      const done = () =&gt; { $(&#x27;kNfcCopy&#x27;).textContent = &#x27;Copied&#x27;; setTimeout(() =&gt; { if ($(&#x27;kNfcCopy&#x27;)) $(&#x27;kNfcCopy&#x27;).textContent = &#x27;Copy&#x27;; }, 1500); };
+      if (navigator.clipboard &amp;&amp; navigator.clipboard.writeText) navigator.clipboard.writeText(text).then(done, () =&gt; window.prompt(&#x27;Copy this:&#x27;, text));
+      else window.prompt(&#x27;Copy this:&#x27;, text);
+    };
+  }
+
+  /* ───────── the teach panel (developer mode only) ───────── */
+  function showTeach(serial) {
+    const p = $(&#x27;kNfcTeach&#x27;); if (!p) return;
+    p.innerHTML = `&lt;div class=&quot;muted&quot;&gt;New tag &lt;code&gt;${esc(serial)}&lt;/code&gt; — which card is it?&lt;/div&gt;
+      &lt;div class=&quot;tapgrid&quot; style=&quot;margin-top:10px&quot;&gt;${storyCards().map((c) =&gt;
+        `&lt;button class=&quot;card tap&quot; data-canon=&quot;${esc(c.registry)}&quot;&gt;&lt;span class=&quot;icon&quot;&gt;${c.icon}&lt;/span&gt;&lt;small&gt;${esc(c.label)}&lt;/small&gt;&lt;/button&gt;`).join(&#x27;&#x27;)}&lt;/div&gt;
+      &lt;div class=&quot;actions&quot;&gt;&lt;button id=&quot;kNfcIgnore&quot;&gt;Ignore this tag&lt;/button&gt;&lt;/div&gt;`;
+    p.classList.remove(&#x27;hide&#x27;);
+    p.querySelectorAll(&#x27;button[data-canon]&#x27;).forEach((b) =&gt; { b.onclick = () =&gt; teach(serial, b.dataset.canon); });
+    $(&#x27;kNfcIgnore&#x27;).onclick = () =&gt; { p.classList.add(&#x27;hide&#x27;); lastUnknown = null; say(&#x27;&#x27;); };
+  }
+  function hideTeach() { const p = $(&#x27;kNfcTeach&#x27;); if (p) p.classList.add(&#x27;hide&#x27;); }
+  function teach(serial, canon) {
+    const ok = window.CardRegistry &amp;&amp; CardRegistry.teach(serial, canon);
+    if (!ok) { say(`Could not teach ${serial} as ${canon} — is it in cards.json?`, &#x27;error&#x27;); return; }
+    const m = readTaught(); m[serial] = canon; writeTaught(m); renderTaught();
+    hideTeach(); lastUnknown = null;
+    say(`Taught: ${serial} is ${label(canon)}.`, &#x27;ok&#x27;);
+    guarded(serial);                                   // it counts right now, like any scan
+  }
+
+  /* ───────── a tag was read ───────── */
+  function onReading(ev) {
+    const serial = String(ev.serialNumber || &#x27;&#x27;).trim().toUpperCase();
+    if (!serial) { say(&#x27;That tag has no serial number — try another tag.&#x27;, &#x27;warn&#x27;); return; }
+    const canon = window.CardRegistry ? CardRegistry.lookup(serial) : null;
+    if (canon &amp;&amp; inStory(canon)) { hideTeach(); say(&#x27;&#x27;); guarded(serial); return; }
+    if (canon) { say(`That tag is ${canon}, which this story does not use.`, &#x27;warn&#x27;); return; }
+    lastUnknown = serial;
+    if (isDev()) { say(`Unknown tag ${serial}.`, &#x27;warn&#x27;); showTeach(serial); }
+    else say(&#x27;Unknown tag — teach it in developer mode (?dev).&#x27;, &#x27;warn&#x27;);
+  }
+  function onReadingError() { say(&quot;Couldn&#x27;t read that tag — hold it still against the back of the phone.&quot;, &#x27;warn&#x27;); }
+
+  /* ───────── starting ───────── */
+  function explain(e) {
+    const n = (e &amp;&amp; e.name) || &#x27;&#x27;;
+    if (n === &#x27;NotAllowedError&#x27;) return &#x27;NFC was not allowed. Check Chrome › Site settings › NFC for this site, then try again.&#x27;;
+    if (n === &#x27;NotSupportedError&#x27;) return &#x27;NFC is off or not available on this phone. Turn NFC on in the phone settings and try again.&#x27;;
+    if (n === &#x27;NotReadableError&#x27;) return &#x27;The NFC antenna is busy (another app?) — close it and try again.&#x27;;
+    if (n === &#x27;AbortError&#x27;) return &#x27;NFC scan stopped.&#x27;;
+    return &#x27;NFC could not start: &#x27; + (e &amp;&amp; (e.message || n) || &#x27;unknown error&#x27;);
+  }
+
+  function install() {
+    const start = $(&#x27;kStart&#x27;); if (!start || $(&#x27;kNfc&#x27;)) return;
+    const engineStart = start.onclick;                  // the engine&#x27;s begin(&#x27;reader&#x27;), captured once
+    if (typeof engineStart !== &#x27;function&#x27;) return;
+    start.textContent = &#x27;Start · RFID reader&#x27;;
+
+    const nfc = document.createElement(&#x27;button&#x27;);
+    nfc.id = &#x27;kNfc&#x27;; nfc.className = &#x27;primary&#x27;; nfc.textContent = &#x27;Start · Phone NFC&#x27;;
+    start.insertAdjacentElement(&#x27;afterend&#x27;, nfc);
+
+    const line = document.createElement(&#x27;div&#x27;); line.id = &#x27;kNfcLine&#x27;; line.className = &#x27;status hide&#x27;;
+    $(&#x27;kWelcomeStatus&#x27;).insertAdjacentElement(&#x27;afterend&#x27;, line);
+
+    const play = $(&#x27;kPlay&#x27;);
+    const playLine = document.createElement(&#x27;div&#x27;); playLine.id = &#x27;kNfcPlayLine&#x27;; playLine.className = &#x27;status hide&#x27;;
+    const teachPanel = document.createElement(&#x27;div&#x27;); teachPanel.id = &#x27;kNfcTeach&#x27;; teachPanel.className = &#x27;wanted hide&#x27;;
+    const taught = document.createElement(&#x27;div&#x27;); taught.id = &#x27;kNfcTaught&#x27;; taught.className = &#x27;muted small hide&#x27;;
+    $(&#x27;kTapGrid&#x27;).insertAdjacentElement(&#x27;afterend&#x27;, teachPanel);
+    teachPanel.insertAdjacentElement(&#x27;afterend&#x27;, playLine);
+    $(&#x27;kDevLine&#x27;).insertAdjacentElement(&#x27;beforebegin&#x27;, taught);
+    renderTaught();
+    // the dev line toggles when developer mode does; mirror it for the taught list
+    new MutationObserver(renderTaught).observe($(&#x27;kDevLine&#x27;), { attributes: true, attributeFilter: [&#x27;class&#x27;] });
+
+    if (!supported || !secure) {
+      nfc.disabled = true;
+      say(!secure ? &#x27;Phone NFC needs an https address (or localhost) — open the game from taptales.netlify.app.&#x27;
+                  : &#x27;Phone NFC needs Chrome on Android. iPhone Safari cannot read NFC tags from a web page.&#x27;, &#x27;warn&#x27;);
+      return;
+    }
+
+    guarded = window.ScanGuard ? ScanGuard.wrap(Kahani.handleScan) : Kahani.handleScan;
+
+    const startStory = () =&gt; {
+      if (window.ReaderCheck) ReaderCheck.known = () =&gt; true;   // this play answers with the phone, not the reader
+      start.disabled = true; nfc.disabled = true;
+      say(&#x27;&#x27;);
+      engineStart();
+    };
+
+    nfc.onclick = () =&gt; {
+      if (ready) { startStory(); return; }                      // second tap after the permission prompt
+      if (scanning) return;
+      scanning = true; nfc.disabled = true; start.disabled = true;
+      say(&#x27;Starting NFC… allow it if Chrome asks.&#x27;);
+      const t0 = performance.now();
+      let p;
+      try {
+        reader = new NDEFReader();
+        reader.addEventListener(&#x27;reading&#x27;, onReading);
+        reader.addEventListener(&#x27;readingerror&#x27;, onReadingError);
+        p = reader.scan();                                      // inside the tap, as Web NFC requires
+      } catch (e) { p = Promise.reject(e); }
+      p.then(() =&gt; {
+        ready = true;
+        if (performance.now() - t0 &lt; FAST_MS) { startStory(); return; }   // no prompt: the tap is still fresh for audio
+        nfc.disabled = false; start.disabled = true;
+        nfc.textContent = &#x27;NFC ready — tap to start&#x27;;
+        say(&#x27;NFC is on. Tap the button once more to start the story.&#x27;, &#x27;ok&#x27;);
+      }).catch((e) =&gt; {
+        scanning = false; ready = false; reader = null;
+        nfc.disabled = false; start.disabled = false;
+        say(explain(e), &#x27;error&#x27;);
+      });
+    };
+  }
+
+  // Kahani.boot() renders the welcome panel after story.json arrives; wait for it.
+  if ($(&#x27;kStart&#x27;)) install();
+  else new MutationObserver((_, o) =&gt; { if ($(&#x27;kStart&#x27;)) { o.disconnect(); install(); } }).observe(document.body, { childList: true, subtree: true });
+
+  window.NightDriveNFC = { supported, secure, _reading: onReading, _ready: () =&gt; ready, _scanning: () =&gt; scanning, _lastUnknown: () =&gt; lastUnknown, taught: readTaught };
+})();
+</pre>
+</main></body></html>

@@ -1,0 +1,7 @@
+{
+  "text": "One realistic small Jeep arrival and stop, heard close: tires slow and gently crunch gravel, a brief soft brake squeak, suspension settles, then the petrol engine winds down and switches fully off with a short mechanical click. Clear final silence. No horn, crash, voices, music, birds, or jungle ambience.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 1.7,
+  "prompt_influence": 0.85,
+  "loop": false
+}

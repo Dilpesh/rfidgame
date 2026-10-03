@@ -45,3 +45,49 @@ Its success formula, used on every single card:
 
 Name the card, name the child, say what changed. Toy Town only ever did the
 third, and at two stops said nothing at all.
+
+---
+
+## 2026-09-21 · played with the kids
+
+Session cut short partway through, so this covers the jeep, the elephant and
+the giraffe properly and the rest thinly.
+
+**The headline:** even unfinished, it beat Toy Town — *"because of the energy,
+the appreciation and fewer pauses."* That is the same three things measurement
+already pointed at. This is the story to work on.
+
+### Landed
+
+| what | note |
+|---|---|
+| **"ये road है या trampoline?!"** | works. Physical, and they can feel it |
+| **The elephant's sound** | gets a laugh on its own |
+| **"muddy / गंदा"** | **the biggest laugh in either story.** Mess and dirt are reliable at this age |
+| **Coco falling** — the SFX | works |
+
+### Did not land
+
+| what | why, as far as we can tell |
+|---|---|
+| **"Fair point."** | adult concession — confirmed by the kids, as predicted |
+| **"मैं Elephant हूँ."** | *"not working at all"* |
+| **"एक छोटा bite मेरे लिए"** | confirmed, as predicted |
+| **"Pull, pull, pull"** | no laugh. It is effort with no payoff |
+| **The whole giraffe scene** | *"disconnected, kids are not relating, no joke in the whole giraffe story"* — the weakest stretch |
+| **"निकालो और ऊपर, और ऊपर"** | part of the same flat giraffe stretch |
+| **"तुम doctor कब बने?"** | the first-aid bit is not landing *(reported under Toy Town; there is no doctor line there, so it is assumed to be this scene — confirm)* |
+
+### Ideas from the session
+
+- **Add an SFX at the very start** when the jeep engine starts and it begins
+  moving — the opening currently has nothing under it
+- **"Pull, pull… दिमाग की बत्ती गुल!"** — the user's own suggestion, and a good
+  one: it turns effort into a punchline instead of just effort
+
+### What this says about the story
+
+Two scenes carry it — the muddy pit and the elephant — and the giraffe scene
+has nothing in it at all. The fix is not more sound; it is that a stretch of
+story went by with no joke, no effect and no appreciation. See the 30-second
+rule now in `STORY_CRAFT.md` §4.

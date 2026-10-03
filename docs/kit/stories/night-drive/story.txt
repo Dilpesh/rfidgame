@@ -1,0 +1,124 @@
+# Coco की Night Drive — a two-minute story made only from clips already in the library.
+# Not one new recording: every line and sound is @lib:… (lifted from Jungle Rescue English
+# and Find & Tap). Written 29 Sep 2026 to test the kit end to end.
+# Format: docs/kit/tools/FORMAT.md
+
+title: Coco की Night Drive
+key: night-drive
+language: hi
+minutes: 3
+audio: audio/
+cache: nd-1
+hints at: 8s 17s 28s
+tap sound: @lib:tap
+voices: COCO=Saanu, NARRATOR=Jia
+activities: Drink real water during the Water break | Dance and freeze | A high-five in the air
+
+card FUEL: ⛽ Fuel
+card FLASHLIGHT: 🔦 Flashlight = TORCH
+card WATER: 💧 Water
+card MUSIC: 🎵 Music
+
+
+== scene: Jeep won't start
+bed jungle_day
+COCO [bright and playful] @lib:hello_coco: हैलो, मैं हूँ कोको। आज हम जंगल बचाओ टीम बनेंगे।
+COCO [hopeful and inviting] @lib:captain_help: जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम Captain बनकर मेरी मदद करोगे?
+wait 1.5s
+COCO [delighted] @lib:yes_great: Yes! Great! अब Captain और कोको मिलकर सारे animals को बचा लेंगे।
+COCO [warm] @lib:jeep_ready: जल्दी चलो, हमारी जंगल रेस्क्यू जीप तैयार है।
+sfx jeep_door
+NARRATOR [warm and brisk] @lib:narr_jeep_start: कोको जीप में बैठा, स्टीयरिंग पकड़ी, चाबी घुमाई।
+sfx key_engine_cough
+COCO [surprised and amused] @lib:tank_empty: ओह, ये स्टार्ट क्यों नहीं हो रही है? हम्म, जीप की टंकी खाली है।
+ask FUEL
+  prompt COCO [curious and clear] @lib:ask_fuel: Captain, टंकी खाली है! इसमें क्या डालें कि जीप चल पड़े?
+  hint COCO @lib:hint_fuel_1: अपने सामने वाले cards को देखो... इनमें Jeep को चलाने वाली कोई चीज़ है क्या?
+  hint COCO @lib:hint_fuel_2: जिससे गाड़ी की tank भरती है, वही card ढूँढो.
+  hint COCO @lib:hint_fuel_3: FUEL वाला card scan करो.
+sfx ting
+COCO [excited] @lib:yes_fuel #praise: YES! FUEL! टंकी भर गई!
+sfx fuel_pour
+sfx engine_start
+COCO [energetic] @lib:rescue_team_chalo: जंगल रेस्क्यू टीम चलो!
+
+
+== scene: Into the dark
+NARRATOR [bouncy] @lib:narr_jungle_drive: जीप जंगल के अंदर गई। बड़े-बड़े पेड़, छोटी-छोटी नदियाँ, उछलती-कूदती जीप!
+sfx jeep_bump
+sfx jeep_bump
+COCO [surprised and comic] @lib:trampoline_joke #joke: वो! ये रोड है या ट्रैम्पोलीन?
+bed jungle_night @0.26 crossfade
+sfx jeep_arrive_stop
+NARRATOR [hushed] @lib:narr_night_arrival: रेस्क्यू जीप घने जंगलों के बीच आकर रुकी। सूरज ढल चुका था और पेड़-पौधे अंधेरे में अजीब साए जैसे लग रहे थे।
+sfx owl_hoot
+ask FLASHLIGHT
+  prompt COCO [urgent but playful] @lib:ask_torch: अरे! इतना अंधेरा है कि मेरी नाक भी नहीं दिख रही! Captain, हमें तुरंत रोशनी चाहिए, वरना हम सब टकरा जाएँगे!
+  hint COCO @lib:hint_torch_1: अपने cards में देखो... कोई ऐसी चीज़ है जो अंधेरे में तेज़ रोशनी दे सके?
+  hint COCO @lib:hint_torch_2: इसे ON करते ही अंधेरे में रास्ता साफ़ दिखने लगता है।
+  hint COCO @lib:hint_torch_3: FLASHLIGHT वाला card scan करो!
+together:
+  sfx torch_click @0.85
+  sfx ting @0.25
+wait 150ms
+COCO [relieved and bright] @lib:yes_torch #praise: YES! FLASHLIGHT!
+sfx light_sweep
+COCO [surprised and relieved] @lib:owl_joke #joke: वाह! रोशनी होते ही सब दिखने लगा! ...और rock के ऊपर वो उल्लू भी!
+sfx owl_hoot
+
+
+== scene: Water break
+ask WATER
+  prompt COCO [caring] @lib:ask_water #action: इतने rescue missions के बाद Captain को भी थोड़ी प्यास लगी होगी। पहले तुम जाकर थोड़ा असली पानी पियो। पानी पीकर वापस आना और WATER वाला card tap करना।
+  after prompt: bed stop
+  remind COCO [kind and unhurried] @lib:remind_water at 30s 60s 3m 5m 7m: Captain, Coco यहीं wait कर रहा है। पानी पीकर आओ और WATER वाला card tap कर देना।
+sfx ting
+COCO [energetic] @lib:rescue_team_chalo #praise #effort: जंगल रेस्क्यू टीम चलो!
+
+
+== scene: Party
+sfx clap @0.72
+sfx party_whistle
+ask MUSIC
+  prompt COCO [eager, playful] @lib:ask_music: मेरे पैर तो नाचने लगे! पर धुन कहाँ है? Captain, नाचने के लिए क्या बजाएँ?
+  hint COCO @lib:hint_music_1: पार्टी में नाचने के लिए धुन चाहिए।
+  hint COCO @lib:hint_music_2: गाना बजाने वाला card ढूँढो।
+  hint COCO @lib:hint_music_3: MUSIC वाला card tap करो।
+sfx ting @0.35
+wait 150ms
+COCO [excited] @lib:yes_music #praise: YES! MUSIC!
+music dance_loop
+duck COCO [bouncy] @lib:dance_elephant #action: Elephant dance! हाथ की सूँड़ बनाओ — इधर, उधर! बैठे-बैठे भी!
+music at 10s
+sfx elephant_trumpet @0.55 under
+music at 20s
+music stop
+COCO [playful, clear] @lib:freeze_statue hold 3s #action: Freeze! मूर्ति बन जाओ!
+group #second-dance:
+  music dance_loop
+  duck COCO [bright, rhythmic] @lib:dance_parrot #action: Parrot dance! हाथों के पंख — फड़फड़, फड़फड़!
+  music at 10s
+  music at 20s
+  music stop
+  COCO [funny, clear] @lib:freeze_cheeks hold 3s #action: Freeze! गाल फुलाओ!
+sfx music_end_flourish
+COCO [inviting, joyful] @lib:hands_up #action: हाथ ऊपर! साथ बोलो — हम हैं जंगल बचाओ टीम!
+wait 500ms
+COCO [playful] @lib:high_five #action: मेरी तरफ हवा में high-five!
+wait 2s
+sfx high_five_slap
+COCO [comic surprise] @lib:mud_hands_joke #joke: अरे! मेरे हाथ पर अभी भी कीचड़ है!
+sfx squelch #joke
+COCO [laughing, affectionate] @lib:bye_captain: ये कौन करता है?! पहले हाथ धोऊँगा! Bye-bye, Captain!
+sfx outro_sting
+
+
+== wrong card
+sfx boing
+COCO [playfully surprised] @lib:wrong_1: ओहो! ये वाला काम नहीं करेगा। Captain, एक और card try करो!
+--
+sfx boing
+COCO [light, encouraging] @lib:wrong_2: ऊप्स! हमें कोई और चीज़ चाहिए। Captain, फिर से सोचो!
+--
+sfx boing
+COCO [curious, supportive] @lib:wrong_3: हम्म... ये नहीं। Captain, दूसरा card try करो!

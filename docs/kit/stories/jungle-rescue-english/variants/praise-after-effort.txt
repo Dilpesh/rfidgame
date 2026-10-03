@@ -1,0 +1,4 @@
+name: Praise after real effort only
+note: The old rule (STORY_CRAFT before 2026-09-29): no "YES! CARD!" on every tap, praise only after the rope pull and the water trip (#effort).
+exclude: praise
+keep: effort

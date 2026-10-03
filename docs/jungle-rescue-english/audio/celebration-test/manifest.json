@@ -1,0 +1,593 @@
+{
+  "JR_151": {
+    "file": "celebration-test/JR_151.mp3",
+    "type": "speech",
+    "duration_seconds": 6.374,
+    "integrated_lufs": -15.6,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "voice": "NARRATOR",
+    "voice_id": "ItmwhOeluca31IEX91Yk",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.56,
+      "similarity_boost": 0.78,
+      "style": 0.12,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "बारिश थम गई। Lion King को सोने देकर टीम जीप के पास लौट आई।",
+    "performance_tag": "[warm, relieved]",
+    "source_file": "raw/JR_151.mp3"
+  },
+  "JR_152": {
+    "file": "celebration-test/JR_152.mp3",
+    "type": "speech",
+    "duration_seconds": 4.754,
+    "integrated_lufs": -15.6,
+    "true_peak_dbfs": -2.3,
+    "review_status": "test",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "Captain, हमने दोस्तों की मदद कर दी! अब हमारी पार्टी!",
+    "performance_tag": "[proud, delighted]",
+    "source_file": "raw/JR_152.mp3"
+  },
+  "JR_154": {
+    "file": "celebration-test/JR_154.mp3",
+    "type": "speech",
+    "duration_seconds": 5.564,
+    "integrated_lufs": -16.9,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "मेरे पैर तो नाचने लगे! पर धुन कहाँ है? Captain, नाचने के लिए क्या बजाएँ?",
+    "performance_tag": "[eager, playful]",
+    "source_file": "raw/JR_154.mp3"
+  },
+  "JR_155": {
+    "file": "celebration-test/JR_155.mp3",
+    "type": "speech",
+    "duration_seconds": 2.926,
+    "integrated_lufs": -19.2,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "पार्टी में नाचने के लिए धुन चाहिए।",
+    "performance_tag": "[gently encouraging]",
+    "source_file": "raw/JR_155.mp3"
+  },
+  "JR_156": {
+    "file": "celebration-test/JR_156.mp3",
+    "type": "speech",
+    "duration_seconds": 2.194,
+    "integrated_lufs": -16.5,
+    "true_peak_dbfs": -2.5,
+    "review_status": "test",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "गाना बजाने वाला card ढूँढो।",
+    "performance_tag": "[playful, helpful]",
+    "source_file": "raw/JR_156.mp3"
+  },
+  "JR_157": {
+    "file": "celebration-test/JR_157.mp3",
+    "type": "speech",
+    "duration_seconds": 2.273,
+    "integrated_lufs": -18.1,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "MUSIC वाला card tap करो।",
+    "performance_tag": "[clear, kind]",
+    "source_file": "raw/JR_157.mp3"
+  },
+  "JR_159": {
+    "file": "celebration-test/JR_159.mp3",
+    "type": "speech",
+    "duration_seconds": 1.881,
+    "integrated_lufs": -16.4,
+    "true_peak_dbfs": -4.8,
+    "review_status": "test",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "YES! MUSIC!",
+    "performance_tag": "[excited]",
+    "source_file": "raw/JR_159.mp3"
+  },
+  "JR_161": {
+    "file": "celebration-test/JR_161.mp3",
+    "type": "speech",
+    "duration_seconds": 6.191,
+    "integrated_lufs": -17.6,
+    "true_peak_dbfs": -2.3,
+    "review_status": "test",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "Elephant dance! हाथ की सूँड़ बनाओ — इधर, उधर! बैठे-बैठे भी!",
+    "performance_tag": "[bouncy, inviting]",
+    "source_file": "raw/JR_161.mp3"
+  },
+  "JR_163": {
+    "file": "celebration-test/JR_163.mp3",
+    "type": "speech",
+    "duration_seconds": 2.429,
+    "integrated_lufs": -16.4,
+    "true_peak_dbfs": -3.6,
+    "review_status": "test",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "Freeze! मूर्ति बन जाओ!",
+    "performance_tag": "[playful, clear]",
+    "source_file": "raw/JR_163.mp3"
+  },
+  "JR_164": {
+    "file": "celebration-test/JR_164.mp3",
+    "type": "speech",
+    "duration_seconds": 4.441,
+    "integrated_lufs": -15.5,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "Parrot dance! हाथों के पंख — फड़फड़, फड़फड़!",
+    "performance_tag": "[bright, rhythmic]",
+    "source_file": "raw/JR_164.mp3"
+  },
+  "JR_166": {
+    "file": "celebration-test/JR_166.mp3",
+    "type": "speech",
+    "duration_seconds": 2.194,
+    "integrated_lufs": -16.4,
+    "true_peak_dbfs": -5.4,
+    "review_status": "test",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "Freeze! गाल फुलाओ!",
+    "performance_tag": "[funny, clear]",
+    "source_file": "raw/JR_166.mp3"
+  },
+  "JR_167": {
+    "file": "celebration-test/JR_167.mp3",
+    "type": "speech",
+    "duration_seconds": 4.598,
+    "integrated_lufs": -16.2,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "पुफ्फ! अब Captain वाला dance! हाथ हिलाओ या ताली बजाओ!",
+    "performance_tag": "[puffed cheeks, funny release]",
+    "source_file": "raw/JR_167.mp3"
+  },
+  "JR_168": {
+    "file": "celebration-test/JR_168.mp3",
+    "type": "speech",
+    "duration_seconds": 4.049,
+    "integrated_lufs": -16.5,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "अरे! मेरे गाल फिर से गुब्बारे बन गए! पुफ्फ!",
+    "performance_tag": "[puffs cheeks again; laughing at himself]",
+    "source_file": "raw/JR_168.mp3"
+  },
+  "JR_171": {
+    "file": "celebration-test/JR_171.mp3",
+    "type": "speech",
+    "duration_seconds": 5.721,
+    "integrated_lufs": -16.8,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "Captain, तुम्हारी मदद से हमारे दोस्त फिर खुश हैं। Thank you, Captain!",
+    "performance_tag": "[warm, proud; gently catching his breath]",
+    "source_file": "raw/JR_171.mp3"
+  },
+  "JR_172": {
+    "file": "celebration-test/JR_172.mp3",
+    "type": "speech",
+    "duration_seconds": 4.911,
+    "integrated_lufs": -15.3,
+    "true_peak_dbfs": -2.7,
+    "review_status": "test",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "हाथ ऊपर! साथ बोलो — हम हैं जंगल बचाओ टीम!",
+    "performance_tag": "[inviting, joyful]",
+    "source_file": "raw/JR_172.mp3"
+  },
+  "JR_173": {
+    "file": "celebration-test/JR_173.mp3",
+    "type": "speech",
+    "duration_seconds": 2.691,
+    "integrated_lufs": -16.4,
+    "true_peak_dbfs": -2.7,
+    "review_status": "test",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "मेरी तरफ हवा में high-five!",
+    "performance_tag": "[playful]",
+    "source_file": "raw/JR_173.mp3"
+  },
+  "JR_175": {
+    "file": "celebration-test/JR_175.mp3",
+    "type": "speech",
+    "duration_seconds": 2.691,
+    "integrated_lufs": -16.6,
+    "true_peak_dbfs": -3.1,
+    "review_status": "test",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "अरे! मेरे हाथ पर अभी भी कीचड़ है!",
+    "performance_tag": "[comic surprise]",
+    "source_file": "raw/JR_175.mp3"
+  },
+  "JR_177": {
+    "file": "celebration-test/JR_177.mp3",
+    "type": "speech",
+    "duration_seconds": 4.911,
+    "integrated_lufs": -15.5,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "ये कौन करता है?! पहले हाथ धोऊँगा! Bye-bye, Captain!",
+    "performance_tag": "[laughing, affectionate]",
+    "source_file": "raw/JR_177.mp3"
+  },
+  "JR_180": {
+    "file": "celebration-test/JR_180.mp3",
+    "type": "speech",
+    "duration_seconds": 4.989,
+    "integrated_lufs": -16.3,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "ओहो! ये वाला काम नहीं करेगा। Captain, एक और card try करो!",
+    "performance_tag": "[playfully surprised, encouraging]",
+    "source_file": "raw/JR_180.mp3"
+  },
+  "JR_182": {
+    "file": "celebration-test/JR_182.mp3",
+    "type": "speech",
+    "duration_seconds": 5.068,
+    "integrated_lufs": -16.7,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "ऊप्स! हमें कोई और चीज़ चाहिए। Captain, फिर से सोचो!",
+    "performance_tag": "[light, encouraging]",
+    "source_file": "raw/JR_182.mp3"
+  },
+  "JR_184": {
+    "file": "celebration-test/JR_184.mp3",
+    "type": "speech",
+    "duration_seconds": 4.676,
+    "integrated_lufs": -15.4,
+    "true_peak_dbfs": -2.4,
+    "review_status": "test",
+    "voice": "COCO",
+    "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+    "model_id": "eleven_v3",
+    "voice_settings": {
+      "stability": 0.4,
+      "similarity_boost": 0.78,
+      "style": 0.28,
+      "use_speaker_boost": true
+    },
+    "spoken_text": "हम्म... ये नहीं। Captain, दूसरा card try करो!",
+    "performance_tag": "[curious, supportive]",
+    "source_file": "raw/JR_184.mp3"
+  },
+  "JR_150": {
+    "file": "celebration-test/JR_150.mp3",
+    "type": "sfx",
+    "duration_seconds": 4.049,
+    "integrated_lufs": -18.8,
+    "true_peak_dbfs": -1.2,
+    "review_status": "test",
+    "model_id": "eleven_text_to_sound_v2",
+    "source_file": "raw/JR_150.mp3"
+  },
+  "JR_153": {
+    "file": "celebration-test/JR_153.mp3",
+    "type": "sfx",
+    "duration_seconds": 0.836,
+    "integrated_lufs": -26.1,
+    "true_peak_dbfs": -1.3,
+    "review_status": "test",
+    "model_id": "eleven_text_to_sound_v2",
+    "source_file": "raw/JR_153.mp3"
+  },
+  "JR_165": {
+    "file": "celebration-test/JR_165.mp3",
+    "type": "sfx",
+    "duration_seconds": 1.228,
+    "integrated_lufs": -18.3,
+    "true_peak_dbfs": -7.4,
+    "review_status": "test",
+    "model_id": "eleven_text_to_sound_v2",
+    "source_file": "raw/JR_165.mp3"
+  },
+  "JR_170": {
+    "file": "celebration-test/JR_170.mp3",
+    "type": "music",
+    "duration_seconds": 1.384,
+    "integrated_lufs": -19.9,
+    "true_peak_dbfs": -8.2,
+    "review_status": "test",
+    "model_id": "eleven_text_to_sound_v2",
+    "source_file": "raw/JR_170.mp3"
+  },
+  "JR_174": {
+    "file": "celebration-test/JR_174.mp3",
+    "type": "sfx",
+    "duration_seconds": 0.731,
+    "integrated_lufs": -18.4,
+    "true_peak_dbfs": -0.5,
+    "review_status": "test",
+    "model_id": "eleven_text_to_sound_v2",
+    "source_file": "raw/JR_174.mp3"
+  },
+  "JR_178": {
+    "file": "celebration-test/JR_178.mp3",
+    "type": "sfx",
+    "duration_seconds": 2.377,
+    "integrated_lufs": -18.4,
+    "true_peak_dbfs": -8.4,
+    "review_status": "test",
+    "model_id": "eleven_text_to_sound_v2",
+    "source_file": "raw/JR_178.mp3",
+    "components": [
+      "JR_170.mp3",
+      "raw/JR_178.mp3"
+    ],
+    "production_edit": "Dance resolving hook, then trimmed jeep horn."
+  },
+  "JR_158": {
+    "file": "celebration-test/JR_158.mp3",
+    "type": "sfx",
+    "duration_seconds": 1.228,
+    "integrated_lufs": -21.2,
+    "true_peak_dbfs": -3.8,
+    "review_status": "reused_source",
+    "alias_of": "JR_040",
+    "source_file": "audio/elephant-rescue-test/JR_040.mp3",
+    "reuse_reason": "approved shipped correct chime"
+  },
+  "JR_162": {
+    "file": "celebration-test/JR_162.mp3",
+    "type": "sfx",
+    "duration_seconds": 2.142,
+    "integrated_lufs": -20.5,
+    "true_peak_dbfs": -12.8,
+    "review_status": "reused_source",
+    "alias_of": "JR_027",
+    "source_file": "audio/elephant-rescue-test/JR_027.mp3",
+    "reuse_reason": "approved older elephant call"
+  },
+  "JR_169": {
+    "file": "celebration-test/JR_169.mp3",
+    "type": "sfx",
+    "duration_seconds": 0.993,
+    "integrated_lufs": -16.6,
+    "true_peak_dbfs": -2.5,
+    "review_status": "reused_source",
+    "alias_of": "JR_066_coco",
+    "source_file": "audio/elephant-rescue-test/raw/JR_066_coco.mp3",
+    "reuse_reason": "Coco giggle from reviewed Elephant batch"
+  },
+  "JR_176": {
+    "file": "celebration-test/JR_176.mp3",
+    "type": "sfx",
+    "duration_seconds": 1.802,
+    "integrated_lufs": -20.6,
+    "true_peak_dbfs": -1.7,
+    "review_status": "reused_source",
+    "alias_of": "JR_031",
+    "source_file": "audio/elephant-rescue-test/JR_031.mp3",
+    "reuse_reason": "established approved mud sound for the closing callback"
+  },
+  "JR_179": {
+    "file": "celebration-test/JR_179.mp3",
+    "type": "sfx",
+    "duration_seconds": 1.045,
+    "integrated_lufs": -20.4,
+    "true_peak_dbfs": -5.5,
+    "review_status": "reused_source",
+    "alias_of": "JR_070",
+    "source_file": "audio/elephant-rescue-test/JR_070.mp3",
+    "reuse_reason": "approved shipped soft boing"
+  },
+  "JR_181": {
+    "file": "celebration-test/JR_181.mp3",
+    "type": "sfx",
+    "duration_seconds": 1.045,
+    "integrated_lufs": -20.4,
+    "true_peak_dbfs": -5.5,
+    "review_status": "reused_source",
+    "alias_of": "JR_070",
+    "source_file": "audio/elephant-rescue-test/JR_070.mp3",
+    "reuse_reason": "approved shipped soft boing"
+  },
+  "JR_183": {
+    "file": "celebration-test/JR_183.mp3",
+    "type": "sfx",
+    "duration_seconds": 1.045,
+    "integrated_lufs": -20.4,
+    "true_peak_dbfs": -5.5,
+    "review_status": "reused_source",
+    "alias_of": "JR_070",
+    "source_file": "audio/elephant-rescue-test/JR_070.mp3",
+    "reuse_reason": "approved shipped soft boing"
+  },
+  "JR_160": {
+    "file": "celebration-test/JR_160.mp3",
+    "type": "music",
+    "duration_seconds": 20.036,
+    "integrated_lufs": -24.9,
+    "true_peak_dbfs": -8.3,
+    "review_status": "test",
+    "loop": true,
+    "volume": 0.62,
+    "exact_runtime_seconds": 20.0,
+    "model_id": "music_v2",
+    "source_file": "raw/JR_160.mp3"
+  },
+  "_batch": {
+    "name": "Jungle Rescue Celebration production test",
+    "range": "JR_150–JR_184",
+    "format": "mp3_44100_128",
+    "script": "jungle_rescue_final_production_script.md",
+    "note": "Speech, effects and dance music remain separate for deterministic freeze timing."
+  },
+  "JR_152_clap": {
+    "file": "celebration-test/JR_152_clap.mp3",
+    "duration_seconds": 2.534,
+    "integrated_lufs": -15.2,
+    "true_peak_dbfs": -1.0,
+    "review_status": "approved",
+    "type": "sfx",
+    "description": "Three-second child-friendly celebration applause after JR_152; play before JR_153 foot taps."
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "text": "A little bandage winds once around a bird wing with soft fabric rustle, followed by one short bright magical healing sparkle. No voices, no music.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 1.6,
+  "prompt_influence": 0.8,
+  "loop": false
+}

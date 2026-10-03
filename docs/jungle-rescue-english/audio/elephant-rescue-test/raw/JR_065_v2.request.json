@@ -1,0 +1,10 @@
+{
+  "text": "[playfully overwhelmed] ओके, ओके, बस करो! और खाऊँगा तो balloon बन जाऊँगा!",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+    "stability": 0.42,
+    "similarity_boost": 0.78,
+    "style": 0.3,
+    "use_speaker_boost": true
+  }
+}

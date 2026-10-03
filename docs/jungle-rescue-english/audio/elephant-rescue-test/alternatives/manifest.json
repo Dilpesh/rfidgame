@@ -1,0 +1,86 @@
+{
+  "purpose": "Replacement auditions only; current production-test SFX remain unchanged",
+  "model_id": "eleven_text_to_sound_v2",
+  "options": {
+    "bump_a_1": {
+      "file": "bump_a_1.mp3",
+      "prompt": "A real small jeep rolls over one low rounded dirt-road hump: muted tire thump and soft suspension compression and rebound. Gentle, child-friendly, no crash, no horn, no voice, no music.",
+      "duration_seconds": 0.731,
+      "integrated_lufs": -24.0,
+      "true_peak_dbfs": -3.8
+    },
+    "bump_a_2": {
+      "file": "bump_a_2.mp3",
+      "prompt": "A real small jeep rolls over a medium rounded dirt-road hump: firmer tire thump, clear suspension compression and rebound, and one tiny cabin rattle. Safe, no crash, no horn, no voice, no music.",
+      "duration_seconds": 0.914,
+      "integrated_lufs": -25.5,
+      "true_peak_dbfs": -8.7
+    },
+    "bump_a_3": {
+      "file": "bump_a_3.mp3",
+      "prompt": "A real small jeep crosses two rounded dirt-road humps quickly: two clear tire-and-suspension thumps with a playful bounce and brief cabin rattle. Safe, no crash, no horn, no voice, no music.",
+      "duration_seconds": 1.228,
+      "integrated_lufs": -21.5,
+      "true_peak_dbfs": -1.5
+    },
+    "bump_b_1": {
+      "file": "bump_b_1.mp3",
+      "prompt": "One soft playful rescue-jeep bounce over a jungle path bump: rubber tire thud followed by a light suspension wobble. Warm cartoon realism, no spring boing, no crash, no voice, no music.",
+      "duration_seconds": 0.731,
+      "integrated_lufs": -20.5,
+      "true_peak_dbfs": -10.3
+    },
+    "bump_b_2": {
+      "file": "bump_b_2.mp3",
+      "prompt": "One bigger playful rescue-jeep bounce over a jungle path bump: deeper rubber tire thud, suspension wobble, short harmless body rattle. Warm cartoon realism, no spring boing, no crash, no voice, no music.",
+      "duration_seconds": 0.914,
+      "integrated_lufs": -22.1,
+      "true_peak_dbfs": -1.5
+    },
+    "bump_b_3": {
+      "file": "bump_b_3.mp3",
+      "prompt": "A quick double rescue-jeep bounce over two jungle path bumps: two rhythmic rubber tire thuds and a funny suspension wobble. Warm cartoon realism, no spring boing, no crash, no voice, no music.",
+      "duration_seconds": 1.228,
+      "integrated_lufs": -23.7,
+      "true_peak_dbfs": -1.9
+    },
+    "rope_a": {
+      "file": "rope_a.mp3",
+      "prompt": "A thick natural rope is pulled tight by several people: one short textured fibre strain and sturdy tension creak. Clear physical effort, no snapping, no wood, no voice, no music.",
+      "duration_seconds": 0.914,
+      "integrated_lufs": -21.9,
+      "true_peak_dbfs": -4.9
+    },
+    "rope_b": {
+      "file": "rope_b.mp3",
+      "prompt": "A thick rescue rope goes taut during one strong tug: short low rope tension groan with a little gritty fibre movement. Strong but safe, no snapping, no wood, no voice, no music.",
+      "duration_seconds": 0.914,
+      "integrated_lufs": -20.3,
+      "true_peak_dbfs": -4.2
+    },
+    "bump_a_sequence": {
+      "file": "bump_a_sequence.mp3",
+      "parts": [
+        "bump_a_1.mp3",
+        "bump_a_2.mp3",
+        "bump_a_3.mp3"
+      ],
+      "duration_seconds": 3.109,
+      "integrated_lufs": -23.9,
+      "true_peak_dbfs": -2.0,
+      "preview_only": true
+    },
+    "bump_b_sequence": {
+      "file": "bump_b_sequence.mp3",
+      "parts": [
+        "bump_b_1.mp3",
+        "bump_b_2.mp3",
+        "bump_b_3.mp3"
+      ],
+      "duration_seconds": 3.109,
+      "integrated_lufs": -21.5,
+      "true_peak_dbfs": -1.9,
+      "preview_only": true
+    }
+  }
+}

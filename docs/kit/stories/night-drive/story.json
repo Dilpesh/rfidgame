@@ -1,0 +1,1302 @@
+{
+ "format": "kahani-story/1",
+ "title": "Coco की Night Drive",
+ "heading": "Coco की Night Drive",
+ "key": "night-drive",
+ "language": "hi",
+ "minutes": 3,
+ "audioDir": "audio/",
+ "cacheTag": "nd-1",
+ "hintDelays": [
+  8000,
+  17000,
+  28000
+ ],
+ "activities": [
+  "Drink real water during the Water break",
+  "Dance and freeze",
+  "A high-five in the air"
+ ],
+ "cards": [
+  {
+   "id": "FUEL",
+   "icon": "⛽",
+   "label": "Fuel",
+   "registry": "FUEL",
+   "say": [
+    "Fuel"
+   ]
+  },
+  {
+   "id": "FLASHLIGHT",
+   "icon": "🔦",
+   "label": "Flashlight",
+   "registry": "TORCH",
+   "say": [
+    "Flashlight"
+   ]
+  },
+  {
+   "id": "WATER",
+   "icon": "💧",
+   "label": "Water",
+   "registry": "WATER",
+   "say": [
+    "Water"
+   ]
+  },
+  {
+   "id": "MUSIC",
+   "icon": "🎵",
+   "label": "Music",
+   "registry": "MUSIC",
+   "say": [
+    "Music"
+   ]
+  }
+ ],
+ "uids": {
+  "6359145": "FUEL",
+  "2692483": "FLASHLIGHT",
+  "6375577": "FLASHLIGHT",
+  "2690428": "WATER",
+  "2682976": "WATER",
+  "6360574": "MUSIC",
+  "819667906": "MUSIC"
+ },
+ "seedVersion": "2026-10-02a",
+ "wrong": [
+  [
+   {
+    "op": "sfx",
+    "cue": "lib:boing",
+    "tags": [],
+    "line": 117,
+    "channel": "fg",
+    "wait": true
+   },
+   {
+    "op": "say",
+    "cue": "lib:wrong_1",
+    "speaker": "COCO",
+    "text": "ओहो! ये वाला काम नहीं करेगा। Captain, एक और card try करो!",
+    "tags": [],
+    "line": 118,
+    "emotion": "playfully surprised"
+   }
+  ],
+  [
+   {
+    "op": "sfx",
+    "cue": "lib:boing",
+    "tags": [],
+    "line": 120,
+    "channel": "fg",
+    "wait": true
+   },
+   {
+    "op": "say",
+    "cue": "lib:wrong_2",
+    "speaker": "COCO",
+    "text": "ऊप्स! हमें कोई और चीज़ चाहिए। Captain, फिर से सोचो!",
+    "tags": [],
+    "line": 121,
+    "emotion": "light, encouraging"
+   }
+  ],
+  [
+   {
+    "op": "sfx",
+    "cue": "lib:boing",
+    "tags": [],
+    "line": 123,
+    "channel": "fg",
+    "wait": true
+   },
+   {
+    "op": "say",
+    "cue": "lib:wrong_3",
+    "speaker": "COCO",
+    "text": "हम्म... ये नहीं। Captain, दूसरा card try करो!",
+    "tags": [],
+    "line": 124,
+    "emotion": "curious, supportive"
+   }
+  ]
+ ],
+ "scenes": [
+  {
+   "id": "s01",
+   "title": "Jeep won't start",
+   "onJump": [],
+   "beats": [
+    {
+     "op": "bed",
+     "cue": "lib:jungle_day",
+     "line": 24
+    },
+    {
+     "op": "say",
+     "cue": "lib:hello_coco",
+     "speaker": "COCO",
+     "text": "हैलो, मैं हूँ कोको। आज हम जंगल बचाओ टीम बनेंगे।",
+     "tags": [],
+     "line": 25,
+     "emotion": "bright and playful"
+    },
+    {
+     "op": "say",
+     "cue": "lib:captain_help",
+     "speaker": "COCO",
+     "text": "जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम Captain बनकर मेरी मदद करोगे?",
+     "tags": [],
+     "line": 26,
+     "emotion": "hopeful and inviting"
+    },
+    {
+     "op": "wait",
+     "ms": 1500,
+     "line": 27
+    },
+    {
+     "op": "say",
+     "cue": "lib:yes_great",
+     "speaker": "COCO",
+     "text": "Yes! Great! अब Captain और कोको मिलकर सारे animals को बचा लेंगे।",
+     "tags": [],
+     "line": 28,
+     "emotion": "delighted"
+    },
+    {
+     "op": "say",
+     "cue": "lib:jeep_ready",
+     "speaker": "COCO",
+     "text": "जल्दी चलो, हमारी जंगल रेस्क्यू जीप तैयार है।",
+     "tags": [],
+     "line": 29,
+     "emotion": "warm"
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:jeep_door",
+     "tags": [],
+     "line": 30,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "lib:narr_jeep_start",
+     "speaker": "NARRATOR",
+     "text": "कोको जीप में बैठा, स्टीयरिंग पकड़ी, चाबी घुमाई।",
+     "tags": [],
+     "line": 31,
+     "emotion": "warm and brisk"
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:key_engine_cough",
+     "tags": [],
+     "line": 32,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "lib:tank_empty",
+     "speaker": "COCO",
+     "text": "ओह, ये स्टार्ट क्यों नहीं हो रही है? हम्म, जीप की टंकी खाली है।",
+     "tags": [],
+     "line": 33,
+     "emotion": "surprised and amused"
+    },
+    {
+     "op": "ask",
+     "card": "FUEL",
+     "prompt": {
+      "op": "say",
+      "cue": "lib:ask_fuel",
+      "speaker": "COCO",
+      "text": "Captain, टंकी खाली है! इसमें क्या डालें कि जीप चल पड़े?",
+      "tags": [],
+      "line": 35,
+      "emotion": "curious and clear"
+     },
+     "hints": [
+      {
+       "op": "say",
+       "cue": "lib:hint_fuel_1",
+       "speaker": "COCO",
+       "text": "अपने सामने वाले cards को देखो... इनमें Jeep को चलाने वाली कोई चीज़ है क्या?",
+       "tags": [],
+       "line": 36
+      },
+      {
+       "op": "say",
+       "cue": "lib:hint_fuel_2",
+       "speaker": "COCO",
+       "text": "जिससे गाड़ी की tank भरती है, वही card ढूँढो.",
+       "tags": [],
+       "line": 37
+      },
+      {
+       "op": "say",
+       "cue": "lib:hint_fuel_3",
+       "speaker": "COCO",
+       "text": "FUEL वाला card scan करो.",
+       "tags": [],
+       "line": 38
+      }
+     ],
+     "afterPrompt": [],
+     "remind": null,
+     "tags": [],
+     "line": 34
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:ting",
+     "tags": [],
+     "line": 39,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "lib:yes_fuel",
+     "speaker": "COCO",
+     "text": "YES! FUEL! टंकी भर गई!",
+     "tags": [
+      "praise"
+     ],
+     "line": 40,
+     "emotion": "excited"
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:fuel_pour",
+     "tags": [],
+     "line": 41,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:engine_start",
+     "tags": [],
+     "line": 42,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "lib:rescue_team_chalo",
+     "speaker": "COCO",
+     "text": "जंगल रेस्क्यू टीम चलो!",
+     "tags": [],
+     "line": 43,
+     "emotion": "energetic"
+    }
+   ]
+  },
+  {
+   "id": "s02",
+   "title": "Into the dark",
+   "onJump": [],
+   "beats": [
+    {
+     "op": "say",
+     "cue": "lib:narr_jungle_drive",
+     "speaker": "NARRATOR",
+     "text": "जीप जंगल के अंदर गई। बड़े-बड़े पेड़, छोटी-छोटी नदियाँ, उछलती-कूदती जीप!",
+     "tags": [],
+     "line": 47,
+     "emotion": "bouncy"
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:jeep_bump",
+     "tags": [],
+     "line": 48,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:jeep_bump",
+     "tags": [],
+     "line": 49,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "lib:trampoline_joke",
+     "speaker": "COCO",
+     "text": "वो! ये रोड है या ट्रैम्पोलीन?",
+     "tags": [
+      "joke"
+     ],
+     "line": 50,
+     "emotion": "surprised and comic"
+    },
+    {
+     "op": "bed",
+     "cue": "lib:jungle_night",
+     "line": 51,
+     "volume": 0.26,
+     "crossfade": true
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:jeep_arrive_stop",
+     "tags": [],
+     "line": 52,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "lib:narr_night_arrival",
+     "speaker": "NARRATOR",
+     "text": "रेस्क्यू जीप घने जंगलों के बीच आकर रुकी। सूरज ढल चुका था और पेड़-पौधे अंधेरे में अजीब साए जैसे लग रहे थे।",
+     "tags": [],
+     "line": 53,
+     "emotion": "hushed"
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:owl_hoot",
+     "tags": [],
+     "line": 54,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "ask",
+     "card": "FLASHLIGHT",
+     "prompt": {
+      "op": "say",
+      "cue": "lib:ask_torch",
+      "speaker": "COCO",
+      "text": "अरे! इतना अंधेरा है कि मेरी नाक भी नहीं दिख रही! Captain, हमें तुरंत रोशनी चाहिए, वरना हम सब टकरा जाएँगे!",
+      "tags": [],
+      "line": 56,
+      "emotion": "urgent but playful"
+     },
+     "hints": [
+      {
+       "op": "say",
+       "cue": "lib:hint_torch_1",
+       "speaker": "COCO",
+       "text": "अपने cards में देखो... कोई ऐसी चीज़ है जो अंधेरे में तेज़ रोशनी दे सके?",
+       "tags": [],
+       "line": 57
+      },
+      {
+       "op": "say",
+       "cue": "lib:hint_torch_2",
+       "speaker": "COCO",
+       "text": "इसे ON करते ही अंधेरे में रास्ता साफ़ दिखने लगता है।",
+       "tags": [],
+       "line": 58
+      },
+      {
+       "op": "say",
+       "cue": "lib:hint_torch_3",
+       "speaker": "COCO",
+       "text": "FLASHLIGHT वाला card scan करो!",
+       "tags": [],
+       "line": 59
+      }
+     ],
+     "afterPrompt": [],
+     "remind": null,
+     "tags": [],
+     "line": 55
+    },
+    {
+     "op": "together",
+     "beats": [
+      {
+       "op": "sfx",
+       "cue": "lib:torch_click",
+       "tags": [],
+       "line": 61,
+       "channel": "overlay",
+       "volume": 0.85,
+       "wait": true
+      },
+      {
+       "op": "sfx",
+       "cue": "lib:ting",
+       "tags": [],
+       "line": 62,
+       "channel": "overlay",
+       "volume": 0.25,
+       "wait": true
+      }
+     ],
+     "line": 60
+    },
+    {
+     "op": "wait",
+     "ms": 150,
+     "line": 63
+    },
+    {
+     "op": "say",
+     "cue": "lib:yes_torch",
+     "speaker": "COCO",
+     "text": "YES! FLASHLIGHT!",
+     "tags": [
+      "praise"
+     ],
+     "line": 64,
+     "emotion": "relieved and bright"
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:light_sweep",
+     "tags": [],
+     "line": 65,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "lib:owl_joke",
+     "speaker": "COCO",
+     "text": "वाह! रोशनी होते ही सब दिखने लगा! ...और rock के ऊपर वो उल्लू भी!",
+     "tags": [
+      "joke"
+     ],
+     "line": 66,
+     "emotion": "surprised and relieved"
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:owl_hoot",
+     "tags": [],
+     "line": 67,
+     "channel": "fg",
+     "wait": true
+    }
+   ]
+  },
+  {
+   "id": "s03",
+   "title": "Water break",
+   "onJump": [],
+   "beats": [
+    {
+     "op": "ask",
+     "card": "WATER",
+     "prompt": {
+      "op": "say",
+      "cue": "lib:ask_water",
+      "speaker": "COCO",
+      "text": "इतने rescue missions के बाद Captain को भी थोड़ी प्यास लगी होगी। पहले तुम जाकर थोड़ा असली पानी पियो। पानी पीकर वापस आना और WATER वाला card tap करना।",
+      "tags": [
+       "action"
+      ],
+      "line": 72,
+      "emotion": "caring"
+     },
+     "hints": [],
+     "afterPrompt": [
+      {
+       "op": "bed",
+       "stop": true,
+       "line": 73
+      }
+     ],
+     "remind": {
+      "beat": {
+       "op": "say",
+       "cue": "lib:remind_water",
+       "speaker": "COCO",
+       "text": "Captain, Coco यहीं wait कर रहा है। पानी पीकर आओ और WATER वाला card tap कर देना।",
+       "tags": [],
+       "line": 74,
+       "emotion": "kind and unhurried"
+      },
+      "at": [
+       30000,
+       60000,
+       180000,
+       300000,
+       420000
+      ]
+     },
+     "tags": [],
+     "line": 71
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:ting",
+     "tags": [],
+     "line": 75,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "lib:rescue_team_chalo",
+     "speaker": "COCO",
+     "text": "जंगल रेस्क्यू टीम चलो!",
+     "tags": [
+      "praise",
+      "effort"
+     ],
+     "line": 76,
+     "emotion": "energetic"
+    }
+   ]
+  },
+  {
+   "id": "s04",
+   "title": "Party",
+   "onJump": [],
+   "beats": [
+    {
+     "op": "sfx",
+     "cue": "lib:clap",
+     "tags": [],
+     "line": 80,
+     "channel": "overlay",
+     "volume": 0.72,
+     "wait": true
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:party_whistle",
+     "tags": [],
+     "line": 81,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "ask",
+     "card": "MUSIC",
+     "prompt": {
+      "op": "say",
+      "cue": "lib:ask_music",
+      "speaker": "COCO",
+      "text": "मेरे पैर तो नाचने लगे! पर धुन कहाँ है? Captain, नाचने के लिए क्या बजाएँ?",
+      "tags": [],
+      "line": 83,
+      "emotion": "eager, playful"
+     },
+     "hints": [
+      {
+       "op": "say",
+       "cue": "lib:hint_music_1",
+       "speaker": "COCO",
+       "text": "पार्टी में नाचने के लिए धुन चाहिए।",
+       "tags": [],
+       "line": 84
+      },
+      {
+       "op": "say",
+       "cue": "lib:hint_music_2",
+       "speaker": "COCO",
+       "text": "गाना बजाने वाला card ढूँढो।",
+       "tags": [],
+       "line": 85
+      },
+      {
+       "op": "say",
+       "cue": "lib:hint_music_3",
+       "speaker": "COCO",
+       "text": "MUSIC वाला card tap करो।",
+       "tags": [],
+       "line": 86
+      }
+     ],
+     "afterPrompt": [],
+     "remind": null,
+     "tags": [],
+     "line": 82
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:ting",
+     "tags": [],
+     "line": 87,
+     "channel": "overlay",
+     "volume": 0.35,
+     "wait": true
+    },
+    {
+     "op": "wait",
+     "ms": 150,
+     "line": 88
+    },
+    {
+     "op": "say",
+     "cue": "lib:yes_music",
+     "speaker": "COCO",
+     "text": "YES! MUSIC!",
+     "tags": [
+      "praise"
+     ],
+     "line": 89,
+     "emotion": "excited"
+    },
+    {
+     "op": "music",
+     "cue": "lib:dance_loop",
+     "line": 90
+    },
+    {
+     "op": "duck",
+     "cue": "lib:dance_elephant",
+     "speaker": "COCO",
+     "text": "Elephant dance! हाथ की सूँड़ बनाओ — इधर, उधर! बैठे-बैठे भी!",
+     "tags": [
+      "action"
+     ],
+     "line": 91,
+     "emotion": "bouncy"
+    },
+    {
+     "op": "music",
+     "at": 10.0,
+     "line": 92
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:elephant_trumpet",
+     "tags": [],
+     "line": 93,
+     "channel": "overlay",
+     "volume": 0.55,
+     "wait": false
+    },
+    {
+     "op": "music",
+     "at": 20.0,
+     "line": 94
+    },
+    {
+     "op": "music",
+     "stop": true,
+     "line": 95
+    },
+    {
+     "op": "say",
+     "cue": "lib:freeze_statue",
+     "speaker": "COCO",
+     "text": "Freeze! मूर्ति बन जाओ!",
+     "tags": [
+      "action"
+     ],
+     "line": 96,
+     "emotion": "playful, clear",
+     "hold": 3000
+    },
+    {
+     "op": "group",
+     "tags": [
+      "second-dance"
+     ],
+     "beats": [
+      {
+       "op": "music",
+       "cue": "lib:dance_loop",
+       "line": 98
+      },
+      {
+       "op": "duck",
+       "cue": "lib:dance_parrot",
+       "speaker": "COCO",
+       "text": "Parrot dance! हाथों के पंख — फड़फड़, फड़फड़!",
+       "tags": [
+        "action"
+       ],
+       "line": 99,
+       "emotion": "bright, rhythmic"
+      },
+      {
+       "op": "music",
+       "at": 10.0,
+       "line": 100
+      },
+      {
+       "op": "music",
+       "at": 20.0,
+       "line": 101
+      },
+      {
+       "op": "music",
+       "stop": true,
+       "line": 102
+      },
+      {
+       "op": "say",
+       "cue": "lib:freeze_cheeks",
+       "speaker": "COCO",
+       "text": "Freeze! गाल फुलाओ!",
+       "tags": [
+        "action"
+       ],
+       "line": 103,
+       "emotion": "funny, clear",
+       "hold": 3000
+      }
+     ],
+     "line": 97
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:music_end_flourish",
+     "tags": [],
+     "line": 104,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "lib:hands_up",
+     "speaker": "COCO",
+     "text": "हाथ ऊपर! साथ बोलो — हम हैं जंगल बचाओ टीम!",
+     "tags": [
+      "action"
+     ],
+     "line": 105,
+     "emotion": "inviting, joyful"
+    },
+    {
+     "op": "wait",
+     "ms": 500,
+     "line": 106
+    },
+    {
+     "op": "say",
+     "cue": "lib:high_five",
+     "speaker": "COCO",
+     "text": "मेरी तरफ हवा में high-five!",
+     "tags": [
+      "action"
+     ],
+     "line": 107,
+     "emotion": "playful"
+    },
+    {
+     "op": "wait",
+     "ms": 2000,
+     "line": 108
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:high_five_slap",
+     "tags": [],
+     "line": 109,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "lib:mud_hands_joke",
+     "speaker": "COCO",
+     "text": "अरे! मेरे हाथ पर अभी भी कीचड़ है!",
+     "tags": [
+      "joke"
+     ],
+     "line": 110,
+     "emotion": "comic surprise"
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:squelch",
+     "tags": [
+      "joke"
+     ],
+     "line": 111,
+     "channel": "fg",
+     "wait": true
+    },
+    {
+     "op": "say",
+     "cue": "lib:bye_captain",
+     "speaker": "COCO",
+     "text": "ये कौन करता है?! पहले हाथ धोऊँगा! Bye-bye, Captain!",
+     "tags": [],
+     "line": 112,
+     "emotion": "laughing, affectionate"
+    },
+    {
+     "op": "sfx",
+     "cue": "lib:outro_sting",
+     "tags": [],
+     "line": 113,
+     "channel": "fg",
+     "wait": true
+    }
+   ]
+  }
+ ],
+ "variants": {
+  "short": {
+   "name": "Short (one dance, no jokes)",
+   "exclude": [
+    "second-dance",
+    "joke"
+   ],
+   "keepAlways": [],
+   "keepEvery": {},
+   "set": {},
+   "note": "The two-minute version — second dance round and the three jokes dropped."
+  }
+ },
+ "clips": {
+  "lib:jungle_day": {
+   "kind": "bed",
+   "name": "jungle_day",
+   "scene": 1,
+   "library": true
+  },
+  "lib:hello_coco": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "हैलो, मैं हूँ कोको। आज हम जंगल बचाओ टीम बनेंगे।",
+   "emotion": "bright and playful",
+   "scene": 1,
+   "library": true
+  },
+  "lib:captain_help": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "जंगल में हमारे कई दोस्त मुसीबत में हैं और हमें उन्हें बचाना है। क्या तुम Captain बनकर मेरी मदद करोगे?",
+   "emotion": "hopeful and inviting",
+   "scene": 1,
+   "library": true
+  },
+  "lib:yes_great": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "Yes! Great! अब Captain और कोको मिलकर सारे animals को बचा लेंगे।",
+   "emotion": "delighted",
+   "scene": 1,
+   "library": true
+  },
+  "lib:jeep_ready": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "जल्दी चलो, हमारी जंगल रेस्क्यू जीप तैयार है।",
+   "emotion": "warm",
+   "scene": 1,
+   "library": true
+  },
+  "lib:jeep_door": {
+   "kind": "sfx",
+   "name": "jeep_door",
+   "scene": 1,
+   "library": true
+  },
+  "lib:narr_jeep_start": {
+   "kind": "speech",
+   "speaker": "NARRATOR",
+   "text": "कोको जीप में बैठा, स्टीयरिंग पकड़ी, चाबी घुमाई।",
+   "emotion": "warm and brisk",
+   "scene": 1,
+   "library": true
+  },
+  "lib:key_engine_cough": {
+   "kind": "sfx",
+   "name": "key_engine_cough",
+   "scene": 1,
+   "library": true
+  },
+  "lib:tank_empty": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "ओह, ये स्टार्ट क्यों नहीं हो रही है? हम्म, जीप की टंकी खाली है।",
+   "emotion": "surprised and amused",
+   "scene": 1,
+   "library": true
+  },
+  "lib:ask_fuel": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "Captain, टंकी खाली है! इसमें क्या डालें कि जीप चल पड़े?",
+   "emotion": "curious and clear",
+   "scene": 1,
+   "library": true
+  },
+  "lib:hint_fuel_1": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "अपने सामने वाले cards को देखो... इनमें Jeep को चलाने वाली कोई चीज़ है क्या?",
+   "emotion": "",
+   "scene": 1,
+   "library": true
+  },
+  "lib:hint_fuel_2": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "जिससे गाड़ी की tank भरती है, वही card ढूँढो.",
+   "emotion": "",
+   "scene": 1,
+   "library": true
+  },
+  "lib:hint_fuel_3": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "FUEL वाला card scan करो.",
+   "emotion": "",
+   "scene": 1,
+   "library": true
+  },
+  "lib:ting": {
+   "kind": "sfx",
+   "name": "ting",
+   "scene": 1,
+   "library": true
+  },
+  "lib:yes_fuel": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "YES! FUEL! टंकी भर गई!",
+   "emotion": "excited",
+   "scene": 1,
+   "library": true
+  },
+  "lib:fuel_pour": {
+   "kind": "sfx",
+   "name": "fuel_pour",
+   "scene": 1,
+   "library": true
+  },
+  "lib:engine_start": {
+   "kind": "sfx",
+   "name": "engine_start",
+   "scene": 1,
+   "library": true
+  },
+  "lib:rescue_team_chalo": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "जंगल रेस्क्यू टीम चलो!",
+   "emotion": "energetic",
+   "scene": 1,
+   "library": true
+  },
+  "lib:narr_jungle_drive": {
+   "kind": "speech",
+   "speaker": "NARRATOR",
+   "text": "जीप जंगल के अंदर गई। बड़े-बड़े पेड़, छोटी-छोटी नदियाँ, उछलती-कूदती जीप!",
+   "emotion": "bouncy",
+   "scene": 2,
+   "library": true
+  },
+  "lib:jeep_bump": {
+   "kind": "sfx",
+   "name": "jeep_bump",
+   "scene": 2,
+   "library": true
+  },
+  "lib:trampoline_joke": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "वो! ये रोड है या ट्रैम्पोलीन?",
+   "emotion": "surprised and comic",
+   "scene": 2,
+   "library": true
+  },
+  "lib:jungle_night": {
+   "kind": "bed",
+   "name": "jungle_night",
+   "scene": 2,
+   "library": true
+  },
+  "lib:jeep_arrive_stop": {
+   "kind": "sfx",
+   "name": "jeep_arrive_stop",
+   "scene": 2,
+   "library": true
+  },
+  "lib:narr_night_arrival": {
+   "kind": "speech",
+   "speaker": "NARRATOR",
+   "text": "रेस्क्यू जीप घने जंगलों के बीच आकर रुकी। सूरज ढल चुका था और पेड़-पौधे अंधेरे में अजीब साए जैसे लग रहे थे।",
+   "emotion": "hushed",
+   "scene": 2,
+   "library": true
+  },
+  "lib:owl_hoot": {
+   "kind": "sfx",
+   "name": "owl_hoot",
+   "scene": 2,
+   "library": true
+  },
+  "lib:ask_torch": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "अरे! इतना अंधेरा है कि मेरी नाक भी नहीं दिख रही! Captain, हमें तुरंत रोशनी चाहिए, वरना हम सब टकरा जाएँगे!",
+   "emotion": "urgent but playful",
+   "scene": 2,
+   "library": true
+  },
+  "lib:hint_torch_1": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "अपने cards में देखो... कोई ऐसी चीज़ है जो अंधेरे में तेज़ रोशनी दे सके?",
+   "emotion": "",
+   "scene": 2,
+   "library": true
+  },
+  "lib:hint_torch_2": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "इसे ON करते ही अंधेरे में रास्ता साफ़ दिखने लगता है।",
+   "emotion": "",
+   "scene": 2,
+   "library": true
+  },
+  "lib:hint_torch_3": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "FLASHLIGHT वाला card scan करो!",
+   "emotion": "",
+   "scene": 2,
+   "library": true
+  },
+  "lib:torch_click": {
+   "kind": "sfx",
+   "name": "torch_click",
+   "scene": 2,
+   "library": true
+  },
+  "lib:yes_torch": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "YES! FLASHLIGHT!",
+   "emotion": "relieved and bright",
+   "scene": 2,
+   "library": true
+  },
+  "lib:light_sweep": {
+   "kind": "sfx",
+   "name": "light_sweep",
+   "scene": 2,
+   "library": true
+  },
+  "lib:owl_joke": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "वाह! रोशनी होते ही सब दिखने लगा! ...और rock के ऊपर वो उल्लू भी!",
+   "emotion": "surprised and relieved",
+   "scene": 2,
+   "library": true
+  },
+  "lib:ask_water": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "इतने rescue missions के बाद Captain को भी थोड़ी प्यास लगी होगी। पहले तुम जाकर थोड़ा असली पानी पियो। पानी पीकर वापस आना और WATER वाला card tap करना।",
+   "emotion": "caring",
+   "scene": 3,
+   "library": true
+  },
+  "lib:remind_water": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "Captain, Coco यहीं wait कर रहा है। पानी पीकर आओ और WATER वाला card tap कर देना।",
+   "emotion": "kind and unhurried",
+   "scene": 3,
+   "library": true
+  },
+  "lib:clap": {
+   "kind": "sfx",
+   "name": "clap",
+   "scene": 4,
+   "library": true
+  },
+  "lib:party_whistle": {
+   "kind": "sfx",
+   "name": "party_whistle",
+   "scene": 4,
+   "library": true
+  },
+  "lib:ask_music": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "मेरे पैर तो नाचने लगे! पर धुन कहाँ है? Captain, नाचने के लिए क्या बजाएँ?",
+   "emotion": "eager, playful",
+   "scene": 4,
+   "library": true
+  },
+  "lib:hint_music_1": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "पार्टी में नाचने के लिए धुन चाहिए।",
+   "emotion": "",
+   "scene": 4,
+   "library": true
+  },
+  "lib:hint_music_2": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "गाना बजाने वाला card ढूँढो।",
+   "emotion": "",
+   "scene": 4,
+   "library": true
+  },
+  "lib:hint_music_3": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "MUSIC वाला card tap करो।",
+   "emotion": "",
+   "scene": 4,
+   "library": true
+  },
+  "lib:yes_music": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "YES! MUSIC!",
+   "emotion": "excited",
+   "scene": 4,
+   "library": true
+  },
+  "lib:dance_loop": {
+   "kind": "music",
+   "name": "dance_loop",
+   "scene": 4,
+   "library": true
+  },
+  "lib:dance_elephant": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "Elephant dance! हाथ की सूँड़ बनाओ — इधर, उधर! बैठे-बैठे भी!",
+   "emotion": "bouncy",
+   "scene": 4,
+   "library": true
+  },
+  "lib:elephant_trumpet": {
+   "kind": "sfx",
+   "name": "elephant_trumpet",
+   "scene": 4,
+   "library": true
+  },
+  "lib:freeze_statue": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "Freeze! मूर्ति बन जाओ!",
+   "emotion": "playful, clear",
+   "scene": 4,
+   "library": true
+  },
+  "lib:dance_parrot": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "Parrot dance! हाथों के पंख — फड़फड़, फड़फड़!",
+   "emotion": "bright, rhythmic",
+   "scene": 4,
+   "library": true
+  },
+  "lib:freeze_cheeks": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "Freeze! गाल फुलाओ!",
+   "emotion": "funny, clear",
+   "scene": 4,
+   "library": true
+  },
+  "lib:music_end_flourish": {
+   "kind": "sfx",
+   "name": "music_end_flourish",
+   "scene": 4,
+   "library": true
+  },
+  "lib:hands_up": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "हाथ ऊपर! साथ बोलो — हम हैं जंगल बचाओ टीम!",
+   "emotion": "inviting, joyful",
+   "scene": 4,
+   "library": true
+  },
+  "lib:high_five": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "मेरी तरफ हवा में high-five!",
+   "emotion": "playful",
+   "scene": 4,
+   "library": true
+  },
+  "lib:high_five_slap": {
+   "kind": "sfx",
+   "name": "high_five_slap",
+   "scene": 4,
+   "library": true
+  },
+  "lib:mud_hands_joke": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "अरे! मेरे हाथ पर अभी भी कीचड़ है!",
+   "emotion": "comic surprise",
+   "scene": 4,
+   "library": true
+  },
+  "lib:squelch": {
+   "kind": "sfx",
+   "name": "squelch",
+   "scene": 4,
+   "library": true
+  },
+  "lib:bye_captain": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "ये कौन करता है?! पहले हाथ धोऊँगा! Bye-bye, Captain!",
+   "emotion": "laughing, affectionate",
+   "scene": 4,
+   "library": true
+  },
+  "lib:outro_sting": {
+   "kind": "sfx",
+   "name": "outro_sting",
+   "scene": 4,
+   "library": true
+  },
+  "lib:boing": {
+   "kind": "sfx",
+   "name": "boing",
+   "scene": 0,
+   "library": true
+  },
+  "lib:wrong_1": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "ओहो! ये वाला काम नहीं करेगा। Captain, एक और card try करो!",
+   "emotion": "playfully surprised",
+   "scene": 0,
+   "library": true
+  },
+  "lib:wrong_2": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "ऊप्स! हमें कोई और चीज़ चाहिए। Captain, फिर से सोचो!",
+   "emotion": "light, encouraging",
+   "scene": 0,
+   "library": true
+  },
+  "lib:wrong_3": {
+   "kind": "speech",
+   "speaker": "COCO",
+   "text": "हम्म... ये नहीं। Captain, दूसरा card try करो!",
+   "emotion": "curious, supportive",
+   "scene": 0,
+   "library": true
+  }
+ },
+ "voices": {
+  "COCO": "Saanu",
+  "NARRATOR": "Jia"
+ },
+ "tapSound": "lib:tap",
+ "libraryDir": "../../library/",
+ "_notes": [
+  "line 112: \"ये कौन करता है\" — Coco's signature line — fine, it is a running sound not an idea"
+ ]
+}

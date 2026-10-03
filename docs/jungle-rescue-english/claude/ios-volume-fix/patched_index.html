@@ -1,0 +1,308 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Jungle Rescue Patrol — English</title>
+  <style>
+    :root{--bg:#10231b;--panel:#173427;--ink:#f6f2df;--muted:#bdd0c0;--go:#ffd166;--line:#315844;--bad:#ff9b88}
+    *{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+    body{margin:0;min-height:100vh;background:radial-gradient(circle at 20% 0,#28543d,var(--bg) 62%);color:var(--ink);font:16px/1.5 system-ui,-apple-system,"Noto Sans Devanagari",sans-serif;padding:18px}
+    main{max-width:760px;margin:0 auto}.eyebrow{color:var(--go);font-weight:800;letter-spacing:.08em;text-transform:uppercase;font-size:12px}.panel{background:rgba(23,52,39,.94);border:1px solid var(--line);border-radius:20px;padding:22px;margin-top:14px;box-shadow:0 12px 35px #06120c66}h1{margin:4px 0;font-size:clamp(25px,7vw,42px);line-height:1.05}h2{margin:0 0 8px}.muted{color:var(--muted)}button{font:inherit;border:1px solid #5d7f69;border-radius:12px;background:#234b36;color:var(--ink);padding:12px 16px;cursor:pointer}button.primary{background:var(--go);color:#182a1d;border-color:var(--go);font-weight:800}button:disabled{opacity:.45;cursor:not-allowed}.actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}.hide{display:none!important}.status{min-height:27px;color:var(--muted);margin-top:12px}.progress{height:8px;border-radius:9px;background:#0c1c14;overflow:hidden;margin:18px 0 6px}.progress i{display:block;height:100%;background:var(--go);width:0;transition:width .2s}.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:14px}.card{background:#10271b;border:1px solid var(--line);border-radius:12px;padding:10px 5px;text-align:center}.card .icon{font-size:27px;display:block}.card small{display:block;color:var(--muted);font-size:11px;margin-top:3px}.wanted{margin-top:18px;text-align:center;padding:18px;background:#10271b;border-radius:16px;border:1px solid var(--line)}.wanted .icon{font-size:66px;display:block}.wanted strong{font-size:23px}.tapgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:16px}.tap{min-height:82px;padding:9px 4px}.tap .icon{font-size:28px;display:block}.tap small{font-size:11px}.log{font:12px/1.45 ui-monospace,monospace;white-space:pre-wrap;color:#b9c9bd;background:#0b1811;border-radius:10px;padding:10px;max-height:170px;overflow:auto;margin-top:12px}.ok{color:#b9f6ca}.warn{color:#ffcf83}.error{color:var(--bad)}@media(max-width:480px){body{padding:11px}.panel{padding:17px}.cards,.tapgrid{grid-template-columns:repeat(2,1fr)}}
+  </style>
+</head>
+<body>
+<main>
+  <div class="eyebrow">Jungle Rescue English</div>
+  <h1>जंगल बचाओ टीम 🐘</h1>
+  <p class="muted">Listen, find the card, and help Coco rescue the jungle.</p>
+
+  <section id="welcome" class="panel">
+    <h2>Ready to play?</h2>
+    <p class="muted">This player uses the shared RFID reader checks, scan protection, wake lock and story introduction used by the other games.</p>
+    <div class="actions"><button class="primary" id="readerMode">Use card reader</button><button id="screenMode">Play on screen</button></div>
+    <div id="welcomeStatus" class="status"></div>
+  </section>
+
+  <section id="play" class="panel hide" aria-live="polite">
+    <div class="eyebrow" id="sceneLabel">Jungle Rescue Team</div>
+    <div id="storyStatus" class="status">Starting…</div>
+    <div class="progress"><i id="bar"></i></div>
+    <div id="question" class="wanted hide"><span class="icon" id="wantIcon">🎴</span><strong id="wantLabel">Listen…</strong></div>
+    <div id="tapGrid" class="tapgrid hide"></div>
+    <div id="storyActions" class="actions"></div>
+    <div class="actions"><button id="nextCue" class="hide">Next cue</button></div>
+    <div id="log" class="log hide"></div>
+  </section>
+</main>
+
+<script src="../scan-guard.js"></script>
+<script src="../reader-check.js"></script>
+<script src="../story-intro.js"></script>
+<script>
+/* Jungle Rescue English player. Runtime behavior is specified in
+   jungle_rescue_playback_spec.md; audio wording and JR_NNN cue ownership live
+   in jungle_rescue_final_production_script.md. */
+'use strict';
+
+const STORY_KEY = 'jungle-rescue-english';
+const DEV_MODE = new URLSearchParams(location.search).has('dev');
+const AUDIO_DIR = 'audio/';
+const CARD_ORDER = ['FUEL','ROPE','BISCUIT','FIRST_AID','WATER','FLASHLIGHT','BLANKET','MUSIC'];
+const CARD_INFO = {
+  FUEL:{label:'Fuel',icon:'⛽'}, ROPE:{label:'Rope',icon:'🪢'}, BISCUIT:{label:'Biscuit',icon:'🍪'},
+  FIRST_AID:{label:'First aid',icon:'🩹'}, WATER:{label:'Water',icon:'💧'}, FLASHLIGHT:{label:'Flashlight',icon:'🔦'},
+  BLANKET:{label:'Blanket',icon:'🧣'}, MUSIC:{label:'Music',icon:'🎵'}
+};
+// Existing physical UIDs: SNACK is the shared Snack / cookie / biscuit card.
+/* __CARD_UIDS_START__ */
+const SEED_VERSION = "2026-09-19b";
+const DEFAULT_UIDS = {
+  "5720648": "BISCUIT",
+  "6373651": "BISCUIT",
+  "6375388": "BLANKET",
+  "6374815": "FIRST_AID",
+  "2692483": "FLASHLIGHT",
+  "6375577": "FLASHLIGHT",
+  "6359145": "FUEL",
+  "6360574": "MUSIC",
+  "6374623": "ROPE",
+  "2682976": "WATER",
+  "2690428": "WATER"
+};
+/* __CARD_UIDS_END__ */
+
+let manifest = {}, audio = null, audioFinish = null, bedAudio = null, mode = 'reader', state = 'idle', expected = null;
+let epoch = 0, hintTimers = [], waterReminderTimers = [], bedFadeTimer = null, hintIndex = 0, waitingSince = 0, bite = 0, fuelGagOpen = false;
+const overlays = new Set();
+let danceAudio = null;
+let uidToCard = {}, inputBuffer = '', wrongVariant = 0, currentCueId = '';
+const $ = id => document.getElementById(id);
+const norm = v => String(v == null ? '' : v).trim().toUpperCase().replace(/^0+(?=.)/,'');
+const assetUrl = (file, tag) => location.protocol === 'file:' ? file : file+(file.includes('?')?'&':'?')+tag;
+const log = (s, cls='') => { const el=$('log'); if(!el)return; el.classList.remove('hide'); el.innerHTML += `<span class="${cls}">${new Date().toLocaleTimeString()} ${s}</span>\n`; el.scrollTop=el.scrollHeight; };
+const setStatus = (s, cls='') => { $('storyStatus').textContent=s; $('storyStatus').className='status '+cls; };
+const wait = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+async function loadManifest(){
+  try { const r=await fetch('audio/manifest.json',{cache:'no-store'}); if(r.ok) manifest=await r.json(); }
+  catch(e){ log('Audio manifest not installed yet; player will show cue IDs.', 'warn'); }
+}
+function cueEntry(id){ const v=manifest[id]; return typeof v==='string'?{file:v}:v||{}; }
+function speechFallback(text){ if(!('speechSynthesis' in window))return; const u=new SpeechSynthesisUtterance(text); u.lang='hi-IN'; u.rate=.92; speechSynthesis.speak(u); }
+function playFile(file, opts={}){
+  if(audioFinish)audioFinish();
+  if(audio){audio.onended=audio.onerror=null;audio.pause();audio.src='';audio=null;}
+  const source=assetUrl(file,'v=jr-final-4');
+  const player=new Audio(source);player.preload='auto';audio=player;
+  const cueId=currentCueId;
+  return new Promise(resolve=>{
+    let done=false, retried=false;
+    const finish=()=>{if(done)return;done=true;player.onended=player.onerror=null;if(audio===player)audio=null;if(audioFinish===finish)audioFinish=null;resolve()};
+    audioFinish=finish;
+    const fallback=()=>{const text=opts.text||ASSET_TEXT[cueId]||(manifest[cueId]&&manifest[cueId].spoken_text);if(text)speechFallback(text);};
+    const retry=()=>{
+      if(done)return;
+      if(!retried){retried=true;player.src=assetUrl(file,'retry='+Date.now());player.load();player.play().catch(()=>{log(`could not play ${file}`, 'error');fallback();finish();});return;}
+      log(`could not play ${file}`, 'error');fallback();finish();
+    };
+    player.onended=finish;player.onerror=retry;
+    player.play().catch(retry);
+  });
+}
+// iOS Safari ignores HTMLMediaElement.volume (it is pinned to 1.0), so every level in this game
+// was playing at full volume on iPhone. Levels now go through a Web Audio gain node, which iOS honours.
+// Narration (playFile) is untouched: it always plays at 1.0 anyway.
+let actx=null;const gainNodes=new WeakMap();
+function audioCtx(){if(!actx){const AC=window.AudioContext||window.webkitAudioContext;if(AC){try{actx=new AC();}catch(e){actx=null;}}}if(actx&&actx.state==='suspended')actx.resume().catch(()=>{});return actx;}
+function setVol(el,v){const ctx=audioCtx();if(!ctx){el.volume=v;return;}let g=gainNodes.get(el);if(!g){try{const src=ctx.createMediaElementSource(el);g=ctx.createGain();src.connect(g);g.connect(ctx.destination);gainNodes.set(el,g);}catch(e){el.volume=v;return;}}el.volume=1;g.gain.value=v;}
+function getVol(el){const g=gainNodes.get(el);return g?g.gain.value:el.volume;}
+document.addEventListener('pointerdown',()=>audioCtx(),{capture:true,passive:true});
+function playOverlayCue(id, volume=.35){
+  const c=cueEntry(id);if(!c.file)return;
+  const effect=new Audio(AUDIO_DIR+c.file);setVol(effect,volume);overlays.add(effect);
+  const done=()=>{overlays.delete(effect);effect.onended=null;effect.onerror=null};effect.onended=done;effect.onerror=done;effect.play().catch(done);
+}
+// iOS Safari only lets a page start sound from inside a tap. startStory() used to await the manifest
+// fetch and the wake lock before its first play(), by which time the tap was gone and every clip was
+// refused ("could not play"). Play a 50 ms silent clip synchronously inside the tap to unlock audio.
+const SILENT_MP3='data:audio/mpeg;base64,SUQzBAAAAAAAI1RTU0UAAAAPAAADTGF2ZjU4Ljc2LjEwMAAAAAAAAAAAAAAA//NwwAAAAAAAAAAAAEluZm8AAAAPAAAABAAAAR8Aubm5ubm5ubm5ubm5ubm5ubm5ubm5ubm50dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0ejo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Ojo6Oj/////////////////////////////////AAAAAExhdmM1OC4xMwAAAAAAAAAAAAAAACQCcQAAAAAAAAEfOUBsQwAAAAAAAAAAAAAAAAD/8xDEAAAAA0gAAAAATEFNRTMuMTAwVVVVVf/zEsQNAAADSAAAAABVVVVVVVVVVVVVVVVVVf/zEMQbAAADSAAAAABVVVVVVVVVVVVVVVVV//MQxCgAAANIAAAAAFVVVVVVVVVVVVVVVVU=';
+function unlockAudio(){try{const u=new Audio(SILENT_MP3);u.play().catch(()=>{});}catch(e){}if(typeof audioCtx==='function')audioCtx();}
+function playOverlayCueAndWait(id, volume=.35){
+  const c=cueEntry(id);if(!c.file)return Promise.resolve();
+  const effect=new Audio(AUDIO_DIR+c.file);setVol(effect,volume);overlays.add(effect);
+  return new Promise(resolve=>{const done=()=>{overlays.delete(effect);effect.onended=null;effect.onerror=null;resolve()};effect.onended=done;effect.onerror=done;effect.play().catch(done);});
+}
+function playStandaloneSfx(file,volume=.72){const effect=new Audio(file);setVol(effect,volume);return new Promise(resolve=>{effect.onended=resolve;effect.onerror=resolve;effect.play().catch(resolve);});}
+function playBedFile(file, volume=.18){if(bedAudio){bedAudio.pause();bedAudio.src='';}const source=assetUrl(file,'v=jr-bed-6');bedAudio=new Audio(source);bedAudio.preload='auto';bedAudio.loop=true;setVol(bedAudio,volume);bedAudio.onerror=()=>log(`could not play background ${file}`,'error');bedAudio.play().catch(()=>log(`could not start background ${file}`,'error'));return Promise.resolve();}
+function crossfadeBedFile(file, volume=.18){
+  if(bedFadeTimer){clearInterval(bedFadeTimer);bedFadeTimer=null;}
+  const old=bedAudio;const source=assetUrl(file,'v=jr-bed-6');const next=new Audio(source);next.preload='auto';next.loop=true;setVol(next,0);bedAudio=next;next.onerror=()=>log(`could not play background ${file}`,'error');next.play().catch(()=>log(`could not start background ${file}`,'error'));
+  return new Promise(resolve=>{let step=0;bedFadeTimer=setInterval(()=>{step++;setVol(next,volume*step/8);if(old)setVol(old,Math.max(0,getVol(old)*(8-step)/8));if(step>=8){clearInterval(bedFadeTimer);bedFadeTimer=null;if(old){old.pause();old.src='';}resolve();}},90);});
+}
+async function playCue(id, opts={}){
+  currentCueId=id;
+  if(id==='JR_129'){const c=cueEntry(id);if(c.bed_file)await crossfadeBedFile(AUDIO_DIR+c.bed_file,c.bed_volume);return playCue('JR_129_entry',opts);}
+  const c=cueEntry(id);
+  if(c.type==='split_sfx'){
+    if(c.bed_file)playBedFile(AUDIO_DIR+c.bed_file, c.bed_volume);
+    if(c.jeep_file)await playFile(AUDIO_DIR+c.jeep_file);
+    if(c.entry_file)return playFile(AUDIO_DIR+c.entry_file);
+    return Promise.resolve();
+  }
+  if(c.bed || c.loop || ['JR_001','JR_021'].includes(id)) return playBed(id);
+  if(!c.file){ log(`cue ${id} missing from manifest`, 'warn'); const text=opts.text||ASSET_TEXT[id]||c.spoken_text;if(text)speechFallback(text); return Promise.resolve(); }
+  return playFile(AUDIO_DIR+c.file, opts);
+}
+function playBed(id){const c=cueEntry(id);if(!c.file){log(`bed ${id} missing from manifest`,'warn');return Promise.resolve();}if(typeof c.volume!=='number'){log(`bed ${id} has no manifest volume`,'error');return Promise.resolve();}return playBedFile(AUDIO_DIR+c.file,c.volume);}
+function stopBed(){if(bedFadeTimer){clearInterval(bedFadeTimer);bedFadeTimer=null;}if(bedAudio){bedAudio.pause();bedAudio.currentTime=0;bedAudio=null;}}
+function stopDanceTrack(){if(danceAudio){danceAudio.pause();danceAudio.src='';danceAudio=null;}}
+function stopForeground(){const active=audio;if(audioFinish)audioFinish();if(active){active.onended=active.onerror=null;active.pause();active.currentTime=0;if(audio===active)audio=null;}}
+function stopAudio(){const active=audio;if(audioFinish)audioFinish();if(active){active.onended=active.onerror=null;active.pause();active.currentTime=0;if(audio===active)audio=null;}stopDanceTrack();for(const effect of overlays){effect.pause();effect.src='';}overlays.clear();if('speechSynthesis'in window)speechSynthesis.cancel();}
+function clearTimers(){hintTimers.forEach(clearTimeout);hintTimers=[];waterReminderTimers.forEach(clearTimeout);waterReminderTimers=[];}
+function invalidate(){epoch++;clearTimers();stopAudio();expected=null;}
+function setProgress(n,total=CARD_ORDER.length){$('bar').style.width=Math.round(n/total*100)+'%';}
+function renderWanted(card){const c=CARD_INFO[card];$('question').classList.remove('hide');$('wantIcon').textContent=c.icon;$('wantLabel').textContent=`${c.label} वाला card tap करो`;$('tapGrid').classList.remove('hide');}
+function renderTapGrid(){ $('tapGrid').innerHTML=CARD_ORDER.map(id=>`<button class="card tap" data-card="${id}"><span class="icon">${CARD_INFO[id].icon}</span><small>${CARD_INFO[id].label}</small></button>`).join('');$('tapGrid').querySelectorAll('button').forEach(b=>b.onclick=()=>acceptCard(b.dataset.card,'screen')); }
+function hideQuestion(){ $('question').classList.add('hide');$('tapGrid').classList.add('hide'); }
+function advanceCue(){if(!DEV_MODE)return;stopForeground();setStatus('Skipped to the next cue.');}
+
+const ASSET_TEXT = {
+  'JR_010':'Captain, टंकी खाली है! इसमें क्या डालें कि जीप चल पड़े?',
+  'JR_011':'अपने सामने वाले cards को देखो... इनमें Jeep को चलाने वाली कोई चीज़ है क्या?',
+  'JR_012':'जिससे गाड़ी की tank भरती है, वही card ढूँढो.',
+  'JR_013':'FUEL वाला card scan करो.',
+  'JR_036':'Captain, हमें कोई लंबी चीज़ चाहिए जिससे एलिफेंट दादा को अपनी तरफ खींच सकें। क्या हमारे पास ऐसी कोई चीज़ है?',
+  'JR_037':'अपने cards को देखो... कोई लंबी और मजबूत चीज़ ढूँढो.',
+  'JR_038':'इससे हम Elephant Dada को अपनी तरफ खींच सकते हैं.',
+  'JR_039':'ROPE वाला card scan करो.',
+  'JR_055':'एलिफेंट दादा को भूख लगी है! Captain, क्या हमारे पास कुछ खाने के लिए है?',
+  'JR_056':'अपने cards में देखो... खाने वाली कोई चीज़ मिल रही है?',
+  'JR_057':'जब थोड़ी भूख लगे तो हम इसे खा सकते हैं.',
+  'JR_058':'BISCUIT वाला card scan करो.',
+  'JR_079':'चोट लगने पर हमें ऐसी चीज़ चाहिए जिसमें bandage और medicine जैसी चीज़ें होती हैं। Captain, क्या हमारे पास कुछ ऐसा है?',
+  'JR_080':'अपने cards को देखो... चोट लगने पर काम आने वाली चीज़ ढूँढो.',
+  'JR_081':'इसमें bandage जैसी चीज़ें रखी होती हैं.',
+  'JR_082':'FIRST AID वाला card scan करो.',
+  'JR_094':'इतने rescue missions के बाद Captain को भी थोड़ी प्यास लगी होगी। पहले असली पानी पियो, फिर WATER वाला card tap करो।',
+  'JR_115':'अरे! इतना अँधेरा है कि मेरी नाक भी नहीं दिख रही! Captain, हमें तुरंत रोशनी चाहिए!',
+  'JR_116':'अपने cards में देखो... कोई ऐसी चीज़ है जो अँधेरे में तेज़ रोशनी दे सके?',
+  'JR_117':'इसे ON करते ही अँधेरे में रास्ता साफ़ दिखने लगता है.',
+  'JR_118':'FLASHLIGHT वाला card scan करो.',
+  'JR_134':'Captain, हमें Lion King के लिए कोई soft और गर्म चीज़ चाहिए जिसे उन्हें ओढ़ा सकें!',
+  'JR_135':'अपने cards को देखो... कोई ऐसी soft चीज़ ढूँढो जो ठंड से बचाए.',
+  'JR_136':'रात को सोते समय हम इसे अपने ऊपर ओढ़कर warm महसूस करते हैं.',
+  'JR_137':'BLANKET वाला card scan करो.',
+  'JR_154':'मेरे पैर तो नाचने लगे! पर धुन कहाँ है? Captain, नाचने के लिए क्या बजाएँ?',
+  'JR_155':'पार्टी में नाचने के लिए धुन चाहिए.',
+  'JR_156':'गाना बजाने वाला card ढूँढो.',
+  'JR_157':'MUSIC वाला card tap करो.'
+};
+async function playSequence(ids, token){for(const id of ids){if(token!==epoch)return;await playCue(id,{text:ASSET_TEXT[id]});}}
+
+function arm(card, promptCue, hints, onCorrect, onPromptDone){
+  invalidate(); state='question'; expected=card; hintIndex=0; waitingSince=performance.now(); renderWanted(card); setStatus(`Waiting for ${CARD_INFO[card].label}.`);
+  const token=epoch;
+  (promptCue?playCue(promptCue,{text:ASSET_TEXT[promptCue]}):Promise.resolve()).then(()=>{if(token!==epoch)return; if(onPromptDone)onPromptDone(token); scheduleHints(hints,token);});
+  arm.onCorrect=onCorrect;
+}
+function scheduleHints(hints, token){ clearTimers(); [8000,17000,28000].forEach((ms,i)=>{if(!hints[i])return;hintTimers.push(setTimeout(async()=>{if(token!==epoch||state!=='question'||hintIndex>i)return;hintIndex=i+1;setStatus('Coco is helping…');await playCue(hints[i]);},ms));}); }
+function acceptCard(card, source='reader'){
+  if(state==='done'||state==='idle')return;
+  if(state==='question' && card===expected){ clearTimers(); stopForeground(); epoch++; state='success'; const fn=arm.onCorrect; expected=null; hideQuestion(); setStatus(`Accepted ${CARD_INFO[card].label}.`); if(fn)fn(); return; }
+  if(state==='question'){const variants=[['JR_179','JR_180'],['JR_181','JR_182'],['JR_183','JR_184']];const pair=variants[wrongVariant++%variants.length];const token=epoch;setStatus('Try another card.','warn');playCue(pair[0]).then(()=>{if(token===epoch&&state==='question')return playCue(pair[1]);});}
+}
+function screenOrReaderStart(){
+  $('welcome').classList.add('hide');$('play').classList.remove('hide');renderTapGrid();
+  if(mode==='reader' && window.ReaderCheck && !ReaderCheck.known()) ReaderCheck.run({onWorking:startStory,onSkip:startStory}); else startStory();
+}
+async function startStory(){
+  unlockAudio();state='narrative';setStatus('Starting the jungle rescue…');setProgress(0);const token=++epoch;await loadManifest();
+  if('wakeLock'in navigator){try{window._jrWake=await navigator.wakeLock.request('screen');}catch(e){log('Wake lock unavailable; keep the screen awake manually.','warn');}}
+  await playSequence(['JR_001','JR_002','JR_003'],token); if(token!==epoch)return;
+  await wait(1500); if(token!==epoch)return;
+  await playSequence(['JR_004','JR_005','JR_006','JR_007','JR_008','JR_009'],token); if(token!==epoch)return;
+  arm('FUEL','JR_010',['JR_011','JR_012','JR_013'],()=>fuelSuccess());
+}
+document.addEventListener('visibilitychange',()=>{
+  if(document.visibilityState==='visible'&&state!=='idle'&&state!=='done'&&'wakeLock'in navigator){
+    navigator.wakeLock.request('screen').then(w=>{window._jrWake=w;}).catch(()=>{});
+  }
+});
+async function fuelSuccess(){setProgress(1);await playSequence(['JR_014','JR_015','JR_016','JR_017','JR_018'],epoch);fuelGagOpen=true;setStatus('Fuel loaded. Jungle Rescue Team, चलो!');setTimeout(()=>{if(fuelGagOpen){fuelGagOpen=false;elephantScene();}},2000);}
+async function elephantScene(){fuelGagOpen=false;state='narrative';setStatus('Elephant rescue');const token=++epoch;await playSequence(['JR_021','JR_022','JR_023','JR_024','JR_025','JR_026','JR_027'],token);if(token!==epoch){return;}playBedFile(AUDIO_DIR+cueEntry('JR_001').file,.25);await playSequence(['JR_028','JR_029'],token);await wait(800);await playSequence(['JR_030','JR_031','JR_032','JR_033','JR_034','JR_035'],token);if(token===epoch)arm('ROPE','JR_036',['JR_037','JR_038','JR_039'],ropeSuccess);}
+async function holdEffect(id,token,duration=2000){const started=performance.now();await playCue(id);if(token!==epoch)return;const remaining=duration-(performance.now()-started);if(remaining>0)await wait(remaining);}
+async function ropeSuccess(){setProgress(2);const token=epoch;await playSequence(['JR_040','JR_041','JR_042'],token);await holdEffect('JR_043',token);await playCue('JR_044',token);await holdEffect('JR_045',token);await playSequence(['JR_046','JR_047','JR_048','JR_049','JR_050','JR_051','JR_052','JR_053','JR_054'],token);if(token!==epoch)return;await wait(800);if(token===epoch)arm('BISCUIT','JR_055',['JR_056','JR_057','JR_058'],biscuitSuccess);}
+function biscuitSuccess(){const token=epoch;bite++;setProgress(3);if(bite===1)playSequence(['JR_059','JR_060','JR_061','JR_062'],token).then(()=>biscuitWait());else if(bite===2)playSequence(['JR_061','JR_063'],token).then(()=>biscuitWait());else if(bite===3)playSequence(['JR_061','JR_064'],token).then(()=>biscuitWait());else playSequence(['JR_061','JR_065','JR_066'],token).then(()=>firstAidScene());}
+function biscuitWait(){arm('BISCUIT',null,['JR_067','JR_068','JR_069'],biscuitSuccess);}
+async function firstAidScene(){state='narrative';const token=++epoch;await playSequence(['JR_072','JR_073','JR_074','JR_075','JR_076','JR_077','JR_078'],token);if(token===epoch)arm('FIRST_AID','JR_079',['JR_080','JR_081','JR_082'],firstAidSuccess);}
+async function firstAidSuccess(){setProgress(4);const token=epoch;await playSequence(['JR_083','JR_084'],token);if(token!==epoch)return;await wait(250);await playSequence(['JR_085','JR_086','JR_087','JR_088','JR_089','JR_090','JR_090','JR_091','JR_092','JR_093'],token);if(token===epoch)waterBreak();}
+function waterBreak(){state='water';expected='WATER';hideQuestion();clearTimers();setStatus('Drink some real water, then tap WATER.');arm('WATER','JR_094',[],waterSuccess,(token)=>{stopBed();setStatus('Take a real water break. Tap WATER when you return.');[30000,60000,180000,300000,420000].forEach(delay=>waterReminderTimers.push(setTimeout(()=>{if(token===epoch&&state==='question')playCue('JR_095');},delay)));});}
+async function waterSuccess(){setProgress(5);const token=epoch;await playCue('JR_096',{});if(token!==epoch)return;playBedFile(AUDIO_DIR+cueEntry('JR_001').file,.23);await playSequence(['JR_097','JR_098','JR_099','JR_100','JR_101','JR_102'],token);stopBed();if(token===epoch)lionScene();}
+async function lionScene(){state='narrative';const token=++epoch;await playSequence(['JR_103','JR_104','JR_105','JR_106','JR_107','JR_108','JR_106_lion','JR_109','JR_110','JR_111','JR_106_lion','JR_113','JR_114'],token);if(token===epoch)arm('FLASHLIGHT','JR_115',['JR_116','JR_117','JR_118'],flashlightSuccess);}
+async function flashlightSuccess(){setProgress(6);const token=epoch;await Promise.all([playOverlayCueAndWait('JR_120',.85),playOverlayCueAndWait('JR_119',.25)]);await wait(150);if(token!==epoch)return;await playCue('JR_121',{});if(token!==epoch)return;await playSequence(['JR_122','JR_123','JR_124','JR_125','JR_126','JR_127','JR_128','JR_129','JR_130','JR_131','JR_132','JR_132_sting'],token);if(token===epoch)arm('BLANKET','JR_134',['JR_135','JR_136','JR_137'],blanketSuccess);}
+async function blanketSuccess(){setProgress(7);const token=epoch;await playOverlayCueAndWait('JR_138',.35);await wait(150);if(token!==epoch)return;await playSequence(['JR_140','JR_139','JR_141','JR_142','JR_143','JR_144','JR_145','JR_147','JR_149'],token);if(token===epoch)musicScene();}
+async function musicScene(){state='narrative';const token=++epoch;stopBed();await playSequence(['JR_150','JR_151','JR_152'],token);if(token!==epoch)return;await playStandaloneSfx('audio/celebration-test/JR_152_clap.mp3',.72);if(token!==epoch)return;await playSequence(['JR_153','JR_154'],token);if(token===epoch)arm('MUSIC',null,['JR_155','JR_156','JR_157'],musicSuccess);}
+async function startDanceTrack(){
+  const cue=cueEntry('JR_160');
+  if(!cue.file||typeof cue.volume!=='number'){setStatus('Dance music is missing. Please try again later.','error');return null;}
+  stopDanceTrack();danceAudio=new Audio(AUDIO_DIR+cue.file);danceAudio.preload='auto';setVol(danceAudio,cue.volume);
+  try{await danceAudio.play();return danceAudio;}catch(e){stopDanceTrack();setStatus('Dance music could not play. Please try again.','error');return null;}
+}
+function waitForDanceTime(track,seconds,token){
+  return new Promise(resolve=>{
+    const timer=setInterval(()=>{
+      if(token!==epoch||danceAudio!==track||track.error){clearInterval(timer);resolve(false);return;}
+      if(track.ended||track.currentTime>=seconds){clearInterval(timer);resolve(true);}
+    },25);
+  });
+}
+async function danceVoice(track,id){
+  const full=cueEntry('JR_160').volume;setVol(track,full*.60);
+  await playCue(id);
+  if(danceAudio===track&&!track.ended)setVol(track,full);
+}
+async function freezeFor(id,token){
+  const started=performance.now();await playCue(id);
+  const remaining=3000-(performance.now()-started);if(remaining>0)await wait(remaining);
+  return token===epoch;
+}
+async function danceRound(callCue,animalCue,freezeCue,token){
+  if(token!==epoch)return false;
+  const track=await startDanceTrack();if(!track)return false;await danceVoice(track,callCue);
+  if(!await waitForDanceTime(track,10,token))return false;
+  playOverlayCue(animalCue,.55);
+  if(!await waitForDanceTime(track,20,token))return false;
+  stopDanceTrack();return freezeFor(freezeCue,token);
+}
+async function musicSuccess(){
+  setProgress(8);state='dance';expected=null;hideQuestion();const token=++epoch;
+  await playOverlayCueAndWait('JR_158',.35);await wait(150);if(token!==epoch)return;await playCue('JR_159');if(token!==epoch)return;
+  setStatus('Dance party!');stopBed();
+  if(!await danceRound('JR_161','JR_162','JR_163',token))return;
+  if(!await danceRound('JR_164','JR_165','JR_166',token))return;
+  const track=await startDanceTrack();if(!track)return;await danceVoice(track,'JR_167');
+  if(!await waitForDanceTime(track,10,token))return;
+  await danceVoice(track,'JR_168');await playCue('JR_169');
+  if(!await waitForDanceTime(track,20,token))return;
+  stopDanceTrack();await playCue('JR_170');
+  await playSequence(['JR_171','JR_172'],token);if(token!==epoch)return;
+  await wait(500);if(token!==epoch)return;
+  await playCue('JR_173');await wait(2000);if(token!==epoch)return;
+  await playSequence(['JR_174','JR_175','JR_176','JR_177','JR_178'],token);if(token!==epoch)return;
+  state='done';$('sceneLabel').textContent='Mission complete';setStatus('Mission complete. Bye-bye, Captain!');stopBed();
+  if(window._jrWake){try{await window._jrWake.release();}catch(e){}window._jrWake=null;}
+}
+
+function handleScan(raw){const uid=norm(raw),card=uidToCard[uid]||raw;if(!uid)return;log(`scan ${uid} → ${card}`);if(fuelGagOpen&&card==='FUEL'){fuelGagOpen=false;playSequence(['JR_019','JR_020'],epoch).then(elephantScene);return;}acceptCard(card,'reader');}
+const guardedScan=window.ScanGuard?ScanGuard.wrap(handleScan):handleScan;
+window.addEventListener('keydown',e=>{if(e.key==='Enter'){e.preventDefault();const v=inputBuffer;inputBuffer='';if(v)guardedScan(v);}else if(e.key.length===1)inputBuffer+=e.key;});
+document.addEventListener('click',e=>{const b=e.target.closest('button');if(b)setTimeout(()=>b.blur(),0);});
+function loadCards(){try{uidToCard=JSON.parse(localStorage.getItem('rescueGameCards')||'{}');}catch(e){uidToCard={};}Object.entries(DEFAULT_UIDS).forEach(([u,c])=>{if(!uidToCard[u])uidToCard[u]=c;});}
+function begin(modeName){unlockAudio();mode=modeName;loadCards();if(window.StoryIntro){StoryIntro.show({key:STORY_KEY,title:'Jungle Rescue English',minutes:9,cards:CARD_ORDER.map(id=>({icon:CARD_INFO[id].icon,label:CARD_INFO[id].label})),activities:['Pull an imaginary rope','Drink real water during the Water break','Hum along with Coco','Dance and freeze'],onStart:screenOrReaderStart});}else screenOrReaderStart();}
+$('readerMode').onclick=()=>begin('reader');$('screenMode').onclick=()=>begin('screen');
+$('nextCue').onclick=advanceCue;
+if(DEV_MODE)$('nextCue').classList.remove('hide');
+</script>
+</body>
+</html>

@@ -1,0 +1,3 @@
+name: Fewer taps (2 biscuit bites)
+note: Card-frequency experiment — the middle two biscuit taps (group #more-bites) are dropped, so the elephant is fed in two bites instead of four.
+exclude: more-bites

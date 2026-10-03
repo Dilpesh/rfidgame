@@ -1,0 +1,10 @@
+{
+  "text": "[worried but gentle] कोको... मैं यहाँ रास्ता भूल गया हूँ। और यहाँ इतना अँधेरा है कि मुझे अपनी पूँछ भी दिखाई नहीं दे रही!",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+    "stability": 0.44,
+    "similarity_boost": 0.78,
+    "style": 0.3,
+    "use_speaker_boost": true
+  }
+}

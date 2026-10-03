@@ -1,0 +1,7 @@
+{
+  "text": "Close, recognizable small rugged 4x4 rescue jeep driving slowly on a gravel jungle track. Hear a chunky low petrol engine motor running steadily with subtle mechanical rattle, tires crunching dirt and stones, then a gentle brake and engine ignition switched off. One coherent vehicle movement for about four seconds. Realistic jeep, not a generic passing car, no honk, voices, music, crash or cartoon boing.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 4.0,
+  "prompt_influence": 0.8,
+  "loop": false
+}

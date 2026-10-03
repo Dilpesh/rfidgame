@@ -1,0 +1,101 @@
+# Find & Tap — ported from find-and-tap.src.html (the base64 build in docs/find-and-tap/).
+# Same fifteen human-voice clips (audio_human/) and the same background loop; the game asks
+# for the eight cards in a random order, praises with one of two lines, and ends with the outro.
+# What changed on purpose: a card that does not come is asked for again at 8 / 17 / 28 s
+# (the old game had a Replay button instead), and wrong-card lines rotate rather than pick at random.
+
+title: Find & Tap
+key: find-and-tap
+language: en
+minutes: 3
+audio: audio/
+cache: ft-1
+hints at: 8s 17s 28s
+tap sound: @lib:tap             # a soft tick when a card is tapped while Coco is still talking
+voices: NARRATOR=luvvoice (human English)
+activities: Look around the room for the card that is asked for
+
+card RED: 🔴 Red
+card BLUE: 🔵 Blue
+card YELLOW: 🟡 Yellow
+card GREEN: 🟢 Green
+card CIRCLE: ⚪ Circle
+card SQUARE: 🟦 Square
+card TRIANGLE: 🔺 Triangle
+card STAR: ⭐ Star
+
+
+== block praise
+one of:
+  NARRATOR [delighted] @correct_1 #praise: Yay! You found it! Great job!
+  NARRATOR [delighted] @correct_2 #praise: Wonderful! That's exactly right!
+
+
+== scene: Find them all
+bed background_music @bg_loop @0.16
+NARRATOR [bright, inviting] @intro: Hi there! Let's play a fun finding game! Listen carefully, and go find the card I ask for.
+shuffle:
+  group:
+    ask RED
+      prompt NARRATOR @card_red: Can you find something that is red?
+      hint NARRATOR @card_red: Can you find something that is red?
+      hint NARRATOR @card_red: Can you find something that is red?
+      hint NARRATOR @card_red: Can you find something that is red?
+    use praise
+  group:
+    ask BLUE
+      prompt NARRATOR @card_blue: Now, find something blue!
+      hint NARRATOR @card_blue: Now, find something blue!
+      hint NARRATOR @card_blue: Now, find something blue!
+      hint NARRATOR @card_blue: Now, find something blue!
+    use praise
+  group:
+    ask YELLOW
+      prompt NARRATOR @card_yellow: Look around... can you find something yellow?
+      hint NARRATOR @card_yellow: Look around... can you find something yellow?
+      hint NARRATOR @card_yellow: Look around... can you find something yellow?
+      hint NARRATOR @card_yellow: Look around... can you find something yellow?
+    use praise
+  group:
+    ask GREEN
+      prompt NARRATOR @card_green: Where is something green? Go find it!
+      hint NARRATOR @card_green: Where is something green? Go find it!
+      hint NARRATOR @card_green: Where is something green? Go find it!
+      hint NARRATOR @card_green: Where is something green? Go find it!
+    use praise
+  group #shape:
+    ask CIRCLE
+      prompt NARRATOR @card_circle: Can you find the circle?
+      hint NARRATOR @card_circle: Can you find the circle?
+      hint NARRATOR @card_circle: Can you find the circle?
+      hint NARRATOR @card_circle: Can you find the circle?
+    use praise
+  group #shape:
+    ask SQUARE
+      prompt NARRATOR @card_square: Now let's find the square!
+      hint NARRATOR @card_square: Now let's find the square!
+      hint NARRATOR @card_square: Now let's find the square!
+      hint NARRATOR @card_square: Now let's find the square!
+    use praise
+  group #shape:
+    ask TRIANGLE
+      prompt NARRATOR @card_triangle: Where is the triangle? Go find it!
+      hint NARRATOR @card_triangle: Where is the triangle? Go find it!
+      hint NARRATOR @card_triangle: Where is the triangle? Go find it!
+      hint NARRATOR @card_triangle: Where is the triangle? Go find it!
+    use praise
+  group #shape:
+    ask STAR
+      prompt NARRATOR @card_star: Can you find the star?
+      hint NARRATOR @card_star: Can you find the star?
+      hint NARRATOR @card_star: Can you find the star?
+      hint NARRATOR @card_star: Can you find the star?
+    use praise
+bed stop
+NARRATOR [proud, warm] @outro: Wow, you found everything! You are amazing! Great job today!
+
+
+== wrong card
+NARRATOR [kind] @retry_1: Hmm, not quite. Try again!
+--
+NARRATOR [kind] @retry_2: Almost! Look one more time!

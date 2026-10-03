@@ -1,0 +1,10 @@
+{
+  "text": "[warm and reassuring; the lion still feels cold inside] रोशनी में Lion King को अपनी गुफा दिख गई। कोको उन्हें अंदर ले गया, लेकिन Lion King को अब भी बहुत ठंड लग रही थी।",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+    "stability": 0.56,
+    "similarity_boost": 0.78,
+    "style": 0.12,
+    "use_speaker_boost": true
+  }
+}

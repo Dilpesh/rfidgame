@@ -1,0 +1,10 @@
+{
+  "text": "[hushed and adventurous] रेस्क्यू जीप घने जंगलों के बीच आकर रुकी। सूरज ढल चुका था और पेड़-पौधे अँधेरे में अजीब साए जैसे लग रहे थे।",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+    "stability": 0.56,
+    "similarity_boost": 0.78,
+    "style": 0.12,
+    "use_speaker_boost": true
+  }
+}

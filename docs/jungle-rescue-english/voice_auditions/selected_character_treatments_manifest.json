@@ -1,0 +1,36 @@
+{
+  "purpose": "Character-voice treatment auditions only; not final JR_NNN cues",
+  "cast": {
+    "ELEPHANT": {
+      "voice": "Vardan",
+      "voice_id": "bBG9wwa23659EgIkMbc1"
+    },
+    "LION": {
+      "voice": "Bholu",
+      "voice_id": "5krdMTA5HonvWAlY2vSx"
+    }
+  },
+  "roles": {
+    "ELEPHANT": {
+      "source_file": "elephant_vardan_playful.mp3",
+      "treated_file": "elephant_vardan_character.mp3",
+      "duration_seconds": 12.696,
+      "integrated_lufs": -15.6,
+      "true_peak_dbfs": -1.5,
+      "filter": "[0:a]asplit=2[clear0][body0];[clear0]asetrate=43218,aresample=44100,atempo=1.020408,highpass=f=105,equalizer=f=650:t=q:w=1:g=2.5,equalizer=f=950:t=q:w=1:g=2.5,equalizer=f=2500:t=q:w=0.9:g=2[clear];[body0]asetrate=37485,aresample=44100,atempo=1.176471,highpass=f=380,lowpass=f=1050,volume=0.20[body];[clear][body]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=11,alimiter=limit=0.95[out]",
+      "animal_call_file": "audio_candidates/old_sfx_elephant.mp3",
+      "context_preview_file": "elephant_vardan_character_with_call.mp3"
+    },
+    "LION": {
+      "source_file": "lion_bholu.mp3",
+      "treated_file": "lion_bholu_character.mp3",
+      "duration_seconds": 28.447,
+      "integrated_lufs": -15.9,
+      "true_peak_dbfs": -2.3,
+      "filter": "[0:a]asplit=2[clear0][throat0];[clear0]highpass=f=120,equalizer=f=630:t=q:w=1:g=1.5,equalizer=f=2400:t=q:w=0.9:g=2[clear];[throat0]asetrate=41454,aresample=44100,atempo=1.06383,highpass=f=420,lowpass=f=1500,volume=2,asoftclip=type=tanh:threshold=0.35:oversample=4,volume=0.11[throat];[clear][throat]amix=inputs=2:duration=first:normalize=0,loudnorm=I=-16:TP=-1.5:LRA=11,alimiter=limit=0.95[out]",
+      "animal_call_file": "lion_cub_soft_call.mp3",
+      "context_preview_file": null
+    }
+  },
+  "note": "The clear speech stays dominant. Listen on the child's phone speaker before approving treatment. Animal call clips are separate from words in production."
+}

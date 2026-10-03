@@ -1,0 +1,7 @@
+games/_parity/
+stories/_parity/
+__pycache__/
+.DS_Store
+library/raw/
+games/*/audio/raw/
+library/names/*/raw/

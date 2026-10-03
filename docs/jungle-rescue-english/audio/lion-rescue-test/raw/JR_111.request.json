@@ -1,0 +1,10 @@
+{
+  "text": "[confident, then uncertain] फ़िक्र मत करो! मैं ढूँढता हूँ आपकी पूँछ।",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+  }
+}

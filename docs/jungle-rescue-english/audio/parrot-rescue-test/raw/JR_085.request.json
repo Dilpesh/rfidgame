@@ -1,0 +1,7 @@
+{
+  "text": "A small first aid kit clicks open, soft rustle of a clean bandage being taken out. Gentle, tidy and reassuring. No sparkle, no voices, no music.",
+  "model_id": "eleven_text_to_sound_v2",
+  "duration_seconds": 1.4,
+  "prompt_influence": 0.8,
+  "loop": false
+}
