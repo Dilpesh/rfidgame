@@ -1029,5 +1029,65 @@
   "duration_seconds": 4.36,
   "integrated_lufs": -16.3,
   "true_peak_dbfs": -2.4
+ },
+ "BOBO_BIRTHDAY_S02_101_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Yum! Yummy banana!",
+  "performance_tag": "[excited]",
+  "review_status": "test",
+  "generated": "2026-10-03",
+  "file": "generated/BOBO_BIRTHDAY_S02_101_COCO.mp3",
+  "duration_seconds": 2.27,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -4.1
+ },
+ "BOBO_BIRTHDAY_S02_102_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "अब आई ना असली birthday energy!",
+  "performance_tag": "[excited]",
+  "review_status": "test",
+  "generated": "2026-10-03",
+  "file": "generated/BOBO_BIRTHDAY_S02_102_COCO.mp3",
+  "duration_seconds": 2.12,
+  "integrated_lufs": -16.0,
+  "true_peak_dbfs": -3.8
+ },
+ "BOBO_BIRTHDAY_S04_103_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Happy birthday to you! Happy birthday, dear Bobo!",
+  "performance_tag": "[singing to the Happy Birthday tune]",
+  "review_status": "test",
+  "generated": "2026-10-03",
+  "file": "generated/BOBO_BIRTHDAY_S04_103_COCO.mp3",
+  "duration_seconds": 7.08,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.3
  }
 }

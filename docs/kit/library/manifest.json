@@ -1,5 +1,5 @@
 {
- "version": "lib-2026-10-03a",
+ "version": "lib-2026-10-03b",
  "clips": {
   "tap": {
    "type": "sfx",
@@ -2228,6 +2228,84 @@
    "file": "music/dance_loop_phone.mp3",
    "source": "games/bobo-birthday/audio/sfx-in/dance_loop_phone.mp3",
    "duration_seconds": 20.036
+  },
+  "praise_correct_choice": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Correct choice, Captain!",
+   "performance_tag": "[pleased, clear]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "voice/praise_correct_choice.mp3",
+   "duration_seconds": 1.65,
+   "integrated_lufs": -16.2,
+   "true_peak_dbfs": -2.5,
+   "name_text": "Correct choice, {name}!",
+   "description": "name line (Captain version): Correct choice, Captain!",
+   "tags": [
+    "name",
+    "captain"
+   ]
+  },
+  "praise_bilkul_sahi": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "बिल्कुल सही, Captain!",
+   "performance_tag": "[warm, proud]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "voice/praise_bilkul_sahi.mp3",
+   "duration_seconds": 2.04,
+   "integrated_lufs": -16.1,
+   "true_peak_dbfs": -2.4,
+   "name_text": "बिल्कुल सही, {name}!",
+   "description": "name line (Captain version): बिल्कुल सही, Captain!",
+   "tags": [
+    "name",
+    "captain"
+   ]
+  },
+  "goodbye": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "अगली story में फिर मिलेंगे, Captain!",
+   "performance_tag": "[warm, waving]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "voice/goodbye.mp3",
+   "duration_seconds": 2.93,
+   "integrated_lufs": -16.1,
+   "true_peak_dbfs": -2.3,
+   "name_text": "अगली story में फिर मिलेंगे, {name}!",
+   "description": "name line (Captain version): अगली story में फिर मिलेंगे, Captain!",
+   "tags": [
+    "name",
+    "captain"
+   ]
   }
  }
 }

@@ -20,9 +20,6 @@ import copy, json, os, re, sys
 HERE = os.path.dirname(os.path.abspath(__file__))          # docs/kit/tools
 KIT = os.path.abspath(os.path.join(HERE, '..'))             # docs/kit
 REPO = os.path.abspath(os.path.join(KIT, '..', '..'))       # the repo root: only cards.json is read from here
-STANDARDS = os.path.join(KIT, 'standards.txt')              # the kit's standard blocks (praise, goodbye)
-BYE_RE = re.compile(r'bye-bye|फिर मिलेंगे', re.I)
-ACK_MAX_WORDS = 8          # words between a card tap and its praise: say the card, praise, then the story
 
 TIME_RE = re.compile(r'^(\d+(?:\.\d+)?)(ms|s|m)$')
 SPEAKER_RE = re.compile(r'^([A-Z][A-Z0-9_]*)(\s+.*?)?:\s(.*)$')   # COCO [tag] @id #tag: text
@@ -599,57 +596,6 @@ def lint_names(story, durations):
 COUNT_WORDS = re.compile(r'\b(\d+|एक|दो|तीन|चार|पाँच|पांच|छह|सात|आठ|नौ|दस)\s+(cards?|कार्ड|animals?|दोस्त|friends?|stops?)\b', re.I)
 
 
-def standard_lines(story, body):
-    """The standards.txt blocks this story needs: every block it uses but does not define, plus
-    goodbye unless it is off or the story already says goodbye. Line numbers are offset by 9000
-    so a warning on one of them reads "line 90xx" (= standards.txt line xx)."""
-    if not os.path.exists(STANDARDS):
-        return [], False
-    own = {c[3:].strip()[6:].strip() for _, _, c in body if c.lower().startswith('== block ')}
-    used = {c.split()[1] for _, _, c in body if c.split()[0] == 'use' and len(c.split()) > 1}
-    scenes = [k for k, (_, _, c) in enumerate(body) if c.lower().startswith('== scene:')]
-    last = []
-    if scenes:
-        for _, _, c in body[scenes[-1] + 1:]:
-            if c.startswith('== '): break
-            last.append(c)
-    goodbye = (story.meta.get('goodbye', 'on').lower() not in ('off', 'no', 'false')
-               and not any(BYE_RE.search(c) for c in last))
-    if goodbye: used.add('goodbye')
-    if not goodbye and 'goodbye' not in own and story.meta.get('goodbye', 'on').lower() == 'on':
-        story.notes.append('standard goodbye skipped: the last scene already says goodbye')
-    want = used - own
-    out, keep = [], False
-    for ln, ind, c in split_lines(open(STANDARDS, encoding='utf-8').read()):
-        if c.startswith('== '):
-            keep = c.lower().startswith('== block ') and c[9:].strip() in want
-        if keep:
-            out.append((9000 + ln, ind, c))
-    return out, goodbye
-
-
-def lint_ack_order(story):
-    """After a card is accepted: the card word first, then praise, then the story. Many words
-    before the praise means the praise lands late (the banana line in Bobo, 3 Oct)."""
-    for s in story.scenes:
-        beats = s['beats']
-        for k, b in enumerate(beats):
-            if b.get('op') != 'ask':
-                continue
-            words, first = 0, None
-            for x in beats[k + 1:]:
-                if x.get('op') == 'ask':
-                    break
-                if x.get('op') == 'group' and x.get('block') in ('praise', 'praise_action'):
-                    if words > ACK_MAX_WORDS:
-                        story.warnings.append(f'line {first}: {words} words between the {b["card"]} tap and the praise '
-                                              f'(limit {ACK_MAX_WORDS}) — say the card ("YES! Banana!"), praise, then the rest')
-                    break
-                if x.get('op') in ('say', 'duck'):
-                    first = first or x['line']
-                    words += len([w for w in x['text'].split() if any(ch.isalpha() for ch in w)])
-
-
 def lint(story, errors):
     """The STORY_CRAFT rules that a machine can check. Warnings, not errors, unless noted."""
     # The story as the child hears it: every scene in order, groups opened up.
@@ -696,16 +642,6 @@ def lint(story, errors):
                 errors.append(f'{cid}: name line not recorded yet — python3 docs/kit/tools/names.py captain (see library/names/README.md)')
             else:
                 errors.append(f'{cid}: not in docs/kit/library/manifest.json (python3 docs/kit/tools/library.py find <words>)')
-    # One clip id must mean one line. An auto id can land on an id a pinned line already uses
-    # (ids are numbered by position); the second line would silently play the first line's audio.
-    texts = {}
-    walk([b for s in story.scenes for b in s['beats']] + [b for v in story.wrong for b in v],
-         lambda b: texts.setdefault(b['cue'], set()).add(b['text'])
-         if b.get('op') in ('say', 'duck') and b.get('cue') and not b['cue'].startswith('lib:') else None)
-    for cid, t in texts.items():
-        if len(t) > 1:
-            errors.append(f'{cid}: one clip id for {len(t)} different lines ({" / ".join(sorted(x[:30] for x in t))}) — '
-                          f'pin the new line to a fresh id (@{cid.rsplit("_", 2)[0]}_1NN_…) or the old audio plays under it')
     if not story.wrong:
         errors.append('no "== wrong card" section: the engine needs at least one warm wrong-card response')
     if not story.scenes:
@@ -730,14 +666,7 @@ def compile_story(path, variants_dir=None, durations=None):
         raise CompileError('header needs "title:"')
     if not story.cards:
         raise CompileError('header needs at least one "card NAME: icon Label" line')
-    std, goodbye = standard_lines(story, lines[body_start:])
-    if std:
-        parse_body(story, std)                 # standard blocks first, so "use praise" finds them
     parse_body(story, lines[body_start:])
-    if goodbye and story.scenes and 'goodbye' in story.blocks:
-        story.scenes[-1]['beats'].append({'op': 'group', 'tags': [], 'block': 'goodbye',
-                                          'beats': copy.deepcopy(story.blocks['goodbye']), 'line': 9000})
-    lint_ack_order(story)
 
     for cid in story.auto_ids:
         if cid in story.clips: story.clips[cid]['auto'] = True

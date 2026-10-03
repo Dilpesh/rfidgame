@@ -33,14 +33,36 @@
   "missing": false
  },
  {
-  "id": "lib:praise_right",
+  "id": "lib:praise_correct_choice",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "You are absolutely right, Captain!",
+  "text": "Correct choice, Captain!",
   "emotion": "pleased, clear",
   "scene": 0,
   "library": true,
-  "nameText": "You are absolutely right, {name}!",
+  "nameText": "Correct choice, {name}!",
+  "missing": false
+ },
+ {
+  "id": "lib:praise_bilkul_sahi",
+  "kind": "speech",
+  "speaker": "COCO",
+  "text": "बिल्कुल सही, Captain!",
+  "emotion": "warm, proud",
+  "scene": 0,
+  "library": true,
+  "nameText": "बिल्कुल सही, {name}!",
+  "missing": false
+ },
+ {
+  "id": "lib:goodbye",
+  "kind": "speech",
+  "speaker": "COCO",
+  "text": "अगली story में फिर मिलेंगे, Captain!",
+  "emotion": "warm, waving",
+  "scene": 0,
+  "library": true,
+  "nameText": "अगली story में फिर मिलेंगे, {name}!",
   "missing": false
  },
  {
@@ -200,10 +222,20 @@
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S02_014_COCO",
+  "id": "BOBO_BIRTHDAY_S02_101_COCO",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "Yum! Yummy banana! अब आई ना असली birthday energy!",
+  "text": "Yum! Yummy banana!",
+  "emotion": "excited",
+  "scene": 2,
+  "library": false,
+  "missing": false
+ },
+ {
+  "id": "BOBO_BIRTHDAY_S02_102_COCO",
+  "kind": "speech",
+  "speaker": "COCO",
+  "text": "अब आई ना असली birthday energy!",
   "emotion": "excited",
   "scene": 2,
   "library": false,
@@ -275,7 +307,6 @@
   "emotion": "excited, inviting",
   "scene": 3,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -322,7 +353,6 @@
   "emotion": "warm, slow",
   "scene": 3,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -381,7 +411,6 @@
   "emotion": "listing, building up",
   "scene": 4,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -495,14 +524,13 @@
   "emotion": "inviting",
   "scene": 4,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S04_040_COCO",
+  "id": "BOBO_BIRTHDAY_S04_103_COCO",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "Happy birthday, Bobo~ Happy birthday, Bobo~",
+  "text": "Happy birthday to you! Happy birthday, dear Bobo!",
   "emotion": "singing to the Happy Birthday tune",
   "scene": 4,
   "library": false,
@@ -546,7 +574,6 @@
   "emotion": "proud, big finish",
   "scene": 5,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {

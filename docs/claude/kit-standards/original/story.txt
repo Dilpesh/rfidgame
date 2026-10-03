@@ -20,8 +20,12 @@ card CLAP: 👏 Clap
 
 # The name rules (tools/FORMAT.md): write to the child gender-neutral; {name} only in
 # short independent lines (praise, "{name}, देखो!"); the child named at least every 60 s.
-# "use praise" / "use praise_action" come from docs/kit/standards.txt (recorded once, shared by every story).
-# Define your own "== block praise" here only if this story needs a different pool.
+== block praise
+one of:
+  COCO [warm, proud] #praise: Amazing, {name}!
+  COCO [bright] #praise: Good job, {name}!
+  COCO [delighted] #praise: Excellent work, {name}!
+  COCO [pleased, clear] #praise: You are absolutely right, {name}!
 
 
 == scene: Opening

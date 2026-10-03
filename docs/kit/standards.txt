@@ -1,0 +1,25 @@
+# docs/kit/standards.txt — the kit's standard blocks. compile.py adds a block from here to a story
+# when the story uses it (or, for goodbye, at the end of every story) and does not define its own
+# block with the same name. Edit a line here and every story picks it up on its next build.
+# Every line here is a library line (@lib:…), so it is recorded once for all stories.
+
+# Praise after a puzzle answer — "card word first, then this, then what changed in the story".
+== block praise
+one of:
+  COCO [warm, proud] @lib:praise_amazing #praise: Amazing, {name}!
+  COCO [bright] @lib:praise_good_job #praise: Good job, {name}!
+  COCO [delighted] @lib:praise_excellent #praise: Excellent work, {name}!
+  COCO [pleased, clear] @lib:praise_correct_choice #praise: Correct choice, {name}!
+  COCO [warm, proud] @lib:praise_bilkul_sahi #praise: बिल्कुल सही, {name}!
+
+# Praise after an action (wearing a cap, drinking water) — nothing about being "right".
+== block praise_action
+one of:
+  COCO [warm, proud] @lib:praise_amazing #praise: Amazing, {name}!
+  COCO [bright] @lib:praise_good_job #praise: Good job, {name}!
+  COCO [delighted] @lib:praise_excellent #praise: Excellent work, {name}!
+
+# The last thing every story says. Skipped when the story's last scene already says goodbye
+# (bye-bye / फिर मिलेंगे) or the header says "goodbye: off".
+== block goodbye
+COCO [warm, waving] @lib:goodbye: अगली story में फिर मिलेंगे, {name}!

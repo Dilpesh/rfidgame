@@ -18,8 +18,6 @@
 #   (banana-energy line and "Hands up in the air!" removed).
 #   Dance music: dance_loop_phone (Dance C — phone EQ, full volume), picked 3 Oct; confirm on more OnePlus phones.
 #   Candle line: "five साल / five candles" → "चलो, Bobo के साथ candles बुझाते हैं — ज़ोर से फूँक मारो!"
-#   Final polish (3 Oct, proposal): praise pool — "You are absolutely right" out, "Correct choice" + "बिल्कुल सही" in;
-#   banana ack → praise → energy line; candle wait 1.5 → 0.8 s; song lyric fits the tune; goodbye from the kit standard.
 # Hindi in Devanagari, English words in Latin (what ElevenLabs reads reliably); nothing reworded.
 # Where a sentence with the name sits inside a longer speech it is its own line, so only that
 # sentence is a per-child clip. Format: tools/FORMAT.md
@@ -44,7 +42,20 @@ card PARTYCAP: 🥳 Birthday cap say=cap|टोपी
 card SPEAKER: 🔊 Speaker = MUSIC say=speaker|music
 
 
-# Praise blocks come from docs/kit/standards.txt (praise, praise_action); the goodbye too.
+== block praise
+one of:
+  COCO [warm, proud] @lib:praise_amazing #praise: Amazing, {name}!
+  COCO [bright] @lib:praise_good_job #praise: Good job, {name}!
+  COCO [delighted] @lib:praise_excellent #praise: Excellent work, {name}!
+  COCO [pleased, clear] @lib:praise_right #praise: You are absolutely right, {name}!
+
+
+# Praise after an ACTION (wearing the cap) — no "You are absolutely right", which only fits a puzzle answered.
+== block praise_action
+one of:
+  COCO [warm, proud] @lib:praise_amazing #praise: Amazing, {name}!
+  COCO [bright] @lib:praise_good_job #praise: Good job, {name}!
+  COCO [delighted] @lib:praise_excellent #praise: Excellent work, {name}!
 
 
 == scene: Mission setup
@@ -71,9 +82,8 @@ ask BANANA
   hint COCO [kind] @BOBO_BIRTHDAY_S02_012_COCO: Banana वाला card — पीला, लंबा केला।
   hint COCO [kind, clear] @BOBO_BIRTHDAY_S02_013_COCO: Banana वाला card tap करो!
 sfx biscuit_crunch
-COCO [excited] @BOBO_BIRTHDAY_S02_101_COCO #praise: Yum! Yummy banana!
+COCO [excited] @BOBO_BIRTHDAY_S02_014_COCO #praise: Yum! Yummy banana! अब आई ना असली birthday energy!
 use praise
-COCO [excited] @BOBO_BIRTHDAY_S02_102_COCO: अब आई ना असली birthday energy!
 
 
 == scene: Candles & wearing the birthday cap
@@ -85,14 +95,14 @@ ask CANDLE
 sfx candle_pop_flame
 COCO [excited] @BOBO_BIRTHDAY_S03_019_COCO #praise: Yes! Candle!
 use praise
-COCO [excited, inviting] @BOBO_BIRTHDAY_S03_001_COCO: चलो, Bobo के साथ candles बुझाते हैं — ज़ोर से फूँक मारो!
-wait 0.8s
+COCO [excited, inviting]: चलो, Bobo के साथ candles बुझाते हैं — ज़ोर से फूँक मारो!
+wait 1.5s
 sfx blow_candles_out
 COCO [delighted] @BOBO_BIRTHDAY_S03_022_COCO: Poof! सारी candles बुझ गईं!
 sfx cap_flies_off_2
 COCO [surprised, laughing] @BOBO_BIRTHDAY_S03_023_COCO #joke: अरे! इतनी ज़ोर की फूँक… मेरी cap उड़ गई! Woooosh!
 wait 1.5s
-COCO [warm, slow] @BOBO_BIRTHDAY_S03_002_COCO: देखो, table पर एक real Birthday Cap रखी है! उसे उठाओ और सर पर पहन लो!
+COCO [warm, slow]: देखो, table पर एक real Birthday Cap रखी है! उसे उठाओ और सर पर पहन लो!
 wait 3s
 ask PARTYCAP
   prompt COCO [bright] @BOBO_BIRTHDAY_S03_025_COCO: अब जल्दी से table पर रखे Birthday Cap Card को भी tap कर दो!
@@ -104,7 +114,7 @@ use praise_action
 
 
 == scene: Speaker, dance & birthday song
-COCO [listing, building up] @BOBO_BIRTHDAY_S04_003_COCO: वाह, party लगभग ready है! पर party में और क्या चाहिए, जिससे सब dance करें? धन-टना-टन… Music!
+COCO [listing, building up]: वाह, party लगभग ready है! पर party में और क्या चाहिए, जिससे सब dance करें? धन-टना-टन… Music!
 ask SPEAKER
   prompt COCO [playful, riddling] @BOBO_BIRTHDAY_S04_030_COCO: जिससे loud आवाज़ में birthday music बजता है… वो कौनसा card है?
   hint COCO [bright, revealing] @BOBO_BIRTHDAY_S04_031_COCO: जल्दी से Speaker Card को tap करो!
@@ -121,8 +131,8 @@ music at 19s
 music stop
 sfx music_end_flourish
 bed birthday_bg @0.25
-COCO [inviting] @BOBO_BIRTHDAY_S04_004_COCO: चलो, Bobo को birthday wish करके clap करते हैं!
-COCO [singing to the Happy Birthday tune] @BOBO_BIRTHDAY_S04_103_COCO #action: Happy birthday to you! Happy birthday, dear Bobo!
+COCO [inviting]: चलो, Bobo को birthday wish करके clap करते हैं!
+COCO [singing to the Happy Birthday tune] @BOBO_BIRTHDAY_S04_040_COCO #action: Happy birthday, Bobo~ Happy birthday, Bobo~
 sfx clap_five
 COCO [calling, rhythmic] @BOBO_BIRTHDAY_S04_041_COCO #action: {name}, clap with me!
 sfx clap_five
@@ -132,7 +142,7 @@ bed stop
 
 == scene: Thank you & hero praise
 COCO [खुश होकर, warm] @BOBO_BIRTHDAY_S05_042_COCO: Thank you so much, {name}, for helping me plan Bobo's birthday!
-COCO [proud, big finish] @BOBO_BIRTHDAY_S05_005_COCO: What an amazing birthday party! You are such a hero!
+COCO [proud, big finish]: What an amazing birthday party! You are such a hero!
 together:
   sfx audience_cheer
   sfx fireworks

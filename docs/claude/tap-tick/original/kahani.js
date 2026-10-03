@@ -398,9 +398,6 @@ window.Kahani = (function () {
   }
   function acceptCard(card, source = 'reader') {
     if (state === 'done' || state === 'idle') return;
-    // Every tap is acknowledged with the same tick at once — right card, wrong card, reader or
-    // screen. An 'early' accept was already ticked when it was scanned (handleScan).
-    if (source !== 'early' && story.tapSound) playOverlayCue(story.tapSound, .5);
     if (state === 'question' && card === expected) {
       clearTimers(); stopForeground(); epoch++; state = 'success'; expected = null; hideQuestion();
       setStatus(`Accepted ${cardInfo(card).label}.`);
@@ -598,7 +595,6 @@ window.Kahani = (function () {
   async function boot(opts = {}) {
     if (typeof opts.story === 'string') { const r = await fetch(opts.story, { cache: 'no-store' }); story = await r.json(); } else story = opts.story;
     AUDIO_DIR = story.audioDir || 'audio/'; CACHE_TAG = story.cacheTag || 'v1'; LIB_DIR = story.libraryDir || '../../library/';
-    if (!story.tapSound) story.tapSound = 'lib:tap';   // the tap tick is part of the engine, not optional per story
     if (params.has('dev')) devMode = params.get('dev') !== '0'; else { try { devMode = localStorage.getItem(DEV_KEY) === '1'; } catch (e) {} }
     if (params.has('dev')) { try { localStorage.setItem(DEV_KEY, devMode ? '1' : '0'); } catch (e) {} }
     variantName = params.get('v') || '';

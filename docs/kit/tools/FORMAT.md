@@ -296,3 +296,15 @@ levelled to the standard) and adds it to the manifest; sounds are listed for
 clip the story needs with speaker, direction and text — the list the audio
 producer (or `tts/generate.py`) works from. Clips pinned with `@` to an
 existing manifest entry cost nothing.
+
+
+## Kit standards (docs/kit/standards.txt)
+
+Blocks every story gets without writing them: `praise`, `praise_action` (used with `use praise`) and
+`goodbye` (added at the very end of every story). A story that defines its own `== block praise` keeps
+its own. The goodbye is skipped when the last scene already says bye-bye / फिर मिलेंगे, or with
+`goodbye: off` in the header. All standard lines are library lines, recorded once.
+
+Two checks that came with them: more than 8 words between a card tap and its praise is a warning
+(say the card, praise, then the rest); two different lines on one clip id is an error — pin a new
+line in an edited story to a fresh id (`@KEY_S04_103_COCO`) rather than letting it take an auto id.
