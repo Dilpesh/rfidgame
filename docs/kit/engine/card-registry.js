@@ -33,7 +33,7 @@ window.CardRegistry = (function () {
   const KEY = 'kahaniCards';
 
   /* __CARD_REGISTRY_START__ */
-const SEED_VERSION = "2026-10-02a";
+const SEED_VERSION = "2026-10-03a";
 const DEFAULT = {
   "6170247": "BALLOONS",
   "6358547": "BANANA",
@@ -41,15 +41,20 @@ const DEFAULT = {
   "6375388": "BLANKET",
   "88154103": "CAKE",
   "1778512553": "CANDLE",
+  "3395744772": "CAP",
+  "3842956061": "CAR",
   "6358348": "CLAP",
   "6373847": "DANCE",
   "6375198": "DISCOBALL",
+  "3400869124": "DOG",
+  "34545395": "ELEPHANT",
   "5688164": "FAN",
   "6374815": "FIRSTAID",
   "6359145": "FUEL",
   "6375007": "GEM",
   "6358746": "JUMP",
   "5688918": "KEY",
+  "3834713885": "KITCHEN",
   "5688805": "LADDER",
   "2681159": "LAUGH",
   "5687908": "LIGHT",
@@ -63,6 +68,7 @@ const DEFAULT = {
   "6374623": "ROPE",
   "6373651": "SNACK",
   "5720648": "SNACK",
+  "819771714": "SNACK",
   "2692483": "TORCH",
   "6375577": "TORCH",
   "2690428": "WATER",
@@ -75,7 +81,7 @@ const LABELS = {
   CAKE:       "Cake",
   CANDLE:     "Candle",
   CAP:        "Cap & Goggles",
-  CAR:        "Car",
+  CAR:        "Police car",
   CLAP:       "Clap",
   DANCE:      "Dance",
   DISCOBALL:  "Disco ball",

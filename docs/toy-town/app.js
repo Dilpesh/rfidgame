@@ -2,10 +2,11 @@ const $=id=>document.getElementById(id);
 const CARDS=[['key','🔑','KEY'],['light','💡','LIGHT'],['fan','🌀','FAN'],['water','💧','WATER'],['music','🎵','MUSIC'],['biscuit','🍪','BISCUIT']];
 /* ===== CARD UIDS - generated from cards.json by sync_cards.py, do not edit ===== */
 /* __CARD_UIDS_START__ */
-const SEED_VERSION = "2026-10-02a";
+const SEED_VERSION = "2026-10-03a";
 const DEFAULT_UIDS = {
   "5720648":   "biscuit",
   "6373651":   "biscuit",
+  "819771714": "biscuit",
   "5688164":   "fan",
   "5688918":   "key",
   "5687908":   "light",
