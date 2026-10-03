@@ -84,7 +84,7 @@
     "op": "sfx",
     "cue": "lib:boing",
     "tags": [],
-    "line": 151,
+    "line": 153,
     "channel": "fg",
     "wait": true
    },
@@ -94,7 +94,7 @@
     "speaker": "COCO",
     "text": "ओहो! ये वाला काम नहीं करेगा। Captain, एक और card try करो!",
     "tags": [],
-    "line": 152,
+    "line": 154,
     "emotion": "warm"
    }
   ],
@@ -103,7 +103,7 @@
     "op": "sfx",
     "cue": "lib:boing",
     "tags": [],
-    "line": 154,
+    "line": 156,
     "channel": "fg",
     "wait": true
    },
@@ -113,7 +113,7 @@
     "speaker": "COCO",
     "text": "ऊप्स! हमें कोई और चीज़ चाहिए। Captain, फिर से सोचो!",
     "tags": [],
-    "line": 155,
+    "line": 157,
     "emotion": "warm"
    }
   ],
@@ -122,7 +122,7 @@
     "op": "sfx",
     "cue": "lib:boing",
     "tags": [],
-    "line": 157,
+    "line": 159,
     "channel": "fg",
     "wait": true
    },
@@ -132,7 +132,7 @@
     "speaker": "COCO",
     "text": "हम्म... ये नहीं। Captain, दूसरा card try करो!",
     "tags": [],
-    "line": 158,
+    "line": 160,
     "emotion": "warm"
    }
   ]
@@ -147,7 +147,7 @@
      "op": "sfx",
      "cue": "lib:welcome_chime",
      "tags": [],
-     "line": 56,
+     "line": 62,
      "channel": "fg",
      "wait": true
     },
@@ -160,7 +160,7 @@
       "intro",
       "name"
      ],
-     "line": 57,
+     "line": 63,
      "emotion": "upbeat, welcoming",
      "name": true,
      "nameText": "Hey! Hi, {name}! मैं हूँ Coco और आज मेरे friend Bobo का birthday है। क्या तुम Bobo की birthday party arrange करने में मेरी help करोगे?"
@@ -168,7 +168,7 @@
     {
      "op": "wait",
      "ms": 1500,
-     "line": 58
+     "line": 64
     },
     {
      "op": "say",
@@ -176,7 +176,7 @@
      "speaker": "COCO",
      "text": "Great! तो चलो सबसे पहले party की सबसे yummy चीज़ ढूँढते हैं…",
      "tags": [],
-     "line": 59,
+     "line": 65,
      "emotion": "bright"
     },
     {
@@ -188,7 +188,7 @@
       "speaker": "COCO",
       "text": "कुछ ऐसा जो मीठा होता है, soft होता है, और birthday पर cut किया जाता है! उसका card ढूँढो और please tap करो!",
       "tags": [],
-      "line": 61,
+      "line": 67,
       "emotion": "playful, riddling"
      },
      "hints": [
@@ -198,7 +198,7 @@
        "speaker": "COCO",
        "text": "नहीं मिला? अरे, हम बात कर रहे हैं Cake की! जल्दी से Cake Card को tap करो!",
        "tags": [],
-       "line": 62,
+       "line": 68,
        "emotion": "bright, revealing"
       },
       {
@@ -207,7 +207,7 @@
        "speaker": "COCO",
        "text": "Cake वाला card ढूँढो — गोल cake, ऊपर cream वाला।",
        "tags": [],
-       "line": 63,
+       "line": 69,
        "emotion": "kind"
       },
       {
@@ -216,20 +216,20 @@
        "speaker": "COCO",
        "text": "Cake वाला card tap करो!",
        "tags": [],
-       "line": 64,
+       "line": 70,
        "emotion": "kind, clear"
       }
      ],
      "afterPrompt": [],
      "remind": null,
      "tags": [],
-     "line": 60
+     "line": 66
     },
     {
      "op": "sfx",
      "cue": "lib:magic_sparkle",
      "tags": [],
-     "line": 65,
+     "line": 71,
      "channel": "fg",
      "wait": true
     }
@@ -248,7 +248,7 @@
      "tags": [
       "praise"
      ],
-     "line": 69,
+     "line": 75,
      "emotion": "excited"
     },
     {
@@ -268,7 +268,7 @@
           "praise",
           "name"
          ],
-         "line": 41,
+         "line": 47,
          "emotion": "warm, proud",
          "name": true,
          "nameText": "Amazing, {name}!"
@@ -282,7 +282,7 @@
           "praise",
           "name"
          ],
-         "line": 42,
+         "line": 48,
          "emotion": "bright",
          "name": true,
          "nameText": "Good job, {name}!"
@@ -296,7 +296,7 @@
           "praise",
           "name"
          ],
-         "line": 43,
+         "line": 49,
          "emotion": "delighted",
          "name": true,
          "nameText": "Excellent work, {name}!"
@@ -310,16 +310,16 @@
           "praise",
           "name"
          ],
-         "line": 44,
+         "line": 50,
          "emotion": "pleased, clear",
          "name": true,
          "nameText": "You are absolutely right, {name}!"
         }
        ],
-       "line": 40
+       "line": 46
       }
      ],
-     "line": 70
+     "line": 76
     },
     {
      "op": "say",
@@ -329,7 +329,7 @@
      "tags": [
       "name"
      ],
-     "line": 71,
+     "line": 77,
      "emotion": "leaning in",
      "name": true,
      "nameText": "पर पता है {name}?"
@@ -340,7 +340,7 @@
      "speaker": "COCO",
      "text": "अगर Bobo और हम सिर्फ cake खाएँगे, तो tummy ache हो सकता है। Party में non-stop मस्ती और dance करने के लिए हमें super energy चाहिए!",
      "tags": [],
-     "line": 72,
+     "line": 78,
      "emotion": "explaining, playful"
     },
     {
@@ -352,7 +352,7 @@
       "speaker": "COCO",
       "text": "क्या तुम cards में से कोई ऐसा healthy food ढूँढ सकते हो जो हमें strong बनाए और super-energy दे?",
       "tags": [],
-      "line": 74,
+      "line": 80,
       "emotion": "inviting"
      },
      "hints": [
@@ -362,7 +362,7 @@
        "speaker": "COCO",
        "text": "ध्यान से देखो… yummy, healthy banana! Fast-fast Banana Card को tap करो और healthy power लो!",
        "tags": [],
-       "line": 75,
+       "line": 81,
        "emotion": "bright, revealing"
       },
       {
@@ -371,7 +371,7 @@
        "speaker": "COCO",
        "text": "Banana वाला card — पीला, लंबा केला।",
        "tags": [],
-       "line": 76,
+       "line": 82,
        "emotion": "kind"
       },
       {
@@ -380,20 +380,20 @@
        "speaker": "COCO",
        "text": "Banana वाला card tap करो!",
        "tags": [],
-       "line": 77,
+       "line": 83,
        "emotion": "kind, clear"
       }
      ],
      "afterPrompt": [],
      "remind": null,
      "tags": [],
-     "line": 73
+     "line": 79
     },
     {
      "op": "sfx",
      "cue": "lib:biscuit_crunch",
      "tags": [],
-     "line": 78,
+     "line": 84,
      "channel": "fg",
      "wait": true
     },
@@ -405,7 +405,7 @@
      "tags": [
       "praise"
      ],
-     "line": 79,
+     "line": 85,
      "emotion": "excited"
     },
     {
@@ -425,7 +425,7 @@
           "praise",
           "name"
          ],
-         "line": 41,
+         "line": 47,
          "emotion": "warm, proud",
          "name": true,
          "nameText": "Amazing, {name}!"
@@ -439,7 +439,7 @@
           "praise",
           "name"
          ],
-         "line": 42,
+         "line": 48,
          "emotion": "bright",
          "name": true,
          "nameText": "Good job, {name}!"
@@ -453,7 +453,7 @@
           "praise",
           "name"
          ],
-         "line": 43,
+         "line": 49,
          "emotion": "delighted",
          "name": true,
          "nameText": "Excellent work, {name}!"
@@ -467,16 +467,16 @@
           "praise",
           "name"
          ],
-         "line": 44,
+         "line": 50,
          "emotion": "pleased, clear",
          "name": true,
          "nameText": "You are absolutely right, {name}!"
         }
        ],
-       "line": 40
+       "line": 46
       }
      ],
-     "line": 80
+     "line": 86
     }
    ]
   },
@@ -494,7 +494,7 @@
       "speaker": "COCO",
       "text": "अब हमारा cake ready है! लेकिन birthday cake के ऊपर हम क्या लगाते हैं जिसे फूँक मारकर blow करते हैं?",
       "tags": [],
-      "line": 85,
+      "line": 91,
       "emotion": "curious, leading"
      },
      "hints": [
@@ -504,7 +504,7 @@
        "speaker": "COCO",
        "text": "Candle! जल्दी से Candle Card को tap करो!",
        "tags": [],
-       "line": 86,
+       "line": 92,
        "emotion": "bright, revealing"
       },
       {
@@ -513,7 +513,7 @@
        "speaker": "COCO",
        "text": "Candle वाला card — जलती हुई candle वाला।",
        "tags": [],
-       "line": 87,
+       "line": 93,
        "emotion": "kind"
       },
       {
@@ -522,20 +522,20 @@
        "speaker": "COCO",
        "text": "Candle वाला card tap करो!",
        "tags": [],
-       "line": 88,
+       "line": 94,
        "emotion": "kind, clear"
       }
      ],
      "afterPrompt": [],
      "remind": null,
      "tags": [],
-     "line": 84
+     "line": 90
     },
     {
      "op": "sfx",
      "cue": "lib:candle_pop_flame",
      "tags": [],
-     "line": 89,
+     "line": 95,
      "channel": "fg",
      "wait": true
     },
@@ -547,7 +547,7 @@
      "tags": [
       "praise"
      ],
-     "line": 90,
+     "line": 96,
      "emotion": "excited"
     },
     {
@@ -567,7 +567,7 @@
           "praise",
           "name"
          ],
-         "line": 41,
+         "line": 47,
          "emotion": "warm, proud",
          "name": true,
          "nameText": "Amazing, {name}!"
@@ -581,7 +581,7 @@
           "praise",
           "name"
          ],
-         "line": 42,
+         "line": 48,
          "emotion": "bright",
          "name": true,
          "nameText": "Good job, {name}!"
@@ -595,7 +595,7 @@
           "praise",
           "name"
          ],
-         "line": 43,
+         "line": 49,
          "emotion": "delighted",
          "name": true,
          "nameText": "Excellent work, {name}!"
@@ -609,45 +609,36 @@
           "praise",
           "name"
          ],
-         "line": 44,
+         "line": 50,
          "emotion": "pleased, clear",
          "name": true,
          "nameText": "You are absolutely right, {name}!"
         }
        ],
-       "line": 40
+       "line": 46
       }
      ],
-     "line": 91
+     "line": 97
     },
     {
      "op": "say",
-     "cue": "BOBO_BIRTHDAY_S03_020_COCO",
+     "cue": "BOBO_BIRTHDAY_S03_001_COCO",
      "speaker": "COCO",
-     "text": "Bobo five साल का हो गया, तो five candles!",
+     "text": "चलो, Bobo के साथ candles बुझाते हैं — ज़ोर से फूँक मारो!",
      "tags": [],
-     "line": 92,
-     "emotion": "bright, proud"
-    },
-    {
-     "op": "say",
-     "cue": "BOBO_BIRTHDAY_S03_021_COCO",
-     "speaker": "COCO",
-     "text": "Look! One, two, three, four… FIVE candles!",
-     "tags": [],
-     "line": 93,
-     "emotion": "excited, counting"
+     "line": 98,
+     "emotion": "excited, inviting"
     },
     {
      "op": "wait",
      "ms": 1500,
-     "line": 94
+     "line": 99
     },
     {
      "op": "sfx",
      "cue": "lib:blow_candles_out",
      "tags": [],
-     "line": 95,
+     "line": 100,
      "channel": "fg",
      "wait": true
     },
@@ -657,14 +648,14 @@
      "speaker": "COCO",
      "text": "Poof! सारी candles बुझ गईं!",
      "tags": [],
-     "line": 96,
+     "line": 101,
      "emotion": "delighted"
     },
     {
      "op": "sfx",
      "cue": "lib:cap_flies_off_2",
      "tags": [],
-     "line": 97,
+     "line": 102,
      "channel": "fg",
      "wait": true
     },
@@ -676,27 +667,27 @@
      "tags": [
       "joke"
      ],
-     "line": 98,
+     "line": 103,
      "emotion": "surprised, laughing"
     },
     {
      "op": "wait",
      "ms": 1500,
-     "line": 99
+     "line": 104
     },
     {
      "op": "say",
-     "cue": "BOBO_BIRTHDAY_S03_024_COCO",
+     "cue": "BOBO_BIRTHDAY_S03_002_COCO",
      "speaker": "COCO",
-     "text": "अब देखो, तुम्हारी table पर एक real Birthday Cap रखी है। पहले उस cap को उठाओ और अपने सर पर पहन लो! पहन लिया?",
+     "text": "देखो, table पर एक real Birthday Cap रखी है! उसे उठाओ और सर पर पहन लो!",
      "tags": [],
-     "line": 100,
+     "line": 105,
      "emotion": "warm, slow"
     },
     {
      "op": "wait",
      "ms": 3000,
-     "line": 101
+     "line": 106
     },
     {
      "op": "ask",
@@ -707,7 +698,7 @@
       "speaker": "COCO",
       "text": "अब जल्दी से table पर रखे Birthday Cap Card को भी tap कर दो!",
       "tags": [],
-      "line": 103,
+      "line": 108,
       "emotion": "bright"
      },
      "hints": [
@@ -717,7 +708,7 @@
        "speaker": "COCO",
        "text": "आराम से पहनो। Cap पहन कर, Cap वाला card tap करना।",
        "tags": [],
-       "line": 104,
+       "line": 109,
        "emotion": "relaxed, reassuring"
       },
       {
@@ -726,20 +717,20 @@
        "speaker": "COCO",
        "text": "Cap वाला card tap करो!",
        "tags": [],
-       "line": 105,
+       "line": 110,
        "emotion": "kind, clear"
       }
      ],
      "afterPrompt": [],
      "remind": null,
      "tags": [],
-     "line": 102
+     "line": 107
     },
     {
      "op": "sfx",
      "cue": "lib:party_whistle",
      "tags": [],
-     "line": 106,
+     "line": 111,
      "channel": "fg",
      "wait": true
     },
@@ -751,7 +742,7 @@
      "tags": [
       "praise"
      ],
-     "line": 107,
+     "line": 112,
      "emotion": "cheering"
     },
     {
@@ -771,7 +762,7 @@
           "praise",
           "name"
          ],
-         "line": 50,
+         "line": 56,
          "emotion": "warm, proud",
          "name": true,
          "nameText": "Amazing, {name}!"
@@ -785,7 +776,7 @@
           "praise",
           "name"
          ],
-         "line": 51,
+         "line": 57,
          "emotion": "bright",
          "name": true,
          "nameText": "Good job, {name}!"
@@ -799,16 +790,16 @@
           "praise",
           "name"
          ],
-         "line": 52,
+         "line": 58,
          "emotion": "delighted",
          "name": true,
          "nameText": "Excellent work, {name}!"
         }
        ],
-       "line": 49
+       "line": 55
       }
      ],
-     "line": 108
+     "line": 113
     }
    ]
   },
@@ -819,11 +810,11 @@
    "beats": [
     {
      "op": "say",
-     "cue": "BOBO_BIRTHDAY_S04_029_COCO",
+     "cue": "BOBO_BIRTHDAY_S04_003_COCO",
      "speaker": "COCO",
-     "text": "Cake ready, banana खा लिया, candles blow हो गईं, और birthday cap भी पहन ली! अब birthday party की जान बाकी है… धन-टना-टन… Music!",
+     "text": "वाह, party लगभग ready है! पर party में और क्या चाहिए, जिससे सब dance करें? धन-टना-टन… Music!",
      "tags": [],
-     "line": 112,
+     "line": 117,
      "emotion": "listing, building up"
     },
     {
@@ -835,7 +826,7 @@
       "speaker": "COCO",
       "text": "जिससे loud आवाज़ में birthday music बजता है… वो कौनसा card है?",
       "tags": [],
-      "line": 114,
+      "line": 119,
       "emotion": "playful, riddling"
      },
      "hints": [
@@ -845,7 +836,7 @@
        "speaker": "COCO",
        "text": "जल्दी से Speaker Card को tap करो!",
        "tags": [],
-       "line": 115,
+       "line": 120,
        "emotion": "bright, revealing"
       },
       {
@@ -854,7 +845,7 @@
        "speaker": "COCO",
        "text": "Speaker वाला card — जिससे music बजता है।",
        "tags": [],
-       "line": 116,
+       "line": 121,
        "emotion": "kind"
       },
       {
@@ -863,20 +854,20 @@
        "speaker": "COCO",
        "text": "Speaker वाला card tap करो!",
        "tags": [],
-       "line": 117,
+       "line": 122,
        "emotion": "kind, clear"
       }
      ],
      "afterPrompt": [],
      "remind": null,
      "tags": [],
-     "line": 113
+     "line": 118
     },
     {
      "op": "sfx",
      "cue": "lib:button_click",
      "tags": [],
-     "line": 118,
+     "line": 123,
      "channel": "fg",
      "wait": true
     },
@@ -888,7 +879,7 @@
      "tags": [
       "praise"
      ],
-     "line": 119,
+     "line": 124,
      "emotion": "excited"
     },
     {
@@ -908,7 +899,7 @@
           "praise",
           "name"
          ],
-         "line": 41,
+         "line": 47,
          "emotion": "warm, proud",
          "name": true,
          "nameText": "Amazing, {name}!"
@@ -922,7 +913,7 @@
           "praise",
           "name"
          ],
-         "line": 42,
+         "line": 48,
          "emotion": "bright",
          "name": true,
          "nameText": "Good job, {name}!"
@@ -936,7 +927,7 @@
           "praise",
           "name"
          ],
-         "line": 43,
+         "line": 49,
          "emotion": "delighted",
          "name": true,
          "nameText": "Excellent work, {name}!"
@@ -950,24 +941,19 @@
           "praise",
           "name"
          ],
-         "line": 44,
+         "line": 50,
          "emotion": "pleased, clear",
          "name": true,
          "nameText": "You are absolutely right, {name}!"
         }
        ],
-       "line": 40
+       "line": 46
       }
      ],
-     "line": 120
+     "line": 125
     },
     {
-     "op": "music",
-     "cue": "lib:dance_loop",
-     "line": 121
-    },
-    {
-     "op": "duck",
+     "op": "say",
      "cue": "BOBO_BIRTHDAY_S04_035_COCO",
      "speaker": "COCO",
      "text": "Let's DANCE, Captain!",
@@ -975,42 +961,20 @@
       "action",
       "name"
      ],
-     "line": 122,
+     "line": 126,
      "emotion": "party voice",
      "name": true,
      "nameText": "Let's DANCE, {name}!"
     },
     {
-     "op": "duck",
-     "cue": "BOBO_BIRTHDAY_S04_036_COCO",
-     "speaker": "COCO",
-     "text": "अपनी banana वाली super energy और birthday cap के साथ jump करो, spin करो, and clap!",
-     "tags": [
-      "action"
-     ],
-     "line": 123,
-     "emotion": "bouncy"
+     "op": "music",
+     "cue": "lib:dance_loop_phone",
+     "line": 127
     },
     {
      "op": "music",
      "at": 9.0,
-     "line": 124
-    },
-    {
-     "op": "duck",
-     "cue": "BOBO_BIRTHDAY_S04_037_COCO",
-     "speaker": "COCO",
-     "text": "Hands up in the air!",
-     "tags": [
-      "action"
-     ],
-     "line": 125,
-     "emotion": "calling out"
-    },
-    {
-     "op": "music",
-     "at": 14.0,
-     "line": 126
+     "line": 128
     },
     {
      "op": "duck",
@@ -1020,40 +984,40 @@
      "tags": [
       "action"
      ],
-     "line": 127,
+     "line": 129,
      "emotion": "calling out"
     },
     {
      "op": "music",
      "at": 19.0,
-     "line": 128
+     "line": 130
     },
     {
      "op": "music",
      "stop": true,
-     "line": 129
+     "line": 131
     },
     {
      "op": "sfx",
      "cue": "lib:music_end_flourish",
      "tags": [],
-     "line": 130,
+     "line": 132,
      "channel": "fg",
      "wait": true
     },
     {
      "op": "bed",
      "cue": "lib:birthday_bg",
-     "line": 131,
+     "line": 133,
      "volume": 0.25
     },
     {
      "op": "say",
-     "cue": "BOBO_BIRTHDAY_S04_039_COCO",
+     "cue": "BOBO_BIRTHDAY_S04_004_COCO",
      "speaker": "COCO",
-     "text": "Now, क्या तुम मेरे साथ Bobo को birthday wish करोगे? चलो मिलकर गाते हैं और clap करते हैं!",
+     "text": "चलो, Bobo को birthday wish करके clap करते हैं!",
      "tags": [],
-     "line": 132,
+     "line": 134,
      "emotion": "inviting"
     },
     {
@@ -1064,14 +1028,14 @@
      "tags": [
       "action"
      ],
-     "line": 133,
+     "line": 135,
      "emotion": "singing to the Happy Birthday tune"
     },
     {
      "op": "sfx",
      "cue": "lib:clap_five",
      "tags": [],
-     "line": 134,
+     "line": 136,
      "channel": "fg",
      "wait": true
     },
@@ -1084,7 +1048,7 @@
       "action",
       "name"
      ],
-     "line": 135,
+     "line": 137,
      "emotion": "calling, rhythmic",
      "name": true,
      "nameText": "{name}, clap with me!"
@@ -1093,19 +1057,19 @@
      "op": "sfx",
      "cue": "lib:clap_five",
      "tags": [],
-     "line": 136,
+     "line": 138,
      "channel": "fg",
      "wait": true
     },
     {
      "op": "wait",
      "ms": 3000,
-     "line": 137
+     "line": 139
     },
     {
      "op": "bed",
      "stop": true,
-     "line": 138
+     "line": 140
     }
    ]
   },
@@ -1122,18 +1086,18 @@
      "tags": [
       "name"
      ],
-     "line": 142,
+     "line": 144,
      "emotion": "खुश होकर, warm",
      "name": true,
      "nameText": "Thank you so much, {name}, for helping me plan Bobo's birthday!"
     },
     {
      "op": "say",
-     "cue": "BOBO_BIRTHDAY_S05_043_COCO",
+     "cue": "BOBO_BIRTHDAY_S05_005_COCO",
      "speaker": "COCO",
-     "text": "What an amazing birthday party! Thank you so much! You are such a hero!",
+     "text": "What an amazing birthday party! You are such a hero!",
      "tags": [],
-     "line": 143,
+     "line": 145,
      "emotion": "proud, big finish"
     },
     {
@@ -1143,7 +1107,7 @@
        "op": "sfx",
        "cue": "lib:audience_cheer",
        "tags": [],
-       "line": 145,
+       "line": 147,
        "channel": "fg",
        "wait": true
       },
@@ -1151,7 +1115,7 @@
        "op": "sfx",
        "cue": "lib:fireworks",
        "tags": [],
-       "line": 146,
+       "line": 148,
        "channel": "fg",
        "wait": true
       },
@@ -1159,12 +1123,12 @@
        "op": "sfx",
        "cue": "lib:clap",
        "tags": [],
-       "line": 147,
+       "line": 149,
        "channel": "fg",
        "wait": true
       }
      ],
-     "line": 144
+     "line": 146
     }
    ]
   }
@@ -1220,8 +1184,7 @@
    "emotion": "upbeat, welcoming",
    "scene": 1,
    "library": false,
-   "nameText": "Hey! Hi, {name}! मैं हूँ Coco और आज मेरे friend Bobo का birthday है। क्या तुम Bobo की birthday party arrange करने में मेरी help करोगे?",
-   "auto": true
+   "nameText": "Hey! Hi, {name}! मैं हूँ Coco और आज मेरे friend Bobo का birthday है। क्या तुम Bobo की birthday party arrange करने में मेरी help करोगे?"
   },
   "BOBO_BIRTHDAY_S01_002_COCO": {
    "kind": "speech",
@@ -1229,8 +1192,7 @@
    "text": "Great! तो चलो सबसे पहले party की सबसे yummy चीज़ ढूँढते हैं…",
    "emotion": "bright",
    "scene": 1,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "BOBO_BIRTHDAY_S01_003_COCO": {
    "kind": "speech",
@@ -1238,8 +1200,7 @@
    "text": "कुछ ऐसा जो मीठा होता है, soft होता है, और birthday पर cut किया जाता है! उसका card ढूँढो और please tap करो!",
    "emotion": "playful, riddling",
    "scene": 1,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "BOBO_BIRTHDAY_S01_004_COCO": {
    "kind": "speech",
@@ -1247,8 +1208,7 @@
    "text": "नहीं मिला? अरे, हम बात कर रहे हैं Cake की! जल्दी से Cake Card को tap करो!",
    "emotion": "bright, revealing",
    "scene": 1,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "BOBO_BIRTHDAY_S01_005_COCO": {
    "kind": "speech",
@@ -1256,8 +1216,7 @@
    "text": "Cake वाला card ढूँढो — गोल cake, ऊपर cream वाला।",
    "emotion": "kind",
    "scene": 1,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "BOBO_BIRTHDAY_S01_006_COCO": {
    "kind": "speech",
@@ -1265,8 +1224,7 @@
    "text": "Cake वाला card tap करो!",
    "emotion": "kind, clear",
    "scene": 1,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "lib:magic_sparkle": {
    "kind": "sfx",
@@ -1280,8 +1238,7 @@
    "text": "YES! Cake! एक sweet, sweet birthday cake!",
    "emotion": "excited",
    "scene": 2,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "BOBO_BIRTHDAY_S02_008_COCO": {
    "kind": "speech",
@@ -1290,8 +1247,7 @@
    "emotion": "leaning in",
    "scene": 2,
    "library": false,
-   "nameText": "पर पता है {name}?",
-   "auto": true
+   "nameText": "पर पता है {name}?"
   },
   "BOBO_BIRTHDAY_S02_009_COCO": {
    "kind": "speech",
@@ -1299,8 +1255,7 @@
    "text": "अगर Bobo और हम सिर्फ cake खाएँगे, तो tummy ache हो सकता है। Party में non-stop मस्ती और dance करने के लिए हमें super energy चाहिए!",
    "emotion": "explaining, playful",
    "scene": 2,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "BOBO_BIRTHDAY_S02_010_COCO": {
    "kind": "speech",
@@ -1308,8 +1263,7 @@
    "text": "क्या तुम cards में से कोई ऐसा healthy food ढूँढ सकते हो जो हमें strong बनाए और super-energy दे?",
    "emotion": "inviting",
    "scene": 2,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "BOBO_BIRTHDAY_S02_011_COCO": {
    "kind": "speech",
@@ -1317,8 +1271,7 @@
    "text": "ध्यान से देखो… yummy, healthy banana! Fast-fast Banana Card को tap करो और healthy power लो!",
    "emotion": "bright, revealing",
    "scene": 2,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "BOBO_BIRTHDAY_S02_012_COCO": {
    "kind": "speech",
@@ -1326,8 +1279,7 @@
    "text": "Banana वाला card — पीला, लंबा केला।",
    "emotion": "kind",
    "scene": 2,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "BOBO_BIRTHDAY_S02_013_COCO": {
    "kind": "speech",
@@ -1335,8 +1287,7 @@
    "text": "Banana वाला card tap करो!",
    "emotion": "kind, clear",
    "scene": 2,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "lib:biscuit_crunch": {
    "kind": "sfx",
@@ -1350,8 +1301,7 @@
    "text": "Yum! Yummy banana! अब आई ना असली birthday energy!",
    "emotion": "excited",
    "scene": 2,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "BOBO_BIRTHDAY_S03_015_COCO": {
    "kind": "speech",
@@ -1359,8 +1309,7 @@
    "text": "अब हमारा cake ready है! लेकिन birthday cake के ऊपर हम क्या लगाते हैं जिसे फूँक मारकर blow करते हैं?",
    "emotion": "curious, leading",
    "scene": 3,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "BOBO_BIRTHDAY_S03_016_COCO": {
    "kind": "speech",
@@ -1368,8 +1317,7 @@
    "text": "Candle! जल्दी से Candle Card को tap करो!",
    "emotion": "bright, revealing",
    "scene": 3,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "BOBO_BIRTHDAY_S03_017_COCO": {
    "kind": "speech",
@@ -1377,8 +1325,7 @@
    "text": "Candle वाला card — जलती हुई candle वाला।",
    "emotion": "kind",
    "scene": 3,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "BOBO_BIRTHDAY_S03_018_COCO": {
    "kind": "speech",
@@ -1386,8 +1333,7 @@
    "text": "Candle वाला card tap करो!",
    "emotion": "kind, clear",
    "scene": 3,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "lib:candle_pop_flame": {
    "kind": "sfx",
@@ -1401,23 +1347,13 @@
    "text": "Yes! Candle!",
    "emotion": "excited",
    "scene": 3,
-   "library": false,
-   "auto": true
+   "library": false
   },
-  "BOBO_BIRTHDAY_S03_020_COCO": {
+  "BOBO_BIRTHDAY_S03_001_COCO": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "Bobo five साल का हो गया, तो five candles!",
-   "emotion": "bright, proud",
-   "scene": 3,
-   "library": false,
-   "auto": true
-  },
-  "BOBO_BIRTHDAY_S03_021_COCO": {
-   "kind": "speech",
-   "speaker": "COCO",
-   "text": "Look! One, two, three, four… FIVE candles!",
-   "emotion": "excited, counting",
+   "text": "चलो, Bobo के साथ candles बुझाते हैं — ज़ोर से फूँक मारो!",
+   "emotion": "excited, inviting",
    "scene": 3,
    "library": false,
    "auto": true
@@ -1434,8 +1370,7 @@
    "text": "Poof! सारी candles बुझ गईं!",
    "emotion": "delighted",
    "scene": 3,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "lib:cap_flies_off_2": {
    "kind": "sfx",
@@ -1449,13 +1384,12 @@
    "text": "अरे! इतनी ज़ोर की फूँक… मेरी cap उड़ गई! Woooosh!",
    "emotion": "surprised, laughing",
    "scene": 3,
-   "library": false,
-   "auto": true
+   "library": false
   },
-  "BOBO_BIRTHDAY_S03_024_COCO": {
+  "BOBO_BIRTHDAY_S03_002_COCO": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "अब देखो, तुम्हारी table पर एक real Birthday Cap रखी है। पहले उस cap को उठाओ और अपने सर पर पहन लो! पहन लिया?",
+   "text": "देखो, table पर एक real Birthday Cap रखी है! उसे उठाओ और सर पर पहन लो!",
    "emotion": "warm, slow",
    "scene": 3,
    "library": false,
@@ -1467,8 +1401,7 @@
    "text": "अब जल्दी से table पर रखे Birthday Cap Card को भी tap कर दो!",
    "emotion": "bright",
    "scene": 3,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "BOBO_BIRTHDAY_S03_026_COCO": {
    "kind": "speech",
@@ -1476,8 +1409,7 @@
    "text": "आराम से पहनो। Cap पहन कर, Cap वाला card tap करना।",
    "emotion": "relaxed, reassuring",
    "scene": 3,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "BOBO_BIRTHDAY_S03_027_COCO": {
    "kind": "speech",
@@ -1485,8 +1417,7 @@
    "text": "Cap वाला card tap करो!",
    "emotion": "kind, clear",
    "scene": 3,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "lib:party_whistle": {
    "kind": "sfx",
@@ -1500,13 +1431,12 @@
    "text": "Woohoo! Birthday cap ready!",
    "emotion": "cheering",
    "scene": 3,
-   "library": false,
-   "auto": true
+   "library": false
   },
-  "BOBO_BIRTHDAY_S04_029_COCO": {
+  "BOBO_BIRTHDAY_S04_003_COCO": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "Cake ready, banana खा लिया, candles blow हो गईं, और birthday cap भी पहन ली! अब birthday party की जान बाकी है… धन-टना-टन… Music!",
+   "text": "वाह, party लगभग ready है! पर party में और क्या चाहिए, जिससे सब dance करें? धन-टना-टन… Music!",
    "emotion": "listing, building up",
    "scene": 4,
    "library": false,
@@ -1518,8 +1448,7 @@
    "text": "जिससे loud आवाज़ में birthday music बजता है… वो कौनसा card है?",
    "emotion": "playful, riddling",
    "scene": 4,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "BOBO_BIRTHDAY_S04_031_COCO": {
    "kind": "speech",
@@ -1527,8 +1456,7 @@
    "text": "जल्दी से Speaker Card को tap करो!",
    "emotion": "bright, revealing",
    "scene": 4,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "BOBO_BIRTHDAY_S04_032_COCO": {
    "kind": "speech",
@@ -1536,8 +1464,7 @@
    "text": "Speaker वाला card — जिससे music बजता है।",
    "emotion": "kind",
    "scene": 4,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "BOBO_BIRTHDAY_S04_033_COCO": {
    "kind": "speech",
@@ -1545,8 +1472,7 @@
    "text": "Speaker वाला card tap करो!",
    "emotion": "kind, clear",
    "scene": 4,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "lib:button_click": {
    "kind": "sfx",
@@ -1560,14 +1486,7 @@
    "text": "YES! Speaker ready! Party mode ON!",
    "emotion": "excited",
    "scene": 4,
-   "library": false,
-   "auto": true
-  },
-  "lib:dance_loop": {
-   "kind": "music",
-   "name": "dance_loop",
-   "scene": 4,
-   "library": true
+   "library": false
   },
   "BOBO_BIRTHDAY_S04_035_COCO": {
    "kind": "speech",
@@ -1576,26 +1495,13 @@
    "emotion": "party voice",
    "scene": 4,
    "library": false,
-   "nameText": "Let's DANCE, {name}!",
-   "auto": true
+   "nameText": "Let's DANCE, {name}!"
   },
-  "BOBO_BIRTHDAY_S04_036_COCO": {
-   "kind": "speech",
-   "speaker": "COCO",
-   "text": "अपनी banana वाली super energy और birthday cap के साथ jump करो, spin करो, and clap!",
-   "emotion": "bouncy",
+  "lib:dance_loop_phone": {
+   "kind": "music",
+   "name": "dance_loop_phone",
    "scene": 4,
-   "library": false,
-   "auto": true
-  },
-  "BOBO_BIRTHDAY_S04_037_COCO": {
-   "kind": "speech",
-   "speaker": "COCO",
-   "text": "Hands up in the air!",
-   "emotion": "calling out",
-   "scene": 4,
-   "library": false,
-   "auto": true
+   "library": true
   },
   "BOBO_BIRTHDAY_S04_038_COCO": {
    "kind": "speech",
@@ -1603,8 +1509,7 @@
    "text": "Spin around! Keep moving!",
    "emotion": "calling out",
    "scene": 4,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "lib:music_end_flourish": {
    "kind": "sfx",
@@ -1618,10 +1523,10 @@
    "scene": 4,
    "library": true
   },
-  "BOBO_BIRTHDAY_S04_039_COCO": {
+  "BOBO_BIRTHDAY_S04_004_COCO": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "Now, क्या तुम मेरे साथ Bobo को birthday wish करोगे? चलो मिलकर गाते हैं और clap करते हैं!",
+   "text": "चलो, Bobo को birthday wish करके clap करते हैं!",
    "emotion": "inviting",
    "scene": 4,
    "library": false,
@@ -1633,8 +1538,7 @@
    "text": "Happy birthday, Bobo~ Happy birthday, Bobo~",
    "emotion": "singing to the Happy Birthday tune",
    "scene": 4,
-   "library": false,
-   "auto": true
+   "library": false
   },
   "lib:clap_five": {
    "kind": "sfx",
@@ -1649,8 +1553,7 @@
    "emotion": "calling, rhythmic",
    "scene": 4,
    "library": false,
-   "nameText": "{name}, clap with me!",
-   "auto": true
+   "nameText": "{name}, clap with me!"
   },
   "BOBO_BIRTHDAY_S05_042_COCO": {
    "kind": "speech",
@@ -1659,13 +1562,12 @@
    "emotion": "खुश होकर, warm",
    "scene": 5,
    "library": false,
-   "nameText": "Thank you so much, {name}, for helping me plan Bobo's birthday!",
-   "auto": true
+   "nameText": "Thank you so much, {name}, for helping me plan Bobo's birthday!"
   },
-  "BOBO_BIRTHDAY_S05_043_COCO": {
+  "BOBO_BIRTHDAY_S05_005_COCO": {
    "kind": "speech",
    "speaker": "COCO",
-   "text": "What an amazing birthday party! Thank you so much! You are such a hero!",
+   "text": "What an amazing birthday party! You are such a hero!",
    "emotion": "proud, big finish",
    "scene": 5,
    "library": false,

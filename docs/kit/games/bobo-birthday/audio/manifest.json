@@ -929,5 +929,105 @@
   "duration_seconds": 5.8,
   "integrated_lufs": -16.0,
   "true_peak_dbfs": -2.9
+ },
+ "BOBO_BIRTHDAY_S03_001_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "चलो, Bobo के साथ candles बुझाते हैं — ज़ोर से फूँक मारो!",
+  "performance_tag": "[excited, inviting]",
+  "review_status": "test",
+  "generated": "2026-10-03",
+  "file": "generated/BOBO_BIRTHDAY_S03_001_COCO.mp3",
+  "duration_seconds": 4.68,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.4
+ },
+ "BOBO_BIRTHDAY_S03_002_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "देखो, table पर एक real Birthday Cap रखी है! उसे उठाओ और सर पर पहन लो!",
+  "performance_tag": "[warm, slow]",
+  "review_status": "test",
+  "generated": "2026-10-03",
+  "file": "generated/BOBO_BIRTHDAY_S03_002_COCO.mp3",
+  "duration_seconds": 6.03,
+  "integrated_lufs": -16.4,
+  "true_peak_dbfs": -2.4
+ },
+ "BOBO_BIRTHDAY_S04_003_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "वाह, party लगभग ready है! पर party में और क्या चाहिए, जिससे सब dance करें? धन-टना-टन… Music!",
+  "performance_tag": "[listing, building up]",
+  "review_status": "test",
+  "generated": "2026-10-03",
+  "file": "generated/BOBO_BIRTHDAY_S04_003_COCO.mp3",
+  "duration_seconds": 9.8,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -2.3
+ },
+ "BOBO_BIRTHDAY_S04_004_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "चलो, Bobo को birthday wish करके clap करते हैं!",
+  "performance_tag": "[inviting]",
+  "review_status": "test",
+  "generated": "2026-10-03",
+  "file": "generated/BOBO_BIRTHDAY_S04_004_COCO.mp3",
+  "duration_seconds": 3.71,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -2.4
+ },
+ "BOBO_BIRTHDAY_S05_005_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "What an amazing birthday party! You are such a hero!",
+  "performance_tag": "[proud, big finish]",
+  "review_status": "test",
+  "generated": "2026-10-03",
+  "file": "generated/BOBO_BIRTHDAY_S05_005_COCO.mp3",
+  "duration_seconds": 4.36,
+  "integrated_lufs": -16.3,
+  "true_peak_dbfs": -2.4
  }
 }

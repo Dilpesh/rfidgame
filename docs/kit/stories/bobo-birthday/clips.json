@@ -60,7 +60,6 @@
   "scene": 1,
   "library": false,
   "nameText": "Hey! Hi, {name}! मैं हूँ Coco और आज मेरे friend Bobo का birthday है। क्या तुम Bobo की birthday party arrange करने में मेरी help करोगे?",
-  "auto": true,
   "missing": false
  },
  {
@@ -71,7 +70,6 @@
   "emotion": "bright",
   "scene": 1,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -82,7 +80,6 @@
   "emotion": "playful, riddling",
   "scene": 1,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -93,7 +90,6 @@
   "emotion": "bright, revealing",
   "scene": 1,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -104,7 +100,6 @@
   "emotion": "kind",
   "scene": 1,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -115,7 +110,6 @@
   "emotion": "kind, clear",
   "scene": 1,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -134,7 +128,6 @@
   "emotion": "excited",
   "scene": 2,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -146,7 +139,6 @@
   "scene": 2,
   "library": false,
   "nameText": "पर पता है {name}?",
-  "auto": true,
   "missing": false
  },
  {
@@ -157,7 +149,6 @@
   "emotion": "explaining, playful",
   "scene": 2,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -168,7 +159,6 @@
   "emotion": "inviting",
   "scene": 2,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -179,7 +169,6 @@
   "emotion": "bright, revealing",
   "scene": 2,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -190,7 +179,6 @@
   "emotion": "kind",
   "scene": 2,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -201,7 +189,6 @@
   "emotion": "kind, clear",
   "scene": 2,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -220,7 +207,6 @@
   "emotion": "excited",
   "scene": 2,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -231,7 +217,6 @@
   "emotion": "curious, leading",
   "scene": 3,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -242,7 +227,6 @@
   "emotion": "bright, revealing",
   "scene": 3,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -253,7 +237,6 @@
   "emotion": "kind",
   "scene": 3,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -264,7 +247,6 @@
   "emotion": "kind, clear",
   "scene": 3,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -283,26 +265,14 @@
   "emotion": "excited",
   "scene": 3,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S03_020_COCO",
+  "id": "BOBO_BIRTHDAY_S03_001_COCO",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "Bobo five साल का हो गया, तो five candles!",
-  "emotion": "bright, proud",
-  "scene": 3,
-  "library": false,
-  "auto": true,
-  "missing": false
- },
- {
-  "id": "BOBO_BIRTHDAY_S03_021_COCO",
-  "kind": "speech",
-  "speaker": "COCO",
-  "text": "Look! One, two, three, four… FIVE candles!",
-  "emotion": "excited, counting",
+  "text": "चलो, Bobo के साथ candles बुझाते हैं — ज़ोर से फूँक मारो!",
+  "emotion": "excited, inviting",
   "scene": 3,
   "library": false,
   "auto": true,
@@ -324,7 +294,6 @@
   "emotion": "delighted",
   "scene": 3,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -343,14 +312,13 @@
   "emotion": "surprised, laughing",
   "scene": 3,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S03_024_COCO",
+  "id": "BOBO_BIRTHDAY_S03_002_COCO",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "अब देखो, तुम्हारी table पर एक real Birthday Cap रखी है। पहले उस cap को उठाओ और अपने सर पर पहन लो! पहन लिया?",
+  "text": "देखो, table पर एक real Birthday Cap रखी है! उसे उठाओ और सर पर पहन लो!",
   "emotion": "warm, slow",
   "scene": 3,
   "library": false,
@@ -365,7 +333,6 @@
   "emotion": "bright",
   "scene": 3,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -376,7 +343,6 @@
   "emotion": "relaxed, reassuring",
   "scene": 3,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -387,7 +353,6 @@
   "emotion": "kind, clear",
   "scene": 3,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -406,14 +371,13 @@
   "emotion": "cheering",
   "scene": 3,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S04_029_COCO",
+  "id": "BOBO_BIRTHDAY_S04_003_COCO",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "Cake ready, banana खा लिया, candles blow हो गईं, और birthday cap भी पहन ली! अब birthday party की जान बाकी है… धन-टना-टन… Music!",
+  "text": "वाह, party लगभग ready है! पर party में और क्या चाहिए, जिससे सब dance करें? धन-टना-टन… Music!",
   "emotion": "listing, building up",
   "scene": 4,
   "library": false,
@@ -428,7 +392,6 @@
   "emotion": "playful, riddling",
   "scene": 4,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -439,7 +402,6 @@
   "emotion": "bright, revealing",
   "scene": 4,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -450,7 +412,6 @@
   "emotion": "kind",
   "scene": 4,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -461,7 +422,6 @@
   "emotion": "kind, clear",
   "scene": 4,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -480,15 +440,6 @@
   "emotion": "excited",
   "scene": 4,
   "library": false,
-  "auto": true,
-  "missing": false
- },
- {
-  "id": "lib:dance_loop",
-  "kind": "music",
-  "name": "dance_loop",
-  "scene": 4,
-  "library": true,
   "missing": false
  },
  {
@@ -500,29 +451,14 @@
   "scene": 4,
   "library": false,
   "nameText": "Let's DANCE, {name}!",
-  "auto": true,
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S04_036_COCO",
-  "kind": "speech",
-  "speaker": "COCO",
-  "text": "अपनी banana वाली super energy और birthday cap के साथ jump करो, spin करो, and clap!",
-  "emotion": "bouncy",
+  "id": "lib:dance_loop_phone",
+  "kind": "music",
+  "name": "dance_loop_phone",
   "scene": 4,
-  "library": false,
-  "auto": true,
-  "missing": false
- },
- {
-  "id": "BOBO_BIRTHDAY_S04_037_COCO",
-  "kind": "speech",
-  "speaker": "COCO",
-  "text": "Hands up in the air!",
-  "emotion": "calling out",
-  "scene": 4,
-  "library": false,
-  "auto": true,
+  "library": true,
   "missing": false
  },
  {
@@ -533,7 +469,6 @@
   "emotion": "calling out",
   "scene": 4,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -553,10 +488,10 @@
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S04_039_COCO",
+  "id": "BOBO_BIRTHDAY_S04_004_COCO",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "Now, क्या तुम मेरे साथ Bobo को birthday wish करोगे? चलो मिलकर गाते हैं और clap करते हैं!",
+  "text": "चलो, Bobo को birthday wish करके clap करते हैं!",
   "emotion": "inviting",
   "scene": 4,
   "library": false,
@@ -571,7 +506,6 @@
   "emotion": "singing to the Happy Birthday tune",
   "scene": 4,
   "library": false,
-  "auto": true,
   "missing": false
  },
  {
@@ -591,7 +525,6 @@
   "scene": 4,
   "library": false,
   "nameText": "{name}, clap with me!",
-  "auto": true,
   "missing": false
  },
  {
@@ -603,14 +536,13 @@
   "scene": 5,
   "library": false,
   "nameText": "Thank you so much, {name}, for helping me plan Bobo's birthday!",
-  "auto": true,
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S05_043_COCO",
+  "id": "BOBO_BIRTHDAY_S05_005_COCO",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "What an amazing birthday party! Thank you so much! You are such a hero!",
+  "text": "What an amazing birthday party! You are such a hero!",
   "emotion": "proud, big finish",
   "scene": 5,
   "library": false,

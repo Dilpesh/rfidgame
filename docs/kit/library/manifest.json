@@ -1,5 +1,5 @@
 {
- "version": "lib-2026-10-02z",
+ "version": "lib-2026-10-03a",
  "clips": {
   "tap": {
    "type": "sfx",
@@ -2212,6 +2212,22 @@
    "file": "sfx/clap_five.mp3",
    "source": "games/bobo-birthday/audio/sfx-in/clap_five.mp3",
    "duration_seconds": 2.51
+  },
+  "dance_loop_phone": {
+   "type": "music",
+   "description": "dance_loop EQ'd for a phone speaker (high-pass 150 Hz, +6 dB at 2.5 kHz, limiter) and played at full volume — Dance C, picked by Dilpesh 3 Oct for Bobo; still to confirm on more OnePlus phones",
+   "tags": [
+    "dance",
+    "music",
+    "party",
+    "phone"
+   ],
+   "volume": 1.0,
+   "loop": true,
+   "added": "2026-10-03",
+   "file": "music/dance_loop_phone.mp3",
+   "source": "games/bobo-birthday/audio/sfx-in/dance_loop_phone.mp3",
+   "duration_seconds": 20.036
   }
  }
 }
