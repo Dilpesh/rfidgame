@@ -346,6 +346,14 @@
   "missing": false
  },
  {
+  "id": "lib:cap_laugh",
+  "kind": "sfx",
+  "name": "cap_laugh",
+  "scene": 3,
+  "library": true,
+  "missing": false
+ },
+ {
   "id": "BOBO_BIRTHDAY_S03_002_COCO",
   "kind": "speech",
   "speaker": "COCO",
@@ -356,10 +364,20 @@
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S03_025_COCO",
+  "id": "BOBO_BIRTHDAY_S03_104_COCO",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "अब जल्दी से table पर रखे Birthday Cap Card को भी tap कर दो!",
+  "text": "इतनी जल्दी नहीं! पहले birthday cap पहनो — cap तुम्हारी table पर रखी है।",
+  "emotion": "kind, playful",
+  "scene": 3,
+  "library": false,
+  "missing": false
+ },
+ {
+  "id": "BOBO_BIRTHDAY_S03_105_COCO",
+  "kind": "speech",
+  "speaker": "COCO",
+  "text": "Cap पहन ली? अब Birthday Cap वाला card tap करो!",
   "emotion": "bright",
   "scene": 3,
   "library": false,
@@ -376,10 +394,10 @@
   "missing": false
  },
  {
-  "id": "BOBO_BIRTHDAY_S03_027_COCO",
+  "id": "BOBO_BIRTHDAY_S03_106_COCO",
   "kind": "speech",
   "speaker": "COCO",
-  "text": "Cap वाला card tap करो!",
+  "text": "पहले cap पहनो, फिर Cap वाला card tap करो!",
   "emotion": "kind, clear",
   "scene": 3,
   "library": false,

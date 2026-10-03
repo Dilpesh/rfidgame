@@ -1089,5 +1089,65 @@
   "duration_seconds": 7.08,
   "integrated_lufs": -16.1,
   "true_peak_dbfs": -2.3
+ },
+ "BOBO_BIRTHDAY_S03_104_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "इतनी जल्दी नहीं! पहले birthday cap पहनो — cap तुम्हारी table पर रखी है।",
+  "performance_tag": "[kind, playful]",
+  "review_status": "test",
+  "generated": "2026-10-03",
+  "file": "generated/BOBO_BIRTHDAY_S03_104_COCO.mp3",
+  "duration_seconds": 5.56,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -2.4
+ },
+ "BOBO_BIRTHDAY_S03_105_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "Cap पहन ली? अब Birthday Cap वाला card tap करो!",
+  "performance_tag": "[bright]",
+  "review_status": "test",
+  "generated": "2026-10-03",
+  "file": "generated/BOBO_BIRTHDAY_S03_105_COCO.mp3",
+  "duration_seconds": 3.79,
+  "integrated_lufs": -16.2,
+  "true_peak_dbfs": -2.4
+ },
+ "BOBO_BIRTHDAY_S03_106_COCO": {
+  "type": "speech",
+  "voice": "COCO",
+  "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+  "model_id": "eleven_v3",
+  "voice_settings": {
+   "stability": 0.4,
+   "similarity_boost": 0.78,
+   "style": 0.28,
+   "use_speaker_boost": true
+  },
+  "spoken_text": "पहले cap पहनो, फिर Cap वाला card tap करो!",
+  "performance_tag": "[kind, clear]",
+  "review_status": "test",
+  "generated": "2026-10-03",
+  "file": "generated/BOBO_BIRTHDAY_S03_106_COCO.mp3",
+  "duration_seconds": 4.13,
+  "integrated_lufs": -16.1,
+  "true_peak_dbfs": -2.3
  }
 }

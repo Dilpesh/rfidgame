@@ -270,16 +270,15 @@ def parse_body(story, lines):
             if card not in [c['id'] for c in story.cards]:
                 raise CompileError(f'line {line_no}: ask {card}: no "card {card}:" line in the header')
             ask = {'op': 'ask', 'card': card, 'prompt': None, 'hints': [], 'afterPrompt': [],
-                   'remind': None, 'tooEarly': [], 'tags': m['tags'], 'line': line_no}
+                   'remind': None, 'tags': m['tags'], 'line': line_no}
             for b in block(i, indent):
                 k = b.get('_askpart')
                 if k == 'prompt': ask['prompt'] = b['beat']
                 elif k == 'hint': ask['hints'].append(b['beat'])
                 elif k == 'after': ask['afterPrompt'].append(b['beat'])
                 elif k == 'remind': ask['remind'] = b['beat']
-                elif k == 'early': ask['tooEarly'].append(b['beat'])
                 else:
-                    raise CompileError(f'line {b.get("line")}: inside "ask" only prompt / hint / after prompt / too early / remind lines are allowed')
+                    raise CompileError(f'line {b.get("line")}: inside "ask" only prompt / hint / after prompt / remind lines are allowed')
             return ask
         if first == 'prompt':
             rest = content[6:].strip()
@@ -288,9 +287,6 @@ def parse_body(story, lines):
             return {'_askpart': 'prompt', 'beat': parse_beat(story, scene_i, line_no, rest, 'ask'), 'line': line_no}
         if first == 'hint':
             return {'_askpart': 'hint', 'beat': parse_beat(story, scene_i, line_no, content[4:].strip(), 'ask'), 'line': line_no}
-        if content.lower().startswith('too early:'):
-            # the card was tapped before this ask (while Coco gave the action): say this instead of accepting it
-            return {'_askpart': 'early', 'beat': parse_beat(story, scene_i, line_no, content.split(':', 1)[1].strip(), 'ask'), 'line': line_no}
         if content.lower().startswith('after prompt:'):
             return {'_askpart': 'after', 'beat': parse_beat(story, scene_i, line_no, content.split(':', 1)[1].strip(), 'ask'), 'line': line_no}
         if first == 'remind':
@@ -526,7 +522,6 @@ def walk(beats, fn):
             for h in b['hints']: fn(h)
             if b['prompt']: fn(b['prompt'])
             for a in b['afterPrompt']: fn(a)
-            for a in b.get('tooEarly', []): fn(a)
             if b['remind']: fn(b['remind']['beat'])
 
 

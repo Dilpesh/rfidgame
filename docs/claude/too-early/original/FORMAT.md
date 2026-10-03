@@ -165,27 +165,6 @@ Also inside an ask:
 `remind` is for the water break: a gentle line at those times, as long as the
 card has not come.
 
-### An action before the card (too early)
-
-```
-ask PARTYCAP
-  too early: COCO [kind, playful]: इतनी जल्दी नहीं! पहले birthday cap पहनो…
-  too early: wait 3s
-  prompt COCO: Cap पहन ली? अब Cap वाला card tap करो!
-```
-
-When the child taps the card *before* the ask (while Coco is still giving the action), the tap does
-not count: the `too early:` lines play, taps during them do not count either, then the prompt.
-Without `too early:` an early tap counts as soon as the ask begins (the default).
-
-Use it only for an **action that the card confirms** — wear the cap and *then* tap the cap card, drink
-water and *then* tap WATER, put on cap + goggles. Not for actions with no card (dance, clap), and not for
-ordinary "find the card" asks, where tapping early is the child being quick.
-
-Any card that is not in the story's header — another game's card, or an extra card left on the table so
-the pile never runs out — is treated as a wrong card: boing + the warm redirect. Extra cards need no line
-in the script.
-
 ### An optional tap
 
 ```

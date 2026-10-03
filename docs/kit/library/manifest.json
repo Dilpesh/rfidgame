@@ -1,5 +1,5 @@
 {
- "version": "lib-2026-10-03b",
+ "version": "lib-2026-10-03d",
  "clips": {
   "tap": {
    "type": "sfx",
@@ -2306,6 +2306,34 @@
     "name",
     "captain"
    ]
+  },
+  "tap_correct": {
+   "type": "sfx",
+   "description": "correct-card sound the engine plays on every right tap: magic_sparkle with its 0.2 s lead-in and silent tail cut (1.3 s)",
+   "tags": [
+    "tap",
+    "correct",
+    "sparkle",
+    "engine"
+   ],
+   "added": "2026-10-03",
+   "file": "sfx/tap_correct.mp3",
+   "source": "games/bobo-birthday/audio/sfx-in/tap_correct.mp3",
+   "duration_seconds": 1.332
+  },
+  "cap_laugh": {
+   "type": "sfx",
+   "description": "small kids giggling together, a short burst of real kids laughter (ElevenLabs sound-generation; Dilpesh picked A of 3, 3 Oct) — after Coco's cap flies off in Bobo",
+   "tags": [
+    "laugh",
+    "giggle",
+    "kids",
+    "joke"
+   ],
+   "added": "2026-10-03",
+   "file": "sfx/cap_laugh.mp3",
+   "source": "games/bobo-birthday/audio/sfx-in/cap_laugh.mp3",
+   "duration_seconds": 2.038
   }
  }
 }

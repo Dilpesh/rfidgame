@@ -22,3 +22,5 @@ New lines to generate (7): S00_001 Correct choice {name}, S00_002 बिल्�
 
 **Ids:** the 3 new story lines are pinned to fresh ids S02_101, S02_102, S04_103 (an auto id had collided with the bridge line). 38 lines verified against their audio, 0 wrong.
 To generate: names.py captain (3 library lines) · generate.py bobo-birthday (3 lines).
+
+**3 Oct, later:** kids' giggle after the cap joke — `sfx cap_laugh` (A of 3, `claude/audition_laugh.py`, library cap_laugh, −23 LUFS), pause after it 1.5 → 0.6 s. Before: `story.before-laugh.txt`. Right/wrong tap sounds are now in the engine (docs/claude/tap-sounds/).

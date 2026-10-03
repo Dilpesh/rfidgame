@@ -46,7 +46,6 @@ window.Kahani = (function () {
   let pendingAsk = null;          // {card, resolve}
   let earlyScan = null;           // {card, at}: a card scanned while Coco was still talking (LEARNINGS 9–10)
   const EARLY_SCAN_MS = 10000;
-  const UNLISTED = '__unlisted__';   // any card not in this story's header
   let tapWindow = null;           // {card, fire}
   let cardMap = {}, uidToCard = {}, inputBuffer = '';
   let progressDone = 0, wakeLock = null, sceneCursor = 0, runToken = 0;
@@ -141,7 +140,7 @@ window.Kahani = (function () {
     // prefetch with the same versioned URL playback uses, so a bumped cache tag really re-downloads
     const list = []; const seen = new Set(); const add = (u) => { if (u && !seen.has(u)) { seen.add(u); list.push(u); } };
     const used = new Set(); story.scenes.forEach((sc) => walk(sc.beats, (b) => { if (b.cue) used.add(b.cue); if (b.prompt && b.prompt.cue) used.add(b.prompt.cue); (b.hints || []).forEach((h) => used.add(h.cue)); }));
-    story.wrong.forEach((v) => v.forEach((b) => { if (b.cue) used.add(b.cue); })); [story.tapSound, story.correctSound, story.wrongSound].forEach((c) => { if (c) used.add(c); });
+    story.wrong.forEach((v) => v.forEach((b) => { if (b.cue) used.add(b.cue); })); if (story.tapSound) used.add(story.tapSound);
     // story order first, so the intro is ready soonest; then the rest of the game's manifest; library clips only if the story uses them
     firstCues().forEach((id) => { const c = cueEntry(id); ['jeep_file', 'entry_file', 'bed_file', 'file'].forEach((k) => add(fileUrl(c, k))); });
     for (const [k, c] of Object.entries(manifest)) { if (k === '_build' || !c || typeof c !== 'object') continue; if (c._lib && !used.has(k)) continue; for (const key of ['jeep_file', 'entry_file', 'bed_file', 'file']) add(fileUrl(c, key)); }
@@ -379,19 +378,10 @@ window.Kahani = (function () {
       setStatus(`Waiting for ${cardInfo(b.card).label}.`);
       const t = epoch; pendingAsk = { card: b.card, resolve };
       const early = earlyScan; earlyScan = null;
-      const tooEarly = b.tooEarly || [];
-      const soon = early && early.card === b.card && performance.now() - early.at < EARLY_SCAN_MS;
-      if (soon && !tooEarly.length) {
+      if (early && early.card === b.card && performance.now() - early.at < EARLY_SCAN_MS) {
         log(`early scan of ${b.card} accepted`); setTimeout(() => { if (t === epoch) acceptCard(b.card, 'early'); }, 0); return;
       }
-      // An ask with "too early:" lines (an action comes first — wear the cap): a tap made before the
-      // ask does not count; Coco says those lines (taps during them do not count either), then asks.
-      const first = soon ? (async () => {
-        log(`early scan of ${b.card} — too early, not accepted`); state = 'narrative';
-        for (const x of tooEarly) { if (t !== epoch) return; await runBeat(x, t); }
-        if (t === epoch) { state = 'question'; earlyScan = null; }
-      })() : Promise.resolve();
-      first.then(() => (t === epoch && b.prompt ? runBeat(b.prompt, t) : undefined)).then(async () => {
+      (b.prompt ? runBeat(b.prompt, t) : Promise.resolve()).then(async () => {
         if (t !== epoch) return;
         for (const a of b.afterPrompt) { await runBeat(a, t); if (t !== epoch) return; }
         scheduleHints(b.hints, t);
@@ -408,36 +398,30 @@ window.Kahani = (function () {
   }
   function acceptCard(card, source = 'reader') {
     if (state === 'done' || state === 'idle') return;
-    // Right card → the sparkle (the story waits for it, then plays its own reward sound and line);
-    // wrong card → the boing (then the story's warm redirect). A tap while Coco is talking is silent
-    // and remembered (Dilpesh, 3 Oct: the tick was inaudible on a phone, removed).
+    // Every tap is acknowledged with the same tick at once — right card, wrong card, reader or
+    // screen. An 'early' accept was already ticked when it was scanned (handleScan).
+    if (source !== 'early' && story.tapSound) playOverlayCue(story.tapSound, .5);
     if (state === 'question' && card === expected) {
       clearTimers(); stopForeground(); epoch++; state = 'success'; expected = null; hideQuestion();
       setStatus(`Accepted ${cardInfo(card).label}.`);
       cardsDone.add(card); progressDone = cardsDone.size; setProgress(progressDone);
-      const p = pendingAsk; pendingAsk = null; const t = epoch;
-      if (p) playOverlayCueAndWait(story.correctSound, 1).then(() => p.resolve(t));
+      const p = pendingAsk; pendingAsk = null; if (p) p.resolve(epoch);
       return;
     }
-    if (state === 'question') {
-      setStatus('Try another card.', 'warn');
-      if (!story.wrong.length) { playOverlayCue(story.wrongSound, 1); return; }
+    if (state === 'question' && story.wrong.length) {
       const variant = story.wrong[wrongVariant++ % story.wrong.length]; const t = epoch;
-      (async () => {
-        await playOverlayCueAndWait(story.wrongSound, 1);
-        for (const x of variant) { if (t !== epoch || state !== 'question') return; await runBeat(x, t); }
-      })();
-      return;
+      setStatus('Try another card.', 'warn');
+      (async () => { for (const x of variant) { if (t !== epoch || state !== 'question') return; await runBeat(x, t); } })();
     }
   }
   function handleScan(raw) {
     const uid = norm(raw); if (!uid) return;
-    // A card this story doesn't list (another game's card, an extra/decoy card on the table) is a
-    // wrong card: during a question it gets the boing and the warm redirect (Dilpesh, 3 Oct).
-    const card = lookupCard(raw) || UNLISTED; log(`scan ${uid} → ${card === UNLISTED ? 'not in this story (wrong card)' : card}`);
+    const card = lookupCard(raw); log(`scan ${uid} → ${card || 'unknown'}`);
+    if (!card) return;
     if (tapWindow && card === tapWindow.card) { tapWindow.fire(); return; }
     if (state === 'narrative' || state === 'success') {
-      // Coco is still talking: remember the tap (silently since 3 Oct — no tick; story.tapSound is null). If it is the card the next question wants, it counts when the question arms;
+      // Coco is still talking: acknowledge the tap at once (a sound within 200 ms, always) and
+      // remember it. If it is the card the next question wants, it counts when the question arms;
       // a wrong one is never punished and never advances the story.
       earlyScan = { card, at: performance.now() };
       if (story.tapSound) playOverlayCue(story.tapSound, .5);
@@ -614,15 +598,7 @@ window.Kahani = (function () {
   async function boot(opts = {}) {
     if (typeof opts.story === 'string') { const r = await fetch(opts.story, { cache: 'no-store' }); story = await r.json(); } else story = opts.story;
     AUDIO_DIR = story.audioDir || 'audio/'; CACHE_TAG = story.cacheTag || 'v1'; LIB_DIR = story.libraryDir || '../../library/';
-    story.tapSound = null;   // no tick (Dilpesh, 3 Oct: inaudible on a phone) — a story's "tap sound:" line is ignored
-    story.correctSound = story.correctSound || 'lib:tap_correct';   // right card: the sparkle, trimmed to start at once
-    story.wrongSound = story.wrongSound || 'lib:boing';             // wrong card
-    // The engine now plays these itself, so a story's own copy right after an ask (sfx magic_sparkle)
-    // or at the start of a wrong-card response (sfx boing) is dropped — nothing plays twice, and
-    // games built before this need no rebuild.
-    const named = (b, n) => b && b.op === 'sfx' && (b.cue === 'lib:' + n || ((story.clips || {})[b.cue] || {}).name === n);
-    story.scenes.forEach((sc) => { for (let i = sc.beats.length - 1; i > 0; i--) if (sc.beats[i - 1].op === 'ask' && named(sc.beats[i], 'magic_sparkle')) sc.beats.splice(i, 1); });
-    story.wrong = story.wrong.map((v) => (named(v[0], 'boing') ? v.slice(1) : v));
+    if (!story.tapSound) story.tapSound = 'lib:tap';   // the tap tick is part of the engine, not optional per story
     if (params.has('dev')) devMode = params.get('dev') !== '0'; else { try { devMode = localStorage.getItem(DEV_KEY) === '1'; } catch (e) {} }
     if (params.has('dev')) { try { localStorage.setItem(DEV_KEY, devMode ? '1' : '0'); } catch (e) {} }
     variantName = params.get('v') || '';

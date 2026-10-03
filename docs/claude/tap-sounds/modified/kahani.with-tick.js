@@ -46,7 +46,6 @@ window.Kahani = (function () {
   let pendingAsk = null;          // {card, resolve}
   let earlyScan = null;           // {card, at}: a card scanned while Coco was still talking (LEARNINGS 9–10)
   const EARLY_SCAN_MS = 10000;
-  const UNLISTED = '__unlisted__';   // any card not in this story's header
   let tapWindow = null;           // {card, fire}
   let cardMap = {}, uidToCard = {}, inputBuffer = '';
   let progressDone = 0, wakeLock = null, sceneCursor = 0, runToken = 0;
@@ -379,19 +378,10 @@ window.Kahani = (function () {
       setStatus(`Waiting for ${cardInfo(b.card).label}.`);
       const t = epoch; pendingAsk = { card: b.card, resolve };
       const early = earlyScan; earlyScan = null;
-      const tooEarly = b.tooEarly || [];
-      const soon = early && early.card === b.card && performance.now() - early.at < EARLY_SCAN_MS;
-      if (soon && !tooEarly.length) {
+      if (early && early.card === b.card && performance.now() - early.at < EARLY_SCAN_MS) {
         log(`early scan of ${b.card} accepted`); setTimeout(() => { if (t === epoch) acceptCard(b.card, 'early'); }, 0); return;
       }
-      // An ask with "too early:" lines (an action comes first — wear the cap): a tap made before the
-      // ask does not count; Coco says those lines (taps during them do not count either), then asks.
-      const first = soon ? (async () => {
-        log(`early scan of ${b.card} — too early, not accepted`); state = 'narrative';
-        for (const x of tooEarly) { if (t !== epoch) return; await runBeat(x, t); }
-        if (t === epoch) { state = 'question'; earlyScan = null; }
-      })() : Promise.resolve();
-      first.then(() => (t === epoch && b.prompt ? runBeat(b.prompt, t) : undefined)).then(async () => {
+      (b.prompt ? runBeat(b.prompt, t) : Promise.resolve()).then(async () => {
         if (t !== epoch) return;
         for (const a of b.afterPrompt) { await runBeat(a, t); if (t !== epoch) return; }
         scheduleHints(b.hints, t);
@@ -408,9 +398,10 @@ window.Kahani = (function () {
   }
   function acceptCard(card, source = 'reader') {
     if (state === 'done' || state === 'idle') return;
-    // Right card → the sparkle (the story waits for it, then plays its own reward sound and line);
-    // wrong card → the boing (then the story's warm redirect). A tap while Coco is talking is silent
-    // and remembered (Dilpesh, 3 Oct: the tick was inaudible on a phone, removed).
+    // Every tap gets a sound at once (Dilpesh, 3 Oct): the right card → the sparkle (the story
+    // waits for it, then plays its own reward sound and line); a wrong card → the boing (then the
+    // story's warm redirect); a tap while Coco is talking → the neutral tick (an 'early' accept
+    // was already ticked when it was scanned).
     if (state === 'question' && card === expected) {
       clearTimers(); stopForeground(); epoch++; state = 'success'; expected = null; hideQuestion();
       setStatus(`Accepted ${cardInfo(card).label}.`);
@@ -429,15 +420,16 @@ window.Kahani = (function () {
       })();
       return;
     }
+    if (source !== 'early' && story.tapSound) playOverlayCue(story.tapSound, .5);
   }
   function handleScan(raw) {
     const uid = norm(raw); if (!uid) return;
-    // A card this story doesn't list (another game's card, an extra/decoy card on the table) is a
-    // wrong card: during a question it gets the boing and the warm redirect (Dilpesh, 3 Oct).
-    const card = lookupCard(raw) || UNLISTED; log(`scan ${uid} → ${card === UNLISTED ? 'not in this story (wrong card)' : card}`);
+    const card = lookupCard(raw); log(`scan ${uid} → ${card || 'unknown'}`);
+    if (!card) return;
     if (tapWindow && card === tapWindow.card) { tapWindow.fire(); return; }
     if (state === 'narrative' || state === 'success') {
-      // Coco is still talking: remember the tap (silently since 3 Oct — no tick; story.tapSound is null). If it is the card the next question wants, it counts when the question arms;
+      // Coco is still talking: acknowledge the tap at once (a sound within 200 ms, always) and
+      // remember it. If it is the card the next question wants, it counts when the question arms;
       // a wrong one is never punished and never advances the story.
       earlyScan = { card, at: performance.now() };
       if (story.tapSound) playOverlayCue(story.tapSound, .5);
@@ -614,7 +606,7 @@ window.Kahani = (function () {
   async function boot(opts = {}) {
     if (typeof opts.story === 'string') { const r = await fetch(opts.story, { cache: 'no-store' }); story = await r.json(); } else story = opts.story;
     AUDIO_DIR = story.audioDir || 'audio/'; CACHE_TAG = story.cacheTag || 'v1'; LIB_DIR = story.libraryDir || '../../library/';
-    story.tapSound = null;   // no tick (Dilpesh, 3 Oct: inaudible on a phone) — a story's "tap sound:" line is ignored
+    if (!story.tapSound) story.tapSound = 'lib:tap';   // the tap tick is part of the engine, not optional per story
     story.correctSound = story.correctSound || 'lib:tap_correct';   // right card: the sparkle, trimmed to start at once
     story.wrongSound = story.wrongSound || 'lib:boing';             // wrong card
     // The engine now plays these itself, so a story's own copy right after an ask (sfx magic_sparkle)

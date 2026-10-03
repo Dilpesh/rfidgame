@@ -20,8 +20,6 @@
 #   Candle line: "five साल / five candles" → "चलो, Bobo के साथ candles बुझाते हैं — ज़ोर से फूँक मारो!"
 #   Final polish (3 Oct, proposal): praise pool — "You are absolutely right" out, "Correct choice" + "बिल्कुल सही" in;
 #   banana ack → praise → energy line; candle wait 1.5 → 0.8 s; song lyric fits the tune; goodbye from the kit standard.
-#   Kids' giggle (cap_laugh, A of 3) right after the cap joke; the pause after it 1.5 → 0.6 s (3 Oct).
-#   Cap first (kids' play, 3 Oct): a cap-card tap before the ask → "इतनी जल्दी नहीं! पहले birthday cap पहनो…"; prompt and last hint say wear first.
 # Hindi in Devanagari, English words in Latin (what ElevenLabs reads reliably); nothing reworded.
 # Where a sentence with the name sits inside a longer speech it is its own line, so only that
 # sentence is a per-child clip. Format: tools/FORMAT.md
@@ -93,16 +91,13 @@ sfx blow_candles_out
 COCO [delighted] @BOBO_BIRTHDAY_S03_022_COCO: Poof! सारी candles बुझ गईं!
 sfx cap_flies_off_2
 COCO [surprised, laughing] @BOBO_BIRTHDAY_S03_023_COCO #joke: अरे! इतनी ज़ोर की फूँक… मेरी cap उड़ गई! Woooosh!
-sfx cap_laugh
-wait 0.6s
+wait 1.5s
 COCO [warm, slow] @BOBO_BIRTHDAY_S03_002_COCO: देखो, table पर एक real Birthday Cap रखी है! उसे उठाओ और सर पर पहन लो!
 wait 3s
 ask PARTYCAP
-  too early: COCO [kind, playful] @BOBO_BIRTHDAY_S03_104_COCO: इतनी जल्दी नहीं! पहले birthday cap पहनो — cap तुम्हारी table पर रखी है।
-  too early: wait 3s
-  prompt COCO [bright] @BOBO_BIRTHDAY_S03_105_COCO: Cap पहन ली? अब Birthday Cap वाला card tap करो!
+  prompt COCO [bright] @BOBO_BIRTHDAY_S03_025_COCO: अब जल्दी से table पर रखे Birthday Cap Card को भी tap कर दो!
   hint COCO [relaxed, reassuring] @BOBO_BIRTHDAY_S03_026_COCO: आराम से पहनो। Cap पहन कर, Cap वाला card tap करना।
-  hint COCO [kind, clear] @BOBO_BIRTHDAY_S03_106_COCO: पहले cap पहनो, फिर Cap वाला card tap करो!
+  hint COCO [kind, clear] @BOBO_BIRTHDAY_S03_027_COCO: Cap वाला card tap करो!
 sfx party_whistle
 COCO [cheering] @BOBO_BIRTHDAY_S03_028_COCO #praise: Woohoo! Birthday cap ready!
 use praise_action
