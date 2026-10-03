@@ -1,0 +1,529 @@
+{
+ "_child": {
+  "display": "Kishu",
+  "devanagari": "किशु"
+ },
+ "clips": {
+  "praise_amazing": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Amazing, किशु!",
+   "performance_tag": "[warm, proud]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "praise_amazing.mp3",
+   "duration_seconds": 1.65,
+   "integrated_lufs": -16.1,
+   "true_peak_dbfs": -2.3
+  },
+  "praise_good_job": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Good job, किशु!",
+   "performance_tag": "[bright]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "praise_good_job.mp3",
+   "duration_seconds": 2.04,
+   "integrated_lufs": -16.5,
+   "true_peak_dbfs": -2.4
+  },
+  "praise_excellent": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Excellent work, किशु!",
+   "performance_tag": "[delighted]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "praise_excellent.mp3",
+   "duration_seconds": 2.35,
+   "integrated_lufs": -16.1,
+   "true_peak_dbfs": -2.4
+  },
+  "praise_right": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "You are absolutely right, किशु!",
+   "performance_tag": "[pleased, clear]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "praise_right.mp3",
+   "duration_seconds": 2.35,
+   "integrated_lufs": -16.0,
+   "true_peak_dbfs": -2.3
+  },
+  "title_captain": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "अब से तुम हो — Captain किशु!",
+   "performance_tag": "[proud, warm]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "title_captain.mp3",
+   "duration_seconds": 3.0,
+   "integrated_lufs": -16.5,
+   "true_peak_dbfs": -2.4
+  },
+  "look": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "किशु, देखो!",
+   "performance_tag": "[urgent, excited]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "look.mp3",
+   "duration_seconds": 2.19,
+   "integrated_lufs": -16.0,
+   "true_peak_dbfs": -3.9
+  },
+  "listen_carefully": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "किशु, ध्यान से सुनो…",
+   "performance_tag": "[whispering]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "listen_carefully.mp3",
+   "duration_seconds": 2.51,
+   "integrated_lufs": -16.0,
+   "true_peak_dbfs": -2.3
+  },
+  "sing_along": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "किशु, साथ में गाओ!",
+   "performance_tag": "[tender, inviting]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "sing_along.mp3",
+   "duration_seconds": 2.59,
+   "integrated_lufs": -16.3,
+   "true_peak_dbfs": -2.4
+  },
+  "praise_correct_choice": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Correct choice, किशु!",
+   "performance_tag": "[pleased, clear]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "praise_correct_choice.mp3",
+   "duration_seconds": 2.12,
+   "integrated_lufs": -16.1,
+   "true_peak_dbfs": -2.3
+  },
+  "praise_bilkul_sahi": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "बिल्कुल सही, किशु!",
+   "performance_tag": "[warm, proud]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "praise_bilkul_sahi.mp3",
+   "duration_seconds": 1.65,
+   "integrated_lufs": -16.0,
+   "true_peak_dbfs": -2.5
+  },
+  "goodbye": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "अगली story में फिर मिलेंगे, किशु!",
+   "performance_tag": "[warm, waving]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "goodbye.mp3",
+   "duration_seconds": 2.93,
+   "integrated_lufs": -16.1,
+   "true_peak_dbfs": -2.4
+  },
+  "bobo-birthday:BOBO_BIRTHDAY_S01_001_COCO": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Hey! Hi, किशु! मैं हूँ Coco और आज मेरे friend Bobo का birthday है। क्या तुम Bobo की birthday party arrange करने में मेरी help करोगे?",
+   "performance_tag": "[upbeat, welcoming]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "bobo-birthday_BOBO_BIRTHDAY_S01_001_COCO.mp3",
+   "duration_seconds": 9.64,
+   "integrated_lufs": -16.3,
+   "true_peak_dbfs": -2.3
+  },
+  "bobo-birthday:BOBO_BIRTHDAY_S02_008_COCO": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "पर पता है किशु?",
+   "performance_tag": "[leaning in]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "bobo-birthday_BOBO_BIRTHDAY_S02_008_COCO.mp3",
+   "duration_seconds": 1.88,
+   "integrated_lufs": -16.1,
+   "true_peak_dbfs": -2.3
+  },
+  "bobo-birthday:BOBO_BIRTHDAY_S04_035_COCO": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Let's DANCE, किशु!",
+   "performance_tag": "[party voice]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "bobo-birthday_BOBO_BIRTHDAY_S04_035_COCO.mp3",
+   "duration_seconds": 1.96,
+   "integrated_lufs": -16.0,
+   "true_peak_dbfs": -3.6
+  },
+  "bobo-birthday:BOBO_BIRTHDAY_S04_041_COCO": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "किशु, clap with me!",
+   "performance_tag": "[calling, rhythmic]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "bobo-birthday_BOBO_BIRTHDAY_S04_041_COCO.mp3",
+   "duration_seconds": 2.04,
+   "integrated_lufs": -16.4,
+   "true_peak_dbfs": -2.3
+  },
+  "bobo-birthday:BOBO_BIRTHDAY_S05_042_COCO": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Thank you so much, किशु, for helping me plan Bobo's birthday!",
+   "performance_tag": "[खुश होकर, warm]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "bobo-birthday_BOBO_BIRTHDAY_S05_042_COCO.mp3",
+   "duration_seconds": 3.87,
+   "integrated_lufs": -16.1,
+   "true_peak_dbfs": -2.4
+  },
+  "gulbul-pandey:GULBUL_PANDEY_S00_001_INSPECTOR": {
+   "type": "speech",
+   "voice": "INSPECTOR",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.5,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Amazing, किशु!",
+   "performance_tag": "[warm, proud]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "gulbul-pandey_GULBUL_PANDEY_S00_001_INSPECTOR.mp3",
+   "duration_seconds": 1.8,
+   "integrated_lufs": -16.4,
+   "true_peak_dbfs": -2.4
+  },
+  "gulbul-pandey:GULBUL_PANDEY_S00_002_INSPECTOR": {
+   "type": "speech",
+   "voice": "INSPECTOR",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.5,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Good job, किशु!",
+   "performance_tag": "[bright, cheerful]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "gulbul-pandey_GULBUL_PANDEY_S00_002_INSPECTOR.mp3",
+   "duration_seconds": 1.41,
+   "integrated_lufs": -16.0,
+   "true_peak_dbfs": -2.6
+  },
+  "gulbul-pandey:GULBUL_PANDEY_S00_003_INSPECTOR": {
+   "type": "speech",
+   "voice": "INSPECTOR",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.5,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Excellent work, किशु!",
+   "performance_tag": "[delighted]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "gulbul-pandey_GULBUL_PANDEY_S00_003_INSPECTOR.mp3",
+   "duration_seconds": 2.19,
+   "integrated_lufs": -16.4,
+   "true_peak_dbfs": -2.4
+  },
+  "gulbul-pandey:GULBUL_PANDEY_S00_004_INSPECTOR": {
+   "type": "speech",
+   "voice": "INSPECTOR",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.5,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "You are absolutely right, किशु!",
+   "performance_tag": "[pleased, clear]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "gulbul-pandey_GULBUL_PANDEY_S00_004_INSPECTOR.mp3",
+   "duration_seconds": 2.85,
+   "integrated_lufs": -16.2,
+   "true_peak_dbfs": -2.5
+  },
+  "gulbul-pandey:GULBUL_PANDEY_S01_010_INSPECTOR": {
+   "type": "speech",
+   "voice": "INSPECTOR",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.5,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "अरे किशु! क्या तुम हमारे Detective बनोगे?",
+   "performance_tag": "[warm, inviting]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "gulbul-pandey_GULBUL_PANDEY_S01_010_INSPECTOR.mp3",
+   "duration_seconds": 3.63,
+   "integrated_lufs": -16.0,
+   "true_peak_dbfs": -2.5
+  },
+  "gulbul-pandey:GULBUL_PANDEY_S01_018_INSPECTOR": {
+   "type": "speech",
+   "voice": "INSPECTOR",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.5,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Ready, Detective किशु!",
+   "performance_tag": "[heroic, proud]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "gulbul-pandey_GULBUL_PANDEY_S01_018_INSPECTOR.mp3",
+   "duration_seconds": 2.04,
+   "integrated_lufs": -16.3,
+   "true_peak_dbfs": -2.4
+  },
+  "gulbul-pandey:GULBUL_PANDEY_S03_043_INSPECTOR": {
+   "type": "speech",
+   "voice": "INSPECTOR",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.5,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "किशु, देखो!",
+   "performance_tag": "[calling, warm]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "gulbul-pandey_GULBUL_PANDEY_S03_043_INSPECTOR.mp3",
+   "duration_seconds": 2.19,
+   "integrated_lufs": -16.0,
+   "true_peak_dbfs": -3.0
+  },
+  "gulbul-pandey:GULBUL_PANDEY_S04_057_INSPECTOR": {
+   "type": "speech",
+   "voice": "INSPECTOR",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.5,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "किशु, ध्यान से सुनो…",
+   "performance_tag": "[hushed]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "gulbul-pandey_GULBUL_PANDEY_S04_057_INSPECTOR.mp3",
+   "duration_seconds": 2.59,
+   "integrated_lufs": -16.0,
+   "true_peak_dbfs": -3.5
+  },
+  "gulbul-pandey:GULBUL_PANDEY_S04_067_INSPECTOR": {
+   "type": "speech",
+   "voice": "INSPECTOR",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.5,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "किशु, ध्यान से सुनो…",
+   "performance_tag": "[hushed]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "gulbul-pandey_GULBUL_PANDEY_S04_067_INSPECTOR.mp3",
+   "duration_seconds": 2.59,
+   "integrated_lufs": -16.0,
+   "true_peak_dbfs": -1.9
+  },
+  "jungle-rescue-english:JR_003c": {
+   "type": "speech",
+   "voice": "COCO",
+   "voice_id": "d9BvEI0bp2Tmdpqnjwn0",
+   "model_id": "eleven_v3",
+   "voice_settings": {
+    "stability": 0.4,
+    "similarity_boost": 0.78,
+    "style": 0.28,
+    "use_speaker_boost": true
+   },
+   "spoken_text": "Hello किशु! जंगल में हमारे कई दोस्त problem में हैं और हमें उन्हें बचाना है। क्या तुम मेरी मदद के लिए तैयार हो?",
+   "performance_tag": "[hopeful and inviting]",
+   "review_status": "test",
+   "generated": "2026-10-03",
+   "file": "jungle-rescue-english_JR_003c.mp3",
+   "duration_seconds": 9.25,
+   "integrated_lufs": -16.5,
+   "true_peak_dbfs": -2.3
+  }
+ },
+ "version": "2026-10-03"
+}
