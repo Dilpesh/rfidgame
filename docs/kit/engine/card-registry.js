@@ -33,7 +33,7 @@ window.CardRegistry = (function () {
   const KEY = 'kahaniCards';
 
   /* __CARD_REGISTRY_START__ */
-const SEED_VERSION = "2026-10-03b";
+const SEED_VERSION = "2026-10-03c";
 const DEFAULT = {
   "6170247": "BALLOONS",
   "6358547": "BANANA",
@@ -45,6 +45,7 @@ const DEFAULT = {
   "3842956061": "CAR",
   "6358348": "CLAP",
   "6373847": "DANCE",
+  "2675113": "DANCE",
   "6375198": "DISCOBALL",
   "3400869124": "DOG",
   "34545395": "ELEPHANT",
